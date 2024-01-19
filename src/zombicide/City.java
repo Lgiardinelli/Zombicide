@@ -16,13 +16,13 @@ public class City {
     private int height;
 
     /** The list of streets in the city. */
-    private List<Street> streets;
+    private List<Street streets;
 
     /** The list of buildings in the city. */
     private List<Building> buildings;
 
     /** The list of areas in the city. */
-    private List<Area> areas;
+    private Area[][] areas;
 
     /**
      * Constructs a new City with the specified width and height.
