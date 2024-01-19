@@ -40,6 +40,19 @@ public class City {
     }
     
     /**
+     * Creates an empty city by initializing all areas as streets.
+     * This method populates the city with streets at each coordinate.
+     */
+    public void createEmptyCity() {
+        for (int x = 0; x < this.width; x++) {
+            for (int y = 0; y < this.height; y++) {
+                areas[x][y] = new Street(x, y);
+            }
+        }
+    }
+
+    
+    /**
      * Adds a street to the city.
      *
      * @param e The Street to be added.
@@ -68,5 +81,7 @@ public class City {
     public boolean isAStreet(Area a) {
         return streets.contains(a);
     }
+    
+    
 
 }
