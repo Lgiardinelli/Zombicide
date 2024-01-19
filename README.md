@@ -40,6 +40,12 @@
 # Journal de bord
 
 ## Semaine 1
+Nous avons effectué ensemble notre première version de l'UML avec toutes les classes et les premières méthodes et attributs. 
+Puis les jours suivant, nous l'avons compléter et nous nous sommes réparti les différentes classes à coder.
+Léo -> Area.java
+Dylan -> Door.java
+Elies -> City.java
+Théophane -> Building.java
 
 ## Semaine 2
 
