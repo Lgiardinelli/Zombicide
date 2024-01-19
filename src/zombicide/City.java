@@ -64,6 +64,13 @@ public class City {
     }
     
     public boolean canBeSplit(Area a) {
+    	if(isABuilding(a)) {
+    		for (int x = 0; x <= 5; x++) {
+                for (int y = 0; y <= 5; y++) {
+
+                }
+            }
+    	}
     	
     }
     
@@ -71,10 +78,10 @@ public class City {
      * Checks if an area is a street in the city.
      *
      * @param a The Area to check.
-     * @return true if the area is a street, false otherwise.
+     * @return true if the area is a building, false otherwise.
      */
-    public boolean isAStreet(Area a) {
-        return this.streets.contains(a);
+    public boolean isABuilding(Area a) {
+        return this.buildings.contains(a);
     }
     
     /**
