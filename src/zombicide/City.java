@@ -39,6 +39,18 @@ public class City {
     }
     
     /**
+     * Gets the area at the specified coordinates in the city.
+     *
+     * @param x The x-coordinate of the area.
+     * @param y The y-coordinate of the area.
+     * @return The area at the specified coordinates.
+     */
+    public Area getArea(int x, int y) {
+        return this.areas[x][y];
+    }
+
+    
+    /**
      * Creates an city by initializing all areas as buildings.
      * This method populates the city with streets at each coordinate.
      */
