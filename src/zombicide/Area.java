@@ -20,4 +20,13 @@ public class Area {
 		this.zombies = new Arraylist<Zombie>();
 		this.noise = 0;
 	}
+	
+	/**
+	 * Get the position X
+	 * @return int 
+	 */
+	public int getX() {
+		return this.getX();
+	}
+	
 }
