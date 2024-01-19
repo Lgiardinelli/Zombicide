@@ -40,6 +40,12 @@
 # Journal de bord
 
 ## Semaine 1
+Together, we created our first version of the UML with all the classes and the first methods and attributes.
+Then, over the next few days, we completed it and divided up the various classes to be coded.
+Léo -> Area.java
+Dylan -> Door.java
+Elies -> City.java
+Théophane -> Building.java
 
 ## Semaine 2
 
