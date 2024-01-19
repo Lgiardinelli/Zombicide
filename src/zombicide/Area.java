@@ -29,4 +29,12 @@ public class Area {
 		return this.getX();
 	}
 	
+	/**
+	 * Get the position Y
+	 * @return int 
+	 */
+	public int getY() {
+		return this.getY();
+	}
+	
 }
