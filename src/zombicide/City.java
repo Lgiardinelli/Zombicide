@@ -16,7 +16,7 @@ public class City {
     private int height;
 
     /** The list of streets in the city. */
-    private List<Street streets;
+    private List<Street> streets;
 
     /** The list of buildings in the city. */
     private List<Building> buildings;
@@ -35,22 +35,32 @@ public class City {
         this.height = height;
         this.streets = new ArrayList<>();
         this.buildings = new ArrayList<>();
-        this.areas = new ArrayList<>();
         initCity();
     }
     
     /**
-     * Creates an empty city by initializing all areas as streets.
+     * Creates an city by initializing all areas as buildings.
      * This method populates the city with streets at each coordinate.
      */
-    public void createEmptyCity() {
+    public void createCity() {
         for (int x = 0; x < this.width; x++) {
             for (int y = 0; y < this.height; y++) {
                 areas[x][y] = new Street(x, y);
             }
         }
     }
+    
 
+    
+    /**
+     * Checks if an area is a street in the city.
+     *
+     * @param a The Area to check.
+     * @return true if the area is a street, false otherwise.
+     */
+    public boolean isAStreet(Area a) {
+        return streets.contains(a);
+    }
     
     /**
      * Adds a street to the city.
@@ -72,15 +82,7 @@ public class City {
         return buildings.add(e);
     }
     
-    /**
-     * Checks if an area is a street in the city.
-     *
-     * @param a The Area to check.
-     * @return true if the area is a street, false otherwise.
-     */
-    public boolean isAStreet(Area a) {
-        return streets.contains(a);
-    }
+    
     
     
 
