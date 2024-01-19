@@ -58,5 +58,15 @@ public class City {
     public boolean addBuilding(Building e) {
         return buildings.add(e);
     }
+    
+    /**
+     * Checks if an area is a street in the city.
+     *
+     * @param a The Area to check.
+     * @return true if the area is a street, false otherwise.
+     */
+    public boolean isAStreet(Area a) {
+        return streets.contains(a);
+    }
 
 }
