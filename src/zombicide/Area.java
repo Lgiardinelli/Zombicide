@@ -37,4 +37,12 @@ public class Area {
 		return this.getY();
 	}
 	
+	/**
+	 * the cell accepts the fight or not
+	 * @return true if there can be a fight no otherwise
+	 */
+	public boolean canFight() {
+		return true;
+	}
+	
 }
