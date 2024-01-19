@@ -83,7 +83,7 @@ public class City {
      * @param e The Street to be added.
      * @return true if the street is successfully added, false otherwise.
      */
-    public boolean addStreet(Street e) {
+    public void addStreet(Area e) {
         return this.streets.add(e);
     }
     
@@ -93,7 +93,7 @@ public class City {
      * @param e The Building to be added.
      * @return true if the building is successfully added, false otherwise.
      */
-    public boolean addBuilding(Building e) {
+    public void addBuilding(Area e) {
         return this.buildings.add(e);
     }
     
