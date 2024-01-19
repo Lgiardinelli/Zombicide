@@ -24,5 +24,9 @@ public class Building {
 		initBuilding();
 	}
 	
+	/** initialize the room of the building */
+	public void initBuilding() {
+		
+	}
 	
 }
