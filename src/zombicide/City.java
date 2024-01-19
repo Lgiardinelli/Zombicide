@@ -65,9 +65,11 @@ public class City {
     
     public boolean canBeSplit(Area a) {
     	if(isABuilding(a)) {
-    		for (int x = 0; x <= 5; x++) {
-                for (int y = 0; y <= 5; y++) {
-
+    		for (int x = 0; x < 4; x++) {
+                for (int y = 0; y < 4; y++) {
+                	if isABuilding(this.getArea(x+1, y)) {
+                		return false
+                	}
                 }
             }
     	}
