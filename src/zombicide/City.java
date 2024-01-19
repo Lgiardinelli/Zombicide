@@ -12,6 +12,14 @@ public class City{
     private List<Building> buildings;
     private List<Area> areas;
     
+    public City(int width,int height){
+		this.width=width;
+		this.height=height;
+		this.streets= new ArrayList<>();
+		this.buildings= new ArrayList<>();
+		this.areas = new ArrayList<>();
+		initCity();
+	}
 
 	
 
