@@ -48,5 +48,15 @@ public class City {
     public boolean addStreet(Street e) {
         return streets.add(e);
     }
+    
+    /**
+     * Adds a building to the city.
+     *
+     * @param e The Building to be added.
+     * @return true if the building is successfully added, false otherwise.
+     */
+    public boolean addBuilding(Building e) {
+        return buildings.add(e);
+    }
 
 }
