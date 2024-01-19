@@ -67,12 +67,13 @@ public class City {
     	if(isABuilding(a)) {
     		for (int x = 0; x < 4; x++) {
                 for (int y = 0; y < 4; y++) {
-                	if isABuilding(this.getArea(x+1, y)) {
-                		return false
+                	if(isABuilding(this.getArea(x+1, y))) {
+                		return false;
                 	}
                 }
             }
     	}
+    	return true;
     	
     }
     
