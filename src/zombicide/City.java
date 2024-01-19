@@ -45,12 +45,15 @@ public class City {
     public void createCity() {
         for (int x = 0; x < this.width; x++) {
             for (int y = 0; y < this.height; y++) {
-                areas[x][y] = new Street(x, y);
+                areas[x][y] = new Building(x, y);
+                addBuilding(getArea(x,y));
             }
         }
     }
     
-
+    public boolean canBeSplit(Area a) {
+    	
+    }
     
     /**
      * Checks if an area is a street in the city.
@@ -59,7 +62,7 @@ public class City {
      * @return true if the area is a street, false otherwise.
      */
     public boolean isAStreet(Area a) {
-        return streets.contains(a);
+        return this.streets.contains(a);
     }
     
     /**
@@ -69,7 +72,7 @@ public class City {
      * @return true if the street is successfully added, false otherwise.
      */
     public boolean addStreet(Street e) {
-        return streets.add(e);
+        return this.streets.add(e);
     }
     
     /**
@@ -79,7 +82,7 @@ public class City {
      * @return true if the building is successfully added, false otherwise.
      */
     public boolean addBuilding(Building e) {
-        return buildings.add(e);
+        return this.buildings.add(e);
     }
     
     
