@@ -1,3 +1,4 @@
+package zombicide;
 
 public class Main {
 
