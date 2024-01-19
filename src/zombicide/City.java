@@ -38,5 +38,15 @@ public class City {
         this.areas = new ArrayList<>();
         initCity();
     }
+    
+    /**
+     * Adds a street to the city.
+     *
+     * @param e The Street to be added.
+     * @return true if the street is successfully added, false otherwise.
+     */
+    public boolean addStreet(Street e) {
+        return streets.add(e);
+    }
 
 }
