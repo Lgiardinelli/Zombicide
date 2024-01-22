@@ -68,6 +68,26 @@ public class City {
         int y = random.nextInt(2, areas[0].length - 2);
         return new Position(x, y);
     }
+    
+    /**
+     * Initializes streets originating from the given crossroad within the city areas.
+     *
+     * @param crossRoad The crossroad street.
+     * @param areas The two-dimensional array representing different areas in the city.
+     */
+    private void initStreetsFromCrossRoad(Street crossRoad, Area[][] areas) {
+        int x = crossRoad.getX();
+        int y = crossRoad.getY();
+        
+        for (int i = 0; i < areas[0].length; i++) {
+            if (this.areas[x][i] == null)
+                this.areas[x][i] = new Street(x, i);
+        }
+        for (int i = 0; i < areas.length; i++) {
+            if (this.areas[i][y] == null)
+                this.areas[i][y] = new Street(i, y);
+        }
+    }
 
 	/**
      * Gets the area at the specified coordinates in the city.
