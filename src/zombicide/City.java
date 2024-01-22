@@ -10,20 +10,16 @@ import java.util.Random;
  */
 public class City {
 
-    /** The width of the city. */
-    private int width;
-
-    /** The height of the city. */
-    private int height;
-
     /** The list of streets in the city. */
     private List<Street> streets;
 
     /** The list of buildings in the city. */
-    private List<Building> buildings;
+    private List<Room> rooms;
 
     /** The list of areas in the city. */
     private Area[][] areas;
+    private SpawnStreet spawnStreet;
+    private Random random;
 
     /**
      * Constructs a new City with the specified width and height.
@@ -32,14 +28,25 @@ public class City {
      * @param height The height of the city.
      */
     public City(int width, int height) {
-        this.width = width;
-        this.height = height;
+    	this.areas = new Area[width][height];
         this.streets = new ArrayList<>();
-        this.buildings = new ArrayList<>();
+        this.rooms = new ArrayList<>();
+        this.random = new Random();
         initCity();
+        createSpawnStreet();
     }
     
-    /**
+    
+    
+    private void createSpawnStreet() {
+    	int x = random.nextInt(2, areas.length - 2);
+    	int y = random.nextInt(2, areas[0].length - 2);
+    	this.areas[x][y] = new SpawnStreet();
+	}
+
+
+
+	/**
      * Gets the area at the specified coordinates in the city.
      *
      * @param x The x-coordinate of the area.
@@ -48,19 +55,6 @@ public class City {
      */
     public Area getArea(int x, int y) {
         return this.areas[x][y];
-    }
-
-    
-    /**
-     * Creates an city by initializing all areas.
-     * This method populates the city with streets at each coordinate.
-     */
-    public void createCity() {
-        for (int x = 0; x < this.width; x++) {
-            for (int y = 0; y < this.height; y++) {
-                areas[x][y] = new Area(x, y);
-            }
-        }
     }
     
     /**
@@ -79,8 +73,6 @@ public class City {
         return false;
     }
     
-    
-    
     /**
      * Splits the city by spawning crossroads until it can no longer be split.
      * Crossroads are spawned in splitable areas within the city.
@@ -90,8 +82,6 @@ public class City {
             spawnCrossroad();
         }
     }
-    
-    
     
     /**
      * Spawns a crossroad in a splitable area within the city.
@@ -112,9 +102,6 @@ public class City {
         }
     }
     
-    
-    
-    
     /**
      * Checks if the specified area is splitable, considering both right and down directions.
      *
@@ -127,11 +114,6 @@ public class City {
         return rightSplitable(areas[x][y]) && downSplitable(areas[x][y]);
     }
     
-    
-    
-    
-    
-    
     /**
      * Checks if the four consecutive areas to the right of the specified area are of type Area.
      *
@@ -142,15 +124,12 @@ public class City {
     	int x = a.getX();
         int y = a.getY();
         for (int i = 0; i <= 4; i++) {
-            if (!isAStreet(this.areas[x + i][y])) {
+            if (isAStreet(this.areas[x + i][y])) {
                 return false;
             }
         }
         return true;
     }
-
-    
-    
     
     /**
      * Checks if the four consecutive areas below the specified area are of type Area.
@@ -169,22 +148,6 @@ public class City {
         return true;
     }
     
-    
-    
-    
-    /**
-     * Checks if an area is a building in the city.
-     *
-     * @param a The Area to check.
-     * @return true if the area is a building, false otherwise.
-     */
-    public boolean isABuilding(Area a) {
-        return this.buildings.contains(a);
-    }
-    
-    
-    
-    
     /**
      * Checks if an area is a street in the city.
      *
@@ -195,23 +158,15 @@ public class City {
         return this.streets.contains(a);
     }
     
-    
-    
-    
-    
     /**
      * Adds a street to the city.
      *
      * @param e The Street to be added.
      * @return true if the street is successfully added, false otherwise.
      */
-    public void addStreet(Area e) {
-        return this.streets.add(e);
+    public void addStreet(Street e) {
+        this.streets.add(e);
     }
-    
-    
-    
-    
     
     /**
      * Adds a building to the city.
@@ -219,12 +174,7 @@ public class City {
      * @param e The Building to be added.
      * @return true if the building is successfully added, false otherwise.
      */
-    public void addBuilding(Building e) {
-        this.buildings.add(e);
+    public void addRoom(Room e) {
+        this.rooms.add(e);
     }
-    
-    
-    
-    
-
 }
