@@ -36,15 +36,12 @@ public class City {
         createSpawnStreet();
     }
     
-    
-    
     private void createSpawnStreet() {
     	int x = random.nextInt(2, areas.length - 2);
     	int y = random.nextInt(2, areas[0].length - 2);
-    	this.areas[x][y] = new SpawnStreet();
+    	this.spawnStreet = new SpawnStreet(x, y);
+    	this.areas[x][y] = spawnStreet;
 	}
-
-
 
 	/**
      * Gets the area at the specified coordinates in the city.
