@@ -106,7 +106,7 @@ public class City {
                     int b = availableRange(areas[x][y])[1];
                     a = random.nextInt((a+2) - (a-2) + 1) + (a-2);
                     b = random.nextInt((b+2) - (b-2) + 1) + (b-2);
-                    areas[x + a][y + b] = new CrossRoad(x + a, y + b);
+                    areas[x + a][y + b] = new Street(x + a, y + b);
                 }
             }
         }
@@ -123,7 +123,7 @@ public class City {
      */
     public boolean presentSplitableArea(Area a) {
         int x = a.getX();
-        int y = a.getY();a
+        int y = a.getY();
         return rightSplitable(areas[x][y]) && downSplitable(areas[x][y]);
     }
     
@@ -151,7 +151,7 @@ public class City {
 
     
     
-    a
+    
     /**
      * Checks if the four consecutive areas below the specified area are of type Area.
      *
