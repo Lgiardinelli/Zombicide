@@ -78,6 +78,20 @@ public class City {
         return false;
     }
     
+    
+    
+    /**
+     * Splits the city by spawning crossroads until it can no longer be split.
+     * Crossroads are spawned in splitable areas within the city.
+     */
+    public void splitCity() {
+        while (canBeSplit()) {
+            spawnCrossroad();
+        }
+    }
+    
+    
+    
     /**
      * Spawns a crossroad in a splitable area within the city.
      * The crossroad is randomly placed within the available range of the splitable area.
@@ -97,6 +111,9 @@ public class City {
         }
     }
     
+    
+    
+    
     /**
      * Checks if the specified area is splitable, considering both right and down directions.
      *
@@ -108,6 +125,10 @@ public class City {
         int y = a.getY();
         return rightSplitable(areas[x][y]) && downSplitable(areas[x][y]);
     }
+    
+    
+    
+    
     
     
     /**
@@ -127,6 +148,9 @@ public class City {
         return true;
     }
 
+    
+    
+    
     /**
      * Checks if the four consecutive areas below the specified area are of type Area.
      *
@@ -144,6 +168,9 @@ public class City {
         return true;
     }
     
+    
+    
+    
     /**
      * Checks if an area is a building in the city.
      *
@@ -153,6 +180,9 @@ public class City {
     public boolean isABuilding(Area a) {
         return this.buildings.contains(a);
     }
+    
+    
+    
     
     /**
      * Checks if an area is a street in the city.
@@ -164,6 +194,10 @@ public class City {
         return this.streets.contains(a);
     }
     
+    
+    
+    
+    
     /**
      * Adds a street to the city.
      *
@@ -173,6 +207,10 @@ public class City {
     public void addStreet(Area e) {
         return this.streets.add(e);
     }
+    
+    
+    
+    
     
     /**
      * Adds a building to the city.
