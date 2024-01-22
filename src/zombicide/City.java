@@ -149,8 +149,8 @@ public class City {
      * @param e The Building to be added.
      * @return true if the building is successfully added, false otherwise.
      */
-    public void addBuilding(Area e) {
-        return this.buildings.add(e);
+    public void addBuilding(Building e) {
+        this.buildings.add(e);
     }
     
     
