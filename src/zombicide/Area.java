@@ -1,6 +1,6 @@
 package zombicide;
 
-public class Area {
+public abstract class Area {
 	
 	private int posX;
 	private int posY;

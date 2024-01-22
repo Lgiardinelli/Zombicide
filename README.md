@@ -40,14 +40,19 @@
 # Journal de bord
 
 ## Semaine 1
-Together, we created our first version of the UML with all the classes and the first methods and attributes.
-Then, over the next few days, we completed it and divided up the various classes to be coded.
-Léo -> Area.java
-Dylan -> Door.java
-Elies -> City.java
-Théophane -> Building.java
+Together, we created our first version of the UML with all the classes and the first methods and attributes.  
+Then, over the next few days, we completed it and divided up the various classes to be coded.  
+Léo -> Area.java  
+Dylan -> Door.java  
+Elies -> City.java  
+Théophane -> Building.java  
 
 ## Semaine 2
+__Objectif de la semaine : __ 
+- Finir l'algorythme de création de la map
+- Avancer sur la modélisation de la map
+
+__Réflexion du groupe :  __
 
 ## Semaine 3
 
