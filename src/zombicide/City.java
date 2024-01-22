@@ -78,6 +78,19 @@ public class City {
     }
     
     /**
+     * Checks if the specified area is splitable, considering both right and down directions.
+     *
+     * @param a The area to check for splitability.
+     * @return True if the area is splitable, otherwise false.
+     */
+    public boolean presentSplitableArea(Area a) {
+        int x = a.getX();
+        int y = a.getY();
+        return rightSplitable(areas[x][y]) && downSplitable(areas[x][y]);
+    }
+    
+    
+    /**
      * Checks if the area to the right of the specified area is splitable.
      *
      * @param a The area to check.
