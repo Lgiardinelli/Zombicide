@@ -62,18 +62,20 @@ public class City {
         }
     }
     
-    public boolean canBeSplit(Area a) {
-    	if(isABuilding(a)) {
-    		for (int x = 0; x < 4; x++) {
-                for (int y = 0; y < 4; y++) {
-                	if(isABuilding(this.getArea(x+1, y))) {
-                		return false;
-                	}
+    /**
+     * Checks if the city can be split, i.e., if there are splitable areas present.
+     *
+     * @return True if the city can be split, otherwise false.
+     */
+    public boolean canBeSplit() {
+        for (int x = 0; x <= this.width; x++) {
+            for (int y = 0; y <= this.height; y++) {
+                if (presentSplitableArea(areas[x][y])) {
+                    return true;
                 }
             }
-    	}
-    	return true;
-    	
+        }
+        return false;
     }
     
     /**
