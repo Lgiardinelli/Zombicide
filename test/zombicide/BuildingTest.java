@@ -13,5 +13,7 @@ class BuildingTest {
 		building.addRoom(room, 2, 2);
 		assertNotNull(building.getRoom(2, 2));
 	}
+	
+	
 
 }
