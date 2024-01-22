@@ -88,6 +88,51 @@ public class City {
                 this.areas[i][y] = new Street(i, y);
         }
     }
+    
+    /**
+     * Divides the city areas into four sub-areas based on the given crossroad.
+     *
+     * @param crossRoad The crossroad street.
+     * @param areas The two-dimensional array representing different areas in the city.
+     * @return A list containing the four sub-areas.
+     */
+    private List<Area[][]> getSplittedAreasList(Street crossRoad, Area[][] areas) {
+        List<Area[][]> splittedAreas = new ArrayList<>();
+        
+        int x = crossRoad.getX();
+        int y = crossRoad.getY();
+
+        Area[][] topLeft = getSubAreas(0, 0, x - 1, y - 1);
+        Area[][] topRight = getSubAreas(x + 1, 0, areas.length - 1, y - 1);
+        Area[][] bottomLeft = getSubAreas(0, y + 1, x - 1, areas[0].length - 1);
+        Area[][] bottomRight = getSubAreas(x + 1, y + 1, areas.length - 1, areas[0].length - 1);
+        
+        splittedAreas.add(topLeft);
+        splittedAreas.add(topRight);
+        splittedAreas.add(bottomLeft);
+        splittedAreas.add(bottomRight);
+        
+        return splittedAreas;
+    }
+    
+    /**
+     * Retrieves a sub-area from the given areas based on specified start and end coordinates.
+     *
+     * @param startX The starting x-coordinate.
+     * @param startY The starting y-coordinate.
+     * @param endX The ending x-coordinate.
+     * @param endY The ending y-coordinate.
+     * @return The sub-area represented by a two-dimensional array.
+     */
+    private Area[][] getSubAreas(int startX, int startY, int endX, int endY) {
+        Area[][] subArea = new Area[endX - startX + 1][endY - startY + 1];
+        for (int i = startX; i <= endX; i++) {
+            for (int j = startY; j <= endY; j++) {
+                subArea[i - startX][j - startY] = areas[i][j];
+            }
+        }
+        return subArea;
+    }
 
 	/**
      * Gets the area at the specified coordinates in the city.
