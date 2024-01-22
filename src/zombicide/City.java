@@ -79,6 +79,25 @@ public class City {
     }
     
     /**
+     * Spawns a crossroad in a splitable area within the city.
+     * The crossroad is randomly placed within the available range of the splitable area.
+     */
+    public void spawnCrossroad() {
+        Random random = new Random();
+        for (int x = 0; x <= this.width; x++) {
+            for (int y = 0; y <= this.height; y++) {
+                if (presentSplitableArea(areas[x][y])) {
+                    int a = availableRange(areas[x][y])[0];
+                    int b = availableRange(areas[x][y])[1];
+                    a = random.nextInt(a);
+                    b = random.nextInt(b);
+                    areas[x + a][y + b] = new CrossRoad(x + a, y + b);
+                }
+            }
+        }
+    }
+    
+    /**
      * Checks if the specified area is splitable, considering both right and down directions.
      *
      * @param a The area to check for splitability.
