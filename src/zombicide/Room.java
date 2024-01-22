@@ -4,7 +4,7 @@ package zombicide;
  * The {@code Room} class represents a room in the Zombicide game.
  * Each room can have multiple doors.
  */
-public class Room {
+public class Room extends Area {
     
     /**
      * An array of doors in the room.
@@ -16,7 +16,8 @@ public class Room {
      * 
      * @param nbDoors The number of doors in the room.
      */
-    public Room(int nbDoors) {
+    public Room(int x, int y, int nbDoors) {
+    	super(x, y);
         this.doors = new Door[nbDoors];
         
         for (int i = 0; i < this.doors.length; i++) {
