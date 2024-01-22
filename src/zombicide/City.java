@@ -78,6 +78,23 @@ public class City {
     }
     
     /**
+     * Checks if the area to the right of the specified area is splitable.
+     *
+     * @param a The area to check.
+     * @return True if the right area is splitable, otherwise false.
+     */
+    public boolean rightSplitable(Area a) {
+        int x = a.getX();
+        int y = a.getY();
+        for (int i = 0; i <= 4; i++) {
+            if (!isABuilding(this.areas[x + i][y])) {
+                return false;
+            }
+        }
+        return true;
+    }
+     
+    /**
      * Checks if the area below the specified area is splitable.
      *
      * @param a The area to check.
