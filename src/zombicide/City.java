@@ -2,6 +2,7 @@ package zombicide;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * The {@code City} class represents a city in the game of Zombicide. It includes information
@@ -42,7 +43,7 @@ public class City {
      * Gets the area at the specified coordinates in the city.
      *
      * @param x The x-coordinate of the area.
-     * @param y The y-coordinate of the area.
+     * @param y The y-coordinate of the area.a
      * @return The area at the specified coordinates.
      */
     public Area getArea(int x, int y) {
@@ -103,8 +104,8 @@ public class City {
                 if (presentSplitableArea(areas[x][y])) {
                     int a = availableRange(areas[x][y])[0];
                     int b = availableRange(areas[x][y])[1];
-                    a = random.nextInt(a);
-                    b = random.nextInt(b);
+                    a = random.nextInt((a+2) - (a-2) + 1) + (a-2);
+                    b = random.nextInt((b+2) - (b-2) + 1) + (b-2);
                     areas[x + a][y + b] = new CrossRoad(x + a, y + b);
                 }
             }
@@ -122,7 +123,7 @@ public class City {
      */
     public boolean presentSplitableArea(Area a) {
         int x = a.getX();
-        int y = a.getY();
+        int y = a.getY();a
         return rightSplitable(areas[x][y]) && downSplitable(areas[x][y]);
     }
     
@@ -150,7 +151,7 @@ public class City {
 
     
     
-    
+    a
     /**
      * Checks if the four consecutive areas below the specified area are of type Area.
      *
