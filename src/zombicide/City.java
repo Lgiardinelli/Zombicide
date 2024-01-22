@@ -124,13 +124,23 @@ public class City {
     }
     
     /**
-     * Checks if an area is a street in the city.
+     * Checks if an area is a building in the city.
      *
      * @param a The Area to check.
      * @return true if the area is a building, false otherwise.
      */
     public boolean isABuilding(Area a) {
         return this.buildings.contains(a);
+    }
+    
+    /**
+     * Checks if an area is a street in the city.
+     *
+     * @param a The Area to check.
+     * @return true if the area is a street, false otherwise.
+     */
+    public boolean isAStreet(Area a) {
+        return this.streets.contains(a);
     }
     
     /**
