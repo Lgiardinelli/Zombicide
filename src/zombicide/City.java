@@ -51,14 +51,13 @@ public class City {
 
     
     /**
-     * Creates an city by initializing all areas as buildings.
+     * Creates an city by initializing all areas.
      * This method populates the city with streets at each coordinate.
      */
     public void createCity() {
         for (int x = 0; x < this.width; x++) {
             for (int y = 0; y < this.height; y++) {
-                areas[x][y] = new Building(x, y);
-                addBuilding(getArea(x,y));
+                areas[x][y] = new Area(x, y);
             }
         }
     }
@@ -91,33 +90,33 @@ public class City {
     
     
     /**
-     * Checks if the area to the right of the specified area is splitable.
+     * Checks if the four consecutive areas to the right of the specified area are of type Area.
      *
      * @param a The area to check.
-     * @return True if the right area is splitable, otherwise false.
+     * @return True if the consecutive areas to the right are of type Area, otherwise false.
      */
     public boolean rightSplitable(Area a) {
-        int x = a.getX();
+    	int x = a.getX();
         int y = a.getY();
         for (int i = 0; i <= 4; i++) {
-            if (!isABuilding(this.areas[x + i][y])) {
+            if (!isAStreet(this.areas[x + i][y])) {
                 return false;
             }
         }
         return true;
     }
-     
+
     /**
-     * Checks if the area below the specified area is splitable.
+     * Checks if the four consecutive areas below the specified area are of type Area.
      *
      * @param a The area to check.
-     * @return True if the area below is splitable, otherwise false.
+     * @return True if the consecutive areas below are of type Area, otherwise false.
      */
     public boolean downSplitable(Area a) {
     	int x = a.getX();
         int y = a.getY();
         for (int i = 0; i <= 4; i++) {
-            if (isABuilding(this.areas[x][y + i]) || isAStreet(this.areas[x][y + i])) {
+            if (!isAStreet(this.areas[x][y + i])) {
                 return false;
             }
         }
