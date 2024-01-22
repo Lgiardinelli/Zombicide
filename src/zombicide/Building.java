@@ -1,3 +1,4 @@
+package zombicide;
 /**
  * The {@code Building} class represents a building in the Zombicide game.
  * A building is composed of rooms arranged in a grid.
