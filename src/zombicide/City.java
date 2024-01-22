@@ -15,10 +15,14 @@ public class City {
 
     /** The list of buildings in the city. */
     private List<Room> rooms;
-
-    /** The list of areas in the city. */
+    
+    /** The two-dimensional array representing different areas in the city. */
     private Area[][] areas;
+    
+    /** The spawn street for player entry. */
     private SpawnStreet spawnStreet;
+    
+    /** Random generator for various city-related operations. */
     private Random random;
 
     /**
@@ -28,20 +32,42 @@ public class City {
      * @param height The height of the city.
      */
     public City(int width, int height) {
-    	this.areas = new Area[width][height];
+        this.areas = new Area[width][height];
         this.streets = new ArrayList<>();
         this.rooms = new ArrayList<>();
         this.random = new Random();
-        initCity();
-        createSpawnStreet();
+    }
+
+    /**
+     * Creates a crossroad at a random position within the given areas and initializes it.
+     *
+     * @param areas The two-dimensional array representing different areas in the city.
+     * @return The created crossroad street.
+     */
+    private Street createCrossRoad(Area[][] areas) {
+        Position p = getRandomPositionForCrossRoad(areas);
+        int x = p.getX();
+        int y = p.getY();
+        Street crossRoad;
+        if (this.spawnStreet == null) {
+            crossRoad = new SpawnStreet(x, y);
+            this.spawnStreet = (SpawnStreet) crossRoad;
+        } else 
+            crossRoad = new Street(x, y);
+        return crossRoad;
     }
     
-    private void createSpawnStreet() {
-    	int x = random.nextInt(2, areas.length - 2);
-    	int y = random.nextInt(2, areas[0].length - 2);
-    	this.spawnStreet = new SpawnStreet(x, y);
-    	this.areas[x][y] = spawnStreet;
-	}
+    /**
+     * Generates a random position within the given areas for creating a crossroad.
+     *
+     * @param areas The two-dimensional array representing different areas in the city.
+     * @return The randomly generated position.
+     */
+    private Position getRandomPositionForCrossRoad(Area[][] areas) {
+        int x = random.nextInt(2, areas.length - 2);
+        int y = random.nextInt(2, areas[0].length - 2);
+        return new Position(x, y);
+    }
 
 	/**
      * Gets the area at the specified coordinates in the city.
@@ -52,51 +78,6 @@ public class City {
      */
     public Area getArea(int x, int y) {
         return this.areas[x][y];
-    }
-    
-    /**
-     * Checks if the city can be split, i.e., if there are splitable areas present.
-     *
-     * @return True if the city can be split, otherwise false.
-     */
-    public boolean canBeSplit() {
-        for (int x = 0; x <= this.width; x++) {
-            for (int y = 0; y <= this.height; y++) {
-                if (presentSplitableArea(areas[x][y])) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-    
-    /**
-     * Splits the city by spawning crossroads until it can no longer be split.
-     * Crossroads are spawned in splitable areas within the city.
-     */
-    public void splitCity() {
-        while (canBeSplit()) {
-            spawnCrossroad();
-        }
-    }
-    
-    /**
-     * Spawns a crossroad in a splitable area within the city.
-     * The crossroad is randomly placed within the available range of the splitable area.
-     */
-    public void spawnCrossroad() {
-        Random random = new Random();
-        for (int x = 0; x <= this.width; x++) {
-            for (int y = 0; y <= this.height; y++) {
-                if (presentSplitableArea(areas[x][y])) {
-                    int a = availableRange(areas[x][y])[0];
-                    int b = availableRange(areas[x][y])[1];
-                    a = random.nextInt((a+2) - (a-2) + 1) + (a-2);
-                    b = random.nextInt((b+2) - (b-2) + 1) + (b-2);
-                    areas[x + a][y + b] = new Street(x + a, y + b);
-                }
-            }
-        }
     }
     
     /**
