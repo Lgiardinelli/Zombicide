@@ -90,6 +90,48 @@ public class City {
     }
     
     /**
+     * Checks if the given areas can be split further.
+     *
+     * @param areas The two-dimensional array representing different areas in the city.
+     * @return True if the areas can be split, false otherwise.
+     */
+    private boolean isSplittable(Area[][] areas) {
+        return areas.length >= 5 || areas[0].length >= 5;
+    }
+    
+    /**
+     * Recursively splits the given areas into smaller sub-areas until they are not splittable.
+     *
+     * @param areas The two-dimensional array representing different areas in the city.
+     */
+    private void splitAreas(Area[][] areas) {
+        // Create a crossroad and initialize streets originating from it.
+        Street crossRoad = createCrossRoad(areas);
+        initStreetsFromCrossRoad(crossRoad, areas);
+
+        int x = crossRoad.getX();
+        int y = crossRoad.getY();
+        
+        // Get the list of splitted areas.
+        List<Area[][]> splittedAreas = getSplittedAreasList(crossRoad, areas);
+        
+        // Iterate through sub-areas and split further or create rooms.
+        for (Area[][] subArea : splittedAreas) {
+            if (isSplittable(subArea)) {
+                splitAreas(subArea);
+            } else {
+                for (int i = 0; i < subArea.length; i++) {
+                    for (int j = 0; j < subArea[0].length; j++) {
+                        if (subArea[i][j] == null) {
+                            // TODO: Add a new Room and handle doors and walls
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /**
      * Divides the city areas into four sub-areas based on the given crossroad.
      *
      * @param crossRoad The crossroad street.
