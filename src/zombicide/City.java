@@ -78,6 +78,23 @@ public class City {
     }
     
     /**
+     * Checks if the area below the specified area is splitable.
+     *
+     * @param a The area to check.
+     * @return True if the area below is splitable, otherwise false.
+     */
+    public boolean downSplitable(Area a) {
+    	int x = a.getX();
+        int y = a.getY();
+        for (int i = 0; i <= 4; i++) {
+            if (isABuilding(this.areas[x][y + i]) || isAStreet(this.areas[x][y + i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    /**
      * Checks if an area is a street in the city.
      *
      * @param a The Area to check.
