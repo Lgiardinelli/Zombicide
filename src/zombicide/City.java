@@ -36,8 +36,19 @@ public class City {
         this.streets = new ArrayList<>();
         this.rooms = new ArrayList<>();
         this.random = new Random();
+        initCity();
+    }
+    
+    
+    /**
+     * Initializes the city by splitting areas.
+     */
+    public void initCity() {
+        splitAreas(this.areas);
     }
 
+    
+    
     /**
      * Creates a crossroad at a random position within the given areas and initializes it.
      *
@@ -95,7 +106,7 @@ public class City {
      * @param areas The two-dimensional array representing different areas in the city.
      * @return True if the areas can be split, false otherwise.
      */
-    private boolean isSplittable(Area[][] areas) {
+    public boolean isSplittable(Area[][] areas) {
         return areas.length >= 5 || areas[0].length >= 5;
     }
     
