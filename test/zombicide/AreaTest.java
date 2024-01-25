@@ -13,4 +13,16 @@ class AreaTest {
         assertEquals(2, area.getY());
     }
 
+	@Test
+    void testAreaSurvivorList() {
+        Area area = new Room(1, 2, 4);
+        assertNotNull(area);
+        assertTrue(area.getSurvivors().isEmpty());
+
+        Survivor survivor = new Survivor("John");
+        area.addSurvivor(survivor);
+
+        assertFalse(area.getSurvivors().isEmpty());
+        assertTrue(area.getSurvivors().contains(survivor));
+    }
 }
