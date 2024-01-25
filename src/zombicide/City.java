@@ -273,4 +273,18 @@ public class City {
     public void addRoom(Room e) {
         this.rooms.add(e);
     }
+    
+    
+    
+    /**
+     * Displays the entire city by iterating over each area and invoking its display method.
+     */
+    public void display() {
+        for (int x = 0; x < areas.length; x++) {
+            for (int y = 0; y < areas[x].length; y++) {
+                getArea(x, y).display();
+            }
+        }
+    }
+
 }
