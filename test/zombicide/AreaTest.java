@@ -70,5 +70,21 @@ class AreaTest {
         assertTrue(street.getZombies().contains(zombie));
 	}
 	
+	@Test
+    void testAreaCanFight() {
+		//Room
+        Area room = new Room(1, 2, 4);
+        assertTrue(room.canFight());
+
+        room.addZombie(new Zombie());
+        assertFalse(room.canFight());
+        
+        //Street
+        Area street = new Street(1, 2);
+        assertTrue(street.canFight());
+
+        street.addZombie(new Zombie());
+        assertFalse(street.canFight());
+    }
 	
 }
