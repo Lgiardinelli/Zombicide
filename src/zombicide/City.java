@@ -282,7 +282,9 @@ public class City {
     public void display() {
         for (int x = 0; x < areas.length; x++) {
             for (int y = 0; y < areas[x].length; y++) {
-                getArea(x, y).display();
+            	if(getArea(x, y)== null) {
+            		System.out.println("A");
+            	}else {getArea(x, y).display();}
             }
         }
     }
