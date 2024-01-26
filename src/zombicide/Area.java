@@ -4,8 +4,8 @@ public abstract class Area {
 	
 	private int posX;
 	private int posY;
-	private List<Survivor> survivors;
-	private List<Zombie> zombies;
+//	private List<Survivor> survivors;
+//	private List<Zombie> zombies;
 	private int noise;
 	
 	/**
@@ -16,8 +16,8 @@ public abstract class Area {
 	public Area(int posX, int posY) {
 		this.posX = posX;
 		this.posY = posY;
-		this.survivors = new ArrayList<Survivor>();
-		this.zombies = new Arraylist<Zombie>();
+//		this.survivors = new ArrayList<Survivor>();
+//		this.zombies = new Arraylist<Zombie>();
 		this.noise = 0;
 	}
 	
@@ -26,7 +26,7 @@ public abstract class Area {
 	 * @return int 
 	 */
 	public int getX() {
-		return this.getX();
+		return this.posX;
 	}
 	
 	/**
@@ -34,7 +34,7 @@ public abstract class Area {
 	 * @return int 
 	 */
 	public int getY() {
-		return this.getY();
+		return this.posY;
 	}
 	
 	/**
