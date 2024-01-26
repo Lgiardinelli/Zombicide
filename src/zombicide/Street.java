@@ -7,7 +7,7 @@ public class Street extends Area {
 	}
 	
 	public void display() {
-		System.out.println("S");
+		System.out.print("S ");
 	}
 	
 }
