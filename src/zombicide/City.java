@@ -75,8 +75,8 @@ public class City {
      * @return The randomly generated position.
      */
     private Position getRandomPositionForCrossRoad(Area[][] areas) {
-        int x = random.nextInt(2, areas.length - 2);
-        int y = random.nextInt(2, areas[0].length - 2);
+    	int x = random.nextInt(areas.length - 4) + 2;
+    	int y = random.nextInt(areas[0].length - 4) + 2;
         return new Position(x, y);
     }
     
@@ -283,7 +283,7 @@ public class City {
         for (int x = 0; x < areas.length; x++) {
             for (int y = 0; y < areas[x].length; y++) {
             	if(getArea(x, y)== null) {
-            		System.out.print("A ");
+            		System.out.print("A  ");
             	}else {getArea(x, y).display();}
             }
             System.out.println(" ");
