@@ -284,8 +284,14 @@ public class City {
      * Displays the entire city by iterating over each area and invoking its display method.
      */
     public void display() {
+    	int l = areas.length;
+    	for (int i=0; i<l*2; i++) {
+        	System.out.print("--");
+    	}
+    	System.out.print("\n");
         for (int x = 0; x < areas.length; x++) {
             for (int y = 0; y < areas[x].length; y++) {
+            	System.out.print("|");
             	if(getArea(x, y)== null) {
             		System.out.print("A  ");
             	}else {getArea(x, y).display();}
