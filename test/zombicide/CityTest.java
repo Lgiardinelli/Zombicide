@@ -11,5 +11,10 @@ class CityTest {
 		City city = new City(10, 10);
 		assertNotNull(city);
 	}
-
+	
+	@Test
+	void testCityAreaInitialization() {
+		City city = new City(10,10);
+		assertNotNull(city.getArea(5, 5));
+	}
 }
