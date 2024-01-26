@@ -60,13 +60,17 @@ public class City {
         int x = p.getX();
         int y = p.getY();
         Street crossRoad;
+
         if (this.spawnStreet == null) {
             crossRoad = new SpawnStreet(x, y);
             this.spawnStreet = (SpawnStreet) crossRoad;
-        } else 
+        } else {
             crossRoad = new Street(x, y);
+        }
+
         return crossRoad;
     }
+
     
     /**
      * Generates a random position within the given areas for creating a crossroad.
