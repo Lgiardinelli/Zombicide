@@ -294,4 +294,11 @@ public class City {
         }
     }
 
+
+	public SpawnStreet getSpawnStreet() {
+		return spawnStreet;
+	}
+    
+    
+
 }
