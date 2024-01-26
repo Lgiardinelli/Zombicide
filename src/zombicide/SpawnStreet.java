@@ -5,4 +5,8 @@ public class SpawnStreet extends Street {
 	public SpawnStreet(int posX, int posY) {
 		super(posX, posY);
 	}
+	
+	public void display() {
+		System.out.print("C  ");
+	}
 }

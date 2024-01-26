@@ -60,13 +60,17 @@ public class City {
         int x = p.getX();
         int y = p.getY();
         Street crossRoad;
+
         if (this.spawnStreet == null) {
             crossRoad = new SpawnStreet(x, y);
             this.spawnStreet = (SpawnStreet) crossRoad;
-        } else 
+        } else {
             crossRoad = new Street(x, y);
+        }
+
         return crossRoad;
     }
+
     
     /**
      * Generates a random position within the given areas for creating a crossroad.
@@ -75,8 +79,8 @@ public class City {
      * @return The randomly generated position.
      */
     private Position getRandomPositionForCrossRoad(Area[][] areas) {
-        int x = random.nextInt(2, areas.length - 2);
-        int y = random.nextInt(2, areas[0].length - 2);
+    	int x = random.nextInt(areas.length - 4) + 2;
+    	int y = random.nextInt(areas[0].length - 4) + 2;
         return new Position(x, y);
     }
     
@@ -280,12 +284,19 @@ public class City {
      * Displays the entire city by iterating over each area and invoking its display method.
      */
     public void display() {
+    	int l = areas.length;
+    	for (int i=0; i<l*2; i++) {
+        	System.out.print("--");
+    	}
+    	System.out.print("\n");
         for (int x = 0; x < areas.length; x++) {
             for (int y = 0; y < areas[x].length; y++) {
+            	System.out.print("|");
             	if(getArea(x, y)== null) {
-            		System.out.println("A");
+            		System.out.print("A  ");
             	}else {getArea(x, y).display();}
             }
+            System.out.println(" ");
         }
     }
 
