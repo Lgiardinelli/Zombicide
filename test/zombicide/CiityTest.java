@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 class CityTest {
 
 	@Test
-	void testCityInitialization() {
-		City city = new City(10, 10);
-		assertNotNull(city);
+	public void checkIfCityCanBeSplit() {
+		City city = new City(5, 5);
+		city.createCity();
+		assertTrue(city.canBeSplit());
 	}
-
 }
