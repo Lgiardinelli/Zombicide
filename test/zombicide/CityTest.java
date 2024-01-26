@@ -8,13 +8,13 @@ class CityTest {
 
 	@Test
 	void testCityInitialization() {
-		City city = new City(10, 10);
+		City city = new City(10, 11);
 		assertNotNull(city);
 	}
 	
 	@Test
 	void testCityAreaInitialization() {
-		City city = new City(10,10);
+		City city = new City(10,11);
 		assertNotNull(city.getArea(5, 5));
 	}
 }
