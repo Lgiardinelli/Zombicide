@@ -6,7 +6,8 @@ public class SpawnStreet extends Street {
 		super(posX, posY);
 	}
 	
-	public void display() {
-		System.out.print("C  ");
+	@Override
+	public String toString() {
+		return "| O ";
 	}
 }
