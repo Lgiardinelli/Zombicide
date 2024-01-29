@@ -33,26 +33,26 @@ public class City {
      * @param width  The width of the city.
      * @param height The height of the city.
      */
-    public City(int width, int height) {
+    public City(int width, int height)		// TODO Auto-generated method stub {
         this.areas = new Area[height][width];
         this.streets = new ArrayList<>();
         this.rooms = new ArrayList<>();
         this.random = new Random();
-        initCity();
+//        initCity();		// TODO Auto-generated method stub
     }
     
-    /**
-     * Initializes the city by splitting areas.
-     */
-    public void initCity() {
-        splitAreas(new Position(0, 0), new Position(getWidth(), getHeight()));
-        
-        System.out.println(spawnStreet.getX() + " | " + spawnStreet.getY());
-    }
+//    /**
+//     * Initializes the city by splitting areas.
+//     */
+//    public void initCity() {
+//        splitAreas(new Position(0, 0), new Position(getWidth(), getHeight()));
+//        
+//        System.out.println(spawnStreet.getX() + " | " + spawnStreet.getY());
+//    }
     
     private void createSpawnStreet() {
     	Position p = getRandomPositionInArea(this.areas);
-    	int x = p.getX();
+    	int x = p.getX();		// TODO Auto-generated method stub
     	int y = p.getY();
     	this.spawnStreet = new SpawnStreet(x, y);
     	this.areas[y][x] = this.spawnStreet;
@@ -61,7 +61,7 @@ public class City {
     /**
      * Generates a random position within the given areas for creating a crossroad.
      *
-     * @param areas The two-dimensional array representing different areas in the city.
+     * @param areas The tw		// TODO Auto-generated method stubo-dimensional array representing different areas in the city.
      * @return The randomly generated position.
      */
     private Position getRandomPositionInArea(Area[][] areas) {
@@ -122,18 +122,19 @@ public class City {
     
     public void display() {
     	for (int i = 0; i < this.getHeight(); i++) {
-    		System.out.println();
     		for (int j = 0; j < this.getWidth(); j++) {
-    			if (this.areas[i][j] == null) {
-    				Room r = new Room(j, i, 4);
-    				this.areas[i][j] = r;
+    			if(isARoom(getArea(i,j))){
+    				getArea(i,j).toString();
     			}
-    			System.out.print(this.areas[i][j]);
     		}
     	}
     }
     
-    private int getAreasWidth(Area[][] areas) {
+    private boolean isARoom(Area area) {
+		return this.rooms.contains(area);
+	}
+
+	private int getAreasWidth(Area[][] areas) {
     	return areas[0].length;
     }
     

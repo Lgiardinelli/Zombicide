@@ -6,6 +6,7 @@ public class Main {
 		
 		City aCity = new City(7,7);
 		
+		
 		aCity.display();
 	}
 

@@ -15,7 +15,7 @@ public abstract class Area {
 	 */
 	public Area(int posX, int posY) {
 		this.posX = posX;
-		this.posY = posY;
+		this.posY = pos		// TODO Auto-generated method stubY;
 //		this.survivors = new ArrayList<Survivor>();
 //		this.zombies = new Arraylist<Zombie>();
 		this.noise = 0;
@@ -30,7 +30,7 @@ public abstract class Area {
 	}
 	
 	/**
-	 * Get the position Y
+	 * Get the position		// TODO Auto-generated method stub Y
 	 * @return int 
 	 */
 	public int getY() {
@@ -43,5 +43,8 @@ public abstract class Area {
 	 */
 	public boolean canFight() {
 		return true;
+	}
+
+	protected void display() {	
 	}
 }
