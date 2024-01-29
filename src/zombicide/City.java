@@ -64,9 +64,12 @@ public class City {
         if (this.spawnStreet == null) {
             crossRoad = new SpawnStreet(x, y);
             this.spawnStreet = (SpawnStreet) crossRoad;
+            System.out.println(this.getSpawnStreet().getX()+" "+this.getSpawnStreet().getY());
         } else {
             crossRoad = new Street(x, y);
         }
+
+
 
         return crossRoad;
     }

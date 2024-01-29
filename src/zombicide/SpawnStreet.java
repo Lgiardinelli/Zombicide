@@ -10,4 +10,6 @@ public class SpawnStreet extends Street {
     public void display() {
         System.out.print("C  ");
     }
+
+	
 }
