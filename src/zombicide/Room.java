@@ -35,5 +35,10 @@ public class Room extends Area {
     public Door getDoor(int index) {
         return this.doors[index];
     }
+
+	@Override
+	public String toString() {
+		return "| . ";
+	}
 }
 

@@ -53,6 +53,12 @@ __Objectif de la semaine : __
 - Avancer sur la modélisation de la map
 
 __Réflexion du groupe :  __
+Durant la semaine, nous nous sommes posé plusieurs question, par exemple comment split la map pour créer les immeubles et comment le modéliser pour faire en sorte que quand une porte est cassé, supprimer dans l'affichage que cette porte.  
+Nous avons premièrement écrit un algorithme non récursif puis avec de la récursivité mais celui-ci ne fonctionne pas car il split que 1 fois.  
+
+
+__Partage de taches : __  
+
 
 ## Semaine 3
 
