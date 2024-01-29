@@ -45,7 +45,8 @@ public class City {
      * Initializes the city by splitting areas.
      */
     public void initCity() {
-        splitAreas(this.areas, new Position(0, 0));
+        splitAreas(new Position(0, 0), new Position(getWidth(), getHeight()));
+        
         System.out.println(spawnStreet.getX() + " | " + spawnStreet.getY());
     }
     
@@ -78,29 +79,19 @@ public class City {
      *
      * @param areas The two-dimensional array representing different areas in the city.
      */
-    private void splitAreas(Area[][] areas) {
-        // Create a crossroad and initialize streets originating from it.
-        Street crossRoad = createCrossRoad(areas);
-        initStreetsFromCrossRoad(crossRoad, areas);
-
-        int x = crossRoad.getX();
-        int y = crossRoad.getY();
+    private void splitAreas(Position topLeftPos, Position bottomRightPos) {
         
-        // Get the list of splitted areas.
-        List<Area[][]> splittedAreas = getSplittedAreasList(crossRoad, areas);
+    	List<Position> areasPositions;
+    	if (this.spawnStreet == null) {
+        	createSpawnStreet();
+        	areasPositions = getSplittedAreasList(spawnStreet, topLeftPos, bottomRightPos);
+        }
         
-        // Iterate through sub-areas and split further or create rooms.
-        for (Area[][] subArea : splittedAreas) {
-            if (isSplittable(subArea)) {
-                splitAreas(subArea);
-            } else {
-                for (int i = 0; i < subArea.length; i++) {
-                    for (int j = 0; j < subArea[0].length; j++) {
-                        if (subArea[i][j] == null) {
-                            // TODO: Add a new Room and handle doors and walls
-                        }
-                    }
-                }
+        for (Position p : areasPositions) {
+        	
+        	if (isSplittable(areas)) {
+        		
+            	splitAreas(topLeftPos, bottomRightPos);
             }
         }
     }
@@ -112,7 +103,7 @@ public class City {
      * @param areas The two-dimensional array representing different areas in the city.
      * @return A list containing the four sub-areas.
      */
-    private List<Area[][]> getSplittedAreasList(Street crossRoad, Area[][] areas) {
+    private List<Position> getSplittedAreasList(Street crossRoad, Position topLeftPos, Position bottomRightPos) {
         List<Area[][]> splittedAreas = new ArrayList<>();
         
         int x = crossRoad.getX();
