@@ -1,29 +1,21 @@
-package zombicide;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * The {@code City} class represents a city in the game of Zombicide. It includes information
- * about the city's dimensions, streets, buildings, and areas.
- */
 public class City {
-
-    /** The list of streets in the city. */
+    private int width;
+    private int height;
     private List<Street> streets;
+    private Area[][] areas;
 
-    /** The list of buildings in the city. */
-    private List<Room> rooms;
-    
-    /** The two-dimensional arraycontains representing different areas in the city. */
-    private Area[][] areas; 
-    /**
-     * Creates a crossroad at a random position within the given areas and initializes it.
-     *
-     * @param areas The two-dimensional array representing different areas in the city.
-     * @return The created crossroad street.
-     */
+    public City(int width, int height) {
+        this.width = width;
+        this.height = height;
+        this.streets = new ArrayList<>();
+        this.areas = new Area[width][height];
+        initCity();
+    }
+
     
     /**
      * Checks if an area is a street in the city.
