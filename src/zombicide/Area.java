@@ -44,4 +44,9 @@ public abstract class Area {
 	public boolean canFight() {
 		return true;
 	}
+
+	public void display() {
+		
+		
+	}
 }
