@@ -39,7 +39,7 @@ public class Room extends Area {
     }
 
 	@Override
-	public void display() {
+	public void  display() {
 		Door upDoor = getDoor(DoorDirection.UP);
 		Door leftDoor = getDoor(DoorDirection.LEFT);
 		

@@ -56,7 +56,7 @@ public class City {
     	int y = p.getY();
     	this.spawnStreet = new SpawnStreet(x, y);
     	this.areas[y][x] = this.spawnStreet;
-	}
+	}		Room aRoom = new Room(5,5);
     
     /**
      * Generates a random position within the given areas for creating a crossroad.
