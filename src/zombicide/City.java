@@ -81,11 +81,7 @@ public class City {
      */
     private void splitAreas(Position topLeftPos, Position bottomRightPos) {
         
-    	List<Position> areasPositions;
-    	if (this.spawnStreet == null) {
-        	createSpawnStreet();
-        	areasPositions = getSplittedAreasList(spawnStreet, topLeftPos, bottomRightPos);
-        }
+    	List<Position> areasPositions = getSplittedAreasList(topLeftPos, bottomRightPos);
         
         for (Position p : areasPositions) {
         	
