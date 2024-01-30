@@ -33,34 +33,35 @@ public class City {
      * @param width  The width of the city.
      * @param height The height of the city.
      */
-    public City(int width, int height) {
+    public City(int width, int height)		// TODO Auto-generated method stub {
         this.areas = new Area[height][width];
         this.streets = new ArrayList<>();
         this.rooms = new ArrayList<>();
         this.random = new Random();
-        initCity();
+//        initCity();		// TODO Auto-generated method stub
     }
     
-    /**
-     * Initializes the city by splitting areas.
-     */
-    public void initCity() {
-        splitAreas(this.areas, new Position(0, 0));
-        System.out.println(spawnStreet.getX() + " | " + spawnStreet.getY());
-    }
+//    /**
+//     * Initializes the city by splitting areas.
+//     */
+//    public void initCity() {
+//        splitAreas(new Position(0, 0), new Position(getWidth(), getHeight()));
+//        
+//        System.out.println(spawnStreet.getX() + " | " + spawnStreet.getY());
+//    }
     
     private void createSpawnStreet() {
     	Position p = getRandomPositionInArea(this.areas);
-    	int x = p.getX();
+    	int x = p.getX();		// TODO Auto-generated method stub
     	int y = p.getY();
     	this.spawnStreet = new SpawnStreet(x, y);
     	this.areas[y][x] = this.spawnStreet;
-	}
+	}		Room aRoom = new Room(5,5);
     
     /**
      * Generates a random position within the given areas for creating a crossroad.
      *
-     * @param areas The two-dimensional array representing different areas in the city.
+     * @param areas The tw		// TODO Auto-generated method stubo-dimensional array representing different areas in the city.
      * @return The randomly generated position.
      */
     private Position getRandomPositionInArea(Area[][] areas) {
@@ -73,92 +74,63 @@ public class City {
 		return random.nextInt(2, coords - 2);
 	}
     
-    private void splitAreas(Area[][] areas, Position areasPos) {
-    	Map<Position, Area[][]> splittedAreas = null;
-    	
-    	int width = getAreasWidth(areas);
-    	int height = getAreasHeight(areas);
-    	
-    	if (this.spawnStreet == null) {
-    		createSpawnStreet();
-    		splittedAreas = splitVertically(width, height, areasPos, this.spawnStreet.getX());
-    	}
-    	
-    	if (isWidthSplittable(areas)) {
-    		
-    	}
-    	
-    	if (isHeightSplittable(areas)) {
-    		
-    	}
-    	
-    	if (splittedAreas == null) return;
-    	
-    	for (Map.Entry<Position, Area[][]> entry : splittedAreas.entrySet()) {
-    		Area[][] subAreas = entry.getValue();
-    		Position newAreasPos = entry.getKey();
-    		
-    		if (isSplittable(subAreas)) {
-    			splitAreas(subAreas, newAreasPos);
-    		}
+    /**
+     * Recursively splits the given areas into smaller sub-areas until they are not splittable.
+     *
+     * @param areas The two-dimensional array representing different areas in the city.
+     */
+    private void splitAreas(Position topLeftPos, Position bottomRightPos) {
+        
+    	List<Position> areasPositions = getSplittedAreasList(topLeftPos, bottomRightPos);
+        
+        for (Position p : areasPositions) {
+        	
+        	if (isSplittable(areas)) {
+        		
+            	splitAreas(topLeftPos, bottomRightPos);
+            }
         }
-	}
+    }
+    
+    /**
+     * Divides the city areas into four sub-areas based on the given crossroad.
+     *
+     * @param crossRoad The crossroad street.
+     * @param areas The two-dimensional array representing different areas in the city.
+     * @return A list containing the four sub-areas.
+     */
+    private List<Position> getSplittedAreasList(Street crossRoad, Position topLeftPos, Position bottomRightPos) {
+        List<Area[][]> splittedAreas = new ArrayList<>();
+        
+        int x = crossRoad.getX();
+        int y = crossRoad.getY();
+        
+        
+        
+        return splittedAreas;
+    }
+
+
     
     private boolean isSplittable(Area[][] areas) {
-    	return isWidthSplittable(areas) || isHeightSplittable(areas);
+    	return getWidth() >= 5 && getHeight() >= 5;
     }
-    
-    private boolean isWidthSplittable(Area[][] areas) {
-        return areas[0].length >= 5;
-    }
-    
-    private boolean isHeightSplittable(Area[][] areas) {
-        return areas.length >= 5;
-    }
-    
-    private Map<Position, Area[][]> splitVertically(int areasWidth, int areasHeight, Position areasPos, int splitIndex) {
-		int areasX = areasPos.getX();
-		int areasY = areasPos.getY();
-		
-		for (int i = 0; i < areasHeight; i++) {
-			int x = areasX + splitIndex;
-			int y = areasY + i;
-			if (getAreas()[y][x] == null)
-				getAreas()[y][x] = new Street(x, y);
-		}
-		
-		System.out.printf("%d | %d | %d | %d | %d%n", areasWidth, areasHeight, areasX, areasY, splitIndex);
-		
-		Area[][] leftAreas = new Area[areasHeight][splitIndex - areasX];
-		Area[][] rightAreas = new Area[areasHeight][areasWidth - 1 - splitIndex + areasX];
-		
-		Position leftAreasPos = new Position(areasX, areasY);
-		Position rightAreasPos = new Position(splitIndex + 1, areasY);
-		
-		System.out.println("Left : " + leftAreasPos.getX() + " | " + leftAreasPos.getY());
-		System.out.println("Right : " + rightAreasPos.getX() + " | " + rightAreasPos.getY());
-		
-		Map<Position, Area[][]> result = new HashMap<>();
-		result.put(leftAreasPos, leftAreas);
-		result.put(rightAreasPos, rightAreas);
-		
-		return result;
-	}
     
     public void display() {
     	for (int i = 0; i < this.getHeight(); i++) {
-    		System.out.println();
     		for (int j = 0; j < this.getWidth(); j++) {
-    			if (this.areas[i][j] == null) {
-    				Room r = new Room(j, i, 4);
-    				this.areas[i][j] = r;
+    			if(isARoom(getArea(i,j))){
+    				getArea(i,j).toString();
     			}
-    			System.out.println(this.areas[i][j]);
     		}
     	}
     }
     
-    private int getAreasWidth(Area[][] areas) {
+    private boolean isARoom(Area area) {
+		return this.rooms.contains(area);
+	}
+
+	private int getAreasWidth(Area[][] areas) {
     	return areas[0].length;
     }
     

@@ -1,5 +1,8 @@
 package zombicide;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * The {@code Room} class represents a room in the Zombicide game.
  * Each room can have multiple doors.
@@ -9,19 +12,18 @@ public class Room extends Area {
     /**
      * An array of doors in the room.
      */
-    private final Door[] doors;
+    private final Map<DoorDirection, Door> doors;
     
     /**
      * Constructs a room with the specified number of doors.
      * 
      * @param nbDoors The number of doors in the room.
      */
-    public Room(int x, int y, int nbDoors) {
+    public Room(int x, int y) {
     	super(x, y);
-        this.doors = new Door[nbDoors];
-        
-        for (int i = 0; i < this.doors.length; i++) {
-            this.doors[i] = new Door();
+        this.doors = new HashMap<>();
+        for (DoorDirection d : DoorDirection.values()) {
+        	doors.put(d, null);
         }
     }
     
@@ -32,13 +34,30 @@ public class Room extends Area {
      * @return The door at the specified index.
      * @throws IndexOutOfBoundsException If the index is out of range.
      */
-    public Door getDoor(int index) {
-        return this.doors[index];
+    public Door getDoor(DoorDirection direction) {
+        return this.doors.get(direction);
     }
 
 	@Override
-	public String toString() {
-		return "| . ";
+	public void  display() {
+		Door upDoor = getDoor(DoorDirection.UP);
+		Door leftDoor = getDoor(DoorDirection.LEFT);
+		
+		if(upDoor.isOpen()) {
+			System.out.print(".   .");
+		}else { System.out.print("-----"); }
+		
+		if(leftDoor.isOpen()) {
+			System.out.print(".");
+			for(int i=1; i <=3; i++) {
+				System.out.println(" ");
+			}
+			System.out.print(".");
+		}else { 
+			System.out.println("|");
+			System.out.println("|");
+		}
+			
 	}
 }
 
