@@ -92,8 +92,17 @@ __Partage de taches : __
     Les jours suivants :
     
     Dylan -> ...    
-    Elies -> ...
+    Elies -> création de la méthode display
     Théophane -> Finir les tests
+    Léo -> ...
+```
+
+```bash   
+    Mardi 30/01 :
+    
+    Dylan -> ...    
+    Elies -> test de la création display en initialisation des Room ( sans méthode de split précise )
+    Théophane -> 
     Léo -> ...
 ```
 
