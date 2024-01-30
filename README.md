@@ -100,10 +100,13 @@ __Partage de taches : __
 ```bash   
     Mardi 30/01 :
     
-    Dylan -> ...    
     Elies -> test de la création display en initialisant des Room ( sans méthode de split précise ). Pour cela, j'ai amélioré la classe Room pour permettre l'ajout de portes 
-    Théophane -> 
-    Léo -> ...
+```
+
+```bash   
+    Mercredi 31/01 :
+    
+    Dylan -> création de la logique de split terminée, plateau prêt à être utilisé notamment pour l'affichage des portes en fonction de leur état. Javadoc de la classe City mise à jour.
 ```
 
 ## Semaine 4
