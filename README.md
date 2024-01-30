@@ -101,7 +101,7 @@ __Partage de taches : __
     Mardi 30/01 :
     
     Dylan -> ...    
-    Elies -> test de la création display en initialisation des Room ( sans méthode de split précise )
+    Elies -> test de la création display en initialisant des Room ( sans méthode de split précise ). Pour cela, j'ai amélioré la classe Room pour permettre l'ajout de portes 
     Théophane -> 
     Léo -> ...
 ```
