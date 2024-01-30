@@ -61,14 +61,14 @@ __Partage de taches : __
 
 
 ## Semaine 3
-__Objectif de la semaine : __ 
+### Objectif de la semaine :  
 ```bash
     - Finir la modélisation des portes
     - Terminer la modélisation de la map
     - Finir l affichage de la map
     - Finir les tests
 ```
-__Réflexion du groupe :  __
+### Réflexion du groupe :
 ```bash 
     Lundi 29/01 : 
     Durant ce lundi nous avons réflechi sur la modélisation des portes, ce qui nous a mené a la création d une class enum pour la position des portes avec l ajout d une hashmap enum/porte.
@@ -80,7 +80,7 @@ __Réflexion du groupe :  __
     ... ici on écrit ce que l on a fait et réfléchis !
 
 ```
-__Partage de taches : __
+### Partage de taches : 
 ```bash   
     Lundi 29/01 :
     Groupe entier -> réunions des idées et réflexion sur la modélisation de la map et l affichage des pieces et des portes. 
