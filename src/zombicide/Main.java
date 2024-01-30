@@ -6,9 +6,9 @@ public class Main {
 		
 		City aCity = new City(7,7);
 		
+		
 		aCity.display();
 		
-		System.out.println(aCity.getSpawnStreet().getX()+" "+aCity.getSpawnStreet().getY());
 	}
 
 }
