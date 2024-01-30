@@ -71,7 +71,7 @@ __Objectif de la semaine : __
 __Réflexion du groupe :  __
 ```bash 
     Lundi 29/01 : 
-    Durant ce lundi nous avons réflechi sur la modélisation des portes, ce qui nous a mené a la création d une class enum pour la position des portes avec l ajout d'une hashmap enum/porte.
+    Durant ce lundi nous avons réflechi sur la modélisation des portes, ce qui nous a mené a la création d une class enum pour la position des portes avec l ajout d une hashmap enum/porte.
 
     Cela nous à également été emenée à réflechir sur l affichage de la map et l affichage des portes (ouvert et fermée) et nous avons réfléchi sur la methode de splitHorizontal et splitVertical en la modifiant sur un split en croix. 
 
