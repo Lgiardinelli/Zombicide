@@ -47,6 +47,17 @@ public class Room extends Area {
     		doors.put(d, door);
     	}
      }
+     
+     /**
+      * Adds a door to the room at the specified direction.
+      * 
+      * @param direction The direction to add the door.
+      */
+
+      public void addDoor(DoorDirection direction) {
+    	  Door door = new Door();
+    	  doors.put(direction, door);
+      }
 
 	@Override
 	public void  display() {
