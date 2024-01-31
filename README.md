@@ -91,7 +91,7 @@ Lundi 29/01 :
 Les jours suivants :
     
 - Dylan -> affichage des rues, finalisation des splits, affichage des portes et de leur état 
-- Elies -> création de la méthode display
+- Elies -> création de la méthode display, initialisation des rooms et ajout des portes
 - Théophane -> Finir les tests
 - Léo -> création des deux classes continentale et pharmacie + intégration des deux classes dans la ville
 
