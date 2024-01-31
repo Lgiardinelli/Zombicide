@@ -84,10 +84,5 @@ public class Room extends Area {
 		}
 			
 	}
-	
-	@Override
-	public String toString() {
-		return "| . ";
-	}
 }
 
