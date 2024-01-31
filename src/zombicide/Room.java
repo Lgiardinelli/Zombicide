@@ -43,21 +43,8 @@ public class Room extends Area {
 		Door upDoor = getDoor(DoorDirection.UP);
 		Door leftDoor = getDoor(DoorDirection.LEFT);
 		
-		if(upDoor.isOpen()) {
-			System.out.print(".   .");
-		}else { System.out.print("-----"); }
-		
-		if(leftDoor.isOpen()) {
-			System.out.print(".");
-			for(int i=1; i <=3; i++) {
-				System.out.println(" ");
-			}
-			System.out.print(".");
-		}else { 
-			System.out.println("|");
-			System.out.println("|");
-		}
-			
+		System.out.println(upDoor.isOpen() ? ".   ." : "-----");
+		System.out.printf(leftDoor.isOpen() ? ".%n %n %n %n.%n" : "|%n|%n");
 	}
 	
 	@Override
