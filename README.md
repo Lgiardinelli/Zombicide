@@ -90,10 +90,10 @@ Lundi 29/01 :
 
 Les jours suivants :
     
-- Dylan -> ...    
+- Dylan -> affichage des rues, finalisation des splits, affichage des portes et de leur état 
 - Elies -> création de la méthode display
 - Théophane -> Finir les tests
-- Léo -> ...
+- Léo -> création des deux classes continentale et pharmacie + intégration des deux classes dans la ville
 
 Mardi 30/01 :
     
@@ -103,7 +103,9 @@ Mercredi 31/01 :
     
 - Dylan -> création de la logique de split terminée, plateau prêt à être utilisé notamment pour l'affichage des portes en fonction de leur état. Javadoc de la classe City mise à jour.
 
-- Théophane -> Création des tests concernant la classe Room et la classe Door, les tests sont terminés concernant ces deux classes
+- Théophane -> Création des tests concernant la classe Room et la classe Door, les tests sont terminés concernant ces deux classes, suppréssion de la classe test street après réflexion sur son utilité, amélioration des méthodes de tests dans la classe test Area et réfléxion sur différentes methodes à revoirs
+
+Jeudi 01/02 :
 
 ## Semaine 4
 
