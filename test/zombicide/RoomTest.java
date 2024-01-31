@@ -16,12 +16,24 @@ class RoomTest {
 	void testAddDoorInRoom() {
 		Room room = new Room(5,6);
 		
-		DoorDirection direction = DoorDirection.UP;
-		room.addDoor(direction);
+		room.addDoor(DoorDirection.UP);
 		
-		Door addedDoor = room.getDoor(direction);
+		Door addedDoor = room.getDoor(DoorDirection.UP);
 		
 		assertNotNull(addedDoor);
 		assertEquals(room.getDoor(DoorDirection.UP), addedDoor);
 	}
+	
+	@Test
+	void testAddAllDoorInRoom() {
+		Room room = new Room(5,6);
+
+		room.addAllDoors();
+		
+		assertNotNull(room.getDoors());
+		for(DoorDirection direction : DoorDirection.values()) {
+			Door door = room.getDoor(direction);
+			assertNotNull(door);
+		}
+	}	
 }
