@@ -8,9 +8,50 @@ class RoomTest {
 
 	@Test
 	void testRoomInitialization() {
-		City city = new City(10,10);
-		Room room = new Room(5, 6, 4);
-		city.addRoom(room);
-		assertNotNull(city.getArea(5, 6));
+		Room room = new Room(5, 6);
+		assertNotNull(room);
 	}
+	
+	@Test 
+	void testAddDoorInRoom() {
+		Room room = new Room(5,6);
+		
+		room.addDoor(DoorDirection.UP);
+		
+		Door addedDoor = room.getDoor(DoorDirection.UP);
+		
+		assertNotNull(addedDoor);
+		assertEquals(room.getDoor(DoorDirection.UP), addedDoor);
+	}
+	
+	@Test
+	void testAddAllDoorInRoom() {
+		Room room = new Room(5,6);
+
+		room.addAllDoors();
+		
+		assertNotNull(room.getDoors());
+		for(DoorDirection direction : DoorDirection.values()) {
+			Door door = room.getDoor(direction);
+			assertNotNull(door);
+		}
+	}
+	
+	@Test
+	void testDoorIsOpen() {
+		Room room = new Room(5,6);
+		room.addDoor(DoorDirection.UP);
+		assertNotNull(room.getDoor(DoorDirection.UP));
+		room.getDoor(DoorDirection.UP).open();
+		assertTrue(room.getDoor(DoorDirection.UP).isOpen());
+	}
+	
+	@Test
+	void testDoorIsClose() {
+		Room room = new Room(5,6);
+		room.addDoor(DoorDirection.UP);
+		assertNotNull(room.getDoor(DoorDirection.UP));
+		assertFalse(room.getDoor(DoorDirection.UP).isOpen());
+	}
+	
 }

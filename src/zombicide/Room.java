@@ -37,6 +37,31 @@ public class Room extends Area {
     public Door getDoor(DoorDirection direction) {
         return this.doors.get(direction);
     }
+    
+    public Map<DoorDirection, Door> getDoors() {
+    	return doors;
+    }
+    
+    /**
+     * Adds all possible doors to the room
+     */
+     public void addAllDoors() {
+    	for (DoorDirection d : DoorDirection.values()) {
+    		Door door = new Door();
+    		doors.put(d, door);
+    	}
+     }
+     
+     /**
+      * Adds a door to the room at the specified direction.
+      * 
+      * @param direction The direction to add the door.
+      */
+
+      public void addDoor(DoorDirection direction) {
+    	  Door door = new Door();
+    	  doors.put(direction, door);
+      }
 
 	@Override
 	public void  display() {
@@ -45,11 +70,6 @@ public class Room extends Area {
 		
 		System.out.println(upDoor.isOpen() ? ".   ." : "-----");
 		System.out.printf(leftDoor.isOpen() ? ".%n %n %n %n.%n" : "|%n|%n");
-	}
-	
-	@Override
-	public String toString() {
-		return "| . ";
 	}
 }
 

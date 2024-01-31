@@ -65,27 +65,27 @@ __Partage de taches : __
 
 - Finir la modélisation des portes
 - Terminer la modélisation de la map
-- Finir l affichage de la map
+- Finir l'affichage de la map
 - Finir les tests
 
 ### Réflexion du groupe :
 
-Lundi 29/01 : 
-Durant ce lundi nous avons réflechi sur la modélisation des portes, ce qui nous a mené a la création d une class enum pour la position des portes avec l ajout d une hashmap enum/porte.
+Lundi 29/01 :
+Durant ce lundi, nous avons réfléchi à la modélisation des portes, ce qui nous a amenés à la création d'une classe enum pour la position des portes avec l'ajout d'une hashmap enum/porte.
 
-Cela nous à également été emenée à réflechir sur l affichage de la map et l affichage des portes (ouvert et fermée) et nous avons réfléchi sur la methode de splitHorizontal et splitVertical en la modifiant sur un split en croix. 
+Cela nous a également amenés à réfléchir sur l'affichage de la map et l'affichage des portes (ouvertes et fermées), et nous avons réfléchi sur la méthode de splitHorizontal et splitVertical en la modifiant sur un split en croix.
 
 Les jours suivants :
-    
-... ici on écrit ce que l on a fait et réfléchis !
+
+... ici, nous écrivons ce que nous avons fait et réfléchi !
 
 ### Partage de taches :
 
 Lundi 29/01 :
-- Groupe entier -> réunions des idées et réflexion sur la modélisation de la map et l affichage des pieces et des portes. 
+- Groupe entier -> réunion des idées et réflexion sur la modélisation de la map et l'affichage des pièces et des portes.
 - Dylan -> Terminer la modélisation de la map
-- Elies -> Finir l affichage de la map
-- Théophane -> Mise en place et mise en forme du readme  
+- Elies -> Finir l'affichage de la map
+- Théophane -> Mise en place et mise en forme du readme
 - Léo -> Terminer la modélisation de la map
 
 Les jours suivants :
@@ -97,12 +97,13 @@ Les jours suivants :
 
 Mardi 30/01 :
     
-- Elies -> test de la création display en initialisant des Room ( sans méthode de split précise ). Pour cela, j'ai amélioré la classe Room pour permettre l'ajout de portes 
+- Elies -> test de la création display en initialisant des Room (sans méthode de split précise). Pour cela, j'ai amélioré la classe Room pour permettre l'ajout de portes 
    
 Mercredi 31/01 :
     
 - Dylan -> création de la logique de split terminée, plateau prêt à être utilisé notamment pour l'affichage des portes en fonction de leur état. Javadoc de la classe City mise à jour.
 
+- Théophane -> Création des tests concernant la classe Room et la classe Door, les tests sont terminés concernant ces deux classes
 
 ## Semaine 4
 
