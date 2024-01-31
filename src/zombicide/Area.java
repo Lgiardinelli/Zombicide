@@ -15,7 +15,7 @@ public abstract class Area {
 	 */
 	public Area(int posX, int posY) {
 		this.posX = posX;
-		this.posY = pos		// TODO Auto-generated method stubY;
+		this.posY = posY;		// TODO Auto-generated method stubY;
 //		this.survivors = new ArrayList<Survivor>();
 //		this.zombies = new Arraylist<Zombie>();
 		this.noise = 0;
