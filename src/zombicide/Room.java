@@ -38,6 +38,10 @@ public class Room extends Area {
         return this.doors.get(direction);
     }
     
+    public Map<DoorDirection, Door> getDoors() {
+    	return doors;
+    }
+    
     /**
      * Adds all possible doors to the room
      */
