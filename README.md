@@ -77,7 +77,7 @@ Cela nous a également amenés à réfléchir sur l'affichage de la map et l'aff
 
 Les jours suivants :
 
-... ici, nous écrivons ce que nous avons fait et réfléchi !
+Nous avons réfléchi à si nous allions faire des méthodes de tests sur city et après plusieurs réfléxion sur l'utilité dans faire du fait que nous avions mis les méthodes en privée, nous n'avons pas fait de méthode de test pour city.
 
 ### Partage de taches :
 
