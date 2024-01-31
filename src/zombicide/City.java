@@ -63,8 +63,10 @@ public class City {
     private void splitAreas(Position topLeftPos, Position bottomRightPos) {
         Position crossroadPos = getRandomPosBetweenBounds(topLeftPos, bottomRightPos);
 
-        if (this.spawnStreet == null)
-            createSpawnStreet(crossroadPos);
+        if (this.spawnStreet == null) {
+        	createSpawnStreet(crossroadPos);
+        	createManholes(crossroadPos, topLeftPos, bottomRightPos);
+        }
 
         createStreets(crossroadPos, topLeftPos, bottomRightPos);
 
@@ -80,7 +82,18 @@ public class City {
         }
     }
 
-    /**
+    private void createManholes(Position crossroadPos, Position topLeftPos, Position bottomRightPos) {
+    	this.areas[0][crossroadPos.getX()] = 
+    			new ManholeStreet(crossroadPos.getX(), 0);
+    	this.areas[crossroadPos.getY()][bottomRightPos.getX()] = 
+    			new ManholeStreet(bottomRightPos.getX(), crossroadPos.getY());
+    	this.areas[bottomRightPos.getY()][crossroadPos.getX()] = 
+    			new ManholeStreet(crossroadPos.getX(), bottomRightPos.getY());
+    	this.areas[crossroadPos.getY()][0] = 
+    			new ManholeStreet(0, crossroadPos.getY());
+	}
+
+	/**
      * Gets the positions of the areas after splitting.
      *
      * @param crossroadPos     the position of the crossroad
