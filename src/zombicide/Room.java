@@ -37,6 +37,16 @@ public class Room extends Area {
     public Door getDoor(DoorDirection direction) {
         return this.doors.get(direction);
     }
+    
+    /**
+     * Adds all possible doors to the room
+     */
+     public void addAllDoors() {
+    	for (DoorDirection d : DoorDirection.values()) {
+    		Door door = new Door();
+    		doors.put(d, door);
+    	}
+     }
 
 	@Override
 	public void  display() {
