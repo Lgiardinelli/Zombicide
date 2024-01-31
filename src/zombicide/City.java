@@ -82,16 +82,30 @@ public class City {
         }
     }
 
+    /**
+     * Creates manhole streets at the extremities of the principal crossroad's streets.
+     *
+     * This method places manhole streets at specific positions within the areas array,
+     * defining the boundaries of the streets that intersect at the given crossroad position.
+     *
+     * @param crossroadPos The position of the principal crossroad where streets intersect.
+     * @param topLeftPos The position representing the top-left corner of the area to be considered.
+     * @param bottomRightPos The position representing the bottom-right corner of the area to be considered.
+     */
     private void createManholes(Position crossroadPos, Position topLeftPos, Position bottomRightPos) {
-    	this.areas[0][crossroadPos.getX()] = 
-    			new ManholeStreet(crossroadPos.getX(), 0);
-    	this.areas[crossroadPos.getY()][bottomRightPos.getX()] = 
-    			new ManholeStreet(bottomRightPos.getX(), crossroadPos.getY());
-    	this.areas[bottomRightPos.getY()][crossroadPos.getX()] = 
-    			new ManholeStreet(crossroadPos.getX(), bottomRightPos.getY());
-    	this.areas[crossroadPos.getY()][0] = 
-    			new ManholeStreet(0, crossroadPos.getY());
-	}
+        this.areas[0][crossroadPos.getX()] = 
+        		new ManholeStreet(crossroadPos.getX(), 0);
+        
+        this.areas[crossroadPos.getY()][bottomRightPos.getX()] =
+                new ManholeStreet(bottomRightPos.getX(), crossroadPos.getY());
+
+        this.areas[bottomRightPos.getY()][crossroadPos.getX()] =
+                new ManholeStreet(crossroadPos.getX(), bottomRightPos.getY());
+        
+        this.areas[crossroadPos.getY()][0] = 
+        		new ManholeStreet(0, crossroadPos.getY());
+    }
+
 
 	/**
      * Gets the positions of the areas after splitting.
