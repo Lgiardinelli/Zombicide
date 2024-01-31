@@ -82,26 +82,26 @@ Les jours suivants :
 ### Partage de taches :
 
 Lundi 29/01 :
-Groupe entier -> réunions des idées et réflexion sur la modélisation de la map et l affichage des pieces et des portes. 
-Dylan -> Terminer la modélisation de la map
-Elies -> Finir l affichage de la map
-Théophane -> Mise en place et mise en forme du readme  
-Léo -> Terminer la modélisation de la map
+- Groupe entier -> réunions des idées et réflexion sur la modélisation de la map et l affichage des pieces et des portes. 
+- Dylan -> Terminer la modélisation de la map
+- Elies -> Finir l affichage de la map
+- Théophane -> Mise en place et mise en forme du readme  
+- Léo -> Terminer la modélisation de la map
 
 Les jours suivants :
     
-Dylan -> ...    
-Elies -> création de la méthode display
-Théophane -> Finir les tests
-Léo -> ...
+- Dylan -> ...    
+- Elies -> création de la méthode display
+- Théophane -> Finir les tests
+- Léo -> ...
 
-- Mardi 30/01 :
+Mardi 30/01 :
     
-Elies -> test de la création display en initialisant des Room ( sans méthode de split précise ). Pour cela, j'ai amélioré la classe Room pour permettre l'ajout de portes 
+- Elies -> test de la création display en initialisant des Room ( sans méthode de split précise ). Pour cela, j'ai amélioré la classe Room pour permettre l'ajout de portes 
    
-- Mercredi 31/01 :
+Mercredi 31/01 :
     
-Dylan -> création de la logique de split terminée, plateau prêt à être utilisé notamment pour l'affichage des portes en fonction de leur état. Javadoc de la classe City mise à jour.
+- Dylan -> création de la logique de split terminée, plateau prêt à être utilisé notamment pour l'affichage des portes en fonction de leur état. Javadoc de la classe City mise à jour.
 
 
 ## Semaine 4
