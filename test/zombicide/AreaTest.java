@@ -14,6 +14,14 @@ class AreaTest {
         //Street
         Area street = new Street(4,5);
         assertNotNull(street);
+        
+        //Pharmacy
+        Area pharmacy = new ThePharmacy(4,7);
+        assertNotNull(pharmacy);
+        
+        //Continental
+        Area continental = new TheContinental(8,8);
+        assertNotNull(continental);
     }
 
 	@Test
