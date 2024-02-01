@@ -6,5 +6,9 @@ public class ThePharmacy extends Room {
 		super(x, y);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public boolean canFight() {
+		return true;
+	}
 
 }
