@@ -104,8 +104,10 @@ Mercredi 31/01 :
 - Théophane -> Création des tests concernant la classe Room et la classe Door, les tests sont terminés concernant ces deux classes, suppréssion de la classe test street après réflexion sur son utilité, amélioration des méthodes de tests dans la classe test Area et réfléxion sur différentes methodes à revoirs
 
 Jeudi 01/02 :
+
 - Léo : Création des classes continental et pharmacie et début de code dans celle-ci.
 
+- Théophane : Ajout de méthode canFight dans la pharmacie et le continental, test sur la pharmacie et le continental dans la class test area 
 
 ## Semaine 4
 
