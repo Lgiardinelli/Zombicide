@@ -6,5 +6,9 @@ public class TheContinental extends Room {
 		super(x, y);
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	@Override
+	public boolean canFight() {
+		return false;
+	}
 }
