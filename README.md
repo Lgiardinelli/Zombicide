@@ -61,14 +61,13 @@ __Partage de taches : __
 
 
 ## Semaine 3
-### Objectif de la semaine :  
-
+__Objectif de la semaine :__  
 - Finir la modélisation des portes
 - Terminer la modélisation de la map
 - Finir l'affichage de la map
 - Finir les tests
 
-### Réflexion du groupe :
+__Réflexion du groupe :__  
 
 Lundi 29/01 :
 Durant ce lundi, nous avons réfléchi à la modélisation des portes, ce qui nous a amenés à la création d'une classe enum pour la position des portes avec l'ajout d'une hashmap enum/porte.
@@ -76,10 +75,9 @@ Durant ce lundi, nous avons réfléchi à la modélisation des portes, ce qui no
 Cela nous a également amenés à réfléchir sur l'affichage de la map et l'affichage des portes (ouvertes et fermées), et nous avons réfléchi sur la méthode de splitHorizontal et splitVertical en la modifiant sur un split en croix.
 
 Les jours suivants :
+Nous avons réfléchi à si nous allions faire des méthodes de tests sur city et après plusieurs réfléxion sur l'utilité dans faire du fait que nous avions mis les méthodes en privée, nous n'avons pas fait de méthode de test pour city.
 
-... ici, nous écrivons ce que nous avons fait et réfléchi !
-
-### Partage de taches :
+__Partage de taches :__
 
 Lundi 29/01 :
 - Groupe entier -> réunion des idées et réflexion sur la modélisation de la map et l'affichage des pièces et des portes.
@@ -90,10 +88,10 @@ Lundi 29/01 :
 
 Les jours suivants :
     
-- Dylan -> ...    
-- Elies -> création de la méthode display
+- Dylan -> affichage des rues, finalisation des splits, affichage des portes et de leur état 
+- Elies -> création de la méthode display, initialisation des rooms et ajout des portes
 - Théophane -> Finir les tests
-- Léo -> ...
+- Léo -> création des deux classes continentale et pharmacie + intégration des deux classes dans la ville
 
 Mardi 30/01 :
     
@@ -103,7 +101,11 @@ Mercredi 31/01 :
     
 - Dylan -> création de la logique de split terminée, plateau prêt à être utilisé notamment pour l'affichage des portes en fonction de leur état. Javadoc de la classe City mise à jour.
 
-- Théophane -> Création des tests concernant la classe Room et la classe Door, les tests sont terminés concernant ces deux classes
+- Théophane -> Création des tests concernant la classe Room et la classe Door, les tests sont terminés concernant ces deux classes, suppréssion de la classe test street après réflexion sur son utilité, amélioration des méthodes de tests dans la classe test Area et réfléxion sur différentes methodes à revoirs
+
+Jeudi 01/02 :
+- Léo : Création des classes continental et pharmacie et début de code dans celle-ci.
+
 
 ## Semaine 4
 
