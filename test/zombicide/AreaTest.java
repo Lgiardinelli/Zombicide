@@ -95,20 +95,17 @@ class AreaTest {
 	@Test
     void testAreaCanFight() {
 		//Room
-		Area room = new Room(1, 2);
 		assertTrue(room.canFight());
         
         //Continental
-        Area continental = new TheContinental(4,4);
         assertFalse(continental.canFight());
         
         //Pharmacy
-        Area pharmacy = new ThePharmacy(6,6);
         assertTrue(pharmacy.canFight());
     }
 	
 	/**
-	 * Faire les tests sur la précence de loot dans area
+	 * Faire les tests sur la précence de loot dans area et corriger avec un beforeEach 
 	 */
 	@Test
 	void testLootInArea() {
