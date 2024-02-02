@@ -29,9 +29,7 @@ class RoomTest {
 	}
 	
 	@Test
-	void testAddAllDoorInRoom() {
-		room.addAllDoors();
-		
+	void testAddAllDoorInRoom() {		
 		assertNotNull(room.getDoors());
 		for(DoorDirection direction : DoorDirection.values()) {
 			Door door = room.getDoor(direction);
