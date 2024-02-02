@@ -30,8 +30,6 @@ class RoomTest {
 	
 	@Test
 	void testAddAllDoorInRoom() {
-		Room room = new Room(5,6);
-
 		room.addAllDoors();
 		
 		assertNotNull(room.getDoors());
