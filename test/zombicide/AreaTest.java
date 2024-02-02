@@ -2,28 +2,42 @@ package zombicide;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class AreaTest {
+	
+	private Area room;
+	private Area street;
+	private Area pharmacy;
+	private Area continental;
+	
+	@BeforeEach
+	public void before() {
+		this.room = new Room(6,7);
+		this.street = new Street(4,5);
+		this.pharmacy = new ThePharmacy(3,4);
+		this.continental = new TheContinental(2,7);
+	}
+	
 	@Test
     void testAreaInitialization() {
 		//Room
-        Area room = new Room(5, 6);
         assertNotNull(room);
         
         //Street
-        Area street = new Street(4,5);
         assertNotNull(street);
         
         //Pharmacy
-        Area pharmacy = new ThePharmacy(4,7);
         assertNotNull(pharmacy);
         
         //Continental
-        Area continental = new TheContinental(8,8);
         assertNotNull(continental);
     }
 
+	/**
+	 * Corriger les tests avec le beforeEach
+	 */
 	@Test
     void testAreaSurvivorList() {
 		//Room
@@ -49,6 +63,10 @@ class AreaTest {
         assertTrue(street.getSurvivors().contains(survivor));
     }
 	
+	
+	/**
+	 * Corriger les tests avec le beforeEach
+	 */
 	@Test
     void testAreaZombieList() {
 		//Room
@@ -77,20 +95,17 @@ class AreaTest {
 	@Test
     void testAreaCanFight() {
 		//Room
-		Area room = new Room(1, 2);
 		assertTrue(room.canFight());
         
         //Continental
-        Area continental = new TheContinental(4,4);
         assertFalse(continental.canFight());
         
         //Pharmacy
-        Area pharmacy = new ThePharmacy(6,6);
         assertTrue(pharmacy.canFight());
     }
 	
 	/**
-	 * Faire les tests sur la précence de loot dans area
+	 * Faire les tests sur la précence de loot dans area et corriger avec un beforeEach 
 	 */
 	@Test
 	void testLootInArea() {
@@ -102,6 +117,12 @@ class AreaTest {
 		
 		//Pharmacy
 		Area pharmacy = new ThePharmacy(6,6);
+	}
+	
+	@Test
+	void testPositionOfArea() {
+		assertEquals(room.getX(), 6);
+		assertEquals(room.getY(), 7);
 	}
 	
 }

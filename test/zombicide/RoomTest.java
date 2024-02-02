@@ -2,22 +2,26 @@ package zombicide;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class RoomTest {
 
+	private Room room;
+	
+	@BeforeEach
+	private void before() {
+		room = new Room(5,6);
+	}
+	
 	@Test
 	void testRoomInitialization() {
-		Room room = new Room(5, 6);
 		assertNotNull(room);
 	}
 	
 	@Test 
 	void testAddDoorInRoom() {
-		Room room = new Room(5,6);
-		
 		room.addDoor(DoorDirection.UP);
-		
 		Door addedDoor = room.getDoor(DoorDirection.UP);
 		
 		assertNotNull(addedDoor);
@@ -26,8 +30,6 @@ class RoomTest {
 	
 	@Test
 	void testAddAllDoorInRoom() {
-		Room room = new Room(5,6);
-
 		room.addAllDoors();
 		
 		assertNotNull(room.getDoors());
@@ -39,7 +41,6 @@ class RoomTest {
 	
 	@Test
 	void testDoorIsOpen() {
-		Room room = new Room(5,6);
 		room.addDoor(DoorDirection.UP);
 		assertNotNull(room.getDoor(DoorDirection.UP));
 		room.getDoor(DoorDirection.UP).open();
@@ -48,10 +49,20 @@ class RoomTest {
 	
 	@Test
 	void testDoorIsClose() {
-		Room room = new Room(5,6);
 		room.addDoor(DoorDirection.UP);
 		assertNotNull(room.getDoor(DoorDirection.UP));
 		assertFalse(room.getDoor(DoorDirection.UP).isOpen());
+	}
+	
+	@Test
+	void testOpenAndCloseTheDoor() {
+		room.addDoor(DoorDirection.UP);
+		Door addedDoor = room.getDoor(DoorDirection.UP);
+		assertNotNull(addedDoor);
+		addedDoor.open();
+		assertTrue(addedDoor.isOpen());
+		addedDoor.close();
+		assertFalse(addedDoor.isOpen());
 	}
 	
 }
