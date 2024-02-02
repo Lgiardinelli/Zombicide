@@ -16,7 +16,6 @@ class CityTest {
 	
 	@Test
 	void testInitializationCity() {
-		City city = new City(10,10);
 		assertNotNull(city);
 	}
 	
