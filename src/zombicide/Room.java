@@ -23,7 +23,7 @@ public class Room extends Area {
     	super(x, y);
         this.doors = new HashMap<>();
         for (DoorDirection d : DoorDirection.values()) {
-        	doors.put(d, null);
+        	doors.put(d, new Door());
         }
     }
     
@@ -41,16 +41,6 @@ public class Room extends Area {
     public Map<DoorDirection, Door> getDoors() {
     	return doors;
     }
-    
-    /**
-     * Adds all possible doors to the room
-     */
-     public void addAllDoors() {
-    	for (DoorDirection d : DoorDirection.values()) {
-    		Door door = new Door();
-    		doors.put(d, door);
-    	}
-     }
      
      /**
       * Adds a door to the room at the specified direction.
@@ -68,8 +58,14 @@ public class Room extends Area {
 		Door upDoor = getDoor(DoorDirection.UP);
 		Door leftDoor = getDoor(DoorDirection.LEFT);
 		
-		System.out.println(upDoor.isOpen() ? ".   ." : "-----");
-		System.out.printf(leftDoor.isOpen() ? ".%n %n %n %n.%n" : "|%n|%n");
+		if (this.isTop) {
+			System.out.print(upDoor.isOpen() ? "-- --" : "-----");
+			this.isTop = false;
+		}
+		else {
+			System.out.print(leftDoor.isOpen() ? "  " : "| ");
+			this.isTop = true;
+		}
 	}
 	
 	@Override
