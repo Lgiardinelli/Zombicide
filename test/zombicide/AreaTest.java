@@ -2,9 +2,24 @@ package zombicide;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class AreaTest {
+	
+	private Area room;
+	private Area Street;
+	private Area pharmacy;
+	private Area continental;
+	
+	@BeforeEach
+	public void before() {
+		this.room = new Room(6,7);
+		this.Street = new Street(4,5);
+		this.pharmacy = new ThePharmacy(3,4);
+		this.continental = new TheContinental(2,7);
+	}
+	
 	@Test
     void testAreaInitialization() {
 		//Room
