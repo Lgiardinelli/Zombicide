@@ -21,7 +21,6 @@ class CityTest {
 	
 	@Test
 	void testCheckSizeOfCity() {
-		City city = new City(10,10);
 		assertEquals(city.getHeight(), 10);
 		assertEquals(city.getWidth(), 10);
 	}
