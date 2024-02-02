@@ -121,9 +121,8 @@ class AreaTest {
 	
 	@Test
 	void testPositionOfArea() {
-		Area area = new Room(1,2);
-		assertEquals(area.getX(), 1);
-		assertEquals(area.getY(), 2);
+		assertEquals(room.getX(), 6);
+		assertEquals(room.getY(), 7);
 	}
 	
 }
