@@ -49,8 +49,8 @@ public class City {
      * @return a random position between the bounds
      */
     private Position getRandomPosBetweenBounds(Position pos1, Position pos2) {
-        int x = random.nextInt(pos1.getX() + 2, pos2.getX() - 1);
-        int y = random.nextInt(pos1.getY() + 2, pos2.getY() - 1);
+        int x = random.nextInt(pos2.getX() - 1) + pos1.getX() + 2;
+        int y = random.nextInt(pos2.getY() - 1) + pos1.getY() + 2;
         return new Position(x, y);
     }
 
