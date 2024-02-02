@@ -7,6 +7,7 @@ public abstract class Area {
 //	private List<Survivor> survivors;
 //	private List<Zombie> zombies;
 	private int noise;
+	protected boolean topLineDisplay;
 	
 	/**
 	 * Constructor of area
@@ -19,6 +20,7 @@ public abstract class Area {
 //		this.survivors = new ArrayList<Survivor>();
 //		this.zombies = new Arraylist<Zombie>();
 		this.noise = 0;
+		this.topLineDisplay = true;
 	}
 	
 	/**
