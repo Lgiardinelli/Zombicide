@@ -185,7 +185,7 @@ public class City {
                     Room r = new Room(j, i);
                     this.areas[i][j] = r;
                 }
-                System.out.print(this.areas[i][j]);
+                this.areas[i][j].display();
             }
         }
     }
