@@ -8,8 +8,8 @@ public class MiniCityMain {
 		 int width = aCity.getWidth();
 		 int height = aCity.getHeight();
 
-		 for(int i = 0 ; i < width ; i++) {
-			 for(int j = 0 ; j < height ; i++) {
+		 for(int i = 0 ; i < height ; i++) {
+			 for(int j = 0 ; j < width ; j++) {
 				 Room r = new Room(i,j);
 				 r.addAllDoors();		 
 			 }
