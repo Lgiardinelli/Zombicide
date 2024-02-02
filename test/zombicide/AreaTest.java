@@ -104,4 +104,11 @@ class AreaTest {
 		Area pharmacy = new ThePharmacy(6,6);
 	}
 	
+	@Test
+	void testPositionOfArea() {
+		Area area = new Room(1,2);
+		assertEquals(area.getX(), 1);
+		assertEquals(area.getY(), 2);
+	}
+	
 }
