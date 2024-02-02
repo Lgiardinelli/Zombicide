@@ -112,6 +112,10 @@ Jeudi 01/02 :
 
 - Théophane : Ajout de méthode canFight dans la pharmacie et le continental, test sur la pharmacie et le continental dans la class test area 
 
+Vendredi 02/02 :
+
+- Théophane : Modification des tests -> implémentation des beforeEach et ajout, modification de test 
+
 ## Semaine 4
 
 ## Semaine 5
