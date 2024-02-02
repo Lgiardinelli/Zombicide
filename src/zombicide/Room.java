@@ -71,5 +71,10 @@ public class Room extends Area {
 		System.out.println(upDoor.isOpen() ? ".   ." : "-----");
 		System.out.printf(leftDoor.isOpen() ? ".%n %n %n %n.%n" : "|%n|%n");
 	}
+	
+	@Override
+	public String toString() {
+		return "| . ";
+	}
 }
 

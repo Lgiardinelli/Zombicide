@@ -12,8 +12,8 @@ public class MiniCityMain {
 			 for(int j = 0 ; j < height ; i++) {
 				 Room r = new Room(i,j);
 				 r.addAllDoors();		 
-				 aCity.display();
 			 }
 		 }
+		 aCity.display();
 	}
 }
