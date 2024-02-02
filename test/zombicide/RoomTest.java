@@ -21,10 +21,7 @@ class RoomTest {
 	
 	@Test 
 	void testAddDoorInRoom() {
-		Room room = new Room(5,6);
-		
 		room.addDoor(DoorDirection.UP);
-		
 		Door addedDoor = room.getDoor(DoorDirection.UP);
 		
 		assertNotNull(addedDoor);
