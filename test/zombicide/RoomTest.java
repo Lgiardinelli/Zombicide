@@ -41,7 +41,6 @@ class RoomTest {
 	
 	@Test
 	void testDoorIsOpen() {
-		Room room = new Room(5,6);
 		room.addDoor(DoorDirection.UP);
 		assertNotNull(room.getDoor(DoorDirection.UP));
 		room.getDoor(DoorDirection.UP).open();
