@@ -84,7 +84,7 @@ class AreaTest {
         Area continental = new TheContinental(4,4);
         assertFalse(continental.canFight());
         
-        //Pharmacie
+        //Pharmacy
         Area pharmacy = new ThePharmacy(6,6);
         assertTrue(pharmacy.canFight());
     }
@@ -92,5 +92,16 @@ class AreaTest {
 	/**
 	 * Faire les tests sur la précence de loot dans area
 	 */
+	@Test
+	void testLootInArea() {
+		//Room
+		Area room = new Room(1,2);
+		
+		//Continental
+		Area continental = new TheContinental(4,4);
+		
+		//Pharmacy
+		Area pharmacy = new ThePharmacy(6,6);
+	}
 	
 }
