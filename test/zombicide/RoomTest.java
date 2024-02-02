@@ -55,8 +55,7 @@ class RoomTest {
 	}
 	
 	@Test
-	void testCloseTheDoor() {
-		Room room = new Room(5,6);
+	void testOpenAndCloseTheDoor() {
 		room.addDoor(DoorDirection.UP);
 		Door addedDoor = room.getDoor(DoorDirection.UP);
 		assertNotNull(addedDoor);
