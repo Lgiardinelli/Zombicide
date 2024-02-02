@@ -8,14 +8,14 @@ import org.junit.jupiter.api.Test;
 class AreaTest {
 	
 	private Area room;
-	private Area Street;
+	private Area street;
 	private Area pharmacy;
 	private Area continental;
 	
 	@BeforeEach
 	public void before() {
 		this.room = new Room(6,7);
-		this.Street = new Street(4,5);
+		this.street = new Street(4,5);
 		this.pharmacy = new ThePharmacy(3,4);
 		this.continental = new TheContinental(2,7);
 	}
@@ -23,22 +23,21 @@ class AreaTest {
 	@Test
     void testAreaInitialization() {
 		//Room
-        Area room = new Room(5, 6);
         assertNotNull(room);
         
         //Street
-        Area street = new Street(4,5);
         assertNotNull(street);
         
         //Pharmacy
-        Area pharmacy = new ThePharmacy(4,7);
         assertNotNull(pharmacy);
         
         //Continental
-        Area continental = new TheContinental(8,8);
         assertNotNull(continental);
     }
 
+	/**
+	 * Corriger les tests avec le beforeEach
+	 */
 	@Test
     void testAreaSurvivorList() {
 		//Room
@@ -64,6 +63,10 @@ class AreaTest {
         assertTrue(street.getSurvivors().contains(survivor));
     }
 	
+	
+	/**
+	 * Corriger les tests avec le beforeEach
+	 */
 	@Test
     void testAreaZombieList() {
 		//Room
