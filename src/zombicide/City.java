@@ -179,14 +179,18 @@ public class City {
      */
     public void display() {
         for (int i = 0; i < getHeight(); i++) {
-            System.out.println();
-            for (int j = 0; j < getWidth(); j++) {
-                if (this.areas[i][j] == null) {
-                    Room r = new Room(j, i);
-                    this.areas[i][j] = r;
+        	for (int n = 0; n<2; n++) {
+        		for (int j = 0; j < getWidth(); j++) {
+                    if (this.areas[i][j] == null) {
+                        Room r = new Room(j, i);
+                        this.areas[i][j] = r;
+                    }
+                    this.areas[i][j].display();
+                    // this.areas[i][j].display();
                 }
-                this.areas[i][j].display();
-            }
+                System.out.println();
+        	}
+            // System.out.println();
         }
     }
 

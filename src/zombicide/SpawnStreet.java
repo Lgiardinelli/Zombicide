@@ -8,7 +8,7 @@ public class SpawnStreet extends Street {
 
     @Override
     public void display() {
-        System.out.print("C  ");
+        // System.out.print("C  ");
     }
 
 

@@ -63,7 +63,7 @@ public class Room extends Area {
 			this.isTop = false;
 		}
 		else {
-			System.out.print(leftDoor.isOpen() ? "  " : "| ");
+			System.out.print(leftDoor.isOpen() ? "    " : "|    ");
 			this.isTop = true;
 		}
 	}
