@@ -77,6 +77,9 @@ Cela nous a également amenés à réfléchir sur l'affichage de la map et l'aff
 Les jours suivants :
 Nous avons réfléchi à si nous allions faire des méthodes de tests sur city et après plusieurs réfléxion sur l'utilité dans faire du fait que nous avions mis les méthodes en privée, nous n'avons pas fait de méthode de test pour city.
 
+Vendredi 02/02 :
+Après une réflexion de groupe à 4, nous avons décidé de revenir sur une version antérieure de City car la nouvelle version ne convenait pas par rapport à nos objectifs.
+
 __Partage de taches :__
 
 Lundi 29/01 :
