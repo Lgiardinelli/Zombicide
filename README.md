@@ -115,6 +115,7 @@ Jeudi 01/02 :
 Vendredi 02/02 :
 
 - Théophane : Modification des tests -> implémentation des beforeEach et ajout, modification de test 
+- Léo : coder la méthode display pour avoir un affichage que l'oint souhaite, non fini.
 
 ## Semaine 4
 
