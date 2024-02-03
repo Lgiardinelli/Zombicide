@@ -7,7 +7,14 @@ public class ManholeStreet extends Street {
 	}
 	
 	@Override
-	public String toString() {
-		return "| _ ";
+	public void  display() {
+		if (this.isTop) {
+			System.out.print("-----");
+			this.isTop = false;
+		}
+		else {
+			System.out.print("  M  ");
+			this.isTop = true;
+		}
 	}
 }
