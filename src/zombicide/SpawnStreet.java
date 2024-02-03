@@ -7,15 +7,14 @@ public class SpawnStreet extends Street {
     }
 
     @Override
-    public void display() {
-        // System.out.print("C  ");
-    }
-
-
-	
-	@Override
-	public String toString() {
-		return "| O ";
+	public void  display() {
+		if (this.isTop) {
+			System.out.print("-----");
+			this.isTop = false;
+		}
+		else {
+			System.out.print("  _  ");
+			this.isTop = true;
+		}
 	}
-
 }
