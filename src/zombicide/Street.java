@@ -7,7 +7,14 @@ public class Street extends Area {
 	}
 
 	@Override
-	public String toString() {
-		return "| S ";
+	public void  display() {
+		if (this.isTop) {
+			System.out.print("-----");
+			this.isTop = false;
+		}
+		else {
+			System.out.print("  S  ");
+			this.isTop = true;
+		}
 	}
 }
