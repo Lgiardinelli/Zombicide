@@ -124,6 +124,8 @@ Vendredi 02/02 :
 Week-end :
 - Léo, Dylan : Amelioration du display
 
+- Théophane : Finalisation du diagramme UML concernant la modélisation de la ville
+
 ## Semaine 4
 
 ## Semaine 5
