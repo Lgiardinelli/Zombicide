@@ -82,7 +82,8 @@ Après une réflexion de groupe à 4, nous avons décidé de revenir sur une ver
 
 Week-end :
 Pour pouvoir gerer les portes ouvertes, nous avons penser à regarder la cellulle du dessus pour savoir si la porte du bas était ouverte ou non, de même pour les autres côté. Le problème que nous avons eu est que si la celulle d'au dessus est une street, elle n'a pas de porte. 
-En refléchissant en groupe, ...
+En refléchissant en groupe, nous avons utilisé la solution de faire en sorte qu'une porte soit la même pour les pièces mitoyenne.
+En créant cette méthode, nous l'avons testé et elle fonctionne bien, le problème étant que le code n'est très explicite, nous allons essayer de le simplifier.
 
 __Partage de taches :__
 
@@ -122,7 +123,8 @@ Vendredi 02/02 :
 - Léo : coder la méthode display pour avoir un affichage que l'oint souhaite, non fini.
 
 Week-end :
-- Léo, Dylan : Amelioration du display
+- Léo, Dylan : Amelioration du display, travail sur un écran les deux
+- Théophane, Elies : Mis à jour de l'UML en fonction des modifications qui ont été faites et completer le readme. 
 
 ## Semaine 4
 
