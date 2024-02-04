@@ -1,5 +1,8 @@
 package zombicide;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public abstract class Area {
 	
 	private int posX;
@@ -7,7 +10,8 @@ public abstract class Area {
 //	private List<Survivor> survivors;
 //	private List<Zombie> zombies;
 	private int noise;
-	protected boolean isTop;
+	protected int isTop;
+    protected final Map<DoorDirection, Door> doors;
 	
 	/**
 	 * Constructor of area
@@ -20,7 +24,36 @@ public abstract class Area {
 //		this.survivors = new ArrayList<Survivor>();
 //		this.zombies = new Arraylist<Zombie>();
 		this.noise = 0;
-		this.isTop = true;
+		this.isTop = 0;
+		this.doors = new HashMap<>();
+        for (DoorDirection d : DoorDirection.values()) {
+        	doors.put(d, new Door());
+        }
+	}
+	
+	/**
+     * Gets the door at the specified index in the room.
+     * 
+     * @param index The index of the door to retrieve.
+     * @return The door at the specified index.
+     * @throws IndexOutOfBoundsException If the index is out of range.
+     */
+    public Door getDoor(DoorDirection direction) {
+        return this.doors.get(direction);
+    }
+    
+    public Map<DoorDirection, Door> getDoors() {
+    	return doors;
+    }
+     
+	/**
+	* Adds a door to the room at the specified direction.
+	* 
+	* @param direction The direction to add the door.
+	*/
+	
+	public void addDoor(DoorDirection direction, Door door) {
+		doors.put(direction, door);
 	}
 	
 	/**
@@ -46,10 +79,7 @@ public abstract class Area {
 	public boolean canFight() {
 		return true;
 	}
-
-
-		
-
+	
 	protected void display() {	
 	}
 }
