@@ -19,6 +19,10 @@ public class City {
         this.random = new Random();
         initCity();
     }
+    
+    public Area[][] getAreas() {
+		return this.areas;
+	}
 
     /**
      * Initializes the city by splitting the areas.
@@ -27,6 +31,8 @@ public class City {
         Position topLeftPos = new Position(0, 0);
         Position bottomRightPos = new Position(getWidth() - 1, getHeight() - 1);
         splitAreas(topLeftPos, bottomRightPos);
+        createRooms();
+        createDoors();
     }
 
     /**
@@ -81,6 +87,15 @@ public class City {
             }
         }
     }
+    
+    private void createRooms() {
+        for (int i = 0; i < this.getHeight(); i++) {
+            for (int j = 0; j < this.getWidth(); j++) {
+                if (this.areas[i][j] == null)
+              		this.areas[i][j] = new Room(j, i);
+        	}
+        }
+	}
 
     /**
      * Creates manhole streets at the extremities of the principal crossroad's streets.
@@ -181,19 +196,57 @@ public class City {
         for (int i = 0; i < getHeight(); i++) {
         	for (int n = 0; n<2; n++) {
         		for (int j = 0; j < getWidth(); j++) {
-                    if (this.areas[i][j] == null) {
-                        Room r = new Room(j, i);
-                        this.areas[i][j] = r;
-                    }
+//        			if (isDoorOpen(i, j-1, DoorDirection.DOWN))
                     this.areas[i][j].display();
-                    // this.areas[i][j].display();
                 }
                 System.out.println();
         	}
-            // System.out.println();
         }
     }
-
+    
+    
+    public boolean isDoorOpen(int x, int y, DoorDirection d) {
+    	Area a;
+    	if (d == DoorDirection.UP)
+    		a = this.areas[x][y-1];
+    	else if (d == DoorDirection.LEFT)
+    		a = this.areas[x-1][y];
+    	else 
+    		return false;
+    	
+    	try {
+            Room r = (Room) a;
+            return r.getDoor(d).isOpen();
+        } catch(ClassCastException e) {
+            return false;
+        }
+    }
+    
+    private void createDoors() {
+        for (int i = 0; i < this.getHeight(); i++) {
+            for (int j = 0; j < this.getWidth(); j++) {
+                Door upDoor = new Door();
+                Door leftDoor = new Door();
+                try {
+                    Room room = (Room) this.areas[i][j];
+                    room.addDoor(DoorDirection.UP, upDoor);
+                    room.addDoor(DoorDirection.LEFT, leftDoor);
+                } catch(ArrayIndexOutOfBoundsException | ClassCastException e) {
+    			}
+    			try {
+                    Room upRoom = (Room) this.areas[i - 1][j];
+                    upRoom.addDoor(DoorDirection.DOWN, upDoor);
+                } catch(ArrayIndexOutOfBoundsException | ClassCastException e) {
+    			}
+    			try {
+                    Room leftRoom = (Room) this.areas[i][j - 1];
+                    leftRoom.addDoor(DoorDirection.RIGHT, leftDoor);
+                } catch(ArrayIndexOutOfBoundsException | ClassCastException e) {
+    			}
+        	}
+        }
+	}
+    
     /**
      * Gets the width of the areas based on the given positions.
      *
@@ -233,4 +286,19 @@ public class City {
     public int getHeight() {
         return this.areas.length;
     }
+    
+    public Area getCellUp(int x, int y) {
+    	return this.areas[x][y-1];
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
