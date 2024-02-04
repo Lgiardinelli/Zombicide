@@ -194,7 +194,7 @@ public class City {
      */
     public void display() {
         for (int i = 0; i < getHeight(); i++) {
-        	for (int n = 0; n<2; n++) {
+        	for (int n = 0; n<3; n++) {
         		for (int j = 0; j < getWidth(); j++) {
 //        			if (isDoorOpen(i, j-1, DoorDirection.DOWN))
                     this.areas[i][j].display();
@@ -203,7 +203,6 @@ public class City {
         	}
         }
     }
-    
     
     public boolean isDoorOpen(int x, int y, DoorDirection d) {
     	Area a;
@@ -228,20 +227,20 @@ public class City {
                 Door upDoor = new Door();
                 Door leftDoor = new Door();
                 try {
-                    Room room = (Room) this.areas[i][j];
-                    room.addDoor(DoorDirection.UP, upDoor);
-                    room.addDoor(DoorDirection.LEFT, leftDoor);
-                } catch(ArrayIndexOutOfBoundsException | ClassCastException e) {
+                    Area area = this.areas[i][j];
+                    area.addDoor(DoorDirection.UP, upDoor);
+                    area.addDoor(DoorDirection.LEFT, leftDoor);
+                } catch(ArrayIndexOutOfBoundsException e) {
     			}
     			try {
-                    Room upRoom = (Room) this.areas[i - 1][j];
-                    upRoom.addDoor(DoorDirection.DOWN, upDoor);
-                } catch(ArrayIndexOutOfBoundsException | ClassCastException e) {
+                    Area upArea = this.areas[i - 1][j];
+                    upArea.addDoor(DoorDirection.DOWN, upDoor);
+                } catch(ArrayIndexOutOfBoundsException e) {
     			}
     			try {
-                    Room leftRoom = (Room) this.areas[i][j - 1];
-                    leftRoom.addDoor(DoorDirection.RIGHT, leftDoor);
-                } catch(ArrayIndexOutOfBoundsException | ClassCastException e) {
+                    Area leftArea = this.areas[i][j - 1];
+                    leftArea.addDoor(DoorDirection.RIGHT, leftDoor);
+                } catch(ArrayIndexOutOfBoundsException e) {
     			}
         	}
         }
@@ -290,15 +289,4 @@ public class City {
     public Area getCellUp(int x, int y) {
     	return this.areas[x][y-1];
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
