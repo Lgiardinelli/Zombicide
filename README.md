@@ -67,6 +67,10 @@ __Objectif de la semaine :__
 - Finir l'affichage de la map
 - Finir les tests
 
+__Objectif atteint :__
+ - Finir les tests
+ 
+
 __Réflexion du groupe :__  
 
 Lundi 29/01 :
@@ -83,7 +87,7 @@ Après une réflexion de groupe à 4, nous avons décidé de revenir sur une ver
 Week-end :
 Pour pouvoir gerer les portes ouvertes, nous avons penser à regarder la cellulle du dessus pour savoir si la porte du bas était ouverte ou non, de même pour les autres côté. Le problème que nous avons eu est que si la celulle d'au dessus est une street, elle n'a pas de porte. 
 En refléchissant en groupe, nous avons utilisé la solution de faire en sorte qu'une porte soit la même pour les pièces mitoyenne.
-En créant cette méthode, nous l'avons testé et elle fonctionne bien, le problème étant que le code n'est très explicite, nous allons essayer de le simplifier.
+En créant cette méthode, nous l'avons testé et elle fonctionne bien, le problème étant que le code n'est très explicite, nous allons essayer de le simplifier. 
 
 __Partage de taches :__
 
