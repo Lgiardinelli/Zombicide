@@ -68,7 +68,8 @@ __Objectif de la semaine :__
 - Finir les tests
 
 __Objectif atteint :__
- - Finir les tests
+- Finir la modélisation des portes
+- Finir les tests
  
 
 __Réflexion du groupe :__  
@@ -87,7 +88,8 @@ Après une réflexion de groupe à 4, nous avons décidé de revenir sur une ver
 Week-end :
 Pour pouvoir gerer les portes ouvertes, nous avons penser à regarder la cellulle du dessus pour savoir si la porte du bas était ouverte ou non, de même pour les autres côté. Le problème que nous avons eu est que si la celulle d'au dessus est une street, elle n'a pas de porte. 
 En refléchissant en groupe, nous avons utilisé la solution de faire en sorte qu'une porte soit la même pour les pièces mitoyenne.
-En créant cette méthode, nous l'avons testé et elle fonctionne bien, le problème étant que le code n'est très explicite, nous allons essayer de le simplifier. 
+En créant cette méthode, nous l'avons testé et elle fonctionne bien, le problème étant que le code n'est très explicite, nous allons essayer de le simplifier.
+Les portes sont crées comme voulues dans chaque zone, il faut règler l'affichage de ces dernières dans le cas ou la zone est une rue.
 
 __Partage de taches :__
 
@@ -127,7 +129,8 @@ Vendredi 02/02 :
 - Léo : coder la méthode display pour avoir un affichage que l'oint souhaite, non fini.
 
 Week-end :
-- Léo, Dylan : Amelioration du display, travail sur un écran les deux
+- Léo, Dylan : Amelioration du display, travail à deux sur un seul écran.
+- Dylan : Crééation des portes dans chaque zones, en prenant en compte le fait qu'une porte peut être dans deux pièces.
 - Théophane, Elies : Mis à jour de l'UML en fonction des modifications qui ont été faites et completer le readme. 
 
 ## Semaine 4
