@@ -8,13 +8,30 @@ public class ManholeStreet extends Street {
 	
 	@Override
 	public void  display() {
-		if (this.isTop) {
+		if (this.isTop == 0) {
 			System.out.print("-----");
-			this.isTop = false;
+			this.isTop = 1;
+		}
+		else if (this.isTop == 1){
+			if (this.getDoor(DoorDirection.LEFT).isOpen()) {
+				System.out.print("  M  ");
+				this.isTop = 2;
+			}
+			else {
+				System.out.print("| M  ");
+				this.isTop = 2;
+			}
+			
 		}
 		else {
-			System.out.print("  M  ");
-			this.isTop = true;
+			if (this.getDoor(DoorDirection.LEFT).isOpen()) {
+				System.out.print("     ");
+				this.isTop = 2;
+			}
+			else {
+				System.out.print("|    ");
+				this.isTop = 2;
+			}
 		}
 	}
 }
