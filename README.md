@@ -80,6 +80,10 @@ Nous avons réfléchi à si nous allions faire des méthodes de tests sur city e
 Vendredi 02/02 :
 Après une réflexion de groupe à 4, nous avons décidé de revenir sur une version antérieure de City car la nouvelle version ne convenait pas par rapport à nos objectifs.
 
+Week-end :
+Pour pouvoir gerer les portes ouvertes, nous avons penser à regarder la cellulle du dessus pour savoir si la porte du bas était ouverte ou non, de même pour les autres côté. Le problème que nous avons eu est que si la celulle d'au dessus est une street, elle n'a pas de porte. 
+En refléchissant en groupe, ...
+
 __Partage de taches :__
 
 Lundi 29/01 :
@@ -116,6 +120,9 @@ Vendredi 02/02 :
 
 - Théophane : Modification des tests -> implémentation des beforeEach et ajout, modification de test 
 - Léo : coder la méthode display pour avoir un affichage que l'oint souhaite, non fini.
+
+Week-end :
+- Léo, Dylan : Amelioration du display
 
 ## Semaine 4
 
