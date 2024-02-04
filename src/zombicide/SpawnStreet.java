@@ -9,7 +9,7 @@ public class SpawnStreet extends Street {
     @Override
 	public void  display() {
 		if (this.isTop) {
-			System.out.print(".    ");
+			System.out.print(".   .");
 			this.isTop = false;
 		}
 		else {

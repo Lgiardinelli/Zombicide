@@ -48,8 +48,7 @@ public class Room extends Area {
       * @param direction The direction to add the door.
       */
 
-      public void addDoor(DoorDirection direction) {
-    	  Door door = new Door();
+      public void addDoor(DoorDirection direction, Door door) {
     	  doors.put(direction, door);
       }
 
@@ -59,7 +58,7 @@ public class Room extends Area {
 		Door leftDoor = getDoor(DoorDirection.LEFT);
 		
 		if (this.isTop) {
-			System.out.print(upDoor.isOpen() ? "-- --" : "-----");
+			System.out.print(upDoor.isOpen() ? ".   ." : "-----");
 			this.isTop = false;
 		}
 		else {

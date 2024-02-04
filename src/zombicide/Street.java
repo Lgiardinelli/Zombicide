@@ -9,7 +9,6 @@ public class Street extends Area {
 	@Override
 	public void  display() {		
 		if (this.isTop) {
-			// if ()
 			System.out.print("-----");
 			this.isTop = false;
 		}
