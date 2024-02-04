@@ -168,13 +168,16 @@ public class City {
         int tY = topLeftPos.getY();
 
         for (int i = 0; i < width; i++) {
-            if (this.areas[cY][tX + i] == null)
+            if (this.areas[cY][tX + i] == null) {
                 this.areas[cY][tX + i] = new Street(tX + i, cY);
+            }
         }
 
         for (int i = 0; i < height; i++) {
-            if (this.areas[tY + i][cX] == null)
+            if (this.areas[tY + i][cX] == null) {
                 this.areas[tY + i][cX] = new Street(cX, tY + i);
+                
+            }
         }
     }
 

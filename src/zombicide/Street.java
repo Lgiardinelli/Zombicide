@@ -1,9 +1,12 @@
 package zombicide;
 
 public class Street extends Area {
+	
+	protected boolean isVerticaly;
 
 	public Street(int posX, int posY) {
 		super(posX, posY);
+		this.isVerticaly = true;
 	}
 
 	@Override
