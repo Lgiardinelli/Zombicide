@@ -130,8 +130,6 @@ Week-end :
 - Léo, Dylan : Amelioration du display, travail sur un écran les deux
 - Théophane, Elies : Mis à jour de l'UML en fonction des modifications qui ont été faites et completer le readme. 
 
-- Théophane : Finalisation du diagramme UML concernant la modélisation de la ville
-
 ## Semaine 4
 
 ## Semaine 5
