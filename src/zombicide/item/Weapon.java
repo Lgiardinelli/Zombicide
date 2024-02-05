@@ -1,6 +1,8 @@
-package zombicide;
+package zombicide.item;
 
 import java.util.Random;
+
+import zombicide.Item;
 
 
 public abstract class Weapon implements Item {

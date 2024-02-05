@@ -1,6 +1,6 @@
-package zombicide.weapon;
+package zombicide.item.weapon;
 
-import zombicide.Weapon;
+import zombicide.item.Weapon;
 
 public class Crowbar extends Weapon{
 	
