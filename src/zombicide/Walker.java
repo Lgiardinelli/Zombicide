@@ -6,5 +6,10 @@ public class Walker extends Zombie {
 		this.attackPoints = 1;
 		this.isStrong = false;
 	}
+	
+	public boolean getIsStrong() {
+		return this.isStrong;
+	}
+	
 }
 
