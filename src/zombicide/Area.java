@@ -82,4 +82,7 @@ public abstract class Area {
 	
 	protected void display() {	
 	}
+	
+	protected void display(int n) {	
+	}
 }
