@@ -19,9 +19,22 @@
 
 ## Livrable 1
 
+### Objectif du premier livrable :
+
+Travailler sur la modélisitation de la map et créer un algorithme de création, créer un plateau d'entrainement.
+
+### Etat du développement : 
+
+La modélisation de la carte est terminée avec en supplément l'ajout des portes.
+
 ### Atteinte des objectifs
 
+* Modélisation de la carte est complète.
+* Les portes ont été ajoutée avec succès.
+
 ### Difficultés restant à résoudre
+
+Aucune difficulté majeure n'a été identifiée jusqu'à présent.
 
 ## Livrable 2
 
@@ -142,12 +155,14 @@ Week-end :
 
 __Objectif de la semaine :__  
 
+- Réfléxion sur la modélisation.
+- Avancer dans la modélisation des acteurs et des équipements.
+
 __Objectif atteint :__
 
 __Réflexion du groupe :__  
 
 Lundi 05/02 :
-- Léo, Dylan : Amelioration du display pour gerer les portes entre les streets et début de modification de code pour ajouter des constantes dans le but d'ameliorer le code si modification.
 
 Les jours suivants :
 
@@ -158,15 +173,19 @@ Week-end :
 __Partage de taches :__
 
 Lundi 05/02 : 
+
 - Eliès : création des classes liées aux survivants (Survivor, types de survivants). Ajout des classes BackPack et Role.
 
+- Théophane : Création des classes liées aux zombies (Zombie, types de zombies).
+
+- Léo, Dylan : Amelioration du display pour gerer les portes entre les streets et début de modification de code pour ajouter des constantes dans le but d'ameliorer le code si modification.
 
 Les jours suivants :
     
 Mardi 30/01 :
 
 Mercredi 31/01 :
- 
+
 Jeudi 01/02 :
 
 Vendredi 02/02 :
