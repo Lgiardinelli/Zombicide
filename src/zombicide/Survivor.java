@@ -26,7 +26,7 @@ public class Survivor extends Actor {
      */
     public void handleItem(Item item) {
         if (this.handleItem != null) {
-            this.backpack.addEquipment(this.handleItem);
+            this.backpack.addItem(this.handleItem);
         }
         this.handleItem = item;
     }
