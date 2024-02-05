@@ -216,7 +216,7 @@ Lundi 05/02 :
 
 - Eliès : création des classes liées aux survivants (Survivor, types de survivants). Ajout des classes BackPack et Role.
 
-- Théophane : Création des classes liées aux zombies (Zombie, types de zombies).
+- Théophane : Création des classes liées aux zombies (Zombie, types de zombies), mise en place de l'uml dans le git et mise en forme du livrable 1 
 
 - Léo, Dylan : Amelioration du display pour gerer les portes entre les streets et début de modification de code pour ajouter des constantes dans le but d'ameliorer le code si modification.
 
