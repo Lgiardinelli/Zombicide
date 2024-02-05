@@ -11,6 +11,10 @@
 
 [Le sujet 2024](https://www.fil.univ-lille.fr/~varre/portail/l2s4-projet/sujet2024.pdf)
 
+# UML
+
+![UML](image/uml_map.jpg)
+
 # Livrables
 
 ## Livrable 1
