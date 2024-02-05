@@ -3,6 +3,11 @@ package zombicide;
 import java.util.List;
 import java.util.Random;
 
+import zombicide.area.Room;
+import zombicide.area.Street;
+import zombicide.area.street.ManholeStreet;
+import zombicide.area.street.SpawnStreet;
+
 public class City {
     private final Area[][] areas;
     private final Random random;

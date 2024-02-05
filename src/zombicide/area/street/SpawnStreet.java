@@ -1,4 +1,6 @@
-package zombicide;
+package zombicide.area.street;
+
+import zombicide.area.Street;
 
 public class SpawnStreet extends Street {
 

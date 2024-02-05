@@ -1,7 +1,11 @@
-package zombicide;
+package zombicide.actor;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import zombicide.Actor;
+import zombicide.BackPack;
+import zombicide.Item;
 
 public class Survivor extends Actor {
 

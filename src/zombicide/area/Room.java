@@ -1,7 +1,11 @@
-package zombicide;
+package zombicide.area;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import zombicide.Area;
+import zombicide.Door;
+import zombicide.DoorDirection;
 
 /**
  * The {@code Room} class represents a room in the Zombicide game.

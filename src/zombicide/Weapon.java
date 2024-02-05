@@ -5,11 +5,11 @@ import java.util.Random;
 
 public abstract class Weapon implements Item {
 
-    private int nbDiceThrows;
-    private int diceThreshold;
-    private int damage;
-    private int minHittingRange;
-    private int maxHittingRange;
+    protected int nbDiceThrows;
+    protected int diceThreshold;
+    protected int damage;
+    protected int minHittingRange;
+    protected int maxHittingRange;
 
     /**
      * Performs the shooting action with the weapon, rolling dice and calculating the result.

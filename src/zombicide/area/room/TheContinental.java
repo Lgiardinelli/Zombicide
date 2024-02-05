@@ -1,4 +1,6 @@
-package zombicide;
+package zombicide.area.room;
+
+import zombicide.area.Room;
 
 public class TheContinental extends Room {
 

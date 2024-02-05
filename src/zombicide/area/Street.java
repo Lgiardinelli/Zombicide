@@ -1,4 +1,7 @@
-package zombicide;
+package zombicide.area;
+
+import zombicide.Area;
+import zombicide.DoorDirection;
 
 public class Street extends Area {
 	

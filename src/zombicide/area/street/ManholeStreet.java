@@ -1,4 +1,7 @@
-package zombicide;
+package zombicide.area.street;
+
+import zombicide.DoorDirection;
+import zombicide.area.Street;
 
 public class ManholeStreet extends Street {
 
