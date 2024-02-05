@@ -147,6 +147,7 @@ __Objectif atteint :__
 __Réflexion du groupe :__  
 
 Lundi 05/02 :
+- Léo, Dylan : Amelioration du display pour gerer les portes entre les streets et début de modification de code pour ajouter des constantes dans le but d'ameliorer le code si modification.
 
 Les jours suivants :
 
