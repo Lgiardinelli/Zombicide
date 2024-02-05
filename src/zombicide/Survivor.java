@@ -13,6 +13,7 @@ public class Survivor extends Actor {
      * The survivor starts with 3 action points and 5 life points.
      */
     public Survivor(Role role) {
+    	this.skillPoints = 0;
         this.actionPoints = 3;
         this.lifePoints = 5;
         this.rolePlayer = role;
