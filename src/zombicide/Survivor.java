@@ -33,6 +33,24 @@ public class Survivor extends Actor {
         }
         this.handleItem = item;
     }
+
+	public int getSkillPoints() {
+		return skillPoints;
+	}
+
+	public BackPack getBackpack() {
+		return backpack;
+	}
+
+	public Item getHandleItem() {
+		return handleItem;
+	}
+
+	public List<Role> getRolePlayer() {
+		return rolePlayer;
+	}
+    
+    
     
     
 }
