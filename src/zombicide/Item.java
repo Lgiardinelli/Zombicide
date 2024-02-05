@@ -1,5 +1,5 @@
 package zombicide;
 
-public abstract class Item {
+public interface Item {
 
 }
