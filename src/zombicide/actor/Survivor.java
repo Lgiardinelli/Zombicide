@@ -6,6 +6,7 @@ import java.util.List;
 import zombicide.Actor;
 import zombicide.BackPack;
 import zombicide.Item;
+import zombicide.Role;
 
 public class Survivor extends Actor {
 
