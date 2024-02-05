@@ -5,8 +5,6 @@ public abstract class Actor {
 	private int actionPoints;
 	
 	public Actor() {
-		this.actionPoints = 3;
-		this.lifePoints = 5;
 	}
 	
 	public int getLifePoints() {
