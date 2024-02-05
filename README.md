@@ -19,18 +19,30 @@
 
 ## Livrable 1
 
-### Objectif du premier livrable :
+### Objectif du premier livrable 
 
 Travailler sur la modélisitation de la map et créer un algorithme de création, créer un plateau d'entrainement.
 
-### Etat du développement : 
+### Choix de modélisation 
 
-La modélisation de la carte est terminée avec en supplément l'ajout des portes.
+[???]
+
+### Etat du développement 
+
+- La modélisation de la carte est terminée avec en supplément l'ajout des portes.
+- Test unitaire fonctionnel sur la modélisation de la map (à mettre a jour pendants l'intégration des acteurs et des items).  
 
 ### Atteinte des objectifs
 
-* Modélisation de la carte est complète.
-* Les portes ont été ajoutée avec succès.
+- Modélisation de la carte est complète.
+- Les portes ont été ajoutée avec succès.
+- Les tests unitaires sur la modélisation de la map sont terminée.
+
+### Ensemble des commandes 
+
+- Compilation :   
+- Javadoc : 
+- Jar : 
 
 ### Difficultés restant à résoudre
 
@@ -38,17 +50,43 @@ Aucune difficulté majeure n'a été identifiée jusqu'à présent.
 
 ## Livrable 2
 
+### Objectif du premier livrable 
+
+Modélisation des acteurs et des équipements.
+
+### Choix de modélisation 
+
+### Etat du développement 
+
 ### Atteinte des objectifs
+
+### Ensemble des commandes
 
 ### Difficultés restant à résoudre
 
 ## Livrable 3
+
+### Objectif du premier livrable 
+
+Modélisation des actions.
+
+### Choix de modélisation 
+
+### Etat du développement 
 
 ### Atteinte des objectifs
 
 ### Difficultés restant à résoudre
 
 ## Livrable 4
+
+### Objectif du premier livrable 
+
+Modélisation complète.
+
+### Choix de modélisation 
+
+### Etat du développement 
 
 ### Atteinte des objectifs
 
@@ -78,13 +116,15 @@ __Partage de taches : __
 
 
 ## Semaine 3
-__Objectif de la semaine :__  
+__Objectif de la semaine :__ 
+
 - Finir la modélisation des portes
 - Terminer la modélisation de la map
 - Finir l'affichage de la map
 - Finir les tests
 
 __Objectif atteint :__
+
 - Finir la modélisation des portes
 - Finir les tests
  
@@ -148,8 +188,8 @@ Vendredi 02/02 :
 
 Week-end :
 - Léo, Dylan : Amelioration du display, travail à deux sur un seul écran.
-- Dylan : Crééation des portes dans chaque zones, en prenant en compte le fait qu'une porte peut être dans deux pièces.
-- Théophane, Elies : Mis à jour de l'UML en fonction des modifications qui ont été faites et completer le readme. 
+- Dylan : Création des portes dans chaque zones, en prenant en compte le fait qu'une porte peut être dans deux pièces.
+- Théophane, Elies : Mise à jour de l'UML en fonction des modifications qui ont été faites et completer le readme. 
 
 ## Semaine 4
 
