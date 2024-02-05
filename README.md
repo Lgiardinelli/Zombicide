@@ -157,8 +157,7 @@ Week-end :
 __Partage de taches :__
 
 Lundi 05/02 : 
-
-- Eliès : création des classes liées aux acteurs (survivants, zombies, types de survivants, types de zombies)
+- Eliès : création des classes liées aux survivants (Survivor, types de survivants). Ajout des classes BackPack et Role.
 
 
 Les jours suivants :
