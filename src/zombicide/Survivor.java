@@ -1,12 +1,14 @@
 package zombicide;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class Survivor extends Actor {
 
     private int skillPoints;
     private BackPack backpack;
     private Item handleItem;
-    private Role rolePlayer;
+    private List<Role> rolePlayer;
 
     /**
      * Constructs a new Survivor object with default action points and life points.
@@ -16,7 +18,7 @@ public class Survivor extends Actor {
     	this.skillPoints = 0;
         this.actionPoints = 3;
         this.lifePoints = 5;
-        this.rolePlayer = role;
+        this.rolePlayer = new ArrayList<>();
     }
 
     /**
