@@ -11,4 +11,8 @@ public class Runner extends Zombie {
 	public boolean getIsStrong() {
 		return this.isStrong;
 	}
+	
+	public int getAttackPoints() {
+		return this.attackPoints;
+	}
 }
