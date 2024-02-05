@@ -1,14 +1,18 @@
 package zombicide;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import zombicide.actor.*;
 
 public abstract class Area {
 	
 	private int posX;
 	private int posY;
-//	private List<Survivor> survivors;
-//	private List<Zombie> zombies;
+	private List<Survivor> survivors;
+	private List<Zombie> zombies;
 	private int noise;
 	protected int isTop;
     protected final Map<DoorDirection, Door> doors;
@@ -21,8 +25,8 @@ public abstract class Area {
 	public Area(int posX, int posY) {
 		this.posX = posX;
 		this.posY = posY;		// TODO Auto-generated method stubY;
-//		this.survivors = new ArrayList<Survivor>();
-//		this.zombies = new Arraylist<Zombie>();
+		this.survivors = new ArrayList<>();
+		this.zombies = new ArrayList<>();
 		this.noise = 0;
 		this.isTop = 0;
 		this.doors = new HashMap<>();
