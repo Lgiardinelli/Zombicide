@@ -13,7 +13,7 @@
 
 # UML
 
-![UML](images/uml_map.jpg)
+![UML](image/uml_map.jpg)
 
 # Livrables
 
