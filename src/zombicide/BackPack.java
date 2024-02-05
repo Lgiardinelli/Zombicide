@@ -10,4 +10,10 @@ public class BackPack {
 	public BackPack() {
 		this.items = new ArrayList<>();
 	}
+	
+	
+	public void addItem(Item i) {
+		this.items.add(i);
+	}
+	
 }
