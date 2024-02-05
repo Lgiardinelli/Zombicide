@@ -24,6 +24,21 @@ public abstract class Weapon implements Item {
         }
         return result;
     }
+    
+    
+    
+    /**
+     * Checks if the weapon can successfully shoot based on the dice throws and threshold.
+     *
+     * @return if the weapon can shoot successfully, otherwise.
+     */
+    public boolean canShoot() {
+        int result = shoot();
+        return result >= this.diceThreshold;
+    }
+
+    
+    
 
 	public int getNbDiceThrows() {
 		return nbDiceThrows;
