@@ -6,14 +6,16 @@ public class Survivor extends Actor {
     private int skillPoints;
     private BackPack backpack;
     private Weapon handleWeapon;
+    private Role rolePlayer;
 
     /**
      * Constructs a new Survivor object with default action points and life points.
      * The survivor starts with 3 action points and 5 life points.
      */
-    public Survivor() {
+    public Survivor(Role role) {
         this.actionPoints = 3;
         this.lifePoints = 5;
+        this.rolePlayer = role;
     }
 
     /**
