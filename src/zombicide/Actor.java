@@ -1,11 +1,8 @@
 package zombicide;
 
 public abstract class Actor {
-	private int lifePoints;
-	private int actionPoints;
-	
-	public Actor() {
-	}
+	protected int lifePoints;
+	protected int actionPoints;
 	
 	public int getLifePoints() {
 		return lifePoints;
