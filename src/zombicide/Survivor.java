@@ -5,7 +5,7 @@ public class Survivor extends Actor {
 
     private int skillPoints;
     private BackPack backpack;
-    private Weapon handleWeapon;
+    private Item handleItem;
     private Role rolePlayer;
 
     /**
@@ -24,11 +24,11 @@ public class Survivor extends Actor {
      *
      * @param weapon The weapon to be handled by the survivor.
      */
-    public void handleWeapon(Weapon weapon) {
-        if (this.handleWeapon != null) {
-            this.backpack.addEquipment(this.handleWeapon);
+    public void handleItem(Item item) {
+        if (this.handleItem != null) {
+            this.backpack.addEquipment(this.handleItem);
         }
-        this.handleWeapon = weapon;
+        this.handleItem = item;
     }
     
     
