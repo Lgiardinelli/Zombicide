@@ -7,18 +7,15 @@ public class SpawnStreet extends Street {
     }
 
     @Override
-	public void  display() {
-    	if (this.isTop == 0) {
+	public void  display(int n) {
+    	if (n == 0) {
 			System.out.print(".   .");
-			this.isTop = 1;
 		}
-		else if (this.isTop == 1){
+		else if (n == 1){
 			System.out.print("  _  ");
-			this.isTop = 2;
 		}
 		else {
 			System.out.print("     ");
-			this.isTop = 0;
 		}
 	}
 }

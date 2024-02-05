@@ -18,21 +18,18 @@ public class Room extends Area {
     }
 
 	@Override
-	public void  display() {
+	public void  display(int n) {
 		Door upDoor = getDoor(DoorDirection.UP);
 		Door leftDoor = getDoor(DoorDirection.LEFT);
 		
-		if (this.isTop == 0) {
+		if (n == 0) {
 			System.out.print(upDoor.isOpen() ? "--  -" : "-----");
-			this.isTop = 1;
 		}
-		else if (this.isTop == 1){
+		else if (n == 1){
 			System.out.print(leftDoor.isOpen() ? "-    " : "|    ");
-			this.isTop = 2;
 		}
 		else {
 			System.out.print(leftDoor.isOpen() ? "-    " : "|    ");
-			this.isTop = 0;
 		}
 	}
 	

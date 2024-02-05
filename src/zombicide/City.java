@@ -200,10 +200,18 @@ public class City {
         	for (int n = 0; n<3; n++) {
         		for (int j = 0; j < getWidth(); j++) {
 //        			if (isDoorOpen(i, j-1, DoorDirection.DOWN))
-                    this.areas[i][j].display();
+                    this.areas[i][j].display(n);
                 }
-                System.out.println();
+        		if (n != 0) {
+        			System.out.println('|'); 
+        		}
+        		else {
+        			System.out.println(); 
+        		}
         	}
+        }
+        for (int s=0; s<this.getWidth(); s++) {
+        	System.out.print("-----");
         }
     }
     

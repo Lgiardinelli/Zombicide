@@ -94,7 +94,7 @@ Pour pouvoir gerer les portes ouvertes, nous avons penser à regarder la cellull
 En refléchissant en groupe, nous avons utilisé la solution de faire en sorte qu'une porte soit la même pour les pièces mitoyenne.
 En créant cette méthode, nous l'avons testé et elle fonctionne bien, le problème étant que le code n'est très explicite, nous allons essayer de le simplifier.
 Les portes sont crées comme voulues dans chaque zone, il faut règler l'affichage de ces dernières dans le cas ou la zone est une rue.
-Le problème actuellement est de pouvoir gerer l'affichage dans le cas où entre les street il n'y a pas de porte car comment savoir que deux streets sont a côté.
+Le problème actuellement esEquipementt de pouvoir gerer l'affichage dans le cas où entre les street il n'y a pas de porte car comment savoir que deux streets sont a côté.
 
 __Partage de taches :__
 
@@ -139,6 +139,40 @@ Week-end :
 - Théophane, Elies : Mis à jour de l'UML en fonction des modifications qui ont été faites et completer le readme. 
 
 ## Semaine 4
+
+__Objectif de la semaine :__  
+
+__Objectif atteint :__
+
+__Réflexion du groupe :__  
+
+Lundi 05/02 :
+- Léo, Dylan : Amelioration du display pour gerer les portes entre les streets et début de modification de code pour ajouter des constantes dans le but d'ameliorer le code si modification.
+
+Les jours suivants :
+
+Vendredi 02/02 :
+
+Week-end :
+
+__Partage de taches :__
+
+Lundi 05/02 : 
+- Eliès : création des classes liées aux survivants (Survivor, types de survivants). Ajout des classes BackPack et Role.
+
+
+Les jours suivants :
+    
+Mardi 30/01 :
+
+Mercredi 31/01 :
+ 
+Jeudi 01/02 :
+
+Vendredi 02/02 :
+
+Week-end :
+
 
 ## Semaine 5
 
