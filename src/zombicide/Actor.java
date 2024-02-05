@@ -23,5 +23,7 @@ public abstract class Actor {
 	public void movePlayer() {
 	}
 	
+	public void attack() {}
+	
 	
 }
