@@ -24,4 +24,26 @@ public abstract class Weapon implements Item {
         }
         return result;
     }
+
+	public int getNbDiceThrows() {
+		return nbDiceThrows;
+	}
+
+	public int getDiceThreshold() {
+		return diceThreshold;
+	}
+
+	public int getDamage() {
+		return damage;
+	}
+
+	public int getMinHittingRange() {
+		return minHittingRange;
+	}
+
+	public int getMaxHittingRange() {
+		return maxHittingRange;
+	}
+    
+    
 }
