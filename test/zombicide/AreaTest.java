@@ -5,6 +5,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import zombicide.area.Room;
+import zombicide.area.Street;
+import zombicide.area.room.TheContinental;
+import zombicide.area.room.ThePharmacy;
+
 class AreaTest {
 	
 	private Area room;
