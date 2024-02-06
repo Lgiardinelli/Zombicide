@@ -5,13 +5,17 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import zombicide.area.Room;
+
 class CityTest {
 
 	private City city;
+	private	Room room;
 	
 	@BeforeEach
 	private void before() {
 		city = new City(10,10);
+		room = new Room(5,5);
 	}
 	
 	@Test
@@ -35,6 +39,12 @@ class CityTest {
 	    }
 	}
 	
-	
+	@Test
+	void testGetCellUp() {
+	    Area[][] areas = city.getAreas();
+	    Area expectedArea = areas[0][8];
+	    Area actualArea = city.getCellUp(0, 9);
+	    assertEquals(expectedArea, actualArea);
+	}
 }
 
