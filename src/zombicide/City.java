@@ -1,5 +1,6 @@
 package zombicide;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -12,6 +13,7 @@ public class City {
     private final Area[][] areas;
     private final Random random;
     private SpawnStreet spawnStreet;
+    private List<Room> rooms;
 
     /**
      * Constructs a new City object with the specified width and height.
@@ -22,6 +24,7 @@ public class City {
     public City(int width, int height) {
         this.areas = new Area[height][width];
         this.random = new Random();
+        this.rooms = new ArrayList<>();
         initCity();
     }
     
@@ -38,6 +41,16 @@ public class City {
         splitAreas(topLeftPos, bottomRightPos);
         createRooms();
         createDoors();
+        initDoors();
+    }
+    
+    private void initDoors() {
+    	for (Room r : rooms) {
+    		r.getDoor(DoorDirection.UP).close();
+    		r.getDoor(DoorDirection.DOWN).close();
+    		r.getDoor(DoorDirection.LEFT).close();
+    		r.getDoor(DoorDirection.RIGHT).close();
+    	}
     }
 
     /**
@@ -96,8 +109,11 @@ public class City {
     private void createRooms() {
         for (int i = 0; i < this.getHeight(); i++) {
             for (int j = 0; j < this.getWidth(); j++) {
-                if (this.areas[i][j] == null)
-              		this.areas[i][j] = new Room(j, i);
+                if (this.areas[i][j] == null) {
+                	Room r = new Room(j, i);
+                	this.areas[i][j] = r;
+                	this.rooms.add(r);
+                }
         	}
         }
 	}

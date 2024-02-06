@@ -19,6 +19,10 @@ public class Room extends Area {
      */
     public Room(int x, int y) {
     	super(x, y);
+    	this.getDoor(DoorDirection.UP).close();
+    	this.getDoor(DoorDirection.DOWN).close();
+    	this.getDoor(DoorDirection.LEFT).close();
+    	this.getDoor(DoorDirection.RIGHT).close();
     }
 
 	@Override

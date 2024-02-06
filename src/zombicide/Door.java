@@ -12,7 +12,7 @@ public class Door {
 	 * Constructor for Door
 	 */
 	public Door() {
-		isOpen = false;
+		isOpen = true;
 	}
 	
 	/**

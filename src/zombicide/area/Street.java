@@ -14,7 +14,12 @@ public class Street extends Area {
 	@Override
 	public void  display(int n) {
 		if (n == 0) {
-			System.out.print("-----");
+			if (this.getDoor(DoorDirection.UP).isOpen()) {
+				System.out.print("--  -");
+			}
+			else {
+				System.out.print("-----");
+			}
 		}
 		else if (n == 1){
 			if (this.getDoor(DoorDirection.LEFT).isOpen()) {
