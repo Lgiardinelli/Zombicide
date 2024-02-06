@@ -232,8 +232,9 @@ Mardi 30/01 :
 
 - Eliès : réorganisation des packages pour une meilleure optimisation du projet. Il s'agissait notamment de gérer les classes liées à un héritage.
             Création des méthodes qui gérent une attaque avec les armes ( lancer de dé et vérification pour voir si le seuil était dépassé)
+            Mise à jour du readme 
 
-- Théophane : Ajout des paramètres liées aux caractéristiques des divers zzombies ( points de vie , points d'action , etc...)
+- Théophane : Ajout des paramètres liées aux caractéristiques des divers zombies ( points de vie , points d'action , etc...)
 
 - Dylan : Remodélisation de la méthode qui ajoutait des portes aux zones de la ville pour finaliser son affichage complet.
 
