@@ -25,7 +25,8 @@ Travailler sur la modélisitation de la map et créer un algorithme de création
 
 ### Choix de modélisation 
 
-[???]
+Dans un tout premier temps, il s'agissait de créer un plateau représentant la ville par des listes et de Streets et de Building. Après réflexion, on a vite compris que créer une classe Building serait inutile et que garder seulement les objets de type Room serait plus optimal. Nous avons également convenu qu'il serait préférable d'utiliser des tableaux pour modéliser la ville, comme le tp de BattleSHip réalisé au S3.
+Nous avons donc décidé d'ajouter dans un premier temps les rues tant que la ville pouvait être divisée. Ensuite il s'agissait de repmplir les zones vides par des Rooms qui auront chacun des portes créées à leur instanciation.
 
 ### Etat du développement 
 
@@ -195,7 +196,9 @@ Week-end :
 
 __Objectif de la semaine :__  
 
-- Réfléxion sur la modélisation.
+- Finalisation de la modélisation de la ville.
+- Finalisation de la gestion des portes pour les Rooms
+- Finalisation de l'affichage de la ville
 - Avancer dans la modélisation des acteurs et des équipements.
 
 __Objectif atteint :__
@@ -203,6 +206,8 @@ __Objectif atteint :__
 __Réflexion du groupe :__  
 
 Lundi 05/02 :
+
+- On a d'abord réfléchi concernant la gestion des portes. En effet, il s'agissait de décider si les Street pouvaient elles aussi avoir des portes ( pour une gestion plus facile pour la méthode d'affichage de la ville) ou non. Cette option a été finalement choisie. 
 
 Les jours suivants :
 
@@ -214,7 +219,8 @@ __Partage de taches :__
 
 Lundi 05/02 : 
 
-- Eliès : création des classes liées aux survivants (Survivor, types de survivants). Ajout des classes BackPack et Role.
+- Eliès : création des classes liées aux survivants (Survivor, types de survivants). Ajout des classes BackPack et Role. 
+         Ajout des paramètres liées aux caractéristiques des diverses armes ( points de dégats , seuil , etc...)
 
 - Théophane : Création des classes liées aux zombies (Zombie, types de zombies), mise en place de l'uml dans le git et mise en forme du livrable 1 
 
@@ -222,7 +228,14 @@ Lundi 05/02 :
 
 Les jours suivants :
     
-Mardi 30/01 :
+Mardi 30/01 : 
+
+- Eliès : réorganisation des packages pour une meilleure optimisation du projet. Il s'agissait notamment de gérer les classes liées à un héritage.
+            Création des méthodes qui gérent une attaque avec les armes ( lancer de dé et vérification pour voir si le seuil était dépassé)
+
+- Théophane : Ajout des paramètres liées aux caractéristiques des divers zzombies ( points de vie , points d'action , etc...)
+
+- Dylan : Remodélisation de la méthode qui ajoutait des portes aux zones de la ville pour finaliser son affichage complet.
 
 Mercredi 31/01 :
 
