@@ -24,4 +24,17 @@ class CityTest {
 		assertEquals(city.getHeight(), 10);
 		assertEquals(city.getWidth(), 10);
 	}
+	
+	@Test
+	void testGetArea() {
+		Area[][] area2 = city.getAreas();
+		for (int i = 0; i < 10; i++) {
+	        for (int j = 0; j < 10; j++) {
+	            assertNotNull(area2[i][j]);
+	        }
+	    }
+	}
+	
+	
 }
+
