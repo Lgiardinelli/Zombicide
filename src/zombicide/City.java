@@ -46,10 +46,15 @@ public class City {
     
     private void initDoors() {
     	for (Room r : rooms) {
-    		r.getDoor(DoorDirection.UP).close();
-    		r.getDoor(DoorDirection.DOWN).close();
-    		r.getDoor(DoorDirection.LEFT).close();
-    		r.getDoor(DoorDirection.RIGHT).close();
+    		for (DoorDirection d : DoorDirection.values()) {
+    			r.getDoor(d).close();
+    		}
+    	}
+    	for (int i = 0; i < this.getHeight(); i++) {
+    		for (int j = 0 ; j < this.getWidth(); j++) {
+    			this.getAreas()[0][j].getDoor(DoorDirection.UP).close();
+    			this.getAreas()[i][0].getDoor(DoorDirection.LEFT).close();
+    		}
     	}
     }
 

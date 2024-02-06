@@ -3,7 +3,7 @@ package zombicide;
 public class MiniCityMain {
 
 	public static void main(String[] args) {
-		 City aCity = new City(5,5);
+		 City aCity = new City(20, 20);
 		 Area r = aCity.getAreas()[0][0];
 		 r.getDoor(DoorDirection.RIGHT).open();
 		 Area r1 = aCity.getAreas()[0][4];
