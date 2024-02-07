@@ -31,7 +31,8 @@ Nous avons également convenu qu'il serait préférable d'utiliser des tableaux 
 Nous avons donc décidé d'ajouter dans un premier temps les rues tant que la ville pouvait être divisée en prenant en compte les contraintes imposées (un batiment doit faire au minimum 2 de largeur et longueur).  
 Ensuite il s'agissait de placer les pièces spéciales (Continental et Pharmacie), nous avons créé une méthode qui permettait de prendre une position aléatoire dans la ville et de vérifier si elle etait null (pour éviter de tomber sur une steeet), puis donc de l'assigner à cette position.  
 Enfin, nous avons rempli les zones vides par des Rooms qui sont ajoutée dans une liste de room.   
-Cette liste vas permettre en itérant dessus, de fermé les portes parmis toutes les positions (UP, DOWN, LEFT, RIGHT) car de bases, toutes les portes de toutes les cellulles sont ouvertes.  
+Cette liste vas permettre en itérant dessus, de fermer les portes parmis toutes les positions (UP, DOWN, LEFT, RIGHT) car de bases, toutes les portes de toutes les cellulles sont ouvertes.  
+Ce qui donne l'affichage idéal de MiniCityMain (la ville d'entraînement.  
 
 ### Etat du développement 
 
