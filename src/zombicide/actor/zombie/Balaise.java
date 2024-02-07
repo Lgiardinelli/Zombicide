@@ -9,4 +9,8 @@ public class Balaise extends Zombie{
 		this.attackPoints = 2;
 		this.isStrong = true;
 	}
+	
+	public boolean getIsStrong() {
+		return this.isStrong;
+	}
 }
