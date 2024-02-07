@@ -13,4 +13,8 @@ public class ThePharmacy extends Room {
 		return true;
 	}
 
+	@Override
+	public void display(int n) {
+		System.out.print("  F  ");
+	}
 }

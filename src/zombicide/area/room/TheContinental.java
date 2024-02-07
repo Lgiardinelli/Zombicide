@@ -13,4 +13,9 @@ public class TheContinental extends Room {
 	public boolean canFight() {
 		return false;
 	}
+	
+	@Override
+	public void display(int n) {
+		System.out.print("  C  ");
+	}
 }
