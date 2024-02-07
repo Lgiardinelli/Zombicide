@@ -1,5 +1,6 @@
 package zombicide.area.room;
 
+import zombicide.DoorDirection;
 import zombicide.area.Room;
 
 public class ThePharmacy extends Room {
@@ -15,6 +16,30 @@ public class ThePharmacy extends Room {
 
 	@Override
 	public void display(int n) {
-		System.out.print("  F  ");
+		if (n == 0) {
+			if (this.getDoor(DoorDirection.UP).isOpen()) {
+				System.out.print(OPEN_UP);
+			}
+			else {
+				System.out.print("-----");
+			}
+		}
+		else if (n == 1){
+			if (this.getDoor(DoorDirection.LEFT).isOpen()) {
+				System.out.print("  P  ");
+			}
+			else {
+				System.out.print("| P  ");
+			}
+			
+		}
+		else {
+			if (this.getDoor(DoorDirection.LEFT).isOpen()) {
+				System.out.print("     ");
+			}
+			else {
+				System.out.print("|    ");
+			}
+		}
 	}
 }
