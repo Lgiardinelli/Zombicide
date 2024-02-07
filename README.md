@@ -41,9 +41,22 @@ Ce qui donne l'affichage idéal de MiniCityMain (la ville d'entraînement.
 - Les tests unitaires sur la modélisation de la map sont terminée.
 
 ### Ensemble des commandes 
-- Compilation : 
+- Compilation
+```bash
+javac -sourcepath src src/zombicide/*.java -d classes
+```
+
 - Javadoc : 
-- Jar : 
+
+- Jar compilation
+```bash
+jar cvfe livrable1.jar src/zombicide/Main.java -C classes .
+```
+- Jar exécution
+```bash
+java -jar livrable1.jar
+```
+
 
 ### Difficultés restant à résoudre
 Aucune difficulté majeure n'a été identifiée jusqu'à présent.
