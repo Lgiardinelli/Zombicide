@@ -25,7 +25,12 @@ Travailler sur la modélisitation de la map et créer un algorithme de création
 
 ### Choix de modélisation 
 
-Dans un tout premier temps, il s'agissait de créer un plateau représentant la ville par des listes et de Streets et de Building. Après réflexion, on a vite compris que créer une classe Building serait inutile et que garder seulement les objets de type Room serait plus optimal. Nous avons également convenu qu'il serait préférable d'utiliser des tableaux pour modéliser la ville, comme le tp de BattleSHip réalisé au S3.
+Dans un tout premier temps, il s'agissait de créer un plateau représentant la ville par des listes et de Streets et de Building.
+ 
+Après réflexion, on a vite compris que créer une classe Building serait inutile et que garder seulement les objets de type Room serait plus optimal. 
+
+Nous avons également convenu qu'il serait préférable d'utiliser des tableaux pour modéliser la ville, comme le tp de BattleSHip réalisé au S3.
+
 Nous avons donc décidé d'ajouter dans un premier temps les rues tant que la ville pouvait être divisée. Ensuite il s'agissait de repmplir les zones vides par des Rooms qui auront chacun des portes créées à leur instanciation.
 
 ### Etat du développement 
@@ -245,7 +250,9 @@ Mardi 30/01 :
 - Dylan : Remodélisation de la méthode qui ajoutait des portes aux zones de la ville pour finaliser son affichage complet.
 
 Mercredi 31/01 :
-- Léo, Dylan :	Remodélisation des méthodes pour gerer toutes les portes qui doivent rester ouvertes (entre les streets), display fini.
+- Léo, Dylan : Remodélisation des méthodes pour gerer toutes les portes qui doivent rester ouvertes (entre les streets), display fini.
+
+- Théophane : Ajout du package role avec les classes le concernant et modification des classes zombies pour ajouter des methodes les concernants
 
 Jeudi 01/02 :
 
