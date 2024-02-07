@@ -254,6 +254,10 @@ Mercredi 31/01 :
 - Léo, Dylan : Remodélisation des méthodes pour gerer toutes les portes qui doivent rester ouvertes (entre les streets), display fini.
 
 - Théophane : Ajout du package role avec les classes le concernant et modification des classes zombies pour ajouter des methodes les concernants
+                Ajout des classes liées aux équipements (Item)
+
+- Eliès : réalisation de la java doc sur plusieurs classes du projet.
+            Ajout de méthodes pour la modélisation des Actor et des Survivor.
 
 Jeudi 01/02 :
 
