@@ -26,7 +26,7 @@ public class ThePharmacy extends Room {
 		}
 		else if (n == 1){
 			if (this.getDoor(DoorDirection.LEFT).isOpen()) {
-				System.out.print("  P  ");
+				System.out.print("- P  ");
 			}
 			else {
 				System.out.print("| P  ");
@@ -35,7 +35,7 @@ public class ThePharmacy extends Room {
 		}
 		else {
 			if (this.getDoor(DoorDirection.LEFT).isOpen()) {
-				System.out.print("     ");
+				System.out.print("-    ");
 			}
 			else {
 				System.out.print("|    ");

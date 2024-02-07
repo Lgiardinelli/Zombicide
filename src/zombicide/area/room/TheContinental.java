@@ -27,7 +27,7 @@ public class TheContinental extends Room {
 		}
 		else if (n == 1){
 			if (this.getDoor(DoorDirection.LEFT).isOpen()) {
-				System.out.print("  C  ");
+				System.out.print("- C  ");
 			}
 			else {
 				System.out.print("| C  ");
@@ -36,7 +36,7 @@ public class TheContinental extends Room {
 		}
 		else {
 			if (this.getDoor(DoorDirection.LEFT).isOpen()) {
-				System.out.print("     ");
+				System.out.print("-    ");
 			}
 			else {
 				System.out.print("|    ");
