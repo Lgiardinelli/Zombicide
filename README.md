@@ -202,12 +202,18 @@ __Objectif de la semaine :__
 - Avancer dans la modélisation des acteurs et des équipements.
 
 __Objectif atteint :__
+- Finalisation de la gestion des portes pour les Rooms
+- Finalisation de l'affichage de la ville
 
 __Réflexion du groupe :__  
 
 Lundi 05/02 :
 
-- On a d'abord réfléchi concernant la gestion des portes. En effet, il s'agissait de décider si les Street pouvaient elles aussi avoir des portes ( pour une gestion plus facile pour la méthode d'affichage de la ville) ou non. Cette option a été finalement choisie. 
+- On a d'abord réfléchi concernant la gestion des portes. En effet, il s'agissait de décider si les Street pouvaient elles aussi avoir des portes ( pour une gestion plus facile pour la méthode d'affichage de la ville) ou non. Cette option a été finalement choisie.
+
+Mercredi 07/02 :
+- Après de longues réflexions et plusieurs essaie de modélisation pour gerer les portes, nous avons réussi à résoudre cela en ouvrant les portes de toutes les cellulles à la création du plateau et en parcourant la liste des rooms, fermer les 4 côtés. Ce qui a permis d'avoir un plateau optimal et correspondant à nos attentes et objectifs.
+- Ajout des constantes dans Area pour l'affichage des portes ouvertes et fermées pour éviter la redondance dans chaque classes pour la méthode display. Ce qui permettra si l'ont souhaite modifier l'affichage de modifier que dans la classe Area et non dans toutes les classes qui hérite de celle-ci. 
 
 Les jours suivants :
 
@@ -239,6 +245,7 @@ Mardi 30/01 :
 - Dylan : Remodélisation de la méthode qui ajoutait des portes aux zones de la ville pour finaliser son affichage complet.
 
 Mercredi 31/01 :
+- Léo, Dylan :	Remodélisation des méthodes pour gerer toutes les portes qui doivent rester ouvertes (entre les streets), display fini.
 
 Jeudi 01/02 :
 
