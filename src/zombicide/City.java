@@ -30,12 +30,17 @@ public class City {
         initCity();
     }
     
+    /**
+     * Retrieves the array of areas representing the city.
+     *
+     * @return The array of areas representing the city.
+     */
     public Area[][] getAreas() {
-		return this.areas;
-	}
+        return this.areas;
+    }
 
     /**
-     * Initializes the city by splitting the areas.
+     * Initializes the city by splitting the areas and creating rooms.
      */
     private void initCity() {
         Position topLeftPos = getTopLeftPosition();
@@ -44,35 +49,48 @@ public class City {
         createRooms();
     }
 
-	private Position getBottomRightPosition() {
-		return new Position(getWidth() - 1, getHeight() - 1);
-	}
+    /**
+     * Retrieves the position of the bottom-right corner of the city.
+     *
+     * @return The position of the bottom-right corner of the city.
+     */
+    private Position getBottomRightPosition() {
+        return new Position(getWidth() - 1, getHeight() - 1);
+    }
 
-	private Position getTopLeftPosition() {
-		return new Position(0, 0);
-	}
-    
+    /**
+     * Retrieves the position of the top-left corner of the city.
+     *
+     * @return The position of the top-left corner of the city.
+     */
+    private Position getTopLeftPosition() {
+        return new Position(0, 0);
+    }
+
+    /**
+     * Initializes doors for the rooms and areas.
+     *
+     * @param rooms The list of rooms in the city.
+     */
     private void initDoors(List<Room> rooms) {
-    	createDoors();
-    	
-    	for (Room r : rooms) {
-    		for (DoorDirection d : DoorDirection.values()) {
-    			r.getDoor(d).close();
-    		}
-    	}
-    	
-    	for (int i = 0; i < this.getHeight(); i++) {
-    		for (int j = 0 ; j < this.getWidth(); j++) {
-    			this.getAreas()[0][j].getDoor(DoorDirection.UP).close();
-    			this.getAreas()[i][0].getDoor(DoorDirection.LEFT).close();
-    		}
-    	}
+        createDoors();
+
+        for (Room r : rooms) {
+            for (DoorDirection d : DoorDirection.values()) {
+                r.getDoor(d).close();
+            }
+        }
+
+        for (int i = 0; i < this.getHeight(); i++) {
+            this.getAreas()[0][i].getDoor(DoorDirection.UP).close();
+            this.getAreas()[i][0].getDoor(DoorDirection.LEFT).close();
+        }
     }
 
     /**
      * Creates a spawn street at the given position.
      *
-     * @param p the position of the spawn street
+     * @param p The position of the spawn street.
      */
     private void createSpawnStreet(Position p) {
         int x = p.getX();
@@ -84,27 +102,35 @@ public class City {
     /**
      * Generates a random position between the given bounds.
      *
-     * @param pos1 the first position
-     * @param pos2 the second position
-     * @return a random position between the bounds
+     * @param pos1 The first position.
+     * @param pos2 The second position.
+     * @return A random position between the bounds.
      */
     private Position getRandomCrossRoadPos(Position pos1, Position pos2) {
         return getRandomPos(pos1, pos2, 2);
     }
-    
+
     /**
      * Generates a random position between the given bounds.
      *
-     * @param pos1 the first position
-     * @param pos2 the second position
-     * @return a random position between the bounds
+     * @param pos1 The first position.
+     * @param pos2 The second position.
+     * @return A random position between the bounds.
      */
     private Position getRandomRoomPos(Position pos1, Position pos2) {
         return getRandomPos(pos1, pos2, 0);
     }
-    
+
+    /**
+     * Generates a random position between the given bounds.
+     *
+     * @param pos1      The first position.
+     * @param pos2      The second position.
+     * @param delimiter The delimiter to adjust randomness.
+     * @return A random position between the bounds.
+     */
     private Position getRandomPos(Position pos1, Position pos2, int delimiter) {
-    	int x = random.nextInt(pos1.getX() + delimiter, pos2.getX() - delimiter + 1);
+        int x = random.nextInt(pos1.getX() + delimiter, pos2.getX() - delimiter + 1);
         int y = random.nextInt(pos1.getY() + delimiter, pos2.getY() - delimiter + 1);
         return new Position(x, y);
     }
@@ -112,130 +138,128 @@ public class City {
     /**
      * Splits the areas of the city recursively.
      *
-     * @param topLeftPos      the top left position of the area
-     * @param bottomRightPos  the bottom right position of the area
+     * @param topLeftPos      The top left position of the area.
+     * @param bottomRightPos  The bottom right position of the area.
      */
     private void splitAreas(Position topLeftPos, Position bottomRightPos) {
         Position crossroadPos = getRandomCrossRoadPos(topLeftPos, bottomRightPos);
 
+
         if (this.spawnStreet == null) {
-        	createSpawnStreet(crossroadPos);
-        	createManholes(crossroadPos, topLeftPos, bottomRightPos);
+            createSpawnStreet(crossroadPos);
+            createManholes(crossroadPos, topLeftPos, bottomRightPos);
         }
+
 
         createStreets(crossroadPos, topLeftPos, bottomRightPos);
 
-        List<Position[]> areasPositions = getSplittedPositions(crossroadPos, topLeftPos, bottomRightPos);
 
+        List<Position[]> areasPositions = getSplittedPositions(crossroadPos, topLeftPos, bottomRightPos);
         for (Position[] positions : areasPositions) {
             Position newTopLeftPos = positions[0];
             Position newBottomRightPos = positions[1];
-
             if (isAreaSplittable(newTopLeftPos, newBottomRightPos)) {
                 splitAreas(newTopLeftPos, newBottomRightPos);
             }
         }
     }
-    
-    private Position getEmptyRoomPos() {
-    	Position pos;
-    	do {
-    		pos = getRandomRoomPos(getTopLeftPosition(), getBottomRightPosition());
-    	} while (this.getAreas()[pos.getY()][pos.getX()] != null);
-    	return pos;
-    }
-    
-    private void createSpecialRoom(Class<? extends Room> room, List<Room> rooms) {
-		Position pos = getEmptyRoomPos();
-		int x = pos.getX();
-		int y = pos.getY();
 
-		try {
-			Room r = room.getDeclaredConstructor(int.class, int.class).newInstance(x, y);
-			this.areas[y][x] = r;
-			rooms.add(r);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-    }
     
+    /**
+     * Retrieves an empty position for a room.
+     *
+     * @return An empty position for a room.
+     */
+    private Position getEmptyRoomPos() {
+        Position pos;
+        do {
+            pos = getRandomRoomPos(getTopLeftPosition(), getBottomRightPosition());
+        } while (this.getAreas()[pos.getY()][pos.getX()] != null);
+        return pos;
+    }
+
+    /**
+     * Creates a special room of the given type and adds it to the city.
+     *
+     * @param room  The class representing the special room.
+     * @param rooms The list of rooms in the city.
+     * @return The created special room.
+     */
+    private Room createSpecialRoom(Class<? extends Room> room, List<Room> rooms) {
+        Position pos = getEmptyRoomPos();
+        int x = pos.getX();
+        int y = pos.getY();
+
+        try {
+            Room r = room.getDeclaredConstructor(int.class, int.class).newInstance(x, y);
+            this.areas[y][x] = r;
+            rooms.add(r);
+            return r;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * Initializes the city by creating special rooms and regular rooms.
+     */
     private void createRooms() {
-    	List<Room> rooms = new ArrayList<>();
-    	
-    	createSpecialRoom(TheContinental.class, rooms);
-    	createSpecialRoom(ThePharmacy.class, rooms);
-    	
+        List<Room> rooms = new ArrayList<>();
+
+
+        this.theContinental = (TheContinental) createSpecialRoom(TheContinental.class, rooms);
+        this.thePharmacy = (ThePharmacy) createSpecialRoom(ThePharmacy.class, rooms);
+
+
         for (int i = 0; i < this.getHeight(); i++) {
             for (int j = 0; j < this.getWidth(); j++) {
                 if (this.areas[i][j] == null) {
-                	Room r = new Room(j, i);
-                	this.areas[i][j] = r;
-                	rooms.add(r);
+                    Room r = new Room(j, i);
+                    this.areas[i][j] = r;
+                    rooms.add(r);
                 }
-        	}
+            }
         }
         initDoors(rooms);
-	}
+    }
 
     /**
      * Creates manhole streets at the extremities of the principal crossroad's streets.
      *
-     * This method places manhole streets at specific positions within the areas array,
-     * defining the boundaries of the streets that intersect at the given crossroad position.
-     *
-     * @param crossroadPos The position of the principal crossroad where streets intersect.
-     * @param topLeftPos The position representing the top-left corner of the area to be considered.
-     * @param bottomRightPos The position representing the bottom-right corner of the area to be considered.
+     * @param crossroadPos    The position of the principal crossroad where streets intersect.
+     * @param topLeftPos      The position representing the top-left corner of the area to be considered.
+     * @param bottomRightPos  The position representing the bottom-right corner of the area to be considered.
      */
     private void createManholes(Position crossroadPos, Position topLeftPos, Position bottomRightPos) {
-        this.areas[0][crossroadPos.getX()] = 
-        		new ManholeStreet(crossroadPos.getX(), 0);
-        
-        this.areas[crossroadPos.getY()][bottomRightPos.getX()] =
-                new ManholeStreet(bottomRightPos.getX(), crossroadPos.getY());
-
-        this.areas[bottomRightPos.getY()][crossroadPos.getX()] =
-                new ManholeStreet(crossroadPos.getX(), bottomRightPos.getY());
-        
-        this.areas[crossroadPos.getY()][0] = 
-        		new ManholeStreet(0, crossroadPos.getY());
+        this.areas[0][crossroadPos.getX()] = new ManholeStreet(crossroadPos.getX(), 0);
+        this.areas[crossroadPos.getY()][bottomRightPos.getX()] = new ManholeStreet(bottomRightPos.getX(), crossroadPos.getY());
+        this.areas[bottomRightPos.getY()][crossroadPos.getX()] = new ManholeStreet(crossroadPos.getX(), bottomRightPos.getY());
+        this.areas[crossroadPos.getY()][0] = new ManholeStreet(0, crossroadPos.getY());
     }
 
-
-	/**
+    /**
      * Gets the positions of the areas after splitting.
      *
-     * @param crossroadPos     the position of the crossroad
-     * @param topLeftPos       the top left position of the area
-     * @param bottomRightPos   the bottom right position of the area
-     * @return a list of positions representing the splitted areas
+     * @param crossroadPos    The position of the crossroad.
+     * @param topLeftPos      The top left position of the area.
+     * @param bottomRightPos  The bottom right position of the area.
+     * @return A list of positions representing the splitted areas.
      */
     private List<Position[]> getSplittedPositions(Position crossroadPos, Position topLeftPos, Position bottomRightPos) {
-        Position[] topLeftArea = {
-                topLeftPos,
-                new Position(crossroadPos.getX() - 1, crossroadPos.getY() - 1)
-        };
-        Position[] topRightArea = {
-                new Position(crossroadPos.getX() + 1, topLeftPos.getY()),
-                new Position(bottomRightPos.getX(), crossroadPos.getY() - 1)
-        };
-        Position[] bottomLeftArea = {
-                new Position(topLeftPos.getX(), crossroadPos.getY() + 1),
-                new Position(crossroadPos.getX() - 1, bottomRightPos.getY())
-        };
-        Position[] bottomRightArea = {
-                new Position(crossroadPos.getX() + 1, crossroadPos.getY() + 1),
-                bottomRightPos
-        };
+        Position[] topLeftArea = { topLeftPos, new Position(crossroadPos.getX() - 1, crossroadPos.getY() - 1) };
+        Position[] topRightArea = { new Position(crossroadPos.getX() + 1, topLeftPos.getY()), new Position(bottomRightPos.getX(), crossroadPos.getY() - 1) };
+        Position[] bottomLeftArea = { new Position(topLeftPos.getX(), crossroadPos.getY() + 1), new Position(crossroadPos.getX() - 1, bottomRightPos.getY()) };
+        Position[] bottomRightArea = { new Position(crossroadPos.getX() + 1, crossroadPos.getY() + 1), bottomRightPos };
         return List.of(topLeftArea, topRightArea, bottomLeftArea, bottomRightArea);
     }
 
     /**
      * Creates streets based on the crossroad position and the area bounds.
      *
-     * @param crossRoadPos     the position of the crossroad
-     * @param topLeftPos       the top left position of the area
-     * @param bottomRightPos   the bottom right position of the area
+     * @param crossRoadPos    The position of the crossroad.
+     * @param topLeftPos      The top left position of the area.
+     * @param bottomRightPos  The bottom right position of the area.
      */
     private void createStreets(Position crossRoadPos, Position topLeftPos, Position bottomRightPos) {
         int width = getAreasWidth(topLeftPos, bottomRightPos);
@@ -247,16 +271,17 @@ public class City {
         int tX = topLeftPos.getX();
         int tY = topLeftPos.getY();
 
+
         for (int i = 0; i < width; i++) {
             if (this.areas[cY][tX + i] == null) {
                 this.areas[cY][tX + i] = new Street(tX + i, cY);
             }
         }
 
+
         for (int i = 0; i < height; i++) {
             if (this.areas[tY + i][cX] == null) {
                 this.areas[tY + i][cX] = new Street(cX, tY + i);
-                
             }
         }
     }
@@ -264,54 +289,64 @@ public class City {
     /**
      * Checks if an area is splittable based on its size.
      *
-     * @param pos1 the top left position of the area
-     * @param pos2 the bottom right position of the area
-     * @return true if the area is splittable, false otherwise
+     * @param pos1 The top left position of the area.
+     * @param pos2 The bottom right position of the area.
+     * @return True if the area is splittable, false otherwise.
      */
     private boolean isAreaSplittable(Position pos1, Position pos2) {
         return getAreasWidth(pos1, pos2) >= 5 && getAreasHeight(pos1, pos2) >= 5;
     }
+
 
     /**
      * Displays the city by printing the areas.
      */
     public void display() {
         for (int i = 0; i < getHeight(); i++) {
-        	for (int n = 0; n<3; n++) {
-        		for (int j = 0; j < getWidth(); j++) {
-//        			if (isDoorOpen(i, j-1, DoorDirection.DOWN))
+            for (int n = 0; n < 3; n++) {
+                for (int j = 0; j < getWidth(); j++) {
                     this.areas[i][j].display(n);
                 }
-        		if (n != 0) {
-        			System.out.println('|'); 
-        		}
-        		else {
-        			System.out.println(); 
-        		}
-        	}
+                if (n != 0) {
+                    System.out.println('|');
+                } else {
+                    System.out.println();
+                }
+            }
         }
-        for (int s=0; s<this.getWidth(); s++) {
-        	System.out.print("-----");
+        for (int s = 0; s < getWidth(); s++) {
+            System.out.print("-----");
         }
     }
-    
+
+    /**
+     * Checks if a door is open in a specified direction.
+     *
+     * @param x The x-coordinate of the area.
+     * @param y The y-coordinate of the area.
+     * @param d The direction of the door to check.
+     * @return True if the door is open, otherwise false.
+     */
     public boolean isDoorOpen(int x, int y, DoorDirection d) {
-    	Area a;
-    	if (d == DoorDirection.UP)
-    		a = this.areas[x][y-1];
-    	else if (d == DoorDirection.LEFT)
-    		a = this.areas[x-1][y];
-    	else 
-    		return false;
-    	
-    	try {
+        Area a;
+        if (d == DoorDirection.UP)
+            a = this.areas[x][y - 1];
+        else if (d == DoorDirection.LEFT)
+            a = this.areas[x - 1][y];
+        else
+            return false;
+
+        try {
             Room r = (Room) a;
             return r.getDoor(d).isOpen();
-        } catch(ClassCastException e) {
+        } catch (ClassCastException e) {
             return false;
         }
     }
-    
+
+    /**
+     * Creates doors between areas.
+     */
     private void createDoors() {
         for (int i = 0; i < this.getHeight(); i++) {
             for (int j = 0; j < this.getWidth(); j++) {
@@ -321,28 +356,28 @@ public class City {
                     Area area = this.areas[i][j];
                     area.addDoor(DoorDirection.UP, upDoor);
                     area.addDoor(DoorDirection.LEFT, leftDoor);
-                } catch(ArrayIndexOutOfBoundsException e) {
-    			}
-    			try {
+                } catch (ArrayIndexOutOfBoundsException e) {
+                }
+                try {
                     Area upArea = this.areas[i - 1][j];
                     upArea.addDoor(DoorDirection.DOWN, upDoor);
-                } catch(ArrayIndexOutOfBoundsException e) {
-    			}
-    			try {
+                } catch (ArrayIndexOutOfBoundsException e) {
+                }
+                try {
                     Area leftArea = this.areas[i][j - 1];
                     leftArea.addDoor(DoorDirection.RIGHT, leftDoor);
-                } catch(ArrayIndexOutOfBoundsException e) {
-    			}
-        	}
+                } catch (ArrayIndexOutOfBoundsException e) {
+                }
+            }
         }
-	}
-    
+    }
+
     /**
      * Gets the width of the areas based on the given positions.
      *
-     * @param pos1 the top left position of the area
-     * @param pos2 the bottom right position of the area
-     * @return the width of the areas
+     * @param pos1 The top left position of the area.
+     * @param pos2 The bottom right position of the area.
+     * @return The width of the areas.
      */
     private int getAreasWidth(Position pos1, Position pos2) {
         return pos2.getX() - pos1.getX() + 1;
@@ -351,9 +386,9 @@ public class City {
     /**
      * Gets the height of the areas based on the given positions.
      *
-     * @param pos1 the top left position of the area
-     * @param pos2 the bottom right position of the area
-     * @return the height of the areas
+     * @param pos1 The top left position of the area.
+     * @param pos2 The bottom right position of the area.
+     * @return The height of the areas.
      */
     private int getAreasHeight(Position pos1, Position pos2) {
         return pos2.getY() - pos1.getY() + 1;
@@ -362,7 +397,7 @@ public class City {
     /**
      * Gets the width of the city.
      *
-     * @return the width of the city
+     * @return The width of the city.
      */
     public int getWidth() {
         return this.areas[0].length;
@@ -371,13 +406,21 @@ public class City {
     /**
      * Gets the height of the city.
      *
-     * @return the height of the city
+     * @return The height of the city.
      */
     public int getHeight() {
         return this.areas.length;
     }
-    
+
+    /**
+     * Retrieves the area above a specified position.
+     *
+     * @param x The x-coordinate of the area.
+     * @param y The y-coordinate of the area.
+     * @return The area above the specified position.
+     */
     public Area getCellUp(int x, int y) {
-    	return this.areas[x][y-1];
+        return this.areas[x][y - 1];
     }
+
 }
