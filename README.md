@@ -50,14 +50,19 @@ javac -sourcepath src src/zombicide/*.java -d classes
 java -classpath classes zombicide.Main 10 10
 ```
 
-- Tests
+- Tests compilation
 ```bash
-
+javac -classpath junit-console.jar:classes test/zombicide/*.java
 ```
 
 - Javadoc
 ```bash
 javadoc -sourcepath src -subpackages zombicide -d docs
+```
+
+- Test exécution
+```bash
+java -jar junit-console.jar -classpath test:classes -scan-classpath
 ```
 
 - Jar compilation
