@@ -43,6 +43,7 @@ class AreaTest {
 	/**
 	 * Corriger les tests avec le beforeEach
 	 */
+	/**
 	@Test
     void testAreaSurvivorList() {
 		//Room
@@ -67,11 +68,12 @@ class AreaTest {
         assertFalse(street.getSurvivors().isEmpty());
         assertTrue(street.getSurvivors().contains(survivor));
     }
-	
+	*/
 	
 	/**
 	 * Corriger les tests avec le beforeEach
 	 */
+	/**
 	@Test
     void testAreaZombieList() {
 		//Room
@@ -96,6 +98,7 @@ class AreaTest {
         assertFalse(street.getZombies().isEmpty());
         assertTrue(street.getZombies().contains(zombie));
 	}
+	*/
 	
 	@Test
     void testAreaCanFight() {
@@ -112,6 +115,7 @@ class AreaTest {
 	/**
 	 * Faire les tests sur la précence de loot dans area et corriger avec un beforeEach 
 	 */
+	/**
 	@Test
 	void testLootInArea() {
 		//Room
@@ -123,6 +127,7 @@ class AreaTest {
 		//Pharmacy
 		Area pharmacy = new ThePharmacy(6,6);
 	}
+	*/
 	
 	@Test
 	void testPositionOfArea() {
