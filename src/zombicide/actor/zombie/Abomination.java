@@ -13,4 +13,8 @@ public class Abomination extends Zombie {
 	public boolean getIsStrong() {
 		return this.isStrong;
 	}
+	
+	public int getAttackPoints() {
+		return this.attackPoints;
+	}
 }
