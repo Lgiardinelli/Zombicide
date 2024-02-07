@@ -25,13 +25,13 @@ Travailler sur la modélisitation de la map et créer un algorithme de création
 
 ### Choix de modélisation 
 
-Dans un tout premier temps, il s'agissait de créer un plateau représentant la ville par des listes et de Streets et de Building.
- 
-Après réflexion, on a vite compris que créer une classe Building serait inutile et que garder seulement les objets de type Room serait plus optimal. 
-
-Nous avons également convenu qu'il serait préférable d'utiliser des tableaux pour modéliser la ville, comme le tp de BattleSHip réalisé au S3.
-
-Nous avons donc décidé d'ajouter dans un premier temps les rues tant que la ville pouvait être divisée. Ensuite il s'agissait de repmplir les zones vides par des Rooms qui auront chacun des portes créées à leur instanciation.
+Dans un tout premier temps, il s'agissait de créer un plateau représentant la ville par des listes et de Streets et de Building.  
+Après réflexion, on a vite compris que créer une classe Building serait inutile et que garder seulement les objets de type Room serait plus optimal.  
+Nous avons également convenu qu'il serait préférable d'utiliser des tableaux pour modéliser la ville, comme le tp de BattleSHip réalisé au S3.    
+Nous avons donc décidé d'ajouter dans un premier temps les rues tant que la ville pouvait être divisée en prenant en compte les contraintes imposées (un batiment doit faire au minimum 2 de largeur et longueur).  
+Ensuite il s'agissait de placer les pièces spéciales (Continental et Pharmacie), nous avons créé une méthode qui permettait de prendre une position aléatoire dans la ville et de vérifier si elle etait null (pour éviter de tomber sur une steeet), puis donc de l'assigner à cette position.  
+Enfin, nous avons rempli les zones vides par des Rooms qui sont ajoutée dans une liste de room.   
+Cette liste vas permettre en itérant dessus, de fermé les portes parmis toutes les positions (UP, DOWN, LEFT, RIGHT) car de bases, toutes les portes de toutes les cellulles sont ouvertes.  
 
 ### Etat du développement 
 
