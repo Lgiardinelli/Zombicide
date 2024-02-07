@@ -13,14 +13,16 @@ import zombicide.DoorDirection;
  */
 public class Room extends Area {	
 	
-     /**
-     * Constructs a room with the specified number of doors.
-     * 
-     * @param nbDoors The number of doors in the room.
-     */
-    public Room(int x, int y) {
-    	super(x, y);    	
-    }
+	/**
+	 * Constructs a room at the specified position.
+	 *
+	 * @param x The X-coordinate position of the room.
+	 * @param y The Y-coordinate position of the room.
+	 */
+	public Room(int x, int y) {
+	    super(x, y);
+	}
+
 
 	@Override
 	public void  display(int n) {
