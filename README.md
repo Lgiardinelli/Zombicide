@@ -18,13 +18,10 @@
 # Livrables
 
 ## Livrable 1
-
 ### Objectif du premier livrable 
-
 Travailler sur la modélisitation de la map et créer un algorithme de création, créer un plateau d'entrainement.
 
 ### Choix de modélisation 
-
 Dans un tout premier temps, il s'agissait de créer un plateau représentant la ville par des listes et de Streets et de Building.  
 Après réflexion, on a vite compris que créer une classe Building serait inutile et que garder seulement les objets de type Room serait plus optimal.  
 Nous avons également convenu qu'il serait préférable d'utiliser des tableaux pour modéliser la ville, comme le tp de BattleSHip réalisé au S3.    
@@ -35,30 +32,26 @@ Cette liste vas permettre en itérant dessus, de fermer les portes parmis toutes
 Ce qui donne l'affichage idéal de MiniCityMain (la ville d'entraînement.  
 
 ### Etat du développement 
-
 - La modélisation de la carte est terminée avec en supplément l'ajout des portes.
 - Test unitaire fonctionnel sur la modélisation de la map (à mettre a jour pendants l'intégration des acteurs et des items).  
 
 ### Atteinte des objectifs
-
 - Modélisation de la carte est complète.
 - Les portes ont été ajoutée avec succès.
 - Les tests unitaires sur la modélisation de la map sont terminée.
 
 ### Ensemble des commandes 
-
-- Compilation :   
+- Compilation : 
 - Javadoc : 
 - Jar : 
 
 ### Difficultés restant à résoudre
-
 Aucune difficulté majeure n'a été identifiée jusqu'à présent.
 
+
+
 ## Livrable 2
-
 ### Objectif du premier livrable 
-
 Modélisation des acteurs et des équipements.
 
 ### Choix de modélisation 
@@ -251,7 +244,7 @@ Mardi 30/01 :
 - Dylan : Remodélisation de la méthode qui ajoutait des portes aux zones de la ville pour finaliser son affichage complet.
 
 Mercredi 31/01 :
-- Léo, Dylan : Remodélisation des méthodes pour gerer toutes les portes qui doivent rester ouvertes (entre les streets), display fini.
+- Léo, Dylan : 	Remodélisation des méthodes pour gerer toutes les portes qui doivent rester ouvertes (entre les streets), display fini. Finalisation du display des rooms spéciales (pharmacie et continental)
 
 - Théophane : Ajout du package role avec les classes le concernant et modification des classes zombies pour ajouter des methodes les concernants
                 Ajout des classes liées aux équipements (Item)
