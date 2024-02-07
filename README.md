@@ -250,7 +250,9 @@ Mardi 30/01 :
 - Dylan : Remodélisation de la méthode qui ajoutait des portes aux zones de la ville pour finaliser son affichage complet.
 
 Mercredi 31/01 :
-- Léo, Dylan :	Remodélisation des méthodes pour gerer toutes les portes qui doivent rester ouvertes (entre les streets), display fini.
+- Léo, Dylan : Remodélisation des méthodes pour gerer toutes les portes qui doivent rester ouvertes (entre les streets), display fini.
+
+- Théophane : Ajout du package role avec les classes le concernant et modification des classes zombies pour ajouter des methodes les concernants
 
 Jeudi 01/02 :
 
