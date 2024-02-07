@@ -1,0 +1,10 @@
+zombicide
+zombicide.actor
+zombicide.actor.zombie
+zombicide.area
+zombicide.area.room
+zombicide.area.street
+zombicide.item
+zombicide.item.careItem
+zombicide.item.weapon
+zombicide.role
