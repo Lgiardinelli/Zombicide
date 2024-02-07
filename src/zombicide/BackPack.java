@@ -3,10 +3,19 @@ package zombicide;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class representing a backpack that can hold items.
+ */
 public class BackPack {
 
+    /**
+     * List to store items in the backpack.
+     */
     private List<Item> items;
 
+    /**
+     * Constructor for the BackPack class. Initializes an empty list of items.
+     */
     public BackPack() {
         this.items = new ArrayList<>();
     }
