@@ -25,11 +25,11 @@ Travailler sur la modélisitation de la map et créer un algorithme de création
 
 ### Choix de modélisation 
 
-- Dans un tout premier temps, il s'agissait de créer un plateau représentant la ville par des listes et de Streets et de Building. 
-
+Dans un tout premier temps, il s'agissait de créer un plateau représentant la ville par des listes et de Streets et de Building.
+ 
 Après réflexion, on a vite compris que créer une classe Building serait inutile et que garder seulement les objets de type Room serait plus optimal. 
 
-- Nous avons également convenu qu'il serait préférable d'utiliser des tableaux pour modéliser la ville, comme le tp de BattleSHip réalisé au S3.
+Nous avons également convenu qu'il serait préférable d'utiliser des tableaux pour modéliser la ville, comme le tp de BattleSHip réalisé au S3.
 
 Nous avons donc décidé d'ajouter dans un premier temps les rues tant que la ville pouvait être divisée. Ensuite il s'agissait de repmplir les zones vides par des Rooms qui auront chacun des portes créées à leur instanciation.
 
