@@ -1,40 +1,39 @@
 package zombicide;
 
 /**
- * Door class
- * 
- * Represents a door on the board
+ * Represents a door on the board.
  */
 public class Door {
-	private boolean isOpen;
+    /** Flag indicating whether the door is open or closed. */
+    private boolean isOpen;
 
-	/**
-	 * Constructor for Door
-	 */
-	public Door() {
-		isOpen = true;
-	}
-	
-	/**
-	 * Open the door
-	 */
-	public void open() {
-		isOpen = true;
-	}
-	
-	/**
-	 * Close the door
-	 */
-	public void close() {
-		isOpen = false;
-	}
-	
-	/**
-	 * Check if the door is open
-	 * 
-	 * @return true if the door is open, false otherwise
-	 */
-	public boolean isOpen() {
-		return isOpen;
-	}
+    /**
+     * Constructor for the Door class. Initializes the door as open.
+     */
+    public Door() {
+        isOpen = true;
+    }
+
+    /**
+     * Opens the door.
+     */
+    public void open() {
+        isOpen = true;
+    }
+
+    /**
+     * Closes the door.
+     */
+    public void close() {
+        isOpen = false;
+    }
+
+    /**
+     * Checks if the door is open.
+     *
+     * @return true if the door is open, false otherwise.
+     */
+    public boolean isOpen() {
+        return isOpen;
+    }
 }
