@@ -7,7 +7,7 @@ public class Main {
 		City trainCity = new City(5, 5);
 		
 		if (args.length == 0) {
-			City aCity = new City(10, 10);
+			City aCity = new City(5, 10);
 			aCity.display();
 		}
 		else {

@@ -47,11 +47,12 @@ javac -sourcepath src src/zombicide/*.java -d classes
 ```
 - Exécution du programme (avec 2 paramètres longueur et largeur du tableau)
 ```bash
-java -classpath classes zombicide.Main 9 9
+java -classpath classes zombicide.Main 10 10
 ```
 
 - Tests
 ```bash
+
 ```
 
 - Javadoc
@@ -61,11 +62,11 @@ javadoc -sourcepath src -subpackages zombicide -d docs
 
 - Jar compilation
 ```bash
-jar cvfe livrable1.jar src/zombicide/Main.java -C classes .
+jar cvfe livrable1.jar zombicide/Main -C classes .
 ```
 - Jar exécution
 ```bash
-java -jar livrable1.jar
+java -jar livrable1.jar 10 10
 ```
 
 
