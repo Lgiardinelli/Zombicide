@@ -47,7 +47,7 @@ public class City {
         Position bottomRightPos = getBottomRightPosition();
         splitAreas(topLeftPos, bottomRightPos);
         createRooms();
-    }
+     }
 
     /**
      * Retrieves the position of the bottom-right corner of the city.
