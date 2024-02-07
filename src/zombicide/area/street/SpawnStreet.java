@@ -11,7 +11,7 @@ public class SpawnStreet extends Street {
     @Override
 	public void  display(int n) {
     	if (n == 0) {
-			System.out.print(".   .");
+			System.out.print(OPEN_UP);
 		}
 		else if (n == 1){
 			System.out.print("  _  ");

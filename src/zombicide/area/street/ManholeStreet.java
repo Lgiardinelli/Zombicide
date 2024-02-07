@@ -13,7 +13,7 @@ public class ManholeStreet extends Street {
 	public void  display(int n) {
 		if (n == 0) {
 			if (this.getDoor(DoorDirection.UP).isOpen()) {
-				System.out.print("--  -");
+				System.out.print(OPEN_UP);
 			}
 			else {
 				System.out.print("-----");

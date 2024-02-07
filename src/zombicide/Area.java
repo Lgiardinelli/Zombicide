@@ -9,6 +9,9 @@ import zombicide.actor.*;
 
 public abstract class Area {
 	
+	protected static final String OPEN_UP = "¤    ";
+	protected static final String OPEN_LEFT = "-    ";
+	
 	private int posX;
 	private int posY;
 	private List<Survivor> survivors;
