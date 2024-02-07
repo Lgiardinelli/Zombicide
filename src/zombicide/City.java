@@ -130,8 +130,8 @@ public class City {
      * @return A random position between the bounds.
      */
     private Position getRandomPos(Position pos1, Position pos2, int delimiter) {
-        int x = random.nextInt(pos1.getX() + delimiter, pos2.getX() - delimiter + 1);
-        int y = random.nextInt(pos1.getY() + delimiter, pos2.getY() - delimiter + 1);
+        int x = random.nextInt((pos2.getX() - delimiter + 1) - (pos1.getX() + delimiter)) + pos1.getX() + delimiter;
+        int y = random.nextInt((pos2.getY() - delimiter + 1) - (pos1.getY() + delimiter)) + pos1.getY() + delimiter;
         return new Position(x, y);
     }
 
@@ -207,10 +207,8 @@ public class City {
     private void createRooms() {
         List<Room> rooms = new ArrayList<>();
 
-
         this.theContinental = (TheContinental) createSpecialRoom(TheContinental.class, rooms);
         this.thePharmacy = (ThePharmacy) createSpecialRoom(ThePharmacy.class, rooms);
-
 
         for (int i = 0; i < this.getHeight(); i++) {
             for (int j = 0; j < this.getWidth(); j++) {
@@ -318,32 +316,7 @@ public class City {
             System.out.print("-----");
         }
     }
-
-    /**
-     * Checks if a door is open in a specified direction.
-     *
-     * @param x The x-coordinate of the area.
-     * @param y The y-coordinate of the area.
-     * @param d The direction of the door to check.
-     * @return True if the door is open, otherwise false.
-     */
-    public boolean isDoorOpen(int x, int y, DoorDirection d) {
-        Area a;
-        if (d == DoorDirection.UP)
-            a = this.areas[x][y - 1];
-        else if (d == DoorDirection.LEFT)
-            a = this.areas[x - 1][y];
-        else
-            return false;
-
-        try {
-            Room r = (Room) a;
-            return r.getDoor(d).isOpen();
-        } catch (ClassCastException e) {
-            return false;
-        }
-    }
-
+    
     /**
      * Creates doors between areas.
      */
