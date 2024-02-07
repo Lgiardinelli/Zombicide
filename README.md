@@ -45,7 +45,7 @@ Ce qui donne l'affichage idéal de MiniCityMain (la ville d'entraînement.
 ```bash
 javac -sourcepath src src/zombicide/*.java -d classes
 ```
-- Exécution du programme (avec 2 paramètres longueur et largeur du tableau)
+- Exécution du programme (avec 2 paramètres longueur et largeur du tableau ou non, 10 par 10 de base)
 ```bash
 java -classpath classes zombicide.Main 10 10
 ```
@@ -77,7 +77,6 @@ java -jar livrable1.jar 10 10
 
 ### Difficultés restant à résoudre
 Aucune difficulté majeure n'a été identifiée jusqu'à présent.
-
 
 
 ## Livrable 2
