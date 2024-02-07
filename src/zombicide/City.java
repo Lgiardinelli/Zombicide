@@ -145,25 +145,25 @@ public class City {
     	return pos;
     }
     
+    private void createSpecialRoom(Class<? extends Room> room, List<Room> rooms) {
+		Position pos = getEmptyRoomPos();
+		int x = pos.getX();
+		int y = pos.getY();
+
+		try {
+			Room r = room.getDeclaredConstructor(int.class, int.class).newInstance(x, y);
+			this.areas[y][x] = r;
+			rooms.add(r);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+    
     private void createRooms() {
     	List<Room> rooms = new ArrayList<>();
     	
-    	Position contPos = getEmptyRoomPos();
-    	int contX = contPos.getX();
-    	int contY = contPos.getY();
-    	
-    	this.theContinental = new TheContinental(contX, contY);
-    	this.areas[contY][contX] = theContinental;
-    	
-    	Position pharPos = getEmptyRoomPos();
-    	int pharX = pharPos.getX();
-    	int pharY = pharPos.getY();
-    	
-    	this.thePharmacy = new ThePharmacy(pharX, pharY);
-		this.areas[pharY][pharX] = thePharmacy;
-		
-		rooms.add(this.theContinental);
-		rooms.add(this.thePharmacy);
+    	createSpecialRoom(TheContinental.class, rooms);
+    	createSpecialRoom(ThePharmacy.class, rooms);
     	
         for (int i = 0; i < this.getHeight(); i++) {
             for (int j = 0; j < this.getWidth(); j++) {
@@ -174,7 +174,6 @@ public class City {
                 }
         	}
         }
-        
         initDoors(rooms);
 	}
 
