@@ -81,10 +81,13 @@ public class City {
             }
         }
 
-        for (int i = 0; i < this.getHeight(); i++) {
+        for (int i = 0; i < this.getWidth(); i++) {
             this.getAreas()[0][i].getDoor(DoorDirection.UP).close();
-            this.getAreas()[i][0].getDoor(DoorDirection.LEFT).close();
         }
+        
+         for (int i = 0 ; i < this.getHeight(); i++) {
+        	 this.getAreas()[i][0].getDoor(DoorDirection.LEFT).close();
+         }
     }
 
     /**
