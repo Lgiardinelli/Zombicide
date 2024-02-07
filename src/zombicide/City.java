@@ -6,6 +6,8 @@ import java.util.Random;
 
 import zombicide.area.Room;
 import zombicide.area.Street;
+import zombicide.area.room.TheContinental;
+import zombicide.area.room.ThePharmacy;
 import zombicide.area.street.ManholeStreet;
 import zombicide.area.street.SpawnStreet;
 
@@ -13,7 +15,8 @@ public class City {
     private final Area[][] areas;
     private final Random random;
     private SpawnStreet spawnStreet;
-    private List<Room> rooms;
+    private TheContinental theContinental;
+    private ThePharmacy thePharmacy;
 
     /**
      * Constructs a new City object with the specified width and height.
@@ -24,7 +27,6 @@ public class City {
     public City(int width, int height) {
         this.areas = new Area[height][width];
         this.random = new Random();
-        this.rooms = new ArrayList<>();
         initCity();
     }
     
@@ -36,20 +38,29 @@ public class City {
      * Initializes the city by splitting the areas.
      */
     private void initCity() {
-        Position topLeftPos = new Position(0, 0);
-        Position bottomRightPos = new Position(getWidth() - 1, getHeight() - 1);
+        Position topLeftPos = getTopLeftPosition();
+        Position bottomRightPos = getBottomRightPosition();
         splitAreas(topLeftPos, bottomRightPos);
         createRooms();
-        createDoors();
-        initDoors();
     }
+
+	private Position getBottomRightPosition() {
+		return new Position(getWidth() - 1, getHeight() - 1);
+	}
+
+	private Position getTopLeftPosition() {
+		return new Position(0, 0);
+	}
     
-    private void initDoors() {
+    private void initDoors(List<Room> rooms) {
+    	createDoors();
+    	
     	for (Room r : rooms) {
     		for (DoorDirection d : DoorDirection.values()) {
     			r.getDoor(d).close();
     		}
     	}
+    	
     	for (int i = 0; i < this.getHeight(); i++) {
     		for (int j = 0 ; j < this.getWidth(); j++) {
     			this.getAreas()[0][j].getDoor(DoorDirection.UP).close();
@@ -77,9 +88,24 @@ public class City {
      * @param pos2 the second position
      * @return a random position between the bounds
      */
-    private Position getRandomPosBetweenBounds(Position pos1, Position pos2) {
-        int x = random.nextInt(pos1.getX() + 2, pos2.getX() - 1);
-        int y = random.nextInt(pos1.getY() + 2, pos2.getY() - 1);
+    private Position getRandomCrossRoadPos(Position pos1, Position pos2) {
+        return getRandomPos(pos1, pos2, 2);
+    }
+    
+    /**
+     * Generates a random position between the given bounds.
+     *
+     * @param pos1 the first position
+     * @param pos2 the second position
+     * @return a random position between the bounds
+     */
+    private Position getRandomRoomPos(Position pos1, Position pos2) {
+        return getRandomPos(pos1, pos2, 0);
+    }
+    
+    private Position getRandomPos(Position pos1, Position pos2, int delimiter) {
+    	int x = random.nextInt(pos1.getX() + delimiter, pos2.getX() - delimiter + 1);
+        int y = random.nextInt(pos1.getY() + delimiter, pos2.getY() - delimiter + 1);
         return new Position(x, y);
     }
 
@@ -90,7 +116,7 @@ public class City {
      * @param bottomRightPos  the bottom right position of the area
      */
     private void splitAreas(Position topLeftPos, Position bottomRightPos) {
-        Position crossroadPos = getRandomPosBetweenBounds(topLeftPos, bottomRightPos);
+        Position crossroadPos = getRandomCrossRoadPos(topLeftPos, bottomRightPos);
 
         if (this.spawnStreet == null) {
         	createSpawnStreet(crossroadPos);
@@ -111,16 +137,45 @@ public class City {
         }
     }
     
+    private Position getEmptyRoomPos() {
+    	Position pos;
+    	do {
+    		pos = getRandomRoomPos(getTopLeftPosition(), getBottomRightPosition());
+    	} while (this.getAreas()[pos.getY()][pos.getX()] != null);
+    	return pos;
+    }
+    
     private void createRooms() {
+    	List<Room> rooms = new ArrayList<>();
+    	
+    	Position contPos = getEmptyRoomPos();
+    	int contX = contPos.getX();
+    	int contY = contPos.getY();
+    	
+    	this.theContinental = new TheContinental(contX, contY);
+    	this.areas[contY][contX] = theContinental;
+    	
+    	Position pharPos = getEmptyRoomPos();
+    	int pharX = pharPos.getX();
+    	int pharY = pharPos.getY();
+    	
+    	this.thePharmacy = new ThePharmacy(pharX, pharY);
+		this.areas[pharY][pharX] = thePharmacy;
+		
+		rooms.add(this.theContinental);
+		rooms.add(this.thePharmacy);
+    	
         for (int i = 0; i < this.getHeight(); i++) {
             for (int j = 0; j < this.getWidth(); j++) {
                 if (this.areas[i][j] == null) {
                 	Room r = new Room(j, i);
                 	this.areas[i][j] = r;
-                	this.rooms.add(r);
+                	rooms.add(r);
                 }
         	}
         }
+        
+        initDoors(rooms);
 	}
 
     /**
