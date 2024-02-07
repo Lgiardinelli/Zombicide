@@ -9,12 +9,4 @@ public class Abomination extends Zombie {
 		this.lifePoints = 6;
 		this.isStrong = true;
 	}
-	
-	public boolean getIsStrong() {
-		return this.isStrong;
-	}
-	
-	public int getAttackPoints() {
-		return this.attackPoints;
-	}
 }
