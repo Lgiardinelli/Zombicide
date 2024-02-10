@@ -227,6 +227,7 @@ __Objectif de la semaine :__
 - Finalisation de la modélisation de la ville.
 - Finalisation de la gestion des portes pour les Rooms
 - Finalisation de l'affichage de la ville
+- Bien s'entendre sur le type modélisation des acteurs et des équipements que l'ont souhaite faire pour eviter les incompréhensions
 - Avancer dans la modélisation des acteurs et des équipements.
 
 __Objectif atteint :__
@@ -243,11 +244,8 @@ Mercredi 07/02 :
 - Après de longues réflexions et plusieurs essaie de modélisation pour gerer les portes, nous avons réussi à résoudre cela en ouvrant les portes de toutes les cellulles à la création du plateau et en parcourant la liste des rooms, fermer les 4 côtés. Ce qui a permis d'avoir un plateau optimal et correspondant à nos attentes et objectifs.
 - Ajout des constantes dans Area pour l'affichage des portes ouvertes et fermées pour éviter la redondance dans chaque classes pour la méthode display. Ce qui permettra si l'ont souhaite modifier l'affichage de modifier que dans la classe Area et non dans toutes les classes qui hérite de celle-ci. 
 
-Les jours suivants :
-
-Vendredi 02/02 :
-
 Week-end :
+Nous avons discuté ensemble sur la suite du rendu pour le livrable deux et permettre de se coordonner pour au mieux se répartir les taches. Nous allons procéder de la même manière que le livrable 1, car tous le monde a travailler à son rythme et correctement avec une répartition des taches équitables.
 
 __Partage de taches :__
 
@@ -262,7 +260,7 @@ Lundi 05/02 :
 
 Les jours suivants :
     
-Mardi 30/01 : 
+Mardi 06/02 : 
 
 - Eliès : réorganisation des packages pour une meilleure optimisation du projet. Il s'agissait notamment de gérer les classes liées à un héritage.
             Création des méthodes qui gérent une attaque avec les armes (lancer de dé et vérification pour voir si le seuil était dépassé)
@@ -272,7 +270,7 @@ Mardi 30/01 :
 
 - Dylan : Remodélisation de la méthode qui ajoutait des portes aux zones de la ville pour finaliser son affichage complet.
 
-Mercredi 31/01 :
+Mercredi 07/02 :
 - Léo, Dylan : 	Remodélisation des méthodes pour gerer toutes les portes qui doivent rester ouvertes (entre les streets), display fini. Finalisation du display des rooms spéciales (pharmacie et continental)
 
 - Théophane : Ajout du package role avec les classes le concernant et modification des classes zombies pour ajouter des methodes les concernants
@@ -281,25 +279,390 @@ Mercredi 31/01 :
 - Eliès : réalisation de la java doc sur plusieurs classes du projet.
             Ajout de méthodes pour la modélisation des Actor et des Survivor.
 
-Jeudi 01/02 :
+Week-end :
+- Léo, Dylan, Elies, Théophane : Discussion de groupe pour le livrable 2 et maj du readme pour les prochaines semaines.
 
-Vendredi 02/02 :
+
+## Semaine 5
+__Objectif de la semaine :__  
+
+
+__Objectif atteint :__
+
+
+__Réflexion du groupe :__  
+
+Lundi 12/02 :
+
+
+Mardi 13/02 :
+
+
+Mercredi 14/02 :
+
+
+Jeudi 15/02 :
+
+
+Vendredi 16/02 :
+
 
 Week-end :
 
 
-## Semaine 5
+
+__Partage de taches :__
+
+Lundi 12/02 :
+
+
+Mardi 13/02 :
+
+
+Mercredi 14/02 :
+
+
+Jeudi 15/02 :
+
+
+Vendredi 16/02 :
+
+
+Week-end :
+
 
 ## Semaine 6
+__Objectif de la semaine :__  
+
+
+__Objectif atteint :__
+
+
+__Réflexion du groupe :__  
+
+Lundi 19/02 :
+
+
+Mardi 20/02 :
+
+
+Mercredi 21/02 :
+
+
+Jeudi 22/02 :
+
+
+Vendredi 23/02 :
+
+
+Week-end :
+
+
+
+__Partage de taches :__
+
+Lundi 19/02 :
+
+
+Mardi 20/02 :
+
+
+Mercredi 21/02 :
+
+
+Jeudi 22/02 :
+
+
+Vendredi 23/02 :
+
+
+Week-end :
+
 
 ## Semaine 7
+__Objectif de la semaine :__  
+
+
+__Objectif atteint :__
+
+
+__Réflexion du groupe :__  
+
+Lundi 11/03 :
+
+
+Mardi 12/03 :
+
+
+Mercredi 13/03 :
+
+
+Jeudi 114/03 :
+
+
+Vendredi 15/03 :
+
+
+Week-end :
+
+
+
+__Partage de taches :__
+
+Lundi 11/03 :
+
+
+Mardi 12/03 :
+
+
+Mercredi 13/03 :
+
+
+Jeudi 114/03 :
+
+
+Vendredi 15/03 :
+
+
+Week-end :
+
 
 ## Semaine 8
+__Objectif de la semaine :__  
+
+
+__Objectif atteint :__
+
+
+__Réflexion du groupe :__  
+
+Lundi 18/03 :
+
+
+Mardi 19/03 :
+
+
+Mercredi 20/03 :
+
+
+Jeudi 21/03 :
+
+
+Vendredi 22/03 :
+
+
+Week-end :
+
+
+
+__Partage de taches :__
+
+Lundi 18/03 :
+
+
+Mardi 19/03 :
+
+
+Mercredi 20/03 :
+
+
+Jeudi 21/03 :
+
+
+Vendredi 22/03 :
+
+
+Week-end :
+
 
 ## Semaine 9
+__Objectif de la semaine :__  
+
+
+__Objectif atteint :__
+
+
+__Réflexion du groupe :__  
+
+Lundi 25/03 :
+
+
+Mardi 26/03 :
+
+
+Mercredi 27/03 :
+
+
+Jeudi 28/03 :
+
+
+Vendredi 29/03 :
+
+
+Week-end :
+
+
+
+__Partage de taches :__
+
+Lundi 25/03 :
+
+
+Mardi 26/03 :
+
+
+Mercredi 27/03 :
+
+
+Jeudi 28/03 :
+
+
+Vendredi 29/03 :
+
+
+Week-end :
+
 
 ## Semaine 10
+__Objectif de la semaine :__  
+
+
+__Objectif atteint :__
+
+
+__Réflexion du groupe :__  
+
+Lundi 01/04 :
+
+
+Mardi 02/04 :
+
+
+Mercredi 03/04 :
+
+
+Jeudi 04/04 :
+
+
+Vendredi 05/04 :
+
+
+Week-end :
+
+
+
+__Partage de taches :__
+
+Lundi 01/04 :
+
+
+Mardi 02/04 :
+
+
+Mercredi 03/04 :
+
+
+Jeudi 04/04 :
+
+
+Vendredi 05/04 :
+
+
+Week-end :
+
 
 ## Semaine 11
+__Objectif de la semaine :__  
+
+
+__Objectif atteint :__
+
+
+__Réflexion du groupe :__  
+
+Lundi 08/04 :
+
+
+Mardi 09/04 :
+
+
+Mercredi 10/04 :
+
+
+Jeudi 11/04 :
+
+
+Vendredi 12/04 :
+
+
+Week-end :
+
+
+
+__Partage de taches :__
+
+Lundi 08/04 :
+
+
+Mardi 09/04 :
+
+
+Mercredi 10/04 :
+
+
+Jeudi 11/04 :
+
+
+Vendredi 12/04 :
+
+
+Week-end :
+
 
 ## Semaine 12
+__Objectif de la semaine :__  
+
+
+__Objectif atteint :__
+
+
+__Réflexion du groupe :__  
+
+Lundi 15/04 :
+
+
+Mardi 16/04 :
+
+
+Mercredi 17/04 :
+
+
+Jeudi 18/04 :
+
+
+Vendredi 19/04 :
+
+
+Week-end :
+
+
+
+__Partage de taches :__
+
+Lundi 15/04 :
+
+
+Mardi 16/04 :
+
+
+Mercredi 17/04 :
+
+
+Jeudi 18/04 :
+
+
+Vendredi 19/04 :
+
+
+Week-end :
+
