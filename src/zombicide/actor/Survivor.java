@@ -100,7 +100,7 @@ public class Survivor extends Actor {
      * Levels at which additional skill points are awarded are 3, 7, and 11.
      */
     public boolean levelReached() {
-        return this.skillPoints == 3 || this.skillPoints == 7 || this.skillPoints == 11 
+        return this.skillPoints == 3 || this.skillPoints == 7 || this.skillPoints == 11;
     }
 
 }
