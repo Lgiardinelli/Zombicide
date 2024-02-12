@@ -13,7 +13,12 @@ public abstract class Zombie extends Actor {
     /** Indicates whether the zombie is strong or not. */
     protected boolean isStrong;
 
-    /**
+    public Zombie(int attackPoints, boolean isStrong) {
+		this.attackPoints = attackPoints;
+		this.isStrong = isStrong;
+	}
+
+	/**
      * Gets whether the zombie is strong.
      *
      * @return {@code true} if the zombie is strong, {@code false} otherwise.
