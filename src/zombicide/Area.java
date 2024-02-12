@@ -11,15 +11,27 @@ import zombicide.actor.*;
  * Abstract class representing an area in the game.
  */
 public abstract class Area {
+    protected static char name;
+    protected static int nbZombies = 00;
+    protected static int nbSurvivors = 0;
+    
+    
+    
     /**
      * The string representation for an open door in the up direction.
      */
     protected static final String OPEN_UP = "-    ";
+    
+	protected static final String CLOSE_UP = "-----";
 
-    /**
-     * The string representation for an open door in the left direction.
-     */
-    protected static final String OPEN_LEFT = "     ";
+    protected static final String OPEN_LEFT1 = " " + name + "Z" + nbZombies;
+    
+    protected static final String CLOSE_LEFT1 = "|" + name + "Z" + nbZombies;
+
+    protected static final String OPEN_LEFT2 = "  " + "S" + nbSurvivors;
+
+    protected static final String CLOSE_LEFT2 = "| " + "S" + nbSurvivors;
+
 
     /**
      * The X position of the area.
@@ -111,7 +123,21 @@ public abstract class Area {
      */
     public int getX() {
         return this.posX;
-    }
+    }@Override
+//	public void  display(int n) {
+//	Door upDoor = getDoor(DoorDirection.UP);
+//	Door leftDoor = getDoor(DoorDirection.LEFT);
+//	
+//	if (n == 0) {
+//		System.out.print(upDoor.isOpen() ? OPEN_UP : "-----");
+//	}
+//	else if (n == 1){
+//		System.out.print(leftDoor.isOpen() ? OPEN_LEFT1 : "|    ");
+//	}
+//	else {
+//		System.out.print(leftDoor.isOpen() ? OPEN_LEFT2 : "|    ");
+//	}
+//}
 
     /**
      * Retrieves the Y position of the area.
@@ -144,6 +170,14 @@ public abstract class Area {
      * @param n Specific parameters for displaying the area.
      */
     protected void display(int n) {
-    	
+    	if (n == 0) {
+			System.out.print(this.getDoor(DoorDirection.UP).isOpen() ? OPEN_UP : CLOSE_UP);
+    	}
+    	else if (n == 1) {
+    		System.out.print(this.getDoor(DoorDirection.LEFT).isOpen() ? OPEN_LEFT1 : CLOSE_LEFT1);
+    	}
+    	else {
+    		System.out.print(this.getDoor(DoorDirection.LEFT).isOpen() ? OPEN_LEFT2 : CLOSE_LEFT2);
+    	}
     }
 }

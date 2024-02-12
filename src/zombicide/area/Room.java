@@ -21,24 +21,25 @@ public class Room extends Area {
 	 */
 	public Room(int x, int y) {
 	    super(x, y);
+	    this.name = 'R';
 	}
 
 
-	@Override
-	public void  display(int n) {
-		Door upDoor = getDoor(DoorDirection.UP);
-		Door leftDoor = getDoor(DoorDirection.LEFT);
-		
-		if (n == 0) {
-			System.out.print(upDoor.isOpen() ? OPEN_UP : "-----");
-		}
-		else if (n == 1){
-			System.out.print(leftDoor.isOpen() ? OPEN_LEFT : "|    ");
-		}
-		else {
-			System.out.print(leftDoor.isOpen() ? OPEN_LEFT : "|    ");
-		}
-	}
+//	@Override
+//	public void  display(int n) {
+//		Door upDoor = getDoor(DoorDirection.UP);
+//		Door leftDoor = getDoor(DoorDirection.LEFT);
+//		
+//		if (n == 0) {
+//			System.out.print(upDoor.isOpen() ? OPEN_UP : "-----");
+//		}
+//		else if (n == 1){
+//			System.out.print(leftDoor.isOpen() ? OPEN_LEFT1 : "|    ");
+//		}
+//		else {
+//			System.out.print(leftDoor.isOpen() ? OPEN_LEFT2 : "|    ");
+//		}
+//	}
 	
 	@Override
 	public String toString() {
