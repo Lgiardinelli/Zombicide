@@ -12,8 +12,19 @@ public abstract class Weapon implements Item {
     protected int damage;
     protected int minHittingRange;
     protected int maxHittingRange;
+    protected boolean isNoisy;
 
-    /**
+    public Weapon(int nbDiceThrows, int diceThreshold, int damage, int minHittingRange, int maxHittingRange,
+			boolean isNoisy) {
+		this.nbDiceThrows = nbDiceThrows;
+		this.diceThreshold = diceThreshold;
+		this.damage = damage;
+		this.minHittingRange = minHittingRange;
+		this.maxHittingRange = maxHittingRange;
+		this.isNoisy = isNoisy;
+	}
+
+	/**
      * Performs the shooting action with the weapon, rolling dice and calculating the result.
      *
      * @return The total result obtained by rolling the dice.
