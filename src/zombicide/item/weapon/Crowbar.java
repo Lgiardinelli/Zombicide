@@ -6,11 +6,7 @@ public class Crowbar extends Weapon{
 	
 	
 	public Crowbar() {
-		this.nbDiceThrows = 1;
-		this.diceThreshold = 4;
-		this.damage = 1;
-		this.minHittingRange = 0;
-		this.maxHittingRange = 0;
+		super(1,4,1,0,0,false);
 	}
 	
 }

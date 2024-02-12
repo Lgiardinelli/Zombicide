@@ -6,11 +6,7 @@ public class Pistol extends Weapon{
 	
 	
 	public Pistol() {
-		this.nbDiceThrows = 1;
-		this.diceThreshold = 4;
-		this.damage = 1;
-		this.minHittingRange = 0;
-		this.maxHittingRange = 1;
+		super(1,4,1,0,1,true);
 	}
 	
 }

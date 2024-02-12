@@ -6,11 +6,7 @@ public class Axe extends Weapon{
 	
 	
 	public Axe() {
-		this.nbDiceThrows = 1;
-		this.diceThreshold = 4;
-		this.damage = 2;
-		this.minHittingRange = 0;
-		this.maxHittingRange = 0;
+		super(1,4,2,0,0,false);
 	}
 	
 }

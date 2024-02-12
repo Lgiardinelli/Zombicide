@@ -6,11 +6,7 @@ public class Riffle extends Weapon{
 	
 	
 	public Riffle() {
-		this.nbDiceThrows = 2;
-		this.diceThreshold = 4;
-		this.damage = 1;
-		this.minHittingRange = 1;
-		this.maxHittingRange = 3;
+		super(2,4,1,1,3,true);
 	}
 	
 }
