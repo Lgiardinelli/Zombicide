@@ -4,9 +4,8 @@ import zombicide.actor.Zombie;
 
 public class Balaise extends Zombie{	
 	public Balaise() {
+		super(2,true);
 		this.actionPoints = 1;
 		this.lifePoints = 4;
-		this.attackPoints = 2;
-		this.isStrong = true;
 	}
 }

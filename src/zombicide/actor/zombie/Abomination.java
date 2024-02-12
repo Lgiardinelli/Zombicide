@@ -4,9 +4,8 @@ import zombicide.actor.Zombie;
 
 public class Abomination extends Zombie {
 	public Abomination() {
-		this.attackPoints = 3;
+		super(3, true);
 		this.actionPoints = 1;
 		this.lifePoints = 6;
-		this.isStrong = true;
 	}
 }
