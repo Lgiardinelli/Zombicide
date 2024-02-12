@@ -19,7 +19,7 @@ public abstract class Area {
     /**
      * The string representation for an open door in the left direction.
      */
-    protected static final String OPEN_LEFT = "-    ";
+    protected static final String OPEN_LEFT = "     ";
 
     /**
      * The X position of the area.
