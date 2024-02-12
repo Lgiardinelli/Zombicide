@@ -85,6 +85,12 @@ Modélisation des acteurs et des équipements.
 
 ### Choix de modélisation 
 
+- Concernant les acteurs: 
+Nous avons remarqué que les survivants et les zombies avaient les points d'action et les points de vie en commun. Il s'agissait donc de créer une classe mère qui hérite des classes Survivor et Zommbie. Les types de Zombies seront des classes filles de la classe Zombie, avec des caractéristiques différentes selon le type de Zombie. Les rôles des joueurs seront gérés dans une liste de "rôles" présente dans la classe Survivor. La classe Rôle est donc une classe abstraite qui hérite différentes classes qui représentent les rôles disponibles.
+
+- Concernant les équipements:
+Nous avons décidé de créer une interface qui représentera les équipements. Nous avons ensuite "séparé" les types d'équipements en deux catégories principales: les armes et les autres. La classe Weapon est une classe abstraite 
+
 ### Etat du développement 
 
 ### Atteinte des objectifs
@@ -286,6 +292,10 @@ Week-end :
 ## Semaine 5
 __Objectif de la semaine :__  
 
+- Finir la modélisation complète des armes ( constructeur, attributs, héritage)
+- Finir la modélisation complète des équipements ( constructeur, attributs, héritage)
+- Ajout des acteurs dans le plateau. 
+
 
 __Objectif atteint :__
 
@@ -294,6 +304,8 @@ __Réflexion du groupe :__
 
 Lundi 12/02 :
 
+On a pensé à modifier les classes relatant de Weapon car nous avions remarqué une certaine redondance par rapport à leurs caractéristiques pour le constructeur. En effet, on rappelait les attributs pour chaque arme pour modifier les stats. Nous avons donc créet un constrcuteur dans la classe abstraite Weapon ( il n'y en avaut pas à la base) pour ensuite le rappeler dans chaque classe fille avec les stats correspondantes.
+Par rapport au display, nous avons schématisé ce à quoi ressemblera le display avec l'ajout des acteurs pour chaque cellule.
 
 Mardi 13/02 :
 
@@ -315,6 +327,8 @@ __Partage de taches :__
 
 Lundi 12/02 :
 
+- Léo,Dylan : Finalisation du display, anticipation par rapport à l'affichage des acteurs
+- Théophane, Eliès: Modification des classes relatées à Weapon (modifcation des attributs et des constructeurs)  
 
 Mardi 13/02 :
 
