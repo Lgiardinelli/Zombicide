@@ -86,4 +86,21 @@ public class Survivor extends Actor {
     public List<Role> getRolePlayer() {
         return rolePlayer;
     }
+    
+    /**
+     * Increases the skill points of the survivor.
+     */
+    public void increaseSkillPoints() {
+        this.skillPoints++;
+    }
+
+    /**
+     * Checks if the survivor has reached a level where additional skill points are awarded,
+     * and increases the skill points accordingly.
+     * Levels at which additional skill points are awarded are 3, 7, and 11.
+     */
+    public boolean levelReached() {
+        return this.skillPoints == 3 || this.skillPoints == 7 || this.skillPoints == 11 
+    }
+
 }
