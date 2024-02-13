@@ -11,61 +11,21 @@ import zombicide.actor.*;
  * Abstract class representing an area in the game.
  */
 public abstract class Area {
-    protected static char name;
-    protected static int nbZombies = 0;
-    protected static int nbSurvivors = 0;
-    
-    
-    
-    /**
-     * The string representation for an open door in the up direction.
-     */
-    protected final String OPEN_UP = "-     ";
-    
-	protected final String CLOSE_UP = "------";
-
-    protected  String OPEN_LEFT1 = " " + name + "|Z" + nbZombies + " ";
-    
-    protected final String CLOSE_LEFT1 = "|" + name + "|Z" + nbZombies + " ";
-
-    protected final String OPEN_LEFT2 = "  " + " S" + nbSurvivors + " ";
-
-    protected final String CLOSE_LEFT2 = "| " + " S" + nbSurvivors + " ";
+    private static int nbZombies = 0;
+    private static int nbSurvivors = 0;
+    private final String OPEN_UP = "-     ";
+	private final String CLOSE_UP = "------";
+    private final String OPEN_LEFT1 = " " + getName() + " Z" + nbZombies + " ";
+    private final String CLOSE_LEFT1 = "|" + getName() + " Z" + nbZombies + " ";
+    private final String OPEN_LEFT2 = "  " + " S" + nbSurvivors + " ";
+    private final String CLOSE_LEFT2 = "| " + " S" + nbSurvivors + " ";
 
 
-    /**
-     * The X position of the area.
-     */
     private int posX;
-
-    /**
-     * The Y position of the area.
-     */
     private int posY;
-
-    /**
-     * The list of survivors in the area.
-     */
     private List<Survivor> survivors;
-
-    /**
-     * The list of zombies in the area.
-     */
     private List<Zombie> zombies;
-
-    /**
-     * The noise level of the area.
-     */
     private int noise;
-
-    /**
-     * Flag indicating if the area is on the top layer.
-     */
-    protected int isTop;
-
-    /**
-     * Map containing doors in different directions.
-     */
     protected final Map<DoorDirection, Door> doors;
 
     /**
@@ -80,7 +40,6 @@ public abstract class Area {
         this.survivors = new ArrayList<>();
         this.zombies = new ArrayList<>();
         this.noise = 0;
-        this.isTop = 0;
         this.doors = new HashMap<>();
         for (DoorDirection d : DoorDirection.values()) {
             doors.put(d, new Door());
@@ -180,4 +139,6 @@ public abstract class Area {
     		System.out.print(this.getDoor(DoorDirection.LEFT).isOpen() ? OPEN_LEFT2 : CLOSE_LEFT2);
     	}
     }
+
+    abstract protected String getName();
 }

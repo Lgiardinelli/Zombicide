@@ -23,8 +23,8 @@ public class Main {
 			aCity.display();
 		}
 		
-		System.out.println("");
-		System.out.println("");
+		System.out.println();
+		System.out.println();
 		System.out.println("Plateau d'entrainement :");
 		
 		trainCity.getAreas()[0][0].getDoor(DoorDirection.DOWN).open();
@@ -32,7 +32,7 @@ public class Main {
 		trainCity.getAreas()[0][1].getDoor(DoorDirection.LEFT).open();
 		
 		trainCity.display();
-		System.out.println("");
+		System.out.println();
 		System.out.println(trainCity.getAreas()[2][2]);
 		System.out.println(trainCity.getAreas()[0][2]);
 		System.out.print(trainCity.getAreas()[2][1]);

@@ -8,13 +8,13 @@ import zombicide.area.Room;
 import zombicide.area.Street;
 import zombicide.area.room.TheContinental;
 import zombicide.area.room.ThePharmacy;
-import zombicide.area.street.ManholeStreet;
-import zombicide.area.street.SpawnStreet;
+import zombicide.area.street.Manhole;
+import zombicide.area.street.Spawn;
 
 public class City {
     private final Area[][] areas;
     private final Random random;
-    private SpawnStreet spawnStreet;
+    private Spawn spawn;
     private TheContinental theContinental;
     private ThePharmacy thePharmacy;
     private static final String CLOSE_DOWN = "------";
@@ -99,8 +99,8 @@ public class City {
     private void createSpawnStreet(Position p) {
         int x = p.getX();
         int y = p.getY();
-        this.spawnStreet = new SpawnStreet(x, y);
-        this.areas[y][x] = this.spawnStreet;
+        this.spawn = new Spawn(x, y);
+        this.areas[y][x] = this.spawn;
     }
 
     /**
@@ -149,7 +149,7 @@ public class City {
         Position crossroadPos = getRandomCrossRoadPos(topLeftPos, bottomRightPos);
 
 
-        if (this.spawnStreet == null) {
+        if (this.spawn == null) {
             createSpawnStreet(crossroadPos);
             createManholes(crossroadPos, topLeftPos, bottomRightPos);
         }
@@ -234,10 +234,10 @@ public class City {
      * @param bottomRightPos  The position representing the bottom-right corner of the area to be considered.
      */
     private void createManholes(Position crossroadPos, Position topLeftPos, Position bottomRightPos) {
-        this.areas[0][crossroadPos.getX()] = new ManholeStreet(crossroadPos.getX(), 0);
-        this.areas[crossroadPos.getY()][bottomRightPos.getX()] = new ManholeStreet(bottomRightPos.getX(), crossroadPos.getY());
-        this.areas[bottomRightPos.getY()][crossroadPos.getX()] = new ManholeStreet(crossroadPos.getX(), bottomRightPos.getY());
-        this.areas[crossroadPos.getY()][0] = new ManholeStreet(0, crossroadPos.getY());
+        this.areas[0][crossroadPos.getX()] = new Manhole(crossroadPos.getX(), 0);
+        this.areas[crossroadPos.getY()][bottomRightPos.getX()] = new Manhole(bottomRightPos.getX(), crossroadPos.getY());
+        this.areas[bottomRightPos.getY()][crossroadPos.getX()] = new Manhole(crossroadPos.getX(), bottomRightPos.getY());
+        this.areas[crossroadPos.getY()][0] = new Manhole(0, crossroadPos.getY());
     }
 
     /**
