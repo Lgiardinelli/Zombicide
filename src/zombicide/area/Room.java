@@ -41,9 +41,9 @@ public class Room extends Area {
 //		}
 //	}
 	
-	@Override
-	public String toString() {
-		return "| . ";
-	}
+//	@Override
+//	public String toString() {
+//		return "| . ";
+//	}
 }
 

@@ -316,7 +316,7 @@ public class City {
             }
         }
         for (int s = 0; s < getWidth(); s++) {
-            System.out.print("-----");
+            System.out.print("------");
         }
     }
     

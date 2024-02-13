@@ -12,7 +12,7 @@ import zombicide.actor.*;
  */
 public abstract class Area {
     protected static char name;
-    protected static int nbZombies = 00;
+    protected static int nbZombies = 0;
     protected static int nbSurvivors = 0;
     
     
@@ -20,17 +20,17 @@ public abstract class Area {
     /**
      * The string representation for an open door in the up direction.
      */
-    protected static final String OPEN_UP = "-    ";
+    protected final String OPEN_UP = "-     ";
     
-	protected static final String CLOSE_UP = "-----";
+	protected final String CLOSE_UP = "------";
 
-    protected static final String OPEN_LEFT1 = " " + name + "Z" + nbZombies;
+    protected final String OPEN_LEFT1 = " " + name + "|Z" + nbZombies + " ";
     
-    protected static final String CLOSE_LEFT1 = "|" + name + "Z" + nbZombies;
+    protected final String CLOSE_LEFT1 = "|" + name + "|Z" + nbZombies + " ";
 
-    protected static final String OPEN_LEFT2 = "  " + "S" + nbSurvivors;
+    protected final String OPEN_LEFT2 = "  " + " S" + nbSurvivors + " ";
 
-    protected static final String CLOSE_LEFT2 = "| " + "S" + nbSurvivors;
+    protected final String CLOSE_LEFT2 = "| " + " S" + nbSurvivors + " ";
 
 
     /**
@@ -123,7 +123,8 @@ public abstract class Area {
      */
     public int getX() {
         return this.posX;
-    }@Override
+    }
+//	@Override
 //	public void  display(int n) {
 //	Door upDoor = getDoor(DoorDirection.UP);
 //	Door leftDoor = getDoor(DoorDirection.LEFT);
@@ -161,7 +162,6 @@ public abstract class Area {
      * Abstract method to display the area.
      */
     protected void display() {
-    	
     }
 
     /**

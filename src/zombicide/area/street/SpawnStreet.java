@@ -15,6 +15,7 @@ public class SpawnStreet extends Street {
      */
     public SpawnStreet(int posX, int posY) {
         super(posX, posY);
+        //this.name = '¤';
     }
 
     /**
@@ -27,9 +28,9 @@ public class SpawnStreet extends Street {
         if (n == 0) {
             System.out.print(OPEN_UP);
         } else if (n == 1) {
-            System.out.print("  _  ");
+            System.out.print("  ¤   ");
         } else {
-            System.out.print("     ");
+            System.out.print("      ");
         }
     }
 }

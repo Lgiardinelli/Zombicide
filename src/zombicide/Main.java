@@ -33,7 +33,9 @@ public class Main {
 		
 		trainCity.display();
 		System.out.println("");
-		
+		System.out.println(trainCity.getAreas()[2][2]);
+		System.out.println(trainCity.getAreas()[0][2]);
+		System.out.print(trainCity.getAreas()[2][1]);
 		
 		
 	}
