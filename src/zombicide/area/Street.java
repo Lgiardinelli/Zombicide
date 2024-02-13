@@ -19,7 +19,7 @@ public class Street extends Area {
      */
     public Street(int posX, int posY) {
         super(posX, posY);
-        this.name = 'S';
+        name = 'S';
     }
 
     /**
@@ -33,19 +33,19 @@ public class Street extends Area {
 //            if (this.getDoor(DoorDirection.UP).isOpen()) {
 //                System.out.print(OPEN_UP);
 //            } else {
-//                System.out.print("-----");
+//                System.out.print("------");
 //            }
 //        } else if (n == 1) {
 //            if (this.getDoor(DoorDirection.LEFT).isOpen()) {
-//                System.out.print("  S  ");
+//                System.out.print("  S   ");
 //            } else {
-//                System.out.print("| S  ");
+//                System.out.print("| S   ");
 //            }
 //        } else {
 //            if (this.getDoor(DoorDirection.LEFT).isOpen()) {
-//                System.out.print("     ");
+//                System.out.print("      ");
 //            } else {
-//                System.out.print("|    ");
+//                System.out.print("|     ");
 //            }
 //        }
 //    }

@@ -15,7 +15,7 @@ public class SpawnStreet extends Street {
      */
     public SpawnStreet(int posX, int posY) {
         super(posX, posY);
-        //this.name = '¤';
+        name = '¤';
     }
 
     /**
@@ -23,14 +23,14 @@ public class SpawnStreet extends Street {
      *
      * @param n The formatting level (0, 1, or 2).
      */
-    @Override
-    public void display(int n) {
-        if (n == 0) {
-            System.out.print(OPEN_UP);
-        } else if (n == 1) {
-            System.out.print("  ¤   ");
-        } else {
-            System.out.print("      ");
-        }
-    }
+//    @Override
+//    public void display(int n) {
+//        if (n == 0) {
+//            System.out.print(OPEN_UP);
+//        } else if (n == 1) {
+//            System.out.print("  ¤   ");
+//        } else {
+//            System.out.print("      ");
+//        }
+//    }
 }

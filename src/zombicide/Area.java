@@ -24,7 +24,7 @@ public abstract class Area {
     
 	protected final String CLOSE_UP = "------";
 
-    protected final String OPEN_LEFT1 = " " + name + "|Z" + nbZombies + " ";
+    protected  String OPEN_LEFT1 = " " + name + "|Z" + nbZombies + " ";
     
     protected final String CLOSE_LEFT1 = "|" + name + "|Z" + nbZombies + " ";
 

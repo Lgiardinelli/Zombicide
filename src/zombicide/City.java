@@ -17,6 +17,7 @@ public class City {
     private SpawnStreet spawnStreet;
     private TheContinental theContinental;
     private ThePharmacy thePharmacy;
+    private static final String CLOSE_DOWN = "------";
 
     /**
      * Constructs a new City object with the specified width and height.
@@ -316,7 +317,7 @@ public class City {
             }
         }
         for (int s = 0; s < getWidth(); s++) {
-            System.out.print("------");
+            System.out.print(CLOSE_DOWN);
         }
     }
     
