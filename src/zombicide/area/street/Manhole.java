@@ -1,12 +1,13 @@
 package zombicide.area.street;
 
-import zombicide.DoorDirection;
+import zombicide.Area;
 import zombicide.area.Street;
 
 /**
  * Represents a special street with manholes in the game.
  */
-public class ManholeStreet extends Street {
+public class Manhole extends Area {
+    private static final char name = 'M';
 
     /**
      * Constructs a new ManholeStreet object with the specified position.
@@ -14,9 +15,13 @@ public class ManholeStreet extends Street {
      * @param posX The X-coordinate position of the street.
      * @param posY The Y-coordinate position of the street.
      */
-    public ManholeStreet(int posX, int posY) {
+    public Manhole(int posX, int posY) {
         super(posX, posY);
-        name = 'M';
+    }
+
+    @Override
+    protected String getName() {
+        return "\u001B[41m\u001B[30m" + name + "\u001B[0m";
     }
 
     /**
@@ -25,6 +30,15 @@ public class ManholeStreet extends Street {
      * @param n The formatting level (0, 1, or 2).
      */
 //    @Override
+//    public void display(int n) {
+//        if (n == 0) {
+//            System.out.print(this.getDoor(DoorDirection.UP).isOpen() ? OPEN_UP : "-----");
+//        } else if (n == 1) {
+//            System.out.print("  " + name + "   ");
+//        } else {
+//            System.out.print("      ");
+//        }
+//    }
 //    public void display(int n) {
 //        if (n == 0) {
 //            if (this.getDoor(DoorDirection.UP).isOpen()) {

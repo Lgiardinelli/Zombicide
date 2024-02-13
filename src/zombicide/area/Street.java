@@ -7,6 +7,8 @@ import zombicide.DoorDirection;
  * Represents a street area on the game board.
  */
 public class Street extends Area {
+    private static final char name = 'S';
+
 
     /** Indicates whether the street is vertical or not. */
     protected boolean isVertically;
@@ -19,7 +21,11 @@ public class Street extends Area {
      */
     public Street(int posX, int posY) {
         super(posX, posY);
-        name = 'S';
+    }
+
+    @Override
+    protected String getName() {
+        return "\u001B[44m\u001B[30m" + name + "\u001B[0m";
     }
 
     /**
@@ -30,22 +36,32 @@ public class Street extends Area {
 //    @Override
 //    public void display(int n) {
 //        if (n == 0) {
+//            System.out.print(this.getDoor(DoorDirection.UP).isOpen() ? OPEN_UP : "-----");
+//        } else if (n == 1) {
+//            System.out.print("  " + name + "   ");
+//        } else {
+//            System.out.print("      ");
+//        }
+//    }
+//    @Override
+//    public void display(int n) {
+//        if (n == 0) {
 //            if (this.getDoor(DoorDirection.UP).isOpen()) {
 //                System.out.print(OPEN_UP);
 //            } else {
-//                System.out.print("------");
+//                System.out.print("-----");
 //            }
 //        } else if (n == 1) {
 //            if (this.getDoor(DoorDirection.LEFT).isOpen()) {
-//                System.out.print("  S   ");
+//                System.out.print("  S  ");
 //            } else {
-//                System.out.print("| S   ");
+//                System.out.print("| S  ");
 //            }
 //        } else {
 //            if (this.getDoor(DoorDirection.LEFT).isOpen()) {
-//                System.out.print("      ");
+//                System.out.print("     ");
 //            } else {
-//                System.out.print("|     ");
+//                System.out.print("|    ");
 //            }
 //        }
 //    }

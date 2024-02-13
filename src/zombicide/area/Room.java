@@ -1,17 +1,13 @@
 package zombicide.area;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import zombicide.Area;
-import zombicide.Door;
-import zombicide.DoorDirection;
 
 /**
  * The {@code Room} class represents a room in the Zombicide game.
  * Each room can have multiple doors.
  */
-public class Room extends Area {	
+public class Room extends Area {
+	private static final char name = 'R';
 	
 	/**
 	 * Constructs a room at the specified position.
@@ -21,9 +17,23 @@ public class Room extends Area {
 	 */
 	public Room(int x, int y) {
 	    super(x, y);
-	    this.name = 'R';
 	}
 
+	@Override
+	protected String getName() {
+		return "" + name;
+	}
+
+//	@Override
+//	public void display(int n) {
+//		if (n == 0) {
+//			System.out.print(this.getDoor(DoorDirection.UP).isOpen() ? OPEN_UP : "-----");
+//		} else if (n == 1) {
+//			System.out.print("  " + name + "   ");
+//		} else {
+//			System.out.print("      ");
+//		}
+//	}
 
 //	@Override
 //	public void  display(int n) {

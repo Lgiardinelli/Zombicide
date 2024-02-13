@@ -7,6 +7,7 @@ import zombicide.area.Room;
  * Represents the special room "The Pharmacy" in the game.
  */
 public class ThePharmacy extends Room {
+    private static final char name = 'P';
 
     /**
      * Constructs a new ThePharmacy room object with the specified position.
@@ -16,7 +17,11 @@ public class ThePharmacy extends Room {
      */
     public ThePharmacy(int x, int y) {
         super(x, y);
-        this.name = 'P';
+    }
+
+    @Override
+    protected String getName() {
+    	return "\u001B[42m\u001B[30m" + name + "\u001B[0m";
     }
 
     /**
