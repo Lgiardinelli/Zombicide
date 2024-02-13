@@ -308,7 +308,8 @@ On a pensé à modifier les classes relatant de Weapon car nous avions remarqué
 Par rapport au display, nous avons schématisé ce à quoi ressemblera le display avec l'ajout des acteurs pour chaque cellule.
 
 Mardi 13/02 :
-
+La méthode display qui est dans area nous facilite grandement si l'ont veut faire de changement dans l'affichage, car elle impacte toutes les classes filles de celle-ci, c'est pour cela que nous allons garder cette modélisation.
+Pour l'affichage, nous rencontrons un problème, en faisant une seule méthode display dans aréa pour qu'il n'y ait pas de redondance, il y a des bouches d'égouts qui ne sont pas affichées au bon endroit, tout comme la spawnstreet alors que avec le display dans chaque type de pièce cela fonctionnait. Nous sommes en train de voit où viens cet erreur pour pouvoir la gerer au plus vite.
 
 Mercredi 14/02 :
 
@@ -327,10 +328,11 @@ __Partage de taches :__
 
 Lundi 12/02 :
 
-- Léo,Dylan : Finalisation du display, anticipation par rapport à l'affichage des acteurs
+- Léo,Dylan : Gestion du display, anticipation par rapport à l'affichage des acteurs
 - Théophane, Eliès: Modification des classes relatées à Weapon (modifcation des attributs et des constructeurs)  
 
 Mardi 13/02 :
+- Léo : Gestion du display pour un affichage optimal pour le nombre de zombie et de survivant.
 
 
 Mercredi 14/02 :
