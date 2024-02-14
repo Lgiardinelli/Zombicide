@@ -29,7 +29,7 @@ Nous avons donc décidé d'ajouter dans un premier temps les rues tant que la vi
 Ensuite il s'agissait de placer les pièces spéciales (Continental et Pharmacie), nous avons créé une méthode qui permettait de prendre une position aléatoire dans la ville et de vérifier si elle etait null (pour éviter de tomber sur une steeet), puis donc de l'assigner à cette position.  
 Enfin, nous avons rempli les zones vides par des Rooms qui sont ajoutée dans une liste de room.   
 Cette liste vas permettre en itérant dessus, de fermer les portes parmis toutes les positions (UP, DOWN, LEFT, RIGHT) car de bases, toutes les portes de toutes les cellulles sont ouvertes.  
-Ce qui donne l'affichage idéal de MiniCityMain (la ville d'entraînement.  
+Ce qui donne l'affichage idéal de MiniCityMain (la ville d'entraînement).  
 
 ### Etat du développement 
 - La modélisation de la carte est terminée avec en supplément l'ajout des portes.
@@ -330,11 +330,10 @@ __Partage de taches :__
 Lundi 12/02 :
 
 - Léo,Dylan : Gestion du display, anticipation par rapport à l'affichage des acteurs
-- Théophane, Eliès: Modification des classes relatées à Weapon (modifcation des attributs et des constructeurs)  
+- Théophane, Eliès: Modification des classes relatées à Weapon et Zombie (modifcation des attributs et des constructeurs)  
 
 Mardi 13/02 :
 - Léo : Gestion du display pour un affichage optimal pour le nombre de zombie et de survivant.
-
 
 Mercredi 14/02 :
 
