@@ -10,6 +10,7 @@ import zombicide.area.room.TheContinental;
 import zombicide.area.room.ThePharmacy;
 import zombicide.area.street.Manhole;
 import zombicide.area.street.Spawn;
+import zombicide.util.Position;
 
 public class City {
     private final Area[][] areas;
