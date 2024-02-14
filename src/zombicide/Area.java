@@ -18,10 +18,10 @@ public abstract class Area {
     protected static final String blackColorCode = Color.BLACK.getCode();
     private final String OPEN_UP = "-     ";
 	private final String CLOSE_UP = "------";
-    private final String OPEN_LEFT1 = " " + getName() + " Z" + nbZombies + " ";
-    private final String CLOSE_LEFT1 = "|" + getName() + " Z" + nbZombies + " ";
-    private final String OPEN_LEFT2 = "  " + " S" + nbSurvivors + " ";
-    private final String CLOSE_LEFT2 = "| " + " S" + nbSurvivors + " ";
+    private final String OPEN_LEFT1 = " " + getName() + " Z" + getNbZombies() + " ";
+    private final String CLOSE_LEFT1 = "|" + getName() + " Z" + getNbZombies() + " ";
+    private final String OPEN_LEFT2 = "  " + " S" + getNbSurvivors() + " ";
+    private final String CLOSE_LEFT2 = "| " + " S" + getNbSurvivors() + " ";
 
     private int posX;
     private int posY;
@@ -128,4 +128,9 @@ public abstract class Area {
     }
 
     abstract protected String getName();
+
+    abstract protected int getNbZombies();
+
+    abstract protected int getNbSurvivors();
+
 }

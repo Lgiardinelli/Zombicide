@@ -10,6 +10,10 @@ public class ThePharmacy extends Room {
     private static final char name = 'P';
     private static final String backGreenColorCode = Color.BACK_GREEN.getCode();
 
+    private int nbZombies;
+
+    private int nbSurvivors;
+
     /**
      * Constructs a new ThePharmacy room object with the specified position.
      *
@@ -18,6 +22,8 @@ public class ThePharmacy extends Room {
      */
     public ThePharmacy(int x, int y) {
         super(x, y);
+        this.nbSurvivors = 0;
+        this.nbZombies = 0;
     }
 
     @Override
@@ -33,5 +39,15 @@ public class ThePharmacy extends Room {
     @Override
     public boolean canFight() {
         return true;
+    }
+
+    @Override
+    protected int getNbSurvivors() {
+        return this.nbSurvivors;
+    }
+
+    @Override
+    protected int getNbZombies() {
+        return this.nbZombies;
     }
 }

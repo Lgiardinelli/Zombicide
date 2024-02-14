@@ -8,6 +8,9 @@ import zombicide.Area;
  */
 public class Room extends Area {
 	private static final char name = 'R';
+	private int nbZombies;
+
+	private int nbSurvivors;
 	
 	/**
 	 * Constructs a room at the specified position.
@@ -16,7 +19,9 @@ public class Room extends Area {
 	 * @param y The Y-coordinate position of the room.
 	 */
 	public Room(int x, int y) {
-	    super(x, y);
+		super(x, y);
+		this.nbZombies = 0;
+		this.nbSurvivors = 0;
 	}
 
 	@Override
@@ -24,36 +29,15 @@ public class Room extends Area {
 		return "" + name;
 	}
 
-//	@Override
-//	public void display(int n) {
-//		if (n == 0) {
-//			System.out.print(this.getDoor(DoorDirection.UP).isOpen() ? OPEN_UP : "-----");
-//		} else if (n == 1) {
-//			System.out.print("  " + name + "   ");
-//		} else {
-//			System.out.print("      ");
-//		}
-//	}
+	@Override
+	protected int getNbSurvivors() {
+		return this.nbSurvivors;
+	}
 
-//	@Override
-//	public void  display(int n) {
-//		Door upDoor = getDoor(DoorDirection.UP);
-//		Door leftDoor = getDoor(DoorDirection.LEFT);
-//		
-//		if (n == 0) {
-//			System.out.print(upDoor.isOpen() ? OPEN_UP : "-----");
-//		}
-//		else if (n == 1){
-//			System.out.print(leftDoor.isOpen() ? OPEN_LEFT1 : "|    ");
-//		}
-//		else {
-//			System.out.print(leftDoor.isOpen() ? OPEN_LEFT2 : "|    ");
-//		}
-//	}
-	
-//	@Override
-//	public String toString() {
-//		return "| . ";
-//	}
+	@Override
+	protected int getNbZombies() {
+		return this.nbZombies;
+	}
+
 }
 

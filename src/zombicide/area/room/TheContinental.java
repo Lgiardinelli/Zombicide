@@ -10,6 +10,10 @@ public class TheContinental extends Room {
     private static final char name = 'C';
     private static final String backPurpleColorCode = Color.BACK_PURPLE.getCode();
 
+    private int nbZombies;
+
+    private int nbSurvivors;
+
     /**
      * Constructs a new TheContinental room object with the specified position.
      *
@@ -18,6 +22,8 @@ public class TheContinental extends Room {
      */
     public TheContinental(int x, int y) {
         super(x, y);
+        this.nbSurvivors = 0;
+        this.nbZombies = 0;
     }
 
     @Override
@@ -33,5 +39,15 @@ public class TheContinental extends Room {
     @Override
     public boolean canFight() {
         return false;
+    }
+
+    @Override
+    protected int getNbSurvivors() {
+        return this.nbSurvivors;
+    }
+
+    @Override
+    protected int getNbZombies() {
+        return this.nbZombies;
     }
 }

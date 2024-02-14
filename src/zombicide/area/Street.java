@@ -11,6 +11,10 @@ public class Street extends Area {
     private static final char name = 'S';
     private static final String backBlueColorCode = Color.BACK_BLUE.getCode();
 
+    private int nbZombies;
+
+    private int nbSurvivors;
+
 
     /** Indicates whether the street is vertical or not. */
     protected boolean isVertically;
@@ -23,10 +27,22 @@ public class Street extends Area {
      */
     public Street(int posX, int posY) {
         super(posX, posY);
+        this.nbSurvivors = 0;
+        this.nbZombies = 0;
     }
 
     @Override
     protected String getName() {
         return backBlueColorCode + blackColorCode + name + resetColorCode;
+    }
+
+    @Override
+    protected int getNbSurvivors() {
+        return this.nbSurvivors;
+    }
+
+    @Override
+    protected int getNbZombies() {
+        return this.nbZombies;
     }
 }
