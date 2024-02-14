@@ -11,9 +11,6 @@ public class Manhole extends Area {
 
     private static final char name = 'M';
 
-    private int nbZombies;
-
-    private int nbSurvivors;
 
     /**
      * Constructs a new ManholeStreet object with the specified position.
@@ -23,8 +20,6 @@ public class Manhole extends Area {
      */
     public Manhole(int posX, int posY) {
         super(posX, posY);
-        this.nbSurvivors = 0;
-        this.nbZombies = 0;
     }
 
     @Override
@@ -32,13 +27,5 @@ public class Manhole extends Area {
         return backRedColorCode + blackColorCode + name + resetColorCode;
     }
 
-    @Override
-    protected int getNbSurvivors() {
-        return this.nbSurvivors;
-    }
 
-    @Override
-    protected int getNbZombies() {
-        return this.nbZombies;
-    }
 }

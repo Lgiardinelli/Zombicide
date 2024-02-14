@@ -18,15 +18,13 @@ public abstract class Area {
     protected static final String blackColorCode = Color.BLACK.getCode();
     private final String OPEN_UP = "-     ";
 	private final String CLOSE_UP = "------";
-    private final String OPEN_LEFT1 = " " + getName() + " Z" + getNbZombies() + " ";
-    private final String CLOSE_LEFT1 = "|" + getName() + " Z" + getNbZombies() + " ";
-    private final String OPEN_LEFT2 = "  " + " S" + getNbSurvivors() + " ";
-    private final String CLOSE_LEFT2 = "| " + " S" + getNbSurvivors() + " ";
-
+    private final static char ZOMBIE = 'Z';
+    private final static char SURVIVOR = 'S';
+    protected List<Survivor> survivors = new ArrayList<>();
+    protected List<Zombie> zombies = new ArrayList<>();
     private int posX;
     private int posY;
-    private List<Survivor> survivors;
-    private List<Zombie> zombies;
+
     private int noise;
     protected final Map<DoorDirection, Door> doors;
 
@@ -46,6 +44,8 @@ public abstract class Area {
         for (DoorDirection d : DoorDirection.values()) {
             doors.put(d, new Door());
         }
+        // this.zombies = new ArrayList<>();
+        // this.survivors = new ArrayList<>();
     }
 
     /**
@@ -120,17 +120,63 @@ public abstract class Area {
 			System.out.print(this.getDoor(DoorDirection.UP).isOpen() ? OPEN_UP : CLOSE_UP);
     	}
     	else if (n == 1) {
-    		System.out.print(this.getDoor(DoorDirection.LEFT).isOpen() ? OPEN_LEFT1 : CLOSE_LEFT1);
+    		System.out.print(this.getDoor(DoorDirection.LEFT).isOpen() ? openLeft1() : closeLeft1());
     	}
     	else {
-    		System.out.print(this.getDoor(DoorDirection.LEFT).isOpen() ? OPEN_LEFT2 : CLOSE_LEFT2);
+    		System.out.print(this.getDoor(DoorDirection.LEFT).isOpen() ? openLeft2() : closeLeft2());
     	}
     }
 
     abstract protected String getName();
 
-    abstract protected int getNbZombies();
+    public int getNbZombies() {
+        return this.zombies.size();
+    }
 
-    abstract protected int getNbSurvivors();
+    public int getNbSurvivors() {
+        return this.survivors.size();
+    }
+
+    private String hasZombies() {
+        int z = getNbZombies();
+        if (z == 0) {
+            return "    ";
+        }
+        return " Z" + z + " ";
+    }
+
+    private String hasSurvivors() {
+        int s = getNbSurvivors();
+        if (s == 0) {
+            return "    ";
+        }
+        return " S" + s + " ";
+    }
+
+    public void addZombie(Zombie z) {
+        this.zombies.add(z);
+    }
+
+    public void addSurvivor(Survivor s) {
+        this.survivors.add(s);
+    }
+
+    public String openLeft1() {
+        return " " + getName() + hasZombies();
+    }
+
+    public String closeLeft1() {
+        return "|" + getName() + hasZombies();
+    }
+
+    public String openLeft2() {
+        return "  " + hasSurvivors();
+    }
+
+    public String closeLeft2() {
+        return "| " + hasSurvivors();
+    }
+
+
 
 }

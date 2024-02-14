@@ -1,5 +1,11 @@
 package zombicide;
 
+import zombicide.actor.Survivor;
+import zombicide.actor.Zombie;
+import zombicide.actor.zombie.Abomination;
+
+import java.time.ZoneOffset;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -12,14 +18,14 @@ public class Main {
 			aCity.getAreas()[0][0].getDoor(DoorDirection.DOWN).open();
 			aCity.getAreas()[0][1].getDoor(DoorDirection.DOWN).open();
 			aCity.getAreas()[0][1].getDoor(DoorDirection.LEFT).open();
-			
+			Zombie z = new Abomination();
+			aCity.getAreas()[0][0].addZombie(z);
 			aCity.display();
 		}
 		else {
 			int x = Integer.parseInt(args[0]);
 			int y = Integer.parseInt(args[1]);
 			City aCity = new City(x, y);
-			
 			aCity.display();
 		}
 		
@@ -30,14 +36,10 @@ public class Main {
 		trainCity.getAreas()[0][0].getDoor(DoorDirection.DOWN).open();
 		trainCity.getAreas()[0][1].getDoor(DoorDirection.DOWN).open();
 		trainCity.getAreas()[0][1].getDoor(DoorDirection.LEFT).open();
-		
+
+		Zombie z = new Abomination();
+		trainCity.getAreas()[0][0].addZombie(z);
 		trainCity.display();
-		System.out.println();
-		System.out.println(trainCity.getAreas()[2][2]);
-		System.out.println(trainCity.getAreas()[0][2]);
-		System.out.print(trainCity.getAreas()[2][1]);
-		
-		
 	}
 
 }

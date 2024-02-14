@@ -8,10 +8,8 @@ import zombicide.Area;
  */
 public class Room extends Area {
 	private static final char name = 'R';
-	private int nbZombies;
 
-	private int nbSurvivors;
-	
+
 	/**
 	 * Constructs a room at the specified position.
 	 *
@@ -20,23 +18,11 @@ public class Room extends Area {
 	 */
 	public Room(int x, int y) {
 		super(x, y);
-		this.nbZombies = 0;
-		this.nbSurvivors = 0;
 	}
 
 	@Override
 	protected String getName() {
 		return "" + name;
-	}
-
-	@Override
-	protected int getNbSurvivors() {
-		return this.nbSurvivors;
-	}
-
-	@Override
-	protected int getNbZombies() {
-		return this.nbZombies;
 	}
 
 }
