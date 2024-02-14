@@ -1,13 +1,14 @@
 package zombicide.area.room;
 
-import zombicide.DoorDirection;
 import zombicide.area.Room;
+import zombicide.util.Color;
 
 /**
  * Represents the special room "The Pharmacy" in the game.
  */
 public class ThePharmacy extends Room {
     private static final char name = 'P';
+    private static final String backGreenColorCode = Color.BACK_GREEN.getCode();
 
     /**
      * Constructs a new ThePharmacy room object with the specified position.
@@ -21,7 +22,7 @@ public class ThePharmacy extends Room {
 
     @Override
     protected String getName() {
-    	return "\u001B[42m\u001B[30m" + name + "\u001B[0m";
+    	return backGreenColorCode + blackColorCode + name + resetColorCode;
     }
 
     /**
@@ -33,32 +34,4 @@ public class ThePharmacy extends Room {
     public boolean canFight() {
         return true;
     }
-
-    /**
-     * Displays the room with specific formatting.
-     *
-     * @param n The formatting level (0, 1, or 2).
-     */
-//    @Override
-//    public void display(int n) {
-//        if (n == 0) {
-//            if (this.getDoor(DoorDirection.UP).isOpen()) {
-//                System.out.print(OPEN_UP);
-//            } else {
-//                System.out.print("-----");
-//            }
-//        } else if (n == 1) {
-//            if (this.getDoor(DoorDirection.LEFT).isOpen()) {
-//                System.out.print("- P  ");
-//            } else {
-//                System.out.print("| P  ");
-//            }
-//        } else {
-//            if (this.getDoor(DoorDirection.LEFT).isOpen()) {
-//                System.out.print("-    ");
-//            } else {
-//                System.out.print("|    ");
-//            }
-//        }
-//    }
 }

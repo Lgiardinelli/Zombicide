@@ -1,13 +1,14 @@
 package zombicide.area.room;
 
-import zombicide.DoorDirection;
 import zombicide.area.Room;
+import zombicide.util.Color;
 
 /**
  * Represents the special room "The Continental" in the game.
  */
 public class TheContinental extends Room {
     private static final char name = 'C';
+    private static final String backPurpleColorCode = Color.BACK_PURPLE.getCode();
 
     /**
      * Constructs a new TheContinental room object with the specified position.
@@ -21,7 +22,7 @@ public class TheContinental extends Room {
 
     @Override
     protected String getName() {
-    	return "\u001B[45m\u001B[30m" + name + "\u001B[0m";
+    	return backPurpleColorCode + blackColorCode + name + resetColorCode;
     }
 
     /**
@@ -33,32 +34,4 @@ public class TheContinental extends Room {
     public boolean canFight() {
         return false;
     }
-
-    /**
-     * Displays the room with specific formatting.
-     *
-     * @param n The formatting level (0, 1, or 2).
-     */
-//    @Override
-//    public void display(int n) {
-//        if (n == 0) {
-//            if (this.getDoor(DoorDirection.UP).isOpen()) {
-//                System.out.print(OPEN_UP);
-//            } else {
-//                System.out.print("-----");
-//            }
-//        } else if (n == 1) {
-//            if (this.getDoor(DoorDirection.LEFT).isOpen()) {
-//                System.out.print("- C  ");
-//            } else {
-//                System.out.print("| C  ");
-//            }
-//        } else {
-//            if (this.getDoor(DoorDirection.LEFT).isOpen()) {
-//                System.out.print("-    ");
-//            } else {
-//                System.out.print("|    ");
-//            }
-//        }
-//    }
 }

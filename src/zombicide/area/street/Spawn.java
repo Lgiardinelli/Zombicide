@@ -1,12 +1,14 @@
 package zombicide.area.street;
 
 import zombicide.area.Street;
+import zombicide.util.Color;
 
 /**
  * Represents a special street where players spawn in the game.
  */
 public class Spawn extends Street {
     private static final char name = '¤';
+    private static final String redColorCode = Color.RED.getCode();
 
     /**
      * Constructs a new Street object with the specified position.
@@ -20,17 +22,6 @@ public class Spawn extends Street {
 
     @Override
     public String getName() {
-        return "\u001B[31m" + name + "\u001B[0m";
+        return redColorCode + name + resetColorCode;
     }
-
-    //    @Override
-//    public void display(int n) {
-//        if (n == 0) {
-//            System.out.print(OPEN_UP);
-//        } else if (n == 1) {
-//            System.out.print("  ¤   ");
-//        } else {
-//            System.out.print("      ");
-//        }
-//    }
 }
