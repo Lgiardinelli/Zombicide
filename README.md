@@ -339,6 +339,7 @@ Mardi 13/02 :
 
 Mercredi 14/02 :
 - Léo, Dylan : Finalisation du display fonctionnel avec les objectifs que nous nous avons fixés.
+- Théophane : Implémentation d'un Makefile pour l'automatisation des commandes java.
 
 Jeudi 15/02 :
 
