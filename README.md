@@ -312,7 +312,8 @@ La méthode display qui est dans area nous facilite grandement si l'ont veut fai
 Pour l'affichage, nous rencontrons un problème, en faisant une seule méthode display dans aréa pour qu'il n'y ait pas de redondance, il y a des bouches d'égouts qui ne sont pas affichées au bon endroit, tout comme la spawnstreet alors que avec le display dans chaque type de pièce cela fonctionnait. Nous sommes en train de voit où viens cet erreur pour pouvoir la gerer au plus vite.
 
 Mercredi 14/02 :
-
+Après réflexion, nous avons décidé de refactoriser le code permettant l'affichage afin de centraliser sa gestion uniquement dans la superclasse des zones. Afin d'éviter la redondance de ce dernier dans les classes enfants.
+De plus, des couleurs seront ajoutées afin de simplifier la compréhension dans l'affichage de la console.
 
 Jeudi 15/02 :
 
