@@ -1,4 +1,4 @@
-package zombicide;
+package zombicide.util;
 
 /**
  * Represents a position on a grid.
