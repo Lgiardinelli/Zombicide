@@ -1,10 +1,7 @@
 package zombicide;
 
-import zombicide.actor.Survivor;
 import zombicide.actor.Zombie;
 import zombicide.actor.zombie.Abomination;
-
-import java.time.ZoneOffset;
 
 public class Main {
 

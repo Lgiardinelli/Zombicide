@@ -295,10 +295,10 @@ __Objectif de la semaine :__
 - Finir la modélisation complète des armes ( constructeur, attributs, héritage)
 - Finir la modélisation complète des équipements ( constructeur, attributs, héritage)
 - Ajout des acteurs dans le plateau. 
-
+- Amelioration de l'affichage avec couleurs et zombies/survivants 
 
 __Objectif atteint :__
-
+- Amelioration de l'affichage avec couleurs et zombies/survivants
 
 __Réflexion du groupe :__  
 
@@ -313,7 +313,9 @@ Pour l'affichage, nous rencontrons un problème, en faisant une seule méthode d
 
 Mercredi 14/02 :
 Après réflexion, nous avons décidé de refactoriser le code permettant l'affichage afin de centraliser sa gestion uniquement dans la superclasse des zones. Afin d'éviter la redondance de ce dernier dans les classes enfants.
-De plus, des couleurs seront ajoutées afin de simplifier la compréhension dans l'affichage de la console.
+De plus, des couleurs seront ajoutées afin de simplifier la compréhension dans l'affichage de la console.  
+Suite au mail reçu par notre chargé de TD, nous avons modifié les constantes que nous avons utilisé pour l'affichage soit remplacé par des méthodes qui vont nous permettre d'avoir quelque chose de dyamique.
+Nous avons ajouté en plus pour pas surcharger l'affichage, fait en sorte que s'il n'y a pas de zombies ou de survivants dans une cellulle, le nombre et le nom de zombies/survivant ne soit pas affichés.
 
 Jeudi 15/02 :
 
@@ -333,10 +335,10 @@ Lundi 12/02 :
 - Théophane, Eliès: Modification des classes relatées à Weapon et Zombie (modifcation des attributs et des constructeurs)  
 
 Mardi 13/02 :
-- Léo : Gestion du display pour un affichage optimal pour le nombre de zombie et de survivant.
+- Léo, Dylan : Gestion du display pour un affichage optimal pour le nombre de zombie et de survivant.
 
 Mercredi 14/02 :
-
+- Léo, Dylan : Finalisation du display fonctionnel avec les objectifs que nous nous avons fixés.
 
 Jeudi 15/02 :
 
