@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import zombicide.actor.*;
+import zombicide.util.Color;
 
 /**
  * Abstract class representing an area in the game.
@@ -13,13 +14,14 @@ import zombicide.actor.*;
 public abstract class Area {
     private static int nbZombies = 0;
     private static int nbSurvivors = 0;
+    protected static final String resetColorCode = Color.RESET.getCode();
+    protected static final String blackColorCode = Color.BLACK.getCode();
     private final String OPEN_UP = "-     ";
 	private final String CLOSE_UP = "------";
     private final String OPEN_LEFT1 = " " + getName() + " Z" + nbZombies + " ";
     private final String CLOSE_LEFT1 = "|" + getName() + " Z" + nbZombies + " ";
     private final String OPEN_LEFT2 = "  " + " S" + nbSurvivors + " ";
     private final String CLOSE_LEFT2 = "| " + " S" + nbSurvivors + " ";
-
 
     private int posX;
     private int posY;
@@ -83,21 +85,6 @@ public abstract class Area {
     public int getX() {
         return this.posX;
     }
-//	@Override
-//	public void  display(int n) {
-//	Door upDoor = getDoor(DoorDirection.UP);
-//	Door leftDoor = getDoor(DoorDirection.LEFT);
-//	
-//	if (n == 0) {
-//		System.out.print(upDoor.isOpen() ? OPEN_UP : "-----");
-//	}
-//	else if (n == 1){
-//		System.out.print(leftDoor.isOpen() ? OPEN_LEFT1 : "|    ");
-//	}
-//	else {
-//		System.out.print(leftDoor.isOpen() ? OPEN_LEFT2 : "|    ");
-//	}
-//}
 
     /**
      * Retrieves the Y position of the area.
