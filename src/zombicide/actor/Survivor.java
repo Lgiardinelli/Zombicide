@@ -27,14 +27,18 @@ public class Survivor extends Actor {
     /**
      * Constructs a new Survivor object with default action points and life points.
      * The survivor starts with 3 action points and 5 life points.
-     *
-     * @param roles The role of the survivor.
+     * The survivor can have one or many roles.
+     * @param roles The roles of the survivor.
      */
     public Survivor(List<Role> roles) {
         this();
         this.roles = roles;
     }
 
+    /**
+     * Constructs a new Survivor object with default action points and life points.
+     * The survivor starts with 3 action points and 5 life points.
+     */
     public Survivor() {
         this.skillPoints = 0;
         this.actionPoints = 3;
@@ -109,5 +113,4 @@ public class Survivor extends Actor {
     public boolean levelReached() {
         return this.skillPoints == 3 || this.skillPoints == 7 || this.skillPoints == 11;
     }
-
 }
