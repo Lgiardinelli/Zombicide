@@ -28,8 +28,8 @@ public abstract class Actor {
      *
      * @param lifePoints the life points to set
      */
-    public void setLifePoints(int lifePoints) {
-        this.lifePoints = lifePoints;
+    public void addLifePoints(int lifePoints) {
+        this.lifePoints += lifePoints;
     }
 
     /**
