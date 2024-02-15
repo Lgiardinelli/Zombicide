@@ -7,8 +7,8 @@ SRC = src
 TEST = test
 CLASSES = classes
 DOCS = docs
-JAR2_NAME = livrable2.jar
-MAIN_CLASSE = zombicide.main
+JAR_NAME = livrable2.jar
+MAIN_CLASS = zombicide.main
 
 SOURCES = $(wildcard $(SRC)/*.java $(SRC)/zombicide/*.java)
 CLASSES_DIR = $(CLASSES)
@@ -23,17 +23,15 @@ run:
 
 test:
 	$(JAVAC) -classpath junit-console.jar:$(CLASSES_DIR) $(TEST)/zombicide/*.java
-    $(JAVA) -jar junit-console.jar -classpath $(TEST):$(CLASSES_DIR) -scan-classpath
+	$(JAVA) -jar junit-console.jar -classpath $(TEST):$(CLASSES_DIR)
 
 javadoc:
 	$(JAVADOC) -sourcepath $(SRC) -d $(DOCS) -subpackages zombicide
 
 jar:
-	$(JAR) cvfe $(JAR2_NAME) $(MAIN_CLASS) -C $(CLASSES_DIR) .
+	$(JAR) cvfe $(JAR_NAME) $(MAIN_CLASS) -C $(CLASSES_DIR) .
 
 clean:
 	rm -rf $(CLASSES_DIR) $(DOCS) $(JAR2_NAME)
 
 .PHONY: all compile run test javadoc jar clean
-
-
