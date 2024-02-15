@@ -37,4 +37,11 @@ public class ActorTest {
         assertNotNull(survivor);
     }
 
+    @Test
+    void testGetZombieAttack(){
+        assertEquals(balaise.getAttackPoints(), 2);
+        assertEquals(abomination.getAttackPoints(), 3);
+        assertEquals(walker.getAttackPoints(), 1);
+        assertEquals(runner.getAttackPoints(), 1);
+    }
 }
