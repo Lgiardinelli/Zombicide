@@ -29,10 +29,12 @@ public class ActorTest {
     }
 
     @Test
-    void testZombieInitialization(){
+    void testActorInitialization(){
         assertNotNull(balaise);
         assertNotNull(abomination);
         assertNotNull(walker);
         assertNotNull(runner);
+        assertNotNull(survivor);
     }
+
 }
