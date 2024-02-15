@@ -73,4 +73,10 @@ public class ActorTest {
         survivor.increaseSkillPoints();
         assertEquals(survivor.getSkillPoints(), 1);
     }
+
+    /* TODO : REVOIR LE TEST ICI (équiper le survivor du backpack et regarder si il est équiper) */
+    @Test
+    void testGetBackpack(){
+        assertNull(survivor.getBackpack());
+    }
 }
