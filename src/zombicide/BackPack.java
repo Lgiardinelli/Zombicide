@@ -37,7 +37,7 @@ public class BackPack {
      * @param item The item to be removed from the backpack.
      */
     public void removeItem(Item item) {
-        if (this.items.size() >= 1) {
+        if (!this.items.isEmpty()) {
             this.items.remove(item);
         }
     }
