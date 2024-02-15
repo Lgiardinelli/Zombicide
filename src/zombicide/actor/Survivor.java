@@ -81,6 +81,10 @@ public class Survivor extends Actor {
         return handleItem;
     }
 
+    public boolean hasRoles() {
+        return this.roles != null;
+    }
+
     /**
      * Gets the roles associated with the survivor.
      *
