@@ -35,3 +35,4 @@ clean:
 	rm -rf $(CLASSES_DIR) $(DOCS) $(JAR2_NAME)
 
 .PHONY: all compile run test javadoc jar clean
+
