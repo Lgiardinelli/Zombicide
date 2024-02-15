@@ -67,4 +67,10 @@ public class ActorTest {
         assertEquals(pistol, survivor.getHandleItem());
     }
 
+    @Test
+    void testSkillPoints(){
+        assertEquals(survivor.getSkillPoints(), 0);
+        survivor.increaseSkillPoints();
+        assertEquals(survivor.getSkillPoints(), 1);
+    }
 }
