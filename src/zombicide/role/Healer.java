@@ -19,4 +19,8 @@ public class Healer extends Role {
     }
 
 
+    @Override
+    protected void handleAction() {
+
+    }
 }
