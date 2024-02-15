@@ -9,6 +9,8 @@ import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Balaise;
 import zombicide.actor.zombie.Runner;
 import zombicide.actor.zombie.Walker;
+import zombicide.item.weapon.Axe;
+import zombicide.item.weapon.Pistol;
 import zombicide.role.Fighter;
 
 public class ActorTest {
@@ -18,6 +20,9 @@ public class ActorTest {
     private Zombie walker;
     private Zombie abomination;
     private Role fighter;
+    private Item pistol;
+    private Item axe;
+    private BackPack backPack;
 
     @BeforeEach
     public void before(){
@@ -26,6 +31,9 @@ public class ActorTest {
         this.abomination = new Abomination();
         this.walker = new Walker();
         this.runner = new Runner();
+        this.pistol = new Pistol();
+        this.backPack = new BackPack();
+        this.axe = new Axe();
     }
 
     @Test
@@ -52,4 +60,11 @@ public class ActorTest {
         assertFalse(walker.getIsStrong());
         assertFalse(runner.getIsStrong());
     }
+
+    @Test
+    void testHandleItem(){
+        survivor.handleItem(pistol);
+        assertEquals(pistol, survivor.getHandleItem());
+    }
+
 }
