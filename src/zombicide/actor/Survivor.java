@@ -1,6 +1,5 @@
 package zombicide.actor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import zombicide.Actor;
@@ -23,19 +22,23 @@ public class Survivor extends Actor {
     private Item handleItem;
 
     /** The roles associated with the survivor. */
-    private List<Role> rolePlayer;
+    private List<Role> roles;
 
     /**
      * Constructs a new Survivor object with default action points and life points.
      * The survivor starts with 3 action points and 5 life points.
      *
-     * @param role The role of the survivor.
+     * @param roles The role of the survivor.
      */
-    public Survivor(Role role) {
+    public Survivor(List<Role> roles) {
+        this();
+        this.roles = roles;
+    }
+
+    public Survivor() {
         this.skillPoints = 0;
         this.actionPoints = 3;
         this.lifePoints = 5;
-        this.rolePlayer = new ArrayList<>();
     }
 
     /**
@@ -83,8 +86,8 @@ public class Survivor extends Actor {
      *
      * @return The list of roles.
      */
-    public List<Role> getRolePlayer() {
-        return rolePlayer;
+    public List<Role> getRoles() {
+        return roles;
     }
     
     /**
