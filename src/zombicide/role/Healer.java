@@ -12,7 +12,7 @@ public class Healer extends Role {
         super();
     }
 
-    public void addLifePoint(List<Survivor> survivors) {
+    public void addLifePoints(List<Survivor> survivors) {
         for (Survivor survivor : survivors) {
             survivor.addLifePoints(NB_LIFE_POINTS);
         }
