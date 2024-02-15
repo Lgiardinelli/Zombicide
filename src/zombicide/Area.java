@@ -12,19 +12,16 @@ import zombicide.util.Color;
  * Abstract class representing an area in the game.
  */
 public abstract class Area {
-    private static int nbZombies = 0;
-    private static int nbSurvivors = 0;
     protected static final String resetColorCode = Color.RESET.getCode();
     protected static final String blackColorCode = Color.BLACK.getCode();
-    private final String OPEN_UP = "-     ";
-	private final String CLOSE_UP = "------";
+    private static final String OPEN_UP = "-     ";
+	private static final String CLOSE_UP = "------";
     private final static char ZOMBIE = 'Z';
     private final static char SURVIVOR = 'S';
-    protected List<Survivor> survivors = new ArrayList<>();
-    protected List<Zombie> zombies = new ArrayList<>();
-    private int posX;
-    private int posY;
-
+    protected List<Survivor> survivors;
+    protected List<Zombie> zombies;
+    private final int posX;
+    private final int posY;
     private int noise;
     protected final Map<DoorDirection, Door> doors;
 
@@ -44,8 +41,6 @@ public abstract class Area {
         for (DoorDirection d : DoorDirection.values()) {
             doors.put(d, new Door());
         }
-        // this.zombies = new ArrayList<>();
-        // this.survivors = new ArrayList<>();
     }
 
     /**
@@ -142,7 +137,7 @@ public abstract class Area {
         if (z == 0) {
             return "    ";
         }
-        return " Z" + z + " ";
+        return " " + ZOMBIE + z + " ";
     }
 
     private String hasSurvivors() {
@@ -150,7 +145,7 @@ public abstract class Area {
         if (s == 0) {
             return "    ";
         }
-        return " S" + s + " ";
+        return " " + SURVIVOR + s + " ";
     }
 
     public void addZombie(Zombie z) {
