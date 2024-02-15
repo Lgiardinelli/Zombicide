@@ -43,6 +43,8 @@ public abstract class Area {
         }
     }
 
+    abstract void addActor(Actor actor);
+
     /**
      * Retrieves the door in the specified direction.
      * 
