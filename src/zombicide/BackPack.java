@@ -41,4 +41,13 @@ public class BackPack {
             this.items.remove(item);
         }
     }
+
+    /**
+     * Returns the list of items currently held or stored by the survivor.
+     *
+     * @return A List of Item objects representing the items held or stored by the survivor.
+     */
+    public List<Item> getItems() {
+        return items;
+    }
 }
