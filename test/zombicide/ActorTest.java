@@ -44,4 +44,12 @@ public class ActorTest {
         assertEquals(walker.getAttackPoints(), 1);
         assertEquals(runner.getAttackPoints(), 1);
     }
+
+    @Test
+    void testGetIsStrong(){
+        assertTrue(balaise.getIsStrong());
+        assertTrue(abomination.getIsStrong());
+        assertFalse(walker.getIsStrong());
+        assertFalse(runner.getIsStrong());
+    }
 }
