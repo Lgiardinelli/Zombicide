@@ -8,4 +8,9 @@ public class Balaise extends Zombie{
 		this.actionPoints = 1;
 		this.lifePoints = 4;
 	}
+
+	@Override
+	protected void handleAction() {
+
+	}
 }

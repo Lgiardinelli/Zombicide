@@ -8,4 +8,9 @@ public class Runner extends Zombie {
 		this.actionPoints = 2;
 		this.lifePoints = 1;
 	}
+
+	@Override
+	protected void handleAction() {
+
+	}
 }

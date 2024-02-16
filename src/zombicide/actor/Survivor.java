@@ -113,4 +113,8 @@ public class Survivor extends Actor {
     public boolean levelReached() {
         return this.skillPoints == 3 || this.skillPoints == 7 || this.skillPoints == 11;
     }
+
+    @Override
+    protected void handleAction() {
+    }
 }

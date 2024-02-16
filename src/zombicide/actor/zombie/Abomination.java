@@ -8,4 +8,9 @@ public class Abomination extends Zombie {
 		this.actionPoints = 1;
 		this.lifePoints = 6;
 	}
+
+	@Override
+	protected void handleAction() {
+
+	}
 }

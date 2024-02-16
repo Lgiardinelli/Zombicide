@@ -7,7 +7,7 @@ public abstract class Actor {
     /**
      * The current area where the actor is located.
      */
-    protected Area area;
+    private Area area;
     /**
      * The life points of the actor.
      */
@@ -62,20 +62,6 @@ public abstract class Actor {
         this.actionPoints = actionPoints;
     }
 
-    /**
-     * Moves the player.
-     * (To be implemented by subclasses)
-     */
-    public void movePlayer() {
-    	
-    }
-
-    /**
-     * Performs an attack.
-     * (To be implemented by subclasses)
-     */
-    public void attack() {
-    	
-    }
+    protected abstract void handleAction();
 }
 

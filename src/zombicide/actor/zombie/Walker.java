@@ -9,5 +9,10 @@ public class Walker extends Zombie {
 		this.actionPoints = 1;
 		this.lifePoints = 1;
 	}
+
+	@Override
+	protected void handleAction() {
+
+	}
 }
 
