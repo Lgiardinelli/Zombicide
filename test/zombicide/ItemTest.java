@@ -84,4 +84,12 @@ public class ItemTest {
         backPack.addItem(weapon);
         assertTrue(backPack.getItems().contains(weapon));
     }
+
+    @Test
+    void testRemoveItemInBackpack(){
+        backPack.addItem(weapon);
+        assertTrue(backPack.getItems().contains(weapon));
+        backPack.removeItem(weapon);
+        assertFalse(backPack.getItems().contains(weapon));
+    }
 }
