@@ -1,12 +1,12 @@
 package zombicide;
 
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import zombicide.actor.Survivor;
 import zombicide.actor.Zombie;
 import zombicide.actor.zombie.Abomination;
-import zombicide.actor.zombie.Balaise;
-import zombicide.actor.zombie.Runner;
-import zombicide.actor.zombie.Walker;
+import zombicide.item.Weapon;
 import zombicide.item.weapon.*;
 
 public class ItemTest {
@@ -15,12 +15,13 @@ public class ItemTest {
     private Zombie abomination;
 
     //Item
-    private Item pistol;
     private Item axe;
     private Item chainsaw;
     private Item crowbar;
     private Item rifle;
     private BackPack backPack;
+
+    private Weapon weapon;
 
     @BeforeEach
     public void before(){
@@ -30,10 +31,17 @@ public class ItemTest {
 
         //Item
         this.backPack = new BackPack();
-        this.pistol = new Pistol();
         this.axe = new Axe();
         this.chainsaw = new Chainsaw();
         this.rifle = new Riffle();
         this.crowbar = new Crowbar();
+        this.weapon = new Pistol();
     }
+
+    @Test
+    void testShoot(){
+        int result = weapon.shoot();
+        assertTrue(result >= weapon.getNbDiceThrows() && result <= weapon.getNbDiceThrows() * 6);
+    }
+
 }
