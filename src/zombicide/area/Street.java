@@ -1,7 +1,6 @@
 package zombicide.area;
 
 import zombicide.Area;
-import zombicide.DoorDirection;
 import zombicide.util.Color;
 
 /**
@@ -9,7 +8,8 @@ import zombicide.util.Color;
  */
 public class Street extends Area {
     private static final char name = 'S';
-    private static final String backBlueColorCode = Color.BACK_BLUE.getCode();
+    private static Street spawn;
+    private static final String blueBoldBrightCode = Color.BLUE_BOLD_BRIGHT.getCode();
 
 
     /** Indicates whether the street is vertical or not. */
@@ -27,7 +27,14 @@ public class Street extends Area {
 
     @Override
     protected String getName() {
-        return backBlueColorCode + blackColorCode + name + resetColorCode;
+        return blueBoldBrightCode + name + resetColorCode;
     }
 
+    public static Street getSpawn() {
+        return spawn;
+    }
+
+    public static void setSpawn(Street spawn) {
+        Street.spawn = spawn;
+    }
 }

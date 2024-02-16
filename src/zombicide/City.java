@@ -15,7 +15,7 @@ import zombicide.util.Position;
 public class City {
     private final Area[][] areas;
     private final Random random;
-    private Spawn spawn;
+    private Street spawn;
     private TheContinental theContinental;
     private ThePharmacy thePharmacy;
     private static final String CLOSE_DOWN = "------";
@@ -100,7 +100,8 @@ public class City {
     private void createSpawnStreet(Position p) {
         int x = p.getX();
         int y = p.getY();
-        this.spawn = new Spawn(x, y);
+        this.spawn = new Street(x, y);
+        Street.setSpawn(this.spawn);
         this.areas[y][x] = this.spawn;
     }
 
