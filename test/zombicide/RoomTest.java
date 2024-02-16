@@ -10,10 +10,12 @@ import zombicide.area.Room;
 class RoomTest {
 
 	private Room room;
+	private Door door;
 	
 	@BeforeEach
 	private void before() {
 		room = new Room(5,6);
+		door = new Door();
 	}
 	
 	@Test
@@ -28,5 +30,15 @@ class RoomTest {
 			Door door = room.getDoor(direction);
 			assertNotNull(door);
 		}
+	}
+
+	@Test
+	void testOpenAndCloseDoorInRoom(){
+		room.addDoor(DoorDirection.UP, door);
+		assertTrue(door.isOpen());
+		door.close();
+		assertFalse(door.isOpen());
+		door.open();
+		assertTrue(door.isOpen());
 	}
 }
