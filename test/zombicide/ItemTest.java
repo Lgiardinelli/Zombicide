@@ -44,4 +44,17 @@ public class ItemTest {
         assertTrue(result >= weapon.getNbDiceThrows() && result <= weapon.getNbDiceThrows() * 6);
     }
 
+
+    @Test
+    void testCanShoot(){
+        boolean canShoot = weapon.canShoot();
+        if(canShoot){
+            assertTrue(canShoot);
+        } else {
+            assertFalse(canShoot);
+        }
+    }
+
+
+
 }
