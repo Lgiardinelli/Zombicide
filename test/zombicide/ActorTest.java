@@ -98,6 +98,7 @@ public class ActorTest {
         }
         assertEquals(survivor.getSkillPoints(), 11);
         assertTrue(survivor.levelReached());
-
     }
+
+    /* TODO : FAIRE UN TEST SUR LES ROLES */
 }
