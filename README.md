@@ -303,7 +303,6 @@ __Objectif atteint :__
 __Réflexion du groupe :__  
 
 Lundi 12/02 :
-
 On a pensé à modifier les classes relatant de Weapon car nous avions remarqué une certaine redondance par rapport à leurs caractéristiques pour le constructeur. En effet, on rappelait les attributs pour chaque arme pour modifier les stats. Nous avons donc créet un constrcuteur dans la classe abstraite Weapon ( il n'y en avaut pas à la base) pour ensuite le rappeler dans chaque classe fille avec les stats correspondantes.
 Par rapport au display, nous avons schématisé ce à quoi ressemblera le display avec l'ajout des acteurs pour chaque cellule.
 
@@ -317,11 +316,10 @@ De plus, des couleurs seront ajoutées afin de simplifier la compréhension dans
 Suite au mail reçu par notre chargé de TD, nous avons modifié les constantes que nous avons utilisé pour l'affichage soit remplacé par des méthodes qui vont nous permettre d'avoir quelque chose de dyamique.
 Nous avons ajouté en plus pour pas surcharger l'affichage, fait en sorte que s'il n'y a pas de zombies ou de survivants dans une cellulle, le nombre et le nom de zombies/survivant ne soit pas affichés.
 
-Jeudi 15/02 :
-
-
 Vendredi 16/02 :
-
+En ce qui concerne le spawn, nous en sommes convenu pour le moment qu'il était intéressant que le spawn soit une Street et non une classe à part entière. 
+En effet dans le plateau d'entrainement il nous faut mettre le spawn sur une Manhole, ce qui était bloquant dans l'ancienne modélisation. 
+Le spawn sera donc "sauvegardé" à sa création et ce en tant que Street.
 
 Week-end :
 
@@ -345,7 +343,10 @@ Jeudi 15/02 :
 
 
 Vendredi 16/02 :
-
+- Dylan : Modification de la logique de spawn par une variable de classe (statique) plutôt que d'utiliser une classe indépendante (voir réflexion de groupe). 
+Cette variable consiste à stocker une instance de Street passée en paramètre d'un mutateur. Ainsi nous avons accès au spawn depuis sa création sans devoir se soucier s'il s'agit d'une Manhole ou d'une Street.
+- Dylan : Début d'implémentation de la gestion d'action afin de pouvoir gérer les rôles de chaque joueurs. 
+Pour le moment la gestion des Rôles se fait dans une classe abstraite, mais cette dernière pourrait devenir une interface si la modélisation ne requiert pas d'attributs communs entre chaque rôle.
 
 Week-end :
 
