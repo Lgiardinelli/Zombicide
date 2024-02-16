@@ -10,8 +10,9 @@ import zombicide.actor.zombie.Balaise;
 import zombicide.actor.zombie.Runner;
 import zombicide.actor.zombie.Walker;
 import zombicide.area.Room;
+import zombicide.area.room.ThePharmacy;
 import zombicide.item.weapon.*;
-import zombicide.role.Fighter;
+
 
 public class ActorTest {
     private Survivor survivor;
@@ -127,11 +128,9 @@ public class ActorTest {
     }
 
     @Test
-    void testGetAreaOfActor(){
-        room.addSurvivor(survivor);
+    void testSetAndGetAreaOfActor(){
+        survivor.setArea(room);
         assertEquals(survivor.getArea().getY(), room.getY());
         assertEquals(survivor.getArea().getX(), room.getX());
     }
-
-
 }
