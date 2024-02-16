@@ -8,9 +8,10 @@ SRC_DIR = src
 TEST_DIR = test
 DOCS_DIR = docs
 
-MAIN_CLASS = zombicide.Main
+MAIN_PACKAGE = zombicide
+MAIN_CLASS = $(MAIN_PACKAGE).Main
 
-JAVA_SOURCES = $(wildcard $(SRC_DIR)/*.java $(SRC_DIR)/zombicide/*.java)
+JAVA_SOURCES = $(wildcard $(SRC_DIR)/*.java $(SRC_DIR)/$(MAIN_PACKAGE)/*.java)
 CLASSES_DIR = classes
 
 JAR_NAME = livrable2.jar
@@ -31,7 +32,7 @@ run:
 
 # Compile tests
 test: compile
-	$(JAVAC) -cp junit-console.jar:$(CLASSES_DIR) $(TEST_DIR)/zombicide/*.java
+	$(JAVAC) -cp junit-console.jar:$(CLASSES_DIR) $(TEST_DIR)/$(MAIN_PACKAGE)/*.java
 
 # Run tests
 run-test: test
@@ -39,7 +40,7 @@ run-test: test
 
 # Generate Java documentation
 javadoc:
-	$(JAVADOC) -sourcepath $(SRC_DIR) -d $(DOCS_DIR) -subpackages zombicide
+	$(JAVADOC) -sourcepath $(SRC_DIR) -d $(DOCS_DIR) -subpackages $(MAIN_PACKAGE)
 
 # Create a JAR file
 jar: compile
