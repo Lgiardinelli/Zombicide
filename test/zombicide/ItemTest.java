@@ -3,39 +3,29 @@ package zombicide;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import zombicide.actor.Survivor;
-import zombicide.actor.Zombie;
-import zombicide.actor.zombie.Abomination;
-import zombicide.item.Weapon;
+import zombicide.item.*;
+import zombicide.item.careItem.FirstAidKit;
+import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.*;
 
 public class ItemTest {
     //Actor
-    private Survivor survivor;
-    private Zombie abomination;
-
-    //Item
-    private Item axe;
-    private Item chainsaw;
-    private Item crowbar;
-    private Item rifle;
-    private BackPack backPack;
-
     private Weapon weapon;
+    private CareItem healingFiask;
+    private CareItem firstAidKit;
+    private InfraredGlasses infraredGlasses;
+    private Map map;
+    private MasterKey masterKey;
 
     @BeforeEach
     public void before(){
-        //Actor
-        this.survivor = new Survivor();
-        this.abomination = new Abomination();
-
         //Item
-        this.backPack = new BackPack();
-        this.axe = new Axe();
-        this.chainsaw = new Chainsaw();
-        this.rifle = new Riffle();
-        this.crowbar = new Crowbar();
         this.weapon = new Pistol();
+        this.healingFiask = new HealingFiask();
+        this.firstAidKit = new FirstAidKit();
+        this.infraredGlasses = new InfraredGlasses();
+        this.map = new Map();
+        this.masterKey = new MasterKey();
     }
 
     @Test
@@ -69,6 +59,18 @@ public class ItemTest {
     void testGetMinAndMaxHittingRange(){
         assertEquals(weapon.getMinHittingRange(), 0);
         assertEquals(weapon.getMaxHittingRange(), 1);
+    }
+
+    @Test
+    void testNoisyItem(){
+        //CareItem
+        assertFalse(firstAidKit.isNoisy);
+        assertFalse(healingFiask.isNoisy);
+
+        //Item
+        assertFalse(infraredGlasses.isNoisy);
+        assertTrue(map.isNoisy);
+        assertFalse(masterKey.isNoisy);
     }
 
 
