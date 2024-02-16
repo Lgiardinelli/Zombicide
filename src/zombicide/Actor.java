@@ -5,6 +5,10 @@ package zombicide;
  */
 public abstract class Actor {
     /**
+     * The current area where the actor is located.
+     */
+    protected Area area;
+    /**
      * The life points of the actor.
      */
     protected int lifePoints;
@@ -13,6 +17,14 @@ public abstract class Actor {
      * The action points of the actor.
      */
     protected int actionPoints;
+
+    public Area getArea() {
+        return area;
+    }
+
+    public void setArea(Area area) {
+        this.area = area;
+    }
 
     /**
      * Retrieves the life points of the actor.
@@ -28,8 +40,8 @@ public abstract class Actor {
      *
      * @param lifePoints the life points to set
      */
-    public void setLifePoints(int lifePoints) {
-        this.lifePoints = lifePoints;
+    public void addLifePoints(int lifePoints) {
+        this.lifePoints += lifePoints;
     }
 
     /**

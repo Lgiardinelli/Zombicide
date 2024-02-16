@@ -16,7 +16,7 @@ public class Main {
 			aCity.getAreas()[0][1].getDoor(DoorDirection.DOWN).open();
 			aCity.getAreas()[0][1].getDoor(DoorDirection.LEFT).open();
 			Zombie z = new Abomination();
-			aCity.getAreas()[0][0].addZombie(z);
+			aCity.getAreas()[5][5].addZombie(z);
 			aCity.display();
 		}
 		else {
@@ -28,7 +28,7 @@ public class Main {
 		
 		System.out.println();
 		System.out.println();
-		System.out.println("Plateau d'entrainement :");
+		System.out.println("Plateau d'entraînement :");
 		
 		trainCity.getAreas()[0][0].getDoor(DoorDirection.DOWN).open();
 		trainCity.getAreas()[0][1].getDoor(DoorDirection.DOWN).open();
