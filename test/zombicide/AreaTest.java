@@ -102,5 +102,14 @@ class AreaTest {
 		assertEquals("|R    ", room.closeLeft1());
 		assertEquals("|     ", room.closeLeft2());
 	}
-	
+
+	@Test
+	void testGetSurvivorInArea(){
+		room.addSurvivor(survivor);
+		room.addSurvivor(survivor2);
+		assertTrue(room.getSurvivors().contains(survivor));
+		assertTrue(room.getSurvivors().contains(survivor2));
+	}
+
+
 }
