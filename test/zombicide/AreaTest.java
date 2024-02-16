@@ -39,66 +39,6 @@ class AreaTest {
         //Continental
         assertNotNull(continental);
     }
-
-	/**
-	 * Corriger les tests avec le beforeEach
-	 */
-	/**
-	@Test
-    void testAreaSurvivorList() {
-		//Room
-        Area room = new Room(1, 2, 4);
-        assertNotNull(room);
-        assertTrue(room.getSurvivors().isEmpty());
-
-        Survivor survivor = new Survivor("John");
-        room.addSurvivor(survivor);
-
-        assertFalse(room.getSurvivors().isEmpty());
-        assertTrue(room.getSurvivors().contains(survivor));
-        
-        //Street
-        Area street = new Street(1, 2);
-        assertNotNull(street);
-        assertTrue(street.getSurvivors().isEmpty());
-
-        Survivor survivor = new Survivor("Elies");
-        street.addSurvivor(survivor);
-
-        assertFalse(street.getSurvivors().isEmpty());
-        assertTrue(street.getSurvivors().contains(survivor));
-    }
-	*/
-	
-	/**
-	 * Corriger les tests avec le beforeEach
-	 */
-	/**
-	@Test
-    void testAreaZombieList() {
-		//Room
-        Area room = new Room(1, 2, 4);
-        assertNotNull(room);
-        assertTrue(room.getZombies().isEmpty());
-
-        Zombie zombie = new Zombie();
-        room.addZombie(zombie);
-
-        assertFalse(room.getZombies().isEmpty());
-        assertTrue(room.getZombies().contains(zombie));
-        
-        //Street
-        Area street = new Street(1, 2);
-        assertNotNull(street);
-        assertTrue(street.getZombies().isEmpty());
-
-        Zombie zombie = new Zombie();
-        street.addZombie(zombie);
-
-        assertFalse(street.getZombies().isEmpty());
-        assertTrue(street.getZombies().contains(zombie));
-	}
-	*/
 	
 	@Test
     void testAreaCanFight() {
