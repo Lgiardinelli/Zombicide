@@ -1,37 +1,57 @@
+# Variables
 JAVAC = javac
 JAVA = java
 JAR = jar
 JAVADOC = javadoc
 
-SRC = src
-TEST = test
-CLASSES = classes
-DOCS = docs
+SRC_DIR = src
+TEST_DIR = test
+DOCS_DIR = docs
+
+MAIN_CLASS = zombicide.Main
+
+JAVA_SOURCES = $(wildcard $(SRC_DIR)/*.java $(SRC_DIR)/zombicide/*.java)
+CLASSES_DIR = classes
+
 JAR_NAME = livrable2.jar
-MAIN_CLASS = zombicide.main
 
-SOURCES = $(wildcard $(SRC)/*.java $(SRC)/zombicide/*.java)
-CLASSES_DIR = $(CLASSES)
+# Targets
+.PHONY: all clean compile jar test javadoc run-test run
 
-all : compile run test javadoc jar
+# Default target
+all: compile jar test javadoc run-test run
 
-compile:
-	$(JAVAC) -sourcepath $(SRC) -d $(CLASSES_DIR) $(SOURCES)
+# Compile Java source files
+compile: $(JAVA_SOURCES)
+	$(JAVAC) -sourcepath $(SRC_DIR) -d $(CLASSES_DIR) $^
 
+# Run the main Java application
 run:
-	$(JAVA) -classpath $(CLASSES_DIR) $(MAIN_CLASS) 10 10
+	$(JAVA) -cp $(CLASSES_DIR) $(MAIN_CLASS) $(ARGS)
 
-test:
-	$(JAVAC) -classpath junit-console.jar:$(CLASSES_DIR) $(TEST)/zombicide/*.java
-	$(JAVA) -jar junit-console.jar -classpath $(TEST):$(CLASSES_DIR)
+# Compile tests
+test: compile
+	$(JAVAC) -cp junit-console.jar:$(CLASSES_DIR) $(TEST_DIR)/zombicide/*.java
 
+# Run tests
+run-test: test
+	$(JAVA) -jar junit-console.jar -cp $(TEST_DIR):$(CLASSES_DIR)
+
+# Generate Java documentation
 javadoc:
-	$(JAVADOC) -sourcepath $(SRC) -d $(DOCS) -subpackages zombicide
+	$(JAVADOC) -sourcepath $(SRC_DIR) -d $(DOCS_DIR) -subpackages zombicide
 
-jar:
+# Create a JAR file
+jar: compile
 	$(JAR) cvfe $(JAR_NAME) $(MAIN_CLASS) -C $(CLASSES_DIR) .
 
-clean:
-	rm -rf $(CLASSES_DIR) $(DOCS) $(JAR2_NAME)
+run-jar: jar
+	$(JAVA) -jar $(JAR_NAME) $(ARGS)
 
-.PHONY: all compile run test javadoc jar clean
+# Clean up generated files
+clean:
+	rm -rf $(CLASSES_DIR) $(DOCS_DIR) $(JAR_NAME)
+
+# Dependency rules
+$(CLASSES_DIR)/%.class: $(SRC_DIR)/%.java
+	$(JAVAC) -d $(CLASSES_DIR) $<
