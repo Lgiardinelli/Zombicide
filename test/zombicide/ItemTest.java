@@ -55,6 +55,11 @@ public class ItemTest {
         }
     }
 
+    @Test
+    void testGetDamageOfWeapon(){
+        assertEquals(weapon.getDamage(), 1);
+    }
+
 
 
 }
