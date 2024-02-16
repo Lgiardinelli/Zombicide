@@ -104,7 +104,12 @@ public class ActorTest {
         assertEquals(abomination.getLifePoints(), 6);
     }
 
-
+    @Test
+    void testAddLifePointsOfActor(){
+        assertEquals(survivor.getLifePoints(), 5);
+        survivor.addLifePoints(1);
+        assertEquals(survivor.getLifePoints(), 6);
+    }
 
 
 }
