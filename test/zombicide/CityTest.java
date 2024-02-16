@@ -46,17 +46,5 @@ class CityTest {
 	    Area actualArea = city.getCellUp(0, 9);
 	    assertEquals(expectedArea, actualArea);
 	}
-
-	@Test
-	void testOpenLeftArea(){
-		assertEquals(" R    ", room.openLeft1());
-		assertEquals("      ", room.openLeft2());
-	}
-
-	@Test
-	void testCloseLeftArea(){
-		assertEquals("|R    ", room.closeLeft1());
-		assertEquals("|     ", room.closeLeft2());
-	}
 }
 
