@@ -98,5 +98,13 @@ public class ActorTest {
 
     /* TODO : FAIRE UN TEST SUR LES ROLES */
 
+    @Test
+    void testGetLifePointsOfActor(){
+        assertEquals(survivor.getLifePoints(), 5);
+        assertEquals(abomination.getLifePoints(), 6);
+    }
+
+
+
 
 }
