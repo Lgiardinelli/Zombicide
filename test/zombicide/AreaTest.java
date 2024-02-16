@@ -85,23 +85,6 @@ class AreaTest {
         assertTrue(pharmacy.canFight());
     }
 	
-	/**
-	 * Faire les tests sur la précence de loot dans area et corriger avec un beforeEach 
-	 */
-	/**
-	@Test
-	void testLootInArea() {
-		//Room
-		Area room = new Room(1,2);
-		
-		//Continental
-		Area continental = new TheContinental(4,4);
-		
-		//Pharmacy
-		Area pharmacy = new ThePharmacy(6,6);
-	}
-	*/
-	
 	@Test
 	void testPositionOfArea() {
 		assertEquals(room.getX(), 6);
