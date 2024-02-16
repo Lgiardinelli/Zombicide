@@ -47,7 +47,8 @@ public class ItemTest {
 
     @Test
     void testGetDamageOfWeapon(){
-        assertEquals(weapon.getDamage(), 1);
+        int WeaponDamage = weapon.getDamage();
+        assertEquals(WeaponDamage, 1);
     }
 
     @Test
