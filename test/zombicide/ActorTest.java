@@ -9,6 +9,7 @@ import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Balaise;
 import zombicide.actor.zombie.Runner;
 import zombicide.actor.zombie.Walker;
+import zombicide.area.Room;
 import zombicide.item.weapon.*;
 import zombicide.role.Fighter;
 
@@ -20,6 +21,7 @@ public class ActorTest {
     private Zombie abomination;
     private Item pistol;
     private BackPack backPack;
+    private Area room;
 
     @BeforeEach
     public void before(){
@@ -30,6 +32,7 @@ public class ActorTest {
         this.runner = new Runner();
         this.pistol = new Pistol();
         this.backPack = new BackPack();
+        this.room = new Room(6,7);
     }
 
     @Test
@@ -112,15 +115,22 @@ public class ActorTest {
     }
 
     @Test
-    void testGetActionPoints(){
+    void testGetActionPointsForActor(){
         assertEquals(survivor.getActionPoints(), 3);
     }
 
     @Test
-    void testSetActionPoints(){
+    void testSetActionPointsForActor(){
         assertEquals(survivor.getActionPoints(), 3);
         survivor.setActionPoints(5);
         assertEquals(survivor.getActionPoints(), 5);
+    }
+
+    @Test
+    void testGetAreaOfActor(){
+        room.addSurvivor(survivor);
+        assertEquals(survivor.getArea().getY(), room.getY());
+        assertEquals(survivor.getArea().getX(), room.getX());
     }
 
 
