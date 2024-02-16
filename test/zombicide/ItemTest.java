@@ -65,6 +65,12 @@ public class ItemTest {
         assertEquals(weapon.getDiceThreshold(), 4);
     }
 
+    @Test
+    void testGetMinAndMaxHittingRange(){
+        assertEquals(weapon.getMinHittingRange(), 0);
+        assertEquals(weapon.getMaxHittingRange(), 1);
+    }
+
 
 
 }
