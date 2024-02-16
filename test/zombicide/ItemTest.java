@@ -16,6 +16,7 @@ public class ItemTest {
     private InfraredGlasses infraredGlasses;
     private Map map;
     private MasterKey masterKey;
+    private BackPack backPack;
 
     @BeforeEach
     public void before(){
@@ -26,6 +27,7 @@ public class ItemTest {
         this.infraredGlasses = new InfraredGlasses();
         this.map = new Map();
         this.masterKey = new MasterKey();
+        this.backPack = new BackPack();
     }
 
     @Test
@@ -77,6 +79,9 @@ public class ItemTest {
         assertFalse(masterKey.isNoisy);
     }
 
-
-
+    @Test
+    void testAddItemInBackpack(){
+        backPack.addItem(weapon);
+        assertTrue(backPack.getItems().contains(weapon));
+    }
 }
