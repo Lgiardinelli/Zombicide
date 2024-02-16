@@ -116,5 +116,12 @@ public class ActorTest {
         assertEquals(survivor.getActionPoints(), 3);
     }
 
+    @Test
+    void testSetActionPoints(){
+        assertEquals(survivor.getActionPoints(), 3);
+        survivor.setActionPoints(5);
+        assertEquals(survivor.getActionPoints(), 5);
+    }
+
 
 }
