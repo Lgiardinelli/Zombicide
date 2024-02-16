@@ -9,8 +9,7 @@ import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Balaise;
 import zombicide.actor.zombie.Runner;
 import zombicide.actor.zombie.Walker;
-import zombicide.item.weapon.Axe;
-import zombicide.item.weapon.Pistol;
+import zombicide.item.weapon.*;
 import zombicide.role.Fighter;
 
 public class ActorTest {
@@ -19,9 +18,7 @@ public class ActorTest {
     private Zombie runner;
     private Zombie walker;
     private Zombie abomination;
-    private Role fighter;
     private Item pistol;
-    private Item axe;
     private BackPack backPack;
 
     @BeforeEach
@@ -33,7 +30,6 @@ public class ActorTest {
         this.runner = new Runner();
         this.pistol = new Pistol();
         this.backPack = new BackPack();
-        this.axe = new Axe();
     }
 
     @Test
@@ -101,4 +97,6 @@ public class ActorTest {
     }
 
     /* TODO : FAIRE UN TEST SUR LES ROLES */
+
+
 }
