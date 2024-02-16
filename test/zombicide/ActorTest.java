@@ -9,9 +9,10 @@ import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Balaise;
 import zombicide.actor.zombie.Runner;
 import zombicide.actor.zombie.Walker;
-import zombicide.item.weapon.Axe;
-import zombicide.item.weapon.Pistol;
-import zombicide.role.Fighter;
+import zombicide.area.Room;
+import zombicide.area.room.ThePharmacy;
+import zombicide.item.weapon.*;
+
 
 public class ActorTest {
     private Survivor survivor;
@@ -19,10 +20,9 @@ public class ActorTest {
     private Zombie runner;
     private Zombie walker;
     private Zombie abomination;
-    private Role fighter;
     private Item pistol;
-    private Item axe;
     private BackPack backPack;
+    private Area room;
 
     @BeforeEach
     public void before(){
@@ -33,7 +33,7 @@ public class ActorTest {
         this.runner = new Runner();
         this.pistol = new Pistol();
         this.backPack = new BackPack();
-        this.axe = new Axe();
+        this.room = new Room(6,7);
     }
 
     @Test
@@ -101,4 +101,36 @@ public class ActorTest {
     }
 
     /* TODO : FAIRE UN TEST SUR LES ROLES */
+
+    @Test
+    void testGetLifePointsOfActor(){
+        assertEquals(survivor.getLifePoints(), 5);
+        assertEquals(abomination.getLifePoints(), 6);
+    }
+
+    @Test
+    void testAddLifePointsOfActor(){
+        assertEquals(survivor.getLifePoints(), 5);
+        survivor.addLifePoints(1);
+        assertEquals(survivor.getLifePoints(), 6);
+    }
+
+    @Test
+    void testGetActionPointsForActor(){
+        assertEquals(survivor.getActionPoints(), 3);
+    }
+
+    @Test
+    void testSetActionPointsForActor(){
+        assertEquals(survivor.getActionPoints(), 3);
+        survivor.setActionPoints(5);
+        assertEquals(survivor.getActionPoints(), 5);
+    }
+
+    @Test
+    void testSetAndGetAreaOfActor(){
+        survivor.setArea(room);
+        assertEquals(survivor.getArea().getY(), room.getY());
+        assertEquals(survivor.getArea().getX(), room.getX());
+    }
 }
