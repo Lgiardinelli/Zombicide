@@ -57,8 +57,10 @@ public class ItemTest {
 
     @Test
     void testGetMinAndMaxHittingRange(){
-        assertEquals(weapon.getMinHittingRange(), 0);
-        assertEquals(weapon.getMaxHittingRange(), 1);
+        int minRange = weapon.getMinHittingRange();
+        int maxRange = weapon.getMaxHittingRange();
+        assertEquals(minRange, 0);
+        assertEquals(maxRange, 1);;
     }
 
     @Test
