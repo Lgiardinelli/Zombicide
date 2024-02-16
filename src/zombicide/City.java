@@ -1,16 +1,15 @@
 package zombicide;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import zombicide.area.Room;
 import zombicide.area.Street;
 import zombicide.area.room.TheContinental;
 import zombicide.area.room.ThePharmacy;
 import zombicide.area.street.Manhole;
-import zombicide.area.street.Spawn;
 import zombicide.util.Position;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class City {
     private final Area[][] areas;
