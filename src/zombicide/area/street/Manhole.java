@@ -7,7 +7,7 @@ import zombicide.util.Color;
  * Represents a special street with manholes in the game.
  */
 public class Manhole extends Area {
-    private static final String backRedColorCode = Color.BACK_RED.getCode();
+    private static final String cyanBoldBrightCode = Color.CYAN_BOLD_BRIGHT.getCode();
 
     private static final char name = 'M';
 
@@ -24,7 +24,7 @@ public class Manhole extends Area {
 
     @Override
     protected String getName() {
-        return backRedColorCode + blackColorCode + name + resetColorCode;
+        return cyanBoldBrightCode + name + resetColorCode;
     }
 
 

@@ -8,7 +8,7 @@ import zombicide.util.Color;
  */
 public class TheContinental extends Room {
     private static final char name = 'C';
-    private static final String backPurpleColorCode = Color.BACK_PURPLE.getCode();
+    private static final String purpleBgBrightCode = Color.PURPLE_BG_BRIGHT.getCode();
 
 
     /**
@@ -23,7 +23,7 @@ public class TheContinental extends Room {
 
     @Override
     protected String getName() {
-    	return backPurpleColorCode + blackColorCode + name + resetColorCode;
+    	return purpleBgBrightCode + blackBoldColorCode + name + resetColorCode;
     }
 
     /**

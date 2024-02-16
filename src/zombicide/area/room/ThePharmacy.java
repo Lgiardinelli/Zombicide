@@ -8,7 +8,7 @@ import zombicide.util.Color;
  */
 public class ThePharmacy extends Room {
     private static final char name = 'P';
-    private static final String backGreenColorCode = Color.BACK_GREEN.getCode();
+    private static final String greenBgBrightCode = Color.GREEN_BG_BRIGHT.getCode();
 
 
     /**
@@ -23,7 +23,7 @@ public class ThePharmacy extends Room {
 
     @Override
     protected String getName() {
-    	return backGreenColorCode + blackColorCode + name + resetColorCode;
+    	return greenBgBrightCode + blackBoldColorCode + name + resetColorCode;
     }
 
     /**

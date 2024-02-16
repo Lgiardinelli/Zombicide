@@ -2,12 +2,12 @@ package zombicide.util;
 
 public enum Color {
     RESET("\u001B[0m"),
-    BLACK("\u001B[30m"),
     RED("\u001B[31m"),
-    BACK_RED("\u001B[41m"),
-    BACK_PURPLE("\u001B[45m"),
-    BACK_BLUE("\u001B[44m"),
-    BACK_GREEN("\u001B[42m");
+    BLACK_BOLD("\u001B[1;30m"),
+    BLUE_BOLD_BRIGHT("\u001B[1;94m"),
+    CYAN_BOLD_BRIGHT("\u001B[1;96m"),
+    GREEN_BG_BRIGHT("\u001B[102m"),
+    PURPLE_BG_BRIGHT("\u001B[105m");
 
     private final String code;
 

@@ -13,7 +13,7 @@ import zombicide.util.Color;
  */
 public abstract class Area {
     protected static final String resetColorCode = Color.RESET.getCode();
-    protected static final String blackColorCode = Color.BLACK.getCode();
+    protected static final String blackBoldColorCode = Color.BLACK_BOLD.getCode();
     private static final String OPEN_UP = "-     ";
 	private static final String CLOSE_UP = "------";
     private final static char ZOMBIE = 'Z';
@@ -43,7 +43,9 @@ public abstract class Area {
         }
     }
 
-    abstract void addActor(Actor actor);
+    public List<Survivor> getSurvivors() {
+        return survivors;
+    }
 
     /**
      * Retrieves the door in the specified direction.
@@ -151,10 +153,12 @@ public abstract class Area {
     }
 
     public void addZombie(Zombie z) {
+        z.setArea(this);
         this.zombies.add(z);
     }
 
     public void addSurvivor(Survivor s) {
+        s.setArea(this);
         this.survivors.add(s);
     }
 
@@ -173,7 +177,4 @@ public abstract class Area {
     public String closeLeft2() {
         return "| " + hasSurvivors();
     }
-
-
-
 }
