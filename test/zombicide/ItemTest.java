@@ -11,7 +11,7 @@ import zombicide.item.weapon.*;
 public class ItemTest {
     //Actor
     private Weapon weapon;
-    private CareItem healingFiask;
+    private CareItem healingFlask;
     private CareItem firstAidKit;
     private InfraredGlasses infraredGlasses;
     private Map map;
@@ -22,7 +22,7 @@ public class ItemTest {
     public void before(){
         //Item
         this.weapon = new Pistol();
-        this.healingFiask = new HealingFiask();
+        this.healingFlask = new HealingFiask();
         this.firstAidKit = new FirstAidKit();
         this.infraredGlasses = new InfraredGlasses();
         this.map = new Map();
@@ -40,7 +40,7 @@ public class ItemTest {
     @Test
     void testCanShoot(){
         boolean canShoot = weapon.canShoot();
-        if(canShoot){
+        if(weapon.shoot() >= weapon.getDiceThreshold()) {
             assertTrue(canShoot);
         } else {
             assertFalse(canShoot);
@@ -64,14 +64,14 @@ public class ItemTest {
         int minRange = weapon.getMinHittingRange();
         int maxRange = weapon.getMaxHittingRange();
         assertEquals(minRange, 0);
-        assertEquals(maxRange, 1);;
+        assertEquals(maxRange, 1);
     }
 
     @Test
     void testNoisyItem(){
         //CareItem
         assertFalse(firstAidKit.isNoisy);
-        assertFalse(healingFiask.isNoisy);
+        assertFalse(healingFlask.isNoisy);
 
         //Item
         assertFalse(infraredGlasses.isNoisy);
