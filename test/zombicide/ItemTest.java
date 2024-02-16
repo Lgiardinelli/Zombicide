@@ -52,7 +52,8 @@ public class ItemTest {
 
     @Test
     void testGetDiceThreshold(){
-        assertEquals(weapon.getDiceThreshold(), 4);
+        int seuilResult = weapon.getDiceThreshold();
+        assertEquals(seuilResult, 4);
     }
 
     @Test
