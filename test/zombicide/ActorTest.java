@@ -26,7 +26,7 @@ public class ActorTest {
 
     @BeforeEach
     public void before(){
-        this.survivor = new Survivor(fighter);
+        this.survivor = new Survivor();
         this.balaise = new Balaise();
         this.abomination = new Abomination();
         this.walker = new Walker();
@@ -78,5 +78,26 @@ public class ActorTest {
     @Test
     void testGetBackpack(){
         assertNull(survivor.getBackpack());
+    }
+
+    @Test
+    void testLevelReached(){
+        assertFalse(survivor.levelReached());
+        for(int i = 0; i < 3; i++){
+            survivor.increaseSkillPoints();
+        }
+        assertEquals(survivor.getSkillPoints(), 3);
+        assertTrue(survivor.levelReached());
+        for(int i = 0; i < 4; i++){
+            survivor.increaseSkillPoints();
+        }
+        assertEquals(survivor.getSkillPoints(), 7);
+        assertTrue(survivor.levelReached());
+        for(int i = 0; i < 4; i++){
+            survivor.increaseSkillPoints();
+        }
+        assertEquals(survivor.getSkillPoints(), 11);
+        assertTrue(survivor.levelReached());
+
     }
 }
