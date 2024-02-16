@@ -60,6 +60,11 @@ public class ItemTest {
         assertEquals(weapon.getDamage(), 1);
     }
 
+    @Test
+    void testGetDiceThreshold(){
+        assertEquals(weapon.getDiceThreshold(), 4);
+    }
+
 
 
 }
