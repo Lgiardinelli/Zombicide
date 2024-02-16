@@ -6,6 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import zombicide.actor.Survivor;
+import zombicide.actor.Zombie;
+import zombicide.actor.zombie.Abomination;
+import zombicide.actor.zombie.Walker;
 import zombicide.area.Room;
 import zombicide.area.Street;
 import zombicide.area.room.TheContinental;
@@ -22,6 +25,8 @@ class AreaTest {
 	//Actor
 	private Survivor survivor;
 	private Survivor survivor2;
+	private Zombie walker;
+	private Zombie abomination;
 	
 	@BeforeEach
 	public void before() {
@@ -33,6 +38,8 @@ class AreaTest {
 		//Actor
 		this.survivor = new Survivor();
 		this.survivor2 = new Survivor();
+		this.walker = new Walker();
+		this.abomination = new Abomination();
 	}
 	
 	@Test
@@ -56,6 +63,14 @@ class AreaTest {
 		assertEquals(room.getNbSurvivors(), 1);
 		room.addSurvivor(survivor2);
 		assertEquals(room.getNbSurvivors(), 2);
+	}
+
+	@Test
+	void testAddAndGetNbZombie(){
+		room.addZombie(abomination);
+		assertEquals(room.getNbZombies(), 1);
+		room.addZombie(walker);
+		assertEquals(room.getNbZombies(), 2);
 	}
 	
 	@Test
