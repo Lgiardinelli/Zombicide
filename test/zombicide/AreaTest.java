@@ -5,24 +5,34 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import zombicide.actor.Survivor;
 import zombicide.area.Room;
 import zombicide.area.Street;
 import zombicide.area.room.TheContinental;
 import zombicide.area.room.ThePharmacy;
 
 class AreaTest {
-	
+
+	//Area
 	private Area room;
 	private Area street;
 	private Area pharmacy;
 	private Area continental;
+
+	//Actor
+	private Survivor survivor;
+	private Survivor survivor2;
 	
 	@BeforeEach
 	public void before() {
+		//Area
 		this.room = new Room(6,7);
 		this.street = new Street(4,5);
 		this.pharmacy = new ThePharmacy(3,4);
 		this.continental = new TheContinental(2,7);
+		//Actor
+		this.survivor = new Survivor();
+		this.survivor2 = new Survivor();
 	}
 	
 	@Test
@@ -39,6 +49,14 @@ class AreaTest {
         //Continental
         assertNotNull(continental);
     }
+
+	@Test
+	void testAddAndGetNbSurvivor() {
+		room.addSurvivor(survivor);
+		assertEquals(room.getNbSurvivors(), 1);
+		room.addSurvivor(survivor2);
+		assertEquals(room.getNbSurvivors(), 2);
+	}
 	
 	@Test
     void testAreaCanFight() {
