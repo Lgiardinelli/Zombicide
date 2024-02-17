@@ -14,9 +14,9 @@ import java.util.List;
 import java.util.Random;
 
 public class City {
-    private final Area[][] areas;
+    protected final Area[][] areas;
     private final Random random;
-    private Street spawn;
+    protected Street spawn;
     private TheContinental theContinental;
     private ThePharmacy thePharmacy;
     private static final String CLOSE_DOWN = "------";
@@ -103,7 +103,7 @@ public class City {
      *
      * @param p The position of the spawn street.
      */
-    private void createSpawnStreet(Position p) {
+    protected void createSpawnStreet(Position p) {
         int x = p.getX();
         int y = p.getY();
         this.spawn = new Street(x, y);
@@ -156,15 +156,11 @@ public class City {
     private void splitAreas(Position topLeftPos, Position bottomRightPos) {
         Position crossroadPos = getRandomCrossRoadPos(topLeftPos, bottomRightPos);
 
-
-        if (this.spawn == null) {
+        if (!spawnAlreadyCreated()) {
             createSpawnStreet(crossroadPos);
-            createManholes(crossroadPos, topLeftPos, bottomRightPos);
+            createManholes(crossroadPos, bottomRightPos);
         }
-
-
         createStreets(crossroadPos, topLeftPos, bottomRightPos);
-
 
         List<Position[]> areasPositions = getSplittedPositions(crossroadPos, topLeftPos, bottomRightPos);
         for (Position[] positions : areasPositions) {
@@ -176,6 +172,9 @@ public class City {
         }
     }
 
+    private boolean spawnAlreadyCreated() {
+        return this.spawn != null;
+    }
     
     /**
      * Retrieves an empty position for a room.
@@ -208,7 +207,6 @@ public class City {
             rooms.add(r);
             return r;
         } catch (Exception e) {
-            e.printStackTrace();
             return null;
         }
     }
@@ -237,10 +235,9 @@ public class City {
      * Creates manhole streets at the extremities of the principal crossroad's streets.
      *
      * @param crossroadPos    The position of the principal crossroad where streets intersect.
-     * @param topLeftPos      The position representing the top-left corner of the area to be considered.
      * @param bottomRightPos  The position representing the bottom-right corner of the area to be considered.
      */
-    private void createManholes(Position crossroadPos, Position topLeftPos, Position bottomRightPos) {
+    protected void createManholes(Position crossroadPos, Position bottomRightPos) {
         this.areas[0][crossroadPos.getX()] = new Manhole(crossroadPos.getX(), 0);
         this.areas[crossroadPos.getY()][bottomRightPos.getX()] = new Manhole(bottomRightPos.getX(), crossroadPos.getY());
         this.areas[bottomRightPos.getY()][crossroadPos.getX()] = new Manhole(crossroadPos.getX(), bottomRightPos.getY());
