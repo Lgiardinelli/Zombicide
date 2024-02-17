@@ -1,12 +1,12 @@
 package zombicide.area.street;
 
-import zombicide.Area;
+import zombicide.area.Street;
 import zombicide.util.Color;
 
 /**
  * Represents a special street with manholes in the game.
  */
-public class Manhole extends Area {
+public class Manhole extends Street {
     private static final String cyanBoldBrightCode = Color.CYAN_BOLD_BRIGHT.getCode();
 
     private static final char name = 'M';
@@ -26,6 +26,4 @@ public class Manhole extends Area {
     protected String getName() {
         return cyanBoldBrightCode + name + resetColorCode;
     }
-
-
 }
