@@ -347,7 +347,7 @@ Vendredi 16/02 :
 Cette variable consiste à stocker une instance de Street passée en paramètre d'un mutateur. Ainsi nous avons accès au spawn depuis sa création sans devoir se soucier s'il s'agit d'une Manhole ou d'une Street.
 - Dylan : Début d'implémentation de la gestion d'action afin de pouvoir gérer les rôles de chaque joueurs. 
 Pour le moment la gestion des Rôles se fait dans une classe abstraite, mais cette dernière pourrait devenir une interface si la modélisation ne requiert pas d'attributs communs entre chaque rôle.
-
+- Théophane : Mise à jours des tests précèdent et implémentation de nouveaux tests pour les méthodes rajoutées cette semaine.
 Week-end :
 
 
