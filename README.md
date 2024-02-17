@@ -322,8 +322,10 @@ En effet dans le plateau d'entrainement il nous faut mettre le spawn sur une Man
 Le spawn sera donc "sauvegardé" à sa création et ce en tant que Street.
 
 Week-end :
-
-
+Pour répartir les items dans les pièces de la map, nous avons pensé à choisir au hasard une rooms dans la liste des rooms que l'ont a créé à linitialisation et de lui ajouter dans sa liste d'items l'items correspondant.  
+La question que nous nous sommes posé (et qui n'est pas écrit dans le sujet) est quels sont les items et combien doit-on en répartir, nous allons voir avec notre responsable lundi.  
+Nous devons quand même gérer le fait que dans la liste des rooms, il y a les pièces spéciales (pharmacie et continental) où la pharmacie ne contient que des fioles et continental (pas plus d'information dans le sujet mais l'ont suppose qu'il n'y a pas d'item car il n'y a pas d'attaque dans cette pièce).  
+Pour cela, nous avons enlever l'ajout dans la liste rooms des pièces spéciales pour garder que celle "basique" en en prennant aléatoirement et ajouter des items dedans.
 
 __Partage de taches :__
 
@@ -348,8 +350,9 @@ Cette variable consiste à stocker une instance de Street passée en paramètre 
 - Dylan : Début d'implémentation de la gestion d'action afin de pouvoir gérer les rôles de chaque joueurs. 
 Pour le moment la gestion des Rôles se fait dans une classe abstraite, mais cette dernière pourrait devenir une interface si la modélisation ne requiert pas d'attributs communs entre chaque rôle.
 - Théophane : Mise à jours des tests précèdent et implémentation de nouveaux tests pour les méthodes rajoutées cette semaine.
-Week-end :
 
+Week-end :
+- Léo : insertion des items qui sont réparti dans les pièces de la map.
 
 ## Semaine 6
 __Objectif de la semaine :__  
