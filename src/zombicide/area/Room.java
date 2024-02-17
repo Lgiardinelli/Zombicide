@@ -1,6 +1,10 @@
 package zombicide.area;
 
 import zombicide.Area;
+import zombicide.Item;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The {@code Room} class represents a room in the Zombicide game.
@@ -8,6 +12,8 @@ import zombicide.Area;
  */
 public class Room extends Area {
 	private static final char name = 'R';
+
+	public List<Item> items;
 
 
 	/**
@@ -18,6 +24,7 @@ public class Room extends Area {
 	 */
 	public Room(int x, int y) {
 		super(x, y);
+		this.items = new ArrayList<>();
 	}
 
 	@Override
@@ -25,5 +32,8 @@ public class Room extends Area {
 		return "" + name;
 	}
 
+	public List getItems()  {
+		return this.items;
+	}
 }
 
