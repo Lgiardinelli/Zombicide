@@ -1,5 +1,6 @@
 package zombicide.role;
 
+import zombicide.Role;
 import zombicide.actor.Survivor;
 
 import java.util.List;
@@ -17,7 +18,6 @@ public class Healer extends Role {
             survivor.addLifePoints(NB_LIFE_POINTS);
         }
     }
-
 
     @Override
     protected void handleAction() {
