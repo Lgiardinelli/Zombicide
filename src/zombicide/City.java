@@ -5,6 +5,8 @@ import zombicide.area.Street;
 import zombicide.area.room.TheContinental;
 import zombicide.area.room.ThePharmacy;
 import zombicide.area.street.Manhole;
+import zombicide.item.careItem.FirstAidKit;
+import zombicide.item.weapon.*;
 import zombicide.util.Position;
 
 import java.util.ArrayList;
@@ -18,6 +20,8 @@ public class City {
     private TheContinental theContinental;
     private ThePharmacy thePharmacy;
     private static final String CLOSE_DOWN = "------";
+    private List<Room> rooms;
+    private List<Item> items;
 
     /**
      * Constructs a new City object with the specified width and height.
@@ -28,6 +32,8 @@ public class City {
     public City(int width, int height) {
         this.areas = new Area[height][width];
         this.random = new Random();
+        this.rooms = new ArrayList<>();
+        this.items = new ArrayList<>();
         initCity();
     }
     
@@ -48,6 +54,7 @@ public class City {
         Position bottomRightPos = getBottomRightPosition();
         splitAreas(topLeftPos, bottomRightPos);
         createRooms();
+        dispatchItems();
      }
 
     /**
@@ -210,7 +217,6 @@ public class City {
      * Initializes the city by creating special rooms and regular rooms.
      */
     private void createRooms() {
-        List<Room> rooms = new ArrayList<>();
 
         this.theContinental = (TheContinental) createSpecialRoom(TheContinental.class, rooms);
         this.thePharmacy = (ThePharmacy) createSpecialRoom(ThePharmacy.class, rooms);
@@ -400,5 +406,42 @@ public class City {
     public Area getCellUp(int x, int y) {
         return this.areas[x][y - 1];
     }
+
+    public void dispatchItems() {
+        Axe axe = new Axe();
+        Chainsaw chainsaw = new Chainsaw();
+        Crowbar crowbar = new Crowbar();
+        Pistol pistol = new Pistol();
+        Riffle riffle = new Riffle();
+        FirstAidKit firstAidKit = new FirstAidKit();
+        this.items.add(axe);
+        this.items.add(chainsaw);
+        this.items.add(crowbar);
+        this.items.add(pistol);
+        this.items.add(riffle);
+        this.items.add(firstAidKit);
+        int sizeRooms = this.rooms.size();
+        for (Item i : items) {
+            int r = random.nextInt(sizeRooms);
+            this.rooms.get(r).items.add(i);
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
