@@ -32,7 +32,7 @@ public class Room extends Area {
 		return "" + name;
 	}
 
-	public List getItems()  {
+	public List<Item> getItems()  {
 		return this.items;
 	}
 }
