@@ -6,13 +6,13 @@ import zombicide.Item;
 
 
 public abstract class Weapon implements Item {
-
     protected int nbDiceThrows;
     protected int diceThreshold;
     protected int damage;
     protected int minHittingRange;
     protected int maxHittingRange;
     protected boolean isNoisy;
+	private static final Random RANDOM = new Random();
 
     public Weapon(int nbDiceThrows, int diceThreshold, int damage, int minHittingRange, int maxHittingRange,
 			boolean isNoisy) {
@@ -30,22 +30,23 @@ public abstract class Weapon implements Item {
      * @return The total result obtained by rolling the dice.
      */
     public int shoot() {
-        Random random = new Random();
         int result = 0;
         for (int i = 0; i < this.nbDiceThrows; i++) {
-            result += random.nextInt(6) + 1;
+            result += throwOneDie();
         }
         return result;
     }
     
-    
+    private int throwOneDie() {
+		return RANDOM.nextInt(7);
+	}
     
     /**
      * Checks if the weapon can successfully shoot based on the dice throws and threshold.
      *
      * @return if the weapon can shoot successfully, otherwise.
      */
-    public boolean canShoot() {
+    public boolean shotHitsTarget() {
         int result = shoot();
         return result >= this.diceThreshold;
     }

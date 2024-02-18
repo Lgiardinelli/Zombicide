@@ -38,12 +38,12 @@ public class ItemTest {
 
 
     @Test
-    void testCanShoot(){
-        boolean canShoot = weapon.canShoot();
+    void testShotHitsTarget(){
+        boolean shotHitsTarget = weapon.shotHitsTarget();
         if(weapon.shoot() >= weapon.getDiceThreshold()) {
-            assertTrue(canShoot);
+            assertTrue(shotHitsTarget);
         } else {
-            assertFalse(canShoot);
+            assertFalse(shotHitsTarget);
         }
     }
 
