@@ -14,6 +14,8 @@ import zombicide.util.Color;
 public abstract class Area {
     protected static final String resetColorCode = Color.RESET.getCode();
     protected static final String blackBoldColorCode = Color.BLACK_BOLD.getCode();
+    private static final String greenBoldBrightCode = Color.GREEN_BOLD_BRIGHT.getCode();
+    private static final String redBoldBrightColorCode = Color.RED_BOLD_BRIGHT.getCode();
     private static final String OPEN_UP = "-     ";
 	private static final String CLOSE_UP = "------";
     private final static char ZOMBIE = 'Z';
@@ -141,7 +143,7 @@ public abstract class Area {
         if (z == 0) {
             return "    ";
         }
-        return " " + ZOMBIE + z + " ";
+        return " " + redBoldBrightColorCode + ZOMBIE + z + resetColorCode + " ";
     }
 
     private String hasSurvivors() {
@@ -149,7 +151,7 @@ public abstract class Area {
         if (s == 0) {
             return "    ";
         }
-        return " " + SURVIVOR + s + " ";
+        return " " + greenBoldBrightCode + SURVIVOR + s + resetColorCode + " ";
     }
 
     public void addZombie(Zombie z) {
