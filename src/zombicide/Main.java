@@ -1,5 +1,6 @@
 package zombicide;
 
+import zombicide.actor.Survivor;
 import zombicide.actor.Zombie;
 import zombicide.actor.zombie.Abomination;
 import zombicide.city.TrainCity;
@@ -7,17 +8,27 @@ import zombicide.city.TrainCity;
 public class Main {
 
 	public static void main(String[] args) {
-
 		TrainCity trainCity = new TrainCity();
-		
+
+		Zombie z = new Abomination();
+		Zombie z2 = new Abomination();
+
+		Survivor s = new Survivor();
+		Survivor s2 = new Survivor();
+
 		if (args.length < 2) {
 			City aCity = new City(10, 10);
 			
 			aCity.getAreas()[0][0].getDoor(DoorDirection.DOWN).open();
 			aCity.getAreas()[0][1].getDoor(DoorDirection.DOWN).open();
 			aCity.getAreas()[0][1].getDoor(DoorDirection.LEFT).open();
-			Zombie z = new Abomination();
+
 			aCity.getAreas()[5][5].addZombie(z);
+			aCity.getAreas()[5][5].addZombie(z2);
+
+			aCity.getAreas()[5][2].addSurvivor(s);
+			aCity.getAreas()[5][3].addSurvivor(s2);
+
 			aCity.display();
 		} else {
 			int x = parseInt(args[0]);
@@ -34,8 +45,9 @@ public class Main {
 		trainCity.getAreas()[0][1].getDoor(DoorDirection.DOWN).open();
 		trainCity.getAreas()[0][1].getDoor(DoorDirection.LEFT).open();
 
-		Zombie z = new Abomination();
 		trainCity.getAreas()[0][0].addZombie(z);
+		trainCity.getAreas()[0][0].addSurvivor(s);
+
 		trainCity.display();
 	}
 
