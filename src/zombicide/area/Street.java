@@ -9,7 +9,7 @@ import zombicide.util.Color;
 public class Street extends Area {
     private static final char name = 'S';
     private static Street spawn;
-    private static final String blueBoldBrightCode = Color.BLUE_BOLD_BRIGHT.getCode();
+    private static final String blueBoldCode = Color.BLUE_BOLD.getCode();
 
 
     /** Indicates whether the street is vertical or not. */
@@ -27,7 +27,7 @@ public class Street extends Area {
 
     @Override
     protected String getName() {
-        return blueBoldBrightCode + name + resetColorCode;
+        return blueBoldCode + name + resetColorCode;
     }
 
     public static Street getSpawn() {
