@@ -324,8 +324,10 @@ Le spawn sera donc "sauvegardé" à sa création et ce en tant que Street.
 Week-end :
 Pour répartir les items dans les pièces de la map, nous avons pensé à choisir au hasard une rooms dans la liste des rooms que l'ont a créé à linitialisation et de lui ajouter dans sa liste d'items l'items correspondant.  
 La question que nous nous sommes posé (et qui n'est pas écrit dans le sujet) est quels sont les items et combien doit-on en répartir, nous allons voir avec notre responsable lundi.  
-Nous devons quand même gérer le fait que dans la liste des rooms, il y a les pièces spéciales (pharmacie et continental) où la pharmacie ne contient que des fioles et continental (pas plus d'information dans le sujet mais l'ont suppose qu'il n'y a pas d'item car il n'y a pas d'attaque dans cette pièce).  
-Pour cela, nous avons enlever l'ajout dans la liste rooms des pièces spéciales pour garder que celle "basique" en en prennant aléatoirement et ajouter des items dedans.
+Nous devons quand même gérer le fait que dans la liste des rooms, il y a les pièces spéciales (pharmacie et continental) où la pharmacie ne contient que des fioles et continental (pas plus d'information dans le sujet mais on suppose qu'il n'y a pas d'item car il n'y a pas d'attaque dans cette pièce).  
+Pour cela, nous avons enlever l'ajout dans la liste rooms des pièces spéciales pour garder que celle "basique" et ajouter aléatoirement des items dedans.
+Afin de simplifier la création du plateau d'entrainement, nous en sommes convenu qu'il était intéressant de créer une extension de City qui serait dédiée à ce cas de figure.
+Ce puisque le plateau d'entrainement ne requiert qu'une seule Manhole qui plus est le spawn de ce dernier. Ainsi nous ne devons que redéfinir la logique de création du spawn et de la création de Manhole (ici aucune hormis le spawn créé au préalable).
 
 __Partage de taches :__
 
@@ -353,6 +355,7 @@ Pour le moment la gestion des Rôles se fait dans une classe abstraite, mais cet
 
 Week-end :
 - Léo : insertion des items qui sont réparti dans les pièces de la map.
+- Dylan : Gestion des exceptions au niveau des arguments passables à l'exécution du programme. Création de la classe TrainCity, implémentation de la logique différente en ce qui concerne le spawn et les Manholes de cette dernière.
 
 ## Semaine 6
 __Objectif de la semaine :__  
