@@ -337,17 +337,17 @@ public class City {
                     Area area = this.areas[i][j];
                     area.addDoor(DoorDirection.UP, upDoor);
                     area.addDoor(DoorDirection.LEFT, leftDoor);
-                } catch (ArrayIndexOutOfBoundsException e) {
+                } catch (ArrayIndexOutOfBoundsException ignored) {
                 }
                 try {
                     Area upArea = this.areas[i - 1][j];
                     upArea.addDoor(DoorDirection.DOWN, upDoor);
-                } catch (ArrayIndexOutOfBoundsException e) {
+                } catch (ArrayIndexOutOfBoundsException ignored) {
                 }
                 try {
                     Area leftArea = this.areas[i][j - 1];
                     leftArea.addDoor(DoorDirection.RIGHT, leftDoor);
-                } catch (ArrayIndexOutOfBoundsException e) {
+                } catch (ArrayIndexOutOfBoundsException ignored) {
                 }
             }
         }
