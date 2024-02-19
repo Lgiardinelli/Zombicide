@@ -292,13 +292,16 @@ Week-end :
 ## Semaine 5
 __Objectif de la semaine :__  
 
-- Finir la modélisation complète des armes ( constructeur, attributs, héritage)
-- Finir la modélisation complète des équipements ( constructeur, attributs, héritage)
+- Finir la modélisation complète des armes ( constructeur, attributs, héritage) 
+- Finir la modélisation complète des équipements ( constructeur, attributs, héritage) 
 - Ajout des acteurs dans le plateau. 
 - Amelioration de l'affichage avec couleurs et zombies/survivants 
 
 __Objectif atteint :__
 - Amelioration de l'affichage avec couleurs et zombies/survivants
+- Ajout des acteurs dans le plateau. 
+- Finir la modélisation complète des armes ( constructeur, attributs, héritage) 
+- Finir la modélisation complète des équipements ( constructeur, attributs, héritage) 
 
 __Réflexion du groupe :__  
 
@@ -358,7 +361,12 @@ Week-end :
 - Dylan : Gestion des exceptions au niveau des arguments passables à l'exécution du programme. Création de la classe TrainCity, implémentation de la logique différente en ce qui concerne le spawn et les Manholes de cette dernière.
 
 ## Semaine 6
-__Objectif de la semaine :__  
+__Objectif de la semaine :__ 
+
+- Faire l'implémentation de la prise d'item 
+- Faire l'implémentation de la methode enlever les items
+- Mise en place des actions (package, )
+- Finir le dispatching des items 
 
 
 __Objectif atteint :__
