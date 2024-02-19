@@ -5,6 +5,9 @@ import zombicide.area.Street;
 import zombicide.area.room.TheContinental;
 import zombicide.area.room.ThePharmacy;
 import zombicide.area.street.Manhole;
+import zombicide.item.InfraredGlasses;
+import zombicide.item.Map;
+import zombicide.item.MasterKey;
 import zombicide.item.careItem.FirstAidKit;
 import zombicide.item.weapon.*;
 import zombicide.util.Position;
@@ -411,18 +414,23 @@ public class City {
         Pistol pistol = new Pistol();
         Riffle riffle = new Riffle();
         FirstAidKit firstAidKit = new FirstAidKit();
+        InfraredGlasses infraredGlasses = new InfraredGlasses();
+        Map map = new Map();
+        MasterKey masterKey = new MasterKey();
         this.items.add(axe);
         this.items.add(chainsaw);
         this.items.add(crowbar);
         this.items.add(pistol);
         this.items.add(riffle);
         this.items.add(firstAidKit);
+        this.items.add(infraredGlasses);
+        this.items.add(map);
+        this.items.add(masterKey);
         int sizeRooms = this.rooms.size();
         for (Item i : items) {
             int r = random.nextInt(sizeRooms);
             this.rooms.get(r).items.add(i);
         }
-
     }
 
 
