@@ -6,16 +6,20 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import zombicide.area.Room;
+import zombicide.item.careItem.HealingFiask;
+import zombicide.item.weapon.Pistol;
 
 class RoomTest {
 
 	private Room room;
 	private Door door;
-	
+	private BackPack backpack;
+
 	@BeforeEach
-	private void before() {
+	public void before() {
 		room = new Room(5,6);
 		door = new Door();
+		backpack = new BackPack();
 	}
 	
 	@Test
@@ -40,5 +44,21 @@ class RoomTest {
 		assertFalse(door.isOpen());
 		door.open();
 		assertTrue(door.isOpen());
+	}
+
+	@Test
+	void testLetItems() {
+
+		Pistol item1 = new Pistol();
+		HealingFiask item2 = new HealingFiask();
+		backpack.addItem(item1);
+		backpack.addItem(item2);
+
+
+		room.letItems(backpack);
+
+
+		assertTrue(room.getItems().contains(item1));
+		assertTrue(room.getItems().contains(item2));
 	}
 }
