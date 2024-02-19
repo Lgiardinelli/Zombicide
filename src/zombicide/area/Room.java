@@ -62,10 +62,16 @@ public class Room extends Area {
 	 * Displays the items in this room.
 	 */
 	public void displayItems() {
-		System.out.println("There are:");
-		for(Item item : this.items) {
-			System.out.print(item.toString() + ", ");
+		System.out.print("There are : ");
+		if (this.items.isEmpty()) {
+			System.out.print("nothing");
 		}
+		else {
+			for(Item item : this.items) {
+				System.out.print("| " + item.toString() + " |");
+			}
+		}
+		System.out.println('\n');
 	}
 
 }
