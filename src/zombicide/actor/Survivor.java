@@ -21,8 +21,6 @@ public class Survivor extends Actor {
     /** The roles associated with the survivor. */
     private List<Role> roles;
 
-    private Area area;
-
     /**
      * Constructs a new Survivor object with default action points and life points.
      * The survivor starts with 3 action points and 5 life points.
@@ -116,16 +114,10 @@ public class Survivor extends Actor {
     }
 
     /**
-     * TODO : Une classe sera faite (merci de ne pas y toucher s'il vous plait)
+        Retrieves the current area where the survivor is located.
+        @return The current area where the survivor is located, or null if the survivor is not in any area.
      */
-    public void makeNoise(){
-        Area currentArea = getCurrentArea();
-        if(currentArea != null){
-            currentArea.increaseNoiseLevel();
-        }
-    }
-
-    private Area getCurrentArea(){
+    public Area getCurrentArea(){
         return getArea();
     }
 
