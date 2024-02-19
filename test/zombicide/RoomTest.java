@@ -61,4 +61,5 @@ class RoomTest {
 		assertTrue(room.getItems().contains(item1));
 		assertTrue(room.getItems().contains(item2));
 	}
+
 }
