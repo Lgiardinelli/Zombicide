@@ -4,4 +4,8 @@ import zombicide.Item;
 
 public class MasterKey implements Item {
 	public boolean isNoisy = false;
+
+	public MasterKey() {
+
+	}
 }
