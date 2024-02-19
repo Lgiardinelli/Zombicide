@@ -73,6 +73,9 @@ public abstract class Weapon implements Item {
 	public int getMaxHittingRange() {
 		return maxHittingRange;
 	}
-    
+
+	public void use(){
+		System.out.println("this weapon has been used");
+	}
     
 }
