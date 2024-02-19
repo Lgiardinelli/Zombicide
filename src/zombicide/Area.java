@@ -172,6 +172,10 @@ public abstract class Area {
         this.noise = noise;
     }
 
+    public void increaseNoiseLevel(){
+        this.noise++;
+    }
+
     public String openLeft1() {
         return " " + getName() + hasZombies();
     }
