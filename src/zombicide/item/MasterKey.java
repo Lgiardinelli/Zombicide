@@ -8,4 +8,8 @@ public class MasterKey implements Item {
 	public MasterKey() {
 
 	}
+
+	public String toString(){
+		return "master key";
+	}
 }

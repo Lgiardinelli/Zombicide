@@ -2,6 +2,7 @@ package zombicide.item;
 
 import java.util.Random;
 
+import org.junit.validator.PublicClassValidator;
 import zombicide.Item;
 
 
@@ -73,6 +74,7 @@ public abstract class Weapon implements Item {
 	public int getMaxHittingRange() {
 		return maxHittingRange;
 	}
-    
+
+
     
 }

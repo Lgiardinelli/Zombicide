@@ -3,6 +3,7 @@ package zombicide;
 import zombicide.actor.Survivor;
 import zombicide.actor.Zombie;
 import zombicide.actor.zombie.Abomination;
+import zombicide.area.Room;
 import zombicide.city.TrainCity;
 
 public class Main {
@@ -49,6 +50,11 @@ public class Main {
 		trainCity.getAreas()[0][0].addSurvivor(s);
 
 		trainCity.display();
+
+		trainCity.getRooms().get(0).displayItems();
+		trainCity.getRooms().get(1).displayItems();
+		trainCity.getRooms().get(2).displayItems();
+
 	}
 
 	private static int parseInt(String v) {

@@ -8,4 +8,8 @@ public class Map implements Item {
 	public Map() {
 
 	}
+
+	public String toString(){
+		return "map";
+	}
 }

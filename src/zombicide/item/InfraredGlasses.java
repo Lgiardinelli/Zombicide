@@ -8,4 +8,8 @@ public class InfraredGlasses implements Item {
 	public InfraredGlasses() {
 
 	}
+
+	public String toString(){
+		return "infared glasses";
+	}
 }
