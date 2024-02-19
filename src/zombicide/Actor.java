@@ -71,6 +71,7 @@ public abstract class Actor {
         this.lifePoints -= damage;
     }
 
+
     protected abstract void handleAction();
 }
 
