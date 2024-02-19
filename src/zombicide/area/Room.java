@@ -37,15 +37,36 @@ public class Room extends Area {
 		return this.items;
 	}
 
-	public void addItem(Item i){
-		this.items.add(i);
+	/**
+	 * Adds the specified item to this room.
+	 *
+	 * @param item The item to be added to this room.
+	 */
+	public void addItem(Item item) {
+		this.items.add(item);
 	}
 
-	public void letItems(BackPack b){
-		List<Item> list = b.getItems();
-		for(Item i : list){
-			addItem(i);
+	/**
+	 * Moves all items from the specified backpack to this room.
+	 *
+	 * @param backpack The backpack from which items are moved to this room.
+	 */
+	public void letItems(BackPack backpack) {
+		List<Item> list = backpack.getItems();
+		for(Item item : list) {
+			addItem(item);
 		}
 	}
+
+	/**
+	 * Displays the items in this room.
+	 */
+	public void displayItems() {
+		System.out.println("There are:");
+		for(Item item : this.items) {
+			System.out.print(item.toString() + ", ");
+		}
+	}
+
 }
 
