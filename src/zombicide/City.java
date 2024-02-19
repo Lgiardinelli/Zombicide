@@ -9,6 +9,7 @@ import zombicide.item.InfraredGlasses;
 import zombicide.item.Map;
 import zombicide.item.MasterKey;
 import zombicide.item.careItem.FirstAidKit;
+import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.*;
 import zombicide.util.Position;
 
@@ -25,6 +26,10 @@ public class City {
     private static final String CLOSE_DOWN = "------";
     private List<Room> rooms;
     private List<Item> items;
+
+    private static final int MINIMAL_ITEMS = 1;
+
+    private static final int MAXIMAL_ITEMS_EXCLUDE = 6;
 
     /**
      * Constructs a new City object with the specified width and height.
@@ -407,30 +412,59 @@ public class City {
         return this.areas[x][y - 1];
     }
 
+
+
     public void dispatchItems() {
-        Axe axe = new Axe();
-        Chainsaw chainsaw = new Chainsaw();
-        Crowbar crowbar = new Crowbar();
-        Pistol pistol = new Pistol();
-        Riffle riffle = new Riffle();
-        FirstAidKit firstAidKit = new FirstAidKit();
-        InfraredGlasses infraredGlasses = new InfraredGlasses();
-        Map map = new Map();
-        MasterKey masterKey = new MasterKey();
-        this.items.add(axe);
-        this.items.add(chainsaw);
-        this.items.add(crowbar);
-        this.items.add(pistol);
-        this.items.add(riffle);
-        this.items.add(firstAidKit);
-        this.items.add(infraredGlasses);
-        this.items.add(map);
-        this.items.add(masterKey);
+        for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS_EXCLUDE); i++) {
+            Axe axe = new Axe();
+            this.items.add(axe);
+        }
+        for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS_EXCLUDE); i++) {
+            Chainsaw chainsaw = new Chainsaw();
+            this.items.add(chainsaw);
+        }
+        for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS_EXCLUDE); i++) {
+            Crowbar crowbar = new Crowbar();
+            this.items.add(crowbar);
+        }
+        for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS_EXCLUDE); i++) {
+            Pistol pistol = new Pistol();
+            this.items.add(pistol);
+        }
+        for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS_EXCLUDE); i++) {
+            Riffle riffle = new Riffle();
+            this.items.add(riffle);
+        }
+        for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS_EXCLUDE); i++) {
+            FirstAidKit firstAidKit = new FirstAidKit();
+            this.items.add(firstAidKit);
+        }
+        for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS_EXCLUDE); i++) {
+            HealingFiask healingFiask = new HealingFiask();
+            this.items.add(healingFiask);
+        }
+        for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS_EXCLUDE); i++) {
+            InfraredGlasses infraredGlasses = new InfraredGlasses();
+            this.items.add(infraredGlasses);
+        }
+        for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS_EXCLUDE); i++) {
+            Map map = new Map();
+            this.items.add(map);
+        }
+        for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS_EXCLUDE); i++) {
+            MasterKey masterKey = new MasterKey();
+            this.items.add(masterKey);
+        }
         int sizeRooms = this.rooms.size();
         for (Item i : items) {
             int r = random.nextInt(sizeRooms);
-            this.rooms.get(r).items.add(i);
+            this.rooms.get(r).addItem(i);
         }
+    }
+
+    private int throwDice(int x, int y) {
+        int res = random.nextInt(x, y);
+        return res;
     }
 
 
