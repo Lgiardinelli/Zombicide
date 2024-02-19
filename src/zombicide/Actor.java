@@ -62,6 +62,10 @@ public abstract class Actor {
         this.actionPoints = actionPoints;
     }
 
+    public void removeLifePoints(int damage) {
+        this.lifePoints -= damage;
+    }
+
     protected abstract void handleAction();
 }
 
