@@ -66,7 +66,6 @@ public abstract class Actor {
      * Reduces the life points of the character by the specified amount of damage.
      *
      * @param damage The amount of damage to be subtracted from the character's life points.
-     * @throws IllegalArgumentException If the damage value is negative.
      */
     public void removeLifePoints(int damage) {
         this.lifePoints -= damage;
