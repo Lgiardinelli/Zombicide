@@ -102,7 +102,7 @@ public class Survivor extends Actor {
      * Increases the skill points of the survivor.
      */
     public void increaseSkillPoints() {
-        if(skillPoints < 30) {
+        if(this.skillPoints < 30) {
             this.skillPoints++;
         }
     }
