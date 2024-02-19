@@ -331,6 +331,7 @@ public class City {
         for (int s = 0; s < getWidth(); s++) {
             System.out.print(CLOSE_DOWN);
         }
+        System.out.print('\n');
     }
     
     /**
@@ -460,6 +461,8 @@ public class City {
             int r = random.nextInt(sizeRooms);
             this.rooms.get(r).addItem(i);
         }
+
+
     }
 
     private int throwDice(int x, int y) {
@@ -467,20 +470,7 @@ public class City {
         return res;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public List<Room> getRooms() {
+        return rooms;
+    }
 }
