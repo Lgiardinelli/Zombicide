@@ -1,6 +1,7 @@
 package zombicide.area;
 
 import zombicide.Area;
+import zombicide.BackPack;
 import zombicide.Item;
 
 import java.util.ArrayList;
@@ -34,6 +35,17 @@ public class Room extends Area {
 
 	public List<Item> getItems()  {
 		return this.items;
+	}
+
+	public void addItem(Item i){
+		this.items.add(i);
+	}
+
+	public void letItems(BackPack b){
+		List<Item> list = b.getItems();
+		for(Item i : list){
+			addItem(i);
+		}
 	}
 }
 
