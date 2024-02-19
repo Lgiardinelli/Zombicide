@@ -2,10 +2,7 @@ package zombicide.actor;
 
 import java.util.List;
 
-import zombicide.Actor;
-import zombicide.BackPack;
-import zombicide.Item;
-import zombicide.Role;
+import zombicide.*;
 
 /**
  * Represents a survivor actor in the game.
@@ -23,6 +20,8 @@ public class Survivor extends Actor {
 
     /** The roles associated with the survivor. */
     private List<Role> roles;
+
+    private Area area;
 
     /**
      * Constructs a new Survivor object with default action points and life points.
@@ -114,6 +113,20 @@ public class Survivor extends Actor {
      */
     public boolean levelReached() {
         return this.skillPoints == 3 || this.skillPoints == 7 || this.skillPoints == 11;
+    }
+
+    /**
+     * TODO : Une classe sera faite (merci de ne pas y toucher s'il vous plait)
+     */
+    public void makeNoise(){
+        Area currentArea = getCurrentArea();
+        if(currentArea != null){
+            currentArea.increaseNoiseLevel();
+        }
+    }
+
+    private Area getCurrentArea(){
+        return getArea();
     }
 
     @Override
