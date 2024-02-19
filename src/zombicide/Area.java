@@ -164,6 +164,14 @@ public abstract class Area {
         this.survivors.add(s);
     }
 
+    public int getNoise(){
+        return this.noise;
+    }
+
+    public void setNoise(int noise){
+        this.noise = noise;
+    }
+
     public String openLeft1() {
         return " " + getName() + hasZombies();
     }
