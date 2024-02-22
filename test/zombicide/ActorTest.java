@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import zombicide.actor.Survivor;
 import zombicide.actor.Zombie;
+import zombicide.actor.action.NoiseAction;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Balaise;
 import zombicide.actor.zombie.Runner;
@@ -23,6 +24,7 @@ public class ActorTest {
     private Item pistol;
     private BackPack backPack;
     private Area room;
+    private NoiseAction noiseAction;
 
     @BeforeEach
     public void before(){
@@ -34,6 +36,7 @@ public class ActorTest {
         this.pistol = new Pistol();
         this.backPack = new BackPack();
         this.room = new Room(6,7);
+        this.noiseAction = new NoiseAction();
     }
 
     @Test
@@ -132,5 +135,14 @@ public class ActorTest {
         survivor.setArea(room);
         assertEquals(survivor.getArea().getY(), room.getY());
         assertEquals(survivor.getArea().getX(), room.getX());
+    }
+
+    @Test
+    void testMakeNoiseFromSurvivor(){
+        survivor.setArea(room);
+        noiseAction.setSurvivor(survivor);
+        assertEquals(0, room.getNoise());
+        noiseAction.makeNoise();
+        assertEquals(1, room.getNoise());
     }
 }
