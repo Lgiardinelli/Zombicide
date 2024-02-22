@@ -19,6 +19,13 @@ public class NoiseAction implements SurvivorAction {
         }
     }
 
+    /**
+     * Sets the survivor associated with this NoiseAction.
+     * This method establishes a connection between the NoiseAction and a specific Survivor,
+     * allowing the NoiseAction to interact with the Survivor during noise-related actions.
+     *
+     * @param survivor The Survivor to be associated with this NoiseAction.
+     */
     public void setSurvivor(Survivor survivor) {
         this.survivor = survivor;
     }
