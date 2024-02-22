@@ -1,5 +1,5 @@
 package zombicide;
 
-public interface SurvivorAction {
+public interface SurvivorAction extends ActorAction {
 
 }
