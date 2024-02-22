@@ -18,4 +18,8 @@ public class NoiseAction implements SurvivorAction {
             currentArea.increaseNoiseLevel();
         }
     }
+
+    public void setSurvivor(Survivor survivor) {
+        this.survivor = survivor;
+    }
 }
