@@ -5,8 +5,11 @@ import zombicide.*;
 
 public class MoveAction implements ActorAction {
 
-    private ActorDirection direction;
+    final ActorDirection direction;
 
+    public MoveAction(ActorDirection d){
+        this.direction = d;
+    }
     public Position PositionAfterMoving(Actor a){
         Area actorArea = a.getArea();
         int x = actorArea.getX();
