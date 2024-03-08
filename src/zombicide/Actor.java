@@ -62,9 +62,15 @@ public abstract class Actor {
         this.actionPoints = actionPoints;
     }
 
+    /**
+     * Reduces the life points of the character by the specified amount of damage.
+     *
+     * @param damage The amount of damage to be subtracted from the character's life points.
+     */
     public void removeLifePoints(int damage) {
         this.lifePoints -= damage;
     }
+
 
     protected abstract void handleAction();
 }

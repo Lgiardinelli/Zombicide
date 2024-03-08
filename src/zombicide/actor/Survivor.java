@@ -1,11 +1,9 @@
 package zombicide.actor;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import zombicide.Actor;
-import zombicide.BackPack;
-import zombicide.Item;
-import zombicide.Role;
+import zombicide.*;
 
 /**
  * Represents a survivor actor in the game.
@@ -22,7 +20,7 @@ public class Survivor extends Actor {
     private Item handleItem;
 
     /** The roles associated with the survivor. */
-    private List<Role> roles;
+    private final List<Role> roles;
 
     /**
      * Constructs a new Survivor object with default action points and life points.
@@ -32,7 +30,7 @@ public class Survivor extends Actor {
      */
     public Survivor(List<Role> roles) {
         this();
-        this.roles = roles;
+        this.roles.addAll(roles);
     }
 
     /**
@@ -43,6 +41,7 @@ public class Survivor extends Actor {
         this.skillPoints = 0;
         this.actionPoints = 3;
         this.lifePoints = 5;
+        this.roles = new ArrayList<>();
     }
 
     /**
@@ -86,7 +85,7 @@ public class Survivor extends Actor {
     }
 
     public boolean hasRoles() {
-        return this.roles != null;
+        return !this.roles.isEmpty();
     }
 
     /**
@@ -102,18 +101,24 @@ public class Survivor extends Actor {
      * Increases the skill points of the survivor.
      */
     public void increaseSkillPoints() {
-        if(skillPoints < 30) {
+        if(this.skillPoints < 30) {
             this.skillPoints++;
         }
     }
 
     /**
-     * Checks if the survivor has reached a level where additional skill points are awarded,
-     * and increases the skill points accordingly.
-     * Levels at which additional skill points are awarded are 3, 7, and 11.
+     * @return True if the survivor has reached a new level, false otherwise.
      */
-    public boolean levelReached() {
-        return this.skillPoints == 3 || this.skillPoints == 7 || this.skillPoints == 11;
+    public boolean isLevelReached() {
+        return Expertise.getStage(skillPoints) != null;
+    }
+
+    /**
+        Retrieves the current area where the survivor is located.
+        @return The current area where the survivor is located, or null if the survivor is not in any area.
+     */
+    public Area getCurrentArea(){
+        return getArea();
     }
 
     @Override

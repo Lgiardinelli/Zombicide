@@ -292,13 +292,16 @@ Week-end :
 ## Semaine 5
 __Objectif de la semaine :__  
 
-- Finir la modélisation complète des armes ( constructeur, attributs, héritage)
-- Finir la modélisation complète des équipements ( constructeur, attributs, héritage)
+- Finir la modélisation complète des armes ( constructeur, attributs, héritage) 
+- Finir la modélisation complète des équipements ( constructeur, attributs, héritage) 
 - Ajout des acteurs dans le plateau. 
 - Amelioration de l'affichage avec couleurs et zombies/survivants 
 
 __Objectif atteint :__
 - Amelioration de l'affichage avec couleurs et zombies/survivants
+- Ajout des acteurs dans le plateau. 
+- Finir la modélisation complète des armes ( constructeur, attributs, héritage) 
+- Finir la modélisation complète des équipements ( constructeur, attributs, héritage) 
 
 __Réflexion du groupe :__  
 
@@ -358,7 +361,12 @@ Week-end :
 - Dylan : Gestion des exceptions au niveau des arguments passables à l'exécution du programme. Création de la classe TrainCity, implémentation de la logique différente en ce qui concerne le spawn et les Manholes de cette dernière.
 
 ## Semaine 6
-__Objectif de la semaine :__  
+__Objectif de la semaine :__ 
+
+- Faire l'implémentation de la prise d'item 
+- Faire l'implémentation de la methode enlever les items
+- Mise en place des actions (package, classes)
+- Finir le dispatching des items 
 
 
 __Objectif atteint :__
@@ -368,6 +376,7 @@ __Réflexion du groupe :__
 
 Lundi 19/02 :
 
+- Nous avons réfléchi sur la façon dont on pourrait modéliser les acteurs sur le plateau et comment pourrait t'on l'agencer, nous avons également réfléchi sur le comment modéliser les items dans les chambres et les conditions sur l'apparition et la disparition des items et backpacks et le dispatching.
 
 Mardi 20/02 :
 
@@ -389,6 +398,8 @@ __Partage de taches :__
 
 Lundi 19/02 :
 
+- Théophane : Ajout de la méthode de bruit, ajout des packages et reflexion sur la modélisation des actions, et ajout de la limitation des skillsPoints à 30
+- Eliès : Ajout des tests pour le backpack dans roomTest, ajout de la javadoc et ajout de la méthode toString pour chaque weapon
 
 Mardi 20/02 :
 
@@ -397,7 +408,7 @@ Mercredi 21/02 :
 
 
 Jeudi 22/02 :
-
+- Théophane : Ajout de toutes les classes et interface concernant les actions et ajout de leurs méthodes pour gagner du temps sur leur création. Methode de test sur makeNoise dans ActorTest.
 
 Vendredi 23/02 :
 
