@@ -413,7 +413,7 @@ Jeudi 22/02 :
 Vendredi 23/02 :
 
 
-Week-end :
+Week-end et durant les vacances :
 
 - Eliès : ajout de l'énumération ActorDirection et finalisation de la classe MoveAction avec ses méthodes. Avancement dans la classe Test de MoveAction
 
@@ -441,7 +441,7 @@ Jeudi 114/03 :
 Vendredi 15/03 :
 
 
-Week-end :
+Week-end et durant les vacances :
 
 
 
