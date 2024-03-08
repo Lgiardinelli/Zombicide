@@ -21,14 +21,13 @@ public class MoveActionTest {
     public void before(){
         this.s1 = new Survivor();
         this.z1 = new Walker();
+        this.m1 = new MoveAction(ActorDirection.DOWN);
+        this.m2 = new MoveAction(ActorDirection.LEFT);
 
         Area area = new Street(2, 3);
 
         s1.setArea(area);
         z1.setArea(area);
-
-        this.m1 = new MoveAction(ActorDirection.DOWN);
-        this.m2 = new MoveAction(ActorDirection.LEFT);
     }
 
     @Test
