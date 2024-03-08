@@ -390,7 +390,7 @@ Jeudi 22/02 :
 Vendredi 23/02 :
 
 
-Week-end :
+Week-end : Nous nous sommes tournés vers la gestion des déplacements de joueurs. Pour cela il s'agissait d'utiliser la clase MoveAction, qui prend comme attribut une direction. Cette comporte une méthode qui déplace un joueur passé en paramètre selon la direction correspondante de l'obet MoveAction. La direction, elle, est traduite par une énumération ActorDirection.
 
 
 
@@ -415,6 +415,7 @@ Vendredi 23/02 :
 
 Week-end :
 
+- Eliès : ajout de l'énumération ActorDirection et finalisation de la classe MoveAction avec ses méthodes. Avancement dans la classe Test de MoveAction
 
 ## Semaine 7
 __Objectif de la semaine :__  
