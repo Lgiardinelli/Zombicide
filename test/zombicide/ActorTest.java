@@ -85,22 +85,22 @@ public class ActorTest {
 
     @Test
     void testLevelReached(){
-        assertFalse(survivor.levelReached());
+        assertFalse(survivor.isLevelReached());
         for(int i = 0; i < 3; i++){
             survivor.increaseSkillPoints();
         }
         assertEquals(survivor.getSkillPoints(), 3);
-        assertTrue(survivor.levelReached());
+        assertTrue(survivor.isLevelReached());
         for(int i = 0; i < 4; i++){
             survivor.increaseSkillPoints();
         }
         assertEquals(survivor.getSkillPoints(), 7);
-        assertTrue(survivor.levelReached());
+        assertTrue(survivor.isLevelReached());
         for(int i = 0; i < 4; i++){
             survivor.increaseSkillPoints();
         }
         assertEquals(survivor.getSkillPoints(), 11);
-        assertTrue(survivor.levelReached());
+        assertTrue(survivor.isLevelReached());
     }
 
     /* TODO : FAIRE UN TEST SUR LES ROLES */
