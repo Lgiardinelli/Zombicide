@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"zombicide"},{"l":"zombicide.actor"},{"l":"zombicide.actor.zombie"},{"l":"zombicide.area"},{"l":"zombicide.area.room"},{"l":"zombicide.area.street"},{"l":"zombicide.item"},{"l":"zombicide.item.careItem"},{"l":"zombicide.item.weapon"},{"l":"zombicide.role"}]
