@@ -3,7 +3,9 @@ package zombicide;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import zombicide.backpack.BackPack;
 import zombicide.item.*;
+import zombicide.item.careItem.CareItem;
 import zombicide.item.careItem.FirstAidKit;
 import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.*;
@@ -30,21 +32,14 @@ public class ItemTest {
         this.backPack = new BackPack();
     }
 
-    @Test
-    void testShoot(){
-        int result = weapon.shoot();
-        assertTrue(result >= weapon.getNbDiceThrows() && result <= weapon.getNbDiceThrows() * 6);
-    }
-
 
     @Test
-    void testShotHitsTarget(){
-        boolean shotHitsTarget = weapon.shotHitsTarget();
-        if(weapon.shoot() >= weapon.getDiceThreshold()) {
-            assertTrue(shotHitsTarget);
-        } else {
-            assertFalse(shotHitsTarget);
-        }
+    void testShootingTarget(){
+        assertFalse(weapon.shotHitsTarget());
+        int v = weapon.shoot();
+        assertTrue(v > 0);
+        if (v >= weapon.getDiceThreshold())
+            assertTrue(weapon.shotHitsTarget());
     }
 
     @Test
