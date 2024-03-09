@@ -46,7 +46,7 @@ public class Main {
 		for (int i = 0; i < trainCity.getHeight(); i++) {
 			for (int j = 0; j < trainCity.getWidth(); j++) {
 				Zombie zz = new Abomination();
-				trainCity.getAreas()[j][i].addZombie(z);
+				trainCity.getAreas()[j][i].addZombie(zz);
 			}
 		}
 
