@@ -1,92 +1,93 @@
 package zombicide;
 
-import zombicide.actor.Survivor;
-import zombicide.actor.Zombie;
+import zombicide.actor.survivor.Survivor;
+import zombicide.actor.zombie.Zombie;
 import zombicide.actor.zombie.Abomination;
-import zombicide.area.Room;
+import zombicide.city.City;
 import zombicide.city.TrainCity;
+import zombicide.util.DoorDirection;
 import zombicide.role.Fighter;
+import zombicide.role.Healer;
+import zombicide.role.Lucky;
+import zombicide.role.Snooper;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
 
 	public static void main(String[] args) {
-		TrainCity trainCity = new TrainCity();
-
-		Zombie z = new Abomination();
-		Zombie z2 = new Abomination();
-
-		Survivor s = new Survivor();
-		Survivor s2 = new Survivor();
-
 		if (args.length < 2) {
-			City aCity = new City(10, 10);
-			
-			aCity.getAreas()[0][0].getDoor(DoorDirection.DOWN).open();
-			aCity.getAreas()[0][1].getDoor(DoorDirection.DOWN).open();
-			aCity.getAreas()[0][1].getDoor(DoorDirection.LEFT).open();
-
-			aCity.getAreas()[5][5].addZombie(z);
-			aCity.getAreas()[5][5].addZombie(z2);
-
-			aCity.getAreas()[5][2].addSurvivor(s);
-			aCity.getAreas()[5][3].addSurvivor(s2);
-
-			aCity.display();
+			initCity(10, 10);
 		} else {
-			int x = parseInt(args[0]);
-			int y = parseInt(args[1]);
-			City aCity = new City(x, y);
-			aCity.display();
+			int width = parseInt(args[0]);
+			int height = parseInt(args[1]);
+			initCity(width, height);
 		}
-		
-		System.out.println();
-		System.out.println();
+
+		initTrainCity();
+	}
+
+	private static void initCity(int width, int height) {
+		City city = new City(width, height);
+
+		city.getAreas()[0][0].getDoor(DoorDirection.DOWN).open();
+		city.getAreas()[0][1].getDoor(DoorDirection.DOWN).open();
+		city.getAreas()[0][1].getDoor(DoorDirection.LEFT).open();
+
+		city.getSpawn().addSurvivor(new Survivor(new Fighter()));
+		city.getSpawn().addSurvivor(new Survivor(new Healer()));
+		city.getSpawn().addSurvivor(new Survivor(new Lucky()));
+		city.getSpawn().addSurvivor(new Survivor(new Snooper()));
+
+		city.display();
+	}
+
+	private static void initTrainCity() {
 		System.out.println("Plateau d'entraînement :");
 
-		// Ajout d'un zombie dans toutes les pièces du plateau d'entrainement
+		City trainCity = new TrainCity();
+
+		trainCity.getAreas()[0][0].getDoor(DoorDirection.DOWN).open();
+		trainCity.getAreas()[0][1].getDoor(DoorDirection.DOWN).open();
+		trainCity.getAreas()[0][1].getDoor(DoorDirection.LEFT).open();
+
+		trainCity.getSpawn().addSurvivor(new Survivor(new Fighter()));
+		trainCity.getSpawn().addSurvivor(new Survivor(new Healer()));
+		trainCity.getSpawn().addSurvivor(new Survivor(new Lucky()));
+		trainCity.getSpawn().addSurvivor(new Survivor(new Snooper()));
+
 		for (int i = 0; i < trainCity.getHeight(); i++) {
 			for (int j = 0; j < trainCity.getWidth(); j++) {
-				Zombie zz = new Abomination();
-				trainCity.getAreas()[j][i].addZombie(zz);
+				Zombie abomination = new Abomination();
+				trainCity.getAreas()[j][i].addZombie(abomination);
 			}
 		}
 
-		// Ajout d'un survivant de chaque role dans le spawn
-		List<Role> l_role = new ArrayList<>();
-		Role r = new Fighter();
-		l_role.add(r);
-		Survivor ss = new Survivor(l_role);
-		trainCity.spawn.addSurvivor(ss);
-
-		// Mettre une carte dans le sac à dos de chaques survivants
-
-		// Mettre dans la main de chaque survivant une fiole
-
+		//TODO Mettre une carte dans le sac à dos de chaques survivants.
+		//TODO Mettre dans la main de chaque survivant une fiole.
 
 		trainCity.display();
-		System.out.println();
 
-		System.out.println("Plateau d'entraînement avec les survivants montés de 1 case :");
-		List<Survivor> survivorsSpawn = trainCity.spawn.getSurvivors();
-		for (Survivor surv : survivorsSpawn) {
-			// Ajout du déplacement vers le haut
+		List<Survivor> survivors = trainCity.getSpawn().getSurvivors();
+
+		System.out.println();
+		int i = 1;
+		for (Survivor survivor : survivors) {
+			System.out.printf("Survivant %d : %s%n", i++, survivor.getRoles());
 		}
 
-
-
-
-
-		List<Role> l = trainCity.getAreas()[2][2].getSurvivors().get(0).getRoles();
-		System.out.println(l);
-
+		System.out.println();
 		trainCity.getRooms().get(0).displayItems();
 		trainCity.getRooms().get(1).displayItems();
 		trainCity.getRooms().get(2).displayItems();
 
+		System.out.println("Plateau d'entraînement avec les survivants montés de 1 case :");
+
+		for (Survivor surv : survivors) {
+			//TODO Ajout du déplacement vers le haut.
+		}
+
+		trainCity.display();
 	}
 
 	private static int parseInt(String v) {
