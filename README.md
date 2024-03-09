@@ -96,6 +96,38 @@ Nous avons décidé de créer une interface qui représentera les équipements. 
 ### Atteinte des objectifs
 
 ### Ensemble des commandes
+- Compilation
+```bash
+javac -sourcepath src src/zombicide/*.java -d classes
+```
+- Exécution du programme (avec 2 paramètres longueur et largeur du tableau ou non, 10 par 10 de base)
+```bash
+java -classpath classes zombicide.Main 10 10
+```
+
+- Tests compilation
+```bash
+javac -classpath junit-console.jar:classes test/zombicide/*.java
+```
+
+- Javadoc
+```bash
+javadoc -sourcepath src -subpackages zombicide -d docs
+```
+
+- Test exécution
+```bash
+java -jar junit-console.jar -classpath test:classes -scan-classpath
+```
+
+- Jar compilation
+```bash
+jar cvfe livrable1.jar zombicide/Main -C classes .
+```
+- Jar exécution
+```bash
+java -jar livrable2.jar 10 10
+```
 
 ### Difficultés restant à résoudre
 
