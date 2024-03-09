@@ -1,7 +1,5 @@
 package zombicide.item.weapon;
 
-import zombicide.item.Weapon;
-
 public class Pistol extends Weapon{
 	
 	

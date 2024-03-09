@@ -1,6 +1,5 @@
 package zombicide.area.street;
 
-import zombicide.area.Street;
 import zombicide.util.Color;
 
 /**

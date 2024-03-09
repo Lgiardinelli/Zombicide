@@ -5,12 +5,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import zombicide.actor.Survivor;
-import zombicide.actor.Zombie;
+import zombicide.actor.survivor.Survivor;
+import zombicide.actor.zombie.Zombie;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Walker;
-import zombicide.area.Room;
-import zombicide.area.Street;
+import zombicide.area.Area;
+import zombicide.area.room.Room;
+import zombicide.area.street.Street;
 import zombicide.area.room.TheContinental;
 import zombicide.area.room.ThePharmacy;
 

@@ -1,6 +1,6 @@
-package zombicide.actor;
+package zombicide.actor.zombie;
 
-import zombicide.Actor;
+import zombicide.actor.Actor;
 
 /**
  * Abstract class representing a zombie actor in the game.

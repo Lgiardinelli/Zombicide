@@ -1,4 +1,6 @@
-package zombicide;
+package zombicide.actor;
+
+import zombicide.area.Area;
 
 /**
  * Abstract class representing an actor in the game.

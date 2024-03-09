@@ -1,11 +1,14 @@
-package zombicide;
+package zombicide.area;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import zombicide.actor.*;
+import zombicide.actor.survivor.Survivor;
+import zombicide.actor.zombie.Zombie;
+import zombicide.door.Door;
+import zombicide.util.DoorDirection;
 import zombicide.util.Color;
 
 /**
@@ -116,7 +119,7 @@ public abstract class Area {
      * 
      * @param n Specific parameters for displaying the area.
      */
-    protected void display(int n) {
+    public void display(int n) {
     	if (n == 0) {
 			System.out.print(this.getDoor(DoorDirection.UP).isOpen() ? OPEN_UP : CLOSE_UP);
     	}

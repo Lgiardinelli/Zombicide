@@ -1,6 +1,5 @@
 package zombicide.area.room;
 
-import zombicide.area.Room;
 import zombicide.util.Color;
 
 /**

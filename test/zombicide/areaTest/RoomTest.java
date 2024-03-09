@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import zombicide.BackPack;
-import zombicide.Door;
-import zombicide.DoorDirection;
-import zombicide.area.Room;
+import zombicide.backpack.BackPack;
+import zombicide.door.Door;
+import zombicide.util.DoorDirection;
+import zombicide.area.room.Room;
 import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.Pistol;
 

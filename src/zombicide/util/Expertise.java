@@ -1,4 +1,4 @@
-package zombicide;
+package zombicide.util;
 
 public enum Expertise {
     STAGE_THREE(3),

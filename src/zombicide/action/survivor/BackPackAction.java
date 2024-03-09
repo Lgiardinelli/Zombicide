@@ -1,6 +1,6 @@
-package zombicide.actor.action;
+package zombicide.action.survivor;
 
-import zombicide.SurvivorAction;
+import zombicide.action.SurvivorAction;
 
 public class BackPackAction implements SurvivorAction {
     public boolean takeInHand(){

@@ -1,10 +1,14 @@
-package zombicide;
+package zombicide.city;
 
-import zombicide.area.Room;
-import zombicide.area.Street;
+import zombicide.area.Area;
+import zombicide.item.Item;
+import zombicide.door.Door;
+import zombicide.area.room.Room;
+import zombicide.area.street.Street;
 import zombicide.area.room.TheContinental;
 import zombicide.area.room.ThePharmacy;
 import zombicide.area.street.Manhole;
+import zombicide.util.DoorDirection;
 import zombicide.item.InfraredGlasses;
 import zombicide.item.Map;
 import zombicide.item.MasterKey;
@@ -472,5 +476,9 @@ public class City {
 
     public List<Room> getRooms() {
         return rooms;
+    }
+
+    public Street getSpawn() {
+        return spawn;
     }
 }

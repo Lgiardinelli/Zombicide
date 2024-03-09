@@ -1,6 +1,6 @@
-package zombicide.item;
+package zombicide.item.careItem;
 
-import zombicide.Item;
+import zombicide.item.Item;
 
 public abstract class CareItem implements Item {
 	public boolean isNoisy = false;

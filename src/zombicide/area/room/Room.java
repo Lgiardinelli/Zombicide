@@ -1,8 +1,8 @@
-package zombicide.area;
+package zombicide.area.room;
 
-import zombicide.Area;
-import zombicide.BackPack;
-import zombicide.Item;
+import zombicide.area.Area;
+import zombicide.backpack.BackPack;
+import zombicide.item.Item;
 
 import java.util.ArrayList;
 import java.util.List;

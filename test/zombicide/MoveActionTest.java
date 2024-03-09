@@ -3,11 +3,13 @@ package zombicide;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
-import zombicide.actor.Survivor;
-import zombicide.actor.Zombie;
-import zombicide.actor.action.MoveAction;
+import zombicide.util.ActorDirection;
+import zombicide.actor.survivor.Survivor;
+import zombicide.actor.zombie.Zombie;
+import zombicide.action.actor.MoveAction;
 import zombicide.actor.zombie.Walker;
-import zombicide.area.Street;
+import zombicide.area.Area;
+import zombicide.area.street.Street;
 
 public class MoveActionTest {
 

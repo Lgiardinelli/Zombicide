@@ -3,15 +3,17 @@ package zombicide;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import zombicide.actor.Survivor;
-import zombicide.actor.Zombie;
-import zombicide.actor.action.NoiseAction;
+import zombicide.actor.survivor.Survivor;
+import zombicide.actor.zombie.Zombie;
+import zombicide.action.survivor.NoiseAction;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Balaise;
 import zombicide.actor.zombie.Runner;
 import zombicide.actor.zombie.Walker;
-import zombicide.area.Room;
-import zombicide.area.room.ThePharmacy;
+import zombicide.area.Area;
+import zombicide.area.room.Room;
+import zombicide.backpack.BackPack;
+import zombicide.item.Item;
 import zombicide.item.weapon.*;
 
 

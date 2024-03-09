@@ -1,6 +1,6 @@
-package zombicide.actor.action;
+package zombicide.action.actor;
 
-import zombicide.ActorAction;
+import zombicide.action.ActorAction;
 
 public class AttackAction implements ActorAction {
 

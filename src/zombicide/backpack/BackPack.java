@@ -1,4 +1,6 @@
-package zombicide;
+package zombicide.backpack;
+
+import zombicide.item.Item;
 
 import java.util.ArrayList;
 import java.util.List;

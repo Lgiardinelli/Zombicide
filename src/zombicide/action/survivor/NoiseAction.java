@@ -1,8 +1,8 @@
-package zombicide.actor.action;
+package zombicide.action.survivor;
 
-import zombicide.Area;
-import zombicide.SurvivorAction;
-import zombicide.actor.Survivor;
+import zombicide.area.Area;
+import zombicide.action.SurvivorAction;
+import zombicide.actor.survivor.Survivor;
 
 public class NoiseAction implements SurvivorAction {
 
@@ -13,7 +13,7 @@ public class NoiseAction implements SurvivorAction {
         If the survivor is not in any area, no noise level is increased.
      */
     public void makeNoise(){
-        Area currentArea = survivor.getCurrentArea();
+        Area currentArea = survivor.getArea();
         if(currentArea != null){
             currentArea.increaseNoiseLevel();
         }

@@ -1,7 +1,8 @@
 package zombicide;
 
-import zombicide.actor.Survivor;
-import zombicide.actor.Zombie;
+import zombicide.actor.survivor.Survivor;
+import zombicide.actor.zombie.Zombie;
+import zombicide.city.City;
 
 import java.util.ArrayList;
 import java.util.List;

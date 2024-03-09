@@ -1,6 +1,6 @@
-package zombicide.actor.action;
+package zombicide.action.survivor;
 
-import zombicide.SurvivorAction;
+import zombicide.action.SurvivorAction;
 
 public class AreaAction implements SurvivorAction {
 

@@ -1,4 +1,4 @@
-package zombicide;
+package zombicide.door;
 
 /**
  * Represents a door on the board.

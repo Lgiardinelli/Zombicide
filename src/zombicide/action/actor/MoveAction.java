@@ -1,6 +1,10 @@
-package zombicide.actor.action;
+package zombicide.action.actor;
 
 import zombicide.*;
+import zombicide.action.ActorAction;
+import zombicide.actor.Actor;
+import zombicide.util.ActorDirection;
+import zombicide.area.Area;
 
 /**
  * Represents an action for moving an Actor in a specified direction.

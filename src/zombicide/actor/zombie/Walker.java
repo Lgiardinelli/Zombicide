@@ -1,7 +1,5 @@
 package zombicide.actor.zombie;
 
-import zombicide.actor.Zombie;
-
 public class Walker extends Zombie {
 	
 	public Walker() {

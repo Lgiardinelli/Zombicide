@@ -1,7 +1,5 @@
 package zombicide.actor.zombie;
 
-import zombicide.actor.Zombie;
-
 public class Abomination extends Zombie {
 	public Abomination() {
 		super(3, true);

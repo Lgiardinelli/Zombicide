@@ -1,7 +1,6 @@
 package zombicide.city;
 
-import zombicide.City;
-import zombicide.area.Street;
+import zombicide.area.street.Street;
 import zombicide.area.street.Manhole;
 import zombicide.util.Position;
 
