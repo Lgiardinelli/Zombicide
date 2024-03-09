@@ -423,7 +423,10 @@ Vendredi 23/02 :
 
 
 Week-end : Nous nous sommes tournés vers la gestion des déplacements de joueurs. Pour cela il s'agissait d'utiliser la clase MoveAction, qui prend comme attribut une direction. Cette comporte une méthode qui déplace un joueur passé en paramètre selon la direction correspondante de l'obet MoveAction. La direction, elle, est traduite par une énumération ActorDirection.
-
+Afin de respecter l'encapsulation des méthodes et attributs, nous en sommes convenu à revoir l'entièreté de la structure du projet, et donc à spécialiser d'avantage les classes dans leur package. Par exemple si l'on regarde pour la classe City, ses attributs protected comme le spawn n'était pas uniquement réservé pour elle même et TrainCity, mais aussi pour 
+toutes les classes dans le même package qu'elle (avant qu'elle ne soit déplacée dans city).
+Afin de spécifier un ou plusieurs rôles plus simplement aux survivants, nous somme passé d'une simple liste en paramètre de Survivor à des varargs de Role, ainsi soit nous passonts autant de Roles en paramètre, soit nous passons directement un tableau.
+Ici cela nous évite dans notre POC de créer une liste de 1 rôle et ce pour chaque survivant.
 
 
 __Partage de taches :__
@@ -447,7 +450,10 @@ Vendredi 23/02 :
 
 Week-end et durant les vacances :
 
-- Eliès : ajout de l'énumération ActorDirection et finalisation de la classe MoveAction avec ses méthodes. Avancement dans la classe Test de MoveAction
+- Eliès : ajout de l'énumération ActorDirection et finalisation de la classe MoveAction avec ses méthodes. Avancement dans la classe Test de MoveAction.
+- Dylan : Modification de la structure du projet (raisons expliquées dans la réflexion de groupe), début d'implémentation des roles, notamment le rôle Healer, 
+amélioration de la logique de certaines classes dont Weapon pour la gestion du tir, le Main pour "simplifier" sa compréhension, etc.
+Modification du paramètre de type liste dans Survivor, pour un type varargs Role (raisons dans réflexion de groupe).
 
 ## Semaine 7
 __Objectif de la semaine :__  
