@@ -41,13 +41,17 @@ public class Main {
 		System.out.println();
 		System.out.println();
 		System.out.println("Plateau d'entraînement :");
-		
-		trainCity.getAreas()[0][0].getDoor(DoorDirection.DOWN).open();
-		trainCity.getAreas()[0][1].getDoor(DoorDirection.DOWN).open();
-		trainCity.getAreas()[0][1].getDoor(DoorDirection.LEFT).open();
 
-		trainCity.getAreas()[0][0].addZombie(z);
-		trainCity.getAreas()[0][0].addSurvivor(s);
+		// Ajout d'un zombie dans toutes les pièces du plateau d'entrainement
+		for (int i = 0; i < trainCity.getHeight(); i++) {
+			for (int j = 0; j < trainCity.getWidth(); j++) {
+				Zombie zz = new Abomination();
+				trainCity.getAreas()[j][i].addZombie(z);
+			}
+		}
+
+		// Ajout d'un survivant de chaque role dans le spawn
+		Survivor ss = new Survivor();
 
 		trainCity.display();
 
