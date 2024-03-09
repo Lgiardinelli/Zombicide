@@ -1,19 +1,20 @@
-package zombicide.item;
+package zombicide.item.weapon;
+
+import zombicide.item.Item;
 
 import java.util.Random;
 
-import org.junit.validator.PublicClassValidator;
-import zombicide.Item;
-
 
 public abstract class Weapon implements Item {
+	private static final Random RANDOM = new Random();
     protected int nbDiceThrows;
     protected int diceThreshold;
     protected int damage;
     protected int minHittingRange;
     protected int maxHittingRange;
     protected boolean isNoisy;
-	private static final Random RANDOM = new Random();
+	private int lastShotValue;
+
 
     public Weapon(int nbDiceThrows, int diceThreshold, int damage, int minHittingRange, int maxHittingRange,
 			boolean isNoisy) {
@@ -23,6 +24,7 @@ public abstract class Weapon implements Item {
 		this.minHittingRange = minHittingRange;
 		this.maxHittingRange = maxHittingRange;
 		this.isNoisy = isNoisy;
+		this.lastShotValue = 0;
 	}
 
 	/**
@@ -31,11 +33,11 @@ public abstract class Weapon implements Item {
      * @return The total result obtained by rolling the dice.
      */
     public int shoot() {
-        int result = 0;
+		lastShotValue = 0;
         for (int i = 0; i < this.nbDiceThrows; i++) {
-            result += throwOneDie();
+            lastShotValue += throwOneDie();
         }
-        return result;
+		return lastShotValue;
     }
     
     private int throwOneDie() {
@@ -48,12 +50,8 @@ public abstract class Weapon implements Item {
      * @return if the weapon can shoot successfully, otherwise.
      */
     public boolean shotHitsTarget() {
-        int result = shoot();
-        return result >= this.diceThreshold;
+        return lastShotValue >= this.diceThreshold;
     }
-
-    
-    
 
 	public int getNbDiceThrows() {
 		return nbDiceThrows;
