@@ -1,26 +1,22 @@
 package zombicide.role;
 
-import zombicide.Role;
-import zombicide.actor.Survivor;
+import zombicide.actor.survivor.Survivor;
 
 import java.util.List;
+import java.util.Random;
 
 public class Healer extends Role {
-
     private static final int NB_LIFE_POINTS = 1;
+    private static final Random RANDOM = new Random();
 
-    public Healer() {
-        super();
-    }
-
-    public void addLifePoints(List<Survivor> survivors) {
-        for (Survivor survivor : survivors) {
-            survivor.addLifePoints(NB_LIFE_POINTS);
-        }
+    private void addLifePoints(List<Survivor> survivors) {
+        int index = RANDOM.nextInt(survivors.size());
+        survivors.get(index).addLifePoints(NB_LIFE_POINTS);
     }
 
     @Override
-    protected void handleAction() {
-
+    public void handleAction() {
+        List<Survivor> survivors = survivor.getArea().getSurvivors();
+        addLifePoints(survivors);
     }
 }
