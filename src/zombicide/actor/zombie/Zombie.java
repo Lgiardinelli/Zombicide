@@ -1,6 +1,7 @@
 package zombicide.actor.zombie;
 
 import zombicide.actor.Actor;
+import zombicide.area.Area;
 
 /**
  * Abstract class representing a zombie actor in the game.
@@ -34,5 +35,14 @@ public abstract class Zombie extends Actor {
      */
     public int getAttackPoints() {
         return this.attackPoints;
+    }
+
+    @Override
+    public void setArea(Area area) {
+        if (this.area != null) {
+            this.area.removeActor(this);
+        }
+        this.area = area;
+        area.addZombie(this);
     }
 }

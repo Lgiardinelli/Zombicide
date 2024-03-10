@@ -3,10 +3,12 @@ package zombicide.actor.survivor;
 import java.util.*;
 
 import zombicide.actor.Actor;
+import zombicide.item.weapon.Pistol;
 import zombicide.util.Expertise;
 import zombicide.backpack.BackPack;
 import zombicide.role.Role;
 import zombicide.item.Item;
+import zombicide.area.Area;
 
 /**
  * Represents a survivor actor in the game.
@@ -17,10 +19,10 @@ public class Survivor extends Actor {
     private int skillPoints;
 
     /** The backpack of the survivor to carry items. */
-    private BackPack backpack;
+    private final BackPack backpack;
 
     /** The item currently handled by the survivor. */
-    private zombicide.item.Item handleItem;
+    private Item handleItem;
 
     /** The roles associated with the survivor. */
     private final List<Role> roles;
@@ -35,6 +37,8 @@ public class Survivor extends Actor {
         this.skillPoints = 0;
         this.actionPoints = 3;
         this.lifePoints = 5;
+        this.backpack = new BackPack();
+        this.handleItem = new Pistol();
         this.roles = new ArrayList<>(Arrays.asList(roles));
         for (Role role : this.roles)
             role.setSurvivor(this);
@@ -110,6 +114,15 @@ public class Survivor extends Actor {
     }
 
     @Override
-    protected void handleAction() {
+    public void handleAction() {
+    }
+
+    @Override
+    public void setArea(Area area) {
+        if (this.area != null) {
+            this.area.removeActor(this);
+        }
+        this.area = area;
+        area.addSurvivor(this);
     }
 }
