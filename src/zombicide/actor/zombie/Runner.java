@@ -8,7 +8,7 @@ public class Runner extends Zombie {
 	}
 
 	@Override
-	protected void handleAction() {
+	public void handleAction() {
 
 	}
 }
