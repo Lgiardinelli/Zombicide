@@ -1,5 +1,6 @@
 package zombicide.city;
 
+import zombicide.actor.survivor.Survivor;
 import zombicide.area.Area;
 import zombicide.item.Item;
 import zombicide.door.Door;
@@ -56,6 +57,10 @@ public class City {
      */
     public Area[][] getAreas() {
         return this.areas;
+    }
+
+    public Area getArea(Position p) {
+        return this.areas[p.getY()][p.getX()];
     }
 
     /**
@@ -470,7 +475,7 @@ public class City {
     }
 
     private int throwDice(int x, int y) {
-        int res = random.nextInt(x, y);
+        int res = random.nextInt(y-x) + x;
         return res;
     }
 
