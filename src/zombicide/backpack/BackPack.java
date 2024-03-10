@@ -13,7 +13,7 @@ public class BackPack {
     /**
      * List to store items in the backpack.
      */
-    private List<Item> items;
+    private final List<Item> items;
 
     /**
      * Constructor for the BackPack class. Initializes an empty list of items.
