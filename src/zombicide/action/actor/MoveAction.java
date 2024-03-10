@@ -3,7 +3,9 @@ package zombicide.action.actor;
 import zombicide.*;
 import zombicide.action.ActorAction;
 import zombicide.actor.Actor;
+import zombicide.city.City;
 import zombicide.util.ActorDirection;
+import zombicide.util.Position;
 import zombicide.area.Area;
 
 /**
@@ -13,29 +15,29 @@ public class MoveAction implements ActorAction {
 
     /** The direction in which the Actor will move. */
     final ActorDirection direction;
+    private Actor actor;
+    private City city;
 
     /**
      * Constructs a new MoveAction with the specified direction.
      *
      * @param d The direction in which the Actor will move.
      */
-    public MoveAction(ActorDirection d){
+    public MoveAction(ActorDirection d, Actor actor, City city){
         this.direction = d;
+        this.actor = actor;
+        this.city = city;
     }
 
     /**
      * Calculates the new position of an Actor after moving in the specified direction.
      *
-     * @param a The Actor whose position is to be calculated.
      * @return The new Position after moving the Actor.
      */
-    public Position PositionAfterMoving(Actor a){
-        // Get the current area of the Actor
-        Area actorArea = a.getArea();
-
+    public Position positionAfterMoving(){
         // Get the current X and Y coordinates of the Actor's area
-        int x = actorArea.getX();
-        int y = actorArea.getY();
+        int x = this.actor.getArea().getX();
+        int y = this.actor.getArea().getY();
 
         // Calculate the new X and Y coordinates after moving in the specified direction
         int i = x + direction.getX();
@@ -45,4 +47,9 @@ public class MoveAction implements ActorAction {
         return new Position(i , j);
     }
 
+    @Override
+    public void doSomething() {
+        Position p = positionAfterMoving();
+        this.actor.setArea(this.city.getArea(p));
+    }
 }
