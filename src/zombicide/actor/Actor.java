@@ -1,5 +1,6 @@
 package zombicide.actor;
 
+import zombicide.action.actor.MoveAction;
 import zombicide.area.Area;
 
 /**
@@ -9,7 +10,7 @@ public abstract class Actor {
     /**
      * The current area where the actor is located.
      */
-    private Area area;
+    protected Area area;
     /**
      * The life points of the actor.
      */
@@ -25,7 +26,6 @@ public abstract class Actor {
     }
 
     public void setArea(Area area) {
-        this.area = area;
     }
 
     /**
@@ -72,6 +72,6 @@ public abstract class Actor {
     public void removeLifePoints(int damage) {
         this.lifePoints -= damage;
     }
-    protected abstract void handleAction();
+    public abstract void handleAction();
 }
 
