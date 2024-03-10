@@ -1,10 +1,13 @@
 package zombicide;
 
+import zombicide.action.SurvivorAction;
+import zombicide.action.survivor.*;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.actor.zombie.Abomination;
 import zombicide.city.City;
 import zombicide.city.TrainCity;
+import zombicide.listchooser.RandomListChooser;
 import zombicide.util.DoorDirection;
 import zombicide.role.Fighter;
 import zombicide.role.Healer;
@@ -16,6 +19,11 @@ import java.util.List;
 public class Main {
 
 	public static void main(String[] args) {
+		Main main = new Main();
+		main.start(args);
+	}
+
+	private void start(String[] args) {
 		if (args.length < 2) {
 			initCity(10, 10);
 		} else {
@@ -25,9 +33,11 @@ public class Main {
 		}
 
 		initTrainCity();
+
+		chooseRandomSurvivorAction();
 	}
 
-	private static void initCity(int width, int height) {
+	private void initCity(int width, int height) {
 		City city = new City(width, height);
 
 		city.getAreas()[0][0].getDoor(DoorDirection.DOWN).open();
@@ -42,7 +52,7 @@ public class Main {
 		city.display();
 	}
 
-	private static void initTrainCity() {
+	private void initTrainCity() {
 		System.out.println("Plateau d'entraînement :");
 
 		City trainCity = new TrainCity();
@@ -88,6 +98,22 @@ public class Main {
 		}
 
 		trainCity.display();
+	}
+
+	private void chooseRandomSurvivorAction() {
+		RandomListChooser<SurvivorAction> chooser = new RandomListChooser<>();
+
+		List<SurvivorAction> actions = List.of(
+				new AreaAction(),
+				new BackPackAction(),
+				new DoorAction(),
+				new ItemAction(),
+				new NoiseAction(),
+				new RoomAction()
+		);
+		SurvivorAction chosenAction = chooser.choose(actions);
+
+		chosenAction.doSomething();
 	}
 
 	private static int parseInt(String v) {
