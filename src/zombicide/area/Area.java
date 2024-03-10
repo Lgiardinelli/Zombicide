@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import zombicide.actor.Actor;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.door.Door;
@@ -158,13 +159,18 @@ public abstract class Area {
     }
 
     public void addZombie(Zombie z) {
-        z.setArea(this);
+        // z.setArea(this);
         this.zombies.add(z);
     }
 
     public void addSurvivor(Survivor s) {
-        s.setArea(this);
+        // s.setArea(this);
         this.survivors.add(s);
+    }
+
+    public void removeActor(Actor a) {
+        this.survivors.remove(a);
+        this.zombies.remove(a);
     }
 
     public int getNoise(){
