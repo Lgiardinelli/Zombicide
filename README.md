@@ -80,20 +80,35 @@ Aucune difficulté majeure n'a été identifiée jusqu'à présent.
 
 
 ## Livrable 2
-### Objectif du premier livrable 
-Modélisation des acteurs et des équipements.
+### Objectif du premier livrable
+- des choix de modélisation
+- de l'état du développement
+  
+- un programme principal (nommé Livrable2.java)
+  permettant de :
+- créer la ville d'entraînement,
+- placer un zombie (peu importe le type) sur chaque zone,
+- créer un survivant de chaque rôle sur le carrefour principal,
+- mettre une carte dans le sac à dos de chaque survivant,
+- mettre dans la main de chaque survivant une fiole,
+- afficher une représentation de la ville,
+- déplacer tous les survivants d'une case vers le nord
+- afficher sa représentation.
 
-### Choix de modélisation 
-
-- Concernant les acteurs: 
-Nous avons remarqué que les survivants et les zombies avaient les points d'action et les points de vie en commun. Il s'agissait donc de créer une classe mère qui hérite des classes Survivor et Zommbie. Les types de Zombies seront des classes filles de la classe Zombie, avec des caractéristiques différentes selon le type de Zombie. Les rôles des joueurs seront gérés dans une liste de "rôles" présente dans la classe Survivor. La classe Rôle est donc une classe abstraite qui hérite différentes classes qui représentent les rôles disponibles.
+### Choix de modélisation
+- Concernant les acteurs:
+Nous avons remarqué que les survivants et les zombies avaient les points d'action et les points de vie en commun. Il s'agissait donc de créer une classe mère qui hérite des classes Survivor et Zommbie. Les types de Zombies seront des classes filles de la classe Zombie, avec des caractéristiques différentes selon le type de Zombie.  
+Les rôles des joueurs seront gérés dans une liste de "rôles" présente dans la classe Survivor. La classe Rôle est donc une classe abstraite qui hérite différentes classes qui représentent les rôles disponibles.
 
 - Concernant les équipements:
 Nous avons décidé de créer une interface qui représentera les équipements. Nous avons ensuite "séparé" les types d'équipements en deux catégories principales: les armes et les autres. La classe Weapon est une classe abstraite 
 
-### Etat du développement 
-
-### Atteinte des objectifs
+### Etat du développement && Atteinte des objectifs
+Tous les objectifs du livrable 2 ont été effectué, les zombies ont bien un type et ont été ajouté dans toutes les cellulles du plateau d'entraînement, tous les survivant avec un type de role on été ajouté dans la spawn du plateau d'entrainement et ont montés une cellulle.  
+Ils ont tous une fiole dans les mains ainsi qu'une carte dans le sac à dos.
+Nous avons donc implémenté les différents roles que peuvent avoir les survivants.  
+Nous avons implémenté les déplacements dans toutes les directions des zombies et des survivants.
+Nous avons aussi pu mettre des items dans la ville en les dispersants.
 
 ### Ensemble des commandes
 - Compilation
@@ -122,7 +137,7 @@ java -jar junit-console.jar -classpath test:classes -scan-classpath
 
 - Jar compilation
 ```bash
-jar cvfe livrable1.jar zombicide/Main -C classes .
+jar cvfe livrable2.jar zombicide/Main -C classes .
 ```
 - Jar exécution
 ```bash
@@ -427,6 +442,9 @@ Afin de respecter l'encapsulation des méthodes et attributs, nous en sommes con
 toutes les classes dans le même package qu'elle (avant qu'elle ne soit déplacée dans city).
 Afin de spécifier un ou plusieurs rôles plus simplement aux survivants, nous somme passé d'une simple liste en paramètre de Survivor à des varargs de Role, ainsi soit nous passonts autant de Roles en paramètre, soit nous passons directement un tableau.
 Ici cela nous évite dans notre POC de créer une liste de 1 rôle et ce pour chaque survivant.
+Suite au mail que vous nous avez envoyé avec la descritpion du rendu du livrable 2, nous avons dû modifier le main pour qu'il affiche 2 fois le plateau d'entrainement dont l'un sans le déplacements des survivants et l'autre avec les déplacements.  
+Pour les déplacements, nous avons eu une réfléxion de groupe qui a permis de nous accorder sur la méthode appelé pour le déplacement, qui est géré par la cellulle, car dans notre modélisation, une cellulle a un acteur et un acteur a une cellulle. (Comme le jeu de loi en POO)
+Pour l'ajout des fioles dans la main et de la carte dans le sac, nous avons implémenté cela logiquement dans les listes que contiennent les items.
 
 
 __Partage de taches :__
@@ -451,9 +469,9 @@ Vendredi 23/02 :
 Week-end et durant les vacances :
 
 - Eliès : ajout de l'énumération ActorDirection et finalisation de la classe MoveAction avec ses méthodes. Avancement dans la classe Test de MoveAction.
-- Dylan : Modification de la structure du projet (raisons expliquées dans la réflexion de groupe), début d'implémentation des roles, notamment le rôle Healer, 
-amélioration de la logique de certaines classes dont Weapon pour la gestion du tir, le Main pour "simplifier" sa compréhension, etc.
-Modification du paramètre de type liste dans Survivor, pour un type varargs Role (raisons dans réflexion de groupe).
+- Dylan, Théophane : Modification de la structure du projet (raisons expliquées dans la réflexion de groupe), début d'implémentation des roles, notamment le rôle Healer, 
+amélioration de la logique de certaines classes dont Weapon pour la gestion du tir, le Main pour "simplifier" sa compréhension, etc. Modification du paramètre de type liste dans Survivor, pour un type varargs Role (raisons dans réflexion de groupe).
+- Léo et Elies : Implémentation des méthodes de déplacement sur la carte, modification du main pour convenir au livrable 2, placement des zombies et des survivant.
 
 ## Semaine 7
 __Objectif de la semaine :__  
