@@ -2,7 +2,6 @@ package zombicide.action.survivor;
 
 import zombicide.Area;
 import zombicide.City;
-import zombicide.Door;
 import zombicide.action.SurvivorAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.util.Direction;
@@ -20,7 +19,7 @@ public class AreaAction implements SurvivorAction {
         this.city = c;
     }
 
-    private List<Door> areaArround(){
+    private List<Area> areasArround(){
 
         List<Area> areas = new ArrayList<>();
         for(Direction d : Direction.values()){
@@ -30,12 +29,10 @@ public class AreaAction implements SurvivorAction {
             int x = survivor.getArea().getX();
             int y = survivor.getArea().getY();
 
-            Door door = this.city.getAreas()[y+j][x+i].getDoor(d.getReverse());
+            Area area = this.city.getAreas()[y+j][x+i];
 
-            if(door != null) {
-                doors.add(door);
-            }
+            areas.add(area);
         }
-        return doors;
+        return areas;
     }
 }
