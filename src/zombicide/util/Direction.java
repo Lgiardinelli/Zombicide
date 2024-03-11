@@ -1,6 +1,6 @@
 package zombicide.util;
 
-public enum ActorDirection {
+public enum Direction {
 
     UP(0,-1),
     RIGHT(1,0),
@@ -10,7 +10,7 @@ public enum ActorDirection {
     final int x;
     final int y;
 
-    ActorDirection(int x, int y) {
+    Direction(int x, int y) {
         this.x = x;
         this.y = y;
     }

@@ -9,8 +9,8 @@ import zombicide.actor.Actor;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.door.Door;
-import zombicide.util.DoorDirection;
 import zombicide.util.Color;
+import zombicide.util.Direction;
 
 /**
  * Abstract class representing an area in the game.
@@ -29,7 +29,7 @@ public abstract class Area {
     private final int posX;
     private final int posY;
     private int noise;
-    protected final Map<DoorDirection, Door> doors;
+    protected final Map<Direction, Door> doors;
 
     /**
      * Constructor for the Area class.
@@ -44,7 +44,7 @@ public abstract class Area {
         this.zombies = new ArrayList<>();
         this.noise = 0;
         this.doors = new HashMap<>();
-        for (DoorDirection d : DoorDirection.values()) {
+        for (Direction d : Direction.values()) {
             doors.put(d, new Door());
         }
     }
@@ -63,7 +63,7 @@ public abstract class Area {
      * @param direction The direction of the door.
      * @return The door in the specified direction.
      */
-    public Door getDoor(DoorDirection direction) {
+    public Door getDoor(Direction direction) {
         return this.doors.get(direction);
     }
 
@@ -72,7 +72,7 @@ public abstract class Area {
      * 
      * @return Map containing all doors in the area.
      */
-    public Map<DoorDirection, Door> getDoors() {
+    public Map<Direction, Door> getDoors() {
         return doors;
     }
 
@@ -82,7 +82,7 @@ public abstract class Area {
      * @param direction The direction of the door.
      * @param door The door to add.
      */
-    public void addDoor(DoorDirection direction, Door door) {
+    public void addDoor(Direction direction, Door door) {
         doors.put(direction, door);
     }
 
@@ -126,13 +126,13 @@ public abstract class Area {
      */
     public void display(int n) {
     	if (n == 0) {
-			System.out.print(this.getDoor(DoorDirection.UP).isOpen() ? OPEN_UP : CLOSE_UP);
+			System.out.print(this.getDoor(Direction.UP).isOpen() ? OPEN_UP : CLOSE_UP);
     	}
     	else if (n == 1) {
-    		System.out.print(this.getDoor(DoorDirection.LEFT).isOpen() ? openLeft1() : closeLeft1());
+    		System.out.print(this.getDoor(Direction.LEFT).isOpen() ? openLeft1() : closeLeft1());
     	}
     	else {
-    		System.out.print(this.getDoor(DoorDirection.LEFT).isOpen() ? openLeft2() : closeLeft2());
+    		System.out.print(this.getDoor(Direction.LEFT).isOpen() ? openLeft2() : closeLeft2());
     	}
     }
 
