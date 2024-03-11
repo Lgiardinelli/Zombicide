@@ -41,7 +41,7 @@ public abstract class Weapon implements Item {
     }
     
     private int throwOneDie() {
-		return RANDOM.nextInt(7);
+		return RANDOM.nextInt(6) + 1;
 	}
     
     /**
