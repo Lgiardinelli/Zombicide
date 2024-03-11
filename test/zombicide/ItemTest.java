@@ -63,6 +63,14 @@ public class ItemTest {
     }
 
     @Test
+    void testGetNbDiceThrows(){
+        int nb = pistol.getNbDiceThrows();
+        assertEquals(nb, 1);
+        int nb2 = riffle.getNbDiceThrows();
+        assertEquals(nb2, 2);
+    }
+
+    @Test
     void testGetMinAndMaxHittingRange(){
         int minRange = pistol.getMinHittingRange();
         int maxRange = pistol.getMaxHittingRange();
