@@ -6,7 +6,6 @@ import zombicide.action.survivor.*;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Zombie;
-import zombicide.backpack.BackPack;
 import zombicide.city.City;
 import zombicide.city.TrainCity;
 import zombicide.item.Map;
@@ -16,13 +15,10 @@ import zombicide.role.Fighter;
 import zombicide.role.Healer;
 import zombicide.role.Lucky;
 import zombicide.role.Snooper;
-import zombicide.util.ActorDirection;
-import zombicide.util.DoorDirection;
+import zombicide.util.Direction;
 
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 public class Main {
 
@@ -48,9 +44,9 @@ public class Main {
 	private void initCity(int width, int height) {
 		City city = new City(width, height);
 
-		city.getAreas()[0][0].getDoor(DoorDirection.DOWN).open();
-		city.getAreas()[0][1].getDoor(DoorDirection.DOWN).open();
-		city.getAreas()[0][1].getDoor(DoorDirection.LEFT).open();
+		city.getAreas()[0][0].getDoor(Direction.DOWN).open();
+		city.getAreas()[0][1].getDoor(Direction.DOWN).open();
+		city.getAreas()[0][1].getDoor(Direction.LEFT).open();
 
 		new Survivor(new Fighter()).setArea(city.getSpawn());
 		new Survivor(new Healer()).setArea(city.getSpawn());
@@ -65,9 +61,9 @@ public class Main {
 
 		City trainCity = new TrainCity();
 
-		trainCity.getAreas()[0][0].getDoor(DoorDirection.DOWN).open();
-		trainCity.getAreas()[0][1].getDoor(DoorDirection.DOWN).open();
-		trainCity.getAreas()[0][1].getDoor(DoorDirection.LEFT).open();
+		trainCity.getAreas()[0][0].getDoor(Direction.DOWN).open();
+		trainCity.getAreas()[0][1].getDoor(Direction.DOWN).open();
+		trainCity.getAreas()[0][1].getDoor(Direction.LEFT).open();
 
 		Survivor fighter = new Survivor(new Fighter());
 		Survivor healer = new Survivor(new Healer());
@@ -117,7 +113,7 @@ public class Main {
 		System.out.println("Plateau d'entraînement avec les survivants montés de 1 case :");
 
 		for (int ignored = 0; ignored < 4; ignored++)
-			new MoveAction(ActorDirection.UP, survivors.get(0), trainCity)
+			new MoveAction(Direction.UP, survivors.get(0), trainCity)
 					.doSomething();
 
 		trainCity.display();
