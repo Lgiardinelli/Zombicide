@@ -1,6 +1,5 @@
 package zombicide.city;
 
-import zombicide.actor.survivor.Survivor;
 import zombicide.area.Area;
 import zombicide.item.Item;
 import zombicide.door.Door;
@@ -9,13 +8,13 @@ import zombicide.area.street.Street;
 import zombicide.area.room.TheContinental;
 import zombicide.area.room.ThePharmacy;
 import zombicide.area.street.Manhole;
-import zombicide.util.DoorDirection;
 import zombicide.item.InfraredGlasses;
 import zombicide.item.Map;
 import zombicide.item.MasterKey;
 import zombicide.item.careItem.FirstAidKit;
 import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.*;
+import zombicide.util.Direction;
 import zombicide.util.Position;
 
 import java.util.ArrayList;
@@ -101,17 +100,17 @@ public class City {
         createDoors();
 
         for (Room r : rooms) {
-            for (DoorDirection d : DoorDirection.values()) {
+            for (Direction d : Direction.values()) {
                 r.getDoor(d).close();
             }
         }
 
         for (int i = 0; i < this.getWidth(); i++) {
-            this.getAreas()[0][i].getDoor(DoorDirection.UP).close();
+            this.getAreas()[0][i].getDoor(Direction.UP).close();
         }
         
          for (int i = 0 ; i < this.getHeight(); i++) {
-        	 this.getAreas()[i][0].getDoor(DoorDirection.LEFT).close();
+        	 this.getAreas()[i][0].getDoor(Direction.LEFT).close();
          }
     }
 
@@ -353,18 +352,18 @@ public class City {
                 Door leftDoor = new Door();
                 try {
                     Area area = this.areas[i][j];
-                    area.addDoor(DoorDirection.UP, upDoor);
-                    area.addDoor(DoorDirection.LEFT, leftDoor);
+                    area.addDoor(Direction.UP, upDoor);
+                    area.addDoor(Direction.LEFT, leftDoor);
                 } catch (ArrayIndexOutOfBoundsException ignored) {
                 }
                 try {
                     Area upArea = this.areas[i - 1][j];
-                    upArea.addDoor(DoorDirection.DOWN, upDoor);
+                    upArea.addDoor(Direction.DOWN, upDoor);
                 } catch (ArrayIndexOutOfBoundsException ignored) {
                 }
                 try {
                     Area leftArea = this.areas[i][j - 1];
-                    leftArea.addDoor(DoorDirection.RIGHT, leftDoor);
+                    leftArea.addDoor(Direction.RIGHT, leftDoor);
                 } catch (ArrayIndexOutOfBoundsException ignored) {
                 }
             }
