@@ -2,23 +2,37 @@ package zombicide.util;
 
 public enum Direction {
 
-    UP(0,-1,0,1),
-    DOWN(0,1,0,-1),
-    LEFT(-1,0,1,0),
-    RIGHT(1,0,-1,0);
 
-    final int x;
-    final int y;
+    UP,
+    RIGHT,
+    DOWN,
+    LEFT;
 
-    final int reversex;
+    static {
+        UP.x = 0;
+        UP.y = -1;
+        UP.reverse = DOWN;
 
-    final int reversey;
+        RIGHT.x = 1;
+        RIGHT.y = 0;
+        RIGHT.reverse = LEFT;
 
-    Direction(int x, int y, int rx, int ry) {
-        this.x = x;
-        this.y = y;
-        this.reversex = rx;
-        this.reversey = ry;
+        DOWN.x = 0;
+        DOWN.y = 1;
+        DOWN.reverse = UP;
+
+        LEFT.x = -1;
+        LEFT.y = 0;
+        LEFT.reverse = RIGHT;
+    }
+
+    int x;
+    int y;
+    Direction reverse;
+
+
+
+    Direction() {
     }
 
     public int getX() {
@@ -29,11 +43,12 @@ public enum Direction {
         return y;
     }
 
-    public int getReversex() {
-        return reversex;
+    public Direction getReverse() {
+        return this.reverse;
     }
 
-    public int getReversey() {
-        return reversey;
+
+    public boolean verticalDirection(){
+        return this.x==0;
     }
 }
