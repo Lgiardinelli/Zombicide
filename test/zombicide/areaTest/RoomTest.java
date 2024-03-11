@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 
 import zombicide.backpack.BackPack;
 import zombicide.door.Door;
-import zombicide.util.DoorDirection;
 import zombicide.area.room.Room;
 import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.Pistol;
@@ -33,7 +32,7 @@ class RoomTest {
 	@Test
 	void testAddAllDoorInRoom() {		
 		assertNotNull(room.getDoors());
-		for(DoorDirection direction : DoorDirection.values()) {
+		for(Direction direction : Direction.values()) {
 			Door door = room.getDoor(direction);
 			assertNotNull(door);
 		}
@@ -41,7 +40,7 @@ class RoomTest {
 
 	@Test
 	void testOpenAndCloseDoorInRoom(){
-		room.addDoor(DoorDirection.UP, door);
+		room.addDoor(Direction.UP, door);
 		assertTrue(door.isOpen());
 		door.close();
 		assertFalse(door.isOpen());
