@@ -5,10 +5,10 @@ import zombicide.city.City;
 public class Map implements Item {
 	public boolean isNoisy = true;
 
-	private City board;
+	private City city;
 
 	public Map(City c) {
-		this.board = c;
+		this.city = c;
 	}
 
 	public String toString(){
@@ -17,6 +17,6 @@ public class Map implements Item {
 
 	@Override
 	public void use() {
-		board.display();
+		city.display();
 	}
 }
