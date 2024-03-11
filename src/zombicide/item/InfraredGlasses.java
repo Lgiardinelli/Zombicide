@@ -8,7 +8,7 @@ public class InfraredGlasses implements Item {
 	}
 
 	public String toString(){
-		return "infared glasses";
+		return "infrared glasses";
 	}
 
 	@Override
