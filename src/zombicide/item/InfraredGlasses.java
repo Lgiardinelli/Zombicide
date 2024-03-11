@@ -10,4 +10,9 @@ public class InfraredGlasses implements Item {
 	public String toString(){
 		return "infared glasses";
 	}
+
+	@Override
+	public void use() {
+
+	}
 }

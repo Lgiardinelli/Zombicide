@@ -11,4 +11,9 @@ public class Riffle extends Weapon{
 	public String toString(){
 		return "riffle";
 	}
+
+	@Override
+	public void use() {
+
+	}
 }

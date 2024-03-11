@@ -10,4 +10,9 @@ public class MasterKey implements Item {
 	public String toString(){
 		return "master key";
 	}
+
+	@Override
+	public void use() {
+
+	}
 }
