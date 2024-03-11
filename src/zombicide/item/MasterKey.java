@@ -2,11 +2,14 @@ package zombicide.item;
 
 import zombicide.City;
 import zombicide.Door;
+import zombicide.action.SurvivorAction;
 import zombicide.actor.survivor.Survivor;
+import zombicide.listchooser.RandomListChooser;
 import zombicide.util.Direction;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MasterKey implements Item {
 	public boolean isNoisy = false;
@@ -25,7 +28,10 @@ public class MasterKey implements Item {
 
 	@Override
 	public void use() {
-
+		List<Door> doors = doorsArround();
+		RandomListChooser<Door> chooser = new RandomListChooser<>();
+		Door door = chooser.choose(doors);
+		door.open();
 	}
 
 	public List<Door> doorsArround(){
