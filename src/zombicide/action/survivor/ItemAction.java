@@ -12,6 +12,6 @@ public class ItemAction implements SurvivorAction {
     }
     @Override
     public void doSomething(){
-
+        itemUsed.use();
     }
 }
