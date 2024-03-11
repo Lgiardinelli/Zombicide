@@ -53,6 +53,10 @@ public abstract class Area {
         return survivors;
     }
 
+    public List<Zombie> getZombies() {
+        return zombies;
+    }
+
     /**
      * Retrieves the door in the specified direction.
      * 
