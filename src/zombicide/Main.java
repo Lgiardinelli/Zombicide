@@ -19,6 +19,7 @@ import zombicide.role.Snooper;
 import zombicide.util.ActorDirection;
 import zombicide.util.DoorDirection;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
@@ -135,7 +136,8 @@ public class Main {
 	private void chooseRandomSurvivorAction() {
 		RandomListChooser<SurvivorAction> chooser = new RandomListChooser<>();
 
-		List<SurvivorAction> actions = List.of(
+		List<SurvivorAction> actions = Arrays.asList(
+				null,
 				new AreaAction(),
 				new BackPackAction(),
 				new DoorAction(),
