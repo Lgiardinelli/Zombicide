@@ -5,6 +5,7 @@ import zombicide.Door;
 import zombicide.actor.survivor.Survivor;
 import zombicide.util.Direction;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MasterKey implements Item {
@@ -28,6 +29,8 @@ public class MasterKey implements Item {
 	}
 
 	public List<Door> doorsArround(){
+
+		List<Door> doors = new ArrayList<>();
 		for(Direction d : Direction.values()){
 			int i = d.getX();
 			int j = d.getY();
@@ -35,10 +38,12 @@ public class MasterKey implements Item {
 			int x = survivor.getArea().getX();
 			int y = survivor.getArea().getY();
 
-			int rx = d.getReversex();
-			int ry = d.getReversey();
+			Door door = this.city.getAreas()[y+j][x+i].getDoor(d.getReverse());
 
-
+			if(door != null) {
+				doors.add(door);
+			}
 		}
+		return doors;
 	}
 }
