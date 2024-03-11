@@ -17,6 +17,6 @@ public class Map implements Item {
 
 	@Override
 	public void use() {
-
+		board.display();
 	}
 }
