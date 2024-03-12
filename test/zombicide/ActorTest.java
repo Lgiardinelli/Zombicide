@@ -13,6 +13,7 @@ import zombicide.actor.zombie.Walker;
 import zombicide.area.Area;
 import zombicide.area.room.Room;
 import zombicide.backpack.BackPack;
+import zombicide.city.City;
 import zombicide.item.Item;
 import zombicide.item.weapon.*;
 
@@ -28,13 +29,16 @@ public class ActorTest {
     private Area room;
     private NoiseAction noiseAction;
 
+    private City city;
+
     @BeforeEach
     public void before(){
-        this.survivor = new Survivor();
-        this.balaise = new Balaise();
-        this.abomination = new Abomination();
-        this.walker = new Walker();
-        this.runner = new Runner();
+        this.city = new City(5,5);
+        this.survivor = new Survivor(this.city);
+        this.balaise = new Balaise(this.city);
+        this.abomination = new Abomination(this.city);
+        this.walker = new Walker(this.city);
+        this.runner = new Runner(this.city);
         this.pistol = new Pistol();
         this.backPack = new BackPack();
         this.room = new Room(6,7);
