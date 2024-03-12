@@ -29,7 +29,7 @@ public class DoorAction implements SurvivorAction {
         door.open();
     }
 
-    private List<Door> doorsArround(){
+    private List<Door> doorsAround(){
 
         List<Door> doors = new ArrayList<>();
         for(Direction d : Direction.values()){
