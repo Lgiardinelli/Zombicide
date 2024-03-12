@@ -14,6 +14,7 @@ import zombicide.area.room.Room;
 import zombicide.area.street.Street;
 import zombicide.area.room.TheContinental;
 import zombicide.area.room.ThePharmacy;
+import zombicide.city.City;
 
 class AreaTest {
 
@@ -28,6 +29,8 @@ class AreaTest {
 	private Survivor survivor2;
 	private Zombie walker;
 	private Zombie abomination;
+
+	private City city;
 	
 	@BeforeEach
 	public void before() {
@@ -37,10 +40,10 @@ class AreaTest {
 		this.pharmacy = new ThePharmacy(3,4);
 		this.continental = new TheContinental(2,7);
 		//Actor
-		this.survivor = new Survivor();
-		this.survivor2 = new Survivor();
-		this.walker = new Walker();
-		this.abomination = new Abomination();
+		this.survivor = new Survivor(this.city);
+		this.survivor2 = new Survivor(this.city);
+		this.walker = new Walker(this.city);
+		this.abomination = new Abomination(this.city);
 	}
 	
 	@Test
