@@ -1,8 +1,10 @@
 package zombicide.actor.zombie;
 
+import zombicide.city.City;
+
 public class Abomination extends Zombie {
-	public Abomination() {
-		super(3, true);
+	public Abomination(City c) {
+		super(3, true,c);
 		this.actionPoints = 1;
 		this.lifePoints = 6;
 	}
