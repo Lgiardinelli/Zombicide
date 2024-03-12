@@ -19,6 +19,10 @@ public class NoiseAction implements SurvivorAction {
         this.survivor = s;
         this.noiseLevel = n;
     }
+    /**
+     * Increases the noise level in the current area where the survivor is located.
+     * If the survivor is not in any area, no noise level is increased.
+     */
     public void makeNoise(){
         Area currentArea = survivor.getArea();
         if(currentArea != null){
