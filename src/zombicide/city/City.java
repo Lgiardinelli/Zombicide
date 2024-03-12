@@ -423,6 +423,26 @@ public class City {
 
 
 
+    /**
+     * Dispatches various items to the rooms in the city.
+     * Each item type is randomly added to the city's items list a random number of times within a range.
+     * Then, each item is added to a randomly chosen room in the city.
+     *
+     * Items include:
+     * - Axe
+     * - Chainsaw
+     * - Crowbar
+     * - Pistol
+     * - Rifle
+     * - First Aid Kit
+     * - Healing Fiask
+     * - Infrared Glasses
+     * - Map
+     * - Master Key
+     *
+     * The number of each item type added is determined by random dice rolls.
+     * Each item is then placed in a randomly selected room in the city.
+     */
     public void dispatchItems() {
         for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS + 1); i++) {
             Axe axe = new Axe();
@@ -441,8 +461,8 @@ public class City {
             this.items.add(pistol);
         }
         for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS + 1); i++) {
-            Riffle riffle = new Riffle();
-            this.items.add(riffle);
+            Riffle rifle = new Riffle();
+            this.items.add(rifle);
         }
         for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS + 1); i++) {
             FirstAidKit firstAidKit = new FirstAidKit();
@@ -457,26 +477,35 @@ public class City {
             this.items.add(infraredGlasses);
         }
         for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS + 1); i++) {
-            Map map = new Map(this);
+            Map map = new Map();
             this.items.add(map);
         }
         for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS + 1); i++) {
             MasterKey masterKey = new MasterKey();
             this.items.add(masterKey);
         }
+
         int sizeRooms = this.rooms.size();
         for (Item i : items) {
             int r = random.nextInt(sizeRooms);
             this.rooms.get(r).addItem(i);
         }
-
-
     }
 
+
+    /**
+     * Simulates throwing a dice with specified range.
+     *
+     * @param x The minimum value of the dice (inclusive).
+     * @param y The maximum value of the dice (exclusive).
+     * @return An integer representing the result of the dice throw.
+     *         The result will be in the range [x, y).
+     */
     private int throwDice(int x, int y) {
-        int res = random.nextInt(y-x) + x;
+        int res = random.nextInt(y - x) + x;
         return res;
     }
+
 
     public List<Room> getRooms() {
         return rooms;
