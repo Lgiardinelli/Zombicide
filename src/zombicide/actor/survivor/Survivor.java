@@ -1,5 +1,6 @@
 package zombicide.actor.survivor;
 
+import zombicide.city.City;
 import zombicide.actor.Actor;
 import zombicide.area.Area;
 import zombicide.backpack.BackPack;
@@ -35,7 +36,7 @@ public class Survivor extends Actor {
      *
      * @param roles The roles of the survivor.
      */
-    public Survivor(Role... roles) {
+    public Survivor(City city , Role... roles) {
         this.skillPoints = 0;
         this.actionPoints = 3;
         this.lifePoints = 5;
@@ -44,6 +45,7 @@ public class Survivor extends Actor {
         this.roles = new ArrayList<>(Arrays.asList(roles));
         for (Role role : this.roles)
             role.setSurvivor(this);
+        this.city = city;
     }
 
     /**
