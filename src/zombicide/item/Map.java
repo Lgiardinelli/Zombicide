@@ -1,14 +1,16 @@
 package zombicide.item;
 
+import zombicide.Actor;
+import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
 
 public class Map implements Item {
 	public boolean isNoisy = true;
 
-	private City city;
+	private Survivor survivor;
 
-	public Map(City c) {
-		this.city = c;
+	public Map(Survivor s) {
+		this.survivor = s;
 	}
 
 	public String toString(){
@@ -17,6 +19,7 @@ public class Map implements Item {
 
 	@Override
 	public void use() {
+		City city = this.survivor.getCity();
 		city.display();
 	}
 }
