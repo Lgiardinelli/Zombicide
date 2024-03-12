@@ -1,5 +1,6 @@
 package zombicide.item.weapon;
 
+import zombicide.actor.survivor.Survivor;
 import zombicide.item.Item;
 
 import java.util.Random;
@@ -15,6 +16,8 @@ public abstract class Weapon implements Item {
     protected boolean isNoisy;
 	private int lastShotValue;
 
+	private Survivor survivor;
+
 
     public Weapon(int nbDiceThrows, int diceThreshold, int damage, int minHittingRange, int maxHittingRange,
 			boolean isNoisy) {
@@ -25,6 +28,7 @@ public abstract class Weapon implements Item {
 		this.maxHittingRange = maxHittingRange;
 		this.isNoisy = isNoisy;
 		this.lastShotValue = 0;
+		this.survivor=null;
 	}
 
 	/**

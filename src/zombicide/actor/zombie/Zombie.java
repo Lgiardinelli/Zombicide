@@ -2,6 +2,7 @@ package zombicide.actor.zombie;
 
 import zombicide.actor.Actor;
 import zombicide.area.Area;
+import zombicide.city.City;
 
 /**
  * Abstract class representing a zombie actor in the game.
@@ -14,9 +15,10 @@ public abstract class Zombie extends Actor {
     /** Indicates whether the zombie is strong or not. */
     protected boolean isStrong;
 
-    public Zombie(int attackPoints, boolean isStrong) {
+    public Zombie(int attackPoints, boolean isStrong, City city) {
 		this.attackPoints = attackPoints;
 		this.isStrong = isStrong;
+        this.city = city;
 	}
 
 	/**

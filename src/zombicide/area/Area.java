@@ -146,36 +146,65 @@ public abstract class Area {
         return this.survivors.size();
     }
 
+    /**
+     * Checks if the area has zombies and returns a formatted string representing the count.
+     * If there are no zombies, returns a placeholder.
+     *
+     * @return A formatted string showing the zombie count if present, or a placeholder.
+     */
     private String hasZombies() {
         int z = getNbZombies();
         if (z == 0) {
-            return "    ";
+            return "    ";  // Placeholder for no zombies
         }
         return " " + redBoldBrightColorCode + ZOMBIE + z + resetColorCode + " ";
     }
 
+    /**
+     * Checks if the area has survivors and returns a formatted string representing the count.
+     * If there are no survivors, returns a placeholder.
+     *
+     * @return A formatted string showing the survivor count if present, or a placeholder.
+     */
     private String hasSurvivors() {
         int s = getNbSurvivors();
         if (s == 0) {
-            return "    ";
+            return "    ";  // Placeholder for no survivors
         }
         return " " + greenBoldBrightCode + SURVIVOR + s + resetColorCode + " ";
     }
 
+    /**
+     * Adds a zombie to the area's list of zombies.
+     *
+     * @param z The Zombie to add.
+     */
     public void addZombie(Zombie z) {
-        // z.setArea(this);
+        // z.setArea(this);  // Set the area for the zombie (if needed)
         this.zombies.add(z);
     }
 
+    /**
+     * Adds a survivor to the area's list of survivors.
+     *
+     * @param s The Survivor to add.
+     */
     public void addSurvivor(Survivor s) {
-        // s.setArea(this);
+        // s.setArea(this);  // Set the area for the survivor (if needed)
         this.survivors.add(s);
     }
 
+    /**
+     * Removes an actor (zombie or survivor) from the area.
+     * Removes the actor from both the zombie and survivor lists.
+     *
+     * @param a The Actor to remove.
+     */
     public void removeActor(Actor a) {
         this.survivors.remove(a);
         this.zombies.remove(a);
     }
+
 
     public int getNoise(){
         return this.noise;

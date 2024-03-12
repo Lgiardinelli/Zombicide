@@ -38,7 +38,7 @@ public class ActorTest {
         this.pistol = new Pistol();
         this.backPack = new BackPack();
         this.room = new Room(6,7);
-        this.noiseAction = new NoiseAction();
+        this.noiseAction = new NoiseAction(this.survivor,1);
     }
 
     @Test
