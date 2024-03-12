@@ -181,8 +181,8 @@ public abstract class Area {
         this.noise = noise;
     }
 
-    public void increaseNoiseLevel(){
-        this.noise++;
+    public void increaseNoiseLevel(int n){
+        this.noise += n;
     }
 
     public String openLeft1() {
