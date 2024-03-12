@@ -18,6 +18,10 @@ public class AreaAction implements SurvivorAction {
         this.survivor = s;
     }
 
+    /**
+     * Displays the items in the rooms around the Survivor's current position.
+     * This action retrieves adjacent areas and displays the items they contain.
+     */
     public void displayAreasAround(){
         List<Room> rooms = roomsAround();
         for(Room r : rooms){

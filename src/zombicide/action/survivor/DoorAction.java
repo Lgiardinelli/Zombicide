@@ -18,8 +18,12 @@ public class DoorAction implements SurvivorAction {
     public DoorAction(Survivor s){
         this.survivor = s;
     }
+    /**
+     * Opens a door in a random adjacent area around the Survivor's current position.
+     * This action selects the door from the adjacent areas and opens it.
+     */
     public void openTheDoor(){
-        List<Door> doors = doorsArround();
+        List<Door> doors = doorsAround();
         RandomListChooser<Door> chooser = new RandomListChooser<>();
         Door door = chooser.choose(doors);
         door.open();
