@@ -1,5 +1,6 @@
 package zombicide.item;
 
+import zombicide.action.survivor.AreaAction;
 import zombicide.actor.survivor.Survivor;
 
 public class InfraredGlasses implements Item {
@@ -20,6 +21,7 @@ public class InfraredGlasses implements Item {
 
 	@Override
 	public void use() {
-
+		AreaAction a = new AreaAction(this.survivor);
+		a.displayAreasAround();
 	}
 }
