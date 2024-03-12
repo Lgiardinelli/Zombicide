@@ -41,6 +41,8 @@ public abstract class Actor {
         return lifePoints;
     }
 
+    public City city(){ return  this.city; }
+
     /**
      * Sets the life points of the actor.
      *
