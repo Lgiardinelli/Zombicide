@@ -13,11 +13,9 @@ import java.util.List;
 public class AreaAction implements SurvivorAction {
 
     private Survivor survivor;
-    private City city;
 
-    public AreaAction(Survivor s,City c){
+    public AreaAction(Survivor s){
         this.survivor = s;
-        this.city = c;
     }
 
     public void displayAreasAround(){
@@ -36,8 +34,9 @@ public class AreaAction implements SurvivorAction {
             int x = survivor.getArea().getX();
             int y = survivor.getArea().getY();
 
-            Area area = this.city.getAreas()[y+j][x+i];
-            if(this.city.isARoom(area)){
+            City city = this.survivor.getCity();
+            Area area = city.getAreas()[y+j][x+i];
+            if(city.isARoom(area)){
                 rooms.add((Room) area);
             }
 
