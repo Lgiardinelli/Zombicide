@@ -9,7 +9,13 @@ public abstract class CareItem implements Item {
 
 	private Survivor survivor;
 
+	public CareItem(){
+		this.survivor = null;
+	}
 
+	public void setSurvivor(Survivor s){
+		this.survivor = s;
+	}
 	@Override
 	public void use() {
 
