@@ -86,7 +86,7 @@ public class ActorTest {
     /* TODO : REVOIR LE TEST ICI (équiper le survivor du backpack et regarder si il est équiper) */
     @Test
     void testGetBackpack(){
-        assertNull(survivor.getBackpack());
+        assertNotNull(survivor.getBackpack());
     }
 
     @Test
