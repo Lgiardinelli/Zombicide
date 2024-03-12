@@ -1,6 +1,5 @@
 package zombicide.actor;
 
-import zombicide.action.actor.MoveAction;
 import zombicide.area.Area;
 import zombicide.city.City;
 

@@ -47,8 +47,4 @@ public enum Direction {
         return this.reverse;
     }
 
-
-    public boolean verticalDirection(){
-        return this.x==0;
-    }
 }

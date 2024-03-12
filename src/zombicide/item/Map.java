@@ -1,6 +1,5 @@
 package zombicide.item;
 
-import zombicide.Actor;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
 

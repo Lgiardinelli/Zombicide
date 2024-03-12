@@ -10,6 +10,7 @@ import zombicide.door.Door;
 import zombicide.area.room.Room;
 import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.Pistol;
+import zombicide.util.Direction;
 
 class RoomTest {
 

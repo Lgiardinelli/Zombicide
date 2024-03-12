@@ -1,16 +1,7 @@
 package zombicide.item;
 
-import zombicide.Door;
-import zombicide.action.SurvivorAction;
 import zombicide.action.survivor.DoorAction;
 import zombicide.actor.survivor.Survivor;
-import zombicide.city.City;
-import zombicide.listchooser.RandomListChooser;
-import zombicide.util.Direction;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 public class MasterKey implements Item {
 	public boolean isNoisy = false;
