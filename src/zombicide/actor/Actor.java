@@ -2,6 +2,7 @@ package zombicide.actor;
 
 import zombicide.action.actor.MoveAction;
 import zombicide.area.Area;
+import zombicide.city.City;
 
 /**
  * Abstract class representing an actor in the game.
@@ -21,11 +22,14 @@ public abstract class Actor {
      */
     protected int actionPoints;
 
+    protected City city;
+
     public Area getArea() {
         return area;
     }
 
     public void setArea(Area area) {
+        this.area = area;
     }
 
     /**
