@@ -10,6 +10,7 @@ import zombicide.city.City;
 import zombicide.city.TrainCity;
 import zombicide.item.Map;
 import zombicide.item.careItem.HealingFiask;
+import zombicide.item.weapon.Pistol;
 import zombicide.listchooser.RandomListChooser;
 import zombicide.role.Fighter;
 import zombicide.role.Healer;
@@ -113,7 +114,7 @@ public class Main {
 		System.out.println("Plateau d'entraînement avec les survivants montés de 1 case :");
 
 		for (int ignored = 0; ignored < 4; ignored++)
-			new MoveAction(Direction.UP, survivors.get(0), trainCity)
+			new MoveAction(Direction.UP, survivors.get(0))
 					.doSomething();
 
 		trainCity.display();
@@ -130,15 +131,17 @@ public class Main {
 	}
 
 	private void chooseRandomSurvivorAction() {
+		Survivor s = new Survivor();
+		Map m = new Map();
 		RandomListChooser<SurvivorAction> chooser = new RandomListChooser<>();
 
 		List<SurvivorAction> actions = Arrays.asList(
 				null,
-				new AreaAction(),
+				new AreaAction(s),
 				new BackPackAction(),
-				new DoorAction(),
-				new ItemAction(),
-				new NoiseAction(),
+				new DoorAction(s),
+				new ItemAction(m),
+				new NoiseAction(s,1),
 				new RoomAction()
 		);
 		SurvivorAction chosenAction = chooser.choose(actions);
