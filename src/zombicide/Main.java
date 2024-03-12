@@ -23,6 +23,8 @@ import java.util.List;
 
 public class Main {
 
+	private final City city = new City(10,10);
+
 	public static void main(String[] args) {
 		Main main = new Main();
 		main.start(args);
@@ -30,7 +32,7 @@ public class Main {
 
 	private void start(String[] args) {
 		if (args.length < 2) {
-			initCity(10, 10);
+			initCity(this.city.getWidth(), this.city.getHeight());
 		} else {
 			int width = parseInt(args[0]);
 			int height = parseInt(args[1]);
@@ -49,10 +51,10 @@ public class Main {
 		city.getAreas()[0][1].getDoor(Direction.DOWN).open();
 		city.getAreas()[0][1].getDoor(Direction.LEFT).open();
 
-		new Survivor(new Fighter()).setArea(city.getSpawn());
-		new Survivor(new Healer()).setArea(city.getSpawn());
-		new Survivor(new Lucky()).setArea(city.getSpawn());
-		new Survivor(new Snooper()).setArea(city.getSpawn());
+		new Survivor(this.city,new Fighter()).setArea(city.getSpawn());
+		new Survivor(this.city,new Healer()).setArea(city.getSpawn());
+		new Survivor(this.city,new Lucky()).setArea(city.getSpawn());
+		new Survivor(this.city,new Snooper()).setArea(city.getSpawn());
 
 		city.display();
 	}
@@ -66,10 +68,10 @@ public class Main {
 		trainCity.getAreas()[0][1].getDoor(Direction.DOWN).open();
 		trainCity.getAreas()[0][1].getDoor(Direction.LEFT).open();
 
-		Survivor fighter = new Survivor(new Fighter());
-		Survivor healer = new Survivor(new Healer());
-		Survivor lucky = new Survivor(new Lucky());
-		Survivor snooper = new Survivor(new Snooper());
+		Survivor fighter = new Survivor(this.city,new Fighter());
+		Survivor healer = new Survivor(this.city,new Healer());
+		Survivor lucky = new Survivor(this.city,new Lucky());
+		Survivor snooper = new Survivor(this.city,new Snooper());
 
 		fighter.setArea(trainCity.getSpawn());
 		healer.setArea(trainCity.getSpawn());
@@ -86,7 +88,7 @@ public class Main {
 		// Adding abominations in all city's areas
 		for (int i = 0; i < trainCity.getHeight(); i++) {
 			for (int j = 0; j < trainCity.getWidth(); j++) {
-				Zombie abomination = new Abomination();
+				Zombie abomination = new Abomination(this.city);
 				abomination.setArea(trainCity.getAreas()[j][i]);
 			}
 		}
@@ -131,7 +133,7 @@ public class Main {
 	}
 
 	private void chooseRandomSurvivorAction() {
-		Survivor s = new Survivor();
+		Survivor s = new Survivor(this.city);
 		Map m = new Map();
 		RandomListChooser<SurvivorAction> chooser = new RandomListChooser<>();
 
