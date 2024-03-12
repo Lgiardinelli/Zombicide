@@ -485,4 +485,8 @@ public class City {
     public Street getSpawn() {
         return spawn;
     }
+
+    public boolean isARoom(Area a){
+        return this.rooms.contains(a);
+    }
 }
