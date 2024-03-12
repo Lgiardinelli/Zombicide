@@ -1,9 +1,10 @@
 package zombicide.action.survivor;
 
-import zombicide.Area;
-import zombicide.City;
+import zombicide.area.Area;
+import zombicide.city.City;
 import zombicide.action.SurvivorAction;
 import zombicide.actor.survivor.Survivor;
+import zombicide.area.room.Room;
 import zombicide.util.Direction;
 
 import java.util.ArrayList;
@@ -19,9 +20,15 @@ public class AreaAction implements SurvivorAction {
         this.city = c;
     }
 
-    private List<Area> areasArround(){
+    public void displayAreasAround(){
+        List<Room> rooms = roomsAround();
+        for(Room r : rooms){
+            r.displayItems();
+        }
+    }
+    private List<Room> roomsAround(){
 
-        List<Area> areas = new ArrayList<>();
+        List<Room> rooms = new ArrayList<>();
         for(Direction d : Direction.values()){
             int i = d.getX();
             int j = d.getY();
@@ -30,9 +37,11 @@ public class AreaAction implements SurvivorAction {
             int y = survivor.getArea().getY();
 
             Area area = this.city.getAreas()[y+j][x+i];
+            if(this.city.isARoom(area)){
+                rooms.add((Room) area);
+            }
 
-            areas.add(area);
         }
-        return areas;
+        return rooms;
     }
 }
