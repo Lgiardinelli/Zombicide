@@ -28,6 +28,7 @@ public abstract class Weapon implements Item {
 		this.maxHittingRange = maxHittingRange;
 		this.isNoisy = isNoisy;
 		this.lastShotValue = 0;
+		this.survivor=null;
 	}
 
 	/**
