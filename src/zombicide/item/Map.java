@@ -8,12 +8,16 @@ public class Map implements Item {
 
 	private Survivor survivor;
 
-	public Map(Survivor s) {
-		this.survivor = s;
+	public Map() {
+		this.survivor = null;
 	}
 
 	public String toString(){
 		return "map";
+	}
+
+	public void setSurvivor(Survivor s){
+		this.survivor =s;
 	}
 
 	@Override

@@ -8,12 +8,16 @@ public class MasterKey implements Item {
 
 	public Survivor survivor;
 
-	public MasterKey(Survivor s) {
+	public MasterKey() {
 		this.survivor=null;
 	}
 
 	public String toString(){
 		return "master key";
+	}
+
+	public void setSurvivor(Survivor s){
+		this.survivor =s;
 	}
 
 	@Override
