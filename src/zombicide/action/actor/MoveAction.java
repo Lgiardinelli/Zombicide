@@ -14,17 +14,15 @@ public class MoveAction implements ActorAction {
     /** The direction in which the Actor will move. */
     final Direction direction;
     private Actor actor;
-    private City city;
 
     /**
      * Constructs a new MoveAction with the specified direction.
      *
      * @param d The direction in which the Actor will move.
      */
-    public MoveAction(Direction d, Actor actor, City city){
+    public MoveAction(Direction d, Actor actor){
         this.direction = d;
         this.actor = actor;
-        this.city = city;
     }
 
     /**
@@ -48,6 +46,7 @@ public class MoveAction implements ActorAction {
     @Override
     public void doSomething() {
         Position p = positionAfterMoving();
-        this.actor.setArea(this.city.getArea(p));
+        City city = this.actor.getCity();
+        this.actor.setArea(city.getArea(p));
     }
 }

@@ -10,4 +10,9 @@ public class Chainsaw extends Weapon{
 	public String toString(){
 		return "chainsaw";
 	}
+
+	@Override
+	public void use() {
+
+	}
 }

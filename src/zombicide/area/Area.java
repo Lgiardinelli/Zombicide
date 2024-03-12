@@ -1,16 +1,16 @@
 package zombicide.area;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import zombicide.actor.Actor;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.door.Door;
 import zombicide.util.Color;
 import zombicide.util.Direction;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Abstract class representing an area in the game.
@@ -185,8 +185,8 @@ public abstract class Area {
         this.noise = noise;
     }
 
-    public void increaseNoiseLevel(){
-        this.noise++;
+    public void increaseNoiseLevel(int n){
+        this.noise += n;
     }
 
     public String openLeft1() {

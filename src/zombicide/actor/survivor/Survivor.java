@@ -1,14 +1,16 @@
 package zombicide.actor.survivor;
 
-import java.util.*;
-
 import zombicide.actor.Actor;
-import zombicide.item.weapon.Pistol;
-import zombicide.util.Expertise;
-import zombicide.backpack.BackPack;
-import zombicide.role.Role;
-import zombicide.item.Item;
 import zombicide.area.Area;
+import zombicide.backpack.BackPack;
+import zombicide.item.Item;
+import zombicide.item.weapon.Pistol;
+import zombicide.role.Role;
+import zombicide.util.Expertise;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Represents a survivor actor in the game.

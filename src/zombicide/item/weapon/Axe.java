@@ -10,5 +10,10 @@ public class Axe extends Weapon{
 	public String toString(){
 		return "axe";
 	}
-	
+
+	@Override
+	public void use() {
+
+	}
+
 }

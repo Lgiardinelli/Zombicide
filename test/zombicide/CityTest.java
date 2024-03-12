@@ -48,5 +48,13 @@ class CityTest {
 	    Area actualArea = city.getCellUp(0, 9);
 	    assertEquals(expectedArea, actualArea);
 	}
+
+	@Test
+	void testGetRoom() {
+	}
+
+	@Test
+	void testGetSpawn() {
+	}
 }
 

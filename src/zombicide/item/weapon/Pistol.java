@@ -10,4 +10,9 @@ public class Pistol extends Weapon{
 	public String toString(){
 		return "pistol";
 	}
+
+	@Override
+	public void use() {
+
+	}
 }

@@ -1,14 +1,14 @@
 package zombicide.city;
 
 import zombicide.area.Area;
-import zombicide.item.Item;
-import zombicide.door.Door;
 import zombicide.area.room.Room;
-import zombicide.area.street.Street;
 import zombicide.area.room.TheContinental;
 import zombicide.area.room.ThePharmacy;
 import zombicide.area.street.Manhole;
+import zombicide.area.street.Street;
+import zombicide.door.Door;
 import zombicide.item.InfraredGlasses;
+import zombicide.item.Item;
 import zombicide.item.Map;
 import zombicide.item.MasterKey;
 import zombicide.item.careItem.FirstAidKit;
@@ -457,7 +457,7 @@ public class City {
             this.items.add(infraredGlasses);
         }
         for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS + 1); i++) {
-            Map map = new Map();
+            Map map = new Map(this);
             this.items.add(map);
         }
         for (int i = 0; i < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS + 1); i++) {
@@ -484,5 +484,9 @@ public class City {
 
     public Street getSpawn() {
         return spawn;
+    }
+
+    public boolean isARoom(Area a){
+        return this.rooms.contains(a);
     }
 }

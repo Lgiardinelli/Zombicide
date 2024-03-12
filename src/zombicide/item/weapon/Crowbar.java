@@ -10,4 +10,9 @@ public class Crowbar extends Weapon{
 	public String toString(){
 		return "crowbar";
 	}
+
+	@Override
+	public void use() {
+
+	}
 }

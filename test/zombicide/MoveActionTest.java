@@ -8,6 +8,7 @@ import zombicide.action.actor.MoveAction;
 import zombicide.actor.zombie.Walker;
 import zombicide.area.Area;
 import zombicide.area.street.Street;
+import zombicide.util.Direction;
 
 public class MoveActionTest {
 
@@ -21,8 +22,8 @@ public class MoveActionTest {
     public void before(){
         this.s1 = new Survivor();
         this.z1 = new Walker();
-        this.m1 = new MoveAction(ActorDirection.DOWN);
-        this.m2 = new MoveAction(ActorDirection.LEFT);
+        this.m1 = new MoveAction(Direction.DOWN);
+        this.m2 = new MoveAction(Direction.LEFT);
 
         Area area = new Street(2, 3);
 

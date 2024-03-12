@@ -6,4 +6,9 @@ public class HealingFiask extends CareItem {
         return "healing flask";
     }
 
+    @Override
+    public void use() {
+
+    }
+
 }
