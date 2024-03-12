@@ -1,9 +1,9 @@
 package zombicide.action.survivor;
 
-import zombicide.City;
-import zombicide.Door;
+import zombicide.door.Door;
 import zombicide.action.SurvivorAction;
 import zombicide.actor.survivor.Survivor;
+import zombicide.city.City;
 import zombicide.listchooser.RandomListChooser;
 import zombicide.util.Direction;
 
@@ -14,9 +14,8 @@ public class DoorAction implements SurvivorAction {
 
     private final Survivor survivor;
 
-    private City city;
 
-    public DoorAction(Survivor s, City c){
+    public DoorAction(Survivor s){
         this.survivor = s;
     }
     public void openTheDoor(){
@@ -36,7 +35,8 @@ public class DoorAction implements SurvivorAction {
             int x = survivor.getArea().getX();
             int y = survivor.getArea().getY();
 
-            Door door = this.city.getAreas()[y+j][x+i].getDoor(d.getReverse());
+            City city = this.survivor.getCity();
+            Door door = city.getAreas()[y+j][x+i].getDoor(d.getReverse());
 
             if(door != null) {
                 doors.add(door);
