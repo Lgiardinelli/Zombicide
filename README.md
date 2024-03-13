@@ -117,6 +117,9 @@ Nous avons aussi pu mettre des items dans la ville en les dispersants.
 ```bash
 javac -sourcepath src src/zombicide/*.java -d classes
 ```
+```bash
+javac -sourcepath src src/zombicide/actor/zombie/*.java -d classes
+```
 - Exécution du programme (avec 2 paramètres longueur et largeur du tableau ou non, 10 par 10 de base)
 ```bash
 java -classpath classes zombicide.Main 10 10
