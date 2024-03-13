@@ -22,7 +22,7 @@ public class AreaAction implements SurvivorAction {
      * Displays the items in the rooms around the Survivor's current position.
      * This action retrieves adjacent areas and displays the items they contain.
      */
-    public void displayAreasAround(){
+    public void doSomething(){
         List<Room> rooms = roomsAround();
         for(Room r : rooms){
             r.displayItems();

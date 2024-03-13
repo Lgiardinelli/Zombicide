@@ -22,7 +22,7 @@ public class DoorAction implements SurvivorAction {
      * Opens a door in a random adjacent area around the Survivor's current position.
      * This action selects the door from the adjacent areas and opens it.
      */
-    public void openTheDoor(){
+    public void doSomething(){
         List<Door> doors = doorsAround();
         RandomListChooser<Door> chooser = new RandomListChooser<>();
         Door door = chooser.choose(doors);
