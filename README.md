@@ -480,14 +480,16 @@ amélioration de la logique de certaines classes dont Weapon pour la gestion du 
 
 ## Semaine 7
 __Objectif de la semaine :__  
-
+- Finir le livrable 2
+- Gerer les différentes actions à implémenter
 
 __Objectif atteint :__
-
+- Finir le livrable 2
 
 __Réflexion du groupe :__  
 
 Lundi 11/03 :
+Concertation sur ce que le livrable 2 demande, nous avons donc du gérer l'action de déplacer les survivants d'une case vers le haut, ce qui nous a permi de mettre en place une méthode commune qui vas faire une action qui correspondra à la classe qui l'a appelé.  
 
 
 Mardi 12/03 :
@@ -509,13 +511,16 @@ Week-end et durant les vacances :
 __Partage de taches :__
 
 Lundi 11/03 :
-
+Léo : Créer une méthode qui vas renvoyer une liste de cellulle qui changera en fonction de la portée de l'arme.
+Dylan : Gérer les roles en fonction des actions.
+Théophane :
+Eliès : 
 
 Mardi 12/03 :
-
+Léo, Théophane : Correction de l'UML.
 
 Mercredi 13/03 :
-
+Léo, Dylan : Finission du projet pour le rendu du livrable2.
 
 Jeudi 114/03 :
 
