@@ -11,10 +11,6 @@ public class Street extends Area {
     private static Street spawn;
     private static final String blueBoldCode = Color.BLUE_BOLD.getCode();
 
-
-    /** Indicates whether the street is vertical or not. */
-    protected boolean isVertically;
-
     /**
      * Constructs a new Street object with the specified position.
      *
@@ -28,10 +24,6 @@ public class Street extends Area {
     @Override
     protected String getName() {
         return blueBoldCode + name + resetColorCode;
-    }
-
-    public static Street getSpawn() {
-        return spawn;
     }
 
     public static void setSpawn(Street spawn) {

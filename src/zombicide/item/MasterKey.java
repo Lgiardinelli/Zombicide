@@ -6,7 +6,7 @@ import zombicide.actor.survivor.Survivor;
 public class MasterKey implements Item {
 	public boolean isNoisy = false;
 
-	public Survivor survivor;
+	private Survivor survivor;
 
 	public MasterKey() {
 		this.survivor=null;

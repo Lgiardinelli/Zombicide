@@ -12,7 +12,7 @@ import zombicide.util.Position;
 public class MoveAction implements ActorAction {
 
     /** The direction in which the Actor will move. */
-    final Direction direction;
+    private final Direction direction;
     private Actor actor;
 
     /**
