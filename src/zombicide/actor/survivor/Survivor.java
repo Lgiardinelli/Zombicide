@@ -33,7 +33,7 @@ public class Survivor extends Actor {
     /**
      * Creates a new survivor with the given roles.
      * You can pass either an array of roles, or as many roles in a row.
-     *
+     * @param city - the city of the survivor
      * @param roles The roles of the survivor.
      */
     public Survivor(City city , Role... roles) {

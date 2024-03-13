@@ -6,6 +6,7 @@ public class AttackAction implements ActorAction {
 
     /**
      * TODO
+     * @return boolean -
      */
     public boolean attackZombie(){
         return true;
