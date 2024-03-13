@@ -114,12 +114,6 @@ public abstract class Area {
     }
 
     /**
-     * Abstract method to display the area.
-     */
-    protected void display() {
-    }
-
-    /**
      * Abstract method to display the area with specific parameters.
      * 
      * @param n Specific parameters for displaying the area.
