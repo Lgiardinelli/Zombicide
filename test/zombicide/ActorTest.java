@@ -147,8 +147,9 @@ public class ActorTest {
     void testMakeNoiseFromSurvivor(){
         survivor.setArea(room);
         noiseAction.setSurvivor(survivor);
+        noiseAction.setLifePointsToAdd(1);
         assertEquals(0, room.getNoise());
-        noiseAction.makeNoise();
+        noiseAction.doSomething();
         assertEquals(1, room.getNoise());
     }
 }
