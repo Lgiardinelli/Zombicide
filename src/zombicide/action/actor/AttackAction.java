@@ -15,4 +15,10 @@ public class AttackAction implements ActorAction {
     public AttackAction(Survivor s){
         this.survivor = s;
     }
+
+    public void doSomething(Zombie z) {
+        if(this.weapon.shotHitsTarget()){
+            z.removeLifePoints(this.weapon.getDamage());
+        };
+    }
 }
