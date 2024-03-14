@@ -2,7 +2,7 @@ package zombicide.action.actor;
 
 import zombicide.action.ActorAction;
 import zombicide.action.SurvivorAction;
-import zombicide.actor.Zombie;
+import zombicide.actor.zombie.Zombie;
 import zombicide.actor.survivor.Survivor;
 import zombicide.item.weapon.Weapon;
 
@@ -16,9 +16,16 @@ public class AttackAction implements ActorAction {
         this.survivor = s;
     }
 
+    /**
+     * Performs an action on the specified Zombie.
+     * If the weapon shot hits the target, reduces the Zombie's life points by the weapon's damage.
+     *
+     * @param z The Zombie on which the action is performed.
+     */
     public void doSomething(Zombie z) {
-        if(this.weapon.shotHitsTarget()){
+        if (this.weapon.shotHitsTarget()) {
             z.removeLifePoints(this.weapon.getDamage());
-        };
+        }
     }
+
 }
