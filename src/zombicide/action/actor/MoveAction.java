@@ -12,13 +12,14 @@ import zombicide.util.Position;
 public class MoveAction implements ActorAction {
 
     /** The direction in which the Actor will move. */
-    final Direction direction;
+    private final Direction direction;
     private Actor actor;
 
     /**
      * Constructs a new MoveAction with the specified direction.
      *
      * @param d The direction in which the Actor will move.
+     * @param actor - the actor
      */
     public MoveAction(Direction d, Actor actor){
         this.direction = d;

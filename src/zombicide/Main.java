@@ -1,7 +1,6 @@
 package zombicide;
 
 import zombicide.action.SurvivorAction;
-import zombicide.action.actor.MoveAction;
 import zombicide.action.survivor.*;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Abomination;
@@ -10,7 +9,6 @@ import zombicide.city.City;
 import zombicide.city.TrainCity;
 import zombicide.item.Map;
 import zombicide.item.careItem.HealingFiask;
-import zombicide.item.weapon.Pistol;
 import zombicide.listchooser.RandomListChooser;
 import zombicide.role.Fighter;
 import zombicide.role.Healer;
@@ -24,6 +22,7 @@ import java.util.List;
 public class Main {
 
 	private final City city = new City(10,10);
+	private final TrainCity trainCity = new TrainCity();
 
 	public static void main(String[] args) {
 		Main main = new Main();
@@ -61,8 +60,6 @@ public class Main {
 
 	private void initTrainCity() {
 		System.out.println("Plateau d'entraînement :");
-
-		City trainCity = new TrainCity();
 
 		trainCity.getAreas()[0][0].getDoor(Direction.DOWN).open();
 		trainCity.getAreas()[0][1].getDoor(Direction.DOWN).open();
@@ -116,8 +113,7 @@ public class Main {
 		System.out.println("Plateau d'entraînement avec les survivants montés de 1 case :");
 
 		for (int ignored = 0; ignored < 4; ignored++)
-			new MoveAction(Direction.UP, survivors.get(0))
-					.doSomething();
+			survivors.get(0).setArea(trainCity.getCellUp(2, 2));
 
 		trainCity.display();
 	}
@@ -133,8 +129,9 @@ public class Main {
 	}
 
 	private void chooseRandomSurvivorAction() {
-		Survivor s = new Survivor(this.city);
+		Survivor s = new Survivor(this.trainCity);
 		Map m = new Map();
+		m.setSurvivor(s);
 		RandomListChooser<SurvivorAction> chooser = new RandomListChooser<>();
 
 		List<SurvivorAction> actions = Arrays.asList(
@@ -147,8 +144,8 @@ public class Main {
 				new RoomAction()
 		);
 		SurvivorAction chosenAction = chooser.choose(actions);
-
-		chosenAction.doSomething();
+		if (chosenAction != null)
+			chosenAction.doSomething();
 	}
 
 	private static int parseInt(String v) {

@@ -44,8 +44,8 @@ class CityTest {
 	@Test
 	void testGetCellUp() {
 	    zombicide.area.Area[][] areas = city.getAreas();
-	    zombicide.area.Area expectedArea = areas[0][8];
-	    Area actualArea = city.getCellUp(0, 9);
+	    zombicide.area.Area expectedArea = areas[1][2];
+	    Area actualArea = city.getCellUp(2, 2);
 	    assertEquals(expectedArea, actualArea);
 	}
 

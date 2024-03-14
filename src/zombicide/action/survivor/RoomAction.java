@@ -6,6 +6,7 @@ public class RoomAction implements SurvivorAction {
 
     /**
      * TODO
+     * @return boolean
      */
     public boolean searchRoom(){
         return true;

@@ -53,6 +53,10 @@ public abstract class Area {
         return survivors;
     }
 
+    public List<Zombie> getZombies() {
+        return zombies;
+    }
+
     /**
      * Retrieves the door in the specified direction.
      * 
@@ -107,12 +111,6 @@ public abstract class Area {
      */
     public boolean canFight() {
         return true;
-    }
-
-    /**
-     * Abstract method to display the area.
-     */
-    protected void display() {
     }
 
     /**

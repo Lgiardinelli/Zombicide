@@ -418,7 +418,7 @@ public class City {
      * @return The area above the specified position.
      */
     public Area getCellUp(int x, int y) {
-        return this.areas[x][y - 1];
+        return this.areas[y-1][x];
     }
 
 

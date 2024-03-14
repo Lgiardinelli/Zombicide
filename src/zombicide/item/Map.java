@@ -23,6 +23,7 @@ public class Map implements Item {
 	@Override
 	public void use() {
 		City city = this.survivor.getCity();
+		System.out.println("Affichage de la map 'Action map' :");
 		city.display();
 	}
 }
