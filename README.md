@@ -493,8 +493,7 @@ Concertation sur ce que le livrable 2 demande, nous avons donc du gérer l'actio
 
 
 Mardi 12/03 :
-Il a été décidé que chaque action (n'importe laquelle) allait utiliser une méthode commune (présente dans l'interface mère de toutes les actions ActorAction) : doSomething(). Ainsi, selon l'action utilisée, la méthode doSomething fera quelquechose relatif à l'action correspondqnte. Chaque item qui requiert une action appelera donc cette méthode dans la méthode use (présente dans chaque classse Item)e
-
+Il a été décidé que chaque action (n'importe laquelle) allait utiliser une méthode commune (présente dans l'interface mère de toutes les actions ActorAction) : doSomething(). Ainsi, selon l'action utilisée, la méthode doSomething fera quelquechose relatif à l'action correspondqnte. Chaque item qui requiert une action appelera donc cette méthode dans la méthode use (présente dans chaque classse Item)
 
 Mercredi 13/03 :
 Pour gérer le déplacement des acteurs, nous avions mis comme attribut de la classe MoveAction ( qui gérait le déplacmeent des joueurs ) la City dans laquelle le jeu se déroulait. Il s'agissait d'attribuer la cellule du joueur en utilisant le getArea(int x, int y) de city. Après réflexion, il était plus logique de seulement garder l'attribut survivant car une action concerne un acteur et non une ville.
@@ -521,11 +520,13 @@ Eliès : Avanceemnt dans la gestion des actions en général. Gestion de l'utili
 
 Mardi 12/03 :
 Léo, Théophane : Correction de l'UML.
+Eliès : Finalisation des tests des actions et écriture de la java doc.
 
 Mercredi 13/03 :
 Léo, Dylan : Finission du projet pour le rendu du livrable2.
+Eliès : Modification des attributs de plusieurs classes comme Actor ou MoveAction.
 
-Jeudi 114/03 :
+Jeudi 14/03 :
 
 
 Vendredi 15/03 :
