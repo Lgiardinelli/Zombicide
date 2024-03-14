@@ -14,12 +14,19 @@ public class NoiseAction implements SurvivorAction {
         Increases the noise level in the current area where the survivor is located.
         If the survivor is not in any area, no noise level is increased.
         @param s - the survivor
-        @param n - the noise level
      */
-    public NoiseAction(Survivor s, int n){
+    public NoiseAction(Survivor s){
         this.survivor = s;
+    }
+
+    public void setLifePointsToAdd(int n){
         this.noiseLevel = n;
     }
+
+    public void setNoiseLevel(int noiseLevel) {
+        this.noiseLevel = noiseLevel;
+    }
+
     /**
      * Increases the noise level in the current area where the survivor is located.
      * If the survivor is not in any area, no noise level is increased.
