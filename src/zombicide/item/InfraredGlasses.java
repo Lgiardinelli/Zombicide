@@ -22,6 +22,6 @@ public class InfraredGlasses implements Item {
 	@Override
 	public void use() {
 		AreaAction a = new AreaAction(this.survivor);
-		a.displayAreasAround();
+		a.doSomething();
 	}
 }

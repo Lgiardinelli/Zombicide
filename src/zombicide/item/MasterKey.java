@@ -23,7 +23,7 @@ public class MasterKey implements Item {
 	@Override
 	public void use() {
 		DoorAction d = new DoorAction(survivor);
-		d.openTheDoor();
+		d.doSomething();
 	}
 
 
