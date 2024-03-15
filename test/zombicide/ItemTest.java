@@ -3,7 +3,9 @@ package zombicide;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import zombicide.actor.survivor.Survivor;
 import zombicide.backpack.BackPack;
+import zombicide.city.City;
 import zombicide.item.*;
 import zombicide.item.careItem.CareItem;
 import zombicide.item.careItem.FirstAidKit;
@@ -23,10 +25,11 @@ public class ItemTest {
     private Map map;
     private MasterKey masterKey;
     private BackPack backPack;
+    private Survivor survivor;
+    private City city;
 
     @BeforeEach
     public void before(){
-        //Item
         this.pistol = new Pistol();
         this.axe = new Axe();
         this.chainsaw = new Chainsaw();
@@ -38,6 +41,8 @@ public class ItemTest {
         this.map = new Map();
         this.masterKey = new MasterKey();
         this.backPack = new BackPack();
+        this.city = new City(5,5);
+        this.survivor = new Survivor(this.city);
     }
 
 
@@ -124,5 +129,13 @@ public class ItemTest {
         assertEquals(chainsawString, "chainsaw");
         String crowbarString = crowbar.toString();
         assertEquals(crowbarString, "crowbar");
+        String pistolString = pistol.toString();
+        assertEquals(pistolString, "pistol");
+    }
+
+    @Test
+    void testSetSurvivorOfCareItem(){
+        healingFlask.setSurvivor(survivor);
+        assertEquals(survivor, healingFlask.getSurvivor());
     }
 }
