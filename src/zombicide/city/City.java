@@ -421,6 +421,14 @@ public class City {
         return this.areas[y-1][x];
     }
 
+    public Area getCellByDirection(Area a, Direction d) {
+        int x = a.getX();
+        int y = a.getY();
+        x = d.getX();
+        y = d.getY();
+        return this.getArea(new Position(x, y));
+    }
+
 
 
     /**
