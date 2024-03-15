@@ -142,7 +142,7 @@ public class Main {
 		List<SurvivorAction> actions = Arrays.asList(
 				null,
 				new AreaAction(s),
-				new BackPackAction(),
+				new BackPackAction(s),
 				new DoorAction(s),
 				new ItemAction(m),
 				new NoiseAction(s),
