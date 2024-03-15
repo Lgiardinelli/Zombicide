@@ -15,6 +15,7 @@ import zombicide.role.Healer;
 import zombicide.role.Lucky;
 import zombicide.role.Snooper;
 import zombicide.util.Direction;
+import zombicide.util.Position;
 
 import java.util.Arrays;
 import java.util.List;
@@ -130,6 +131,7 @@ public class Main {
 
 	private void chooseRandomSurvivorAction() {
 		Survivor s = new Survivor(this.trainCity);
+		s.setArea(this.trainCity.getArea(new Position(3,3)));
 		Map m = new Map();
 		m.setSurvivor(s);
 		RandomListChooser<SurvivorAction> chooser = new RandomListChooser<>();
@@ -144,8 +146,10 @@ public class Main {
 				new RoomAction()
 		);
 		SurvivorAction chosenAction = chooser.choose(actions);
-		if (chosenAction != null)
+		if (chosenAction != null) {
 			chosenAction.doSomething();
+			this.trainCity.display();
+		}
 	}
 
 	private static int parseInt(String v) {
