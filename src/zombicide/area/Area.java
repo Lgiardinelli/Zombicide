@@ -199,6 +199,16 @@ public abstract class Area {
         this.zombies.remove(a);
     }
 
+    public void displayActors(){
+        System.out.println("There are :");
+        for(Survivor s : this.survivors){
+            System.out.println("| "+s.display()+" |");
+        }
+        for(Zombie z : this.zombies){
+            System.out.println("| "+z.display()+" |");
+        }
+    }
+
 
     public int getNoise(){
         return this.noise;
