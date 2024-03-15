@@ -38,7 +38,6 @@ public class ActorTest {
     private NoiseAction noiseAction;
     private Fighter fighter;
     private Lucky lucky;
-
     private City city;
 
     @BeforeEach
@@ -114,8 +113,6 @@ public class ActorTest {
         assertEquals(survivor.getSkillPoints(), 11);
         assertTrue(survivor.isLevelReached());
     }
-
-    /* TODO : FAIRE UN TEST SUR LES ROLES */
 
     @Test
     void testGetLifePointsOfActor(){
