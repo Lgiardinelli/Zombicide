@@ -140,7 +140,7 @@ public class Main {
 				new BackPackAction(),
 				new DoorAction(s),
 				new ItemAction(m),
-				new NoiseAction(s,1),
+				new NoiseAction(s),
 				new RoomAction()
 		);
 		SurvivorAction chosenAction = chooser.choose(actions);
