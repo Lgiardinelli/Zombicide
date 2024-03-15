@@ -1,11 +1,15 @@
 package zombicide.action.survivor;
 
-import zombicide.area.Area;
-import zombicide.city.City;
 import zombicide.action.SurvivorAction;
 import zombicide.actor.survivor.Survivor;
+import zombicide.area.Area;
 import zombicide.area.room.Room;
-import zombicide.util.Direction;
+import zombicide.backpack.BackPack;
+import zombicide.city.City;
+import zombicide.door.Door;
+import zombicide.item.Item;
+import zombicide.listchooser.ListChooser;
+import zombicide.listchooser.RandomListChooser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +28,25 @@ public class AreaAction implements SurvivorAction {
      */
     public void doSomething(){
         System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
+        rummage();
+    }
+
+    public void rummage(){
+        Area a = this.survivor.getArea();
+        City city = this.survivor.getCity();
+        if(city.isARoom(a)){
+            Room r = (Room) a;
+            List<Item> roomsItems = r.getItems();
+
+            BackPack bp = this.survivor.getBackpack();
+            List<Item> bpItems = bp.getItems();
+
+            RandomListChooser<Item> chooser = new RandomListChooser<>();
+            Item chosenItemRoom = chooser.choose(roomsItems);
+            Item chosenItemBp = chooser.choose(bpItems);
+
+            bp.swapItems(chosenItemRoom , chosenItemBp);
+        }
     }
 
 
