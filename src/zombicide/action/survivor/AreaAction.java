@@ -23,6 +23,7 @@ public class AreaAction implements SurvivorAction {
      * This action retrieves adjacent areas and displays the items they contain.
      */
     public void doSomething(){
+        System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
         List<Room> rooms = roomsAround();
         for(Room r : rooms){
             r.displayItems();
