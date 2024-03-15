@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 
 import zombicide.area.Area;
 import zombicide.area.room.Room;
+import zombicide.area.street.Manhole;
+import zombicide.area.street.Street;
 import zombicide.city.City;
 
 class CityTest {
@@ -56,7 +58,18 @@ class CityTest {
 
 	@Test
 	void testGetSpawn() {
-		assertTrue(city.getSpawn() != null);
+		assertNotNull(city.getSpawn());
 	}
+
+	/** TODO Revoir le test (isARoom ne considère pas une Room comme une Room)
+	@Test
+	void testIsARoom(){
+		assertTrue(city.isARoom(new Room(0,0)));
+
+		assertFalse(city.isARoom(new Street(1, 1)));
+
+		assertFalse(city.isARoom(new Manhole(2, 2)));
+	}
+	**/
 }
 
