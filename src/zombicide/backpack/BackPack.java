@@ -28,7 +28,7 @@ public class BackPack {
      * @param item The item to be added to the backpack.
      */
     public void addItem(Item item) {
-        if (this.items.size() < 5) {
+        if (canBeAdded()) {
             this.items.add(item);
         }
     }
@@ -51,5 +51,13 @@ public class BackPack {
      */
     public List<Item> getItems() {
         return items;
+    }
+
+    public void swapItems(Item fromRoom, Item fromBp) {
+
+    }
+
+    public boolean canBeAdded(){
+        return this.items.size() == 5;
     }
 }
