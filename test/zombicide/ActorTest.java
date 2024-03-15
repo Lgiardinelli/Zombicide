@@ -16,6 +16,14 @@ import zombicide.backpack.BackPack;
 import zombicide.city.City;
 import zombicide.item.Item;
 import zombicide.item.weapon.*;
+import zombicide.role.Fighter;
+import zombicide.role.Lucky;
+import zombicide.role.Role;
+
+import java.util.List;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class ActorTest {
@@ -28,7 +36,8 @@ public class ActorTest {
     private BackPack backPack;
     private Area room;
     private NoiseAction noiseAction;
-
+    private Fighter fighter;
+    private Lucky lucky;
     private City city;
 
     @BeforeEach
@@ -42,7 +51,9 @@ public class ActorTest {
         this.pistol = new Pistol();
         this.backPack = new BackPack();
         this.room = new Room(6,7);
-        this.noiseAction = new NoiseAction(this.survivor,1);
+        this.noiseAction = new NoiseAction(this.survivor);
+        this.fighter = new Fighter();
+        this.lucky = new Lucky();
     }
 
     @Test
@@ -83,12 +94,6 @@ public class ActorTest {
         assertEquals(survivor.getSkillPoints(), 1);
     }
 
-    /* TODO : REVOIR LE TEST ICI (équiper le survivor du backpack et regarder si il est équiper) */
-//    @Test
-//    void testGetBackpack(){
-//        assertNull(survivor.getBackpack());
-//    }
-
     @Test
     void testLevelReached(){
         assertFalse(survivor.isLevelReached());
@@ -108,8 +113,6 @@ public class ActorTest {
         assertEquals(survivor.getSkillPoints(), 11);
         assertTrue(survivor.isLevelReached());
     }
-
-    /* TODO : FAIRE UN TEST SUR LES ROLES */
 
     @Test
     void testGetLifePointsOfActor(){
@@ -152,4 +155,26 @@ public class ActorTest {
         noiseAction.doSomething();
         assertEquals(1, room.getNoise());
     }
+
+    @Test
+    void testGetBackpackOfSurvivor(){
+        assertNotNull(survivor.getBackpack());
+    }
+
+    @Test
+    void testIfSurvivorHasRoles(){
+        assertFalse(survivor.hasRoles());
+        survivor.getRoles().add(fighter);
+        assertTrue(survivor.hasRoles());
+    }
+
+    @Test
+    void testGetRolesOfSurvivor(){
+        List<Role> Roles = Arrays.asList(fighter, lucky);
+        survivor.getRoles().addAll(Roles);
+        assertEquals(Roles, survivor.getRoles());
+        assertEquals(Roles.size(), survivor.getRoles().size());
+        assertTrue(survivor.getRoles().containsAll(Roles));
+    }
+
 }

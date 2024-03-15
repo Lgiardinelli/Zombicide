@@ -1,8 +1,15 @@
 package zombicide.item.weapon;
 
+import zombicide.actor.zombie.Zombie;
+import zombicide.area.Area;
 import zombicide.actor.survivor.Survivor;
+import zombicide.city.City;
 import zombicide.item.Item;
+import zombicide.util.Direction;
+import zombicide.util.Position;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 
@@ -77,6 +84,28 @@ public abstract class Weapon implements Item {
 		return maxHittingRange;
 	}
 
+	public List<Zombie> shootRange() {
+		Area areaWeapon = this.survivor.getArea();
+		City city = this.survivor.getCity();
+		int x = areaWeapon.getX();
+		int y = areaWeapon.getY();
+		List<Zombie> zombies = new ArrayList<>();
+		if (this.getMinHittingRange() == 0) {
+			List<Zombie> zom = city.getArea(new Position(x, y)).getZombies();
+			zombies.addAll(zom);
+		}
+		for (Direction d : Direction.values()) {
+			for (int i = 1; i < this.getMaxHittingRange(); i++) {
+				x += i*d.getX();
+				y += i*d.getY();
+				if (this.getMinHittingRange() < i) {
+					List<Zombie> zom = city.getArea(new Position(x, y)).getZombies();
+					zombies.addAll(zom);
+				}
+			}
+		}
+		return zombies;
+	}
 
     
 }

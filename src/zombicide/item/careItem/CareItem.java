@@ -13,6 +13,9 @@ public abstract class CareItem implements Item {
 		this.survivor = null;
 	}
 
+	public Survivor getSurvivor(){
+		return this.survivor;
+	}
 	public void setSurvivor(Survivor s){
 		this.survivor = s;
 	}
