@@ -24,14 +24,20 @@ public class AreaAction implements SurvivorAction {
      */
     public void doSomething(){
         System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
-        List<Room> rooms = roomsAround();
-        for(Room r : rooms){
-            r.displayItems();
+        City city = this.survivor.getCity();
+        List<Area> areas = areasAround();
+        for(Area a : areas){
+            a.displayActors();
+            if(city.isARoom(a)){
+                Room r = (Room) a;
+                r.displayItems();
+            }
         }
     }
-    private List<Room> roomsAround(){
 
-        List<Room> rooms = new ArrayList<>();
+    private List<Area> areasAround(){
+
+        List<Area> areas = new ArrayList<>();
         for(Direction d : Direction.values()){
             int i = d.getX();
             int j = d.getY();
@@ -42,10 +48,12 @@ public class AreaAction implements SurvivorAction {
             City city = this.survivor.getCity();
             Area area = city.getAreas()[y+j][x+i];
             if(city.isARoom(area)){
-                rooms.add((Room) area);
+                areas.add((Room) area);
             }
 
         }
-        return rooms;
+        return areas;
     }
+
+
 }
