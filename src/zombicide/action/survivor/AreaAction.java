@@ -27,7 +27,6 @@ public class AreaAction implements SurvivorAction {
     }
 
 
-    }
 
 
 }
