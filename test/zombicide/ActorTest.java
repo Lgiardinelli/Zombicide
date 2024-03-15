@@ -16,6 +16,7 @@ import zombicide.backpack.BackPack;
 import zombicide.city.City;
 import zombicide.item.Item;
 import zombicide.item.weapon.*;
+import zombicide.role.Fighter;
 
 
 public class ActorTest {
@@ -28,6 +29,7 @@ public class ActorTest {
     private BackPack backPack;
     private Area room;
     private NoiseAction noiseAction;
+    private Fighter fighter;
 
     private City city;
 
@@ -43,6 +45,7 @@ public class ActorTest {
         this.backPack = new BackPack();
         this.room = new Room(6,7);
         this.noiseAction = new NoiseAction(this.survivor);
+        this.fighter = new Fighter();
     }
 
     @Test
@@ -146,4 +149,10 @@ public class ActorTest {
         noiseAction.doSomething();
         assertEquals(1, room.getNoise());
     }
+
+    @Test
+    void testGetBackpackOfSurvivor(){
+        assertNotNull(survivor.getBackpack());
+    }
+
 }
