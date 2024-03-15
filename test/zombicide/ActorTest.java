@@ -42,7 +42,7 @@ public class ActorTest {
         this.pistol = new Pistol();
         this.backPack = new BackPack();
         this.room = new Room(6,7);
-        this.noiseAction = new NoiseAction(this.survivor,1);
+        this.noiseAction = new NoiseAction(this.survivor);
     }
 
     @Test
@@ -82,12 +82,6 @@ public class ActorTest {
         survivor.increaseSkillPoints();
         assertEquals(survivor.getSkillPoints(), 1);
     }
-
-    /* TODO : REVOIR LE TEST ICI (équiper le survivor du backpack et regarder si il est équiper) */
-//    @Test
-//    void testGetBackpack(){
-//        assertNull(survivor.getBackpack());
-//    }
 
     @Test
     void testLevelReached(){
