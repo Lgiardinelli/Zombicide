@@ -53,8 +53,10 @@ public class BackPack {
         return items;
     }
 
-    public void swapItems(Item fromRoom, Item fromBp) {
-
+    public void swapItemsRoomBp(Item fromRoom, Item fromBp) {
+        if(canBeAdded()){
+            this.addItem(fromRoom);
+        }
     }
 
     public boolean canBeAdded(){
