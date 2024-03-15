@@ -8,6 +8,7 @@ import zombicide.item.Item;
 import zombicide.util.Direction;
 import zombicide.util.Position;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -36,6 +37,10 @@ public abstract class Weapon implements Item {
 		this.isNoisy = isNoisy;
 		this.lastShotValue = 0;
 		this.survivor=null;
+	}
+
+	public void setSurvivor(Survivor s) {
+		this.survivor = s;
 	}
 
 	/**
@@ -84,7 +89,7 @@ public abstract class Weapon implements Item {
 		return maxHittingRange;
 	}
 
-	public List<Zombie> shootRange() {
+	private List<Zombie> shootRange() {
 		Area areaWeapon = this.survivor.getArea();
 		City city = this.survivor.getCity();
 		int x = areaWeapon.getX();
@@ -95,7 +100,7 @@ public abstract class Weapon implements Item {
 			zombies.addAll(zom);
 		}
 		for (Direction d : Direction.values()) {
-			for (int i = 1; i < this.getMaxHittingRange(); i++) {
+			for (int i = 1; i <= this.getMaxHittingRange(); i++) {
 				x += i*d.getX();
 				y += i*d.getY();
 				if (this.getMinHittingRange() < i) {
@@ -107,5 +112,8 @@ public abstract class Weapon implements Item {
 		return zombies;
 	}
 
+	public void use() {
+		System.out.println(shootRange());
+	}
     
 }
