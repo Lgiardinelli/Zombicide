@@ -155,4 +155,11 @@ public class ActorTest {
         assertNotNull(survivor.getBackpack());
     }
 
+    @Test
+    void testIfSurvivorHasRoles(){
+        assertFalse(survivor.hasRoles());
+        survivor.getRoles().add(fighter);
+        assertTrue(survivor.hasRoles());
+    }
+
 }
