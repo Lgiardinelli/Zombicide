@@ -78,5 +78,9 @@ public abstract class Actor {
         this.lifePoints -= damage;
     }
     public abstract void handleAction();
+
+    public String display() {
+        return this.getClass().getSimpleName();
+    }
 }
 
