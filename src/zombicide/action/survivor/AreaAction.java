@@ -24,29 +24,9 @@ public class AreaAction implements SurvivorAction {
      */
     public void doSomething(){
         System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
-        displayAreasAround();
     }
 
-    private void displayAreasAround(){
-        City city = this.survivor.getCity();
-        for(Direction d : Direction.values()){
-            System.out.print(d.name()+" :");
-            int i = d.getX();
-            int j = d.getY();
 
-            int x = survivor.getArea().getX();
-            int y = survivor.getArea().getY();
-
-            Area a = city.getAreas()[y+j][x+i];
-
-            a.displayActors();
-            System.out.println();
-            if(city.isARoom(a)){
-                Room r = (Room) a;
-                r.displayItems();
-            }
-            System.out.println();
-        }
     }
 
 
