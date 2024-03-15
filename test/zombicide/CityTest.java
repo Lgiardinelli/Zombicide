@@ -51,10 +51,12 @@ class CityTest {
 
 	@Test
 	void testGetRoom() {
+		assertTrue(city.getRooms() != null && !city.getRooms().isEmpty());
 	}
 
 	@Test
 	void testGetSpawn() {
+		assertTrue(city.getSpawn() != null);
 	}
 }
 
