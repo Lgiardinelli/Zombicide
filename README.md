@@ -515,7 +515,7 @@ __Partage de taches :__
 Lundi 11/03 :
 Léo : Créer une méthode qui vas renvoyer une liste de cellulle qui changera en fonction de la portée de l'arme.
 Dylan : Gérer les roles en fonction des actions.
-Théophane :
+Théophane : Gérer et vérifier les tests
 Eliès : Avanceemnt dans la gestion des actions en général. Gestion de l'utilisation du passe-partout et de la carte.
 
 Mardi 12/03 :
@@ -531,6 +531,7 @@ Jeudi 14/03 :
 
 Vendredi 15/03 :
 - Léo : Création de la méthode shootRange qui récupère les zombies dans les cellulles adjacentes en fonction du range de l'arme.
+- Théophane : Correction des tests et ajout des nouveaux test en rapport avec les nouvelles méthodes ajoutées.
 
 Week-end :
 
