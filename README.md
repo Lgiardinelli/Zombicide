@@ -504,9 +504,9 @@ Jeudi 14/03 :
 
 
 Vendredi 15/03 :
+Pour la méthode shootRange, nous l'avons mise dans la class Weapon car elle sera utilisé par toutes les types d'armes qui étendent de Weapon, nous avons du gérer le fait qu'il ne faut pas ajouter les zombies trop proche en fonction de la range minimale, pour cela, nous avons mis une condition d'ajout dans la liste finale. Puis nous avons aussi du gerer le fait qu'en itérant sur les 4 directions, la cellulle où est le survivant ne devra pas ajouter 4 fois le même zombie, pour cela, nous ne l'avons pas inclu dans l'itération des 4 direction mais avant.
 
-
-Week-end et durant les vacances :
+Week-end :
 
 
 
@@ -515,7 +515,7 @@ __Partage de taches :__
 Lundi 11/03 :
 Léo : Créer une méthode qui vas renvoyer une liste de cellulle qui changera en fonction de la portée de l'arme.
 Dylan : Gérer les roles en fonction des actions.
-Théophane :
+Théophane : Gérer et vérifier les tests
 Eliès : Avanceemnt dans la gestion des actions en général. Gestion de l'utilisation du passe-partout et de la carte.
 
 Mardi 12/03 :
@@ -530,7 +530,8 @@ Jeudi 14/03 :
 
 
 Vendredi 15/03 :
-
+- Léo : Création de la méthode shootRange qui récupère les zombies dans les cellulles adjacentes en fonction du range de l'arme.
+- Théophane : Correction des tests et ajout des nouveaux test en rapport avec les nouvelles méthodes ajoutées.
 
 Week-end :
 

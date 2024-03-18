@@ -9,6 +9,7 @@ import zombicide.city.City;
 import zombicide.city.TrainCity;
 import zombicide.item.Map;
 import zombicide.item.careItem.HealingFiask;
+import zombicide.item.weapon.Weapon;
 import zombicide.listchooser.RandomListChooser;
 import zombicide.role.Fighter;
 import zombicide.role.Healer;
@@ -43,6 +44,7 @@ public class Main {
 
 		chooseRandomSurvivorAction();
 	}
+
 
 	private void initCity(int width, int height) {
 		City city = new City(width, height);
@@ -134,16 +136,17 @@ public class Main {
 		s.setArea(this.trainCity.getArea(new Position(3,3)));
 		Map m = new Map();
 		m.setSurvivor(s);
+
 		RandomListChooser<SurvivorAction> chooser = new RandomListChooser<>();
 
 		List<SurvivorAction> actions = Arrays.asList(
 				null,
 				new AreaAction(s),
-				new BackPackAction(),
+				new BackPackAction(s),
 				new DoorAction(s),
 				new ItemAction(m),
 				new NoiseAction(s),
-				new RoomAction()
+				new RoomAction(s)
 		);
 		SurvivorAction chosenAction = chooser.choose(actions);
 		if (chosenAction != null) {

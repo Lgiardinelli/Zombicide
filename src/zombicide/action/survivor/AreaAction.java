@@ -1,11 +1,15 @@
 package zombicide.action.survivor;
 
-import zombicide.area.Area;
-import zombicide.city.City;
 import zombicide.action.SurvivorAction;
 import zombicide.actor.survivor.Survivor;
+import zombicide.area.Area;
 import zombicide.area.room.Room;
-import zombicide.util.Direction;
+import zombicide.backpack.BackPack;
+import zombicide.city.City;
+import zombicide.door.Door;
+import zombicide.item.Item;
+import zombicide.listchooser.ListChooser;
+import zombicide.listchooser.RandomListChooser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,28 +28,28 @@ public class AreaAction implements SurvivorAction {
      */
     public void doSomething(){
         System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
-        List<Room> rooms = roomsAround();
-        for(Room r : rooms){
-            r.displayItems();
+        rummage();
+    }
+
+    public void rummage(){
+        Area a = this.survivor.getArea();
+        City city = this.survivor.getCity();
+        if(city.isARoom(a)){
+            Room r = (Room) a;
+            List<Item> roomsItems = r.getItems();
+
+            BackPack bp = this.survivor.getBackpack();
+            List<Item> bpItems = bp.getItems();
+
+            RandomListChooser<Item> chooser = new RandomListChooser<>();
+            Item chosenItemRoom = chooser.choose(roomsItems);
+            Item chosenItemBp = chooser.choose(bpItems);
+
+            bp.swapItemsRoomBp(chosenItemRoom , chosenItemBp);
         }
     }
-    private List<Room> roomsAround(){
 
-        List<Room> rooms = new ArrayList<>();
-        for(Direction d : Direction.values()){
-            int i = d.getX();
-            int j = d.getY();
 
-            int x = survivor.getArea().getX();
-            int y = survivor.getArea().getY();
 
-            City city = this.survivor.getCity();
-            Area area = city.getAreas()[y+j][x+i];
-            if(city.isARoom(area)){
-                rooms.add((Room) area);
-            }
 
-        }
-        return rooms;
-    }
 }
