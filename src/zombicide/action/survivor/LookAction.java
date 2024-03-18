@@ -22,7 +22,7 @@ public class LookAction implements SurvivorAction {
         Area a = this.survivor.getArea();
         a.displayActors();
         for (Direction d : Direction.values()) {
-            System.out.println("La porte " + d.name() + " est " + a.getDoor(d).isOpen());
+            System.out.println("The door " + d.name() + " is " + (a.getDoor(d).isOpen()? "open" : "closed"));
         }
 
     }
