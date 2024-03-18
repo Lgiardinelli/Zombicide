@@ -3,7 +3,7 @@ package zombicide.action.survivor;
 import zombicide.action.SurvivorAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
-import zombicide.door.Door;
+import zombicide.area.door.Door;
 import zombicide.listchooser.RandomListChooser;
 import zombicide.util.Direction;
 

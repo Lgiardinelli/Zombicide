@@ -6,7 +6,7 @@ import zombicide.area.room.TheContinental;
 import zombicide.area.room.ThePharmacy;
 import zombicide.area.street.Manhole;
 import zombicide.area.street.Street;
-import zombicide.door.Door;
+import zombicide.area.door.Door;
 import zombicide.item.InfraredGlasses;
 import zombicide.item.Item;
 import zombicide.item.Map;

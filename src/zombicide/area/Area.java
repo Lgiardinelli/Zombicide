@@ -3,7 +3,7 @@ package zombicide.area;
 import zombicide.actor.Actor;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
-import zombicide.door.Door;
+import zombicide.area.door.Door;
 import zombicide.util.Color;
 import zombicide.util.Direction;
 

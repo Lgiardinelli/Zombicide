@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import zombicide.backpack.BackPack;
-import zombicide.door.Door;
+import zombicide.area.door.Door;
 import zombicide.area.room.Room;
 import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.Pistol;
