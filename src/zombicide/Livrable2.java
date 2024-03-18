@@ -10,11 +10,11 @@ import zombicide.city.TrainCity;
 import zombicide.item.Map;
 import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.Riffle;
-import zombicide.listchooser.RandomListChooser;
-import zombicide.role.Fighter;
-import zombicide.role.Healer;
-import zombicide.role.Lucky;
-import zombicide.role.Snooper;
+import zombicide.util.listchooser.RandomListChooser;
+import zombicide.actor.survivor.role.Fighter;
+import zombicide.actor.survivor.role.Healer;
+import zombicide.actor.survivor.role.Lucky;
+import zombicide.actor.survivor.role.Snooper;
 import zombicide.util.Direction;
 import zombicide.util.Position;
 
