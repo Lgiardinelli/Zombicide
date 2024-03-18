@@ -6,9 +6,6 @@ import zombicide.city.City;
 public class Map extends Item {
 	public boolean isNoisy = true;
 
-	private Survivor survivor;
-
-
 	public String toString(){
 		return "map";
 	}

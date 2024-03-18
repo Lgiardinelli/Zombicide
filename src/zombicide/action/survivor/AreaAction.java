@@ -45,7 +45,9 @@ public class AreaAction implements SurvivorAction {
             Item chosenItemRoom = chooser.choose(roomsItems);
             Item chosenItemBp = chooser.choose(bpItems);
 
-            bp.swapItemsRoomBp(chosenItemRoom , chosenItemBp);
+            if(chosenItemBp != null && chosenItemRoom != null){
+                bp.swapItemsRoomBp(chosenItemRoom , chosenItemBp);
+            }
         }
     }
 

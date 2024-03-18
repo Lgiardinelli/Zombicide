@@ -4,7 +4,7 @@ import zombicide.actor.survivor.Survivor;
 
 public abstract class Item {
 
-    private Survivor survivor;
+    protected Survivor survivor;
 
     public Item(){
         this.survivor = null;
@@ -18,4 +18,5 @@ public abstract class Item {
         return this.survivor;
     }
 
+    public abstract void use();
 }

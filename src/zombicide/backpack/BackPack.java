@@ -1,6 +1,7 @@
 package zombicide.backpack;
 
 import zombicide.action.SurvivorAction;
+import zombicide.actor.survivor.Survivor;
 import zombicide.item.Item;
 
 import java.util.ArrayList;
@@ -58,6 +59,9 @@ public class BackPack {
         if(canBeAdded()){
             this.addItem(fromRoom);
             this.removeItem(fromBp);
+            Survivor s = fromBp.getSurvivor();
+            fromBp.setSurvivor(null);
+            fromRoom.setSurvivor(s);
         }
     }
 
