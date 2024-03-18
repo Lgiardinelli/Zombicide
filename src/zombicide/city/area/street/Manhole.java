@@ -1,4 +1,4 @@
-package zombicide.area.street;
+package zombicide.city.area.street;
 
 import zombicide.util.Color;
 
