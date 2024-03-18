@@ -200,12 +200,17 @@ public abstract class Area {
     }
 
     public void displayActors(){
+        System.out.print("They are : ");
         for(Survivor s : this.survivors){
-            System.out.print("| "+s.display()+" |");
+            System.out.print("| "+s.display()+" | ");
         }
+        System.out.print("survivors");
+        System.out.println();
+        System.out.print("They are : ");
         for(Zombie z : this.zombies){
-            System.out.print("| "+z.display()+" |");
+            System.out.print("| "+z.display()+" | ");
         }
+        System.out.print("zombies");
         System.out.println();
     }
 
