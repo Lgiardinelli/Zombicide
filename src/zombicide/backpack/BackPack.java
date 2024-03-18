@@ -55,19 +55,28 @@ public class BackPack {
         return items;
     }
 
+    /**
+     * Swaps an item between the Survivor's backpack and the current room.
+     * Removes the specified item from the backpack and adds it to the room,
+     * while removing the specified item from the room and adding it to the backpack.
+     *
+     * @param fromRoom The item to swap from the current room to the backpack.
+     * @param fromBp The item to swap from the backpack to the current room.
+     */
     public void swapItemsRoomBp(Item fromRoom, Item fromBp) {
-            this.addItem(fromRoom);
-            this.removeItem(fromBp);
-            Survivor s = fromBp.getSurvivor();
-            fromBp.setSurvivor(null);
-            fromRoom.setSurvivor(s);
+        this.removeItem(fromBp);
+        this.addItem(fromRoom);
+        Survivor s = fromBp.getSurvivor();
+        fromBp.setSurvivor(null);
+        fromRoom.setSurvivor(s);
     }
+
 
     public void swapItemsHandBp(){
 
     }
 
     public boolean canBeAdded(){
-        return this.items.size() == 5;
+        return this.items.size() < 5;
     }
 }
