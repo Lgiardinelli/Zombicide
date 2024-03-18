@@ -1,14 +1,13 @@
 package zombicide.item.weapon;
 
 import zombicide.actor.zombie.Zombie;
-import zombicide.area.Area;
+import zombicide.city.area.Area;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
 import zombicide.item.Item;
 import zombicide.util.Direction;
 import zombicide.util.Position;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
