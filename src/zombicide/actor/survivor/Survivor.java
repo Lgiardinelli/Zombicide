@@ -2,11 +2,11 @@ package zombicide.actor.survivor;
 
 import zombicide.city.City;
 import zombicide.actor.Actor;
-import zombicide.area.Area;
-import zombicide.backpack.BackPack;
+import zombicide.city.area.Area;
+import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.item.Item;
 import zombicide.item.weapon.Pistol;
-import zombicide.role.Role;
+import zombicide.actor.survivor.role.Role;
 import zombicide.util.Expertise;
 
 import java.util.ArrayList;
