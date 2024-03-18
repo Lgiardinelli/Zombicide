@@ -1,7 +1,6 @@
 package zombicide;
 
-import zombicide.action.SurvivorAction;
-import zombicide.action.survivor.*;
+import zombicide.actor.action.*;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Zombie;
@@ -140,9 +139,9 @@ public class Livrable2 {
 			s.getBackpack().addItem(new Riffle());
 		}
 		System.out.println(s.getBackpack().getItems());
-		RandomListChooser<SurvivorAction> chooser = new RandomListChooser<>();
+		RandomListChooser<ActorAction> chooser = new RandomListChooser<>();
 
-		List<SurvivorAction> actions = Arrays.asList(
+		List<ActorAction> actions = Arrays.asList(
 				null,
 				new AreaAction(s),
 				new BackPackAction(s),
@@ -152,7 +151,7 @@ public class Livrable2 {
 				new RoomAction(s),
 				new LookAction(s)
 		);
-		SurvivorAction chosenAction = chooser.choose(actions);
+		ActorAction chosenAction = chooser.choose(actions);
 		if (chosenAction != null) {
 			chosenAction.doSomething();
 			this.trainCity.display();
