@@ -1,9 +1,21 @@
 package zombicide.item;
 
-public interface Item {
+import zombicide.actor.survivor.Survivor;
 
+public abstract class Item {
 
-    public String toString();
+    private Survivor survivor;
 
-    public void use();
+    public Item(){
+        this.survivor = null;
+    }
+
+    public void setSurvivor(Survivor s){
+        this.survivor = s;
+    }
+
+    public Survivor getSurvivor(){
+        return this.survivor;
+    }
+
 }

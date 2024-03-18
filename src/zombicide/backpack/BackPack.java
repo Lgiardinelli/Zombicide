@@ -1,5 +1,6 @@
 package zombicide.backpack;
 
+import zombicide.action.SurvivorAction;
 import zombicide.item.Item;
 
 import java.util.ArrayList;
@@ -56,6 +57,7 @@ public class BackPack {
     public void swapItemsRoomBp(Item fromRoom, Item fromBp) {
         if(canBeAdded()){
             this.addItem(fromRoom);
+            this.removeItem(fromBp);
         }
     }
 

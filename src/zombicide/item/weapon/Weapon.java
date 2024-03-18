@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Random;
 
 
-public abstract class Weapon implements Item {
+public abstract class Weapon extends Item {
 	private static final Random RANDOM = new Random();
     protected int nbDiceThrows;
     protected int diceThreshold;
@@ -29,6 +29,7 @@ public abstract class Weapon implements Item {
 
     public Weapon(int nbDiceThrows, int diceThreshold, int damage, int minHittingRange, int maxHittingRange,
 			boolean isNoisy) {
+		super();
 		this.nbDiceThrows = nbDiceThrows;
 		this.diceThreshold = diceThreshold;
 		this.damage = damage;
@@ -39,9 +40,6 @@ public abstract class Weapon implements Item {
 		this.survivor=null;
 	}
 
-	public void setSurvivor(Survivor s) {
-		this.survivor = s;
-	}
 
 	/**
      * Performs the shooting action with the weapon, rolling dice and calculating the result.
