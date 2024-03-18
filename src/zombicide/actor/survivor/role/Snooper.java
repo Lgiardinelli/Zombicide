@@ -1,4 +1,4 @@
-package zombicide.role;
+package zombicide.actor.survivor.role;
 
 public class Snooper extends Role {
 
