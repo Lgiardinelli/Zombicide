@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import zombicide.backpack.BackPack;
-import zombicide.area.door.Door;
-import zombicide.area.room.Room;
+import zombicide.actor.survivor.backpack.BackPack;
+import zombicide.city.area.door.Door;
+import zombicide.city.area.room.Room;
 import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.Pistol;
 import zombicide.util.Direction;
