@@ -1,4 +1,4 @@
-package zombicide.role;
+package zombicide.actor.survivor.role;
 
 import zombicide.actor.survivor.Survivor;
 
