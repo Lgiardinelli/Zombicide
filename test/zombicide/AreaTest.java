@@ -16,6 +16,8 @@ import zombicide.area.room.TheContinental;
 import zombicide.area.room.ThePharmacy;
 import zombicide.city.City;
 
+import java.util.List;
+
 class AreaTest {
 
 	//Area
@@ -122,5 +124,14 @@ class AreaTest {
 		assertEquals(room.getNoise(), 1);
 	}
 
+	@Test
+	void testGetZombiesInArea(){
+		room.addZombie(walker);
+		room.addZombie(abomination);
+		List<Zombie> zombiesInArea = room.getZombies();
+		assertEquals(2, zombiesInArea.size());
+		assertTrue(zombiesInArea.contains(walker));
+		assertTrue(zombiesInArea.contains(abomination));
+	}
 
 }
