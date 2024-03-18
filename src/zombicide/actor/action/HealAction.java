@@ -1,9 +1,8 @@
-package zombicide.action.survivor;
+package zombicide.actor.action;
 
-import zombicide.action.SurvivorAction;
 import zombicide.actor.survivor.Survivor;
 
-public class HealAction implements SurvivorAction {
+public class HealAction implements ActorAction {
 
     private final Survivor survivor;
     private int lifePointsToAdd;

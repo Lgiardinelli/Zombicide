@@ -1,6 +1,5 @@
-package zombicide.action.survivor;
+package zombicide.actor.action;
 
-import zombicide.action.SurvivorAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
@@ -11,7 +10,7 @@ import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.List;
 
-public class AreaAction implements SurvivorAction {
+public class AreaAction implements ActorAction {
 
     private Survivor survivor;
 

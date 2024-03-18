@@ -1,4 +1,4 @@
-package zombicide.action;
+package zombicide.actor.action;
 
 public interface ActorAction {
     default void doSomething() {

@@ -1,6 +1,5 @@
-package zombicide.action.survivor;
+package zombicide.actor.action;
 
-import zombicide.action.SurvivorAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
 import zombicide.city.area.door.Door;
@@ -10,7 +9,7 @@ import zombicide.util.Direction;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoorAction implements SurvivorAction {
+public class DoorAction implements ActorAction {
 
     private final Survivor survivor;
 

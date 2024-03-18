@@ -1,9 +1,8 @@
-package zombicide.action.survivor;
+package zombicide.actor.action;
 
-import zombicide.action.SurvivorAction;
 import zombicide.item.Item;
 
-public class ItemAction implements SurvivorAction {
+public class ItemAction implements ActorAction {
 
     private Item itemUsed;
 

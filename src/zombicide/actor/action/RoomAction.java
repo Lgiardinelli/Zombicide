@@ -1,12 +1,8 @@
-package zombicide.action.survivor;
+package zombicide.actor.action;
 
-import zombicide.action.SurvivorAction;
-import zombicide.actor.zombie.Zombie;
 import zombicide.actor.survivor.Survivor;
 
-import java.util.List;
-
-public class RoomAction implements SurvivorAction {
+public class RoomAction implements ActorAction {
 
     private Survivor survivor;
 

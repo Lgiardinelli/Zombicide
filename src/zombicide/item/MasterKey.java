@@ -1,6 +1,6 @@
 package zombicide.item;
 
-import zombicide.action.survivor.DoorAction;
+import zombicide.actor.action.DoorAction;
 import zombicide.actor.survivor.Survivor;
 
 public class MasterKey extends Item {

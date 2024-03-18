@@ -1,6 +1,6 @@
-package zombicide.action.actor;
+package zombicide.actor.action;
 
-import zombicide.action.ActorAction;
+import zombicide.actor.action.ActorAction;
 import zombicide.actor.Actor;
 import zombicide.city.City;
 import zombicide.util.Direction;

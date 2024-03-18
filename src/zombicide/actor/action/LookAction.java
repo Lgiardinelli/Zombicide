@@ -1,11 +1,10 @@
-package zombicide.action.survivor;
+package zombicide.actor.action;
 
-import zombicide.action.SurvivorAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.area.Area;
 import zombicide.util.Direction;
 
-public class LookAction implements SurvivorAction {
+public class LookAction implements ActorAction {
 
     private Survivor survivor;
 

@@ -1,6 +1,5 @@
 package zombicide.actor.survivor.backpack;
 
-import zombicide.action.SurvivorAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.item.Item;
 
