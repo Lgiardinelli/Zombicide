@@ -56,13 +56,15 @@ public class BackPack {
     }
 
     public void swapItemsRoomBp(Item fromRoom, Item fromBp) {
-        if(canBeAdded()){
             this.addItem(fromRoom);
             this.removeItem(fromBp);
             Survivor s = fromBp.getSurvivor();
             fromBp.setSurvivor(null);
             fromRoom.setSurvivor(s);
-        }
+    }
+
+    public void swapItemsHandBp(){
+
     }
 
     public boolean canBeAdded(){
