@@ -1,9 +1,9 @@
-package zombicide.area;
+package zombicide.city.area;
 
 import zombicide.actor.Actor;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
-import zombicide.area.door.Door;
+import zombicide.city.area.door.Door;
 import zombicide.util.Color;
 import zombicide.util.Direction;
 
@@ -33,7 +33,7 @@ public abstract class Area {
 
     /**
      * Constructor for the Area class.
-     * 
+     *
      * @param posX The X position of the area.
      * @param posY The Y position of the area.
      */
