@@ -3,8 +3,8 @@ package zombicide.action.survivor;
 import zombicide.action.SurvivorAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
-import zombicide.area.door.Door;
-import zombicide.listchooser.RandomListChooser;
+import zombicide.city.area.door.Door;
+import zombicide.util.listchooser.RandomListChooser;
 import zombicide.util.Direction;
 
 import java.util.ArrayList;
