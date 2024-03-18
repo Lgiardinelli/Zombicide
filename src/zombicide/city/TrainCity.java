@@ -1,7 +1,7 @@
 package zombicide.city;
 
-import zombicide.area.street.Manhole;
-import zombicide.area.street.Street;
+import zombicide.city.area.street.Manhole;
+import zombicide.city.area.street.Street;
 import zombicide.util.Position;
 
 public class TrainCity extends City {
