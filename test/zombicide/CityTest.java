@@ -5,10 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import zombicide.area.Area;
-import zombicide.area.room.Room;
-import zombicide.area.street.Manhole;
-import zombicide.area.street.Street;
+import zombicide.city.area.Area;
+import zombicide.city.area.room.Room;
 import zombicide.city.City;
 
 class CityTest {
@@ -35,7 +33,7 @@ class CityTest {
 	
 	@Test
 	void testGetArea() {
-		zombicide.area.Area[][] area2 = city.getAreas();
+		Area[][] area2 = city.getAreas();
 		for (int i = 0; i < 10; i++) {
 	        for (int j = 0; j < 10; j++) {
 	            assertNotNull(area2[i][j]);
@@ -45,8 +43,8 @@ class CityTest {
 	
 	@Test
 	void testGetCellUp() {
-	    zombicide.area.Area[][] areas = city.getAreas();
-	    zombicide.area.Area expectedArea = areas[1][2];
+	    Area[][] areas = city.getAreas();
+	    Area expectedArea = areas[1][2];
 	    Area actualArea = city.getCellUp(2, 2);
 	    assertEquals(expectedArea, actualArea);
 	}
