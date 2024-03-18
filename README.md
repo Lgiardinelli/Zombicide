@@ -538,12 +538,15 @@ Week-end :
 
 ## Semaine 8
 __Objectif de la semaine :__  
-
+- Gerer les packages
+- Gerer les différentes actions
 
 __Objectif atteint :__
 
 
 __Réflexion du groupe :__  
+
+
 
 Lundi 18/03 :
 
@@ -567,7 +570,7 @@ Week-end :
 __Partage de taches :__
 
 Lundi 18/03 :
-
+- Léo : Création de la classe LookAction qui vas permettre de regarder dans la pièce les zombies et les survivants ainsi que les portes si elles sont ouverte ou fermée.
 
 Mardi 19/03 :
 
