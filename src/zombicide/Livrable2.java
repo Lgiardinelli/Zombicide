@@ -9,7 +9,6 @@ import zombicide.city.City;
 import zombicide.city.TrainCity;
 import zombicide.item.Map;
 import zombicide.item.careItem.HealingFiask;
-import zombicide.item.weapon.Weapon;
 import zombicide.listchooser.RandomListChooser;
 import zombicide.role.Fighter;
 import zombicide.role.Healer;
@@ -21,14 +20,14 @@ import zombicide.util.Position;
 import java.util.Arrays;
 import java.util.List;
 
-public class Main {
+public class Livrable2 {
 
 	private final City city = new City(10,10);
 	private final TrainCity trainCity = new TrainCity();
 
 	public static void main(String[] args) {
-		Main main = new Main();
-		main.start(args);
+		Livrable2 livrable2 = new Livrable2();
+		livrable2.start(args);
 	}
 
 	private void start(String[] args) {
