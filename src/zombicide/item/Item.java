@@ -18,4 +18,5 @@ public abstract class Item {
         return this.survivor;
     }
 
+    public abstract void use();
 }
