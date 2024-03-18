@@ -9,6 +9,8 @@ import zombicide.city.City;
 import zombicide.city.TrainCity;
 import zombicide.item.Map;
 import zombicide.item.careItem.HealingFiask;
+import zombicide.item.weapon.Pistol;
+import zombicide.item.weapon.Riffle;
 import zombicide.item.weapon.Weapon;
 import zombicide.listchooser.RandomListChooser;
 import zombicide.role.Fighter;
@@ -136,6 +138,10 @@ public class Main {
 		s.setArea(this.trainCity.getArea(new Position(3,3)));
 		Map m = new Map();
 		m.setSurvivor(s);
+		for(int i =0 ; i < 5 ; i++){
+			s.getBackpack().addItem(new Riffle());
+		}
+		System.out.println(s.getBackpack().getItems());
 		RandomListChooser<SurvivorAction> chooser = new RandomListChooser<>();
 
 		List<SurvivorAction> actions = Arrays.asList(
@@ -151,6 +157,7 @@ public class Main {
 		if (chosenAction != null) {
 			chosenAction.doSomething();
 			this.trainCity.display();
+			System.out.println(s.getBackpack().getItems());
 		}
 	}
 
