@@ -2,7 +2,7 @@ package zombicide.action.survivor;
 
 import zombicide.action.SurvivorAction;
 import zombicide.actor.survivor.Survivor;
-import zombicide.area.Area;
+import zombicide.city.area.Area;
 import zombicide.util.Direction;
 
 public class LookAction implements SurvivorAction {
