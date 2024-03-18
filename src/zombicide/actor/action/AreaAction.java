@@ -27,33 +27,40 @@ public class AreaAction implements ActorAction {
         rummage();
     }
 
-    public void rummage(){
+    /**
+     * Allows the survivor to rummage through the current room, picking up an item randomly.
+     * If the survivor has space in their backpack, the chosen item from the room is added to the backpack.
+     * If the backpack is full, the method swaps a randomly chosen item from the backpack with the chosen item from the room.
+     */
+    private void rummage() {
         Area a = this.survivor.getArea();
         City city = this.survivor.getCity();
-        if(city.isARoom(a)){
+
+        if (city.isARoom(a)) {
             Room r = (Room) a;
             List<Item> roomsItems = r.getItems();
 
             BackPack bp = this.survivor.getBackpack();
 
             RandomListChooser<Item> chooser = new RandomListChooser<>();
+
             Item chosenItemRoom = chooser.choose(roomsItems);
 
-            if(bp.canBeAdded()){
+            if (bp.canBeAdded()) {
                 bp.addItem(chosenItemRoom);
-            }
-            else{
+            } else {
                 List<Item> bpItems = bp.getItems();
 
                 Item chosenItemBp = chooser.choose(bpItems);
 
-                if(chosenItemBp != null && chosenItemRoom != null){
-                    bp.swapItemsRoomBp(chosenItemRoom , chosenItemBp);
+                if (chosenItemBp != null && chosenItemRoom != null) {
+                    bp.swapItemsRoomBp(chosenItemRoom, chosenItemBp);
                 }
             }
-
         }
     }
+
+}
 
 
 
