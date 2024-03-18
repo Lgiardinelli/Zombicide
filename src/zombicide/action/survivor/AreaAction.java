@@ -6,12 +6,9 @@ import zombicide.area.Area;
 import zombicide.area.room.Room;
 import zombicide.backpack.BackPack;
 import zombicide.city.City;
-import zombicide.door.Door;
 import zombicide.item.Item;
-import zombicide.listchooser.ListChooser;
 import zombicide.listchooser.RandomListChooser;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AreaAction implements SurvivorAction {
