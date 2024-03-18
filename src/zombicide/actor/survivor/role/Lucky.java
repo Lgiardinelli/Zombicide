@@ -1,4 +1,4 @@
-package zombicide.role;
+package zombicide.actor.survivor.role;
 
 public class Lucky extends Role {
 
