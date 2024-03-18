@@ -2,12 +2,12 @@ package zombicide.action.survivor;
 
 import zombicide.action.SurvivorAction;
 import zombicide.actor.survivor.Survivor;
-import zombicide.area.Area;
-import zombicide.area.room.Room;
-import zombicide.backpack.BackPack;
+import zombicide.city.area.Area;
+import zombicide.city.area.room.Room;
+import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.city.City;
 import zombicide.item.Item;
-import zombicide.listchooser.RandomListChooser;
+import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.List;
 
