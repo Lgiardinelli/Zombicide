@@ -1,4 +1,4 @@
-package zombicide.listchooser;
+package zombicide.util.listchooser;
 
 import java.util.List;
 
