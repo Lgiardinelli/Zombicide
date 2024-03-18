@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import zombicide.backpack.BackPack;
+import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.item.InfraredGlasses;
 import zombicide.item.MasterKey;
 import zombicide.item.careItem.FirstAidKit;
