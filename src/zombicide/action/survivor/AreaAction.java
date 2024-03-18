@@ -39,15 +39,23 @@ public class AreaAction implements SurvivorAction {
             List<Item> roomsItems = r.getItems();
 
             BackPack bp = this.survivor.getBackpack();
-            List<Item> bpItems = bp.getItems();
 
             RandomListChooser<Item> chooser = new RandomListChooser<>();
             Item chosenItemRoom = chooser.choose(roomsItems);
-            Item chosenItemBp = chooser.choose(bpItems);
 
-            if(chosenItemBp != null && chosenItemRoom != null){
-                bp.swapItemsRoomBp(chosenItemRoom , chosenItemBp);
+            if(bp.canBeAdded()){
+                bp.addItem(chosenItemRoom);
             }
+            else{
+                List<Item> bpItems = bp.getItems();
+
+                Item chosenItemBp = chooser.choose(bpItems);
+
+                if(chosenItemBp != null && chosenItemRoom != null){
+                    bp.swapItemsRoomBp(chosenItemRoom , chosenItemBp);
+                }
+            }
+
         }
     }
 
