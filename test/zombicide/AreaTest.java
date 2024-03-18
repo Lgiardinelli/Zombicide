@@ -115,5 +115,12 @@ class AreaTest {
 		assertTrue(room.getSurvivors().contains(survivor2));
 	}
 
+	@Test
+	void testSetNoiseInArea(){
+		assertEquals(room.getNoise(), 0);
+		room.setNoise(1);
+		assertEquals(room.getNoise(), 1);
+	}
+
 
 }
