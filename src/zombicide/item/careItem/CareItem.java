@@ -3,23 +3,13 @@ package zombicide.item.careItem;
 import zombicide.actor.survivor.Survivor;
 import zombicide.item.Item;
 
-public abstract class CareItem implements Item {
+public abstract class CareItem extends Item {
 	public boolean isNoisy = false;
 
 
 	private Survivor survivor;
 
-	public CareItem(){
-		this.survivor = null;
-	}
 
-	public Survivor getSurvivor(){
-		return this.survivor;
-	}
-	public void setSurvivor(Survivor s){
-		this.survivor = s;
-	}
-	@Override
 	public void use() {
 
 	}

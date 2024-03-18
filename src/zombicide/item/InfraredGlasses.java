@@ -7,7 +7,7 @@ import zombicide.area.room.Room;
 import zombicide.city.City;
 import zombicide.util.Direction;
 
-public class InfraredGlasses implements Item {
+public class InfraredGlasses extends Item {
 	public boolean isNoisy = false;
 
 	private Survivor survivor;
@@ -19,11 +19,6 @@ public class InfraredGlasses implements Item {
 		return "infrared glasses";
 	}
 
-	public void setSurvivor(Survivor s){
-		this.survivor =s;
-	}
-
-	@Override
 	public void use() {
 		displayAreasAround();
 	}
