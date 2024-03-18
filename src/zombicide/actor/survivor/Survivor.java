@@ -17,6 +17,8 @@ import java.util.List;
  * Represents a survivor actor in the game.
  */
 public class Survivor extends Actor {
+    private static final int ACTION_POINTS = 3;
+    private static final int LIFE_POINTS = 5;
 
     /** The skill points of the survivor. */
     private int skillPoints;
@@ -38,8 +40,8 @@ public class Survivor extends Actor {
      */
     public Survivor(City city , Role... roles) {
         this.skillPoints = 0;
-        this.actionPoints = 3;
-        this.lifePoints = 5;
+        this.actionPoints = ACTION_POINTS;
+        this.lifePoints = LIFE_POINTS;
         this.backpack = new BackPack();
         this.handleItem = new Pistol();
         this.roles = new ArrayList<>(Arrays.asList(roles));
