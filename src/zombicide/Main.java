@@ -136,7 +136,6 @@ public class Main {
 		s.setArea(this.trainCity.getArea(new Position(3,3)));
 		Map m = new Map();
 		m.setSurvivor(s);
-
 		RandomListChooser<SurvivorAction> chooser = new RandomListChooser<>();
 
 		List<SurvivorAction> actions = Arrays.asList(
