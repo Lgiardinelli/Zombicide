@@ -149,7 +149,8 @@ public class Livrable2 {
 				new DoorAction(s),
 				new ItemAction(m),
 				new NoiseAction(s),
-				new RoomAction(s)
+				new RoomAction(s),
+				new LookAction(s)
 		);
 		SurvivorAction chosenAction = chooser.choose(actions);
 		if (chosenAction != null) {
