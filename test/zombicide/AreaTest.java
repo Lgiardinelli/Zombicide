@@ -9,11 +9,11 @@ import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Walker;
-import zombicide.area.Area;
-import zombicide.area.room.Room;
-import zombicide.area.street.Street;
-import zombicide.area.room.TheContinental;
-import zombicide.area.room.ThePharmacy;
+import zombicide.city.area.Area;
+import zombicide.city.area.room.Room;
+import zombicide.city.area.street.Street;
+import zombicide.city.area.room.TheContinental;
+import zombicide.city.area.room.ThePharmacy;
 import zombicide.city.City;
 
 class AreaTest {
