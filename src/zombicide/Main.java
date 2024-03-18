@@ -146,7 +146,7 @@ public class Main {
 				new DoorAction(s),
 				new ItemAction(m),
 				new NoiseAction(s),
-				new RoomAction()
+				new RoomAction(s)
 		);
 		SurvivorAction chosenAction = chooser.choose(actions);
 		if (chosenAction != null) {
