@@ -1,4 +1,4 @@
-package zombicide.area.door;
+package zombicide.city.area.door;
 
 /**
  * Represents a door on the board.
