@@ -206,6 +206,7 @@ public abstract class Area {
         for(Zombie z : this.zombies){
             System.out.print("| "+z.display()+" |");
         }
+        System.out.println();
     }
 
 
