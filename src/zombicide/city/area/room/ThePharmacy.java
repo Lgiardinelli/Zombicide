@@ -1,4 +1,4 @@
-package zombicide.area.room;
+package zombicide.city.area.room;
 
 import zombicide.util.Color;
 
