@@ -63,16 +63,19 @@ public class BackPack {
      * @param fromBp The item to swap from the backpack to the current room.
      */
     public void swapItemsRoomBp(Item fromRoom, Item fromBp) {
-        this.removeItem(fromBp);
-        this.addItem(fromRoom);
+        removeItem(fromBp);
+        addItem(fromRoom);
         Survivor s = fromBp.getSurvivor();
         fromBp.setSurvivor(null);
         fromRoom.setSurvivor(s);
     }
 
 
-    public void swapItemsHandBp(){
-
+    public void swapItemsHandBp(Item fromHand , Item fromBp){
+        removeItem(fromBp);
+        addItem(fromHand);
+        Survivor s = fromHand.getSurvivor();
+        s.setHandleItem(fromBp);
     }
 
     public boolean canBeAdded(){
