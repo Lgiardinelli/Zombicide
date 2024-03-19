@@ -13,6 +13,7 @@ public class HealAction implements ActorAction {
 
     public void doSomething(){
         this.heal();
+        this.survivor.removeActionPoint();
     }
 
     public void setLifePointsToAdd(int n){

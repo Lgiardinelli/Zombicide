@@ -25,6 +25,7 @@ public class RoomAction implements ActorAction {
     public void doSomething(){
         System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
         rummage();
+        this.survivor.removeActionPoint();
     }
 
     /**

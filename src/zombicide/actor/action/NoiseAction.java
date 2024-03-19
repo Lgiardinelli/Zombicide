@@ -35,6 +35,7 @@ public class NoiseAction implements ActorAction {
         if(currentArea != null){
             currentArea.increaseNoiseLevel(this.noiseLevel);
         }
+        this.survivor.removeActionPoint();
     }
 
     /**

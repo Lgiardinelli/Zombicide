@@ -14,5 +14,6 @@ public class ItemAction implements ActorAction {
     public void doSomething(){
         Item itemUsed = survivor.getHandleItem();
         itemUsed.use();
+        this.survivor.removeActionPoint();
     }
 }

@@ -27,6 +27,7 @@ public class DoorAction implements ActorAction {
         RandomListChooser<Door> chooser = new RandomListChooser<>();
         Door door = chooser.choose(doors);
         door.open();
+        this.survivor.removeActionPoint();
     }
 
     private List<Door> doorsAround(){

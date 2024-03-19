@@ -19,6 +19,7 @@ public class BackPackAction implements ActorAction {
     public void doSomething() {
         System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
         takeOnHand();
+        this.survivor.removeActionPoint();
     }
 
     /**

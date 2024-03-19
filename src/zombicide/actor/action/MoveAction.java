@@ -49,5 +49,6 @@ public class MoveAction implements ActorAction {
         Position p = positionAfterMoving();
         City city = this.actor.getCity();
         this.actor.setArea(city.getArea(p));
+        this.actor.removeActionPoint();
     }
 }
