@@ -144,12 +144,12 @@ public class Livrable2 {
 
 		List<ActorAction> actions = Arrays.asList(
 				null,
-				new AreaAction(s),
+				new RoomAction(s),
 				new BackPackAction(s),
 				new DoorAction(s),
 				new ItemAction(s),
 				new NoiseAction(s),
-				new RoomAction(s),
+				new AreaAction(s),
 				new LookAction(s)
 		);
 		ActorAction chosenAction = chooser.choose(actions);
