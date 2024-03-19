@@ -50,6 +50,14 @@ class RoomTest {
 	}
 
 	@Test
+	public void testGetReverse() {
+		assertEquals(Direction.DOWN, Direction.UP.getReverse());
+		assertEquals(Direction.LEFT, Direction.RIGHT.getReverse());
+		assertEquals(Direction.UP, Direction.DOWN.getReverse());
+		assertEquals(Direction.RIGHT, Direction.LEFT.getReverse());
+	}
+
+	@Test
 	void testLetItems() {
 
 		Pistol item1 = new Pistol();
