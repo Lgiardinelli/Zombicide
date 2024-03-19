@@ -78,7 +78,15 @@ public class BackPack {
         s.setHandleItem(fromBp);
     }
 
+    public void takeAItem(Item bpItem) {
+        removeItem(bpItem);
+        Survivor s = bpItem.getSurvivor();
+        s.setHandleItem(bpItem);
+    }
+
     public boolean canBeAdded(){
         return this.items.size() < 5;
     }
+
+
 }
