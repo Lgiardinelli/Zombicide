@@ -176,4 +176,18 @@ public class ActorTest {
         assertTrue(survivor.getRoles().containsAll(Roles));
     }
 
+    @Test
+    public void testSetArea() {
+        survivor.setArea(room);
+        assertEquals(room, survivor.getArea());
+    }
+
+    @Test
+    public void testRemoveLifePoints() {
+        survivor.addLifePoints(5);
+        assertEquals(survivor.getLifePoints(), 10);
+        survivor.removeLifePoints(5);
+        assertEquals(survivor.getLifePoints(), 5);
+    }
+
 }

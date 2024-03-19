@@ -549,7 +549,9 @@ __Réflexion du groupe :__
 
 
 Lundi 18/03 :
-
+Concertation sur ce qu'il restait à faire au niveau des actions et des rôles. Il s'agissait de se partager le codage des différentes actions existantes.
+Nous avons décidé de changer l'interface Item en une classe abstraite. En effet, l'attribut survivant était utile à une majorité d'actions réalisées par les Items.
+Il a été convenu que les packages doivent être réorganisés afin de simplifier l'arborescence.
 
 Mardi 19/03 :
 
@@ -571,9 +573,11 @@ __Partage de taches :__
 
 Lundi 18/03 :
 - Léo : Création de la classe LookAction qui vas permettre de regarder dans la pièce les zombies et les survivants ainsi que les portes si elles sont ouverte ou fermée.
+- Eliès : Finalisation de RoomAction (fouiller) et ItemAction
+- Dylan : Réorganisation des packages en améliorant l'arborescence
 
 Mardi 19/03 :
-
+- Eliès : Finalisation de BackPack (prendre un Item en main)
 
 Mercredi 20/03 :
 
