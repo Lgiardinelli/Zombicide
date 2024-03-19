@@ -82,5 +82,9 @@ public abstract class Actor {
     public String display() {
         return this.getClass().getSimpleName();
     }
+
+    public void removeActionPoint() {
+        this.actionPoints--;
+    }
 }
 
