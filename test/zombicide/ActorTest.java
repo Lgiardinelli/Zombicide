@@ -182,4 +182,12 @@ public class ActorTest {
         assertEquals(room, survivor.getArea());
     }
 
+    @Test
+    public void testRemoveLifePoints() {
+        survivor.addLifePoints(5);
+        assertEquals(survivor.getLifePoints(), 10);
+        survivor.removeLifePoints(5);
+        assertEquals(survivor.getLifePoints(), 5);
+    }
+
 }
