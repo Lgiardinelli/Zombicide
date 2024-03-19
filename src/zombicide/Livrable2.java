@@ -135,6 +135,7 @@ public class Livrable2 {
 		s.setArea(this.trainCity.getArea(new Position(3,3)));
 		Map m = new Map();
 		m.setSurvivor(s);
+		s.setHandleItem(m);
 		for(int i =0 ; i < 5 ; i++){
 			s.getBackpack().addItem(new Riffle());
 		}
@@ -146,7 +147,7 @@ public class Livrable2 {
 				new AreaAction(s),
 				new BackPackAction(s),
 				new DoorAction(s),
-				new ItemAction(m),
+				new ItemAction(s),
 				new NoiseAction(s),
 				new RoomAction(s),
 				new LookAction(s)
