@@ -176,4 +176,10 @@ public class ActorTest {
         assertTrue(survivor.getRoles().containsAll(Roles));
     }
 
+    @Test
+    public void testSetArea() {
+        survivor.setArea(room);
+        assertEquals(room, survivor.getArea());
+    }
+
 }
