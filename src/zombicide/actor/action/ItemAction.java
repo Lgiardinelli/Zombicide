@@ -1,16 +1,18 @@
 package zombicide.actor.action;
 
+import zombicide.actor.survivor.Survivor;
 import zombicide.item.Item;
 
 public class ItemAction implements ActorAction {
 
-    private Item itemUsed;
+    private Survivor survivor;
 
-    public ItemAction(Item i){
-        this.itemUsed = i;
+    public ItemAction(Survivor s){
+        this.survivor = s;
     }
     @Override
     public void doSomething(){
+        Item itemUsed = survivor.getHandleItem();
         itemUsed.use();
     }
 }
