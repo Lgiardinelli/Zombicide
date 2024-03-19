@@ -7,9 +7,9 @@ import zombicide.actor.zombie.Zombie;
 import zombicide.util.Position;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Walker;
-import zombicide.action.actor.MoveAction;
-import zombicide.area.Area;
-import zombicide.area.street.Street;
+import zombicide.actor.action.MoveAction;
+import zombicide.city.area.Area;
+import zombicide.city.area.street.Street;
 import zombicide.util.Direction;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

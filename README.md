@@ -49,7 +49,7 @@ javac -sourcepath src src/zombicide/*.java -d classes
 ```
 - Exécution du programme (avec 2 paramètres longueur et largeur du tableau ou non, 10 par 10 de base)
 ```bash
-java -classpath classes zombicide.Main 10 10
+java -classpath classes zombicide.Livrable2 10 10
 ```
 
 - Tests compilation
@@ -92,7 +92,7 @@ Aucune difficulté majeure n'a été identifiée jusqu'à présent.
 - placer un zombie (peu importe le type) sur chaque zone,
 - créer un survivant de chaque rôle sur le carrefour principal,
 - mettre une carte dans le sac à dos de chaque survivant,
-- mettre dans la main de chaque survivant une fiole,
+- mettre dans la livrable2 de chaque survivant une fiole,
 - afficher une représentation de la ville,
 - déplacer tous les survivants d'une case vers le nord
 - afficher sa représentation.
@@ -122,7 +122,7 @@ javac -sourcepath src src/zombicide/actor/zombie/*.java -d classes
 ```
 - Exécution du programme (avec 2 paramètres longueur et largeur du tableau ou non, 10 par 10 de base)
 ```bash
-java -classpath classes zombicide.Main 10 10
+java -classpath classes zombicide.Livrable2 10 10
 ```
 
 - Tests compilation
@@ -447,7 +447,7 @@ Afin de respecter l'encapsulation des méthodes et attributs, nous en sommes con
 toutes les classes dans le même package qu'elle (avant qu'elle ne soit déplacée dans city).
 Afin de spécifier un ou plusieurs rôles plus simplement aux survivants, nous somme passé d'une simple liste en paramètre de Survivor à des varargs de Role, ainsi soit nous passonts autant de Roles en paramètre, soit nous passons directement un tableau.
 Ici cela nous évite dans notre POC de créer une liste de 1 rôle et ce pour chaque survivant.
-Suite au mail que vous nous avez envoyé avec la descritpion du rendu du livrable 2, nous avons dû modifier le main pour qu'il affiche 2 fois le plateau d'entrainement dont l'un sans le déplacements des survivants et l'autre avec les déplacements.  
+Suite au mail que vous nous avez envoyé avec la descritpion du rendu du livrable 2, nous avons dû modifier le livrable2 pour qu'il affiche 2 fois le plateau d'entrainement dont l'un sans le déplacements des survivants et l'autre avec les déplacements.  
 Pour les déplacements, nous avons eu une réfléxion de groupe qui a permis de nous accorder sur la méthode appelé pour le déplacement, qui est géré par la cellulle, car dans notre modélisation, une cellulle a un acteur et un acteur a une cellulle. (Comme le jeu de loi en POO)
 Pour l'ajout des fioles dans la main et de la carte dans le sac, nous avons implémenté cela logiquement dans les listes que contiennent les items.
 
@@ -476,7 +476,7 @@ Week-end et durant les vacances :
 - Eliès : ajout de l'énumération ActorDirection et finalisation de la classe MoveAction avec ses méthodes. Avancement dans la classe Test de MoveAction.
 - Dylan, Théophane : Modification de la structure du projet (raisons expliquées dans la réflexion de groupe), début d'implémentation des roles, notamment le rôle Healer, 
 amélioration de la logique de certaines classes dont Weapon pour la gestion du tir, le Main pour "simplifier" sa compréhension, etc. Modification du paramètre de type liste dans Survivor, pour un type varargs Role (raisons dans réflexion de groupe).
-- Léo et Elies : Implémentation des méthodes de déplacement sur la carte, modification du main pour convenir au livrable 2, placement des zombies et des survivant.
+- Léo et Elies : Implémentation des méthodes de déplacement sur la carte, modification du livrable2 pour convenir au livrable 2, placement des zombies et des survivant.
 
 ## Semaine 7
 __Objectif de la semaine :__  
@@ -538,12 +538,15 @@ Week-end :
 
 ## Semaine 8
 __Objectif de la semaine :__  
-
+- Gerer les packages
+- Gerer les différentes actions
 
 __Objectif atteint :__
 
 
 __Réflexion du groupe :__  
+
+
 
 Lundi 18/03 :
 
@@ -567,7 +570,7 @@ Week-end :
 __Partage de taches :__
 
 Lundi 18/03 :
-
+- Léo : Création de la classe LookAction qui vas permettre de regarder dans la pièce les zombies et les survivants ainsi que les portes si elles sont ouverte ou fermée.
 
 Mardi 19/03 :
 

@@ -5,24 +5,23 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
-import zombicide.action.survivor.NoiseAction;
+import zombicide.actor.action.NoiseAction;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Balaise;
 import zombicide.actor.zombie.Runner;
 import zombicide.actor.zombie.Walker;
-import zombicide.area.Area;
-import zombicide.area.room.Room;
-import zombicide.backpack.BackPack;
+import zombicide.city.area.Area;
+import zombicide.city.area.room.Room;
+import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.city.City;
 import zombicide.item.Item;
 import zombicide.item.weapon.*;
-import zombicide.role.Fighter;
-import zombicide.role.Lucky;
-import zombicide.role.Role;
+import zombicide.actor.survivor.role.Fighter;
+import zombicide.actor.survivor.role.Lucky;
+import zombicide.actor.survivor.role.Role;
 
 import java.util.List;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 

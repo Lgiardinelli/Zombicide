@@ -1,12 +1,12 @@
 package zombicide.city;
 
-import zombicide.area.Area;
-import zombicide.area.room.Room;
-import zombicide.area.room.TheContinental;
-import zombicide.area.room.ThePharmacy;
-import zombicide.area.street.Manhole;
-import zombicide.area.street.Street;
-import zombicide.door.Door;
+import zombicide.city.area.Area;
+import zombicide.city.area.room.Room;
+import zombicide.city.area.room.TheContinental;
+import zombicide.city.area.room.ThePharmacy;
+import zombicide.city.area.street.Manhole;
+import zombicide.city.area.street.Street;
+import zombicide.city.area.door.Door;
 import zombicide.item.InfraredGlasses;
 import zombicide.item.Item;
 import zombicide.item.Map;

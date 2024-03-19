@@ -26,7 +26,7 @@ all: compile jar test javadoc run-test run
 compile: $(JAVA_SOURCES)
 	$(JAVAC) -sourcepath $(SRC_DIR) -d $(CLASSES_DIR) $^
 
-# Run the main Java application
+# Run the livrable2 Java application
 run:
 	$(JAVA) -cp $(CLASSES_DIR) $(MAIN_CLASS) $(ARGS)
 

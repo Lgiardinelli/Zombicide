@@ -1,9 +1,8 @@
 package zombicide.item;
 
-import zombicide.action.survivor.AreaAction;
 import zombicide.actor.survivor.Survivor;
-import zombicide.area.Area;
-import zombicide.area.room.Room;
+import zombicide.city.area.Area;
+import zombicide.city.area.room.Room;
 import zombicide.city.City;
 import zombicide.util.Direction;
 

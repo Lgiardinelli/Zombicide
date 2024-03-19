@@ -1,10 +1,15 @@
 package zombicide.item.weapon;
 
-public class Axe extends Weapon{
-	
+public class Axe extends Weapon {
+	private static final int NB_DICE_THROWS = 1;
+	private static final int DICE_THRESHOLD = 4;
+	private static final int DAMAGE = 2;
+	private static final int MIN_HITTING_RANGE = 0;
+	private static final int MAX_HITTING_RANGE = 0;
+	private static final boolean IS_NOISY = false;
 	
 	public Axe() {
-		super(1,4,2,0,0,false);
+		super(NB_DICE_THROWS, DICE_THRESHOLD, DAMAGE, MIN_HITTING_RANGE, MAX_HITTING_RANGE, IS_NOISY);
 	}
 
 	public String toString(){
@@ -15,5 +20,4 @@ public class Axe extends Weapon{
 	public void use() {
 
 	}
-
 }

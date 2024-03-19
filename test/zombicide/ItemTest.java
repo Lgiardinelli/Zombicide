@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import zombicide.actor.survivor.Survivor;
-import zombicide.backpack.BackPack;
+import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.city.City;
 import zombicide.item.*;
 import zombicide.item.careItem.CareItem;

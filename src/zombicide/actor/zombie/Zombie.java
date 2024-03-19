@@ -1,7 +1,7 @@
 package zombicide.actor.zombie;
 
 import zombicide.actor.Actor;
-import zombicide.area.Area;
+import zombicide.city.area.Area;
 import zombicide.city.City;
 
 /**

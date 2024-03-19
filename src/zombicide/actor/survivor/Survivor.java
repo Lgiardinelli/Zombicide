@@ -2,11 +2,12 @@ package zombicide.actor.survivor;
 
 import zombicide.city.City;
 import zombicide.actor.Actor;
-import zombicide.area.Area;
-import zombicide.backpack.BackPack;
+import zombicide.city.area.Area;
+import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.item.Item;
+import zombicide.item.Map;
 import zombicide.item.weapon.Pistol;
-import zombicide.role.Role;
+import zombicide.actor.survivor.role.Role;
 import zombicide.util.Expertise;
 
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ import java.util.List;
  * Represents a survivor actor in the game.
  */
 public class Survivor extends Actor {
+    private static final int ACTION_POINTS = 3;
+    private static final int LIFE_POINTS = 5;
 
     /** The skill points of the survivor. */
     private int skillPoints;
@@ -38,8 +41,8 @@ public class Survivor extends Actor {
      */
     public Survivor(City city , Role... roles) {
         this.skillPoints = 0;
-        this.actionPoints = 3;
-        this.lifePoints = 5;
+        this.actionPoints = ACTION_POINTS;
+        this.lifePoints = LIFE_POINTS;
         this.backpack = new BackPack();
         this.handleItem = new Pistol();
         this.roles = new ArrayList<>(Arrays.asList(roles));
@@ -128,5 +131,9 @@ public class Survivor extends Actor {
         }
         this.area = area;
         area.addSurvivor(this);
+    }
+
+    public void setHandleItem(Item i) {
+        this.handleItem = i;
     }
 }
