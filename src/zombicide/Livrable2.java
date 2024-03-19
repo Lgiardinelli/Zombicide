@@ -17,6 +17,7 @@ import zombicide.actor.survivor.role.Snooper;
 import zombicide.util.Direction;
 import zombicide.util.Position;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.List;
 
@@ -139,6 +140,8 @@ public class Livrable2 {
 		for(int i =0 ; i < 5 ; i++){
 			s.getBackpack().addItem(new Riffle());
 		}
+		System.out.println("Item en main avant action :"+s.getHandleItem());
+		System.out.println("BackPack avant action");
 		System.out.println(s.getBackpack().getItems());
 		RandomListChooser<ActorAction> chooser = new RandomListChooser<>();
 
@@ -156,6 +159,8 @@ public class Livrable2 {
 		if (chosenAction != null) {
 			chosenAction.doSomething();
 			this.trainCity.display();
+			System.out.println("BackPack après action");
+			System.out.println("Item en main après action :"+s.getHandleItem());
 			System.out.println(s.getBackpack().getItems());
 		}
 	}
