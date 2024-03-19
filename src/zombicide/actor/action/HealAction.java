@@ -12,15 +12,15 @@ public class HealAction implements ActorAction {
     }
 
     public void doSomething(){
-        this.heal(this.survivor);
+        this.heal();
     }
 
     public void setLifePointsToAdd(int n){
         this.lifePointsToAdd = n;
     }
 
-    public void heal(Survivor s){
-        s.addLifePoints(this.lifePointsToAdd);
+    public void heal(){
+        this.survivor.addLifePoints(this.lifePointsToAdd);
     }
     
 }
