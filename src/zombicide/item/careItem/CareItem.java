@@ -7,9 +7,6 @@ public abstract class CareItem extends Item {
 	public boolean isNoisy = false;
 
 
-	private Survivor survivor;
-
-
 	public void use() {
 
 	}
