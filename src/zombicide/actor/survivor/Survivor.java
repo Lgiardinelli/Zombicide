@@ -5,6 +5,7 @@ import zombicide.actor.Actor;
 import zombicide.city.area.Area;
 import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.item.Item;
+import zombicide.item.Map;
 import zombicide.item.weapon.Pistol;
 import zombicide.actor.survivor.role.Role;
 import zombicide.util.Expertise;
@@ -130,5 +131,9 @@ public class Survivor extends Actor {
         }
         this.area = area;
         area.addSurvivor(this);
+    }
+
+    public void setHandleItem(Item i) {
+        this.handleItem = i;
     }
 }
