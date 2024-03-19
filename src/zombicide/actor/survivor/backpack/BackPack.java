@@ -71,22 +71,44 @@ public class BackPack {
     }
 
 
-    public void swapItemsHandBp(Item fromHand , Item fromBp){
+    /**
+     * Swaps the item in the survivor's hand with an item from his backpack.
+     * Removes the item from the backpack and adds it to the hand.
+     * Updates the survivor's handle item with the item from the backpack.
+     *
+     * @param fromHand The item currently in the survivor's hand.
+     * @param fromBp   The item from the survivor's backpack to be placed in the hand.
+     */
+    public void swapItemsHandBp(Item fromHand, Item fromBp) {
         removeItem(fromBp);
         addItem(fromHand);
         Survivor s = fromHand.getSurvivor();
         s.setHandleItem(fromBp);
     }
 
+
+    /**
+     * Takes an item from the survivor's backpack and equips it in their hand.
+     * Removes the item from the backpack and sets it as the survivor's handle item.
+     *
+     * @param bpItem The item from the survivor's backpack to be equipped in the hand.
+     */
     public void takeAItem(Item bpItem) {
         removeItem(bpItem);
         Survivor s = bpItem.getSurvivor();
         s.setHandleItem(bpItem);
     }
 
-    public boolean canBeAdded(){
+
+    /**
+     * Checks if the backpack can hold more items.
+     *
+     * @return true if the backpack can hold more items, false otherwise.
+     */
+    public boolean canBeAdded() {
         return this.items.size() < 5;
     }
+
 
 
 }

@@ -21,19 +21,27 @@ public class BackPackAction implements ActorAction {
         takeOnHand();
     }
 
-    public void takeOnHand(){
+    /**
+     * Allows the survivor to take an item from their backpack and equip it in their hand.
+     * If the survivor already has an item in their hand, the method swaps it with a randomly chosen item from the backpack.
+     * If the survivor's hand is empty, the method equips a randomly chosen item from the backpack.
+     */
+    public void takeOnHand() {
         BackPack bp = this.survivor.getBackpack();
         List<Item> itemsBp = bp.getItems();
         RandomListChooser<Item> chooser = new RandomListChooser<>();
+
         Item bpItem = chooser.choose(itemsBp);
 
         Item handItem = this.survivor.getHandleItem();
-        if(handItem != null) {
-            bp.swapItemsHandBp(handItem , bpItem);
-        }else{
+
+        if (handItem != null) {
+            bp.swapItemsHandBp(handItem, bpItem);
+        } else {
             bp.takeAItem(bpItem);
         }
     }
+
 
 
 
