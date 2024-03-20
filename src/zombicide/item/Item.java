@@ -8,8 +8,11 @@ public abstract class Item {
 
     protected boolean canOpen;
 
+    protected boolean canAttack;
+
     public Item(){
         this.survivor = null;
+        this.canAttack = false;
     }
 
     public void setSurvivor(Survivor s){
@@ -24,5 +27,9 @@ public abstract class Item {
 
     public boolean canOpen() {
         return this.canOpen;
+    }
+
+    public boolean canAttack() {
+        return this.canAttack;
     }
 }
