@@ -22,7 +22,6 @@ public abstract class Weapon extends Item {
     protected int maxHittingRange;
     protected boolean isNoisy;
 	private int lastShotValue;
-
 	private Survivor survivor;
 
 
@@ -37,6 +36,7 @@ public abstract class Weapon extends Item {
 		this.isNoisy = isNoisy;
 		this.lastShotValue = 0;
 		this.survivor=null;
+		this.canAttack = true;
 	}
 
 
@@ -86,7 +86,7 @@ public abstract class Weapon extends Item {
 		return maxHittingRange;
 	}
 
-	private List<Zombie> shootRange() {
+	public List<Zombie> shootRange() {
 		Area areaWeapon = this.survivor.getArea();
 		City city = this.survivor.getCity();
 		int x = areaWeapon.getX();
@@ -101,8 +101,10 @@ public abstract class Weapon extends Item {
 				x += i*d.getX();
 				y += i*d.getY();
 				if (this.getMinHittingRange() < i) {
-					List<Zombie> zom = city.getArea(new Position(x, y)).getZombies();
-					zombies.addAll(zom);
+					if (!(areaWeapon.isContinental())) {
+						List<Zombie> zom = city.getArea(new Position(x, y)).getZombies();
+						zombies.addAll(zom);
+					}
 				}
 			}
 		}
