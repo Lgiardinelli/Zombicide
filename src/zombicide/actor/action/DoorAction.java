@@ -3,6 +3,7 @@ package zombicide.actor.action;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
 import zombicide.city.area.door.Door;
+import zombicide.item.Item;
 import zombicide.util.listchooser.RandomListChooser;
 import zombicide.util.Direction;
 
@@ -23,11 +24,13 @@ public class DoorAction implements ActorAction {
      */
     public void doSomething(){
         System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
-        List<Door> doors = doorsAround();
-        RandomListChooser<Door> chooser = new RandomListChooser<>();
-        Door door = chooser.choose(doors);
-        door.open();
-        this.survivor.removeActionPoint();
+        if(canOpen()) {
+            List<Door> doors = doorsAround();
+            RandomListChooser<Door> chooser = new RandomListChooser<>();
+            Door door = chooser.choose(doors);
+            door.open();
+            this.survivor.removeActionPoint();
+        }
     }
 
     private List<Door> doorsAround(){
@@ -48,5 +51,10 @@ public class DoorAction implements ActorAction {
             }
         }
         return doors;
+    }
+
+    public boolean canOpen(){
+        Item i = this.survivor.getHandleItem();
+        return i.canOpen();
     }
 }
