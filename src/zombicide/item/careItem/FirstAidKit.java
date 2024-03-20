@@ -20,13 +20,20 @@ public class FirstAidKit extends CareItem {
         h.doSomething();
     }
 
-    public Survivor chooseAPlayer(){
-        Area a = this.survivor.getArea();
-        List<Survivor> survivors = a.getSurvivors();
+    /**
+     * Randomly chooses a survivor from the same area as the current survivor.
+     *
+     * @return The chosen survivor from the current area, or null if no survivors are present.
+     */
+    public Survivor chooseAPlayer() {
+        Area currentArea = this.survivor.getArea();
+        List<Survivor> survivorsInArea = currentArea.getSurvivors();
+
         ListChooser<Survivor> chooser = new RandomListChooser<>();
-        Survivor s = chooser.choose(survivors);
-        return  s;
+
+        return chooser.choose(survivorsInArea);
     }
+
 
 
 }
