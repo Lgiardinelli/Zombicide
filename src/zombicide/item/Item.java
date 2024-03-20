@@ -6,6 +6,8 @@ public abstract class Item {
 
     protected Survivor survivor;
 
+    protected boolean canOpen;
+
     public Item(){
         this.survivor = null;
     }
@@ -19,4 +21,8 @@ public abstract class Item {
     }
 
     public abstract void use();
+
+    public boolean canOpen() {
+        return this.canOpen;
+    }
 }
