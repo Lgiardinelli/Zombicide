@@ -557,7 +557,11 @@ Mardi 19/03 :
 
 
 Mercredi 20/03 :
-
+En ayant lu le projet pour avoir un résumé de ce qu'il nous manque à faire, nous nous sommes posé une question, sachant qu'une arme en main permet de faire l'action d'ouvrir une porte et d'attaquer, comment implémenter ces deux actions.  
+Nous avons convenu que si l'ont utilise l'atribut use d'une arme elle attaque et que si l'action est d'ouvrir une porte, il faut vérifier que le joueur à un item qui permet d'ouvrir une porte pour l'ouvrir.  
+Puis, une autre interrogation, le sujet ne l'indique pas explicitement, est-ce que le survivant qui peut voir l'état des zombies attaque forcment le plus faible (ou le plus proche) ou vraiment aléatoirement.
+Pour la classe AttackAction, nous sommes bloqué sur le fait de savoir quel est le type de zombie pour savoir si l'rme influge les dégats ou non. Il ne faut pas utiliser d'instanceof, nous avons proposé de mettre un getName pour chaqu'un des zombies mais cela faisait bizarre.  
+Nous nous sommes souvenu qu'il y avait un attribut isStrong qui nous permettait de gerer ce cas la.
 
 Jeudi 21/03 :
 
@@ -580,7 +584,7 @@ Mardi 19/03 :
 - Eliès : Finalisation de BackPack (prendre un Item en main)
 
 Mercredi 20/03 :
-
+- Léo : Avancement de la classe AttackAction
 
 Jeudi 21/03 :
 
