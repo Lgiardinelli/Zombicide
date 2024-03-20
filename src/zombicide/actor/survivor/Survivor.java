@@ -136,4 +136,8 @@ public class Survivor extends Actor {
     public void setHandleItem(Item i) {
         this.handleItem = i;
     }
+
+    public void addSkillPoints(int n) {
+        this.skillPoints += n;
+    }
 }
