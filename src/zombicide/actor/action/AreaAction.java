@@ -42,6 +42,6 @@ public class AreaAction implements ActorAction {
 
     @Override
     public void doSomething() {
-
+        displayAreasAround();
     }
 }
