@@ -35,5 +35,8 @@ public class TheContinental extends Room {
         return false;
     }
 
-
+    @Override
+    public boolean isContinental() {
+        return true;
+    }
 }
