@@ -1,6 +1,10 @@
 package zombicide.actor.action;
 
 import zombicide.actor.survivor.Survivor;
+import zombicide.city.City;
+import zombicide.city.area.Area;
+import zombicide.city.area.room.Room;
+import zombicide.util.Direction;
 
 public class AreaAction implements ActorAction {
 
@@ -14,13 +18,30 @@ public class AreaAction implements ActorAction {
      * TODO
      * @return boolean
      */
-    public boolean searchRoom(){
-        return true;
+    private void displayAreasAround(){
+        City city = this.survivor.getCity();
+        for(Direction d : Direction.values()){
+            System.out.print(d.name()+" :");
+            int i = d.getX();
+            int j = d.getY();
+
+            int x = survivor.getArea().getX();
+            int y = survivor.getArea().getY();
+
+            Area a = city.getAreas()[y+j][x+i];
+
+            a.displayActors();
+            System.out.println();
+            if(city.isARoom(a)){
+                Room r = (Room) a;
+                r.displayItems();
+            }
+            System.out.println();
+        }
     }
 
     @Override
     public void doSomething() {
-        System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
-        this.survivor.getArea().displayActors();
+
     }
 }
