@@ -23,6 +23,12 @@ public abstract class Actor {
 
     protected City city;
 
+    public Actor(City city, int lifePoints, int actionPoints) {
+        this.city = city;
+        this.lifePoints = lifePoints;
+        this.actionPoints = actionPoints;
+    }
+
     public Area getArea() {
         return area;
     }
@@ -52,24 +58,6 @@ public abstract class Actor {
     }
 
     /**
-     * Retrieves the action points of the actor.
-     *
-     * @return the action points of the actor
-     */
-    public int getActionPoints() {
-        return actionPoints;
-    }
-
-    /**
-     * Sets the action points of the actor.
-     *
-     * @param actionPoints the action points to set
-     */
-    public void setActionPoints(int actionPoints) {
-        this.actionPoints = actionPoints;
-    }
-
-    /**
      * Reduces the life points of the character by the specified amount of damage.
      *
      * @param damage The amount of damage to be subtracted from the character's life points.
@@ -86,5 +74,8 @@ public abstract class Actor {
     public void removeActionPoint() {
         this.actionPoints--;
     }
-}
 
+    public int getActionPoints() {
+        return actionPoints;
+    }
+}
