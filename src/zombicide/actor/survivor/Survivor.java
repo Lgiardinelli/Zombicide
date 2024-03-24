@@ -5,7 +5,6 @@ import zombicide.actor.Actor;
 import zombicide.city.area.Area;
 import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.item.Item;
-import zombicide.item.Map;
 import zombicide.item.weapon.Pistol;
 import zombicide.actor.survivor.role.Role;
 import zombicide.util.Expertise;
@@ -28,7 +27,7 @@ public class Survivor extends Actor {
     private final BackPack backpack;
 
     /** The item currently handled by the survivor. */
-    private Item handleItem;
+    private Item itemHeld;
 
     /** The roles associated with the survivor. */
     private final List<Role> roles;
@@ -40,28 +39,14 @@ public class Survivor extends Actor {
      * @param roles The roles of the survivor.
      */
     public Survivor(City city , Role... roles) {
+        super(city, LIFE_POINTS, ACTION_POINTS);
         this.skillPoints = 0;
-        this.actionPoints = ACTION_POINTS;
-        this.lifePoints = LIFE_POINTS;
-        this.backpack = new BackPack();
-        this.handleItem = new Pistol();
+        this.backpack = new BackPack(this);
+        this.itemHeld = new Pistol();
         this.roles = new ArrayList<>(Arrays.asList(roles));
         for (Role role : this.roles)
             role.setSurvivor(this);
-        this.city = city;
-    }
-
-    /**
-     * Handles the given item by the survivor. If the survivor already has a handled item,
-     * it is added to the backpack before setting the new handled item.
-     *
-     * @param item The item to be handled by the survivor.
-     */
-    public void handleItem(Item item) {
-        if (this.handleItem != null) {
-            this.backpack.addItem(this.handleItem);
-        }
-        this.handleItem = item;
+        this.setArea(this.city.getSpawn());
     }
 
     /**
@@ -87,8 +72,19 @@ public class Survivor extends Actor {
      *
      * @return The handled item.
      */
-    public Item getHandleItem() {
-        return handleItem;
+    public Item getItemHeld() {
+        return itemHeld;
+    }
+    public void setItemHeld(Item i) {
+        if (this.itemHeld != null) {
+            this.backpack.addItem(this.itemHeld);
+        }
+        i.setSurvivor(this);
+        this.itemHeld = i;
+    }
+
+    public boolean holdAnItem() {
+        return this.itemHeld != null;
     }
 
     public boolean hasRoles() {
@@ -131,10 +127,6 @@ public class Survivor extends Actor {
         }
         this.area = area;
         area.addSurvivor(this);
-    }
-
-    public void setHandleItem(Item i) {
-        this.handleItem = i;
     }
 
     public void addSkillPoints(int n) {
