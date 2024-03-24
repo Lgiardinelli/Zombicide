@@ -570,7 +570,11 @@ Vendredi 22/03 :
 
 
 Week-end :
-
+Afin d'avoir une bonne séparation des responsabilités, nous avons décidé de créer une classe abstraite AttackAction qui sera la classe mère d'AttackZombie et AttackSurvivor. Ainsi, chaque classe fille aura sa propre implémentation de la méthode doSomething.
+Nous avons également décidé qu'à la création d'un acteur, ce dernier soit directement affecté à une cellule de la city, city étant passée en paramètre du constructeur de l'acteur. Ainsi, chaque acteur est directement dans une cellule de la ville.
+Le survivant est positionné sur le spawn, et les zombies sont positionnés sur une bouche d'égout aléatoire.
+Nous pensons que l'utilisation de mocks pour les tests unitaires serait une bonne idée, mais nous n'avons pas encore eu le temps de les implémenter.
+En effet, certaines méthodes ont pas mal de dépendances, et il serait plus simple de les tester avec des mocks. À discuter avec notre chargé de TD.
 
 
 __Partage de taches :__
@@ -593,7 +597,12 @@ Vendredi 22/03 :
 
 
 Week-end :
-
+- Léo, Dylan : 
+Création de la classe AttackAction et de ses classes filles AttackZombie et AttackSurvivor.
+Mise à jour de la logique de création des acteurs pour qu'ils soient directement dans une cellule de la ville.
+Création de la méthode qui permet de placer les zombies sur une bouche d'égout aléatoire.
+Début de réflexion sur l'utilisation de mocks pour les tests unitaires.
+Création de tests unitaires pour les nouvelles méthodes ajoutées. Dont les tests pour les nouvelles actions.
 
 ## Semaine 9
 __Objectif de la semaine :__  
