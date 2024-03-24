@@ -3,6 +3,7 @@ package zombicide.city.area.room;
 import zombicide.city.area.Area;
 import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.item.Item;
+import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
  */
 public class Room extends Area {
 	private static final char name = 'R';
+	private static final RandomListChooser<Item> ITEM_CHOOSER = new RandomListChooser<>();
 
 	public List<Item> items;
 
@@ -74,5 +76,22 @@ public class Room extends Area {
 		System.out.println('\n');
 	}
 
+	/**
+	 * Retrieves a random item from this room.
+	 *
+	 * @return A random item from this room if there are any, null otherwise.
+	 */
+	public Item getRandomItem() {
+		return ITEM_CHOOSER.choose(this.items);
+	}
+
+	public boolean hasItems() {
+		return !this.items.isEmpty();
+	}
+
+	@Override
+	public boolean isARoom() {
+		return true;
+	}
 }
 
