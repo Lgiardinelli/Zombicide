@@ -3,6 +3,8 @@ package zombicide.actor.zombie;
 import zombicide.actor.Actor;
 import zombicide.city.area.Area;
 import zombicide.city.City;
+import zombicide.city.area.street.Manhole;
+import zombicide.util.listchooser.RandomListChooser;
 
 /**
  * Abstract class representing a zombie actor in the game.
@@ -14,12 +16,18 @@ public abstract class Zombie extends Actor {
 
     /** Indicates whether the zombie is strong or not. */
     protected boolean isStrong;
+    private static final RandomListChooser<Manhole> MANHOLE_CHOOSER = new RandomListChooser<>();
 
-    public Zombie(int attackPoints, boolean isStrong, City city) {
+    public Zombie(int attackPoints, int lifePoints, int actionPoints, boolean isStrong, City city) {
+        super(city, lifePoints, actionPoints);
 		this.attackPoints = attackPoints;
 		this.isStrong = isStrong;
-        this.city = city;
+        this.setArea(chooseRandomManhole());
 	}
+
+    private Manhole chooseRandomManhole() {
+        return MANHOLE_CHOOSER.choose(this.city.getManholes());
+    }
 
 	/**
      * Gets whether the zombie is strong.
