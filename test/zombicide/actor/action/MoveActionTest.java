@@ -1,4 +1,4 @@
-package zombicide.action;
+package zombicide.actor.action;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,7 +7,6 @@ import zombicide.actor.zombie.Zombie;
 import zombicide.util.Position;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Walker;
-import zombicide.actor.action.MoveAction;
 import zombicide.city.area.Area;
 import zombicide.city.area.street.Street;
 import zombicide.util.Direction;
@@ -46,6 +45,6 @@ public class MoveActionTest {
     @Test
     public void testDoSomething(){
         m1.doSomething();
-        assertEquals(s1.getArea(), city.getArea(new Position(2,4)));
+        assertEquals(s1.getArea(), city.getArea(2,4));
     }
 }

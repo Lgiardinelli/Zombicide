@@ -1,11 +1,7 @@
-package zombicide;
+package zombicide.actor.survivor.role;
 
 import org.junit.jupiter.api.BeforeEach;
 import zombicide.actor.survivor.Survivor;
-import zombicide.actor.survivor.role.Fighter;
-import zombicide.actor.survivor.role.Lucky;
-import zombicide.actor.survivor.role.Snooper;
-import zombicide.actor.survivor.role.Healer;
 import zombicide.city.City;
 
 public class RoleTest {

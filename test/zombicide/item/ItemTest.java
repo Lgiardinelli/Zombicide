@@ -1,4 +1,4 @@
-package zombicide;
+package zombicide.item;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -40,7 +40,7 @@ public class ItemTest {
         this.infraredGlasses = new InfraredGlasses();
         this.map = new Map();
         this.masterKey = new MasterKey();
-        this.backPack = new BackPack();
+        this.backPack = new BackPack(null);
         this.city = new City(5,5);
         this.survivor = new Survivor(this.city);
     }
