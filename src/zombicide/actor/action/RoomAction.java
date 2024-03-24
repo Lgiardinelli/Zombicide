@@ -4,13 +4,9 @@ import zombicide.actor.survivor.Survivor;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
 import zombicide.actor.survivor.backpack.BackPack;
-import zombicide.city.City;
 import zombicide.item.Item;
-import zombicide.util.listchooser.RandomListChooser;
 
-import java.util.List;
-
-public class RoomAction implements ActorAction {
+public class RoomAction implements Action {
 
     private Survivor survivor;
 
@@ -34,36 +30,24 @@ public class RoomAction implements ActorAction {
      * If the backpack is full, the method swaps a randomly chosen item from the backpack with the chosen item from the room.
      */
     private void rummage() {
-        Area a = this.survivor.getArea();
-        City city = this.survivor.getCity();
+        Area area = this.survivor.getArea();
 
-        if (city.isARoom(a)) {
-            Room r = (Room) a;
-            List<Item> roomsItems = r.getItems();
+        if (!area.isARoom())
+            return;
 
-            BackPack bp = this.survivor.getBackpack();
+        Room room = (Room) area;
+        BackPack backpack = this.survivor.getBackpack();
 
-            RandomListChooser<Item> chooser = new RandomListChooser<>();
+        if (room.hasItems())
+            return;
 
-            Item chosenItemRoom = chooser.choose(roomsItems);
+        Item roomItem = room.getRandomItem();
 
-            if (bp.canBeAdded()) {
-                bp.addItem(chosenItemRoom);
-            } else {
-                List<Item> bpItems = bp.getItems();
-
-                Item chosenItemBp = chooser.choose(bpItems);
-
-                if (chosenItemBp != null && chosenItemRoom != null) {
-                    bp.swapItemsRoomBp(chosenItemRoom, chosenItemBp);
-                }
-            }
+        if (backpack.stillHaveSpace())
+            backpack.addItem(roomItem);
+        else {
+            Item oldBpItem = backpack.addItem(roomItem);
+            room.addItem(oldBpItem);
         }
     }
-
 }
-
-
-
-
-
