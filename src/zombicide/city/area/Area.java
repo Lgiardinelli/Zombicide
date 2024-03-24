@@ -248,4 +248,8 @@ public abstract class Area {
     public boolean isContinental() {
         return false;
     }
+
+    public boolean isARoom() {
+        return false;
+    }
 }
