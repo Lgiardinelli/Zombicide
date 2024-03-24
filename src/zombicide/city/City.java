@@ -30,6 +30,7 @@ public class City {
     private static final String CLOSE_DOWN = "------";
     private List<Room> rooms;
     private List<Item> items;
+    protected List<Manhole> manholes;
 
     private static final int MINIMAL_ITEMS = 1;
 
@@ -46,6 +47,7 @@ public class City {
         this.random = new Random();
         this.rooms = new ArrayList<>();
         this.items = new ArrayList<>();
+        this.manholes = new ArrayList<>();
         initCity();
     }
     
@@ -58,8 +60,8 @@ public class City {
         return this.areas;
     }
 
-    public Area getArea(Position p) {
-        return this.areas[p.getY()][p.getX()];
+    public Area getArea(int x, int y) {
+        return this.areas[y][x];
     }
 
     /**
@@ -258,6 +260,11 @@ public class City {
         this.areas[crossroadPos.getY()][bottomRightPos.getX()] = new Manhole(bottomRightPos.getX(), crossroadPos.getY());
         this.areas[bottomRightPos.getY()][crossroadPos.getX()] = new Manhole(crossroadPos.getX(), bottomRightPos.getY());
         this.areas[crossroadPos.getY()][0] = new Manhole(0, crossroadPos.getY());
+
+        this.manholes.add((Manhole) this.areas[0][crossroadPos.getX()]);
+        this.manholes.add((Manhole) this.areas[crossroadPos.getY()][bottomRightPos.getX()]);
+        this.manholes.add((Manhole) this.areas[bottomRightPos.getY()][crossroadPos.getX()]);
+        this.manholes.add((Manhole) this.areas[crossroadPos.getY()][0]);
     }
 
     /**
@@ -422,11 +429,9 @@ public class City {
     }
 
     public Area getCellByDirection(Area a, Direction d) {
-        int x = a.getX();
-        int y = a.getY();
-        x = d.getX();
-        y = d.getY();
-        return this.getArea(new Position(x, y));
+        int x = d.getX();
+        int y = d.getY();
+        return this.getArea(x, y);
     }
 
 
@@ -510,8 +515,7 @@ public class City {
      *         The result will be in the range [x, y).
      */
     private int throwDice(int x, int y) {
-        int res = random.nextInt(y - x) + x;
-        return res;
+        return random.nextInt(y - x) + x;
     }
 
 
@@ -523,7 +527,11 @@ public class City {
         return spawn;
     }
 
-    public boolean isARoom(Area a){
-        return this.rooms.contains(a);
+    public boolean containsRoom(Room r){
+        return this.rooms.contains(r);
+    }
+
+    public List<Manhole> getManholes() {
+        return manholes;
     }
 }
