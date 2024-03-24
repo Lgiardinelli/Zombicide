@@ -1,4 +1,4 @@
-package zombicide;
+package zombicide.city.area;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,7 +9,6 @@ import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Walker;
-import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
 import zombicide.city.area.street.Street;
 import zombicide.city.area.room.TheContinental;
@@ -36,6 +35,7 @@ class AreaTest {
 	
 	@BeforeEach
 	public void before() {
+		this.city = new City(10,10);
 		//Area
 		this.room = new Room(6,7);
 		this.street = new Street(4,5);
