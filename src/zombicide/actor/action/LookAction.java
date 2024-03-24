@@ -4,7 +4,7 @@ import zombicide.actor.survivor.Survivor;
 import zombicide.city.area.Area;
 import zombicide.util.Direction;
 
-public class LookAction implements ActorAction {
+public class LookAction implements Action {
 
     private Survivor survivor;
 

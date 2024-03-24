@@ -3,7 +3,7 @@ package zombicide.actor.action;
 import zombicide.actor.survivor.Survivor;
 import zombicide.item.Item;
 
-public class ItemAction implements ActorAction {
+public class ItemAction implements Action {
 
     private Survivor survivor;
 
@@ -12,7 +12,7 @@ public class ItemAction implements ActorAction {
     }
     @Override
     public void doSomething(){
-        Item itemUsed = survivor.getHandleItem();
+        Item itemUsed = survivor.getItemHeld();
         itemUsed.use();
         this.survivor.removeActionPoint();
     }

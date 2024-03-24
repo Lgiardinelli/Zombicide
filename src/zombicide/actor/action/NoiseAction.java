@@ -3,7 +3,7 @@ package zombicide.actor.action;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.area.Area;
 
-public class NoiseAction implements ActorAction {
+public class NoiseAction implements Action {
 
     private Survivor survivor;
 

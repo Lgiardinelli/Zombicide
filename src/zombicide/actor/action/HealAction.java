@@ -2,7 +2,7 @@ package zombicide.actor.action;
 
 import zombicide.actor.survivor.Survivor;
 
-public class HealAction implements ActorAction {
+public class HealAction implements Action {
 
     private final Survivor survivor;
     private int lifePointsToAdd;

@@ -1,6 +1,5 @@
 package zombicide.actor.action;
 
-import zombicide.actor.action.ActorAction;
 import zombicide.actor.Actor;
 import zombicide.city.City;
 import zombicide.util.Direction;
@@ -9,7 +8,7 @@ import zombicide.util.Position;
 /**
  * Represents an action for moving an Actor in a specified direction.
  */
-public class MoveAction implements ActorAction {
+public class MoveAction implements Action {
 
     /** The direction in which the Actor will move. */
     private final Direction direction;
@@ -48,7 +47,7 @@ public class MoveAction implements ActorAction {
     public void doSomething() {
         Position p = positionAfterMoving();
         City city = this.actor.getCity();
-        this.actor.setArea(city.getArea(p));
+        this.actor.setArea(city.getArea(p.getX(), p.getY()));
         this.actor.removeActionPoint();
     }
 }
