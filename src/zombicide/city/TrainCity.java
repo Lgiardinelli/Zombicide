@@ -23,5 +23,6 @@ public class TrainCity extends City {
 
     @Override
     protected void createManholes(Position crossroadPos, Position bottomRightPos) {
+        this.manholes.add((Manhole) this.getSpawn());
     }
 }
