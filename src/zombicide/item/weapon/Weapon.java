@@ -6,7 +6,6 @@ import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
 import zombicide.item.Item;
 import zombicide.util.Direction;
-import zombicide.util.Position;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,7 +92,7 @@ public abstract class Weapon extends Item {
 		int y = areaWeapon.getY();
 		List<Zombie> zombies = new ArrayList<>();
 		if (this.getMinHittingRange() == 0) {
-			List<Zombie> zom = city.getArea(new Position(x, y)).getZombies();
+			List<Zombie> zom = city.getArea(x, y).getZombies();
 			zombies.addAll(zom);
 		}
 		for (Direction d : Direction.values()) {
@@ -102,7 +101,7 @@ public abstract class Weapon extends Item {
 				y += i*d.getY();
 				if (this.getMinHittingRange() < i) {
 					if (!(areaWeapon.isContinental())) {
-						List<Zombie> zom = city.getArea(new Position(x, y)).getZombies();
+						List<Zombie> zom = city.getArea(x, y).getZombies();
 						zombies.addAll(zom);
 					}
 				}
