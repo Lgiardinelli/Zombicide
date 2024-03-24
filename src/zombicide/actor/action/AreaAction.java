@@ -6,7 +6,7 @@ import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
 import zombicide.util.Direction;
 
-public class AreaAction implements ActorAction {
+public class AreaAction implements Action {
 
     private Survivor survivor;
 
@@ -32,10 +32,11 @@ public class AreaAction implements ActorAction {
 
             a.displayActors();
             System.out.println();
-            if(city.isARoom(a)){
-                Room r = (Room) a;
+            if(!a.isARoom())
+                return;
+            Room r = (Room) a;
+            if (city.containsRoom(r))
                 r.displayItems();
-            }
             System.out.println();
         }
     }
