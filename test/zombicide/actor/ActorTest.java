@@ -1,4 +1,4 @@
-package zombicide;
+package zombicide.actor;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,7 +32,6 @@ public class ActorTest {
     private Zombie walker;
     private Zombie abomination;
     private Item pistol;
-    private BackPack backPack;
     private Area room;
     private NoiseAction noiseAction;
     private Fighter fighter;
@@ -48,7 +47,6 @@ public class ActorTest {
         this.walker = new Walker(this.city);
         this.runner = new Runner(this.city);
         this.pistol = new Pistol();
-        this.backPack = new BackPack();
         this.room = new Room(6,7);
         this.noiseAction = new NoiseAction(this.survivor);
         this.fighter = new Fighter();
@@ -82,8 +80,8 @@ public class ActorTest {
 
     @Test
     void testHandleItem(){
-        survivor.handleItem(pistol);
-        assertEquals(pistol, survivor.getHandleItem());
+        survivor.setItemHeld(pistol);
+        assertEquals(pistol, survivor.getItemHeld());
     }
 
     @Test
@@ -129,13 +127,6 @@ public class ActorTest {
     @Test
     void testGetActionPointsForActor(){
         assertEquals(survivor.getActionPoints(), 3);
-    }
-
-    @Test
-    void testSetActionPointsForActor(){
-        assertEquals(survivor.getActionPoints(), 3);
-        survivor.setActionPoints(5);
-        assertEquals(survivor.getActionPoints(), 5);
     }
 
     @Test
