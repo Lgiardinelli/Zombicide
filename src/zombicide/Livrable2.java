@@ -15,9 +15,7 @@ import zombicide.actor.survivor.role.Healer;
 import zombicide.actor.survivor.role.Lucky;
 import zombicide.actor.survivor.role.Snooper;
 import zombicide.util.Direction;
-import zombicide.util.Position;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.List;
 
@@ -53,10 +51,10 @@ public class Livrable2 {
 		city.getAreas()[0][1].getDoor(Direction.DOWN).open();
 		city.getAreas()[0][1].getDoor(Direction.LEFT).open();
 
-		new Survivor(this.city,new Fighter()).setArea(city.getSpawn());
-		new Survivor(this.city,new Healer()).setArea(city.getSpawn());
-		new Survivor(this.city,new Lucky()).setArea(city.getSpawn());
-		new Survivor(this.city,new Snooper()).setArea(city.getSpawn());
+		new Survivor(this.city,new Fighter());
+		new Survivor(this.city,new Healer());
+		new Survivor(this.city,new Lucky());
+		new Survivor(this.city,new Snooper());
 
 		city.display();
 	}
@@ -68,15 +66,10 @@ public class Livrable2 {
 		trainCity.getAreas()[0][1].getDoor(Direction.DOWN).open();
 		trainCity.getAreas()[0][1].getDoor(Direction.LEFT).open();
 
-		Survivor fighter = new Survivor(this.city,new Fighter());
-		Survivor healer = new Survivor(this.city,new Healer());
-		Survivor lucky = new Survivor(this.city,new Lucky());
-		Survivor snooper = new Survivor(this.city,new Snooper());
-
-		fighter.setArea(trainCity.getSpawn());
-		healer.setArea(trainCity.getSpawn());
-		lucky.setArea(trainCity.getSpawn());
-		snooper.setArea(trainCity.getSpawn());
+		new Survivor(this.trainCity,new Fighter());
+		new Survivor(this.trainCity,new Healer());
+		new Survivor(this.trainCity,new Lucky());
+		new Survivor(this.trainCity,new Snooper());
 
 		List<Survivor> survivors = trainCity.getSpawn().getSurvivors();
 
@@ -102,7 +95,7 @@ public class Livrable2 {
 			System.out.printf("Survivant %d : Rôles : %s | Item en main : %s | Contenu sac : %s%n",
 					i++,
 					survivor.getRoles(),
-					survivor.getHandleItem(),
+					survivor.getItemHeld(),
 					survivor.getBackpack().getItems()
 			);
 		}
@@ -128,47 +121,46 @@ public class Livrable2 {
 
 	private void giveHealingFiask(List<Survivor> survivors) {
 		for (Survivor survivor : survivors)
-			survivor.handleItem(new HealingFiask());
+			survivor.setItemHeld(new HealingFiask());
 	}
 
 	private void chooseRandomSurvivorAction() {
-		Survivor s = new Survivor(this.trainCity);
-		s.setArea(this.trainCity.getArea(new Position(3,3)));
+		Survivor survivor = new Survivor(this.trainCity);
+		survivor.setArea(this.trainCity.getArea(3,3));
 		Map m = new Map();
-		m.setSurvivor(s);
-		s.setHandleItem(m);
+		survivor.setItemHeld(m);
 		for(int i =0 ; i < 5 ; i++){
-			s.getBackpack().addItem(new Riffle());
+			survivor.getBackpack().addItem(new Riffle());
 		}
-		System.out.println("Item en main avant action :"+s.getHandleItem());
+		System.out.println("Item en main avant action :"+survivor.getItemHeld());
 		System.out.println("BackPack avant action");
-		System.out.println(s.getBackpack().getItems());
-		RandomListChooser<ActorAction> chooser = new RandomListChooser<>();
+		System.out.println(survivor.getBackpack().getItems());
+		RandomListChooser<Action> chooser = new RandomListChooser<>();
 
-		List<ActorAction> actions = Arrays.asList(
+		List<Action> actions = Arrays.asList(
 				null,
-				new RoomAction(s),
-				new BackPackAction(s),
-				new DoorAction(s),
-				new ItemAction(s),
-				new NoiseAction(s),
-				new AreaAction(s),
-				new LookAction(s)
+				new RoomAction(survivor),
+				new BackPackAction(survivor),
+				new DoorAction(survivor),
+				new ItemAction(survivor),
+				new NoiseAction(survivor),
+				new AreaAction(survivor),
+				new LookAction(survivor)
 		);
-		ActorAction chosenAction = chooser.choose(actions);
+		Action chosenAction = chooser.choose(actions);
 		if (chosenAction != null) {
 			chosenAction.doSomething();
 			this.trainCity.display();
 			System.out.println("BackPack après action");
-			System.out.println("Item en main après action :"+s.getHandleItem());
-			System.out.println(s.getBackpack().getItems());
+			System.out.println("Item en main après action :"+survivor.getItemHeld());
+			System.out.println(survivor.getBackpack().getItems());
 		}
 	}
 
-	private static int parseInt(String v) {
+	private static int parseInt(String s) {
 		String errorMsg = "Les arguments passés en paramètre doivent être des entiers supérieurs à 4 !";
 		try {
-			int n = Integer.parseInt(v);
+			int n = Integer.parseInt(s);
 			if (n < 5)
 				throw new IllegalArgumentException(errorMsg);
 			return n;
