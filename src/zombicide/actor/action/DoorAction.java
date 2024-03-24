@@ -10,7 +10,7 @@ import zombicide.util.Direction;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoorAction implements ActorAction {
+public class DoorAction implements Action {
 
     private final Survivor survivor;
 
@@ -54,7 +54,7 @@ public class DoorAction implements ActorAction {
     }
 
     public boolean canOpen(){
-        Item i = this.survivor.getHandleItem();
+        Item i = this.survivor.getItemHeld();
         return i.canOpen();
     }
 }
