@@ -1,14 +1,9 @@
 package zombicide.actor.action;
 
-
-import zombicide.actor.survivor.Survivor;
 import zombicide.actor.survivor.backpack.BackPack;
-import zombicide.item.Item;
-import zombicide.util.listchooser.RandomListChooser;
+import zombicide.actor.survivor.Survivor;
 
-import java.util.List;
-
-public class BackPackAction implements ActorAction {
+public class BackPackAction implements Action {
 
     private Survivor survivor;
 
@@ -18,7 +13,7 @@ public class BackPackAction implements ActorAction {
 
     public void doSomething() {
         System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
-        takeOnHand();
+        holdRandomItem();
         this.survivor.removeActionPoint();
     }
 
@@ -27,23 +22,11 @@ public class BackPackAction implements ActorAction {
      * If the survivor already has an item in their hand, the method swaps it with a randomly chosen item from the backpack.
      * If the survivor's hand is empty, the method equips a randomly chosen item from the backpack.
      */
-    public void takeOnHand() {
-        BackPack bp = this.survivor.getBackpack();
-        List<Item> itemsBp = bp.getItems();
-        RandomListChooser<Item> chooser = new RandomListChooser<>();
+    private void holdRandomItem() {
+        BackPack backpack = survivor.getBackpack();
+        if (backpack.getItems().isEmpty())
+            return;
 
-        Item bpItem = chooser.choose(itemsBp);
-
-        Item handItem = this.survivor.getHandleItem();
-
-        if (handItem != null) {
-            bp.swapItemsHandBp(handItem, bpItem);
-        } else {
-            bp.takeAItem(bpItem);
-        }
+        survivor.setItemHeld(backpack.getRandomItem());
     }
-
-
-
-
 }
