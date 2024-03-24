@@ -1,4 +1,4 @@
-package zombicide.areaTest;
+package zombicide.city.area;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,7 +22,7 @@ class RoomTest {
 	public void before() {
 		room = new Room(5,6);
 		door = new Door();
-		backpack = new BackPack();
+		backpack = new BackPack(null);
 	}
 	
 	@Test

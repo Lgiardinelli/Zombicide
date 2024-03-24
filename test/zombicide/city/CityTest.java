@@ -1,4 +1,4 @@
-package zombicide;
+package zombicide.city;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,11 +1,10 @@
-package zombicide;
+package zombicide.actor.survivor.backpack;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.item.InfraredGlasses;
 import zombicide.item.MasterKey;
 import zombicide.item.careItem.FirstAidKit;
@@ -31,7 +30,7 @@ class BackPackTest {
 
     @BeforeEach
     public void before() {
-        backpack = new BackPack();
+        backpack = new BackPack(null);
         item1 = new Pistol();
         item2 = new FirstAidKit();
         item3 = new Riffle();
