@@ -10,13 +10,16 @@ public abstract class Item {
 
     protected boolean canAttack;
 
-    protected boolean isNoisy;
+    protected boolean isNoisyDoor;
+
+    protected boolean isNoisyAttack;
 
     public Item(){
         this.survivor = null;
         this.canAttack = false;
         this.canOpen = false;
-        this.isNoisy = false;
+        this.isNoisyDoor = false;
+        this.isNoisyAttack = false;
     }
 
     public void setSurvivor(Survivor s){
@@ -36,4 +39,6 @@ public abstract class Item {
     public boolean canAttack() {
         return this.canAttack;
     }
+
+
 }
