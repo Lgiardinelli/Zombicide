@@ -181,4 +181,10 @@ public class ActorTest {
         assertEquals(survivor.getLifePoints(), 5);
     }
 
+    @Test
+    public void testAddSkillPoints(){
+        survivor.addSkillPoints(5);
+        assertEquals(5, survivor.getSkillPoints());
+    }
+
 }
