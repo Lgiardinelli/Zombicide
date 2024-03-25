@@ -19,20 +19,17 @@ public abstract class Weapon extends Item {
     protected int damage;
     protected int minHittingRange;
     protected int maxHittingRange;
-    protected boolean isNoisy;
 	private int lastShotValue;
 	private Survivor survivor;
 
 
-    public Weapon(int nbDiceThrows, int diceThreshold, int damage, int minHittingRange, int maxHittingRange,
-			boolean isNoisy) {
+    public Weapon(int nbDiceThrows, int diceThreshold, int damage, int minHittingRange, int maxHittingRange) {
 		super();
 		this.nbDiceThrows = nbDiceThrows;
 		this.diceThreshold = diceThreshold;
 		this.damage = damage;
 		this.minHittingRange = minHittingRange;
 		this.maxHittingRange = maxHittingRange;
-		this.isNoisy = isNoisy;
 		this.lastShotValue = 0;
 		this.survivor=null;
 		this.canAttack = true;
