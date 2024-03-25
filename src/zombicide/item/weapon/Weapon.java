@@ -32,7 +32,6 @@ public abstract class Weapon extends Item {
 		this.maxHittingRange = maxHittingRange;
 		this.lastShotValue = 0;
 		this.canAttack = true;
-		this.canOpen = true;
 		this.isNoisyDoor = true;
 	}
 
