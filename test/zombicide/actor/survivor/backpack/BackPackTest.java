@@ -66,6 +66,13 @@ class BackPackTest {
         assertFalse(backpack.getItems().contains(item1));
     }
 
-
+    @Test
+    void testGetRandomItem(){
+        backpack.addItem(item1);
+        backpack.addItem(item2);
+        backpack.addItem(item3);
+        Item randomItem = backpack.getRandomItem();
+        assertTrue(backpack.getItems().contains(randomItem));
+    }
 
 }
