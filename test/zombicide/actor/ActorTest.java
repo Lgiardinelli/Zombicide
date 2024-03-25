@@ -12,7 +12,6 @@ import zombicide.actor.zombie.Runner;
 import zombicide.actor.zombie.Walker;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
-import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.city.City;
 import zombicide.item.Item;
 import zombicide.item.weapon.*;
@@ -31,7 +30,7 @@ public class ActorTest {
     private Zombie runner;
     private Zombie walker;
     private Zombie abomination;
-    private Item pistol;
+    private Item riffle;
     private Area room;
     private NoiseAction noiseAction;
     private Fighter fighter;
@@ -46,7 +45,7 @@ public class ActorTest {
         this.abomination = new Abomination(this.city);
         this.walker = new Walker(this.city);
         this.runner = new Runner(this.city);
-        this.pistol = new Pistol();
+        this.riffle = new Riffle();
         this.room = new Room(6,7);
         this.noiseAction = new NoiseAction(this.survivor);
         this.fighter = new Fighter();
@@ -80,8 +79,8 @@ public class ActorTest {
 
     @Test
     void testHandleItem(){
-        survivor.setItemHeld(pistol);
-        assertEquals(pistol, survivor.getItemHeld());
+        survivor.setItemHeld(riffle);
+        assertEquals(riffle, survivor.getItemHeld());
     }
 
     @Test
@@ -185,6 +184,12 @@ public class ActorTest {
     public void testAddSkillPoints(){
         survivor.addSkillPoints(5);
         assertEquals(5, survivor.getSkillPoints());
+    }
+
+    @Test
+    public void testHoldAnItemOfSurvivor(){
+        survivor.setItemHeld(riffle);
+        assertTrue(survivor.holdAnItem());
     }
 
 }
