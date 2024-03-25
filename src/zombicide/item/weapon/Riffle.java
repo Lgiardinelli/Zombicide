@@ -9,7 +9,8 @@ public class Riffle extends Weapon{
 	private static final boolean IS_NOISY = true;
 	
 	public Riffle() {
-		super(NB_DICE_THROWS, DICE_THRESHOLD, DAMAGE, MIN_HITTING_RANGE, MAX_HITTING_RANGE, IS_NOISY);
+		super(NB_DICE_THROWS, DICE_THRESHOLD, DAMAGE, MIN_HITTING_RANGE, MAX_HITTING_RANGE);
+		this.isNoisyUse = true;
 	}
 
 	public String toString(){
