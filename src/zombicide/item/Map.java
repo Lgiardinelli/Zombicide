@@ -4,8 +4,11 @@ import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
 
 public class Map extends Item {
-	public boolean isNoisy = true;
 
+	public Map(){
+		super();
+		this.isNoisyUse = true;
+	}
 	public String toString(){
 		return "map";
 	}
