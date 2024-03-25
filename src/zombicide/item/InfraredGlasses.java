@@ -11,9 +11,6 @@ public class InfraredGlasses extends Item {
 	public boolean isNoisy = false;
 
 	private Survivor survivor;
-	public InfraredGlasses() {
-		this.survivor = null;
-	}
 
 	public String toString(){
 		return "infrared glasses";
