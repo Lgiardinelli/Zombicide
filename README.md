@@ -615,7 +615,6 @@ __Réflexion du groupe :__
 
 Lundi 25/03 :
 
-
 Mardi 26/03 :
 
 
@@ -636,6 +635,7 @@ __Partage de taches :__
 
 Lundi 25/03 :
 
+- Théophane : Revue et correction des tests avec de multiple condition et ajout de tests
 
 Mardi 26/03 :
 
