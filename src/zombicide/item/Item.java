@@ -40,5 +40,11 @@ public abstract class Item {
         return this.canAttack;
     }
 
+    public boolean isNoisyWhenUsedToOpenDoor(){
+        return this.isNoisyDoor;
+    }
+    public boolean isNoisyWhenUsedToAttack(){
+        return this.isNoisyAttack;
+    }
 
 }
