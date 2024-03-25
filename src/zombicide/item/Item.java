@@ -12,14 +12,14 @@ public abstract class Item {
 
     protected boolean isNoisyDoor;
 
-    protected boolean isNoisyAttack;
+    protected boolean isNoisyUse;
 
     public Item(){
         this.survivor = null;
         this.canAttack = false;
         this.canOpen = false;
         this.isNoisyDoor = false;
-        this.isNoisyAttack = false;
+        this.isNoisyUse = false;
     }
 
     public void setSurvivor(Survivor s){
@@ -43,8 +43,8 @@ public abstract class Item {
     public boolean isNoisyWhenUsedToOpenDoor(){
         return this.isNoisyDoor;
     }
-    public boolean isNoisyWhenUsedToAttack(){
-        return this.isNoisyAttack;
+    public boolean isNoisyWhenUsed(){
+        return this.isNoisyUse;
     }
 
 }
