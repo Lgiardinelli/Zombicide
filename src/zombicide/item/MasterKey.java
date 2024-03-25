@@ -4,11 +4,13 @@ import zombicide.actor.action.DoorAction;
 import zombicide.actor.survivor.Survivor;
 
 public class MasterKey extends Item {
-	public boolean isNoisy = false;
 
 	private Survivor survivor;
 
-
+	public MasterKey(){
+		super();
+		this.canOpen = true;
+	}
 	public String toString(){
 		return "master key";
 	}
