@@ -10,9 +10,13 @@ public abstract class Item {
 
     protected boolean canAttack;
 
+    protected boolean isNoisy;
+
     public Item(){
         this.survivor = null;
         this.canAttack = false;
+        this.canOpen = false;
+        this.isNoisy = false;
     }
 
     public void setSurvivor(Survivor s){
