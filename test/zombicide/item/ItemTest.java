@@ -84,15 +84,15 @@ public class ItemTest {
     }
 
     @Test
-    void testNoisyItem(){
+    void testNoisyUseItem(){
         //CareItem
-        assertFalse(firstAidKit.isNoisy);
-        assertFalse(healingFlask.isNoisy);
+        assertTrue(firstAidKit.isNoisyUse);
+        assertTrue(healingFlask.isNoisyUse);
 
         //Item
-        assertFalse(infraredGlasses.isNoisy);
-        assertTrue(map.isNoisy);
-        assertFalse(masterKey.isNoisy);
+        assertFalse(infraredGlasses.isNoisyUse);
+        assertTrue(map.isNoisyUse);
+        assertFalse(masterKey.isNoisyUse);
     }
 
     @Test
