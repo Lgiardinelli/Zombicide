@@ -8,7 +8,6 @@ import zombicide.city.City;
 import zombicide.util.Direction;
 
 public class InfraredGlasses extends Item {
-	public boolean isNoisy = false;
 
 	private Survivor survivor;
 
