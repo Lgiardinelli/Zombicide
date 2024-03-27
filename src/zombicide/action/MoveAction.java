@@ -1,4 +1,4 @@
-package zombicide.actor.action;
+package zombicide.action;
 
 import zombicide.actor.Actor;
 import zombicide.city.City;
@@ -8,20 +8,16 @@ import zombicide.util.Position;
 /**
  * Represents an action for moving an Actor in a specified direction.
  */
-public class MoveAction implements Action {
+public class MoveAction extends ActorAction {
 
     /** The direction in which the Actor will move. */
     private Direction direction;
-    private Actor actor;
 
     /**
      * Constructs a new MoveAction with the specified direction.
-     *
-     * @param actor - the actor
      */
-    public MoveAction(Actor actor){
+    public MoveAction() {
         this.direction = null;
-        this.actor = actor;
     }
 
     private Direction randomDirection() {

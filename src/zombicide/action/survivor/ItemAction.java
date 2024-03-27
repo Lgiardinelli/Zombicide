@@ -1,15 +1,11 @@
-package zombicide.actor.action;
+package zombicide.action.survivor;
 
+import zombicide.action.Action;
 import zombicide.actor.survivor.Survivor;
 import zombicide.item.Item;
 
-public class ItemAction implements Action {
+public class ItemAction extends SurvivorAction {
 
-    private Survivor survivor;
-
-    public ItemAction(Survivor s){
-        this.survivor = s;
-    }
     @Override
     public void doSomething(){
         Item itemUsed = survivor.getItemHeld();

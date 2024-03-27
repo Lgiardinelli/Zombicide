@@ -1,15 +1,10 @@
-package zombicide.actor.action;
+package zombicide.action.survivor;
 
+import zombicide.action.Action;
 import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.actor.survivor.Survivor;
 
-public class BackPackAction implements Action {
-
-    private Survivor survivor;
-
-    public BackPackAction(Survivor s){
-        this.survivor = s;
-    }
+public class BackPackAction extends SurvivorAction {
 
     public void doSomething() {
         System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());

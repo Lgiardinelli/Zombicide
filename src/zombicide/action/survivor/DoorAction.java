@@ -1,5 +1,6 @@
-package zombicide.actor.action;
+package zombicide.action.survivor;
 
+import zombicide.action.Action;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
 import zombicide.city.area.door.Door;
@@ -10,14 +11,8 @@ import zombicide.util.Direction;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoorAction implements Action {
+public class DoorAction extends SurvivorAction {
 
-    private final Survivor survivor;
-
-
-    public DoorAction(Survivor s){
-        this.survivor = s;
-    }
     /**
      * Opens a door in a random adjacent area around the Survivor's current position.
      * This action selects the door from the adjacent areas and opens it.

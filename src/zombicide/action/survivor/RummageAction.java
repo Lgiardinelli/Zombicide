@@ -1,18 +1,13 @@
-package zombicide.actor.action;
+package zombicide.action.survivor;
 
+import zombicide.action.Action;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
 import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.item.Item;
 
-public class RoomAction implements Action {
-
-    private Survivor survivor;
-
-    public RoomAction(Survivor s){
-        this.survivor = s;
-    }
+public class RummageAction extends SurvivorAction {
 
     /**
      * Displays the items in the rooms around the Survivor's current position.

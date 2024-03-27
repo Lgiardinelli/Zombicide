@@ -1,15 +1,10 @@
-package zombicide.actor.action;
+package zombicide.action.survivor;
 
+import zombicide.action.Action;
 import zombicide.actor.survivor.Survivor;
 
-public class HealAction implements Action {
-
-    private final Survivor survivor;
+public class HealAction extends SurvivorAction {
     private int lifePointsToAdd;
-
-    public HealAction(Survivor s){
-        this.survivor =s;
-    }
 
     public void doSomething(){
         this.heal();

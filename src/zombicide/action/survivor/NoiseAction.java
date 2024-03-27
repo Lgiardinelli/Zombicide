@@ -1,22 +1,12 @@
-package zombicide.actor.action;
+package zombicide.action.survivor;
 
+import zombicide.action.Action;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.area.Area;
 
-public class NoiseAction implements Action {
-
-    private Survivor survivor;
+public class NoiseAction extends SurvivorAction {
 
     private int noiseLevel;
-
-    /**
-        Increases the noise level in the current area where the survivor is located.
-        If the survivor is not in any area, no noise level is increased.
-        @param s - the survivor
-     */
-    public NoiseAction(Survivor s){
-        this.survivor = s;
-    }
 
     public void setLifePointsToAdd(int n){
         this.noiseLevel = n;

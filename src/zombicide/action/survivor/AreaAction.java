@@ -1,18 +1,13 @@
-package zombicide.actor.action;
+package zombicide.action.survivor;
 
-import zombicide.actor.survivor.Survivor;
+;
+import zombicide.action.survivor.SurvivorAction;
 import zombicide.city.City;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
 import zombicide.util.Direction;
 
-public class AreaAction implements Action {
-
-    private Survivor survivor;
-
-    public AreaAction(Survivor s) {
-        this.survivor = s;
-    }
+public class AreaAction extends SurvivorAction {
 
     /**
      * TODO
