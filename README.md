@@ -615,12 +615,15 @@ __Objectif atteint :__
 __Réflexion du groupe :__  
 
 Lundi 25/03 :
+Nous nous sommes mis d'accord sur les armes bruyantes et celles qui pouvaient ouvrir des portes ou non.
+Nous avons donc du modifier une grande partie des constructeurs des équipements ajoutant des attributs isNoisyDoor, isNoisyUse
 
 
 Mardi 26/03 :
 
 
 Mercredi 27/03 :
+Après longue et tumultueuse discussion, il a été décidé d'enlever le paramètre Survivor dans les actions por une meilleure gestion de la création des rôles. En effet, les rôles héritant des actions existantes, et étant créés avant les survivants, on ne pouvait instancier les actions correctement.
 
 
 Jeudi 28/03 :
@@ -638,12 +641,15 @@ __Partage de taches :__
 Lundi 25/03 :
 
 - Théophane : Revue et correction des tests avec de multiple condition et ajout de tests
+- Eliès : modification des classes Item en ajoutant des attributs liés au bruit et modifiant les constructeurs
 
 Mardi 26/03 :
 
 
 Mercredi 27/03 :
 
+- Eliès : Modification des tests liés aux Item ( du à la modification des constrcuteurs )
+- Dylan, Léo : Remodification des classes Action en modifiant les constrcuteurs.
 
 Jeudi 28/03 :
 
