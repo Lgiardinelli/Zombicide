@@ -542,7 +542,8 @@ __Objectif de la semaine :__
 - Gerer les différentes actions
 
 __Objectif atteint :__
-
+- Gerer les packages
+- Gerer les différentes actions
 
 __Réflexion du groupe :__  
 
@@ -606,7 +607,7 @@ Création de tests unitaires pour les nouvelles méthodes ajoutées. Dont les te
 
 ## Semaine 9
 __Objectif de la semaine :__  
-
+- Relier les rôles avec les actions différentes
 
 __Objectif atteint :__
 
@@ -614,6 +615,7 @@ __Objectif atteint :__
 __Réflexion du groupe :__  
 
 Lundi 25/03 :
+
 
 Mardi 26/03 :
 
