@@ -12,6 +12,7 @@ import zombicide.city.area.street.Street;
 import zombicide.util.Direction;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class MoveActionTest {
 
@@ -29,8 +30,8 @@ public class MoveActionTest {
         Area area = new Street(2, 3);
         s1.setArea(area);
         z1.setArea(area);
-        this.m1 = new MoveAction(Direction.DOWN, s1);
-        this.m2 = new MoveAction(Direction.LEFT, z1);
+        this.m1 = new MoveAction(s1);
+        this.m2 = new MoveAction(z1);
     }
 
     @Test
@@ -38,8 +39,8 @@ public class MoveActionTest {
         Position p1 = m1.positionAfterMoving();
         Position p2 = m2.positionAfterMoving();
 
-        assertEquals(p1.getY(), 4);
-        assertEquals(p2.getX(), 1);
+        assertTrue(p1.getY() == 4 || p1.getY() == 2 || p1.getY() == 3);
+        assertTrue(p2.getX() == 1 || p2.getX() == 3 || p2.getX() == 2);
     }
 
     @Test
