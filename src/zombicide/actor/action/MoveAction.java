@@ -11,18 +11,22 @@ import zombicide.util.Position;
 public class MoveAction implements Action {
 
     /** The direction in which the Actor will move. */
-    private final Direction direction;
+    private Direction direction;
     private Actor actor;
 
     /**
      * Constructs a new MoveAction with the specified direction.
      *
-     * @param d The direction in which the Actor will move.
      * @param actor - the actor
      */
-    public MoveAction(Direction d, Actor actor){
-        this.direction = d;
+    public MoveAction(Actor actor){
+        this.direction = null;
         this.actor = actor;
+    }
+
+    private Direction randomDirection() {
+        int random = (int) (Math.random() * Direction.values().length);
+        return Direction.values()[random];
     }
 
     /**
@@ -31,6 +35,7 @@ public class MoveAction implements Action {
      * @return The new Position after moving the Actor.
      */
     public Position positionAfterMoving(){
+        this.direction = randomDirection();
         // Get the current X and Y coordinates of the Actor's area
         int x = this.actor.getArea().getX();
         int y = this.actor.getArea().getY();
