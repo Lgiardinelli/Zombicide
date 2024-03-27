@@ -3,15 +3,16 @@ package zombicide.actor;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import zombicide.action.survivor.NoiseAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
-import zombicide.actor.action.NoiseAction;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Balaise;
 import zombicide.actor.zombie.Runner;
 import zombicide.actor.zombie.Walker;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
+import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.city.City;
 import zombicide.item.Item;
 import zombicide.item.weapon.*;
@@ -47,7 +48,8 @@ public class ActorTest {
         this.runner = new Runner(this.city);
         this.riffle = new Riffle();
         this.room = new Room(6,7);
-        this.noiseAction = new NoiseAction(this.survivor);
+        this.noiseAction = new NoiseAction();
+        this.noiseAction.setSurvivor(this.survivor);
         this.fighter = new Fighter();
         this.lucky = new Lucky();
     }

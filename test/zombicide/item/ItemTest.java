@@ -48,11 +48,10 @@ public class ItemTest {
 
     @Test
     void testShootingTarget(){
-        assertFalse(pistol.shotHitsTarget());
         int v = pistol.shoot();
         assertTrue(v > 0);
         if (v >= pistol.getDiceThreshold())
-            assertTrue(pistol.shotHitsTarget());
+            assertTrue(pistol.shotHitsTarget(v));
     }
 
     @Test

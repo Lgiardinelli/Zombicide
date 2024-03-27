@@ -1,6 +1,7 @@
 package zombicide.actor.action.attack;
 
 import org.junit.jupiter.api.BeforeEach;
+import zombicide.action.survivor.AttackZombieAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Zombie;
@@ -19,6 +20,5 @@ public class AttackZombieActionTest {
         City city = new City(10, 10);
         survivor = new Survivor(city);
         zombie = new Abomination(city);
-        attackZombieAction = new AttackZombieAction(survivor);
     }
 }
