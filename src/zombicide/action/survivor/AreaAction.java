@@ -2,19 +2,20 @@ package zombicide.action.survivor;
 
 ;
 import zombicide.action.survivor.SurvivorAction;
+import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
 import zombicide.util.Direction;
 
-public class AreaAction extends SurvivorAction {
+public class AreaAction implements SurvivorAction {
 
     /**
      * TODO
      * @return boolean
      */
-    private void displayAreasAround(){
-        City city = this.survivor.getCity();
+    private void displayAreasAround(Survivor survivor){
+        City city = survivor.getCity();
         for(Direction d : Direction.values()){
             System.out.print(d.name()+" :");
             int i = d.getX();
@@ -37,8 +38,8 @@ public class AreaAction extends SurvivorAction {
     }
 
     @Override
-    public void doSomething() {
-        displayAreasAround();
-        this.survivor.removeActionPoint();
+    public void doSomething(Survivor survivor) {
+        displayAreasAround(survivor);
+        survivor.removeActionPoint();
     }
 }

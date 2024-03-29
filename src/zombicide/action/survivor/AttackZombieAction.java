@@ -2,6 +2,7 @@ package zombicide.action.survivor;
 
 
 import zombicide.action.survivor.SurvivorAction;
+import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.item.Item;
 import zombicide.item.weapon.Weapon;
@@ -9,12 +10,12 @@ import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.List;
 
-public class AttackZombieAction extends SurvivorAction {
+public class AttackZombieAction implements SurvivorAction {
     private static final RandomListChooser<Zombie> ZOMBIE_CHOOSER = new RandomListChooser<>();
 
     @Override
-    public void doSomething() {
-        Item itemHeld =  this.survivor.getItemHeld();
+    public void doSomething(Survivor survivor) {
+        Item itemHeld =  survivor.getItemHeld();
         if (!itemHeld.canAttack())
             return;
 
@@ -32,7 +33,7 @@ public class AttackZombieAction extends SurvivorAction {
         zombie.removeLifePoints(weapon.getDamage());
         if (zombie.getLifePoints() <= 0) {
             zombies.remove(zombie);
-            this.survivor.addSkillPoints(1);
+            survivor.addSkillPoints(1);
         }
     }
 
