@@ -1,12 +1,14 @@
 package zombicide.actor.survivor;
 
+import zombicide.action.*;
+import zombicide.action.survivor.*;
+import zombicide.actor.survivor.role.Role;
 import zombicide.city.City;
 import zombicide.actor.Actor;
 import zombicide.city.area.Area;
 import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.item.Item;
 import zombicide.item.weapon.Pistol;
-import zombicide.actor.survivor.role.Role;
 import zombicide.util.Expertise;
 
 import java.util.ArrayList;
@@ -44,8 +46,6 @@ public class Survivor extends Actor {
         this.backpack = new BackPack(this);
         this.itemHeld = new Pistol();
         this.roles = new ArrayList<>(Arrays.asList(roles));
-        for (Role role : this.roles)
-            role.setSurvivor(this);
         this.setArea(this.city.getSpawn());
     }
 
@@ -131,5 +131,35 @@ public class Survivor extends Actor {
 
     public void addSkillPoints(int n) {
         this.skillPoints += n;
+    }
+
+    private static List<Class<? extends Action>> getActions() {
+        return List.of(
+                AttackZombieAction.class,
+                AreaAction.class,
+                BackPackAction.class,
+                DoorAction.class,
+                ItemAction.class,
+                LookAction.class,
+                MoveAction.class,
+                NoiseAction.class,
+                RummageAction.class
+        );
+    }
+
+    private List<Action> getSurvivorActions() {
+        List<Action> result = new ArrayList<>();
+        for (Role role : this.roles)
+            for (Class<? extends Action> c : getActions()) {
+                if (c.isAssignableFrom(role.getClass()))
+                    result.add((Action) role);
+                else
+                    try {
+                        result.add(c.getConstructor(Survivor.class).newInstance(this));
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+            }
+        return result;
     }
 }
