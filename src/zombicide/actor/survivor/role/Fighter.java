@@ -1,8 +1,11 @@
 package zombicide.actor.survivor.role;
 
-public class Fighter extends Role {
+import zombicide.action.survivor.AttackZombieAction;
+import zombicide.actor.survivor.Survivor;
 
+public class Fighter extends AttackZombieAction implements Role {
     @Override
-    public void handleAction() {
+    public void doSomething(Survivor survivor) {
+
     }
 }

@@ -1,11 +1,12 @@
 package zombicide.actor.survivor.role;
 
+import zombicide.action.survivor.HealAction;
 import zombicide.actor.survivor.Survivor;
 
 import java.util.List;
 import java.util.Random;
 
-public class Healer extends Role {
+public class Healer extends HealAction implements Role {
     private static final int NB_LIFE_POINTS = 1;
     private static final Random RANDOM = new Random();
 
@@ -21,7 +22,7 @@ public class Healer extends Role {
 
 
     @Override
-    public void handleAction() {
+    public void doSomething(Survivor survivor) {
         List<Survivor> survivors = survivor.getArea().getSurvivors();
         addLifePoints(survivors);
     }
