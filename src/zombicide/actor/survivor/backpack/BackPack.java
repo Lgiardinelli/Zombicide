@@ -11,7 +11,7 @@ import java.util.List;
  * Class representing a backpack that can hold items.
  */
 public class BackPack {
-    private Survivor survivor;
+    private final Survivor survivor;
 
     /**
      * List to store items in the backpack.
