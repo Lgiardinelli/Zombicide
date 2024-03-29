@@ -1,6 +1,6 @@
 package zombicide;
 
-import zombicide.actor.action.*;
+import zombicide.action.survivor.*;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Zombie;
@@ -135,21 +135,22 @@ public class Livrable2 {
 		System.out.println("Item en main avant action :"+survivor.getItemHeld());
 		System.out.println("BackPack avant action");
 		System.out.println(survivor.getBackpack().getItems());
-		RandomListChooser<Action> chooser = new RandomListChooser<>();
+		RandomListChooser<SurvivorAction> survivorChooser = new RandomListChooser<>();
 
-		List<Action> actions = Arrays.asList(
+		List<SurvivorAction> survivorActions = Arrays.asList(
 				null,
-				new RoomAction(survivor),
-				new BackPackAction(survivor),
-				new DoorAction(survivor),
-				new ItemAction(survivor),
-				new NoiseAction(survivor),
-				new AreaAction(survivor),
-				new LookAction(survivor)
+				new RummageAction(),
+				new BackPackAction(),
+				new DoorAction(),
+				new ItemAction(),
+				new NoiseAction(),
+				new AreaAction(),
+				new LookAction()
 		);
-		Action chosenAction = chooser.choose(actions);
-		if (chosenAction != null) {
-			chosenAction.doSomething();
+
+		SurvivorAction action = survivorChooser.choose(survivorActions);
+		if (action != null) {
+			action.doSomething(survivor);
 			this.trainCity.display();
 			System.out.println("BackPack après action");
 			System.out.println("Item en main après action :"+survivor.getItemHeld());
