@@ -1,22 +1,22 @@
 package zombicide.action.survivor;
 
-import zombicide.action.Action;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
 import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.item.Item;
 
-public class RummageAction extends SurvivorAction {
+public class RummageAction implements SurvivorAction {
 
     /**
      * Displays the items in the rooms around the Survivor's current position.
      * This action retrieves adjacent areas and displays the items they contain.
      */
-    public void doSomething(){
+    @Override
+    public void doSomething(Survivor survivor){
         System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
-        rummage();
-        this.survivor.removeActionPoint();
+        rummage(survivor);
+        survivor.removeActionPoint();
     }
 
     /**
@@ -24,14 +24,14 @@ public class RummageAction extends SurvivorAction {
      * If the survivor has space in their backpack, the chosen item from the room is added to the backpack.
      * If the backpack is full, the method swaps a randomly chosen item from the backpack with the chosen item from the room.
      */
-    private void rummage() {
-        Area area = this.survivor.getArea();
+    private void rummage(Survivor survivor) {
+        Area area = survivor.getArea();
 
         if (!area.isARoom())
             return;
 
         Room room = (Room) area;
-        BackPack backpack = this.survivor.getBackpack();
+        BackPack backpack = survivor.getBackpack();
 
         if (room.hasItems())
             return;

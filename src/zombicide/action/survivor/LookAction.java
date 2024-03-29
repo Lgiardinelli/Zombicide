@@ -1,29 +1,21 @@
-package zombicide.actor.action;
+package zombicide.action.survivor;
 
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.area.Area;
 import zombicide.util.Direction;
 
-public class LookAction implements Action {
+public class LookAction implements SurvivorAction {
 
-    private Survivor survivor;
-
-    public LookAction(Survivor survivor) {
-        this.survivor = survivor;
-    }
-
-    public void doSomething(){
+    public void doSomething(Survivor survivor){
         System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
-        rummage();
+        rummage(survivor);
     }
 
-    private void rummage() {
-        Area a = this.survivor.getArea();
+    private void rummage(Survivor survivor) {
+        Area a = survivor.getArea();
         a.displayActors();
         for (Direction d : Direction.values()) {
             System.out.println("The door " + d.name() + " is " + (a.getDoor(d).isOpen()? "open" : "closed"));
         }
-
     }
-
 }

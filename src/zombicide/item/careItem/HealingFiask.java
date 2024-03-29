@@ -1,6 +1,6 @@
 package zombicide.item.careItem;
 
-import zombicide.actor.action.HealAction;
+import zombicide.action.survivor.HealAction;
 
 public class HealingFiask extends CareItem {
 
@@ -10,8 +10,7 @@ public class HealingFiask extends CareItem {
 
     @Override
     public void use() {
-        HealAction h = new HealAction(this.survivor);
-        h.doSomething();
+        HealAction h = new HealAction();
+        h.doSomething(survivor);
     }
-
 }

@@ -1,6 +1,6 @@
 package zombicide.item.careItem;
 
-import zombicide.actor.action.HealAction;
+import zombicide.action.survivor.HealAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.area.Area;
 import zombicide.util.listchooser.ListChooser;
@@ -16,8 +16,8 @@ public class FirstAidKit extends CareItem {
 
     @Override
     public void use() {
-        HealAction h = new HealAction(chooseAPlayer());
-        h.doSomething();
+        HealAction h = new HealAction();
+        h.doSomething(chooseAPlayer());
     }
 
     /**

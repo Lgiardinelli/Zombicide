@@ -1,10 +1,9 @@
 package zombicide.item;
 
-import zombicide.actor.action.DoorAction;
+import zombicide.action.survivor.DoorAction;
 import zombicide.actor.survivor.Survivor;
 
 public class MasterKey extends Item {
-
 	private Survivor survivor;
 
 	public MasterKey(){
@@ -15,12 +14,8 @@ public class MasterKey extends Item {
 		return "master key";
 	}
 
-
-
 	public void use() {
-		DoorAction d = new DoorAction(survivor);
-		d.doSomething();
+		DoorAction d = new DoorAction();
+		d.doSomething(survivor);
 	}
-
-
 }

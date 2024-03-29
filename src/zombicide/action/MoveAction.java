@@ -45,7 +45,7 @@ public class MoveAction extends ActorAction {
     }
 
     @Override
-    public void doSomething() {
+    public void doSomething(Actor actor) {
         Position p = positionAfterMoving();
         City city = this.actor.getCity();
         this.actor.setArea(city.getArea(p.getX(), p.getY()));

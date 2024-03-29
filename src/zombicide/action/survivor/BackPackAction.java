@@ -1,15 +1,14 @@
 package zombicide.action.survivor;
 
-import zombicide.action.Action;
 import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.actor.survivor.Survivor;
 
-public class BackPackAction extends SurvivorAction {
+public class BackPackAction implements SurvivorAction {
 
-    public void doSomething() {
+    public void doSomething(Survivor survivor) {
         System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
-        holdRandomItem();
-        this.survivor.removeActionPoint();
+        holdRandomItem(survivor);
+        survivor.removeActionPoint();
     }
 
     /**
@@ -17,7 +16,7 @@ public class BackPackAction extends SurvivorAction {
      * If the survivor already has an item in their hand, the method swaps it with a randomly chosen item from the backpack.
      * If the survivor's hand is empty, the method equips a randomly chosen item from the backpack.
      */
-    private void holdRandomItem() {
+    private void holdRandomItem(Survivor survivor) {
         BackPack backpack = survivor.getBackpack();
         if (backpack.getItems().isEmpty())
             return;

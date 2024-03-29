@@ -11,24 +11,24 @@ import zombicide.util.Direction;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoorAction extends SurvivorAction {
+public class DoorAction implements SurvivorAction {
 
     /**
      * Opens a door in a random adjacent area around the Survivor's current position.
      * This action selects the door from the adjacent areas and opens it.
      */
-    public void doSomething(){
+    public void doSomething(Survivor survivor){
         System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
-        if(canOpen()) {
-            List<Door> doors = doorsAround();
+        if(canOpen(survivor)) {
+            List<Door> doors = doorsAround(survivor);
             RandomListChooser<Door> chooser = new RandomListChooser<>();
             Door door = chooser.choose(doors);
             door.open();
-            this.survivor.removeActionPoint();
+            survivor.removeActionPoint();
         }
     }
 
-    private List<Door> doorsAround(){
+    private List<Door> doorsAround(Survivor survivor){
 
         List<Door> doors = new ArrayList<>();
         for(Direction d : Direction.values()){
@@ -38,7 +38,7 @@ public class DoorAction extends SurvivorAction {
             int x = survivor.getArea().getX();
             int y = survivor.getArea().getY();
 
-            City city = this.survivor.getCity();
+            City city = survivor.getCity();
             Door door = city.getAreas()[y+j][x+i].getDoor(d.getReverse());
 
             if(door != null && !door.isOpen()) {
@@ -48,8 +48,8 @@ public class DoorAction extends SurvivorAction {
         return doors;
     }
 
-    public boolean canOpen(){
-        Item i = this.survivor.getItemHeld();
+    public boolean canOpen(Survivor survivor){
+        Item i = survivor.getItemHeld();
         return i.canOpen();
     }
 }
