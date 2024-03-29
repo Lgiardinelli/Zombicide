@@ -15,9 +15,8 @@ public class AreaActionTest {
         Survivor s = new Survivor(new City(10, 10));
         s.setArea(new Room(5, 4));
         AreaAction action = new AreaAction();
-        action.setSurvivor(s);
         int actionPoints = s.getActionPoints();
-        action.doSomething();
+        action.doSomething(s);
         assertEquals(actionPoints - 1, s.getActionPoints());
     }
 }

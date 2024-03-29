@@ -47,7 +47,7 @@ public class MoveActionTest {
 
     @Test
     public void testDoSomething(){
-        m1.doSomething();
+        m1.doSomething(z1);
         //assertEquals(s1.getArea(), city.getArea(2,4));
     }
 }

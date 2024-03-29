@@ -23,7 +23,6 @@ public class AttackSurvivorActionTest {
         zombie = new Abomination(city);
         survivor = new Survivor(city);
         action = new AttackSurvivorAction();
-        action.setZombie(zombie);
     }
 
     @Test
@@ -34,7 +33,7 @@ public class AttackSurvivorActionTest {
         int initialLifePoints = survivor.getLifePoints();
         int attackPoints = zombie.getAttackPoints();
 
-        action.doSomething();
+        action.doSomething(zombie);
 
         assertEquals(initialLifePoints - attackPoints, survivor.getLifePoints());
     }
@@ -50,7 +49,7 @@ public class AttackSurvivorActionTest {
         int initialLifePoints2 = survivor2.getLifePoints();
         int attackPoints = zombie.getAttackPoints();
 
-        action.doSomething();
+        action.doSomething(zombie);
 
         boolean isSurvivor1Attacked = survivor.getLifePoints() == initialLifePoints - attackPoints;
         boolean isSurvivor2Attacked = survivor2.getLifePoints() == initialLifePoints2 - attackPoints;
@@ -66,7 +65,7 @@ public class AttackSurvivorActionTest {
 
         int initialLifePoints = survivor.getLifePoints();
 
-        action.doSomething();
+        action.doSomething(zombie);
 
         assertEquals(initialLifePoints, survivor.getLifePoints());
     }

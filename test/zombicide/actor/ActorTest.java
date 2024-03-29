@@ -49,7 +49,6 @@ public class ActorTest {
         this.riffle = new Riffle();
         this.room = new Room(6,7);
         this.noiseAction = new NoiseAction();
-        this.noiseAction.setSurvivor(this.survivor);
         this.fighter = new Fighter();
         this.lucky = new Lucky();
     }
@@ -140,10 +139,9 @@ public class ActorTest {
     @Test
     void testMakeNoiseFromSurvivor(){
         survivor.setArea(room);
-        noiseAction.setSurvivor(survivor);
         noiseAction.setLifePointsToAdd(1);
         assertEquals(0, room.getNoise());
-        noiseAction.doSomething();
+        noiseAction.doSomething(survivor);
         assertEquals(1, room.getNoise());
     }
 
