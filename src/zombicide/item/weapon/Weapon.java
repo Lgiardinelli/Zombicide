@@ -19,7 +19,6 @@ public abstract class Weapon extends Item {
     protected int damage;
     protected int minHittingRange;
     protected int maxHittingRange;
-	private int lastShotValue;
 	private Survivor survivor;
 
 
@@ -30,7 +29,6 @@ public abstract class Weapon extends Item {
 		this.damage = damage;
 		this.minHittingRange = minHittingRange;
 		this.maxHittingRange = maxHittingRange;
-		this.lastShotValue = 0;
 		this.canAttack = true;
 		this.isNoisyDoor = true;
 	}
@@ -42,7 +40,7 @@ public abstract class Weapon extends Item {
      * @return The total result obtained by rolling the dice.
      */
     public int shoot() {
-		lastShotValue = 0;
+		int lastShotValue = 0;
         for (int i = 0; i < this.nbDiceThrows; i++) {
             lastShotValue += throwOneDie();
         }
@@ -58,7 +56,7 @@ public abstract class Weapon extends Item {
      *
      * @return if the weapon can shoot successfully, otherwise.
      */
-    public boolean shotHitsTarget() {
+    public boolean shotHitsTarget(int lastShotValue) {
         return lastShotValue >= this.diceThreshold;
     }
 
