@@ -1,4 +1,12 @@
 package zombicide.actor.survivor.role;
 
-public class Lucky implements Role {
+import zombicide.action.survivor.AttackZombieAction;
+import zombicide.actor.survivor.Survivor;
+
+public class Lucky extends AttackZombieAction implements Role {
+
+    @Override
+    public void doSomething(Survivor survivor) {
+
+    }
 }
