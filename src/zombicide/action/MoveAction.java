@@ -8,7 +8,7 @@ import zombicide.util.Position;
 /**
  * Represents an action for moving an Actor in a specified direction.
  */
-public class MoveAction extends ActorAction {
+public class MoveAction implements Action<Actor> {
 
     /** The direction in which the Actor will move. */
     private Direction direction;
@@ -30,11 +30,11 @@ public class MoveAction extends ActorAction {
      *
      * @return The new Position after moving the Actor.
      */
-    public Position positionAfterMoving(){
+    public Position positionAfterMoving(Actor actor){
         this.direction = randomDirection();
         // Get the current X and Y coordinates of the Actor's area
-        int x = this.actor.getArea().getX();
-        int y = this.actor.getArea().getY();
+        int x = actor.getArea().getX();
+        int y = actor.getArea().getY();
 
         // Calculate the new X and Y coordinates after moving in the specified direction
         int i = x + direction.getX();
@@ -46,9 +46,9 @@ public class MoveAction extends ActorAction {
 
     @Override
     public void doSomething(Actor actor) {
-        Position p = positionAfterMoving();
-        City city = this.actor.getCity();
-        this.actor.setArea(city.getArea(p.getX(), p.getY()));
-        this.actor.removeActionPoint();
+        Position p = positionAfterMoving(actor);
+        City city = actor.getCity();
+        actor.setArea(city.getArea(p.getX(), p.getY()));
+        actor.removeActionPoint();
     }
 }
