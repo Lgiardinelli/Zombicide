@@ -1,12 +1,13 @@
 package zombicide.action.survivor;
 
+import zombicide.action.Action;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
 import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.item.Item;
 
-public class RummageAction implements SurvivorAction {
+public class RummageAction implements Action<Survivor> {
 
     /**
      * Displays the items in the rooms around the Survivor's current position.

@@ -1,7 +1,10 @@
 package zombicide.actor;
 
+import zombicide.action.Action;
 import zombicide.city.area.Area;
 import zombicide.city.City;
+
+import java.util.List;
 
 /**
  * Abstract class representing an actor in the game.
@@ -65,7 +68,6 @@ public abstract class Actor {
     public void removeLifePoints(int damage) {
         this.lifePoints -= damage;
     }
-    public abstract void handleAction();
 
     public String display() {
         return this.getClass().getSimpleName();

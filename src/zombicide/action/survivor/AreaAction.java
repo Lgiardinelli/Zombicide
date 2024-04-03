@@ -1,14 +1,14 @@
 package zombicide.action.survivor;
 
 ;
-import zombicide.action.survivor.SurvivorAction;
+import zombicide.action.Action;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
 import zombicide.util.Direction;
 
-public class AreaAction implements SurvivorAction {
+public class AreaAction implements Action<Survivor> {
 
     /**
      * TODO

@@ -1,7 +1,7 @@
 package zombicide.action.survivor;
 
 
-import zombicide.action.survivor.SurvivorAction;
+import zombicide.action.Action;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.item.Item;
@@ -10,7 +10,7 @@ import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.List;
 
-public class AttackZombieAction implements SurvivorAction {
+public class AttackZombieAction implements Action<Survivor> {
     private static final RandomListChooser<Zombie> ZOMBIE_CHOOSER = new RandomListChooser<>();
 
     @Override

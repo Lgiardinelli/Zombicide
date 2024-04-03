@@ -1,10 +1,11 @@
 package zombicide.action.survivor;
 
+import zombicide.action.Action;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.area.Area;
 import zombicide.util.Direction;
 
-public class LookAction implements SurvivorAction {
+public class LookAction implements Action<Survivor> {
 
     public void doSomething(Survivor survivor){
         System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());

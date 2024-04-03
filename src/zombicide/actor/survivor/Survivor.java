@@ -1,7 +1,7 @@
 package zombicide.actor.survivor;
 
 import zombicide.action.*;
-import zombicide.action.survivor.*;
+import zombicide.actor.ActorHandler;
 import zombicide.actor.survivor.role.Role;
 import zombicide.city.City;
 import zombicide.actor.Actor;
@@ -10,6 +10,7 @@ import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.item.Item;
 import zombicide.item.weapon.Pistol;
 import zombicide.util.Expertise;
+import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,9 +19,11 @@ import java.util.List;
 /**
  * Represents a survivor actor in the game.
  */
-public class Survivor extends Actor {
+public class Survivor extends Actor implements ActorHandler<Survivor> {
     private static final int ACTION_POINTS = 3;
     private static final int LIFE_POINTS = 5;
+    private static final RandomListChooser<Action<Survivor>> SURVIVOR_ACTION_CHOOSER =
+            new RandomListChooser<>();
 
     /** The skill points of the survivor. */
     private int skillPoints;
@@ -34,19 +37,23 @@ public class Survivor extends Actor {
     /** The roles associated with the survivor. */
     private final List<Role> roles;
 
+    public Survivor(City city) {
+        this(new ArrayList<>(), city);
+    }
+
     /**
      * Creates a new survivor with the given roles.
      * You can pass either an array of roles, or as many roles in a row.
      * @param city - the city of the survivor
      * @param roles The roles of the survivor.
      */
-    public Survivor(City city , Role... roles) {
+    public Survivor(List<Role> roles, City city) {
         super(city, LIFE_POINTS, ACTION_POINTS);
         this.skillPoints = 0;
         this.backpack = new BackPack(this);
         this.itemHeld = new Pistol();
-        this.roles = new ArrayList<>(Arrays.asList(roles));
         this.setArea(this.city.getSpawn());
+        this.roles = new ArrayList<>(roles);
     }
 
     /**
@@ -117,10 +124,6 @@ public class Survivor extends Actor {
     }
 
     @Override
-    public void handleAction() {
-    }
-
-    @Override
     public void setArea(Area area) {
         if (this.area != null) {
             this.area.removeActor(this);
@@ -133,33 +136,30 @@ public class Survivor extends Actor {
         this.skillPoints += n;
     }
 
-    private static List<Class<? extends Action>> getActions() {
-        return List.of(
-                AttackZombieAction.class,
-                AreaAction.class,
-                BackPackAction.class,
-                DoorAction.class,
-                ItemAction.class,
-                LookAction.class,
-                MoveAction.class,
-                NoiseAction.class,
-                RummageAction.class
-        );
+    @Override
+    public void handleAction(List<Action<Survivor>> actions) {
+        List<Action<Survivor>> merged = getMergedRolesAndActions(actions);
+        //Action<Survivor> action = SURVIVOR_ACTION_CHOOSER.choose(merged);
+        //if (action != null)
+        //    action.doSomething(this);
+        for (Action<Survivor> action : merged)
+            System.out.println(action);
     }
 
-    private List<Action> getSurvivorActions() {
-        List<Action> result = new ArrayList<>();
-        for (Role role : this.roles)
-            for (Class<? extends Action> c : getActions()) {
-                if (c.isAssignableFrom(role.getClass()))
-                    result.add((Action) role);
-                else
-                    try {
-                        result.add(c.getConstructor(Survivor.class).newInstance(this));
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
-            }
+    private List<Action<Survivor>> getMergedRolesAndActions(List<Action<Survivor>> actions) {
+        List<Action<Survivor>> result = new ArrayList<>(actions);
+        boolean found;
+        for (Role role : this.roles) {
+            found = false;
+            for (Action<Survivor> action : actions)
+                if (action != null && role.extendsAction(action)) {
+                    result.set(result.indexOf(action), role);
+                    found = true;
+                    break;
+                }
+            if (!found)
+                result.add(role);
+        }
         return result;
     }
 }

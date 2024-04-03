@@ -1,4 +1,6 @@
 package zombicide.actor.survivor.role;
 
-public class Snooper implements Role {
+import zombicide.action.survivor.RummageAction;
+
+public class Snooper extends RummageAction implements Role {
 }

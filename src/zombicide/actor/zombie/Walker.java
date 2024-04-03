@@ -1,6 +1,9 @@
 package zombicide.actor.zombie;
 
+import zombicide.action.Action;
 import zombicide.city.City;
+
+import java.util.List;
 
 public class Walker extends Zombie {
 	private static final int ATTACK_POINTS = 1;
@@ -13,7 +16,7 @@ public class Walker extends Zombie {
 	}
 
 	@Override
-	public void handleAction() {
+	public void handleAction(List<Action<Zombie>> actions) {
 
 	}
 }

@@ -1,9 +1,10 @@
 package zombicide.action.survivor;
 
+import zombicide.action.Action;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.area.Area;
 
-public class NoiseAction implements SurvivorAction {
+public class NoiseAction implements Action<Survivor> {
 
     private int noiseLevel;
 

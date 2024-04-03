@@ -11,7 +11,7 @@ import zombicide.util.Direction;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoorAction implements SurvivorAction {
+public class DoorAction implements Action<Survivor> {
 
     /**
      * Opens a door in a random adjacent area around the Survivor's current position.
