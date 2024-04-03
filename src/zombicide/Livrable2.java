@@ -4,6 +4,7 @@ import zombicide.action.Action;
 import zombicide.action.survivor.*;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.survivor.role.*;
+import zombicide.actor.survivor.role.Role;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
