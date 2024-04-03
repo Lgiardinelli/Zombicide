@@ -670,10 +670,10 @@ __Objectif atteint :__
 __Réflexion du groupe :__  
 
 Lundi 01/04 :
-
+Férié
 
 Mardi 02/04 :
-
+- Nous nous sommes demandé comment nous allons gérer les roles et les actions pour parvenir à une solution optimale et qui fonctionne, tout d'abord, nous avons pensé à créer les actions spéciales qui étendent des roles "de base" ce qui vas nous permettre dans une fonction d'itérer sur les roles et de changer dans la liste des actions sa classe mère en role spécial.
 
 Mercredi 03/04 :
 
@@ -691,13 +691,13 @@ Week-end :
 __Partage de taches :__
 
 Lundi 01/04 :
-
+Férié
 
 Mardi 02/04 :
 
 
 Mercredi 03/04 :
-
+- Léo : ajout des fichiers pour le livrable 3, tests manquants
 
 Jeudi 04/04 :
 
