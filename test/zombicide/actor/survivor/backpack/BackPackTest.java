@@ -1,13 +1,9 @@
 package zombicide.actor.survivor.backpack;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.survivor.role.Fighter;
-import zombicide.actor.survivor.role.Role;
 import zombicide.city.City;
 import zombicide.item.InfraredGlasses;
 import zombicide.item.Item;
@@ -16,6 +12,10 @@ import zombicide.item.careItem.FirstAidKit;
 import zombicide.item.weapon.Chainsaw;
 import zombicide.item.weapon.Pistol;
 import zombicide.item.weapon.Riffle;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class BackPackTest {
 
@@ -37,7 +37,7 @@ class BackPackTest {
         item4 = new MasterKey();
         item5 = new InfraredGlasses();
         item6 = new Chainsaw();
-        survivor = new Survivor(new City(5, 5), new Fighter());
+        survivor = new Survivor(List.of(new Fighter()), new City(5, 5));
     }
 
     @Test

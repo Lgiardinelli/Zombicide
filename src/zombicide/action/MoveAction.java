@@ -30,7 +30,7 @@ public class MoveAction implements Action<Actor> {
      *
      * @return The new Position after moving the Actor.
      */
-    public Position positionAfterMoving(Actor actor){
+    private Position positionAfterMoving(Actor actor){
         this.direction = randomDirection();
         // Get the current X and Y coordinates of the Actor's area
         int x = actor.getArea().getX();
