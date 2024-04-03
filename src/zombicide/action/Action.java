@@ -1,4 +1,10 @@
 package zombicide.action;
 
-public interface Action {
+import zombicide.actor.Actor;
+
+public interface Action<T extends Actor> {
+    default String display() {
+        return getClass().getSimpleName();
+    }
+    void doSomething(T actor);
 }
