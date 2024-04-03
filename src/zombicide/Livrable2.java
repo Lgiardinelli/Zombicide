@@ -11,8 +11,8 @@ import zombicide.city.TrainCity;
 import zombicide.item.Map;
 import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.Riffle;
-import zombicide.util.listchooser.RandomListChooser;
 import zombicide.util.Direction;
+import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,19 +28,19 @@ public class Livrable2 {
 	}
 
 	private void start(String[] args) {
+		actionsAndRoles();
+
 		if (args.length < 2) {
-			//initCity(this.city.getWidth(), this.city.getHeight());
+			initCity(this.city.getWidth(), this.city.getHeight());
 		} else {
 			int width = parseInt(args[0]);
 			int height = parseInt(args[1]);
-			//initCity(width, height);
+			initCity(width, height);
 		}
 
-		//initTrainCity();
+		initTrainCity();
 
-		//chooseRandomSurvivorAction();
-
-		actionsAndRoles();
+		chooseRandomSurvivorAction();
 	}
 
 	private void actionsAndRoles() {
