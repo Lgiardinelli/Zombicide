@@ -1,7 +1,9 @@
 package zombicide;
 
+import zombicide.action.Action;
 import zombicide.action.survivor.*;
 import zombicide.actor.survivor.Survivor;
+import zombicide.actor.survivor.role.*;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
@@ -10,10 +12,6 @@ import zombicide.item.Map;
 import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.Riffle;
 import zombicide.util.listchooser.RandomListChooser;
-import zombicide.actor.survivor.role.Fighter;
-import zombicide.actor.survivor.role.Healer;
-import zombicide.actor.survivor.role.Lucky;
-import zombicide.actor.survivor.role.Snooper;
 import zombicide.util.Direction;
 
 import java.util.Arrays;
@@ -31,18 +29,43 @@ public class Livrable2 {
 
 	private void start(String[] args) {
 		if (args.length < 2) {
-			initCity(this.city.getWidth(), this.city.getHeight());
+			//initCity(this.city.getWidth(), this.city.getHeight());
 		} else {
 			int width = parseInt(args[0]);
 			int height = parseInt(args[1]);
-			initCity(width, height);
+			//initCity(width, height);
 		}
 
-		initTrainCity();
+		//initTrainCity();
 
-		chooseRandomSurvivorAction();
+		//chooseRandomSurvivorAction();
+
+		actionsAndRoles();
 	}
 
+	private void actionsAndRoles() {
+		List<Role> roles = Arrays.asList(
+				new Fighter(),
+				new Healer()
+		);
+
+		Survivor survivor = new Survivor(roles, this.city);
+
+		List<Action<Survivor>> survivorActions = Arrays.asList(
+				null,
+				new AreaAction(),
+				new AttackZombieAction(),
+				new BackPackAction(),
+				new DoorAction(),
+				new HealAction(),
+				new ItemAction(),
+				new LookAction(),
+				new NoiseAction(),
+				new RummageAction()
+		);
+
+		survivor.handleAction(survivorActions);
+	}
 
 	private void initCity(int width, int height) {
 		City city = new City(width, height);
@@ -51,10 +74,10 @@ public class Livrable2 {
 		city.getAreas()[0][1].getDoor(Direction.DOWN).open();
 		city.getAreas()[0][1].getDoor(Direction.LEFT).open();
 
-		new Survivor(this.city,new Fighter());
-		new Survivor(this.city,new Healer());
-		new Survivor(this.city,new Lucky());
-		new Survivor(this.city,new Snooper());
+		new Survivor(List.of(new Fighter()), this.trainCity);
+		new Survivor(List.of(new Healer()), this.trainCity);
+		new Survivor(List.of(new Lucky()), this.trainCity);
+		new Survivor(List.of(new Snooper()), this.trainCity);
 
 		city.display();
 	}
@@ -66,10 +89,10 @@ public class Livrable2 {
 		trainCity.getAreas()[0][1].getDoor(Direction.DOWN).open();
 		trainCity.getAreas()[0][1].getDoor(Direction.LEFT).open();
 
-		new Survivor(this.trainCity,new Fighter());
-		new Survivor(this.trainCity,new Healer());
-		new Survivor(this.trainCity,new Lucky());
-		new Survivor(this.trainCity,new Snooper());
+		new Survivor(List.of(new Fighter()), this.trainCity);
+		new Survivor(List.of(new Healer()), this.trainCity);
+		new Survivor(List.of(new Lucky()), this.trainCity);
+		new Survivor(List.of(new Snooper()), this.trainCity);
 
 		List<Survivor> survivors = trainCity.getSpawn().getSurvivors();
 
@@ -135,9 +158,9 @@ public class Livrable2 {
 		System.out.println("Item en main avant action :"+survivor.getItemHeld());
 		System.out.println("BackPack avant action");
 		System.out.println(survivor.getBackpack().getItems());
-		RandomListChooser<SurvivorAction> survivorChooser = new RandomListChooser<>();
+		RandomListChooser<Action<Survivor>> survivorActionChooser = new RandomListChooser<>();
 
-		List<SurvivorAction> survivorActions = Arrays.asList(
+		List<Action<Survivor>> survivorActions = Arrays.asList(
 				null,
 				new RummageAction(),
 				new BackPackAction(),
@@ -148,7 +171,7 @@ public class Livrable2 {
 				new LookAction()
 		);
 
-		SurvivorAction action = survivorChooser.choose(survivorActions);
+		Action<Survivor> action = survivorActionChooser.choose(survivorActions);
 		if (action != null) {
 			action.doSomething(survivor);
 			this.trainCity.display();
