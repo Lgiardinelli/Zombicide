@@ -14,7 +14,7 @@ MAIN_CLASS = $(MAIN_PACKAGE).Main
 JAVA_SOURCES = $(wildcard $(SRC_DIR)/*.java $(SRC_DIR)/$(MAIN_PACKAGE)/*.java)
 CLASSES_DIR = classes
 
-JAR_NAME = livrable2.jar
+JAR_NAME = livrable3.jar
 
 # Targets
 .PHONY: all clean compile jar test javadoc run-test run
