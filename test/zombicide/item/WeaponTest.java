@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import zombicide.item.weapon.*;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WeaponTest {
@@ -28,5 +29,13 @@ public class WeaponTest {
         assertTrue(v > 0);
         if (v >= pistol.getDiceThreshold())
             assertTrue(pistol.shotHitsTarget(v));
+    }
+
+    @Test
+    void testGetMinAndMaxHittingRange(){
+        int minRange = pistol.getMinHittingRange();
+        int maxRange = pistol.getMaxHittingRange();
+        assertEquals(minRange, 0);
+        assertEquals(maxRange, 1);
     }
 }
