@@ -804,7 +804,7 @@ Mercredi 03/04 :
 - Léo : ajout des fichiers pour le livrable 3, tests manquants
 
 Jeudi 04/04 :
-- Théophane : Préparation du livrable 3, (tout est complété sauf le choix de la modélisation)
+- Théophane : Préparation du livrable 3, (tout est complété sauf le choix de la modélisation), agencement de ce qu'il reste à faire et répartition des taches à faire.
 
 Vendredi 05/04 :
 
