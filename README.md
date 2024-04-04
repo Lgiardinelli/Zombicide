@@ -767,9 +767,13 @@ Week-end :
 ## Semaine 10
 __Objectif de la semaine :__  
 
+- Terminer les actions
+- Préparer et finaliser le rendu du livrable 3
 
 __Objectif atteint :__
 
+- Les actions sont terminer
+- Le rendu du livrable 3 est préparer
 
 __Réflexion du groupe :__  
 
@@ -781,16 +785,12 @@ Mardi 02/04 :
 
 Mercredi 03/04 :
 
-
 Jeudi 04/04 :
-
 
 Vendredi 05/04 :
 
 
 Week-end :
-
-
 
 __Partage de taches :__
 
@@ -804,7 +804,7 @@ Mercredi 03/04 :
 - Léo : ajout des fichiers pour le livrable 3, tests manquants
 
 Jeudi 04/04 :
-
+- Théophane : Préparation du livrable 3, (tout est complété sauf le choix de la modélisation)
 
 Vendredi 05/04 :
 
