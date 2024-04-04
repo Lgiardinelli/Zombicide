@@ -231,37 +231,37 @@ java -jar livrable3.jar 10 10
 Ou utilisation du MakeFile
 
 - Pour tout faire :
-```
+```bash
 make all
 ```
 
 - Pour compiler le projet :
-```
+```bash
 make compile
 ```
 
 - Pour exécuter les tests :
-```
+```bash
 make test
 ```
 
 - Pour générer la documentation :
-```
+```bash
 make javadoc
 ```
 
 - Pour créer un fichier JAR exécutable :
-```
+```bash
 make jar
 ```
 
 - Pour nettoyer les fichiers générés :
-```
+```bash
 make clean
 ```
 
 - Pour exécuter le fichier JAR généré : 
-```
+```bash
 make run-jar ARGS="livrable3"
 ```
 
