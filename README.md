@@ -153,17 +153,121 @@ java -jar livrable2.jar 10 10
 
 ## Livrable 3
 
-### Objectif du premier livrable 
+### Objectif du troisième livrable 
 
-Modélisation des actions.
+- Travailler sur la modélisation des actions et leurs mises en place.
+- Modéliser les actions
 
-### Choix de modélisation 
+### Choix de modélisation
 
-### Etat du développement 
+### Etat du développement
 
-### Atteinte des objectifs
+Tous les objectifs du livrable 3 ont été complété
+
+Récapitulatif des actions : 
+
+Regarder autour de soi : Cette fonctionnalité est implémentée et est gratuite. Les joueurs peuvent obtenir une description de la zone où se trouve le survivant.
+
+Fouiller une pièce : Les survivants peuvent fouiller une pièce et récupérer des équipements s'ils en trouvent. La capacité du sac à dos est gérée, et les équipements non pris restent dans la pièce.
+
+Prendre en main : Les joueurs peuvent prendre des objets de leur sac à dos pour les placer en main, remplaçant ainsi tout objet déjà en main.
+
+Utiliser un équipement : Les survivants peuvent utiliser les équipements qu'ils ont en main, et les effets de chaque objet sont correctement appliqués. Une fois utilisé, l'équipement disparaît du jeu.
+
+Ouvrir une porte : Pour ouvrir une porte, les survivants doivent disposer de l'équipement approprié en main. Ouvrir une porte fait apparaître des zombies, avec une chance d'apparition d'Abominations ou de Balaises.
+
+Faire du bruit : Les survivants peuvent choisir de faire du bruit pour attirer les zombies, augmentant ainsi le niveau de bruit dans leur zone.
+
+Se déplacer : Les survivants peuvent se déplacer vers une zone adjacente en passant par une porte ouverte.
+
+Attaquer un zombie : Les survivants peuvent attaquer les zombies en fonction de leur visibilité et de leur portée. Les attaques sont résolues en lançant des dés, avec des seuils de réussite et des dommages dépendant de l'arme utilisée. 
+
+### Objectif atteint
+
+- Toutes les actions spécifiées ont été implémentées
+- La gestion des équipements, de la portée et des effets des actions est fonctionnelle.
+- Lorsqu'un object est utilisé, il est correctement retiré du jeu
+
+### Ensemble des commandes
+- Compilation
+```bash
+javac -sourcepath src src/zombicide/*.java -d classes
+```
+
+```bash
+javac -sourcepath src src/zombicide/actor/zombie/*.java -d classes
+```
+
+- Exécution du programme (avec 2 paramètres longueur et largeur du tableau ou non, 10 par 10 de base)
+```bash
+java -classpath classes zombicide.Livrable3 10 10
+```
+
+- Tests compilation
+```bash
+javac -classpath junit-console.jar:classes test/zombicide/*.java
+```
+
+- Javadoc
+```bash
+javadoc -sourcepath src -subpackages zombicide -d docs
+```
+
+- Test exécution
+```bash
+java -jar junit-console.jar -classpath test:classes -scan-classpath
+```
+
+- Jar compilation
+```bash
+jar cvfe livrable3.jar zombicide/Main -C classes .
+```
+
+- Jar exécution
+```bash
+java -jar livrable3.jar 10 10
+```
+
+Ou utilisation du MakeFile
+
+- Pour tout faire :
+```
+make all
+```
+
+- Pour compiler le projet :
+```
+make compile
+```
+
+- Pour exécuter les tests :
+```
+make test
+```
+
+- Pour générer la documentation :
+```
+make javadoc
+```
+
+- Pour créer un fichier JAR exécutable :
+```
+make jar
+```
+
+- Pour nettoyer les fichiers générés :
+```
+make clean
+```
+
+- Pour exécuter le fichier JAR généré : 
+```
+make run-jar ARGS="livrable3"
+```
 
 ### Difficultés restant à résoudre
+
+- Aucune difficulté majeure n'est signalée dans l'état actuel du développement.
 
 ## Livrable 4
 
