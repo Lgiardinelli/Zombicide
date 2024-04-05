@@ -2,7 +2,6 @@ package zombicide.actor.zombie;
 
 import zombicide.action.Action;
 import zombicide.actor.Actor;
-import zombicide.actor.ActorHandler;
 import zombicide.city.area.Area;
 import zombicide.city.City;
 import zombicide.city.area.street.Manhole;
@@ -13,7 +12,7 @@ import java.util.List;
 /**
  * Abstract class representing a zombie actor in the game.
  */
-public abstract class Zombie extends Actor implements ActorHandler<Zombie> {
+public abstract class Zombie extends Actor {
 
     /** The attack points of the zombie. */
     protected int attackPoints;
@@ -52,7 +51,7 @@ public abstract class Zombie extends Actor implements ActorHandler<Zombie> {
     }
 
     @Override
-    public abstract void handleAction(List<Action<Zombie>> actions);
+    public abstract void handleAction();
 
     @Override
     public void setArea(Area area) {

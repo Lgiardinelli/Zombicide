@@ -1,8 +1,6 @@
 package zombicide.actor.survivor;
 
 import zombicide.action.*;
-import zombicide.actor.ActorHandler;
-import zombicide.actor.survivor.role.Role;
 import zombicide.city.City;
 import zombicide.actor.Actor;
 import zombicide.city.area.Area;
@@ -13,13 +11,12 @@ import zombicide.util.Expertise;
 import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
  * Represents a survivor actor in the game.
  */
-public class Survivor extends Actor implements ActorHandler<Survivor> {
+public class Survivor extends Actor {
     private static final int ACTION_POINTS = 3;
     private static final int LIFE_POINTS = 5;
     private static final RandomListChooser<Action<Survivor>> SURVIVOR_ACTION_CHOOSER =
@@ -35,7 +32,7 @@ public class Survivor extends Actor implements ActorHandler<Survivor> {
     private Item itemHeld;
 
     /** The roles associated with the survivor. */
-    private final List<Role> roles;
+    private final List<Action<Survivor>> roles;
 
     public Survivor(City city) {
         this(new ArrayList<>(), city);
@@ -45,15 +42,15 @@ public class Survivor extends Actor implements ActorHandler<Survivor> {
      * Creates a new survivor with the given roles.
      * You can pass either an array of roles, or as many roles in a row.
      * @param city - the city of the survivor
-     * @param roles The roles of the survivor.
+     * @param actions The actions of the survivor.
      */
-    public Survivor(List<Role> roles, City city) {
+    public Survivor(List<Action<Survivor>> actions, City city) {
         super(city, LIFE_POINTS, ACTION_POINTS);
         this.skillPoints = 0;
         this.backpack = new BackPack(this);
         this.itemHeld = new Pistol();
         this.setArea(this.city.getSpawn());
-        this.roles = new ArrayList<>(roles);
+        this.roles = new ArrayList<>(actions);
     }
 
     /**
@@ -103,7 +100,7 @@ public class Survivor extends Actor implements ActorHandler<Survivor> {
      *
      * @return The list of roles.
      */
-    public List<Role> getRoles() {
+    public List<Action<Survivor>> getRoles() {
         return roles;
     }
     
@@ -137,29 +134,10 @@ public class Survivor extends Actor implements ActorHandler<Survivor> {
     }
 
     @Override
-    public void handleAction(List<Action<Survivor>> actions) {
-        List<Action<Survivor>> merged = getMergedRolesAndActions(actions);
-        //Action<Survivor> action = SURVIVOR_ACTION_CHOOSER.choose(merged);
-        //if (action != null)
-        //    action.doSomething(this);
-        for (Action<Survivor> action : merged)
-            System.out.println(action);
-    }
-
-    private List<Action<Survivor>> getMergedRolesAndActions(List<Action<Survivor>> actions) {
-        List<Action<Survivor>> result = new ArrayList<>(actions);
-        boolean found;
-        for (Role role : this.roles) {
-            found = false;
-            for (Action<Survivor> action : actions)
-                if (action != null && role.extendsAction(action)) {
-                    result.set(result.indexOf(action), role);
-                    found = true;
-                    break;
-                }
-            if (!found)
-                result.add(role);
+    public void handleAction() {
+        Action<Survivor> action = SURVIVOR_ACTION_CHOOSER.choose(roles);
+        if (action != null) {
+            action.doSomething(this);
         }
-        return result;
     }
 }

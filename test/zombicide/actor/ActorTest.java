@@ -12,13 +12,11 @@ import zombicide.actor.zombie.Runner;
 import zombicide.actor.zombie.Walker;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
-import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.city.City;
 import zombicide.item.Item;
 import zombicide.item.weapon.*;
-import zombicide.actor.survivor.role.Fighter;
-import zombicide.actor.survivor.role.Lucky;
-import zombicide.actor.survivor.role.Role;
+import zombicide.action.survivor.special.Fighter;
+import zombicide.action.survivor.special.Lucky;
 
 import java.util.List;
 

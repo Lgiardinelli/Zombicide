@@ -2,14 +2,15 @@ package zombicide;
 
 import zombicide.action.Action;
 import zombicide.action.survivor.*;
+import zombicide.action.survivor.special.Fighter;
+import zombicide.action.survivor.special.Healer;
+import zombicide.action.survivor.special.Lucky;
+import zombicide.action.survivor.special.Snooper;
 import zombicide.actor.survivor.Survivor;
-import zombicide.actor.survivor.role.*;
-import zombicide.actor.survivor.role.Role;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
 import zombicide.city.TrainCity;
-import zombicide.item.Map;
 import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.Axe;
 import zombicide.item.weapon.Riffle;
@@ -37,7 +38,7 @@ public class Livrable3 {
     private void actionsAndRoles() {
 
         // For livrable 3
-        List<Role> roles = Arrays.asList(
+        List<Action<Survivor>> roles = Arrays.asList(
                 new Fighter(),
                 new Healer()
         );

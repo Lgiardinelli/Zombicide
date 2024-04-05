@@ -80,4 +80,6 @@ public abstract class Actor {
     public int getActionPoints() {
         return actionPoints;
     }
+
+    public abstract void handleAction();
 }

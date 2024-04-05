@@ -1,6 +1,10 @@
 package zombicide.actor.survivor.role;
 
 import org.junit.jupiter.api.BeforeEach;
+import zombicide.action.survivor.special.Fighter;
+import zombicide.action.survivor.special.Healer;
+import zombicide.action.survivor.special.Lucky;
+import zombicide.action.survivor.special.Snooper;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
 

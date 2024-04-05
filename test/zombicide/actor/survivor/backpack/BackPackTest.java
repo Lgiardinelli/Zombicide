@@ -3,7 +3,7 @@ package zombicide.actor.survivor.backpack;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import zombicide.actor.survivor.Survivor;
-import zombicide.actor.survivor.role.Fighter;
+import zombicide.action.survivor.special.Fighter;
 import zombicide.city.City;
 import zombicide.item.InfraredGlasses;
 import zombicide.item.Item;
