@@ -32,7 +32,7 @@ public class MasterKeyTest {
         assertTrue(masterkey.canOpen());
         assertFalse(masterkey.canAttack());
         assertFalse(masterkey.isNoisyWhenUsedToOpenDoor());
-        assertTrue(masterkey.isNoisyWhenUsed());
+        assertFalse(masterkey.isNoisyWhenUsed());
     }
 
     @Test
