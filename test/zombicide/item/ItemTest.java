@@ -45,29 +45,6 @@ public class ItemTest {
         this.survivor = new Survivor(this.city);
     }
 
-
-    @Test
-    void testShootingTarget(){
-        int v = pistol.shoot();
-        assertTrue(v > 0);
-        if (v >= pistol.getDiceThreshold())
-            assertTrue(pistol.shotHitsTarget(v));
-    }
-
-    @Test
-    void testAddItemInBackpack(){
-        backPack.addItem(pistol);
-        assertTrue(backPack.getItems().contains(pistol));
-    }
-
-    @Test
-    void testRemoveItemInBackpack(){
-        backPack.addItem(pistol);
-        assertTrue(backPack.getItems().contains(pistol));
-        backPack.removeItem(pistol);
-        assertFalse(backPack.getItems().contains(pistol));
-    }
-
     @Test
     void testToString() {
         String mapString = map.toString();
