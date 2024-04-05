@@ -17,6 +17,7 @@ public class FirstAidKit extends CareItem {
     @Override
     public void use() {
         HealAction h = new HealAction();
+        h.setLifePointsToAdd(this.lifePointsToAdd);
         h.doSomething(chooseAPlayer());
     }
 
