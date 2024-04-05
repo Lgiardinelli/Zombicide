@@ -1,10 +1,29 @@
 package zombicide.item;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class MapTest {
+
+    private Map map;
+
+    @BeforeEach
+    public void setUp() {
+        map = new Map();
+    }
+
+    @Test
+    public void init() {
+        assertFalse(map.canOpen());
+        assertFalse(map.canAttack());
+        assertFalse(map.isNoisyWhenUsedToOpenDoor());
+        assertTrue(map.isNoisyWhenUsed());
+    }
 
     /*
     public void use() {
@@ -21,4 +40,6 @@ public class MapTest {
         survivor.setItemHeld(map);
         map.setSurvivor(survivor);
     }
+
+
 }
