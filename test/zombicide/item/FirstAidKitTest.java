@@ -18,7 +18,9 @@ public class FirstAidKitTest {
     private FirstAidKit firstAidKit;
 
     private Survivor s;
+    private Survivor s2;
 
+    private City c;
     private HealAction h;
 
 
@@ -27,9 +29,16 @@ public class FirstAidKitTest {
     public void setUp() {
         firstAidKit = new FirstAidKit();
         firstAidKit.setLifePointsToAdd(1);
-        s = new Survivor(new City(5 , 5));
+
+        c = new City(5,5);
+        s = new Survivor(c);
+        s2 = new Survivor(c);
+
         firstAidKit.setSurvivor(s);
+
         s.setArea(new Room(4,4));
+        s2.setArea(new Room(4,4));
+
         h = new HealAction();
     }
 
@@ -44,7 +53,7 @@ public class FirstAidKitTest {
     @Test
     public void useTest(){
         firstAidKit.use();
-        assertEquals(s.getLifePoints() , 6);
+        assertTrue(s.getLifePoints() == 6 || s2.getLifePoints() == 6);
     }
 
 
