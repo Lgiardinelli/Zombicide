@@ -59,6 +59,12 @@ class CityTest {
 		assertNotNull(city.getSpawn());
 	}
 
+	@Test
+	void testContainsRoom(){
+		Room r = (Room) city.getArea(0,0);
+		assertTrue(city.containsRoom(r));
+	}
+
 	/** TODO Revoir le test (isARoom ne considère pas une Room comme une Room)
 	@Test
 	void testIsARoom(){
