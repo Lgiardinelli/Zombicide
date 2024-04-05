@@ -4,8 +4,6 @@ import zombicide.action.survivor.DoorAction;
 import zombicide.actor.survivor.Survivor;
 
 public class MasterKey extends Item {
-	private Survivor survivor;
-
 	public MasterKey(){
 		super();
 		this.canOpen = true;
@@ -16,6 +14,6 @@ public class MasterKey extends Item {
 
 	public void use() {
 		DoorAction d = new DoorAction();
-		d.doSomething(survivor);
+		d.doSomething(this.survivor);
 	}
 }

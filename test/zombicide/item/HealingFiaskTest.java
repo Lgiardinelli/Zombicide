@@ -39,7 +39,7 @@ public class HealingFiaskTest {
     }
 
     @Test
-    public void useTest(){
+    public void testUse(){
         healingFiask.use();
         assertEquals(s.getLifePoints() , 6);
     }

@@ -51,7 +51,7 @@ public class FirstAidKitTest {
     }
 
     @Test
-    public void useTest(){
+    public void testUse(){
         firstAidKit.use();
         assertTrue(s.getLifePoints() == 6 || s2.getLifePoints() == 6);
     }

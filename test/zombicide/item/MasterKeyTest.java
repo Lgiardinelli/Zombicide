@@ -36,9 +36,8 @@ public class MasterKeyTest {
     }
 
     @Test
-    public void useTest(){
-        DoorAction d = new DoorAction();
-        d.doSomething(s);
+    public void testUse(){
+        masterkey.use();
         assertTrue(s.getArea().getDoor(Direction.UP).isOpen() || s.getArea().getDoor(Direction.LEFT).isOpen());
     }
 
