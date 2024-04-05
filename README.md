@@ -17,20 +17,23 @@
 # UML LIVRABLE 2
 ![UML](image/UML_LIVRABLE2.jpeg)
 
+# UML LIVRABLE 3
+![UML]()
+
 # Livrables
 
 ## Livrable 1
 ### Objectif du premier livrable 
-Travailler sur la modélisitation de la map et créer un algorithme de création, créer un plateau d'entrainement.
+Travailler sur la modélisation de la map et créer un algorithme de création, créer un plateau d'entrainement.
 
 ### Choix de modélisation 
 Dans un tout premier temps, il s'agissait de créer un plateau représentant la ville par des listes et de Streets et de Building.  
 Après réflexion, on a vite compris que créer une classe Building serait inutile et que garder seulement les objets de type Room serait plus optimal.  
 Nous avons également convenu qu'il serait préférable d'utiliser des tableaux pour modéliser la ville, comme le tp de BattleSHip réalisé au S3.    
-Nous avons donc décidé d'ajouter dans un premier temps les rues tant que la ville pouvait être divisée en prenant en compte les contraintes imposées (un batiment doit faire au minimum 2 de largeur et longueur).  
-Ensuite il s'agissait de placer les pièces spéciales (Continental et Pharmacie), nous avons créé une méthode qui permettait de prendre une position aléatoire dans la ville et de vérifier si elle etait null (pour éviter de tomber sur une steeet), puis donc de l'assigner à cette position.  
+Nous avons donc décidé d'ajouter dans un premier temps les rues tant que la ville pouvait être divisée en prenant en compte les contraintes imposées (un bâtiment doit faire au minimum 2 de largeur et longueur).  
+Ensuite, il s'agissait de placer les pièces spéciales (Continental et Pharmacie), nous avons créé une méthode qui permettait de prendre une position aléatoire dans la ville et de vérifier si elle était null (pour éviter de tomber sur une steeet), puis donc de l'assigner à cette position.  
 Enfin, nous avons rempli les zones vides par des Rooms qui sont ajoutée dans une liste de room.   
-Cette liste vas permettre en itérant dessus, de fermer les portes parmis toutes les positions (UP, DOWN, LEFT, RIGHT) car de bases, toutes les portes de toutes les cellulles sont ouvertes.  
+Cette liste va permettre en itérant dessus, de fermer les portes parmi toutes les positions (UP, DOWN, LEFT, RIGHT) car de bases, toutes les portes de toutes les cellules sont ouvertes.  
 Ce qui donne l'affichage idéal de MiniCityMain (la ville d'entraînement).  
 
 ### Etat du développement 
@@ -159,31 +162,23 @@ java -jar livrable2.jar 10 10
 - Modéliser les actions
 
 ### Choix de modélisation
+Pour le choix de modélisation des actions, nous avons premièrement créé une interface action ce qui nous permettra de mettre les méthodes communes de toutes les actions qui vont étendre de cette interface.  
+Puis, nous avons fait le choix de séparer dans différents packages les actions communes (moveAction), les actions des survivants et les actions des zombies (AttackSurvivorAction), ce choix nous a permis d'avoir un meilleur visuel sur l'ensemble du sujet, bien évidemment, toutes ces actions étendent de l'interface action.  
+Enfin, pour les actions spéciales, ... // A completer
 
 ### Etat du développement
-
 Tous les objectifs du livrable 3 ont été complété
-
-Récapitulatif des actions : 
-
-Regarder autour de soi : Cette fonctionnalité est implémentée et est gratuite. Les joueurs peuvent obtenir une description de la zone où se trouve le survivant.
-
-Fouiller une pièce : Les survivants peuvent fouiller une pièce et récupérer des équipements s'ils en trouvent. La capacité du sac à dos est gérée, et les équipements non pris restent dans la pièce.
-
-Prendre en main : Les joueurs peuvent prendre des objets de leur sac à dos pour les placer en main, remplaçant ainsi tout objet déjà en main.
-
-Utiliser un équipement : Les survivants peuvent utiliser les équipements qu'ils ont en main, et les effets de chaque objet sont correctement appliqués. Une fois utilisé, l'équipement disparaît du jeu.
-
-Ouvrir une porte : Pour ouvrir une porte, les survivants doivent disposer de l'équipement approprié en main. Ouvrir une porte fait apparaître des zombies, avec une chance d'apparition d'Abominations ou de Balaises.
-
-Faire du bruit : Les survivants peuvent choisir de faire du bruit pour attirer les zombies, augmentant ainsi le niveau de bruit dans leur zone.
-
-Se déplacer : Les survivants peuvent se déplacer vers une zone adjacente en passant par une porte ouverte.
-
-Attaquer un zombie : Les survivants peuvent attaquer les zombies en fonction de leur visibilité et de leur portée. Les attaques sont résolues en lançant des dés, avec des seuils de réussite et des dommages dépendant de l'arme utilisée. 
+Récapitulatif des actions :
+- Regarder autour de soi : Cette fonctionnalité est implémentée et est gratuite. Les joueurs peuvent obtenir une description de la zone où se trouve le survivant.
+- Fouiller une pièce : Les survivants peuvent fouiller une pièce et récupérer des équipements s'ils en trouvent. La capacité du sac à dos est gérée, et les équipements non pris restent dans la pièce.
+- Prendre en main : Les joueurs peuvent prendre des objets de leur sac à dos pour les placer en main, remplaçant ainsi tout objet déjà en main.
+- Utiliser un équipement : Les survivants peuvent utiliser les équipements qu'ils ont en main, et les effets de chaque objet sont correctement appliqués. Une fois utilisé, l'équipement disparaît du jeu.
+- Ouvrir une porte : Pour ouvrir une porte, les survivants doivent disposer de l'équipement approprié en main. Ouvrir une porte fait apparaître des zombies, avec une chance d'apparition d'Abominations ou de Balaises.
+- Faire du bruit : Les survivants peuvent choisir de faire du bruit pour attirer les zombies, augmentant ainsi le niveau de bruit dans leur zone.
+- Se déplacer : Les survivants peuvent se déplacer vers une zone adjacente en passant par une porte ouverte.
+- Attaquer un zombie : Les survivants peuvent attaquer les zombies en fonction de leur visibilité et de leur portée. Les attaques sont résolues en lançant des dés, avec des seuils de réussite et des dommages dépendant de l'arme utilisée. 
 
 ### Objectif atteint
-
 - Toutes les actions spécifiées ont été implémentées
 - La gestion des équipements, de la portée et des effets des actions est fonctionnelle.
 - Lorsqu'un object est utilisé, il est correctement retiré du jeu
@@ -198,9 +193,9 @@ javac -sourcepath src src/zombicide/*.java -d classes
 javac -sourcepath src src/zombicide/actor/zombie/*.java -d classes
 ```
 
-- Exécution du programme (avec 2 paramètres longueur et largeur du tableau ou non, 10 par 10 de base)
+- Exécution du programme
 ```bash
-java -classpath classes zombicide.Livrable3 10 10
+java -classpath classes zombicide.Livrable3
 ```
 
 - Tests compilation
@@ -804,7 +799,7 @@ Mercredi 03/04 :
 - Léo : ajout des fichiers pour le livrable 3, tests manquants
 
 Jeudi 04/04 :
-- Théophane : Préparation du livrable 3, (tout est complété sauf le choix de la modélisation), agencement de ce qu'il reste à faire et répartition des taches à faire.
+- Théophane : Préparation du livrable 3, (tout est complété sauf le choix de la modélisation), agencement de ce qu'il reste à faire et répartition des tâches à faire.
 
 Vendredi 05/04 :
 
