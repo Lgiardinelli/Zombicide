@@ -4,12 +4,10 @@ import org.junit.jupiter.api.BeforeEach;
 import zombicide.action.survivor.DoorAction;
 import zombicide.action.MoveAction;
 import zombicide.actor.survivor.Survivor;
-import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
-import zombicide.item.weapon.Weapon;
 
-public class DoorActionTest {
+public class MoveActionTest {
     private MoveAction moveAction;
     private DoorAction doorAction;
     private Survivor survivor;
