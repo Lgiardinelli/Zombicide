@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
 import zombicide.city.City;
+import zombicide.city.area.street.Street;
+import zombicide.util.Direction;
 
 class CityTest {
 
@@ -16,7 +18,7 @@ class CityTest {
 	
 	@BeforeEach
     public void before() {
-		city = new City(10,10);
+		city = new City(5,5);
 		room = new Room(5,5);
 	}
 	
@@ -27,15 +29,15 @@ class CityTest {
 	
 	@Test
 	void testCheckSizeOfCity() {
-		assertEquals(city.getHeight(), 10);
-		assertEquals(city.getWidth(), 10);
+		assertEquals(city.getHeight(), 5);
+		assertEquals(city.getWidth(), 5);
 	}
 	
 	@Test
 	void testGetArea() {
 		Area[][] area2 = city.getAreas();
-		for (int i = 0; i < 10; i++) {
-	        for (int j = 0; j < 10; j++) {
+		for (int i = 0; i < 5; i++) {
+	        for (int j = 0; j < 5; j++) {
 	            assertNotNull(area2[i][j]);
 	        }
 	    }
@@ -64,6 +66,7 @@ class CityTest {
 		Room r = (Room) city.getArea(0,0);
 		assertTrue(city.containsRoom(r));
 	}
+
 
 	/** TODO Revoir le test (isARoom ne considère pas une Room comme une Room)
 	@Test
