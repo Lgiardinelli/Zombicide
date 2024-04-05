@@ -1,4 +1,4 @@
-package zombicide.actor.survivor.role;
+package zombicide.action.survivor.special;
 
 import zombicide.action.survivor.HealAction;
 import zombicide.actor.survivor.Survivor;
@@ -6,7 +6,7 @@ import zombicide.actor.survivor.Survivor;
 import java.util.List;
 import java.util.Random;
 
-public class Healer extends HealAction implements Role {
+public class Healer extends HealAction {
     private static final int NB_LIFE_POINTS = 1;
     private static final Random RANDOM = new Random();
 

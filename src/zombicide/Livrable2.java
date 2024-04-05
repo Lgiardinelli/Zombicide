@@ -2,9 +2,9 @@ package zombicide;
 
 import zombicide.action.Action;
 import zombicide.action.survivor.*;
+import zombicide.action.survivor.special.*;
+import zombicide.actor.survivor.Role;
 import zombicide.actor.survivor.Survivor;
-import zombicide.actor.survivor.role.*;
-import zombicide.actor.survivor.role.Role;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
@@ -13,6 +13,7 @@ import zombicide.item.Map;
 import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.Riffle;
 import zombicide.util.Direction;
+import zombicide.util.listchooser.ListChooser;
 import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.Arrays;
@@ -45,17 +46,10 @@ public class Livrable2 {
 	}
 
 	private void actionsAndRoles() {
-		List<Role> roles = Arrays.asList(
-				new Fighter(),
-				new Healer()
-		);
-
-		Survivor survivor = new Survivor(roles, this.city);
-
-		List<Action<Survivor>> survivorActions = Arrays.asList(
+		List<Action<Survivor>> fighterActions = Arrays.asList(
 				null,
 				new AreaAction(),
-				new AttackZombieAction(),
+				new Fighter(),
 				new BackPackAction(),
 				new DoorAction(),
 				new HealAction(),
@@ -65,7 +59,38 @@ public class Livrable2 {
 				new RummageAction()
 		);
 
-		survivor.handleAction(survivorActions);
+		List<Action<Survivor>> healerActions = Arrays.asList(
+				null,
+				new AreaAction(),
+				new AttackZombieAction(),
+				new BackPackAction(),
+				new DoorAction(),
+				new Healer(),
+				new ItemAction(),
+				new LookAction(),
+				new NoiseAction(),
+				new RummageAction()
+		);
+
+		List<Action<Survivor>> fighterHealerActions = Arrays.asList(
+				null,
+				new AreaAction(),
+				new Fighter(),
+				new BackPackAction(),
+				new DoorAction(),
+				new Healer(),
+				new ItemAction(),
+				new LookAction(),
+				new NoiseAction(),
+				new RummageAction()
+		);
+
+		ListChooser<List<Action<Survivor>>> actionChooser = new RandomListChooser<>();
+		List<List<Action<Survivor>>> actions = Arrays.asList(fighterActions, healerActions, fighterHealerActions);
+
+		Survivor survivor = new Survivor(actionChooser.choose(actions), this.city);
+
+		survivor.handleAction();
 	}
 
 	private void initCity(int width, int height) {
