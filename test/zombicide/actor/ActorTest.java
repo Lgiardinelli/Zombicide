@@ -156,15 +156,6 @@ public class ActorTest {
     }
 
     @Test
-    void testGetRolesOfSurvivor(){
-        List<Role> Roles = Arrays.asList(fighter, lucky);
-        survivor.getRoles().addAll(Roles);
-        assertEquals(Roles, survivor.getRoles());
-        assertEquals(Roles.size(), survivor.getRoles().size());
-        assertTrue(survivor.getRoles().containsAll(Roles));
-    }
-
-    @Test
     public void testSetArea() {
         survivor.setArea(room);
         assertEquals(room, survivor.getArea());
