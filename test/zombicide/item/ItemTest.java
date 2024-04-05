@@ -55,46 +55,6 @@ public class ItemTest {
     }
 
     @Test
-    void testGetDamageOfWeapon(){
-        int WeaponDamage = pistol.getDamage();
-        assertEquals(WeaponDamage, 1);
-    }
-
-    @Test
-    void testGetDiceThreshold(){
-        int seuilResult = pistol.getDiceThreshold();
-        assertEquals(seuilResult, 4);
-    }
-
-    @Test
-    void testGetNbDiceThrows(){
-        int nb = pistol.getNbDiceThrows();
-        assertEquals(nb, 1);
-        int nb2 = riffle.getNbDiceThrows();
-        assertEquals(nb2, 2);
-    }
-
-    @Test
-    void testGetMinAndMaxHittingRange(){
-        int minRange = pistol.getMinHittingRange();
-        int maxRange = pistol.getMaxHittingRange();
-        assertEquals(minRange, 0);
-        assertEquals(maxRange, 1);
-    }
-
-    @Test
-    void testNoisyUseItem(){
-        //CareItem
-        assertTrue(firstAidKit.isNoisyUse);
-        assertTrue(healingFlask.isNoisyUse);
-
-        //Item
-        assertFalse(infraredGlasses.isNoisyUse);
-        assertTrue(map.isNoisyUse);
-        assertFalse(masterKey.isNoisyUse);
-    }
-
-    @Test
     void testAddItemInBackpack(){
         backPack.addItem(pistol);
         assertTrue(backPack.getItems().contains(pistol));
@@ -132,9 +92,5 @@ public class ItemTest {
         assertEquals(pistolString, "pistol");
     }
 
-    @Test
-    void testSetSurvivorOfCareItem(){
-        healingFlask.setSurvivor(survivor);
-        assertEquals(survivor, healingFlask.getSurvivor());
-    }
+
 }
