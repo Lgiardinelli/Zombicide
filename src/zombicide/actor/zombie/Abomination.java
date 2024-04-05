@@ -16,7 +16,7 @@ public class Abomination extends Zombie {
 	}
 
 	@Override
-	public void handleAction(List<Action<Zombie>> actions) {
+	public void handleAction() {
 
 	}
 }

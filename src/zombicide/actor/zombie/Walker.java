@@ -16,7 +16,7 @@ public class Walker extends Zombie {
 	}
 
 	@Override
-	public void handleAction(List<Action<Zombie>> actions) {
+	public void handleAction() {
 
 	}
 }
