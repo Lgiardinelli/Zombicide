@@ -8,6 +8,7 @@ public class ItemAction implements Action<Survivor> {
 
     @Override
     public void doSomething(Survivor survivor){
+        System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
         Item itemUsed = survivor.getItemHeld();
         itemUsed.use();
         survivor.removeActionPoint();

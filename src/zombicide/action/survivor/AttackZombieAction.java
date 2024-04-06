@@ -15,6 +15,7 @@ public class AttackZombieAction implements Action<Survivor> {
 
     @Override
     public void doSomething(Survivor survivor) {
+        System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
         Item itemHeld =  survivor.getItemHeld();
         if (!itemHeld.canAttack())
             return;

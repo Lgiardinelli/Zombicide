@@ -21,6 +21,7 @@ public class NoiseAction implements Action<Survivor> {
      * If the survivor is not in any area, no noise level is increased.
      */
     public void doSomething(Survivor survivor){
+        System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
         Area currentArea = survivor.getArea();
         if(currentArea != null){
             currentArea.increaseNoiseLevel(this.noiseLevel);

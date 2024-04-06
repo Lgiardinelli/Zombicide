@@ -39,6 +39,7 @@ public class AreaAction implements Action<Survivor> {
 
     @Override
     public void doSomething(Survivor survivor) {
+        System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
         displayAreasAround(survivor);
         survivor.removeActionPoint();
     }
