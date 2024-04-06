@@ -784,8 +784,9 @@ Jeudi 04/04 :
 
 Vendredi 05/04 :
 
-
 Week-end :
+Nous avons donc comme demandé créer des listes d'actions en fonction des rôles des survivants ce qui nous permet de les mettre en paramètre pour qu'ils fassent au hasard une actions de cette liste.
+Le problème que nous avons rencontré est que pour l'action Item, en utilisant l'item dans les mains (de base, c'est le pistolet), quand la méthode shootRange était appelé, this.survivor était null, nous avons du assigner un le pistol à un survivant.
 
 __Partage de taches :__
 
@@ -803,9 +804,8 @@ Jeudi 04/04 :
 
 Vendredi 05/04 :
 
-
 Week-end :
-
+- Léo : Creation des listes des actions en fonctions des différents rôles dans le livrable 3, correction des erreurs.
 
 ## Semaine 11
 __Objectif de la semaine :__  
