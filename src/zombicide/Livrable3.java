@@ -70,6 +70,7 @@ public class Livrable3 {
 
         List<Action<Survivor>> fighterAction = Arrays.asList(
                 null,
+                new AttackZombieAction(),
                 new RummageAction(),
                 new BackPackAction(),
                 new DoorAction(),
@@ -83,6 +84,7 @@ public class Livrable3 {
 
         List<Action<Survivor>> healerAction = Arrays.asList(
                 null,
+                new AttackZombieAction(),
                 new RummageAction(),
                 new BackPackAction(),
                 new DoorAction(),
@@ -96,6 +98,7 @@ public class Livrable3 {
 
         List<Action<Survivor>> luckyAction = Arrays.asList(
                 null,
+                new AttackZombieAction(),
                 new RummageAction(),
                 new BackPackAction(),
                 new DoorAction(),
@@ -110,6 +113,7 @@ public class Livrable3 {
         List<Action<Survivor>> snooperAction = Arrays.asList(
                 null,
                 new RummageAction(),
+                new AttackZombieAction(),
                 new BackPackAction(),
                 new DoorAction(),
                 new ItemAction(),
