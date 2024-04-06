@@ -48,7 +48,9 @@ public class Survivor extends Actor {
         super(city, LIFE_POINTS, ACTION_POINTS);
         this.skillPoints = 0;
         this.backpack = new BackPack(this);
-        this.itemHeld = new Pistol();
+        Pistol pistol = new Pistol();
+        pistol.setSurvivor(this);
+        this.itemHeld = pistol;
         this.setArea(this.city.getSpawn());
         this.roles = new ArrayList<>(actions);
     }
