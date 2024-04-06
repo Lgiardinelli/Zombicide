@@ -1,4 +1,4 @@
-package zombicide.actor.action.attack;
+package zombicide.action.zombie;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
