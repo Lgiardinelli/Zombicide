@@ -46,6 +46,7 @@ public class MoveAction implements Action<Actor> {
 
     @Override
     public void doSomething(Actor actor) {
+        System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
         Position p = positionAfterMoving(actor);
         City city = actor.getCity();
         actor.setArea(city.getArea(p.getX(), p.getY()));
