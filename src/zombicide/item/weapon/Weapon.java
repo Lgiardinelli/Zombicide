@@ -19,7 +19,6 @@ public abstract class Weapon extends Item {
     protected int damage;
     protected int minHittingRange;
     protected int maxHittingRange;
-	private Survivor survivor;
 
 
     public Weapon(int nbDiceThrows, int diceThreshold, int damage, int minHittingRange, int maxHittingRange) {
