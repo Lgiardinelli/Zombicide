@@ -1,6 +1,7 @@
 package zombicide;
 
 import zombicide.action.Action;
+import zombicide.action.MoveAction;
 import zombicide.action.survivor.*;
 import zombicide.action.survivor.special.Fighter;
 import zombicide.action.survivor.special.Healer;
@@ -42,20 +43,10 @@ public class Livrable3 {
                 new Fighter(),
                 new Healer()
         );
+
         Survivor survivor = new Survivor(roles, new City(10, 10));
 
-        List<Action<Survivor>> survivorActions = Arrays.asList(
-                null,
-                new AreaAction(),
-                new AttackZombieAction(),
-                new BackPackAction(),
-                new DoorAction(),
-                new HealAction(),
-                new ItemAction(),
-                new LookAction(),
-                new NoiseAction(),
-                new RummageAction()
-        );
+
 
         // Affichage des actions du survivant
         // survivor.handleAction(survivorActions);
@@ -77,18 +68,75 @@ public class Livrable3 {
 //        trainCity.getAreas()[0][1].getDoor(Direction.DOWN).open();
 //        trainCity.getAreas()[0][1].getDoor(Direction.LEFT).open();
 
-        new Survivor(List.of(new Fighter()), this.trainCity);
-        new Survivor(List.of(new Healer()), this.trainCity);
-        new Survivor(List.of(new Lucky()), this.trainCity);
-        new Survivor(List.of(new Snooper()), this.trainCity);
+        List<Action<Survivor>> fighterAction = Arrays.asList(
+                null,
+                new RummageAction(),
+                new BackPackAction(),
+                new DoorAction(),
+                new ItemAction(),
+                new NoiseAction(),
+                new AreaAction(),
+                new LookAction(),
+                new Fighter()
+                // Ajouter la moveAction
+        );
+
+        List<Action<Survivor>> healerAction = Arrays.asList(
+                null,
+                new RummageAction(),
+                new BackPackAction(),
+                new DoorAction(),
+                new ItemAction(),
+                new NoiseAction(),
+                new AreaAction(),
+                new LookAction(),
+                new Healer()
+                // Ajouter la moveAction
+        );
+
+        List<Action<Survivor>> luckyAction = Arrays.asList(
+                null,
+                new RummageAction(),
+                new BackPackAction(),
+                new DoorAction(),
+                new ItemAction(),
+                new NoiseAction(),
+                new AreaAction(),
+                new LookAction(),
+                new Lucky()
+                // Ajouter la moveAction
+        );
+
+        List<Action<Survivor>> snooperAction = Arrays.asList(
+                null,
+                new RummageAction(),
+                new BackPackAction(),
+                new DoorAction(),
+                new ItemAction(),
+                new NoiseAction(),
+                new AreaAction(),
+                new LookAction(),
+                new Snooper()
+                // Ajouter la moveAction
+        );
+
+        new Survivor(fighterAction, this.trainCity);
+        new Survivor(healerAction, this.trainCity);
+        new Survivor(luckyAction, this.trainCity);
+        new Survivor(snooperAction, this.trainCity);
 
         List<Survivor> survivors = trainCity.getSpawn().getSurvivors();
+        int sizeOfSurvivors = survivors.size();
+        for (int i=0; i<sizeOfSurvivors; i++) {
+            survivors.get(0).setArea(trainCity.getAreas()[1][2]);
+        }
+        survivors = trainCity.getAreas()[1][2].getSurvivors();
+
         List<Zombie> zombies = new ArrayList<>();
         for (int i=0; i<trainCity.getRooms().size(); i++) {
             List<Zombie> z = trainCity.getRooms().get(i).getZombies();
             zombies.addAll(z);
         }
-
 
         trainCity.display();
 
@@ -111,16 +159,19 @@ public class Livrable3 {
         }
         System.out.println();
 
-        // Faire une action pour un survivant
-        int alea = (int) (Math.random() * survivors.size());
-        survivors.get(alea); // ... a continuer
-        // Utiliser chooseRandomActionSurvivor ?
-        // Ajout d'une méthode doSomething dans Survivor ?
+        // Faire une action pour chaque survivant
+        int j;
+        for (j=0; j<survivors.size(); j++) {
+            survivors.get(j).handleAction();
+        }
 
         // Action attack and move for all zombies
-        for (i=0 ; i<zombies.size(); i++) {
-            zombies.get(i); // Ajouter l'effet d'attaquer, si survivant dans la cell, attaquer sinon rien faire mais cela doit être gérer dans l'action
+        /**
+        int iterableActionZombie;
+        for (iterableActionZombie=0 ; i<zombies.size(); iterableActionZombie++) {
+            zombies.get(iterableActionZombie).handleAction();// Ajouter l'effet d'attaquer, si survivant dans la cell, attaquer sinon rien faire mais cela doit être gérer dans l'action
         }
+         */
 
 
 
