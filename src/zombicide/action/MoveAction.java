@@ -38,6 +38,7 @@ public class MoveAction<T extends Actor> implements Action<T> {
 
         if (!actor.getArea().getDoor(this.direction).isOpen()) {
             System.out.printf("fermé : %s", this.direction);
+            System.out.println();
             return new Position(x, y);
         }
 
@@ -51,7 +52,6 @@ public class MoveAction<T extends Actor> implements Action<T> {
 
     @Override
     public void doSomething(T actor) {
-        System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
         Position p = positionAfterMoving(actor);
         City city = actor.getCity();
         actor.setArea(city.getArea(p.getX(), p.getY()));
