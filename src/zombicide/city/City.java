@@ -145,6 +145,12 @@ public class City {
          for (int i = 0 ; i < this.getHeight(); i++) {
         	 this.getAreas()[i][0].getDoor(Direction.LEFT).close();
          }
+
+         for (int i=0; i<this.getWidth(); i++)
+             this.getAreas()[this.getHeight()-1][i].getDoor(Direction.DOWN).close();
+
+         for (int i=0; i<this.getHeight(); i++)
+             this.getAreas()[i][getWidth()-1].getDoor(Direction.RIGHT).close();
     }
 
     /**
