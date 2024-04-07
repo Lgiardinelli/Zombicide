@@ -30,30 +30,13 @@ public class Livrable3 {
     }
 
     private void start(String[] args) {
-        actionsAndRoles();
         initTrainCity();
-    }
-
-    private void actionsAndRoles() {
-
-        // For livrable 3
-        List<Action<Survivor>> roles = Arrays.asList(
-                new Fighter(),
-                new Healer()
-        );
-
-        Survivor survivor = new Survivor(roles, new City(10, 10));
-
-
-
-        // Affichage des actions du survivant
-        // survivor.handleAction(survivorActions);
     }
 
     private void initTrainCity() {
         System.out.println("Plateau d'entraînement :");
 
-        List<Action<Zombie>> zombieActions = List.of(new AttackSurvivorAction(), new MoveAction<>());
+        List<Action<Zombie>> zombieActions = Arrays.asList(new AttackSurvivorAction(), new MoveAction<>());
 
         // Adding abominations in all city's areas
         for (int i = 0; i < trainCity.getHeight(); i++) {
@@ -147,11 +130,11 @@ public class Livrable3 {
         System.out.println();
         int i = 1;
         for (Survivor survivor : survivors) {
-            System.out.printf("Survivant %d : Actions : %s | Item en main : %s | Contenu sac : %s%n",
+            System.out.printf("Survivant %d : Item en main : %s | Contenu sac : %s | Actions : %s%n",
                     i++,
-                    survivor.getRoles(),
                     survivor.getItemHeld(),
-                    survivor.getBackpack().getItems()
+                    survivor.getBackpack().getItems(),
+                    survivor.getRoles()
             );
         }
         System.out.println();
@@ -178,22 +161,6 @@ public class Livrable3 {
         }
     }
 
-    Action<Survivor> chooseRandomActionSurvivor(Survivor survivor) {
-        RandomListChooser<Action<Survivor>> survivorActionChooser = new RandomListChooser<>();
-
-        List<Action<Survivor>> survivorActions = Arrays.asList(
-                null,
-                new RummageAction(),
-                new BackPackAction(),
-                new DoorAction(),
-                new ItemAction(),
-                new NoiseAction(),
-                new AreaAction(),
-                new LookAction()
-        );
-        Action<Survivor> action = survivorActionChooser.choose(survivorActions);
-        return action;
-    }
 
     private static int parseInt(String s) {
         String errorMsg = "Les arguments passés en paramètre doivent être des entiers supérieurs à 4 !";
