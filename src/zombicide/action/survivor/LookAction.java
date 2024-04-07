@@ -8,7 +8,6 @@ import zombicide.util.Direction;
 public class LookAction implements Action<Survivor> {
 
     public void doSomething(Survivor survivor){
-        System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
         rummage(survivor);
     }
 

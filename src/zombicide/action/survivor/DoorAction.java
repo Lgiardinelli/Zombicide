@@ -18,7 +18,6 @@ public class DoorAction implements Action<Survivor> {
      * This action selects the door from the adjacent areas and opens it.
      */
     public void doSomething(Survivor survivor){
-        System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
         if(canOpen(survivor)) {
             List<Door> doors = doorsAround(survivor);
             RandomListChooser<Door> chooser = new RandomListChooser<>();

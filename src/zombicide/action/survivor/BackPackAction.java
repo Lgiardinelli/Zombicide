@@ -7,7 +7,6 @@ import zombicide.actor.survivor.Survivor;
 public class BackPackAction implements Action<Survivor> {
 
     public void doSomething(Survivor survivor) {
-        System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
         holdRandomItem(survivor);
         survivor.removeActionPoint();
     }

@@ -15,7 +15,6 @@ public class RummageAction implements Action<Survivor> {
      */
     @Override
     public void doSomething(Survivor survivor){
-        System.out.printf("%nHey ! '%s' called here !%n", getClass().getSimpleName());
         rummage(survivor);
         survivor.removeActionPoint();
     }
