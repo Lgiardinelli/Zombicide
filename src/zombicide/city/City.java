@@ -1,5 +1,7 @@
 package zombicide.city;
 
+import zombicide.actor.survivor.Survivor;
+import zombicide.actor.zombie.Zombie;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
 import zombicide.city.area.room.TheContinental;
@@ -18,6 +20,7 @@ import zombicide.util.Direction;
 import zombicide.util.Position;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -31,6 +34,8 @@ public class City {
     private List<Room> rooms;
     private List<Item> items;
     protected List<Manhole> manholes;
+    private List<Survivor> survivors;
+    private List<Zombie> zombies;
 
     private static final int MINIMAL_ITEMS = 1;
 
@@ -48,9 +53,35 @@ public class City {
         this.rooms = new ArrayList<>();
         this.items = new ArrayList<>();
         this.manholes = new ArrayList<>();
+        this.survivors = new ArrayList<>();
+        this.zombies = new ArrayList<>();
         initCity();
     }
-    
+
+    public List<Survivor> getSurvivors() {
+        this.survivors.clear();
+
+        for (int i = 0; i < getHeight(); i++) {
+            for (int j = 0; j < getWidth(); j++) {
+                Area area = this.getArea(j, i);
+                this.survivors.addAll(area.getSurvivors());
+            }
+        }
+        return this.survivors;
+    }
+
+    public List<Zombie> getZombies() {
+        this.zombies.clear();
+
+        for (int i = 0; i < getHeight(); i++) {
+            for (int j = 0; j < getWidth(); j++) {
+                Area area = this.getArea(j, i);
+                this.zombies.addAll(area.getZombies());
+            }
+        }
+        return this.zombies;
+    }
+
     /**
      * Retrieves the array of areas representing the city.
      *
