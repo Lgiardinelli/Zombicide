@@ -2,7 +2,6 @@ package zombicide.item.weapon;
 
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.area.Area;
-import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
 import zombicide.item.Item;
 import zombicide.util.Direction;
@@ -30,24 +29,6 @@ public abstract class Weapon extends Item {
 		this.maxHittingRange = maxHittingRange;
 		this.canAttack = true;
 		this.isNoisyDoor = true;
-	}
-
-
-	/**
-     * Performs the shooting action with the weapon, rolling dice and calculating the result.
-     *
-     * @return The total result obtained by rolling the dice.
-     */
-    public int shoot() {
-		int lastShotValue = 0;
-        for (int i = 0; i < this.nbDiceThrows; i++) {
-            lastShotValue += throwOneDie();
-        }
-		return lastShotValue;
-    }
-    
-    private int throwOneDie() {
-		return RANDOM.nextInt(6) + 1;
 	}
     
     /**
