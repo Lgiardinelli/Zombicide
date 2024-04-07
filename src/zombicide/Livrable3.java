@@ -9,6 +9,7 @@ import zombicide.action.survivor.special.Lucky;
 import zombicide.action.survivor.special.Snooper;
 import zombicide.action.zombie.AttackSurvivorAction;
 import zombicide.actor.survivor.Survivor;
+import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Walker;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
@@ -41,7 +42,7 @@ public class Livrable3 {
         // Adding abominations in all city's areas
         for (int i = 0; i < trainCity.getHeight(); i++) {
             for (int j = 0; j < trainCity.getWidth(); j++) {
-                Zombie abomination = new Walker(zombieActions, this.trainCity);
+                Zombie abomination = new Abomination(zombieActions, this.trainCity);
                 abomination.setArea(trainCity.getAreas()[j][i]);
             }
         }
