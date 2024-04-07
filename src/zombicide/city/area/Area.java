@@ -205,12 +205,16 @@ public abstract class Area {
             for (Survivor s : this.survivors) {
                 System.out.print("| " + s.display() + " | ");
             }
+            if (this.survivors.isEmpty())
+                System.out.print("nobody ");
             System.out.print("survivors");
             System.out.println();
             System.out.print("They are : ");
             for (Zombie z : this.zombies) {
                 System.out.print("| " + z.display() + " | ");
             }
+            if (this.zombies.isEmpty())
+                System.out.print("nobody ");
             System.out.print("zombies");
             System.out.println();
         }
