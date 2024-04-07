@@ -17,7 +17,7 @@ public class AreaAction implements Action<Survivor> {
     private void displayAreasAround(Survivor survivor){
         City city = survivor.getCity();
         for(Direction d : Direction.values()){
-            System.out.print(d.name()+" :");
+            // System.out.print(d.name()+" :");
             int i = d.getX();
             int j = d.getY();
 
