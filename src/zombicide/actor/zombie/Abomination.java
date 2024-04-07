@@ -17,6 +17,11 @@ public class Abomination extends Zombie {
 
 	@Override
 	public void handleAction() {
-
+		Action<Zombie> action = ACTION_CHOOSER.choose(this.zombieActions);
+		System.out.println();
+		System.out.println(action);
+		if (action != null)  {
+			action.doSomething(this);
+		}
 	}
 }
