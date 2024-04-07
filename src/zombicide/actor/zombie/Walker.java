@@ -11,13 +11,14 @@ public class Walker extends Zombie {
 	private static final int ACTION_POINTS = 1;
 	private static final boolean IS_STRONG = false;
 	
-	public Walker(City city) {
-		super(ATTACK_POINTS, LIFE_POINTS, ACTION_POINTS, IS_STRONG, city);
+	public Walker(List<Action<Zombie>> zombieActions, City city) {
+		super(zombieActions, ATTACK_POINTS, LIFE_POINTS, ACTION_POINTS, IS_STRONG, city);
 	}
 
 	@Override
 	public void handleAction() {
-
+		Action<Zombie> action = ACTION_CHOOSER.choose(zombieActions);
+		System.out.println(action);
 	}
 }
 

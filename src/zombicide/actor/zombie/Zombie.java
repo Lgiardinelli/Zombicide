@@ -7,6 +7,7 @@ import zombicide.city.City;
 import zombicide.city.area.street.Manhole;
 import zombicide.util.listchooser.RandomListChooser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,13 +20,16 @@ public abstract class Zombie extends Actor {
 
     /** Indicates whether the zombie is strong or not. */
     protected boolean isStrong;
+    protected List<Action<Zombie>> zombieActions;
     private static final RandomListChooser<Manhole> MANHOLE_CHOOSER = new RandomListChooser<>();
+    protected static final RandomListChooser<Action<Zombie>> ACTION_CHOOSER = new RandomListChooser<>();
 
-    public Zombie(int attackPoints, int lifePoints, int actionPoints, boolean isStrong, City city) {
+    public Zombie(List<Action<Zombie>> zombieActions, int attackPoints, int lifePoints, int actionPoints, boolean isStrong, City city) {
         super(city, lifePoints, actionPoints);
 		this.attackPoints = attackPoints;
 		this.isStrong = isStrong;
         this.setArea(chooseRandomManhole());
+        this.zombieActions = new ArrayList<>(zombieActions);
 	}
 
     private Manhole chooseRandomManhole() {
