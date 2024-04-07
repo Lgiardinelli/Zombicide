@@ -33,7 +33,7 @@ public class RummageAction implements Action<Survivor> {
         Room room = (Room) area;
         BackPack backpack = survivor.getBackpack();
 
-        if (room.hasItems())
+        if (!room.hasItems())
             return;
 
         Item roomItem = room.getRandomItem();
