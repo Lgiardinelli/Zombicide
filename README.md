@@ -787,6 +787,10 @@ Vendredi 05/04 :
 Week-end :
 Nous avons donc comme demandé créer des listes d'actions en fonction des rôles des survivants ce qui nous permet de les mettre en paramètre pour qu'ils fassent au hasard une actions de cette liste.
 Le problème que nous avons rencontré est que pour l'action Item, en utilisant l'item dans les mains (de base, c'est le pistolet), quand la méthode shootRange était appelé, this.survivor était null, nous avons du assigner un le pistol à un survivant.
+Nous avons gerer les roles des survivants et tout fonctionne correctement, nous sommes donc passé au zombies, sachant qu'il ont que 2 actions possibles (attaquer ou bouger), pour se déplacer, la classe utilisé est la même que celle pour les survivants, nous avons pu faire cela grâce à ...
+// Completer phrase dessus
+Puis pour attackAction, notre classe étaient déjà effectué il manquait plus qu'à l'appeler dans handleAction de chaque types de zombies.
+Maintenant, la question que nous nous posons par rapport aux livrable 3 et au sujet, notre responsable a indiqué qu'il faut que les zombies attauqe et se déplacent, est-ce que cela veut dire que le zombies attaque et s'il n'y a pas de survivant il se déplace ou il fait réellement les deux actions séparément et à la suite ?
 
 __Partage de taches :__
 
@@ -806,6 +810,7 @@ Vendredi 05/04 :
 
 Week-end :
 - Léo : Creation des listes des actions en fonctions des différents rôles dans le livrable 3, correction des erreurs.
+- Dylan, Léo : Dernière modification pour le livrable 3 (fixation des bugs, ajout de fonctions permettant une action de s'exécuter, ...)
 
 ## Semaine 11
 __Objectif de la semaine :__  
