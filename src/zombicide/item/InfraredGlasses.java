@@ -4,7 +4,6 @@ import zombicide.action.survivor.AreaAction;
 import zombicide.actor.survivor.Survivor;
 
 public class InfraredGlasses extends Item {
-	private Survivor survivor;
 
 	public String toString(){
 		return "infrared glasses";
