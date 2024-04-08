@@ -17,7 +17,4 @@ public class Chainsaw extends Weapon{
 		return "chainsaw";
 	}
 
-	@Override
-	public void use() {
-	}
 }
