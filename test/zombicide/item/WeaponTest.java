@@ -2,7 +2,20 @@ package zombicide.item;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import zombicide.actor.zombie.Balaise;
+import zombicide.actor.zombie.Runner;
+import zombicide.actor.zombie.Zombie;
+import zombicide.city.City;
+import zombicide.action.Action;
+import zombicide.action.MoveAction;
+import zombicide.action.zombie.AttackSurvivorAction;
+import zombicide.actor.survivor.Survivor;
+import zombicide.actor.zombie.Abomination;
+import zombicide.city.area.Area;
 import zombicide.item.weapon.*;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -13,6 +26,11 @@ public class WeaponTest {
     private Weapon chainsaw;
     private Weapon crowbar;
     private Weapon riffle;
+    private Survivor s;
+    private Abomination z1;
+    private Abomination z2;
+    private Abomination z3;
+    private City c;
 
     @BeforeEach
     public void before(){
@@ -21,6 +39,25 @@ public class WeaponTest {
         this.chainsaw = new Chainsaw();
         this.riffle = new Riffle();
         this.crowbar = new Crowbar();
+
+        c = new City(5,5);
+        s = new Survivor(c);
+
+        List<Action<zombicide.actor.zombie.Zombie>> zombieSurvivor = Arrays.asList(
+                new MoveAction<>(),
+                new AttackSurvivorAction()
+        );
+        z1 = new Abomination(zombieSurvivor , c);
+        z2 = new Abomination(zombieSurvivor , c);
+        z3 = new Abomination(zombieSurvivor , c);
+
+
+        s.setArea(c.getArea(2,2));
+        z1.setArea(c.getArea(2,2));
+        z2.setArea(c.getArea(2,1));
+        z3.setArea(c.getArea(2,3));
+
+
     }
 
 
@@ -30,5 +67,25 @@ public class WeaponTest {
         int maxRange = pistol.getMaxHittingRange();
         assertEquals(minRange, 0);
         assertEquals(maxRange, 1);
+    }
+
+    @Test
+    public void testShootRange(){
+        pistol.setSurvivor(s);
+        axe.setSurvivor(s);
+
+        c.display();
+
+
+        List<Zombie> listWithRiffle = pistol.shootRange();
+        List<Zombie> listWithAxe = axe.shootRange();
+
+        System.out.println(listWithRiffle);
+
+        assertEquals(listWithAxe.size() , 1);
+        assertEquals(listWithRiffle.size() , 2);
+
+
+
     }
 }
