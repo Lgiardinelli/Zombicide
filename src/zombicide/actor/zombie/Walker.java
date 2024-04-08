@@ -14,15 +14,6 @@ public class Walker extends Zombie {
 	public Walker(List<Action<Zombie>> zombieActions, City city) {
 		super(zombieActions, ATTACK_POINTS, LIFE_POINTS, ACTION_POINTS, IS_STRONG, city);
 	}
-
-	@Override
-	public void handleAction() {
-		Action<Zombie> action = ACTION_CHOOSER.choose(this.zombieActions);
-		System.out.println();
-		System.out.println(action);
-		if (action != null)  {
-			action.doSomething(this);
-		}
-	}
+	
 }
 

@@ -55,14 +55,20 @@ public abstract class Zombie extends Actor {
     }
 
     @Override
-    public abstract void handleAction();
-
-    @Override
     public void setArea(Area area) {
         if (this.area != null) {
             this.area.removeActor(this);
         }
         this.area = area;
         area.addZombie(this);
+    }
+
+    public void handleAction() {
+        Action<Zombie> action = ACTION_CHOOSER.choose(this.zombieActions);
+        System.out.println();
+        System.out.println(action);
+        if (action != null)  {
+            action.doSomething(this);
+        }
     }
 }
