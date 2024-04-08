@@ -3,7 +3,7 @@ package zombicide.actor.action;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import zombicide.action.Action;
-import zombicide.action.MoveAction;
+import zombicide.action.survivor.SurvivorMoveAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Walker;
 import zombicide.actor.zombie.Zombie;
@@ -14,10 +14,10 @@ import zombicide.city.area.street.Street;
 import java.util.Arrays;
 import java.util.List;
 
-public class MoveActionTest {
+public class SurvivorMoveActionTest {
 
-    private MoveAction m1;
-    private MoveAction m2;
+    private SurvivorMoveAction m1;
+    private SurvivorMoveAction m2;
     private Survivor s1;
     private Zombie z1;
     private City city;
@@ -33,8 +33,8 @@ public class MoveActionTest {
         Area area = new Street(2, 3);
         s1.setArea(area);
         z1.setArea(area);
-        this.m1 = new MoveAction();
-        this.m2 = new MoveAction();
+        this.m1 = new SurvivorMoveAction();
+        this.m2 = new SurvivorMoveAction();
     }
 
     @Test
