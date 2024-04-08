@@ -16,7 +16,4 @@ public class Crowbar extends Weapon{
 		return "crowbar";
 	}
 
-	@Override
-	public void use() {
-	}
 }
