@@ -79,7 +79,7 @@ public abstract class Weapon extends Item {
 						if (!(areaWeapon.isContinental())) {
 							List<Zombie> zom = city.getArea(x, y).getZombies();
 							zombies.addAll(zom);
-						}modi
+						}
 					}
 				}
 			}
