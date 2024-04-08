@@ -3,7 +3,11 @@ package zombicide.actor;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import zombicide.action.Action;
+import zombicide.action.MoveAction;
+import zombicide.action.survivor.AttackZombieAction;
 import zombicide.action.survivor.NoiseAction;
+import zombicide.action.zombie.AttackSurvivorAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.actor.zombie.Abomination;
@@ -38,12 +42,19 @@ public class ActorTest {
 
     @BeforeEach
     public void before(){
+        List<Action<Survivor>> actionSurvivor = Arrays.asList(
+                new AttackZombieAction()
+        );
+        List<Action<Zombie>> zombieSurvivor = Arrays.asList(
+                new MoveAction<>(),
+                new AttackSurvivorAction()
+        );
         this.city = new City(5,5);
-        this.survivor = new Survivor(this.city);
-        this.balaise = new Balaise(this.city);
-        this.abomination = new Abomination(this.city);
-        this.walker = new Walker(this.city);
-        this.runner = new Runner(this.city);
+        this.survivor = new Survivor(actionSurvivor , this.city);
+        this.balaise = new Balaise(zombieSurvivor , this.city);
+        this.abomination = new Abomination(zombieSurvivor , this.city);
+        this.walker = new Walker(zombieSurvivor , this.city);
+        this.runner = new Runner(zombieSurvivor , this.city);
         this.riffle = new Riffle();
         this.room = new Room(6,7);
         this.noiseAction = new NoiseAction();

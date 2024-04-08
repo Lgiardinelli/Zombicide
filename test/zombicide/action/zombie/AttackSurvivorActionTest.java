@@ -2,11 +2,16 @@ package zombicide.action.zombie;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import zombicide.action.Action;
+import zombicide.action.MoveAction;
 import zombicide.action.zombie.AttackSurvivorAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -20,7 +25,10 @@ public class AttackSurvivorActionTest {
     @BeforeEach
     public void setup() {
         city = new City(10, 10);
-        zombie = new Abomination(city);
+        List<Action<Zombie>> zombieSurvivor = Arrays.asList(
+                new AttackSurvivorAction()
+        );
+        zombie = new Abomination(zombieSurvivor , city);
         survivor = new Survivor(city);
         action = new AttackSurvivorAction();
     }

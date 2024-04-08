@@ -3,6 +3,7 @@ package zombicide.action.survivor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import zombicide.action.Action;
+import zombicide.action.MoveAction;
 import zombicide.action.survivor.AttackZombieAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Abomination;
@@ -29,9 +30,13 @@ public class AttackZombieActionTest {
         List<Action<Survivor>> actionSurvivor = Arrays.asList(
                 new AttackZombieAction()
         );
+        List<Action<Zombie>> zombieSurvivor = Arrays.asList(
+                new MoveAction<>()
+        );
+
         this.city = new City(10, 10);
         survivor = new Survivor(actionSurvivor, city);
-        zombie = new Abomination(city);
+        zombie = new Abomination(zombieSurvivor, city);
         int posX = zombie.getArea().getX();
         int posY = zombie.getArea().getY();
         survivor.setArea(this.city.getArea(posX, posY));

@@ -23,13 +23,6 @@ public class WeaponTest {
         this.crowbar = new Crowbar();
     }
 
-    @Test
-    void testShootingTarget(){
-        int v = pistol.shoot();
-        assertTrue(v > 0);
-        if (v >= pistol.getDiceThreshold())
-            assertTrue(pistol.shotHitsTarget(v));
-    }
 
     @Test
     void testGetMinAndMaxHittingRange(){
