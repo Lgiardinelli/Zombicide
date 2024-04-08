@@ -5,23 +5,55 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import zombicide.action.Action;
+import zombicide.action.MoveAction;
+import zombicide.action.zombie.AttackSurvivorAction;
+import zombicide.actor.survivor.Survivor;
+import zombicide.actor.zombie.Abomination;
+import zombicide.actor.zombie.Zombie;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
 import zombicide.city.City;
 import zombicide.city.area.street.Street;
 import zombicide.util.Direction;
 
+import java.util.Arrays;
+import java.util.List;
+
 class CityTest {
 
 	private City city;
-	private	Room room;
-	
+	private Survivor survivor1;
+	private Survivor survivor2;
+	private Abomination abomination1;
+	private Abomination abomination2;
+	private Abomination abomination3;
+
 	@BeforeEach
-    public void before() {
-		city = new City(5,5);
-		room = new Room(5,5);
+	public void before() {
+		city = new City(5, 5);
+
+		survivor1 = new Survivor(city);
+		survivor2 = new Survivor(city);
+
+		List<Action<Zombie>> zombieActions = Arrays.asList(
+				new MoveAction<>(),
+				new AttackSurvivorAction()
+		);
+
+		abomination1 = new Abomination(zombieActions , city);
+		abomination2 = new Abomination(zombieActions , city);
+		abomination3 = new Abomination(zombieActions , city);
+
+		survivor1.setArea(city.getArea(2,0));
+		survivor2.setArea(city.getArea(1,1));
+
+		abomination1.setArea(city.getArea(1, 1));
+		abomination2.setArea(city.getArea(3, 3));
+		abomination3.setArea(city.getArea(4, 0));
 	}
-	
+
+
 	@Test
 	void testInitializationCity() {
 		assertNotNull(city);
@@ -66,6 +98,17 @@ class CityTest {
 		Room r = (Room) city.getArea(0,0);
 		assertTrue(city.containsRoom(r));
 	}
+
+	@Test
+	void testGetZombies(){
+		assertEquals(city.getZombies().size() , 3);
+	}
+
+	@Test
+	void testGetSurvivors(){
+		assertEquals(city.getSurvivors().size() , 2);
+	}
+
 
 
 	/** TODO Revoir le test (isARoom ne considère pas une Room comme une Room)
