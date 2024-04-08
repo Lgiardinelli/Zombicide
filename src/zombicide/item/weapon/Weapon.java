@@ -75,9 +75,11 @@ public abstract class Weapon extends Item {
 				x += i*d.getX();
 				y += i*d.getY();
 				if (this.getMinHittingRange() < i) {
-					if (!(areaWeapon.isContinental())) {
-						List<Zombie> zom = city.getArea(x, y).getZombies();
-						zombies.addAll(zom);
+					if(x < city.getWidth() && x > 0 && y < city.getHeight() && y > 0){
+						if (!(areaWeapon.isContinental())) {
+							List<Zombie> zom = city.getArea(x, y).getZombies();
+							zombies.addAll(zom);
+						}modi
 					}
 				}
 			}
