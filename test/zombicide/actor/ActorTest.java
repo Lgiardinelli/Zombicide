@@ -42,15 +42,12 @@ public class ActorTest {
 
     @BeforeEach
     public void before(){
-        List<Action<Survivor>> actionSurvivor = Arrays.asList(
-                new AttackZombieAction()
-        );
         List<Action<Zombie>> zombieSurvivor = Arrays.asList(
                 new MoveAction<>(),
                 new AttackSurvivorAction()
         );
         this.city = new City(5,5);
-        this.survivor = new Survivor(actionSurvivor , this.city);
+        this.survivor = new Survivor(this.city);
         this.balaise = new Balaise(zombieSurvivor , this.city);
         this.abomination = new Abomination(zombieSurvivor , this.city);
         this.walker = new Walker(zombieSurvivor , this.city);

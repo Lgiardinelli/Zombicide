@@ -5,6 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import zombicide.action.Action;
+import zombicide.action.MoveAction;
+import zombicide.action.zombie.AttackSurvivorAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.actor.zombie.Abomination;
@@ -15,6 +18,7 @@ import zombicide.city.area.room.TheContinental;
 import zombicide.city.area.room.ThePharmacy;
 import zombicide.city.City;
 
+import java.util.Arrays;
 import java.util.List;
 
 class AreaTest {
@@ -35,6 +39,10 @@ class AreaTest {
 	
 	@BeforeEach
 	public void before() {
+		List<Action<Zombie>> zombieSurvivor = Arrays.asList(
+				new MoveAction<>(),
+				new AttackSurvivorAction()
+		);
 		this.city = new City(10,10);
 		//Area
 		this.room = new Room(6,7);
@@ -44,8 +52,8 @@ class AreaTest {
 		//Actor
 		this.survivor = new Survivor(this.city);
 		this.survivor2 = new Survivor(this.city);
-		this.walker = new Walker(this.city);
-		this.abomination = new Abomination(this.city);
+		this.walker = new Walker(zombieSurvivor , this.city);
+		this.abomination = new Abomination(zombieSurvivor , this.city);
 	}
 	
 	@Test
