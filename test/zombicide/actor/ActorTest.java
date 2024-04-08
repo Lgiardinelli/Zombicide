@@ -189,4 +189,16 @@ public class ActorTest {
         assertTrue(survivor.holdAnItem());
     }
 
+    @Test
+    void testDisplay(){
+        System.out.println(abomination.display());
+        System.out.println(survivor.display());
+    }
+
+    @Test
+    void testHandleAction(){
+        abomination.handleAction();
+        survivor.handleAction();
+    }
+
 }
