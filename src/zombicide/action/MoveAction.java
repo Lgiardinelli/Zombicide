@@ -2,27 +2,27 @@ package zombicide.action;
 
 import zombicide.actor.Actor;
 import zombicide.city.City;
+import zombicide.city.area.Area;
 import zombicide.util.Direction;
 import zombicide.util.Position;
+import zombicide.util.listchooser.ListChooser;
+import zombicide.util.listchooser.RandomListChooser;
 
-/**
- * Represents an action for moving an Actor in a specified direction.
- */
-public class MoveAction<T extends Actor> implements Action<T> {
+import java.util.List;
+import java.util.stream.Stream;
 
-    /** The direction in which the Actor will move. */
-    private Direction direction;
+public abstract class MoveAction<T extends Actor> implements Action<T> {
+    private static final ListChooser<Direction> DIRECTION_CHOOSER =
+            new RandomListChooser<>();
 
-    /**
-     * Constructs a new MoveAction with the specified direction.
-     */
-    public MoveAction() {
-        this.direction = null;
+    protected List<Direction> getOpenDirectionsFrom(Area area) {
+        return Stream.of(Direction.values())
+                .filter(d -> area.getDoor(d).isOpen())
+                .toList();
     }
 
-    private Direction randomDirection() {
-        int random = (int) (Math.random() * Direction.values().length);
-        return Direction.values()[random];
+    protected Direction randomOpenDirectionFrom(Area area) {
+        return DIRECTION_CHOOSER.choose(getOpenDirectionsFrom(area));
     }
 
     /**
@@ -30,25 +30,25 @@ public class MoveAction<T extends Actor> implements Action<T> {
      *
      * @return The new Position after moving the Actor.
      */
-    private Position positionAfterMoving(Actor actor){
-        this.direction = randomDirection();
+    protected Position positionAfterMoving(Actor actor) {
+        if (actor == null)
+            return null;
+
+        Direction direction = getDirectionFrom(actor.getArea());
 
         int x = actor.getArea().getX();
         int y = actor.getArea().getY();
 
-        if (!actor.getArea().getDoor(this.direction).isOpen()) {
-            System.out.printf("fermé : %s", this.direction);
-            System.out.println();
+        if (direction == null)
             return new Position(x, y);
-        }
 
-        // Calculate the new X and Y coordinates after moving in the specified direction
         int i = x + direction.getX();
         int j = y + direction.getY();
 
-        // Create and return the new Position
         return new Position(i , j);
     }
+
+    protected abstract Direction getDirectionFrom(Area area);
 
     @Override
     public void doSomething(T actor) {
