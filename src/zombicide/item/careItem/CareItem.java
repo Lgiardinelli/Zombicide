@@ -15,7 +15,4 @@ public abstract class CareItem extends Item {
 		this.lifePointsToAdd = n;
 	}
 
-	public void use() {
-
-	}
 }
