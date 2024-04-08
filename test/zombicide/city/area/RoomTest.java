@@ -8,7 +8,9 @@ import org.junit.jupiter.api.Test;
 import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.city.area.door.Door;
 import zombicide.city.area.room.Room;
+import zombicide.item.careItem.FirstAidKit;
 import zombicide.item.careItem.HealingFiask;
+import zombicide.item.weapon.Chainsaw;
 import zombicide.item.weapon.Pistol;
 import zombicide.util.Direction;
 
@@ -23,6 +25,9 @@ class RoomTest {
 		room = new Room(5,6);
 		door = new Door();
 		backpack = new BackPack(null);
+
+		room.addItem(new FirstAidKit());
+		room.addItem(new Chainsaw());
 	}
 	
 	@Test
@@ -71,6 +76,16 @@ class RoomTest {
 
 		assertTrue(room.getItems().contains(item1));
 		assertTrue(room.getItems().contains(item2));
+	}
+
+	@Test
+	void testDisplayItems(){
+		room.displayItems();
+	}
+
+	@Test
+	void testHasItems(){
+		assertTrue(room.hasItems());
 	}
 
 }
