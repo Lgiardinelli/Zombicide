@@ -15,6 +15,7 @@ public class MapTest {
     @BeforeEach
     public void setUp() {
         map = new Map();
+        map.setSurvivor(new Survivor(new City(5,5)));
     }
 
     @Test
@@ -25,13 +26,10 @@ public class MapTest {
         assertTrue(map.isNoisyWhenUsed());
     }
 
-    /*
-    public void use() {
-		City city = this.survivor.getCity();
-		System.out.println("Affichage de la map 'Action map' :");
-		city.display();
-	}
-     */
+    @Test
+    public void useTest(){
+        map.use();
+    }
     @Test
     public void testUseMap() {
         City city = new City(5, 5);
