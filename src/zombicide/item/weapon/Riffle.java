@@ -16,7 +16,4 @@ public class Riffle extends Weapon{
 		return "riffle";
 	}
 
-	@Override
-	public void use() {
-	}
 }
