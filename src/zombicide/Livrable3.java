@@ -1,22 +1,20 @@
 package zombicide;
 
 import zombicide.action.Action;
-import zombicide.action.MoveAction;
+import zombicide.action.survivor.SurvivorMoveAction;
 import zombicide.action.survivor.*;
 import zombicide.action.survivor.special.Fighter;
 import zombicide.action.survivor.special.Healer;
 import zombicide.action.survivor.special.Lucky;
 import zombicide.action.survivor.special.Snooper;
 import zombicide.action.zombie.AttackSurvivorAction;
+import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Abomination;
-import zombicide.actor.zombie.Walker;
 import zombicide.actor.zombie.Zombie;
-import zombicide.city.City;
 import zombicide.city.TrainCity;
 import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.Axe;
-import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,7 +35,7 @@ public class Livrable3 {
     private void initTrainCity() {
         System.out.println("Plateau d'entraînement :");
 
-        List<Action<Zombie>> zombieActions = Arrays.asList(new AttackSurvivorAction(), new MoveAction<>());
+        List<Action<Zombie>> zombieActions = Arrays.asList(new AttackSurvivorAction(), new ZombieMoveAction());
 
         // Adding abominations in all city's areas
         for (int i = 0; i < trainCity.getHeight(); i++) {
@@ -63,7 +61,7 @@ public class Livrable3 {
                 new AreaAction(),
                 new LookAction(),
                 new Fighter(),
-                new MoveAction<>()
+                new SurvivorMoveAction()
         );
 
         List<Action<Survivor>> healerAction = Arrays.asList(
@@ -77,7 +75,7 @@ public class Livrable3 {
                 new AreaAction(),
                 new LookAction(),
                 new Healer(),
-                new MoveAction<>()
+                new SurvivorMoveAction()
         );
 
         List<Action<Survivor>> luckyAction = Arrays.asList(
@@ -91,7 +89,7 @@ public class Livrable3 {
                 new AreaAction(),
                 new LookAction(),
                 new Lucky(),
-                new MoveAction<>()
+                new SurvivorMoveAction()
         );
 
         List<Action<Survivor>> snooperAction = Arrays.asList(
@@ -105,7 +103,7 @@ public class Livrable3 {
                 new AreaAction(),
                 new LookAction(),
                 new Snooper(),
-                new MoveAction<>()
+                new SurvivorMoveAction()
         );
 
         new Survivor(fighterAction, this.trainCity);
