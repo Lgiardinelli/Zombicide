@@ -72,19 +72,20 @@ public class WeaponTest {
 
     @Test
     public void testShootRange(){
-        pistol.setSurvivor(s);
+        riffle.setSurvivor(s);
         axe.setSurvivor(s);
 
         c.display();
 
 
-        List<Zombie> listWithRiffle = pistol.shootRange();
+        List<Zombie> listWithRiffle = riffle.shootRange();
         List<Zombie> listWithAxe = axe.shootRange();
 
         System.out.println(listWithRiffle);
 
-        assertEquals(listWithAxe.size() , 1);
         assertEquals(listWithRiffle.size() , 2);
+        assertEquals(listWithAxe.size() , 1);
+
 
 
 
