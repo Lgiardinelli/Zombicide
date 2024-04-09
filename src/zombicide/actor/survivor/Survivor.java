@@ -74,13 +74,19 @@ public class Survivor extends Actor {
     }
 
     /**
-     * Gets the item currently handled by the survivor.
+     * Gets the item currently held by the survivor.
      *
-     * @return The handled item.
+     * @return The held item.
      */
     public Item getItemHeld() {
         return itemHeld;
     }
+
+    /**
+     * Sets the item held by the survivor.
+     *
+     * @param i The item to be held.
+     */
     public void setItemHeld(Item i) {
         if (this.itemHeld != null) {
             this.backpack.addItem(this.itemHeld);
@@ -89,10 +95,20 @@ public class Survivor extends Actor {
         this.itemHeld = i;
     }
 
+    /**
+     * Checks if the survivor is holding an item.
+     *
+     * @return True if the survivor is holding an item, false otherwise.
+     */
     public boolean holdAnItem() {
         return this.itemHeld != null;
     }
 
+    /**
+     * Checks if the survivor has roles.
+     *
+     * @return True if the survivor has roles, false otherwise.
+     */
     public boolean hasRoles() {
         return !this.roles.isEmpty();
     }
@@ -105,23 +121,30 @@ public class Survivor extends Actor {
     public List<Action<Survivor>> getRoles() {
         return roles;
     }
-    
+
     /**
      * Increases the skill points of the survivor.
      */
     public void increaseSkillPoints() {
-        if(this.skillPoints < 30) {
+        if (this.skillPoints < 30) {
             this.skillPoints++;
         }
     }
 
     /**
+     * Checks if the survivor has reached a new level.
+     *
      * @return True if the survivor has reached a new level, false otherwise.
      */
     public boolean isLevelReached() {
         return Expertise.getStage(skillPoints) != null;
     }
 
+    /**
+     * Sets the area for the survivor, adding the survivor to the area.
+     *
+     * @param area The area where the survivor is located.
+     */
     @Override
     public void setArea(Area area) {
         if (this.area != null) {
@@ -131,10 +154,19 @@ public class Survivor extends Actor {
         area.addSurvivor(this);
     }
 
+    /**
+     * Adds skill points to the survivor.
+     *
+     * @param n The number of skill points to add.
+     */
     public void addSkillPoints(int n) {
         this.skillPoints += n;
     }
 
+    /**
+     * Handles the action of the survivor.
+     * Chooses a random action from the available roles and performs it.
+     */
     @Override
     public void handleAction() {
         Action<Survivor> action = SURVIVOR_ACTION_CHOOSER.choose(roles);
