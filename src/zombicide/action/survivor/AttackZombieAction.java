@@ -17,6 +17,7 @@ public class AttackZombieAction implements Action<Survivor> {
 
     @Override
     public void doSomething(Survivor survivor) {
+        survivor.removeActionPoint();
         Item itemHeld =  survivor.getItemHeld();
         if (!itemHeld.canAttack())
             return;
@@ -24,6 +25,9 @@ public class AttackZombieAction implements Action<Survivor> {
         Weapon weapon = (Weapon) itemHeld;
 
         List<Zombie> zombies = weapon.shootRange();
+        if (zombies.isEmpty())
+            return;
+
         Zombie zombie = chooseRandomZombie(zombies);
         shootZombie(survivor, zombie, weapon);
     }

@@ -37,11 +37,15 @@ public class Livrable3 {
 
         List<Action<Zombie>> zombieActions = Arrays.asList(new AttackSurvivorAction(), new ZombieMoveAction());
 
-        // Adding abominations in all city's areas
+        // Adding abominations in street city's areas
+        for (int i = 0; i < trainCity.getWidth(); i++) {
+            Zombie abomination = new Abomination(zombieActions, this.trainCity);
+            abomination.setArea(trainCity.getAreas()[2][i]);
+        }
         for (int i = 0; i < trainCity.getHeight(); i++) {
-            for (int j = 0; j < trainCity.getWidth(); j++) {
+            if (i != 2) {
                 Zombie abomination = new Abomination(zombieActions, this.trainCity);
-                abomination.setArea(trainCity.getAreas()[j][i]);
+                abomination.setArea(trainCity.getAreas()[i][2]);
             }
         }
 
@@ -137,10 +141,14 @@ public class Livrable3 {
             );
         }
         System.out.println();
+        System.out.println("Représentation des actions des survivant :");
 
         // Faire une action pour chaque survivant
         for (Survivor survivor : survivors)
             survivor.handleAction();
+
+        System.out.println();
+        System.out.println("Représentation des actions des zombies :");
 
         // Action attack and move for all zombies
         List<Zombie> zombies = trainCity.getZombies();
