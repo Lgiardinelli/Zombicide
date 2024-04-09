@@ -60,13 +60,23 @@ public class Game {
     }
 
     public void play(){
-        if(currentPhase == Phase.SURVIVORS){
-            playSurvivorsPhase();
+        while(!endGame()){
+            if(currentPhase == Phase.SURVIVORS){
+                playSurvivorsPhase();
+            }
+            else if(currentPhase == Phase.ZOMBIES){
+                playZombiesPhase();
+            } else { playEndPhase(); }
         }
-        else if(currentPhase == Phase.ZOMBIES){
-            playZombiesPhase();
-        } else { playEndPhase(); }
     }
+
+    private void playSurvivorsPhase() {
+        for(Survivor s : survivors){
+            s.handleAction();
+        }
+    }
+
+
 
 
 }
