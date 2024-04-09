@@ -40,5 +40,14 @@ public class Game {
         return true;
     }
 
+    public boolean allZombiesAreDead(){
+        for(Zombie z : zombies){
+            if(!z.isDead()){
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 }
