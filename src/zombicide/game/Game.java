@@ -80,6 +80,10 @@ public class Game {
             }
         }
 
+        for(int i = 0 ; i < getNumberOfZombiesToSpawn() ; i++){
+            this.board.spawnAZombie();
+        }
+
     }
 
     private void playZombiesPhase() {
