@@ -11,27 +11,53 @@ import zombicide.util.listchooser.RandomListChooser;
 import java.util.List;
 import java.util.stream.Stream;
 
+/**
+ * An abstract class representing a move action for an Actor in the game.
+ * This class provides methods to calculate movement directions and positions
+ * for an Actor based on the game's rules.
+ *
+ * @param <T> The type of Actor performing the move action.
+ */
 public abstract class MoveAction<T extends Actor> implements Action<T> {
     private static final ListChooser<Direction> DIRECTION_CHOOSER =
             new RandomListChooser<>();
 
+    /**
+     * Gets a list of open Directions from the specified Area.
+     *
+     * @param area The Area to check for open Directions.
+     * @return A list of open Directions from the specified Area.
+     */
     protected List<Direction> getOpenDirectionsFrom(Area area) {
         return Stream.of(Direction.values())
                 .filter(d -> area.getDoor(d).isOpen())
                 .toList();
     }
 
+    /**
+     * Chooses a random open Direction from the specified Area.
+     *
+     * @param area The Area to choose a random open Direction from.
+     * @return A random open Direction from the specified Area.
+     */
     protected Direction randomOpenDirectionFrom(Area area) {
         return DIRECTION_CHOOSER.choose(getOpenDirectionsFrom(area));
     }
 
+    /**
+     * Chooses a random Direction.
+     *
+     * @param area The Area to choose a random Direction for.
+     * @return A random Direction.
+     */
     protected Direction randomDirection(Area area) {
         return DIRECTION_CHOOSER.choose(List.of(Direction.values()));
     }
 
     /**
-     * Calculates the new position of an Actor after moving in the specified direction.
+     * Calculates the new Position of an Actor after moving in the specified direction.
      *
+     * @param actor The Actor to calculate the new Position for.
      * @return The new Position after moving the Actor.
      */
     protected Position positionAfterMoving(Actor actor) {
@@ -49,11 +75,22 @@ public abstract class MoveAction<T extends Actor> implements Action<T> {
         int i = x + direction.getX();
         int j = y + direction.getY();
 
-        return new Position(i , j);
+        return new Position(i, j);
     }
 
+    /**
+     * Gets the direction of movement from the specified Area.
+     *
+     * @param area The Area from which to get the direction of movement.
+     * @return The direction of movement from the specified Area.
+     */
     protected abstract Direction getDirectionFrom(Area area);
 
+    /**
+     * Performs the move action for the Actor.
+     *
+     * @param actor The Actor performing the move action.
+     */
     @Override
     public void doSomething(T actor) {
         Position p = positionAfterMoving(actor);
