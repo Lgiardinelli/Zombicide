@@ -12,11 +12,13 @@ public class Game {
     private City board;
     private List<Survivor> survivors;
     private List<Zombie> zombies;
+    private Phase currentPhase;
 
     public Game(City c){
         this.board = c;
         this.survivors = new ArrayList<>();
         this.zombies = new ArrayList<>();
+        this.currentPhase = Phase.SURVIVORS;
     }
 
     public void addSurvivor(Survivor s){
