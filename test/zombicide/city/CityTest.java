@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import zombicide.action.Action;
 import zombicide.action.MoveAction;
 import zombicide.action.zombie.AttackSurvivorAction;
+import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Zombie;
@@ -37,7 +38,7 @@ class CityTest {
 		survivor2 = new Survivor(city);
 
 		List<Action<Zombie>> zombieActions = Arrays.asList(
-				new MoveAction<>(),
+				new ZombieMoveAction(),
 				new AttackSurvivorAction()
 		);
 

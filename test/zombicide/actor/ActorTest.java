@@ -7,7 +7,9 @@ import zombicide.action.Action;
 import zombicide.action.MoveAction;
 import zombicide.action.survivor.AttackZombieAction;
 import zombicide.action.survivor.NoiseAction;
+import zombicide.action.survivor.SurvivorMoveAction;
 import zombicide.action.zombie.AttackSurvivorAction;
+import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.actor.zombie.Abomination;
@@ -43,7 +45,7 @@ public class ActorTest {
     @BeforeEach
     public void before(){
         List<Action<Zombie>> zombieSurvivor = Arrays.asList(
-                new MoveAction<>(),
+                new ZombieMoveAction(),
                 new AttackSurvivorAction()
         );
         this.city = new City(5,5);

@@ -2,6 +2,7 @@ package zombicide.item;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.zombie.Balaise;
 import zombicide.actor.zombie.Runner;
 import zombicide.actor.zombie.Zombie;
@@ -44,7 +45,7 @@ public class WeaponTest {
         s = new Survivor(c);
 
         List<Action<zombicide.actor.zombie.Zombie>> zombieSurvivor = Arrays.asList(
-                new MoveAction<>(),
+                new ZombieMoveAction(),
                 new AttackSurvivorAction()
         );
         z1 = new Abomination(zombieSurvivor , c);

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import zombicide.action.Action;
 import zombicide.action.survivor.SurvivorMoveAction;
+import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Walker;
 import zombicide.actor.zombie.Zombie;
@@ -25,7 +26,7 @@ public class SurvivorMoveActionTest {
     @BeforeEach
     public void before(){
         List<Action<Zombie>> zombieSurvivor = Arrays.asList(
-                new MoveAction<>()
+                new ZombieMoveAction()
         );
         city = new City(5,5);
         s1 = new Survivor(city);
@@ -39,7 +40,7 @@ public class SurvivorMoveActionTest {
 
     @Test
     public void testDoSomething(){
-        m1.doSomething(z1);
+        m1.doSomething(s1);
         //assertEquals(s1.getArea(), city.getArea(2,4));
     }
 }
