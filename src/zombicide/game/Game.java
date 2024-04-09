@@ -54,8 +54,7 @@ public class Game {
     }
 
     public boolean areThePlayersHaveReachedStage(){
-
-        return somme >= 30;
+        return getTotalNumberOfSkillPoints() >= 30;
     }
 
     public void play(){
