@@ -75,19 +75,10 @@ public class WeaponTest {
         riffle.setSurvivor(s);
         axe.setSurvivor(s);
 
-        c.display();
-
-
         List<Zombie> listWithRiffle = riffle.shootRange();
         List<Zombie> listWithAxe = axe.shootRange();
 
-        System.out.println(listWithRiffle);
-
         assertEquals(listWithRiffle.size() , 2);
         assertEquals(listWithAxe.size() , 1);
-
-
-
-
     }
 }
