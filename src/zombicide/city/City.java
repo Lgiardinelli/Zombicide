@@ -58,6 +58,11 @@ public class City {
         initCity();
     }
 
+    /**
+     * Retrieves all the survivors present in the city.
+     *
+     * @return A list of all survivors in the city.
+     */
     public List<Survivor> getSurvivors() {
         this.survivors.clear();
 
@@ -70,6 +75,11 @@ public class City {
         return this.survivors;
     }
 
+    /**
+     * Retrieves all the zombies present in the city.
+     *
+     * @return A list of all zombies in the city.
+     */
     public List<Zombie> getZombies() {
         this.zombies.clear();
 
