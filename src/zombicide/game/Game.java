@@ -28,7 +28,7 @@ public class Game {
     }
 
     public boolean endGame(){
-        return allSurvivorAreDead() && allZombiesAreDead() && areThePlayersHaveReachedStage();
+        return allSurvivorAreDead() || allZombiesAreDead() || areThePlayersHaveReachedStage();
     }
 
     public boolean allSurvivorAreDead(){
