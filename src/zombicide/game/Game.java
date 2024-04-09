@@ -27,5 +27,18 @@ public class Game {
         this.zombies.add(z);
     }
 
+    public boolean endGame(){
+
+    }
+
+    public boolean allPlayersAreDead(){
+        for(Survivor s : survivors){
+            if(!s.isDead()){
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 }
