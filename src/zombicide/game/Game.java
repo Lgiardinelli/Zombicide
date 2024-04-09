@@ -28,7 +28,7 @@ public class Game {
     }
 
     public boolean endGame(){
-
+        return allSurvivorAreDead() && allZombiesAreDead() && areThePlayersHaveReachedStage();
     }
 
     public boolean allSurvivorAreDead(){
@@ -56,6 +56,7 @@ public class Game {
         }
         return somme >= 30;
     }
+
 
 
 }
