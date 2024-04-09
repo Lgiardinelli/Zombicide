@@ -70,6 +70,12 @@ public class Game {
         }
     }
 
+    private void playZombiesPhase() {
+        for(Zombie z : zombies){
+            z.handleAction();
+        }
+    }
+
     private void playSurvivorsPhase() {
         for(Survivor s : survivors){
             s.handleAction();
