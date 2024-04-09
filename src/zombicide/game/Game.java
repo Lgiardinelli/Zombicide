@@ -97,8 +97,7 @@ public class Game {
     }
 
     public int getNumberOfZombiesToSpawn(){
-        int somme = 0;
-
+        return Math.round((float) getTotalNumberOfSkillPoints() /3);
     }
 
     public int getTotalNumberOfSkillPoints(){
