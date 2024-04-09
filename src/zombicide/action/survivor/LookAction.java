@@ -5,17 +5,32 @@ import zombicide.actor.survivor.Survivor;
 import zombicide.city.area.Area;
 import zombicide.util.Direction;
 
+/**
+ * An action representing a Survivor looking around their current area.
+ * The Survivor can use this action to inspect the actors and doors in their area.
+ */
 public class LookAction implements Action<Survivor> {
 
-    public void doSomething(Survivor survivor){
-        rummage(survivor);
+    /**
+     * Performs the action of looking around the Survivor's current area.
+     * This action displays the actors present and the status of doors in the area.
+     *
+     * @param survivor The Survivor performing the look action.
+     */
+    public void doSomething(Survivor survivor) {
+        look(survivor);
     }
 
-    private void rummage(Survivor survivor) {
-        Area a = survivor.getArea();
-        a.displayActors();
-        for (Direction d : Direction.values()) {
-            System.out.println("The door " + d.name() + " is " + (a.getDoor(d).isOpen()? "open" : "closed"));
+    /**
+     * Displays the actors and door statuses in the Survivor's current area.
+     *
+     * @param survivor The Survivor inspecting the area.
+     */
+    private void look(Survivor survivor) {
+        Area area = survivor.getArea();
+        area.displayActors();
+        for (Direction direction : Direction.values()) {
+            System.out.println("The door " + direction.name() + " is " + (area.getDoor(direction).isOpen() ? "open" : "closed"));
         }
     }
 }
