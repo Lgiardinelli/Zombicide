@@ -1,6 +1,14 @@
 package zombicide.city;
 
+import zombicide.action.Action;
+import zombicide.action.survivor.AttackZombieAction;
+import zombicide.action.zombie.AttackSurvivorAction;
+import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.survivor.Survivor;
+import zombicide.actor.zombie.Abomination;
+import zombicide.actor.zombie.Balaise;
+import zombicide.actor.zombie.Walker;
+import zombicide.actor.zombie.Runner;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.Room;
@@ -18,6 +26,8 @@ import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.*;
 import zombicide.util.Direction;
 import zombicide.util.Position;
+import zombicide.util.listchooser.ListChooser;
+import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -575,5 +585,27 @@ public class City {
 
     public List<Manhole> getManholes() {
         return manholes;
+    }
+
+    public void spawnAZombie() {
+        RandomListChooser<Manhole> chooser = new RandomListChooser<>();
+        Manhole manhole = chooser.choose(this.manholes);
+
+        List<Action<Zombie>> zombieActions = Arrays.asList(
+                new ZombieMoveAction(),
+                new AttackSurvivorAction()
+        );
+
+        List<Zombie> zombiesTypes = Arrays.asList(
+                new Runner(zombieActions,this),
+                new Balaise(zombieActions,this),
+                new Abomination(zombieActions,this),
+                new Walker(zombieActions,this)
+        );
+
+        RandomListChooser<Zombie> ch = new RandomListChooser<>();
+        Zombie zombie = ch.choose(zombiesTypes);
+
+        manhole.addZombie(zombie);
     }
 }
