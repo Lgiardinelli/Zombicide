@@ -1,8 +1,10 @@
 package zombicide.game;
 
+import zombicide.actor.Actor;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
+import zombicide.city.area.Area;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,10 +54,7 @@ public class Game {
     }
 
     public boolean areThePlayersHaveReachedStage(){
-        int somme = 0;
-        for(Survivor s : survivors){
-            somme += s.getSkillPoints();
-        }
+
         return somme >= 30;
     }
 
@@ -67,22 +66,49 @@ public class Game {
             else if(currentPhase == Phase.ZOMBIES){
                 playZombiesPhase();
             } else { playEndPhase(); }
+
+            this.board.display();
         }
+    }
+
+    private void playEndPhase() {
+        survivors.removeIf(Survivor::isDead);
+        zombies.removeIf(Zombie::isDead);
+
+        for(int i = 0; i < this.board.getWidth() ; i++){
+            for(int j = 0; j < this.board.getHeight() ; j++){
+                this.board.getArea(i , j).setNoise(0);
+            }
+        }
+
     }
 
     private void playZombiesPhase() {
         for(Zombie z : zombies){
             z.handleAction();
         }
+        this.currentPhase = Phase.END;
     }
 
     private void playSurvivorsPhase() {
         for(Survivor s : survivors){
             s.handleAction();
         }
+        this.currentPhase = Phase.ZOMBIES;
     }
 
+    public int getNumberOfZombiesToSpawn(){
+        int somme = 0;
 
+    }
+
+    public int getTotalNumberOfSkillPoints(){
+        int somme = 0;
+        for(Survivor s : survivors){
+            somme += s.getSkillPoints();
+        }
+        return somme;
+    }
 
 
 }
