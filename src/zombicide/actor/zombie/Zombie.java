@@ -32,12 +32,17 @@ public abstract class Zombie extends Actor {
         this.zombieActions = new ArrayList<>(zombieActions);
 	}
 
+    /**
+     * Chooses a random manhole for the zombie to spawn.
+     *
+     * @return The randomly chosen manhole.
+     */
     private Manhole chooseRandomManhole() {
         return MANHOLE_CHOOSER.choose(this.city.getManholes());
     }
 
-	/**
-     * Gets whether the zombie is strong.
+    /**
+     * Checks if the zombie is strong.
      *
      * @return {@code true} if the zombie is strong, {@code false} otherwise.
      */
@@ -48,12 +53,17 @@ public abstract class Zombie extends Actor {
     /**
      * Gets the attack points of the zombie.
      *
-     * @return The attack points.
+     * @return The attack points of the zombie.
      */
     public int getAttackPoints() {
         return this.attackPoints;
     }
 
+    /**
+     * Sets the area for the zombie, adding the zombie to the area.
+     *
+     * @param area The area where the zombie is located.
+     */
     @Override
     public void setArea(Area area) {
         if (this.area != null) {
@@ -63,10 +73,12 @@ public abstract class Zombie extends Actor {
         area.addZombie(this);
     }
 
+    /**
+     * Handles the action of the zombie.
+     * Chooses a random action from the available actions and performs it.
+     */
     public void handleAction() {
         Action<Zombie> action = ACTION_CHOOSER.choose(this.zombieActions);
-        System.out.println();
-        System.out.println(action);
         if (action != null)  {
             action.doSomething(this);
         }
