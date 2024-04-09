@@ -82,4 +82,8 @@ public abstract class Actor {
     }
 
     public abstract void handleAction();
+
+    public boolean isDead() {
+        return this.lifePoints <= 0;
+    }
 }
