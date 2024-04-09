@@ -7,14 +7,20 @@ import zombicide.city.area.room.Room;
 import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.item.Item;
 
+/**
+ * An action representing a Survivor rummaging through items in the current room.
+ * This action allows the Survivor to pick up items from the current room and manage their backpack.
+ */
 public class RummageAction implements Action<Survivor> {
 
     /**
-     * Displays the items in the rooms around the Survivor's current position.
-     * This action retrieves adjacent areas and displays the items they contain.
+     * Performs the action of rummaging through items in the Survivor's current room.
+     * This action allows the Survivor to pick up items from the room and manage their backpack.
+     *
+     * @param survivor The Survivor performing the rummage action.
      */
     @Override
-    public void doSomething(Survivor survivor){
+    public void doSomething(Survivor survivor) {
         rummage(survivor);
         survivor.removeActionPoint();
     }
@@ -23,6 +29,8 @@ public class RummageAction implements Action<Survivor> {
      * Allows the survivor to rummage through the current room, picking up an item randomly.
      * If the survivor has space in their backpack, the chosen item from the room is added to the backpack.
      * If the backpack is full, the method swaps a randomly chosen item from the backpack with the chosen item from the room.
+     *
+     * @param survivor The Survivor performing the rummage action.
      */
     private void rummage(Survivor survivor) {
         Area area = survivor.getArea();
