@@ -31,7 +31,7 @@ public class Game {
 
     }
 
-    public boolean allPlayersAreDead(){
+    public boolean allSurvivorAreDead(){
         for(Survivor s : survivors){
             if(!s.isDead()){
                 return false;
@@ -47,6 +47,14 @@ public class Game {
             }
         }
         return true;
+    }
+
+    public boolean areThePlayersHaveReachedStage(){
+        int somme = 0;
+        for(Survivor s : survivors){
+            somme += s.getSkillPoints();
+        }
+        return somme >= 30;
     }
 
 
