@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Healer extends HealAction {
-    private static final int NB_LIFE_POINTS = 1;
+    public static final int NB_LIFE_POINTS = 1;
     private static final Random RANDOM = new Random();
 
     /**
