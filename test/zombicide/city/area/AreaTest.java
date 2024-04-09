@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import zombicide.action.Action;
 import zombicide.action.MoveAction;
 import zombicide.action.zombie.AttackSurvivorAction;
+import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.actor.zombie.Abomination;
@@ -40,7 +41,7 @@ class AreaTest {
 	@BeforeEach
 	public void before() {
 		List<Action<Zombie>> zombieSurvivor = Arrays.asList(
-				new MoveAction<>(),
+				new ZombieMoveAction(),
 				new AttackSurvivorAction()
 		);
 		this.city = new City(10,10);
