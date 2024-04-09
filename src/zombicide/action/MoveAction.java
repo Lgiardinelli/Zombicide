@@ -25,6 +25,10 @@ public abstract class MoveAction<T extends Actor> implements Action<T> {
         return DIRECTION_CHOOSER.choose(getOpenDirectionsFrom(area));
     }
 
+    protected Direction randomDirection(Area area) {
+        return DIRECTION_CHOOSER.choose(List.of(Direction.values()));
+    }
+
     /**
      * Calculates the new position of an Actor after moving in the specified direction.
      *

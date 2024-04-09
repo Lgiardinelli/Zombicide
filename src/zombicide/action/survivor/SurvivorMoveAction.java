@@ -11,7 +11,7 @@ import zombicide.util.Direction;
 public class SurvivorMoveAction extends MoveAction<Survivor> {
     @Override
     protected Direction getDirectionFrom(Area area) {
-        Direction direction = randomOpenDirection();
+        Direction direction = randomDirection(area);
 
         if (!area.getDoor(direction).isOpen()) {
             System.out.printf("fermé : %s", direction);
