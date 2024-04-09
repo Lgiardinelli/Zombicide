@@ -11,14 +11,20 @@ import zombicide.util.Direction;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * An action representing a Survivor opening a door in an adjacent area.
+ * The Survivor can open a door in a random adjacent area around their current position.
+ */
 public class DoorAction implements Action<Survivor> {
 
     /**
-     * Opens a door in a random adjacent area around the Survivor's current position.
-     * This action selects the door from the adjacent areas and opens it.
+     * Performs the action of opening a door in a random adjacent area around the Survivor's current position.
+     * If the Survivor can open a door, this action selects a door from the adjacent areas and opens it.
+     *
+     * @param survivor The Survivor performing the action.
      */
-    public void doSomething(Survivor survivor){
-        if(canOpen(survivor)) {
+    public void doSomething(Survivor survivor) {
+        if (canOpen(survivor)) {
             List<Door> doors = doorsAround(survivor);
             RandomListChooser<Door> chooser = new RandomListChooser<>();
             Door door = chooser.choose(doors);
@@ -27,28 +33,40 @@ public class DoorAction implements Action<Survivor> {
         }
     }
 
-    private List<Door> doorsAround(Survivor survivor){
+    /**
+     * Checks if the Survivor has an item that can be used to open doors.
+     *
+     * @param survivor The Survivor to check.
+     * @return true if the Survivor has an item that can open doors, false otherwise.
+     */
+    public boolean canOpen(Survivor survivor) {
+        Item itemHeld = survivor.getItemHeld();
+        return itemHeld != null && itemHeld.canOpen();
+    }
 
+    /**
+     * Finds and returns a list of doors in the adjacent areas around the Survivor's current position
+     * that are closed and can be opened.
+     *
+     * @param survivor The Survivor whose adjacent areas are checked for doors.
+     * @return A list of doors that can be opened in the adjacent areas.
+     */
+    private List<Door> doorsAround(Survivor survivor) {
         List<Door> doors = new ArrayList<>();
-        for(Direction d : Direction.values()){
-            int i = d.getX();
-            int j = d.getY();
+        for (Direction direction : Direction.values()) {
+            int i = direction.getX();
+            int j = direction.getY();
 
             int x = survivor.getArea().getX();
             int y = survivor.getArea().getY();
 
             City city = survivor.getCity();
-            Door door = city.getAreas()[y+j][x+i].getDoor(d.getReverse());
+            Door door = city.getAreas()[y + j][x + i].getDoor(direction.getReverse());
 
-            if(door != null && !door.isOpen()) {
+            if (door != null && !door.isOpen()) {
                 doors.add(door);
             }
         }
         return doors;
-    }
-
-    public boolean canOpen(Survivor survivor){
-        Item i = survivor.getItemHeld();
-        return i.canOpen();
     }
 }
