@@ -59,6 +59,14 @@ public class Game {
         return somme >= 30;
     }
 
+    public void play(){
+        if(currentPhase == Phase.SURVIVORS){
+            playSurvivorsPhase();
+        }
+        else if(currentPhase == Phase.ZOMBIES){
+            playZombiesPhase();
+        } else { playEndPhase(); }
+    }
 
 
 }
