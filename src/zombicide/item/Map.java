@@ -3,20 +3,33 @@ package zombicide.item;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
 
+/**
+ * Represents a Map item in the game.
+ * This item allows a survivor to display the city map when used.
+ */
 public class Map extends Item {
 
-	public Map(){
+	public Map() {
 		super();
 		this.isNoisyUse = true;
 	}
-	public String toString(){
+
+	/**
+	 * Returns a string representation of the Map item.
+	 *
+	 * @return The string "map".
+	 */
+	public String toString() {
 		return "map";
 	}
 
-
+	/**
+	 * Uses the Map item to display the city map.
+	 * Retrieves the city from the survivor and displays it.
+	 */
 	public void use() {
 		City city = this.survivor.getCity();
-		System.out.println("Affichage de la map 'Action map' :");
+		System.out.println("Displaying the map 'Action map':");
 		city.display();
 	}
 }
