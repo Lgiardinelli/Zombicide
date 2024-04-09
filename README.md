@@ -54,7 +54,7 @@ javac -sourcepath src src/zombicide/*.java -d classes
 ```bash
 java -classpath classes zombicide.Livrable2 10 10
 ```
-
+pistol
 - Tests compilation
 ```bash
 javac -classpath junit-console.jar:classes test/zombicide/*.java
@@ -814,14 +814,18 @@ Week-end :
 
 ## Semaine 11
 __Objectif de la semaine :__  
-
+- Finir le livrable 3 
+- Commencer le livrable 4
 
 __Objectif atteint :__
-
+- Finir le livrable 3
 
 __Réflexion du groupe :__  
 
 Lundi 08/04 :
+- Nous nous sommes mis d'accord sur le fait qu'un zombie allait obligatoirement vers une direction q'uil peut atteindre
+- Après discussion avec Monsieur Varré, il a été convenu de placer les zombies seulement dans les rues pour éviter qu'un zombie se retrouve coincé dans une pièce
+- Les MoveAction sont maintenant différentes entre les zombies et les survivants. En effet, nous avons réalisé que les survivants pouvaient tenter de bouger vers une pièce vide tandis que les zombies non. Nous avons donc rendu la classe MoveAction abstraite et créé deux classes ZombieMoveAction et SurvivorMoveAction
 
 
 Mardi 09/04 :
@@ -843,9 +847,15 @@ Week-end :
 __Partage de taches :__
 
 Lundi 08/04 :
+- Eliès, Théophane : finalisation des tests 
+- Dylan,Léo : Modification des classes liées au Move et aux rôles
+
 
 
 Mardi 09/04 :
+- Eliès, Théophane : finalisation des tests 
+- Léo : Correction de la méthode shootRange qui renvoie la liste des zombies qu'une arme peut atteindre
+- Dylan : réalisation des tests liés aux actions et aux rôles
 
 
 Mercredi 10/04 :
