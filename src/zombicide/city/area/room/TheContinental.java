@@ -30,10 +30,6 @@ public class TheContinental extends Room {
      *
      * @return Always returns false, as fighting is not allowed in The Continental room.
      */
-    @Override
-    public boolean canFight() {
-        return false;
-    }
 
     @Override
     public boolean isContinental() {

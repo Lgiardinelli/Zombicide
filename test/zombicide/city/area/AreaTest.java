@@ -89,15 +89,15 @@ class AreaTest {
 	}
 	
 	@Test
-    void testAreaCanFight() {
+    void testIsAContinental() {
 		//Room
-		assertTrue(room.canFight());
+		assertFalse(room.isContinental());
         
         //Continental
-        assertFalse(continental.canFight());
+		assertTrue(continental.isContinental());
         
         //Pharmacy
-        assertTrue(pharmacy.canFight());
+		assertFalse(pharmacy.isContinental());
     }
 	
 	@Test
