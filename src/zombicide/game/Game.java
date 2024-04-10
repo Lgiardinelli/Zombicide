@@ -134,7 +134,9 @@ public class Game {
      */
     private void playZombiesPhase() {
         for(Zombie z : zombies){
-            z.handleAction();
+            while(z.getActionPoints() > 0){
+                z.handleAction();
+            }
         }
         this.currentPhase = Phase.END;
     }
@@ -145,7 +147,9 @@ public class Game {
      */
     private void playSurvivorsPhase() {
         for(Survivor s : survivors){
-            s.handleAction();
+            while(s.getActionPoints() > 0){
+                s.handleAction();
+            }
         }
         this.currentPhase = Phase.ZOMBIES;
     }
