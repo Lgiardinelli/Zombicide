@@ -115,4 +115,8 @@ public class AttackZombieAction implements Action<Survivor> {
         }
         return dieValue;
     }
+
+    public String toString() {
+        return "Attack zombie action";
+    }
 }
