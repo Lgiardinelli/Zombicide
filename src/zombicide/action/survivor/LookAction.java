@@ -28,11 +28,13 @@ public class LookAction implements Action<Survivor> {
      */
     private void look(Survivor survivor) {
         Area area = survivor.getArea();
-        if(!area.isContinental()){
-            area.displayActors();
-            for (Direction direction : Direction.values()) {
-                System.out.println("The door " + direction.name() + " is " + (area.getDoor(direction).isOpen() ? "open" : "closed"));
-            }
+        if(area.isContinental()){
+            System.out.printf("The survivor is in the continental, he can't see anything !");
+        }
+
+        area.displayActors();
+        for (Direction direction : Direction.values()) {
+            System.out.println("The door " + direction.name() + " is " + (area.getDoor(direction).isOpen() ? "open" : "closed"));
         }
     }
 

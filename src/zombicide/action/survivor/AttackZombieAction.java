@@ -70,7 +70,13 @@ public class AttackZombieAction implements Action<Survivor> {
      * @param weapon   The weapon used for the attack.
      */
     private void attackZombie(Survivor survivor, Zombie zombie, Weapon weapon) {
-        if ((zombie.getIsStrong() && weapon.getDamage() < 2) || survivor.getArea().isContinental()) {
+        if (zombie.getIsStrong() && weapon.getDamage() < 2) {
+            System.out.printf("the zombie attacked is too strong for the weapon's survivor !");
+            return;
+        }
+
+        if(survivor.getArea().isContinental()){
+            System.out.printf("the survivor is in the continental, he can't attack !");
             return;
         }
 
