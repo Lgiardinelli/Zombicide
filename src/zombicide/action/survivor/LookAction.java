@@ -33,4 +33,8 @@ public class LookAction implements Action<Survivor> {
             System.out.println("The door " + direction.name() + " is " + (area.getDoor(direction).isOpen() ? "open" : "closed"));
         }
     }
+
+    public String toString() {
+        return "Look action";
+    }
 }
