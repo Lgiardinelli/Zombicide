@@ -202,6 +202,40 @@ java -classpath classes zombicide.Livrable3
 ```bash
 javac -classpath junit-console.jar:classes test/zombicide/*.java
 ```
+Cette commande devrait fonctionner mais elle ne fonctionne pas donc on a du compiler les tests dans chaque package
+```bash
+javac -classpath junit-console.jar:classes test/zombicide/action/survivor/*.java
+```
+```bash
+javac -classpath junit-console.jar:classes test/zombicide/action/survivor/special/*.java
+```
+```bash
+javac -classpath junit-console.jar:classes test/zombicide/action/zombie/*.java
+```
+```bash
+javac -classpath junit-console.jar:classes test/zombicide/actor/*.java
+```
+```bash
+javac -classpath junit-console.jar:classes test/zombicide/actor/action/*.java
+```
+```bash
+javac -classpath junit-console.jar:classes test/zombicide/actor/survivor/*.java
+```
+```bash
+javac -classpath junit-console.jar:classes test/zombicide/actor/survivor/backpack/*.java
+```
+```bash
+javac -classpath junit-console.jar:classes test/zombicide/city/*.java
+```
+```bash
+javac -classpath junit-console.jar:classes test/zombicide/city/area/*.java
+```
+```bash
+javac -classpath junit-console.jar:classes test/zombicide/item/*.java
+```
+```bash
+javac -classpath junit-console.jar:classes test/zombicide/util/listchooser/*.java
+```
 
 - Javadoc
 ```bash
@@ -215,12 +249,12 @@ java -jar junit-console.jar -classpath test:classes -scan-classpath
 
 - Jar compilation
 ```bash
-jar cvfe livrable3.jar zombicide/Main -C classes .
+jar cvfe livrable3.jar zombicide/Livrable3 -C classes .
 ```
 
 - Jar exécution
 ```bash
-java -jar livrable3.jar 10 10
+java -jar livrable3.jar
 ```
 
 Ou utilisation du MakeFile
