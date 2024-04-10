@@ -3,6 +3,7 @@ package zombicide.action;
 import zombicide.actor.Actor;
 import zombicide.city.City;
 import zombicide.city.area.Area;
+import zombicide.city.area.room.ThePharmacy;
 import zombicide.util.Direction;
 import zombicide.util.Position;
 import zombicide.util.listchooser.ListChooser;
@@ -96,6 +97,13 @@ public abstract class MoveAction<T extends Actor> implements Action<T> {
         Position p = positionAfterMoving(actor);
         City city = actor.getCity();
         actor.setArea(city.getArea(p.getX(), p.getY()));
+
+        if(actor.getArea().isPharmacy()){
+            ThePharmacy pharmacy = (ThePharmacy) actor.getArea();
+            pharmacy.addHealingFiask();
+            System.out.println("An actor entered the pharmacy, a healing fiask appeared");
+        }
+
         actor.removeActionPoint();
     }
 }
