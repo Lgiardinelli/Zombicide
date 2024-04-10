@@ -81,8 +81,13 @@ public class AttackZombieAction implements Action<Survivor> {
         }
 
         zombie.removeLifePoints(weapon.getDamage());
-        if (zombie.getLifePoints() <= 0) {
+        if (zombie.isDead()) {
             survivor.addSkillPoints(1);
+            System.out.println("the zombie attacked is dead, the survivor won a skill point !");
+            if(survivor.isLevelReached()){
+                survivor.increaseActionPoints();
+                System.out.println("the survivor reached stage "+survivor.getSkillPoints()+", his action points increased !");
+            }
         }
     }
 
