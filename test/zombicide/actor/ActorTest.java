@@ -203,4 +203,12 @@ public class ActorTest {
         survivor.handleAction();
     }
 
+    @Test
+    public void testIsDead() {
+        survivor.removeLifePoints(5);
+        assertTrue(survivor.isDead());
+    }
+
+
+
 }
