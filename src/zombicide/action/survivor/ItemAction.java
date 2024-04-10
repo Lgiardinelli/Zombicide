@@ -22,4 +22,8 @@ public class ItemAction implements Action<Survivor> {
         itemUsed.use();
         survivor.removeActionPoint();
     }
+
+    public String toString() {
+        return "Item action";
+    }
 }
