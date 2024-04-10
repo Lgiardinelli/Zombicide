@@ -827,9 +827,8 @@ Lundi 08/04 :
 - Après discussion avec Monsieur Varré, il a été convenu de placer les zombies seulement dans les rues pour éviter qu'un zombie se retrouve coincé dans une pièce
 - Les MoveAction sont maintenant différentes entre les zombies et les survivants. En effet, nous avons réalisé que les survivants pouvaient tenter de bouger vers une pièce vide tandis que les zombies non. Nous avons donc rendu la classe MoveAction abstraite et créé deux classes ZombieMoveAction et SurvivorMoveAction
 
-
 Mardi 09/04 :
-
+- Au final en lisant le sujet, les zombies qui se dirigent vers un mur restent sur place et utilise donc leur point d'action. Nous allons corriger cela quand nous auront fini le rendu du livrable 3 (vu avec le responsable du cours)
 
 Mercredi 10/04 :
 
@@ -854,8 +853,8 @@ Lundi 08/04 :
 
 Mardi 09/04 :
 - Eliès, Théophane : finalisation des tests 
-- Léo : Correction de la méthode shootRange qui renvoie la liste des zombies qu'une arme peut atteindre
-- Dylan : réalisation des tests liés aux actions et aux rôles
+- Léo : Correction de la méthode shootRange qui renvoie la liste des zombies qu'une arme peut atteindre, tests
+- Dylan : réalisation des tests liés aux actions et aux rôles, tests
 
 
 Mercredi 10/04 :
