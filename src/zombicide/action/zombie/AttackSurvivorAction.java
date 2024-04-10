@@ -37,4 +37,8 @@ public class AttackSurvivorAction implements Action<Zombie> {
     protected Survivor chooseRandomSurvivor(List<Survivor> survivors) {
         return SURVIVOR_CHOOSER.choose(survivors);
     }
+
+    public String toString () {
+        return "AttackSurvivor Action";
+    }
 }
