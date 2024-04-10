@@ -38,4 +38,8 @@ public class HealAction implements Action<Survivor> {
     public void heal(Survivor survivor) {
         survivor.addLifePoints(lifePointsToAdd);
     }
+
+    public String toString() {
+        return "Heal action";
+    }
 }
