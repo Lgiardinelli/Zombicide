@@ -30,7 +30,7 @@ public class AreaAction implements Action<Survivor> {
             Area a = city.getAreas()[y + j][x + i];
 
             a.displayActors();
-            System.out.println();
+            // System.out.println();
 
             if (!a.isARoom()) {
                 return;
@@ -39,7 +39,7 @@ public class AreaAction implements Action<Survivor> {
             Room r = (Room) a;
             if (city.containsRoom(r)) {
                 r.displayItems();
-                System.out.println();
+                // System.out.println();
             }
         }
     }
