@@ -53,4 +53,8 @@ public class RummageAction implements Action<Survivor> {
             room.addItem(oldBpItem);
         }
     }
+
+    public String toString() {
+        return "Rummage action";
+    }
 }
