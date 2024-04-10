@@ -148,6 +148,7 @@ public class Livrable3 {
         for (Survivor survivor : survivors) {
             System.out.printf("Survivant %d : ", i++);
             survivor.handleAction();
+            System.out.println();
         }
 
         System.out.println();
