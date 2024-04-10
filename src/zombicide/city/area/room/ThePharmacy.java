@@ -1,5 +1,6 @@
 package zombicide.city.area.room;
 
+import zombicide.item.careItem.HealingFiask;
 import zombicide.util.Color;
 
 /**
@@ -25,11 +26,9 @@ public class ThePharmacy extends Room {
     	return greenBgBrightCode + blackBoldColorCode + name + resetColorCode;
     }
 
-    /**
-     * Determines if fighting is allowed in this room. Fighting is allowed in The Pharmacy.
-     *
-     * @return Always returns true, as fighting is allowed in The Pharmacy room.
-     */
+    public void addHealingFiask(){
+        this.addItem(new HealingFiask());
+    }
 
 
 }
