@@ -31,4 +31,8 @@ public class SurvivorMoveAction extends MoveAction<Survivor> {
 
         return direction;
     }
+
+    public String toString() {
+        return "Move action";
+    }
 }
