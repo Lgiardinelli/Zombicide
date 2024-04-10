@@ -623,4 +623,20 @@ public class City {
                 new Axe()
         );
     }
+
+    public void dispatchItems2(){
+        List<Item> items = listOfItems();
+        RandomListChooser<Item> chooser = new RandomListChooser<>();
+
+        for (Room r : this.rooms) {
+            for (int x = 0; x < throwDice(MINIMAL_ITEMS, MAXIMAL_ITEMS + 1); x++) {
+                Item item = chooser.choose(items);
+                r.addItem(item);
+            }
+        }
+    }
+
+
+
+
 }
