@@ -170,10 +170,13 @@ public class Survivor extends Actor {
     @Override
     public void handleAction() {
         Action<Survivor> action = SURVIVOR_ACTION_CHOOSER.choose(roles);
-        System.out.println();
-        System.out.println(action);
+        // System.out.println();
         if (action != null) {
+            System.out.println(action.toString());
             action.doSomething(this);
+        }
+        else {
+            System.out.println("No action (null)");
         }
     }
 }
