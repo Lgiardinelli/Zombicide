@@ -69,4 +69,8 @@ public class DoorAction implements Action<Survivor> {
         }
         return doors;
     }
+
+    public String toString() {
+        return "Door action";
+    }
 }
