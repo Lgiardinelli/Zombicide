@@ -608,4 +608,19 @@ public class City {
 
         manhole.addZombie(zombie);
     }
+
+    public List<Item> listOfItems(){
+        return Arrays.asList(
+                new Riffle(),
+                new Pistol(),
+                new HealingFiask(),
+                new Map(),
+                new InfraredGlasses(),
+                new FirstAidKit(),
+                new Chainsaw(),
+                new MasterKey(),
+                new Crowbar(),
+                new Axe()
+        );
+    }
 }
