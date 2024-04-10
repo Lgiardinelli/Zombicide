@@ -164,7 +164,8 @@ java -jar livrable2.jar 10 10
 ### Choix de modélisation
 Pour le choix de modélisation des actions, nous avons premièrement créé une interface action ce qui nous permettra de mettre les méthodes communes de toutes les actions qui vont étendre de cette interface.  
 Puis, nous avons fait le choix de séparer dans différents packages les actions communes (moveAction), les actions des survivants et les actions des zombies (AttackSurvivorAction), ce choix nous a permis d'avoir un meilleur visuel sur l'ensemble du sujet, bien évidemment, toutes ces actions étendent de l'interface action.  
-Enfin, pour les actions spéciales, ... // A completer
+Enfin, pour les actions spéciales, il s'agit en réalité d'actions qui sont des actions de survivants mais qui ont des spécificités, nous avons donc décidé de les mettre dans un package spécial.
+Ces actions sont des rôles spécifiques qui sont réservés aux survivants et qui étendent de certaines actions. Il s'agit donc entre autre d'une spécification d'actions déjà existantes, qui réécrivent certaines méthodes pour les adapter à leur rôle.
 
 ### Etat du développement
 Tous les objectifs du livrable 3 ont été complété
