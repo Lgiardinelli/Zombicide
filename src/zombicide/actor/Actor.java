@@ -36,9 +36,7 @@ public abstract class Actor {
         return area;
     }
 
-    public void setArea(Area area) {
-        this.area = area;
-    }
+    public abstract void setArea(Area area);
 
     /**
      * Retrieves the life points of the actor.
