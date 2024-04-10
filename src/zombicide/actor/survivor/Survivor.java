@@ -179,4 +179,8 @@ public class Survivor extends Actor {
             System.out.println("No action (null)");
         }
     }
+
+    public void increaseActionPoints() {
+        this.actionPoints++;
+    }
 }
