@@ -22,6 +22,9 @@ public class AttackSurvivorAction implements Action<Zombie> {
      */
     @Override
     public void doSomething(Zombie zombie) {
+        if(zombie.getArea().isContinental())
+            return;
+
         List<Survivor> survivors = zombie.getArea().getSurvivors();
         Survivor s = this.chooseRandomSurvivor(survivors);
         if (s != null)
