@@ -37,7 +37,7 @@ public class AreaAction implements Action<Survivor> {
             }
 
             Room r = (Room) a;
-            if (city.containsRoom(r)) {
+            if (city.containsRoom(r) && !r.isContinental()) {
                 r.displayItems();
                 // System.out.println();
             }

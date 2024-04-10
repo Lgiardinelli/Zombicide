@@ -70,7 +70,7 @@ public class AttackZombieAction implements Action<Survivor> {
      * @param weapon   The weapon used for the attack.
      */
     private void attackZombie(Survivor survivor, Zombie zombie, Weapon weapon) {
-        if (zombie.getIsStrong() && weapon.getDamage() < 2) {
+        if ((zombie.getIsStrong() && weapon.getDamage() < 2) || survivor.getArea().isContinental()) {
             return;
         }
 
