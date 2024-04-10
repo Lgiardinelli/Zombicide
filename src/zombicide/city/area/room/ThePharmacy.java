@@ -30,5 +30,9 @@ public class ThePharmacy extends Room {
         this.addItem(new HealingFiask());
     }
 
+    @Override
+    public boolean isPharmacy() {
+        return true;
+    }
 
 }
