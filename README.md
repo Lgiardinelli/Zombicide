@@ -155,7 +155,7 @@ java -jar livrable2.jar 10 10
 ### Difficultés restant à résoudre
 
 ## Livrable 3
-
+Le placement des zombies sont sur les streets et non dans toutes les zines de la map, cela à été vu avec vous par mail.
 ### Objectif du troisième livrable 
 
 - Travailler sur la modélisation des actions et leurs mises en place.
