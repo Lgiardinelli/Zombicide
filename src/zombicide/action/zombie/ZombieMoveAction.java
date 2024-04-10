@@ -28,4 +28,8 @@ public class ZombieMoveAction extends MoveAction<Zombie> {
 
         return direction;
     }
+
+    public String toString () {
+        return "Move Action";
+    }
 }
