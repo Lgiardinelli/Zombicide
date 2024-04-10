@@ -48,10 +48,9 @@ public abstract class MoveAction<T extends Actor> implements Action<T> {
     /**
      * Chooses a random Direction.
      *
-     * @param area The Area to choose a random Direction for.
      * @return A random Direction.
      */
-    protected Direction randomDirection(Area area) {
+    protected Direction randomDirection() {
         return DIRECTION_CHOOSER.choose(List.of(Direction.values()));
     }
 

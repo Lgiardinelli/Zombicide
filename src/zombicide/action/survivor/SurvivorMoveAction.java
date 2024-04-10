@@ -21,7 +21,7 @@ public class SurvivorMoveAction extends MoveAction<Survivor> {
      */
     @Override
     protected Direction getDirectionFrom(Area area) {
-        Direction direction = randomDirection(area);
+        Direction direction = randomDirection();
 
         if (!area.getDoor(direction).isOpen()) {
             System.out.printf("Door closed in direction: %s", direction);
