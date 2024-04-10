@@ -29,7 +29,8 @@ public class Livrable4 {
     }
 
     private void start(String[] args) {
-        initTrainCity();
+        City c =new City(20,10);
+        c.display();
     }
 
     private void initTrainCity() {
