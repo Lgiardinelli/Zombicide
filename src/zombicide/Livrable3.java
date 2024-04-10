@@ -137,23 +137,30 @@ public class Livrable3 {
                     i++,
                     survivor.getItemHeld(),
                     survivor.getBackpack().getItems(),
-                    survivor.getRoles()
+                    survivor.getRoles().toString()
             );
         }
         System.out.println();
         System.out.println("Représentation des actions des survivant :");
 
         // Faire une action pour chaque survivant
-        for (Survivor survivor : survivors)
+        i=1;
+        for (Survivor survivor : survivors) {
+            System.out.printf("Survivant %d : ", i++);
             survivor.handleAction();
+        }
 
         System.out.println();
         System.out.println("Représentation des actions des zombies :");
 
         // Action attack and move for all zombies
+        i = 1;
         List<Zombie> zombies = trainCity.getZombies();
-        for (Zombie zombie : zombies)
+        for (Zombie zombie : zombies) {
+            System.out.printf("Zombie %d : ", i++);
             zombie.handleAction();
+        }
+
 
 
         System.out.println();
