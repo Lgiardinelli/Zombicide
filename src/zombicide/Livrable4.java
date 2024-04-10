@@ -12,7 +12,7 @@ import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Zombie;
-import zombicide.city.TrainCity;
+import zombicide.city.City;
 import zombicide.item.careItem.HealingFiask;
 import zombicide.item.weapon.Axe;
 
@@ -21,7 +21,7 @@ import java.util.List;
 
 public class Livrable4 {
 
-    private final TrainCity trainCity = new TrainCity();
+    private final City city = new City(10, 10);
 
     public static void main(String[] args) {
         Livrable4 livrable4 = new Livrable4();
@@ -29,8 +29,7 @@ public class Livrable4 {
     }
 
     private void start(String[] args) {
-        City c =new City(20,10);
-        c.display();
+        initTrainCity();
     }
 
     private void initTrainCity() {
@@ -39,17 +38,21 @@ public class Livrable4 {
         List<Action<Zombie>> zombieActions = Arrays.asList(new AttackSurvivorAction(), new ZombieMoveAction());
 
         // Adding abominations in street city's areas
-        for (int i = 0; i < trainCity.getWidth(); i++) {
-            Zombie abomination = new Abomination(zombieActions, this.trainCity);
-            abomination.setArea(trainCity.getAreas()[2][i]);
+        /*for (int i = 0; i < city.getWidth(); i++) {
+            Zombie abomination = new Abomination(zombieActions, this.city);
+            abomination.setArea(city.getAreas()[2][i]);
         }
-        for (int i = 0; i < trainCity.getHeight(); i++) {
+        for (int i = 0; i < city.getHeight(); i++) {
             if (i != 2) {
-                Zombie abomination = new Abomination(zombieActions, this.trainCity);
-                abomination.setArea(trainCity.getAreas()[i][2]);
+                Zombie abomination = new Abomination(zombieActions, this.city);
+                abomination.setArea(city.getAreas()[i][2]);
             }
-        }
+        }*/
 
+//        Ouverture de portes
+//        trainCity.getAreas()[0][0].getDoor(Direction.DOWN).open();
+//        trainCity.getAreas()[0][1].getDoor(Direction.DOWN).open();
+//        trainCity.getAreas()[0][1].getDoor(Direction.LEFT).open();
 
         List<Action<Survivor>> fighterAction = Arrays.asList(
                 null,
@@ -107,18 +110,18 @@ public class Livrable4 {
                 new SurvivorMoveAction()
         );
 
-        new Survivor(fighterAction, this.trainCity);
-        new Survivor(healerAction, this.trainCity);
-        new Survivor(luckyAction, this.trainCity);
-        new Survivor(snooperAction, this.trainCity);
+        new Survivor(fighterAction, this.city);
+        new Survivor(healerAction, this.city);
+        new Survivor(luckyAction, this.city);
+        new Survivor(snooperAction, this.city);
 
-        List<Survivor> survivors = trainCity.getSurvivors();
+        List<Survivor> survivors = city.getSurvivors();
 
         // Déplacement des survivants au nord du spawn
         for (Survivor survivor : survivors)
-            survivor.setArea(this.trainCity.getArea(2, 1));
+            survivor.setArea(this.city.getArea(2, 1));
 
-        trainCity.display();
+        city.display();
 
         // Add axe in the hand survivor 2
         survivors.get(1).setItemHeld(new Axe());
@@ -152,18 +155,18 @@ public class Livrable4 {
         System.out.println("Représentation des actions des zombies :");
 
         // Action attack and move for all zombies
-        i = 1;
-        List<Zombie> zombies = trainCity.getZombies();
+        /*i = 1;
+        List<Zombie> zombies = city.getZombies();
         for (Zombie zombie : zombies) {
             System.out.printf("Zombie %d : ", i++);
             zombie.handleAction();
-        }
+        }*/
 
 
 
         System.out.println();
         System.out.println("Plateau d'entraînement après les actions effectuées :");
-        trainCity.display();
+        city.display();
 
         System.out.println();
         System.out.println("Voici l'état des survivants :");
@@ -185,5 +188,4 @@ public class Livrable4 {
             throw new NumberFormatException(errorMsg);
         }
     }
-
 }
