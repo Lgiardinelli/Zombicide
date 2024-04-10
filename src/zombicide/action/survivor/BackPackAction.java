@@ -39,4 +39,8 @@ public class BackPackAction implements Action<Survivor> {
 
         survivor.setItemHeld(backpack.getRandomItem());
     }
+
+    public String toString() {
+        return "BackPack action";
+    }
 }
