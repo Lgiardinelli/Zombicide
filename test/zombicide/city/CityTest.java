@@ -92,6 +92,8 @@ class CityTest {
 	@Test
 	void testGetSpawn() {
 		assertNotNull(city.getSpawn());
+		assertEquals(city.getSpawn().getX() , 2);
+		assertEquals(city.getSpawn().getY() , 2);
 	}
 
 	@Test
