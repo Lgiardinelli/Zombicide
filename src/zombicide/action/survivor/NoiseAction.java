@@ -34,4 +34,8 @@ public class NoiseAction implements Action<Survivor> {
         }
         survivor.removeActionPoint();
     }
+
+    public String toString() {
+        return "Noise action";
+    }
 }
