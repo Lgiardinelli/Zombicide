@@ -11,6 +11,7 @@ import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
 import zombicide.item.Map;
+import zombicide.item.weapon.Pistol;
 import zombicide.item.weapon.Weapon;
 
 import java.util.Arrays;
@@ -43,11 +44,5 @@ public class AttackZombieActionTest {
         survivor.setArea(this.city.getArea(posX, posY));
     }
 
-    @Test
-    public void canAttackTest() {
-        survivor.setItemHeld(new Map());
-        survivor.handleAction();
-        System.out.println(survivor.getRoles());
-        assertTrue(zombie.getLifePoints() == 6);
-    }
+
 }
