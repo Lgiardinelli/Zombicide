@@ -30,10 +30,6 @@ public class ThePharmacy extends Room {
      *
      * @return Always returns true, as fighting is allowed in The Pharmacy room.
      */
-    @Override
-    public boolean canFight() {
-        return true;
-    }
 
 
 }
