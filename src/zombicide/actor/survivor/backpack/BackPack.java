@@ -21,6 +21,7 @@ public class BackPack {
 
     /**
      * Constructor for the BackPack class. Initializes an empty list of items.
+     * @param survivor The survivor who gets the backpack
      */
     public BackPack(Survivor survivor) {
         this.survivor = survivor;

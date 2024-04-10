@@ -1,5 +1,8 @@
 package zombicide.util;
 
+/**
+ * Enumeration representing ANSI color codes for console output.
+ */
 public enum Color {
     RESET("\u001B[0m"),
     RED("\u001B[31m"),
@@ -13,10 +16,20 @@ public enum Color {
 
     private final String code;
 
+    /**
+     * Constructs a Color with the given ANSI escape code.
+     *
+     * @param code The ANSI escape code for the color.
+     */
     Color(String code) {
         this.code = code;
     }
 
+    /**
+     * Gets the ANSI escape code for the color.
+     *
+     * @return The ANSI escape code.
+     */
     public String getCode() {
         return code;
     }

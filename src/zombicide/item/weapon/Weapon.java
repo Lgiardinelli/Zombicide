@@ -23,11 +23,11 @@ public abstract class Weapon extends Item {
 	/**
 	 * Creates a new Weapon with specified characteristics.
 	 *
-	 * @param nbDiceThrows     The number of dice throws for the weapon.
-	 * @param diceThreshold    The threshold for a successful shot.
-	 * @param damage           The damage inflicted by the weapon.
-	 * @param minHittingRange  The minimum hitting range of the weapon.
-	 * @param maxHittingRange  The maximum hitting range of the weapon.
+	 * @param nbDiceThrows    The number of dice throws for the weapon.
+	 * @param diceThreshold   The threshold for a successful shot.
+	 * @param damage          The damage inflicted by the weapon.
+	 * @param minHittingRange The minimum hitting range of the weapon.
+	 * @param maxHittingRange The maximum hitting range of the weapon.
 	 */
 	public Weapon(int nbDiceThrows, int diceThreshold, int damage, int minHittingRange, int maxHittingRange) {
 		super();
@@ -50,22 +50,47 @@ public abstract class Weapon extends Item {
 		return lastShotValue >= this.diceThreshold;
 	}
 
+	/**
+	 * Gets the number of dice throws for the weapon.
+	 *
+	 * @return The number of dice throws.
+	 */
 	public int getNbDiceThrows() {
 		return nbDiceThrows;
 	}
 
+	/**
+	 * Gets the threshold for a successful shot.
+	 *
+	 * @return The threshold value.
+	 */
 	public int getDiceThreshold() {
 		return diceThreshold;
 	}
 
+	/**
+	 * Gets the damage inflicted by the weapon.
+	 *
+	 * @return The damage value.
+	 */
 	public int getDamage() {
 		return damage;
 	}
 
+	/**
+	 * Gets the minimum hitting range of the weapon.
+	 *
+	 * @return The minimum hitting range.
+	 */
 	public int getMinHittingRange() {
 		return minHittingRange;
 	}
 
+	/**
+	 * Gets the maximum hitting range of the weapon.
+	 *
+	 * @return The maximum hitting range.
+	 */
 	public int getMaxHittingRange() {
 		return maxHittingRange;
 	}
@@ -105,11 +130,15 @@ public abstract class Weapon extends Item {
 		return zombies;
 	}
 
+	/**
+	 * Uses the weapon to check and display the zombies within its shooting range.
+	 */
 	public void use() {
-		List<Zombie> l = shootRange();
-		System.out.print("Zombies in range : ");
-		for (Zombie zombie : l)
-			System.out.printf("%s ", zombie.toString());
+		List<Zombie> zombiesInRange = shootRange();
+		System.out.print("Zombies in range: ");
+		for (Zombie zombie : zombiesInRange) {
+			System.out.print(zombie.toString() + " ");
+		}
 		System.out.println();
 	}
 }
