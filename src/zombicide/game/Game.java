@@ -18,6 +18,7 @@ public class Game {
 
     public Game(City c){
         this.board = c;
+        // Pas forcément besoin de la liste des survivants et des zombies je pense car on l'a déjà dans city Monsieur Placide
         this.survivors = new ArrayList<>();
         this.zombies = new ArrayList<>();
         this.currentPhase = Phase.SURVIVORS;
