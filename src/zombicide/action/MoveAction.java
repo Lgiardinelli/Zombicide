@@ -9,6 +9,7 @@ import zombicide.util.listchooser.ListChooser;
 import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -31,7 +32,7 @@ public abstract class MoveAction<T extends Actor> implements Action<T> {
     protected List<Direction> getOpenDirectionsFrom(Area area) {
         return Stream.of(Direction.values())
                 .filter(d -> area.getDoor(d).isOpen())
-                .toList();
+                .collect(Collectors.toList());
     }
 
     /**
@@ -47,10 +48,9 @@ public abstract class MoveAction<T extends Actor> implements Action<T> {
     /**
      * Chooses a random Direction.
      *
-     * @param area The Area to choose a random Direction for.
      * @return A random Direction.
      */
-    protected Direction randomDirection(Area area) {
+    protected Direction randomDirection() {
         return DIRECTION_CHOOSER.choose(List.of(Direction.values()));
     }
 
