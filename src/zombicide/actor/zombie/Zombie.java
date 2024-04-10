@@ -80,7 +80,11 @@ public abstract class Zombie extends Actor {
     public void handleAction() {
         Action<Zombie> action = ACTION_CHOOSER.choose(this.zombieActions);
         if (action != null)  {
+            System.out.println(action.toString());
             action.doSomething(this);
+        }
+        else {
+            System.out.println("No action (null)");
         }
     }
 }
