@@ -55,4 +55,8 @@ public class AreaAction implements Action<Survivor> {
         displayAreasAround(survivor);
         survivor.removeActionPoint();
     }
+
+    public String toString() {
+        return "Area action";
+    }
 }
