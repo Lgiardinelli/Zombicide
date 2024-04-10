@@ -106,6 +106,10 @@ public abstract class Weapon extends Item {
 	}
 
 	public void use() {
-		System.out.println(shootRange());
+		List<Zombie> l = shootRange();
+		System.out.print("Zombies in range : ");
+		for (Zombie zombie : l)
+			System.out.printf("%s ", zombie.toString());
+		System.out.println();
 	}
 }
