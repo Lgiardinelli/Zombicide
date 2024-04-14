@@ -636,7 +636,20 @@ public class City {
         }
     }
 
-
+    public Area getAreaNoiseMax() {
+        Area areaMaxNoise = null;
+        int maxNoise = 0;
+        for (int i=0; i<getWidth(); i++) {
+            for (int j=0; j<getHeight(); j++) {
+                int noiseArea = this.getArea(i, j).getNoise();
+                if (noiseArea > maxNoise) {
+                    areaMaxNoise = this.getArea(i, j);
+                    maxNoise = noiseArea;
+                }
+            }
+        }
+        return areaMaxNoise;
+    }
 
 
 }
