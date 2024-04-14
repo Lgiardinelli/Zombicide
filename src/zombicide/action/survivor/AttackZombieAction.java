@@ -52,7 +52,7 @@ public class AttackZombieAction implements Action<Survivor> {
      * @param zombie   The Zombie being attacked.
      * @param weapon   The weapon used for the attack.
      */
-    private void shootZombie(Survivor survivor, Zombie zombie, Weapon weapon) {
+    protected void shootZombie(Survivor survivor, Zombie zombie, Weapon weapon) {
         int highestDieValue = getHighestDieValue(weapon.getNbDiceThrows());
 
         if (weapon.shotHitsTarget(highestDieValue)) {
@@ -69,7 +69,7 @@ public class AttackZombieAction implements Action<Survivor> {
      * @param zombie   The Zombie being attacked.
      * @param weapon   The weapon used for the attack.
      */
-    private void attackZombie(Survivor survivor, Zombie zombie, Weapon weapon) {
+    protected void attackZombie(Survivor survivor, Zombie zombie, Weapon weapon) {
         if (zombie.getIsStrong() && weapon.getDamage() < 2) {
             System.out.printf("the zombie attacked is too strong for the weapon's survivor !");
             return;
@@ -116,7 +116,7 @@ public class AttackZombieAction implements Action<Survivor> {
      * @param nbDiceThrows The number of dice to throw.
      * @return The highest value obtained after throwing the dice.
      */
-    private int getHighestDieValue(int nbDiceThrows) {
+    protected int getHighestDieValue(int nbDiceThrows) {
         int dieValue = 0;
         for (int i = 0; i < nbDiceThrows; i++) {
             int actual = throwOneDie();
