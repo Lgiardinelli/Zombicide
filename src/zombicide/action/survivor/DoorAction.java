@@ -63,6 +63,11 @@ public class DoorAction implements Action<Survivor> {
             int y = survivor.getArea().getY();
 
             City city = survivor.getCity();
+
+            if ((y + j) <0 || (y + j)>=city.getHeight() || (x + i) <0 || (x + i)>=city.getWidth()) {
+                continue;
+            }
+
             Door door = city.getAreas()[y + j][x + i].getDoor(direction.getReverse());
             if (door != null && !door.isOpen()) {
                 doors.add(door);
