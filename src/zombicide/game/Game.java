@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Game {
 
-    private City board;
+    private City city;
     private List<Survivor> survivors;
     private List<Zombie> zombies;
     private Phase currentPhase;
@@ -21,10 +21,10 @@ public class Game {
     /**
      * Creates a new game session with the given city.
      *
-     * @param c The city for the game.
+     * @param city The city for the game.
      */
-    public Game(City c){
-        this.board = c;
+    public Game(City city){
+        this.city = city;
         this.survivors = new ArrayList<>();
         this.zombies = new ArrayList<>();
         this.currentPhase = Phase.SURVIVORS;
@@ -32,8 +32,8 @@ public class Game {
 
     public void initGame(){
         for (Survivor survivor : this.survivors)
-            survivor.setArea(this.board.getSpawn());
-        this.board.dispatchItems2();
+            survivor.setArea(this.city.getSpawn());
+        this.city.dispatchItems2();
     }
 
 
@@ -61,6 +61,7 @@ public class Game {
      * @return true if the game should end, false otherwise.
      */
     public boolean endGame(){
+        System.out.println(this.survivors);
         return allSurvivorAreDead() || allZombiesAreDead() || areThePlayersHaveReachedStage();
     }
 
@@ -95,15 +96,17 @@ public class Game {
      * Runs the game loop until the end conditions are met.
      */
     public void play(){
+        // System.out.println(endGame());
         while(!endGame()){
             if(currentPhase == Phase.SURVIVORS){
+                System.out.println("iciiiiiiiiiiiiiiiiiiii");
                 playSurvivorsPhase();
             }
             else if(currentPhase == Phase.ZOMBIES){
                 playZombiesPhase();
             } else { playEndPhase(); }
 
-            this.board.display();
+            this.city.display();
         }
     }
 
@@ -115,15 +118,15 @@ public class Game {
         survivors.removeIf(Survivor::isDead);
         zombies.removeIf(Zombie::isDead);
 
-        for(int i = 0; i < this.board.getWidth() ; i++){
-            for(int j = 0; j < this.board.getHeight() ; j++){
-                this.board.getArea(i , j).setNoise(0);
+        for(int i = 0; i < this.city.getWidth() ; i++){
+            for(int j = 0; j < this.city.getHeight() ; j++){
+                this.city.getArea(i , j).setNoise(0);
             }
         }
 
         if(!allZombiesAreDead()){
             for(int i = 0 ; i < getNumberOfZombiesToSpawn() ; i++){
-                this.board.spawnAZombie();
+                this.city.spawnAZombie();
             }
         }
 
@@ -175,5 +178,9 @@ public class Game {
             sum += s.getSkillPoints();
         }
         return sum;
+    }
+
+    public City getCity() {
+        return  this.city;
     }
 }
