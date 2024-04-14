@@ -875,7 +875,8 @@ Vendredi 12/04 :
 
 
 Week-end :
-
+Pour l'action de l'attack de zombie par les survivant, dans le doSomething, on a utiliser un instanceof, est-ce qu'il est judicieux de l'enlever sachant qu'il ne limite pas l'évolution du programme. A voir avec le responsable du TD.
+Nous avons modifié les actions des zombies car en lisant le sujet, les zombies attaquent systématiquement un survivant s'il se trouve dans la zone du zombie, sinon il se déplace, nus avons gérer cela dans la classe zombie qui appelle l'action adéquate en fonction des survivants présent dans la case où se troyve le zombie.
 
 
 __Partage de taches :__
@@ -902,7 +903,7 @@ Vendredi 12/04 :
 
 
 Week-end :
-
+- Léo : Résumé du sujet avec les derniers correctifs à appliquer pour le livrable 4.  Ajout des bruits pour certaines actions.  Modification de l'attaque des zombies.
 
 ## Semaine 12
 __Objectif de la semaine :__  
