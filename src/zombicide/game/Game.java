@@ -133,8 +133,16 @@ public class Game {
      * Removes dead survivors and zombies, resets noise levels, and spawns new zombies.
      */
     private void playEndPhase() {
-        survivors.removeIf(Survivor::isDead);
-        zombies.removeIf(Zombie::isDead);
+        /*survivors.removeIf(Survivor::isDead);
+        zombies.removeIf(Zombie::isDead);*/
+        survivors.removeIf(survivor -> survivor.isDead());
+        zombies.removeIf(zombie -> zombie.isDead());
+
+        for (Zombie zombie : zombies) {
+            if (zombie.isDead())
+                this.survivors.remove(zombie);
+        }
+
 
         for(int i = 0; i < this.city.getWidth() ; i++){
             for(int j = 0; j < this.city.getHeight() ; j++){
@@ -175,6 +183,7 @@ public class Game {
             while(s.getActionPoints() > 0){
                 s.handleAction();
             }
+            System.out.println();
         }
         this.currentPhase = Phase.ZOMBIES;
     }
