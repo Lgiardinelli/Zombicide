@@ -29,11 +29,7 @@ public class AttackSurvivorAction implements Action<Zombie> {
 
         List<Survivor> survivors = zombie.getArea().getSurvivors();
         Survivor s = this.chooseRandomSurvivor(survivors);
-        if (s != null)
-            s.removeLifePoints(zombie.getAttackPoints());
-        else {
-            System.out.println("No survivor in this cell");
-        }
+        s.removeLifePoints(zombie.getAttackPoints());
     }
 
     /**
