@@ -31,7 +31,8 @@ public class Game {
     }
 
     public void initGame(){
-        this.board.getSpawn().addSurvivors(this.survivors);
+        for (Survivor survivor : this.survivors)
+            survivor.setArea(this.board.getSpawn());
         this.board.dispatchItems2();
     }
 
