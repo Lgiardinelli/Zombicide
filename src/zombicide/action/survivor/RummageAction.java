@@ -45,7 +45,7 @@ public class RummageAction implements Action<Survivor> {
             return;
 
         Item roomItem = room.getRandomItem();
-
+        roomItem.setSurvivor(survivor);
         if (backpack.stillHaveSpace())
             backpack.addItem(roomItem);
         else {

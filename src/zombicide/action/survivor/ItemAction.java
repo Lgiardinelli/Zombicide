@@ -19,6 +19,7 @@ public class ItemAction implements Action<Survivor> {
     @Override
     public void doSomething(Survivor survivor) {
         Item itemUsed = survivor.getItemHeld();
+        itemUsed.setSurvivor(survivor);
         itemUsed.use();
         survivor.removeActionPoint();
     }

@@ -33,6 +33,7 @@ public class AttackZombieAction implements Action<Survivor> {
         }
 
         Weapon weapon = (Weapon) itemHeld;
+        weapon.setSurvivor(survivor);
 
         List<Zombie> zombies = weapon.shootRange();
         if (zombies.isEmpty()) {
