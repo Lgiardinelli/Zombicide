@@ -27,13 +27,16 @@ public class AreaAction implements Action<Survivor> {
             int x = survivor.getArea().getX();
             int y = survivor.getArea().getY();
 
+            if ((y + j) <0 || (y + j)>=city.getHeight() || (x + i) <0 || (x + i)>=city.getWidth()) {
+                continue;
+            }
             Area a = city.getAreas()[y + j][x + i];
 
             a.displayActors();
             // System.out.println();
 
             if (!a.isARoom()) {
-                return;
+                continue;
             }
 
             Room r = (Room) a;
