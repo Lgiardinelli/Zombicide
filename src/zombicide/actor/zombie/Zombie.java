@@ -1,6 +1,8 @@
 package zombicide.actor.zombie;
 
 import zombicide.action.Action;
+import zombicide.action.zombie.AttackSurvivorAction;
+import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.Actor;
 import zombicide.city.area.Area;
 import zombicide.city.City;
@@ -78,6 +80,17 @@ public abstract class Zombie extends Actor {
      * Chooses a random action from the available actions and performs it.
      */
     public void handleAction() {
+        if (!this.getArea().getSurvivors().isEmpty()) {
+            Action<Zombie> action = new AttackSurvivorAction();
+            System.out.println(action.toString());
+            action.doSomething(this);
+        }
+        else {
+            Action<Zombie> action = new ZombieMoveAction();
+            System.out.println(action.toString());
+            action.doSomething(this);
+        }
+        /**
         Action<Zombie> action = ACTION_CHOOSER.choose(this.zombieActions);
         if (action != null)  {
             System.out.println(action.toString());
@@ -86,5 +99,6 @@ public abstract class Zombie extends Actor {
         else {
             System.out.println("No action (null)");
         }
+         */
     }
 }
