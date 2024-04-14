@@ -31,8 +31,8 @@ public class Game {
     }
 
     public void initGame(){
-        for (Survivor survivor : this.survivors)
-            survivor.setArea(this.city.getSpawn());
+        /*for (Survivor survivor : this.survivors)
+            survivor.setArea(this.city.getSpawn());*/
         this.city.dispatchItems2();
     }
 
@@ -96,15 +96,33 @@ public class Game {
      * Runs the game loop until the end conditions are met.
      */
     public void play(){
-        // System.out.println(endGame());
-        while(!endGame()){
+        /*for (int i=0; i<3; i++) {
             if(currentPhase == Phase.SURVIVORS){
-                System.out.println("iciiiiiiiiiiiiiiiiiiii");
                 playSurvivorsPhase();
             }
             else if(currentPhase == Phase.ZOMBIES){
                 playZombiesPhase();
             } else { playEndPhase(); }
+
+            this.city.display();
+        }*/
+
+        while(!endGame()){
+            if(currentPhase == Phase.SURVIVORS){
+                playSurvivorsPhase();
+            }
+            else if(currentPhase == Phase.ZOMBIES){
+                playZombiesPhase();
+            }
+            else {
+                playEndPhase();
+                System.out.println();
+                System.out.println("Voici l'état des survivants :");
+                for (int ignored = 0; ignored < survivors.size(); ignored++) {
+                    System.out.printf("Le survivant %d a %d points de vie", ignored+1, survivors.get(ignored).getLifePoints());
+                    System.out.println();
+                }
+            }
 
             this.city.display();
         }
@@ -130,6 +148,11 @@ public class Game {
             }
         }
 
+        for (Survivor survivor : survivors) {
+            survivor.setActionPoints(3);
+        }
+        this.currentPhase = Phase.SURVIVORS;
+
     }
 
     /**
@@ -138,9 +161,7 @@ public class Game {
      */
     private void playZombiesPhase() {
         for(Zombie z : zombies){
-            while(z.getActionPoints() > 0){
-                z.handleAction();
-            }
+            z.handleAction();
         }
         this.currentPhase = Phase.END;
     }
