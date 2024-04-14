@@ -112,10 +112,14 @@ public class Main {
         trainCity.display();
 
         // Add axe in the hand survivor 2
-        survivors.get(1).setItemHeld(new Axe());
+        Axe axe = new Axe();
+        survivors.get(1).setItemHeld(axe);
+        axe.setSurvivor(survivors.get(0));
 
         // Add healing fiask in the hand survivor 3
-        survivors.get(2).setItemHeld(new HealingFiask());
+        HealingFiask healingFiask = new HealingFiask();
+        survivors.get(2).setItemHeld(healingFiask);
+        healingFiask.setSurvivor(survivors.get(2));
 
         game.play();
 
