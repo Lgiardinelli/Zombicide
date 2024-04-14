@@ -78,6 +78,9 @@ public abstract class Actor {
     public int getActionPoints() {
         return actionPoints;
     }
+    public void setActionPoints(int actionPoints) {
+        this.actionPoints = actionPoints;
+    }
 
     public abstract void handleAction();
 
