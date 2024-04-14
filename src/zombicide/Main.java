@@ -103,8 +103,8 @@ public class Main {
         game.addSurvivor(new Survivor(snooperAction, game.getCity()));
 
         game.addZombie(new Abomination(zombieActions, game.getCity()));
-        game.addZombie(new Abomination(zombieActions, game.getCity()));
-        game.addZombie(new Abomination(zombieActions, game.getCity()));
+        /*game.addZombie(new Abomination(zombieActions, game.getCity()));
+        game.addZombie(new Abomination(zombieActions, game.getCity()));*/
 
 
         List<Survivor> survivors = trainCity.getSurvivors();
@@ -131,13 +131,6 @@ public class Main {
             );
         }
         System.out.println();
-        System.out.println("Représentation des actions des survivant :");
-
-
-
-        System.out.println();
-        System.out.println("Plateau d'entraînement après les actions effectuées :");
-        trainCity.display();
 
         System.out.println();
         System.out.println("Voici l'état des survivants :");
