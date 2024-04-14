@@ -38,9 +38,29 @@ public class AttackZombieAction implements Action<Survivor> {
         if (zombies.isEmpty()) {
             return;
         }
-
+        Zombie zombie = getZombieLessLife(zombies);
+        /**
         Zombie zombie = chooseRandomZombie(zombies);
-        shootZombie(survivor, zombie, weapon);
+        */
+        if (zombie != null)
+            shootZombie(survivor, zombie, weapon);
+    }
+
+    private Zombie getZombieLessLife(List<Zombie> zombies) {
+        Zombie zombieLessLife = zombies.get(0);
+        int minZombieLife = zombies.get(0).getLifePoints();
+        for (Zombie zombie : zombies) {
+            int life = zombie.getLifePoints();
+            if (life > 0) {
+                if (life < minZombieLife) {
+                    zombieLessLife = zombie;
+                    minZombieLife = life;
+                }
+            }
+        }
+        if (minZombieLife <= 0)
+            return null;
+        return zombieLessLife;
     }
 
     /**
@@ -106,9 +126,11 @@ public class AttackZombieAction implements Action<Survivor> {
      * @param zombies The list of Zombies to choose from.
      * @return A randomly chosen Zombie.
      */
+    /**
     protected Zombie chooseRandomZombie(List<Zombie> zombies) {
         return ZOMBIE_CHOOSER.choose(zombies);
     }
+     */
 
     /**
      * Gets the highest value after throwing the specified number of dice.
