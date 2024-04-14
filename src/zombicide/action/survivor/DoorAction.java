@@ -26,9 +26,11 @@ public class DoorAction implements Action<Survivor> {
     public void doSomething(Survivor survivor) {
         if (canOpen(survivor)) {
             List<Door> doors = doorsAround(survivor);
-            RandomListChooser<Door> chooser = new RandomListChooser<>();
-            Door door = chooser.choose(doors);
-            door.open();
+            if (!doors.isEmpty()) {
+                RandomListChooser<Door> chooser = new RandomListChooser<>();
+                Door door = chooser.choose(doors);
+                door.open();
+            }
             survivor.removeActionPoint();
         }
     }
@@ -62,7 +64,6 @@ public class DoorAction implements Action<Survivor> {
 
             City city = survivor.getCity();
             Door door = city.getAreas()[y + j][x + i].getDoor(direction.getReverse());
-
             if (door != null && !door.isOpen()) {
                 doors.add(door);
             }
