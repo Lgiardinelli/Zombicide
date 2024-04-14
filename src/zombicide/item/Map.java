@@ -29,6 +29,7 @@ public class Map extends Item {
 	 */
 	public void use() {
 		City city = this.survivor.getCity();
+		this.survivor.getArea().increaseNoiseLevel(1);
 		System.out.println("Displaying the map 'Action map':");
 		city.display();
 	}
