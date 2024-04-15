@@ -18,5 +18,6 @@ public class AreaActionTest {
         int actionPoints = s.getActionPoints();
         action.doSomething(s);
         assertEquals(actionPoints - 1, s.getActionPoints());
+        assertEquals("Area action", action.toString());
     }
 }

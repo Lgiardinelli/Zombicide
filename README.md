@@ -908,7 +908,7 @@ Week-end :
 
 ## Semaine 12
 __Objectif de la semaine :__  
-
+- Completer la classe Game
 
 __Objectif atteint :__
 
@@ -917,9 +917,9 @@ __Réflexion du groupe :__
 
 Lundi 15/04 :
 
+- Supression de la classe weapon du fait que les attributs était les mêmes, cette suppression à pour objectif d'éviter la redondance.
 
 Mardi 16/04 :
-
 
 Mercredi 17/04 :
 
@@ -938,6 +938,7 @@ __Partage de taches :__
 
 Lundi 15/04 :
 
+Théophane : Ajout, modification et réadaptation des tests selon le changement fait ce lundi 15/04
 
 Mardi 16/04 :
 
@@ -949,6 +950,100 @@ Jeudi 18/04 :
 
 
 Vendredi 19/04 :
+
+
+Week-end :
+
+## Semaine 13
+__Objectif de la semaine :__  
+
+
+__Objectif atteint :__
+
+
+__Réflexion du groupe :__  
+
+Lundi 22/04 :
+
+
+Mardi 23/04 :
+
+
+Mercredi 24/04 :
+
+
+Jeudi 25/04 :
+
+
+Vendredi 26/04 :
+
+
+Week-end :
+
+__Partage de taches :__
+
+Lundi 22/04 :
+
+
+Mardi 23/04 :
+
+
+Mercredi 24/04 :
+
+
+Jeudi 25/04 :
+
+
+Vendredi 26/04 :
+
+
+Week-end :
+
+
+## Semaine 14
+__Objectif de la semaine :__  
+
+- Finir le projet et le rendre
+
+__Objectif atteint :__
+
+
+__Réflexion du groupe :__  
+
+Lundi 29/04 :
+
+
+Mardi 30/04 :
+
+
+Mercredi 01/04 :
+
+
+Jeudi 02/04 :
+
+
+Vendredi 03/04 :
+
+
+Week-end :
+
+
+
+__Partage de taches :__
+
+Lundi 29/04 :
+
+
+Mardi 30/04 :
+
+
+Mercredi 01/04 :
+
+
+Jeudi 02/04 :
+
+
+Vendredi 03/04 :
 
 
 Week-end :
