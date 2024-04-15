@@ -3,17 +3,13 @@ package zombicide.item;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import zombicide.action.zombie.ZombieMoveAction;
-import zombicide.actor.zombie.Balaise;
-import zombicide.actor.zombie.Runner;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
 import zombicide.action.Action;
-import zombicide.action.MoveAction;
 import zombicide.action.zombie.AttackSurvivorAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Abomination;
-import zombicide.city.area.Area;
-import zombicide.item.weapon.*;
+import zombicide.item.attackItem.weapon.*;
 
 import java.util.Arrays;
 import java.util.List;

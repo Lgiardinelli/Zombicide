@@ -9,9 +9,9 @@ import zombicide.item.InfraredGlasses;
 import zombicide.item.Item;
 import zombicide.item.MasterKey;
 import zombicide.item.careItem.FirstAidKit;
-import zombicide.item.weapon.Chainsaw;
-import zombicide.item.weapon.Pistol;
-import zombicide.item.weapon.Riffle;
+import zombicide.item.attackItem.weapon.Chainsaw;
+import zombicide.item.attackItem.weapon.Pistol;
+import zombicide.item.attackItem.weapon.Riffle;
 
 import java.util.List;
 
