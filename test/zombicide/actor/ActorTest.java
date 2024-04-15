@@ -209,6 +209,13 @@ public class ActorTest {
         assertTrue(survivor.isDead());
     }
 
+    @Test
+    public void testIncreaseActionPointsOnSurvivor(){
+        assertEquals(survivor.getSkillPoints(), 0);
+        survivor.increaseSkillPoints();
+        assertEquals(survivor.getSkillPoints(), 1);
+    }
+
 
 
 }
