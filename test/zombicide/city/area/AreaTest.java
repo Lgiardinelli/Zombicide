@@ -143,4 +143,8 @@ class AreaTest {
 		assertTrue(zombiesInArea.contains(abomination));
 	}
 
+	@Test
+	void testCanFightInArea(){
+		assertTrue(room.canFight());
+	}
 }
