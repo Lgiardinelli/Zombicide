@@ -35,13 +35,14 @@ public class AttackSurvivorAction implements Action<Zombie> {
         s.removeLifePoints(zombie.getAttackPoints());
         System.out.println(zombie.getName()+" attacked "+s.getName()+", he has now "+s.getLifePoints()+" life points");
 
-        if(s.isDead()){
-            System.out.println(s.getName()+" is dead ");
+        if(s.isDead()) {
+            System.out.println(s.getName() + " is dead ");
             Area a = s.getArea();
-            if(a.isARoom()){
+            if (a.isARoom()) {
                 Room r = (Room) a;
                 r.letItems(s.getBackpack());
             }
+        }
     }
 
     /**
