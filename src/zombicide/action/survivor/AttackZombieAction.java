@@ -28,14 +28,18 @@ public class AttackZombieAction implements Action<Survivor> {
     public void doSomething(Survivor survivor) {
         survivor.removeActionPoint();
         Item itemHeld = survivor.getItemHeld();
-        if (!itemHeld.canAttack())
+        if (!itemHeld.canAttack()){
+            System.out.println(survivor.getName()+" can't attack !");
             return;
+        }
+
 
         AttackItem attackItem = (AttackItem) itemHeld;
         attackItem.setSurvivor(survivor);
 
         List<Zombie> zombies = attackItem.shootRange();
         if (zombies.isEmpty()) {
+            System.out.println("There is no zombies in the current area");
             return;
         }
         Zombie zombie = getZombieLessLife(zombies);
@@ -90,23 +94,28 @@ public class AttackZombieAction implements Action<Survivor> {
      * @param weapon   The weapon used for the attack.
      */
     protected void attackZombie(Survivor survivor, Zombie zombie, AttackItem weapon) {
+        System.out.println(zombie.getName()+" has "+zombie.getLifePoints()+" life points");
         if (zombie.getIsStrong() && weapon.getDamage() < 2) {
             System.out.printf("the zombie attacked is too strong for the weapon's survivor !");
             return;
         }
 
         if(survivor.getArea().isContinental()){
-            System.out.printf("the survivor is in the continental, he can't attack !");
+            System.out.printf(survivor.getName()+" is in the continental, he can't attack !");
             return;
         }
 
         zombie.removeLifePoints(weapon.getDamage());
+        if (weapon.isNoisyWhenUsed())
+            survivor.getArea().increaseNoiseLevel(1);
+
+
         if (zombie.isDead()) {
             survivor.addSkillPoints(1);
-            System.out.println("the zombie attacked is dead, the survivor won a skill point !");
+            System.out.println("the zombie attacked is dead, "+survivor.getName()+" won a skill point !");
             if(survivor.isLevelReached()){
                 survivor.increaseActionPoints();
-                System.out.println("the survivor reached stage "+survivor.getSkillPoints()+", his action points increased !");
+                System.out.println(survivor.getName()+" reached stage "+survivor.getSkillPoints()+", his action points increased !");
             }
         }
     }
