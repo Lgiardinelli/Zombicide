@@ -18,11 +18,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WeaponTest {
-    private Weapon pistol;
-    private Weapon axe;
-    private Weapon chainsaw;
-    private Weapon crowbar;
-    private Weapon riffle;
+    private Pistol pistol;
+    private Axe axe;
+    private Chainsaw chainsaw;
+    private Crowbar crowbar;
+    private Riffle riffle;
     private Survivor s;
     private Abomination z1;
     private Abomination z2;
