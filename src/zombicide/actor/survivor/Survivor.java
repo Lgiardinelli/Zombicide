@@ -60,6 +60,11 @@ public class Survivor extends Actor {
     public void setName(String name){
         this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
+
     /**
      * Gets the skill points of the survivor.
      *
