@@ -222,7 +222,7 @@ public abstract class Area {
             System.out.println("Survivors:");
             if (!survivors.isEmpty()) {
                 for (Survivor s : survivors) {
-                    System.out.print("| " + s.display() + " ");
+                    System.out.print("| " + s.getName() + " ");
                 }
                 System.out.println("|");
             } else {
@@ -232,7 +232,7 @@ public abstract class Area {
             System.out.println("Zombies:");
             if (!zombies.isEmpty()) {
                 for (Zombie z : zombies) {
-                    System.out.print("| " + z.display() + " ");
+                    System.out.print("| " + z.getName() + " ");
                 }
                 System.out.println("|");
             } else {
