@@ -35,23 +35,30 @@ public class RummageAction implements Action<Survivor> {
     private void rummage(Survivor survivor) {
         Area area = survivor.getArea();
 
-        if (!area.isARoom())
+        if (!area.isARoom()) {
+            System.out.println("The survivor is in the street, he can't rummage");
             return;
+        }
 
         Room room = (Room) area;
         BackPack backpack = survivor.getBackpack();
 
-        if (!room.hasItems())
+        if (!room.hasItems()) {
+            System.out.println("There is no items in the current room");
             return;
+        }
 
         Item roomItem = room.getRandomItem();
         roomItem.setSurvivor(survivor);
-        if (backpack.stillHaveSpace())
+        if (backpack.stillHaveSpace()) {
             backpack.addItem(roomItem);
+        }
         else {
             Item oldBpItem = backpack.addItem(roomItem);
             room.addItem(oldBpItem);
+            System.out.println("Backpack's survivor was full, his "+oldBpItem.toString()+" has been dropped");
         }
+        System.out.println("The survivor picked up a(n) "+ roomItem);
     }
 
     public String toString() {
