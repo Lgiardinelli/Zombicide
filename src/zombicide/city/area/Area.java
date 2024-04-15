@@ -217,26 +217,30 @@ public abstract class Area {
         this.zombies.remove(a);
     }
 
-    public void displayActors(){
-        if (!(this.isContinental())) {
-            System.out.print("They are : ");
-            for (Survivor s : this.survivors) {
-                System.out.print("| " + s.display() + " | ");
+    public void displayActors() {
+        if (!isContinental()) {
+            System.out.println("Survivors:");
+            if (!survivors.isEmpty()) {
+                for (Survivor s : survivors) {
+                    System.out.print("| " + s.display() + " ");
+                }
+                System.out.println("|");
+            } else {
+                System.out.println("Nobody");
             }
-            if (this.survivors.isEmpty())
-                System.out.print("nobody ");
-            System.out.print("survivors");
-            System.out.println();
-            System.out.print("They are : ");
-            for (Zombie z : this.zombies) {
-                System.out.print("| " + z.display() + " | ");
+
+            System.out.println("Zombies:");
+            if (!zombies.isEmpty()) {
+                for (Zombie z : zombies) {
+                    System.out.print("| " + z.display() + " ");
+                }
+                System.out.println("|");
+            } else {
+                System.out.println("Nobody");
             }
-            if (this.zombies.isEmpty())
-                System.out.print("nobody ");
-            System.out.print("zombies");
-            System.out.println();
         }
     }
+
 
 
     public int getNoise(){
