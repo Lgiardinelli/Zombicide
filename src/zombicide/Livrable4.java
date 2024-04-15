@@ -10,11 +10,10 @@ import zombicide.action.survivor.special.Snooper;
 import zombicide.action.zombie.AttackSurvivorAction;
 import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.survivor.Survivor;
-import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
 import zombicide.item.careItem.HealingFiask;
-import zombicide.item.weapon.Axe;
+import zombicide.item.attackItem.weapon.Axe;
 
 import java.util.Arrays;
 import java.util.List;

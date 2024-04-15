@@ -11,8 +11,8 @@ import zombicide.city.area.room.Room;
 import zombicide.city.area.room.TheContinental;
 import zombicide.item.careItem.FirstAidKit;
 import zombicide.item.careItem.HealingFiask;
-import zombicide.item.weapon.Chainsaw;
-import zombicide.item.weapon.Pistol;
+import zombicide.item.attackItem.weapon.Chainsaw;
+import zombicide.item.attackItem.weapon.Pistol;
 import zombicide.util.Direction;
 
 class RoomTest {

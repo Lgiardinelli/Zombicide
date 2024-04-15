@@ -1,23 +1,16 @@
 package zombicide.action.survivor;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import zombicide.action.Action;
-import zombicide.action.MoveAction;
-import zombicide.action.survivor.AttackZombieAction;
 import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Abomination;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
-import zombicide.item.Map;
-import zombicide.item.weapon.Pistol;
-import zombicide.item.weapon.Weapon;
+import zombicide.item.attackItem.weapon.Weapon;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class AttackZombieActionTest {
 

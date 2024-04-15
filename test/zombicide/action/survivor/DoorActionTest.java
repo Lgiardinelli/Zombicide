@@ -1,16 +1,10 @@
 package zombicide.action.survivor;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import zombicide.action.survivor.DoorAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
-import zombicide.city.area.door.Door;
 import zombicide.item.MasterKey;
-import zombicide.item.weapon.Pistol;
-import zombicide.util.Direction;
-
-import java.util.List;
+import zombicide.item.attackItem.weapon.Pistol;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

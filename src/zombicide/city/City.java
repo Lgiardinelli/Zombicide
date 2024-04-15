@@ -1,7 +1,6 @@
 package zombicide.city;
 
 import zombicide.action.Action;
-import zombicide.action.survivor.AttackZombieAction;
 import zombicide.action.zombie.AttackSurvivorAction;
 import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.survivor.Survivor;
@@ -23,10 +22,9 @@ import zombicide.item.Map;
 import zombicide.item.MasterKey;
 import zombicide.item.careItem.FirstAidKit;
 import zombicide.item.careItem.HealingFiask;
-import zombicide.item.weapon.*;
+import zombicide.item.attackItem.weapon.*;
 import zombicide.util.Direction;
 import zombicide.util.Position;
-import zombicide.util.listchooser.ListChooser;
 import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.ArrayList;

@@ -3,8 +3,8 @@ package zombicide.action.survivor;
 import zombicide.action.Action;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
+import zombicide.item.attackItem.AttackItem;
 import zombicide.item.Item;
-import zombicide.item.weapon.Weapon;
 import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.List;
@@ -28,14 +28,13 @@ public class AttackZombieAction implements Action<Survivor> {
     public void doSomething(Survivor survivor) {
         survivor.removeActionPoint();
         Item itemHeld = survivor.getItemHeld();
-        if (!(itemHeld instanceof Weapon)) {
+        if (!itemHeld.canAttack())
             return;
-        }
 
-        Weapon weapon = (Weapon) itemHeld;
-        weapon.setSurvivor(survivor);
+        AttackItem attackItem = (AttackItem) itemHeld;
+        attackItem.setSurvivor(survivor);
 
-        List<Zombie> zombies = weapon.shootRange();
+        List<Zombie> zombies = attackItem.shootRange();
         if (zombies.isEmpty()) {
             return;
         }
@@ -44,7 +43,7 @@ public class AttackZombieAction implements Action<Survivor> {
         Zombie zombie = chooseRandomZombie(zombies);
         */
         if (zombie != null)
-            shootZombie(survivor, zombie, weapon);
+            shootZombie(survivor, zombie, attackItem);
     }
 
     private Zombie getZombieLessLife(List<Zombie> zombies) {
@@ -73,7 +72,7 @@ public class AttackZombieAction implements Action<Survivor> {
      * @param zombie   The Zombie being attacked.
      * @param weapon   The weapon used for the attack.
      */
-    protected void shootZombie(Survivor survivor, Zombie zombie, Weapon weapon) {
+    protected void shootZombie(Survivor survivor, Zombie zombie, AttackItem weapon) {
         int highestDieValue = getHighestDieValue(weapon.getNbDiceThrows());
 
         if (weapon.shotHitsTarget(highestDieValue)) {
@@ -90,7 +89,7 @@ public class AttackZombieAction implements Action<Survivor> {
      * @param zombie   The Zombie being attacked.
      * @param weapon   The weapon used for the attack.
      */
-    protected void attackZombie(Survivor survivor, Zombie zombie, Weapon weapon) {
+    protected void attackZombie(Survivor survivor, Zombie zombie, AttackItem weapon) {
         if (zombie.getIsStrong() && weapon.getDamage() < 2) {
             System.out.printf("the zombie attacked is too strong for the weapon's survivor !");
             return;

@@ -6,11 +6,10 @@ import org.junit.jupiter.api.Test;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.city.City;
-import zombicide.item.*;
 import zombicide.item.careItem.CareItem;
 import zombicide.item.careItem.FirstAidKit;
 import zombicide.item.careItem.HealingFiask;
-import zombicide.item.weapon.*;
+import zombicide.item.attackItem.weapon.*;
 
 public class ItemTest {
     //Actor

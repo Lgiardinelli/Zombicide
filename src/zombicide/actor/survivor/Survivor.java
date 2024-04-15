@@ -6,7 +6,7 @@ import zombicide.actor.Actor;
 import zombicide.city.area.Area;
 import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.item.Item;
-import zombicide.item.weapon.Pistol;
+import zombicide.item.attackItem.weapon.Pistol;
 import zombicide.util.Expertise;
 import zombicide.util.listchooser.RandomListChooser;
 

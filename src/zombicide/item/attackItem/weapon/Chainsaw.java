@@ -1,6 +1,8 @@
-package zombicide.item.weapon;
+package zombicide.item.attackItem.weapon;
 
-public class Chainsaw extends Weapon{
+import zombicide.item.attackItem.AttackItem;
+
+public class Chainsaw extends AttackItem implements Weapon {
 	private static final int NB_DICE_THROWS = 2;
 	private static final int DICE_THRESHOLD = 5;
 	private static final int DAMAGE = 3;
