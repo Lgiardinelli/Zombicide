@@ -21,6 +21,7 @@ public class AreaAction implements Action<Survivor> {
     private void displayAreasAround(Survivor survivor) {
         City city = survivor.getCity();
         for (Direction d : Direction.values()) {
+            System.out.println(d);
             int i = d.getX();
             int j = d.getY();
 
@@ -40,10 +41,11 @@ public class AreaAction implements Action<Survivor> {
             }
 
             Room r = (Room) a;
-            if (city.containsRoom(r) && !r.isContinental()) {
+            if (!r.isContinental()) {
                 r.displayItems();
                 // System.out.println();
             }
+            System.out.println();
         }
     }
 
