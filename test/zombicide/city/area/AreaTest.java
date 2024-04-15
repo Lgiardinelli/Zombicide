@@ -153,4 +153,10 @@ class AreaTest {
 		room.addZombie(walker);
 		assertEquals(room.getNbZombies(), 1);
 	}
+
+	@Test
+	void testAddSurvivorInArea(){
+		room.addSurvivor(survivor);
+		assertEquals(room.getNbSurvivors(), 1);
+	}
 }
