@@ -3,9 +3,12 @@ package zombicide.action.zombie;
 import zombicide.action.Action;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
+import zombicide.city.area.Area;
+import zombicide.city.area.room.Room;
 import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * A class representing the action of a Zombie attacking a Survivor in the game.
@@ -23,13 +26,22 @@ public class AttackSurvivorAction implements Action<Zombie> {
     @Override
     public void doSomething(Zombie zombie) {
         if(zombie.getArea().isContinental()){
-            System.out.printf("the zombie is in the continental, he can't attack !");
+            System.out.printf(zombie.getName()+" is in the continental, he can't attack !");
             return;
         }
 
         List<Survivor> survivors = zombie.getArea().getSurvivors();
         Survivor s = this.chooseRandomSurvivor(survivors);
         s.removeLifePoints(zombie.getAttackPoints());
+        System.out.println(zombie.getName()+" attacked "+s.getName()+", he has now "+s.getLifePoints()+" life points");
+
+        if(s.isDead()){
+            System.out.println(s.getName()+" is dead ");
+            Area a = s.getArea();
+            if(a.isARoom()){
+                Room r = (Room) a;
+                r.letItems(s.getBackpack());
+            }
     }
 
     /**
