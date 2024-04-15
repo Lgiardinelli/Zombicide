@@ -65,6 +65,8 @@ public abstract class Actor {
      */
     public void removeLifePoints(int damage) {
         this.lifePoints -= damage;
+        if(this.lifePoints < 0)
+            this.lifePoints = 0;
     }
 
     public String getName() {
