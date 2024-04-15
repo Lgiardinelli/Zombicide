@@ -34,6 +34,8 @@ public class Survivor extends Actor {
     /** The roles associated with the survivor. */
     private final List<Action<Survivor>> roles;
 
+    private String name;
+
     public Survivor(City city) {
         this(new ArrayList<>(), city);
     }
@@ -55,6 +57,9 @@ public class Survivor extends Actor {
         this.roles = new ArrayList<>(actions);
     }
 
+    public void setName(String name){
+        this.name = name;
+    }
     /**
      * Gets the skill points of the survivor.
      *
