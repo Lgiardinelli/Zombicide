@@ -147,4 +147,10 @@ class AreaTest {
 	void testCanFightInArea(){
 		assertTrue(room.canFight());
 	}
+
+	@Test
+	void testAddZombieInArea(){
+		room.addZombie(walker);
+		assertEquals(room.getNbZombies(), 1);
+	}
 }
