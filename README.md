@@ -917,9 +917,9 @@ __Réflexion du groupe :__
 
 Lundi 15/04 :
 
+- Supression de la classe weapon du fait que les attributs était les mêmes, cette suppression à pour objectif d'éviter la redondance.
 
 Mardi 16/04 :
-
 
 Mercredi 17/04 :
 
@@ -938,6 +938,7 @@ __Partage de taches :__
 
 Lundi 15/04 :
 
+Théophane : Ajout, modification et réadaptation des tests selon le changement fait ce lundi 15/04
 
 Mardi 16/04 :
 
@@ -1002,6 +1003,7 @@ Week-end :
 ## Semaine 14
 __Objectif de la semaine :__  
 
+- Finir le projet et le rendre
 
 __Objectif atteint :__
 
