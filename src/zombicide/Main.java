@@ -15,7 +15,7 @@ import zombicide.actor.zombie.Zombie;
 import zombicide.city.TrainCity;
 import zombicide.game.Game;
 import zombicide.item.careItem.HealingFiask;
-import zombicide.item.weapon.Axe;
+import zombicide.item.attackItem.weapon.Axe;
 
 import java.util.Arrays;
 import java.util.List;

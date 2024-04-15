@@ -10,7 +10,7 @@ import zombicide.city.City;
 import zombicide.city.TrainCity;
 import zombicide.item.Map;
 import zombicide.item.careItem.HealingFiask;
-import zombicide.item.weapon.Riffle;
+import zombicide.item.attackItem.weapon.Riffle;
 import zombicide.util.Direction;
 import zombicide.util.listchooser.RandomListChooser;
 
