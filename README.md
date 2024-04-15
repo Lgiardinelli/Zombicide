@@ -908,7 +908,7 @@ Week-end :
 
 ## Semaine 12
 __Objectif de la semaine :__  
-
+- Completer la classe Game
 
 __Objectif atteint :__
 
@@ -949,6 +949,99 @@ Jeudi 18/04 :
 
 
 Vendredi 19/04 :
+
+
+Week-end :
+
+## Semaine 13
+__Objectif de la semaine :__  
+
+
+__Objectif atteint :__
+
+
+__Réflexion du groupe :__  
+
+Lundi 22/04 :
+
+
+Mardi 23/04 :
+
+
+Mercredi 24/04 :
+
+
+Jeudi 25/04 :
+
+
+Vendredi 26/04 :
+
+
+Week-end :
+
+__Partage de taches :__
+
+Lundi 22/04 :
+
+
+Mardi 23/04 :
+
+
+Mercredi 24/04 :
+
+
+Jeudi 25/04 :
+
+
+Vendredi 26/04 :
+
+
+Week-end :
+
+
+## Semaine 14
+__Objectif de la semaine :__  
+
+
+__Objectif atteint :__
+
+
+__Réflexion du groupe :__  
+
+Lundi 29/04 :
+
+
+Mardi 30/04 :
+
+
+Mercredi 01/04 :
+
+
+Jeudi 02/04 :
+
+
+Vendredi 03/04 :
+
+
+Week-end :
+
+
+
+__Partage de taches :__
+
+Lundi 29/04 :
+
+
+Mardi 30/04 :
+
+
+Mercredi 01/04 :
+
+
+Jeudi 02/04 :
+
+
+Vendredi 03/04 :
 
 
 Week-end :
