@@ -18,11 +18,21 @@ public class ItemAction implements Action<Survivor> {
      */
     @Override
     public void doSomething(Survivor survivor) {
-        Item itemUsed = survivor.getItemHeld();
-        itemUsed.use();
-        if(!itemUsed.canAttack()){
-            survivor.setItemHeld(null);
+        if(survivor.holdAnItem()){
+            Item itemUsed = survivor.getItemHeld();
+            System.out.println(survivor.getName()+" is using his "+itemUsed.toString());
+            itemUsed.use();
+            if(itemUsed.isNoisyWhenUsed())
+                survivor.getArea().increaseNoiseLevel(1);
+
+            if(!itemUsed.canAttack()){
+                survivor.setItemHeld(null);
+                itemUsed.unsetSurvivor();
+            }
+        }else{
+            System.out.println(survivor.getName()+" has no item in his hands");
         }
+
         survivor.removeActionPoint();
     }
 

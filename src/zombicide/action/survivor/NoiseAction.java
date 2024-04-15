@@ -32,6 +32,7 @@ public class NoiseAction implements Action<Survivor> {
         if (currentArea != null) {
             currentArea.increaseNoiseLevel(this.noiseLevel);
         }
+        System.out.println(survivor.getName()+" makes some noise !!!");
         survivor.removeActionPoint();
     }
 

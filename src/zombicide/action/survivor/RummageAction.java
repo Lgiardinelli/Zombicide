@@ -21,6 +21,7 @@ public class RummageAction implements Action<Survivor> {
      */
     @Override
     public void doSomething(Survivor survivor) {
+        System.out.println(survivor.getName()+"tried to rummaging");
         rummage(survivor);
         survivor.removeActionPoint();
     }
@@ -36,7 +37,7 @@ public class RummageAction implements Action<Survivor> {
         Area area = survivor.getArea();
 
         if (!area.isARoom()) {
-            System.out.println("The survivor is in the street, he can't rummage");
+            System.out.println(survivor.getName()+" is in the street, he can't rummage");
             return;
         }
 
@@ -56,9 +57,9 @@ public class RummageAction implements Action<Survivor> {
         else {
             Item oldBpItem = backpack.addItem(roomItem);
             room.addItem(oldBpItem);
-            System.out.println("Backpack's survivor was full, his "+oldBpItem.toString()+" has been dropped");
+            System.out.println(survivor.getName()+"'s backpack was full, his "+oldBpItem.toString()+" has been dropped");
         }
-        System.out.println("The survivor picked up a(n) "+ roomItem);
+        System.out.println(survivor.getName()+" picked up a(n) "+ roomItem);
     }
 
     public String toString() {

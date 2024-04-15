@@ -24,14 +24,22 @@ public class DoorAction implements Action<Survivor> {
      * @param survivor The Survivor performing the action.
      */
     public void doSomething(Survivor survivor) {
+        System.out.println(survivor.getName()+" is trying to open a door");
         if (canOpen(survivor)) {
             List<Door> doors = doorsAround(survivor);
             if (!doors.isEmpty()) {
                 RandomListChooser<Door> chooser = new RandomListChooser<>();
                 Door door = chooser.choose(doors);
                 door.open();
+                if(survivor.getItemHeld().isNoisyWhenUsedToOpenDoor()){
+                    survivor.getArea().increaseNoiseLevel(1);
+                }
+            }else{
+                System.out.println("there is no closed doors around");
             }
             survivor.removeActionPoint();
+        }else{
+            System.out.println(survivor.getName()+" can't open any door");
         }
     }
 

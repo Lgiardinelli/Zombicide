@@ -18,6 +18,7 @@ public class LookAction implements Action<Survivor> {
      * @param survivor The Survivor performing the look action.
      */
     public void doSomething(Survivor survivor) {
+        System.out.println(survivor.getName()+"is looking around");
         look(survivor);
     }
 
@@ -29,7 +30,7 @@ public class LookAction implements Action<Survivor> {
     private void look(Survivor survivor) {
         Area area = survivor.getArea();
         if(area.isContinental()){
-            System.out.printf("The survivor is in the continental, he can't see anything !");
+            System.out.printf(survivor.getName()+" is in the continental, he can't see anything !");
         }
 
         area.displayActors();
