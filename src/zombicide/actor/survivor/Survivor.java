@@ -53,6 +53,7 @@ public class Survivor extends Actor {
         Pistol pistol = new Pistol();
         pistol.setSurvivor(this);
         this.itemHeld = pistol;
+        this.itemHeld.setSurvivor(this);
         this.setArea(this.city.getSpawn());
         this.roles = new ArrayList<>(actions);
     }
@@ -98,6 +99,9 @@ public class Survivor extends Actor {
      * @param i The item to be held.
      */
     public void setItemHeld(Item i) {
+        if(i == null)
+            return;
+
         if (this.itemHeld != null) {
             this.backpack.addItem(this.itemHeld);
         }

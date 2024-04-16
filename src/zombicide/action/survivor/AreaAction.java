@@ -58,7 +58,6 @@ public class AreaAction implements Action<Survivor> {
     @Override
     public void doSomething(Survivor survivor) {
         displayAreasAround(survivor);
-        survivor.removeActionPoint();
     }
 
     public String toString() {

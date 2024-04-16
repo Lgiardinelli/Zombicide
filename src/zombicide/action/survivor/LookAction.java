@@ -18,7 +18,7 @@ public class LookAction implements Action<Survivor> {
      * @param survivor The Survivor performing the look action.
      */
     public void doSomething(Survivor survivor) {
-        System.out.println(survivor.getName()+"is looking around");
+        System.out.println(survivor.getName()+" is looking around");
         look(survivor);
     }
 

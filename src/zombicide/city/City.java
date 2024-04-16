@@ -605,6 +605,7 @@ public class City {
         Zombie zombie = ch.choose(zombiesTypes);
 
         manhole.addZombie(zombie);
+        this.zombies.add(zombie);
     }
 
     public List<Item> listOfItems(){

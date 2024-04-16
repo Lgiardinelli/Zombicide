@@ -37,10 +37,11 @@ public class DoorAction implements Action<Survivor> {
             }else{
                 System.out.println("there is no closed doors around");
             }
-            survivor.removeActionPoint();
         }else{
             System.out.println(survivor.getName()+" can't open any door");
         }
+
+        survivor.removeActionPoint();
     }
 
     /**

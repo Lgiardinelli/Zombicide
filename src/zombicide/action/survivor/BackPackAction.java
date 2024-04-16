@@ -3,6 +3,7 @@ package zombicide.action.survivor;
 import zombicide.action.Action;
 import zombicide.actor.survivor.backpack.BackPack;
 import zombicide.actor.survivor.Survivor;
+import zombicide.item.Item;
 
 /**
  * An action representing a Survivor interacting with their backpack.
@@ -34,10 +35,13 @@ public class BackPackAction implements Action<Survivor> {
     private void holdRandomItem(Survivor survivor) {
         BackPack backpack = survivor.getBackpack();
         if (backpack.getItems().isEmpty()) {
+            System.out.println(survivor.getName()+" has nothing in his backpack");
             return;
         }
 
-        survivor.setItemHeld(backpack.getRandomItem());
+        Item i = backpack.getRandomItem();
+        survivor.setItemHeld(i);
+        System.out.println(survivor.getName()+" took a(n) "+i.toString());
     }
 
     public String toString() {

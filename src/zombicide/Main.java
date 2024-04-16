@@ -62,7 +62,6 @@ public class Main {
                 new DoorAction(),
                 new ItemAction(),
                 new NoiseAction(),
-                new AreaAction(),
                 new LookAction(),
                 new Healer(),
                 new SurvivorMoveAction()
@@ -76,7 +75,6 @@ public class Main {
                 new DoorAction(),
                 new ItemAction(),
                 new NoiseAction(),
-                new AreaAction(),
                 new LookAction(),
                 new Lucky(),
                 new SurvivorMoveAction()
@@ -90,17 +88,22 @@ public class Main {
                 new DoorAction(),
                 new ItemAction(),
                 new NoiseAction(),
-                new AreaAction(),
                 new LookAction(),
                 new Snooper(),
                 new SurvivorMoveAction()
         );
 
         Game game = new Game(this.trainCity);
-        game.addSurvivor(new Survivor(fighterAction, game.getCity()));
-        game.addSurvivor(new Survivor(healerAction, game.getCity()));
-        game.addSurvivor(new Survivor(luckyAction, game.getCity()));
-        game.addSurvivor(new Survivor(snooperAction, game.getCity()));
+
+        Survivor s1 = new Survivor(fighterAction, game.getCity());
+        s1.setName("Théophane");
+        game.addSurvivor(s1);
+
+        Survivor s2 = new Survivor(healerAction, game.getCity());
+        s2.setName("Dylan");
+        game.addSurvivor(s2);
+//        game.addSurvivor(new Survivor(luckyAction, game.getCity()));
+//        game.addSurvivor(new Survivor(snooperAction, game.getCity()));
 
         game.addZombie(new Abomination(zombieActions, game.getCity()));
         /*game.addZombie(new Abomination(zombieActions, game.getCity()));
@@ -111,37 +114,37 @@ public class Main {
 
         trainCity.display();
 
-        // Add axe in the hand survivor 2
-        Axe axe = new Axe();
-        survivors.get(1).setItemHeld(axe);
-        axe.setSurvivor(survivors.get(0));
+//        // Add axe in the hand survivor 2
+//        Axe axe = new Axe();
+//        survivors.get(0).setItemHeld(axe);
+//        axe.setSurvivor(survivors.get(0));
 
         // Add healing fiask in the hand survivor 3
-        HealingFiask healingFiask = new HealingFiask();
-        survivors.get(2).setItemHeld(healingFiask);
-        healingFiask.setSurvivor(survivors.get(2));
+//        HealingFiask healingFiask = new HealingFiask();
+//        survivors.get(2).setItemHeld(healingFiask);
+//        healingFiask.setSurvivor(survivors.get(2));
 
         game.play();
 
         // Displaying survivors with their roles, their items in hand and a map in their backpack.
-        System.out.println();
-        int i = 1;
-        for (Survivor survivor : survivors) {
-            System.out.printf("Survivant %d : Item en main : %s | Contenu sac : %s | Actions : %s%n",
-                    i++,
-                    survivor.getItemHeld(),
-                    survivor.getBackpack().getItems(),
-                    survivor.getRoles().toString()
-            );
-        }
-        System.out.println();
-
-        System.out.println();
-        System.out.println("Voici l'état des survivants :");
-        for (int ignored = 0; ignored < survivors.size(); ignored++) {
-            System.out.printf("Le survivant %d a %d points de vie", ignored+1, survivors.get(ignored).getLifePoints());
-            System.out.println();
-        }
+//        System.out.println();
+//        int i = 1;
+//        for (Survivor survivor : survivors) {
+//            System.out.printf("Survivant %d : Item en main : %s | Contenu sac : %s | Actions : %s%n",
+//                    i++,
+//                    survivor.getItemHeld(),
+//                    survivor.getBackpack().getItems(),
+//                    survivor.getRoles().toString()
+//            );
+//        }
+//        System.out.println();
+//
+//        System.out.println();
+//        System.out.println("Voici l'état des survivants :");
+//        for (int ignored = 0; ignored < survivors.size(); ignored++) {
+//            System.out.printf("Le survivant %d a %d points de vie", ignored+1, survivors.get(ignored).getLifePoints());
+//            System.out.println();
+//        }
     }
 
 

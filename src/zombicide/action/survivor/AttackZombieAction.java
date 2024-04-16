@@ -46,8 +46,9 @@ public class AttackZombieAction implements Action<Survivor> {
         /**
         Zombie zombie = chooseRandomZombie(zombies);
         */
-        if (zombie != null)
+        if (zombie != null) {
             shootZombie(survivor, zombie, attackItem);
+        }
     }
 
     private Zombie getZombieLessLife(List<Zombie> zombies) {
@@ -81,6 +82,8 @@ public class AttackZombieAction implements Action<Survivor> {
 
         if (weapon.shotHitsTarget(highestDieValue)) {
             attackZombie(survivor, zombie, weapon);
+        } else {
+            System.out.println(survivor.getName()+" missed his shot");
         }
     }
 
@@ -96,7 +99,7 @@ public class AttackZombieAction implements Action<Survivor> {
     protected void attackZombie(Survivor survivor, Zombie zombie, AttackItem weapon) {
         System.out.println(zombie.getName()+" has "+zombie.getLifePoints()+" life points");
         if (zombie.getIsStrong() && weapon.getDamage() < 2) {
-            System.out.printf("the zombie attacked is too strong for the weapon's survivor !");
+            System.out.println("the zombie attacked is too strong for the weapon's survivor !");
             return;
         }
 

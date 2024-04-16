@@ -1,12 +1,15 @@
 package zombicide.game;
 
+import zombicide.actor.Actor;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
 import zombicide.city.area.Area;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Represents a Zombicide game session.
@@ -17,6 +20,8 @@ public class Game {
     private List<Survivor> survivors;
     private List<Zombie> zombies;
     private Phase currentPhase;
+
+    Scanner scanner = new Scanner(System.in);
 
     /**
      * Creates a new game session with the given city.
@@ -107,11 +112,14 @@ public class Game {
             this.city.display();
         }*/
 
+
         while(!endGame()){
             if(currentPhase == Phase.SURVIVORS){
+                System.out.println("Survivors' tour");
                 playSurvivorsPhase();
             }
             else if(currentPhase == Phase.ZOMBIES){
+                System.out.println("Zombies' tour");
                 playZombiesPhase();
             }
             else {
@@ -135,8 +143,8 @@ public class Game {
     private void playEndPhase() {
         /*survivors.removeIf(Survivor::isDead);
         zombies.removeIf(Zombie::isDead);*/
-        survivors.removeIf(survivor -> survivor.isDead());
-        zombies.removeIf(zombie -> zombie.isDead());
+        survivors.removeIf(Actor::isDead);
+        zombies.removeIf(Actor::isDead);
 
         for (Zombie zombie : zombies) {
             if (zombie.isDead())
@@ -169,6 +177,7 @@ public class Game {
      */
     private void playZombiesPhase() {
         for(Zombie z : zombies){
+            scanner.next();
             z.handleAction();
         }
         this.currentPhase = Phase.END;
@@ -180,8 +189,11 @@ public class Game {
      */
     private void playSurvivorsPhase() {
         for(Survivor s : survivors){
+            System.out.println("It's "+s.getName()+" turn !");
             while(s.getActionPoints() > 0){
+                scanner.next();
                 s.handleAction();
+                System.out.println(s.getName()+" a "+s.getActionPoints()+" pts d'action");
             }
             System.out.println();
         }
@@ -213,4 +225,6 @@ public class Game {
     public City getCity() {
         return  this.city;
     }
+
+
 }

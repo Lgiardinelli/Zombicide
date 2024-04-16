@@ -98,10 +98,11 @@ public abstract class MoveAction<T extends Actor> implements Action<T> {
         City city = actor.getCity();
         actor.setArea(city.getArea(p.getX(), p.getY()));
 
+        System.out.println(actor.getName()+" moved ");
         if(actor.getArea().isPharmacy()){
             ThePharmacy pharmacy = (ThePharmacy) actor.getArea();
             pharmacy.addHealingFiask();
-            System.out.println("An actor entered the pharmacy, a healing fiask appeared");
+            System.out.println(actor.getName()+" entered the pharmacy, a healing fiask appeared");
         }
 
         actor.removeActionPoint();
