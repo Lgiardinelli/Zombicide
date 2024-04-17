@@ -10,12 +10,16 @@ import zombicide.action.survivor.special.Snooper;
 import zombicide.action.zombie.AttackSurvivorAction;
 import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.survivor.Survivor;
-import zombicide.actor.zombie.Abomination;
-import zombicide.actor.zombie.Zombie;
+import zombicide.actor.zombie.*;
 import zombicide.city.TrainCity;
 import zombicide.game.Game;
+import zombicide.item.InfraredGlasses;
+import zombicide.item.Item;
+import zombicide.item.Map;
+import zombicide.item.MasterKey;
+import zombicide.item.attackItem.weapon.*;
+import zombicide.item.careItem.FirstAidKit;
 import zombicide.item.careItem.HealingFiask;
-import zombicide.item.attackItem.weapon.Axe;
 
 import java.util.Arrays;
 import java.util.List;
@@ -93,6 +97,19 @@ public class Main {
                 new SurvivorMoveAction()
         );
 
+        List<Item> listOfItems = Arrays.asList(
+                new Riffle(),
+                new Pistol(),
+                new HealingFiask(),
+                new Map(),
+                new InfraredGlasses(),
+                new FirstAidKit(),
+                new Chainsaw(),
+                new MasterKey(),
+                new Crowbar(),
+                new Axe()
+        );
+
         Game game = new Game(this.trainCity);
 
         Survivor s1 = new Survivor(fighterAction, game.getCity());
@@ -102,17 +119,27 @@ public class Main {
         Survivor s2 = new Survivor(healerAction, game.getCity());
         s2.setName("Dylan");
         game.addSurvivor(s2);
-//        game.addSurvivor(new Survivor(luckyAction, game.getCity()));
-//        game.addSurvivor(new Survivor(snooperAction, game.getCity()));
+
+        Survivor s3 = new Survivor(luckyAction, game.getCity());
+        s3.setName("Eliès");
+        game.addSurvivor(s3);
+
+        Survivor s4 = new Survivor(snooperAction, game.getCity());
+        s4.setName("Léo");
+        game.addSurvivor(s4);
+
 
         game.addZombie(new Abomination(zombieActions, game.getCity()));
-        /*game.addZombie(new Abomination(zombieActions, game.getCity()));
-        game.addZombie(new Abomination(zombieActions, game.getCity()));*/
+        game.addZombie(new Runner(zombieActions, game.getCity()));
+        game.addZombie(new Balaise(zombieActions, game.getCity()));
+        game.addZombie(new Abomination(zombieActions, game.getCity()));
+        game.addZombie(new Walker(zombieActions, game.getCity()));
 
 
         List<Survivor> survivors = trainCity.getSurvivors();
 
         trainCity.display();
+
 
 //        // Add axe in the hand survivor 2
 //        Axe axe = new Axe();
