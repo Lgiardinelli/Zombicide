@@ -120,41 +120,41 @@ public class Main {
         s2.setName("Dylan");
         game.addSurvivor(s2);
 
-        Survivor s3 = new Survivor(luckyAction, game.getCity());
-        s3.setName("Eliès");
-        game.addSurvivor(s3);
+//        Survivor s3 = new Survivor(luckyAction, game.getCity());
+//        s3.setName("Eliès");
+//        game.addSurvivor(s3);
+//
+//        Survivor s4 = new Survivor(snooperAction, game.getCity());
+//        s4.setName("Léo");
+//        game.addSurvivor(s4);
+//
+//        Survivor s5 = new Survivor(fighterAction, game.getCity());
+//        s5.setName("Bondu");
+//        game.addSurvivor(s5);
+//
+//        Survivor s6 = new Survivor(healerAction, game.getCity());
+//        s6.setName("Clément");
+//        game.addSurvivor(s6);
+//
+//        Survivor s7 = new Survivor(luckyAction, game.getCity());
+//        s7.setName("Monsieur Varré");
+//        game.addSurvivor(s7);
+//
+//        Survivor s8 = new Survivor(snooperAction, game.getCity());
+//        s8.setName("Ethan");
+//        game.addSurvivor(s8);
 
-        Survivor s4 = new Survivor(snooperAction, game.getCity());
-        s4.setName("Léo");
-        game.addSurvivor(s4);
 
-        Survivor s5 = new Survivor(fighterAction, game.getCity());
-        s5.setName("Bondu");
-        game.addSurvivor(s5);
-
-        Survivor s6 = new Survivor(healerAction, game.getCity());
-        s6.setName("Clément");
-        game.addSurvivor(s6);
-
-        Survivor s7 = new Survivor(luckyAction, game.getCity());
-        s7.setName("Monsieur Varré");
-        game.addSurvivor(s7);
-
-        Survivor s8 = new Survivor(snooperAction, game.getCity());
-        s8.setName("Ethan");
-        game.addSurvivor(s8);
-
-
-        game.addZombie(new Abomination(zombieActions, game.getCity()));
-        game.addZombie(new Runner(zombieActions, game.getCity()));
-        game.addZombie(new Balaise(zombieActions, game.getCity()));
-        game.addZombie(new Abomination(zombieActions, game.getCity()));
-        game.addZombie(new Walker(zombieActions, game.getCity()));
-        game.addZombie(new Abomination(zombieActions, game.getCity()));
-        game.addZombie(new Runner(zombieActions, game.getCity()));
-        game.addZombie(new Balaise(zombieActions, game.getCity()));
-        game.addZombie(new Abomination(zombieActions, game.getCity()));
-        game.addZombie(new Walker(zombieActions, game.getCity()));
+//        game.addZombie(new Abomination(zombieActions, game.getCity()));
+//        game.addZombie(new Runner(zombieActions, game.getCity()));
+//        game.addZombie(new Balaise(zombieActions, game.getCity()));
+//        game.addZombie(new Abomination(zombieActions, game.getCity()));
+//        game.addZombie(new Walker(zombieActions, game.getCity()));
+//        game.addZombie(new Abomination(zombieActions, game.getCity()));
+//        game.addZombie(new Runner(zombieActions, game.getCity()));
+//        game.addZombie(new Balaise(zombieActions, game.getCity()));
+//        game.addZombie(new Abomination(zombieActions, game.getCity()));
+//        game.addZombie(new Walker(zombieActions, game.getCity()));
 
 
         List<Survivor> survivors = trainCity.getSurvivors();
