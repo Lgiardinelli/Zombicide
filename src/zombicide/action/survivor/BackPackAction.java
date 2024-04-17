@@ -41,7 +41,9 @@ public class BackPackAction implements Action<Survivor> {
 
         Item i = backpack.getRandomItem();
         survivor.setItemHeld(i);
-        System.out.println(survivor.getName()+" took a(n) "+i.toString());
+        survivor.getBackpack().removeItem(i);
+        System.out.println(survivor.getName()+" took a(n) "+i.toString()+" from his backpack");
+        System.out.println(survivor.getName()+" 's backpack : "+survivor.getBackpack().displayItems());
     }
 
     public String toString() {
