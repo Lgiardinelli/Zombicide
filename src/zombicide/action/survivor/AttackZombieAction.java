@@ -97,9 +97,9 @@ public class AttackZombieAction implements Action<Survivor> {
      * @param weapon   The weapon used for the attack.
      */
     protected void attackZombie(Survivor survivor, Zombie zombie, AttackItem weapon) {
-        System.out.println(survivor.getName()+" is attacking "+zombie.getName()+" ("+zombie.getLifePoints()+" life points) with his "+survivor.getItemHeld().toString());
+        System.out.println(survivor.getName()+" is attacking "+zombie.getName()+" ("+zombie.getLifePoints()+" life point(s)) with his "+weapon.toString()+" ("+weapon.getDamage()+" damage point(s))");
         if (zombie.getIsStrong() && weapon.getDamage() < 2) {
-            System.out.println("the zombie attacked is too strong for the weapon's survivor !");
+            System.out.println("the zombie attacked is too strong for the weapon's survivor ! ("+weapon.toString()+")");
             return;
         }
 
