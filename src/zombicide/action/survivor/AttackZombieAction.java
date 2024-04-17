@@ -97,7 +97,7 @@ public class AttackZombieAction implements Action<Survivor> {
      * @param weapon   The weapon used for the attack.
      */
     protected void attackZombie(Survivor survivor, Zombie zombie, AttackItem weapon) {
-        System.out.println(zombie.getName()+" has "+zombie.getLifePoints()+" life points");
+        System.out.println(survivor.getName()+" attacks "+zombie.getName()+" ("+zombie.getLifePoints()+" life points) with his "+survivor.getItemHeld().toString());
         if (zombie.getIsStrong() && weapon.getDamage() < 2) {
             System.out.println("the zombie attacked is too strong for the weapon's survivor !");
             return;
@@ -115,7 +115,8 @@ public class AttackZombieAction implements Action<Survivor> {
 
         if (zombie.isDead()) {
             survivor.addSkillPoints(1);
-            System.out.println("the zombie attacked is dead, "+survivor.getName()+" won a skill point !");
+            System.out.println("the zombie attacked is dead, "+survivor.getName()+" won a skill point ! ("+survivor.getSkillPoints()+")");
+            zombie.getArea().getZombies().remove(zombie);
             if(survivor.isLevelReached()){
                 survivor.increaseActionPoints();
                 System.out.println(survivor.getName()+" reached stage "+survivor.getSkillPoints()+", his action points increased !");

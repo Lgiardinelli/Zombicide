@@ -37,6 +37,7 @@ public class AttackSurvivorAction implements Action<Zombie> {
 
         if(s.isDead()) {
             System.out.println(s.getName() + " is dead ");
+            s.getArea().getSurvivors().remove(s);
             Area a = s.getArea();
             if (a.isARoom()) {
                 Room r = (Room) a;
