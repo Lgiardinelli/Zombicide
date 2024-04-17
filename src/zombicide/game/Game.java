@@ -45,7 +45,7 @@ public class Game {
         this.survivors = new ArrayList<>();
         this.zombies = new ArrayList<>();
         this.currentPhase = Phase.SURVIVORS;
-        this.startOfTheGame = false;
+        this.startOfTheGame = true;
     }
 
     public void initGame(){
@@ -131,6 +131,7 @@ public class Game {
         initGame();
 
         while(!endGame()){
+            this.startOfTheGame = true;
             if(currentPhase == Phase.SURVIVORS){
                 System.out.println("Survivors' tour");
                 playSurvivorsPhase();
@@ -148,7 +149,6 @@ public class Game {
                     System.out.println();
                 }
             }
-
             this.city.display();
         }
     }
