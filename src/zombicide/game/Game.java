@@ -31,6 +31,8 @@ public class Game {
     private List<Zombie> zombies;
     private Phase currentPhase;
 
+    private boolean startOfTheGame;
+
     Scanner scanner = new Scanner(System.in);
 
     /**
@@ -43,6 +45,7 @@ public class Game {
         this.survivors = new ArrayList<>();
         this.zombies = new ArrayList<>();
         this.currentPhase = Phase.SURVIVORS;
+        this.startOfTheGame = false;
     }
 
     public void initGame(){
@@ -85,9 +88,9 @@ public class Game {
      *
      * @return true if all survivors are dead, false otherwise.
      */
-    public boolean allZombiesAreDead(){
+    public boolean allSurvivorAreDead(){
         if(!this.startOfTheGame) {
-            return this.zombies.isEmpty();
+            return this.survivors.isEmpty();
         }else{ return false; }
     }
 
