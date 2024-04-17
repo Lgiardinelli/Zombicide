@@ -102,9 +102,8 @@ public class Survivor extends Actor {
         if(i == null)
             return;
 
-        if (this.itemHeld != null) {
-            this.backpack.addItem(this.itemHeld);
-        }
+        this.backpack.addItem(this.itemHeld);
+
         i.setSurvivor(this);
         this.itemHeld = i;
     }
