@@ -94,4 +94,12 @@ public class BackPack {
     public Item getRandomItem() {
         return ITEM_CHOOSER.choose(this.items);
     }
+
+    public String displayItems(){
+        String message = "";
+        for(Item i : this.items){
+            message += "| " + i.toString() + " |";
+        }
+        return message;
+    }
 }
