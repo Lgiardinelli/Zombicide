@@ -225,7 +225,8 @@ public class Game {
      * @return The number of zombies to spawn.
      */
     public int getNumberOfZombiesToSpawn(){
-        return (int) Math.ceil((double) getTotalNumberOfSkillPoints() / 3);
+        double result = Math.ceil((double) getTotalNumberOfSkillPoints() / 3);
+        return result == 0 ? 1 : (int) result;
     }
 
 
