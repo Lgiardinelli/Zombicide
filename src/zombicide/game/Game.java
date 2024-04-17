@@ -1,9 +1,13 @@
 package zombicide.game;
 
+import zombicide.action.Action;
+import zombicide.action.zombie.AttackSurvivorAction;
+import zombicide.action.zombie.ZombieMoveAction;
+import zombicide.actor.zombie.*;
+import zombicide.city.area.street.Manhole;
 import zombicide.item.Item;
 import zombicide.actor.Actor;
 import zombicide.actor.survivor.Survivor;
-import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
 import zombicide.city.area.Area;
 import zombicide.item.InfraredGlasses;
@@ -172,7 +176,7 @@ public class Game {
 
         if(!allZombiesAreDead()){
             for(int i = 0 ; i < getNumberOfZombiesToSpawn() ; i++){
-                this.city.spawnAZombie();
+                this.spawnAZombie();
                 System.out.println(i);
             }
             System.out.println(getNumberOfZombiesToSpawn()+" zombies spawned");
@@ -206,7 +210,11 @@ public class Game {
     private void playSurvivorsPhase() {
         for(Survivor s : survivors){
             if(!s.isDead()) {
-                System.out.println("It's " + s.getName() + "'s turn ! He has a(n) " + s.getItemHeld().toString() + " and " + s.getLifePoints() + " life point(s)");
+                System.out.println("It's " + s.getName() + "'s turn ! He has "+s.getLifePoints() +" life point(s)");
+
+                if(s.getItemHeld() != null)
+                    System.out.println(s.getName()+" hold a(n) "+s.getItemHeld().toString());
+
                 System.out.println("Backpack : " + s.getBackpack().displayItems());
                 while (s.getActionPoints() > 0) {
                     scanner.next();
@@ -269,6 +277,29 @@ public class Game {
             s.getBackpack().addItem(item1);
             s.getBackpack().addItem(item2);
         }
+    }
+
+    public void spawnAZombie() {
+        RandomListChooser<Manhole> chooser = new RandomListChooser<>();
+        Manhole manhole = chooser.choose(this.city.getManholes());
+
+        List<Action<Zombie>> zombieActions = Arrays.asList(
+                new ZombieMoveAction(),
+                new AttackSurvivorAction()
+        );
+
+        List<Zombie> zombiesTypes = Arrays.asList(
+                new Runner(zombieActions,this.city),
+                new Balaise(zombieActions,this.city),
+                new Abomination(zombieActions,this.city),
+                new Walker(zombieActions,this.city)
+        );
+
+        RandomListChooser<Zombie> ch = new RandomListChooser<>();
+        Zombie zombie = ch.choose(zombiesTypes);
+
+        manhole.addZombie(zombie);
+        this.zombies.add(zombie);
     }
 
 

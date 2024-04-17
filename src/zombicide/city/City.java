@@ -585,28 +585,6 @@ public class City {
         return manholes;
     }
 
-    public void spawnAZombie() {
-        RandomListChooser<Manhole> chooser = new RandomListChooser<>();
-        Manhole manhole = chooser.choose(this.manholes);
-
-        List<Action<Zombie>> zombieActions = Arrays.asList(
-                new ZombieMoveAction(),
-                new AttackSurvivorAction()
-        );
-
-        List<Zombie> zombiesTypes = Arrays.asList(
-                new Runner(zombieActions,this),
-                new Balaise(zombieActions,this),
-                new Abomination(zombieActions,this),
-                new Walker(zombieActions,this)
-        );
-
-        RandomListChooser<Zombie> ch = new RandomListChooser<>();
-        Zombie zombie = ch.choose(zombiesTypes);
-
-        manhole.addZombie(zombie);
-        this.zombies.add(zombie);
-    }
 
     public List<Item> listOfItems(){
         return Arrays.asList(
