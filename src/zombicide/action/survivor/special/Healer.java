@@ -17,13 +17,17 @@ public class Healer extends HealAction {
      */
     private void addLifePoints(List<Survivor> survivors) {
         int index = RANDOM.nextInt(survivors.size());
-        survivors.get(index).addLifePoints(NB_LIFE_POINTS);
+        Survivor s = survivors.get(index);
+        s.addLifePoints(NB_LIFE_POINTS);
+        System.out.println(s.getName()+" won "+NB_LIFE_POINTS+" life point(s), he has now "+s.getLifePoints()+" life point(s)");
     }
 
 
     @Override
     public void doSomething(Survivor survivor) {
+        System.out.println(survivor.getName()+" uses his healing talent");
         List<Survivor> survivors = survivor.getArea().getSurvivors();
         addLifePoints(survivors);
+        survivor.removeActionPoint();
     }
 }
