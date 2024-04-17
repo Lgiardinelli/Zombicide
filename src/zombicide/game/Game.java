@@ -85,8 +85,10 @@ public class Game {
      *
      * @return true if all survivors are dead, false otherwise.
      */
-    public boolean allSurvivorAreDead(){
-        return this.survivors.isEmpty();
+    public boolean allZombiesAreDead(){
+        if(!this.startOfTheGame) {
+            return this.zombies.isEmpty();
+        }else{ return false; }
     }
 
     /**
@@ -95,7 +97,9 @@ public class Game {
      * @return true if all zombies are dead, false otherwise.
      */
     public boolean allZombiesAreDead(){
-        return this.zombies.isEmpty();
+        if(!this.startOfTheGame) {
+            return this.zombies.isEmpty();
+        }else{ return false; }
     }
 
     /**
@@ -166,6 +170,7 @@ public class Game {
         if(!allZombiesAreDead()){
             for(int i = 0 ; i < getNumberOfZombiesToSpawn() ; i++){
                 this.city.spawnAZombie();
+                System.out.println(i);
             }
             System.out.println(getNumberOfZombiesToSpawn()+" zombies spawned");
         }
