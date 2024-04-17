@@ -1,15 +1,25 @@
 package zombicide.game;
 
+import zombicide.item.Item;
 import zombicide.actor.Actor;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
 import zombicide.city.area.Area;
+import zombicide.item.InfraredGlasses;
+import zombicide.item.Map;
+import zombicide.item.MasterKey;
+import zombicide.item.attackItem.weapon.*;
+import zombicide.item.careItem.FirstAidKit;
+import zombicide.item.careItem.HealingFiask;
+import zombicide.util.listchooser.RandomListChooser;
 
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Represents a Zombicide game session.
@@ -39,6 +49,7 @@ public class Game {
         /*for (Survivor survivor : this.survivors)
             survivor.setArea(this.city.getSpawn());*/
         this.city.dispatchItems2();
+        distributeItems();
     }
 
 
@@ -66,7 +77,6 @@ public class Game {
      * @return true if the game should end, false otherwise.
      */
     public boolean endGame(){
-        System.out.println(this.survivors);
         return allSurvivorAreDead() || allZombiesAreDead() || areThePlayersHaveReachedStage();
     }
 
@@ -111,7 +121,7 @@ public class Game {
 
             this.city.display();
         }*/
-
+        initGame();
 
         while(!endGame()){
             if(currentPhase == Phase.SURVIVORS){
@@ -146,11 +156,6 @@ public class Game {
         survivors.removeIf(Actor::isDead);
         zombies.removeIf(Actor::isDead);
 
-        for (Zombie zombie : zombies) {
-            if (zombie.isDead())
-                this.survivors.remove(zombie);
-        }
-
 
         for(int i = 0; i < this.city.getWidth() ; i++){
             for(int j = 0; j < this.city.getHeight() ; j++){
@@ -162,6 +167,7 @@ public class Game {
             for(int i = 0 ; i < getNumberOfZombiesToSpawn() ; i++){
                 this.city.spawnAZombie();
             }
+            System.out.println(getNumberOfZombiesToSpawn()+" zombies spawned");
         }
 
         for (Survivor survivor : survivors) {
@@ -225,6 +231,31 @@ public class Game {
     public City getCity() {
         return  this.city;
     }
+
+    public void distributeItems() {
+        List<Item> listOfItems = Arrays.asList(
+                new Riffle(),
+                new Pistol(),
+                new HealingFiask(),
+                new Map(),
+                new InfraredGlasses(),
+                new FirstAidKit(),
+                new Chainsaw(),
+                new MasterKey(),
+                new Crowbar(),
+                new Axe()
+        );
+
+        for(Survivor s : this.survivors) {
+            RandomListChooser<Item> chooser = new RandomListChooser<>();
+            Item item1 = chooser.choose(listOfItems);
+            Item item2 = chooser.choose(listOfItems);
+
+            s.getBackpack().addItem(item1);
+            s.getBackpack().addItem(item2);
+        }
+    }
+
 
 
 }
