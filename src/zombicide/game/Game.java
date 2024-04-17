@@ -195,7 +195,8 @@ public class Game {
      */
     private void playSurvivorsPhase() {
         for(Survivor s : survivors){
-            System.out.println("It's "+s.getName()+" turn !");
+            System.out.println("It's "+s.getName()+" turn ! He has a(n) "+s.getItemHeld().toString()+" and "+s.getLifePoints()+" life point(s)");
+            System.out.println("Backpack : "+s.getBackpack().displayItems());
             while(s.getActionPoints() > 0){
                 scanner.next();
                 s.handleAction();
