@@ -99,13 +99,14 @@ public class Survivor extends Actor {
      * @param i The item to be held.
      */
     public void setItemHeld(Item i) {
-        if(i == null)
-            return;
 
         if (this.itemHeld != null) {
             this.backpack.addItem(this.itemHeld);
         }
-        i.setSurvivor(this);
+
+        if(i != null)
+            i.setSurvivor(this);
+
         this.itemHeld = i;
     }
 
