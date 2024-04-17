@@ -183,8 +183,10 @@ public class Game {
      */
     private void playZombiesPhase() {
         for(Zombie z : zombies){
-            scanner.next();
-            z.handleAction();
+            if(!z.isDead()) {
+                scanner.next();
+                z.handleAction();
+            }
         }
         this.currentPhase = Phase.END;
     }
@@ -195,14 +197,16 @@ public class Game {
      */
     private void playSurvivorsPhase() {
         for(Survivor s : survivors){
-            System.out.println("It's "+s.getName()+" turn ! He has a(n) "+s.getItemHeld().toString()+" and "+s.getLifePoints()+" life point(s)");
-            System.out.println("Backpack : "+s.getBackpack().displayItems());
-            while(s.getActionPoints() > 0){
-                scanner.next();
-                s.handleAction();
-                System.out.println(s.getName()+" a "+s.getActionPoints()+" pts d'action");
+            if(!s.isDead()) {
+                System.out.println("It's " + s.getName() + "'s turn ! He has a(n) " + s.getItemHeld().toString() + " and " + s.getLifePoints() + " life point(s)");
+                System.out.println("Backpack : " + s.getBackpack().displayItems());
+                while (s.getActionPoints() > 0) {
+                    scanner.next();
+                    s.handleAction();
+                    System.out.println(s.getName() + " has " + s.getActionPoints() + " pts d'action");
+                }
+                System.out.println();
             }
-            System.out.println();
         }
         this.currentPhase = Phase.ZOMBIES;
     }
