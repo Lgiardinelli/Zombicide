@@ -15,4 +15,7 @@ public class Runner extends Zombie {
 		super(zombieActions, ATTACK_POINTS, LIFE_POINTS, ACTION_POINTS, IS_STRONG, city);
 	}
 
+	public String toString() {
+		return "Runner";
+	}
 }

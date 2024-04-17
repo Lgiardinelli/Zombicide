@@ -14,6 +14,10 @@ public class Walker extends Zombie {
 	public Walker(List<Action<Zombie>> zombieActions, City city) {
 		super(zombieActions, ATTACK_POINTS, LIFE_POINTS, ACTION_POINTS, IS_STRONG, city);
 	}
+
+	public String toString() {
+		return "Walker";
+	}
 	
 }
 
