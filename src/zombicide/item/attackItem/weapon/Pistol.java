@@ -12,6 +12,7 @@ public class Pistol extends AttackItem implements Weapon {
 	public Pistol() {
 		super(NB_DICE_THROWS, DICE_THRESHOLD, DAMAGE, MIN_HITTING_RANGE, MAX_HITTING_RANGE);
 		this.isNoisyUse = true;
+		this.canOpen = true;
 	}
 
 	public String toString(){
