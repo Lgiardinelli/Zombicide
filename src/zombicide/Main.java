@@ -120,7 +120,7 @@ public class Main {
         s2.setName("Dylan");
         game.addSurvivor(s2);
 
-//        Survivor s3 = new Survivor(luckyAction, game.getCity());
+//       Survivor s3 = new Survivor(luckyAction, game.getCity());
 //        s3.setName("Eliès");
 //        game.addSurvivor(s3);
 //
@@ -133,7 +133,7 @@ public class Main {
 //        game.addSurvivor(s5);
 //
 //        Survivor s6 = new Survivor(healerAction, game.getCity());
-//        s6.setName("Clément");
+//        s6.setName("Evan");
 //        game.addSurvivor(s6);
 //
 //        Survivor s7 = new Survivor(luckyAction, game.getCity());
@@ -141,7 +141,7 @@ public class Main {
 //        game.addSurvivor(s7);
 //
 //        Survivor s8 = new Survivor(snooperAction, game.getCity());
-//        s8.setName("Ethan");
+//        s8.setName("Gabriel");
 //        game.addSurvivor(s8);
 
 

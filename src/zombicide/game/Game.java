@@ -56,7 +56,6 @@ public class Game {
         /*for (Survivor survivor : this.survivors)
             survivor.setArea(this.city.getSpawn());*/
         this.city.dispatchItems2();
-        distributeItems();
     }
 
 
