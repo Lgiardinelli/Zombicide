@@ -126,11 +126,11 @@ public class Game {
         while(!endGame()){
             this.startOfTheGame = true;
             if(currentPhase == Phase.SURVIVORS){
-                System.out.println("Survivors' tour ("+this.countOfSurvivorsAlive()+" alive");
+                System.out.println("Survivors' tour ("+this.countOfSurvivorsAlive()+" alive)");
                 playSurvivorsPhase();
             }
             else if(currentPhase == Phase.ZOMBIES){
-                System.out.println("Zombies' tour ("+this.countOfZombiesAlive()+" alive");
+                System.out.println("Zombies' tour ("+this.countOfZombiesAlive()+" alive)");
                 playZombiesPhase();
             }
             else {
