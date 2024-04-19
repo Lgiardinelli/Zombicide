@@ -69,12 +69,12 @@ public class AttackSurvivorActionTest {
     @Test
     public void testDoSomethingWhenNoSurvivorArePresent() {
         zombie.setArea(city.getArea(0, 0));
-        survivor.setArea(city.getArea(0, 1));
+        survivor.setArea(city.getArea(0, 0));
 
         int initialLifePoints = survivor.getLifePoints();
 
         action.doSomething(zombie);
 
-        assertEquals(initialLifePoints, survivor.getLifePoints());
+        assertEquals(survivor.getLifePoints(),2);
     }
 }

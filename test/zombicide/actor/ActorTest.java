@@ -190,12 +190,14 @@ public class ActorTest {
 
     @Test
     void testDisplay(){
-        System.out.println(abomination.display());
-        System.out.println(survivor.display());
+        System.out.println(abomination.toString());
+        System.out.println(survivor.toString());
     }
 
     @Test
     void testHandleAction(){
+        abomination.setArea(this.city.getArea(3,2));
+        survivor.setArea(this.city.getSpawn());
         abomination.handleAction();
         survivor.handleAction();
     }
