@@ -27,7 +27,7 @@ import java.util.List;
 
 public class Main {
 
-    private final City trainCity = new TrainCity();
+    private final City city = new City(10,10);
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -111,7 +111,7 @@ public class Main {
                 new Axe()
         );
 
-        Game game = new Game(this.trainCity);
+        Game game = new Game(this.city);
 
         Survivor s1 = new Survivor(fighterAction, game.getCity());
         s1.setName("Théophane");
@@ -157,9 +157,9 @@ public class Main {
 //        game.addZombie(new Walker(zombieActions, game.getCity()));
 
 
-        List<Survivor> survivors = trainCity.getSurvivors();
+        List<Survivor> survivors = city.getSurvivors();
 
-        trainCity.display();
+        city.display();
 
 
 //        // Add axe in the hand survivor 2
