@@ -30,7 +30,6 @@ public abstract class Zombie extends Actor {
         super(city, lifePoints, actionPoints);
 		this.attackPoints = attackPoints;
 		this.isStrong = isStrong;
-        this.setArea(chooseRandomManhole());
         this.zombieActions = new ArrayList<>(zombieActions);
 	}
 
