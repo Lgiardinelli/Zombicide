@@ -191,7 +191,8 @@ public class Survivor extends Actor {
             action.doSomething(this);
         }
         else {
-            System.out.println("No action (null)");
+            System.out.println(this.getName()+" decided to do nothing");
+            this.removeActionPoint();
         }
     }
 
