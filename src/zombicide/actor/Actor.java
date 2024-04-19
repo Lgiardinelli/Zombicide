@@ -24,12 +24,15 @@ public abstract class Actor {
      */
     protected int actionPoints;
 
+    private int maxActionPoints;
+
     protected City city;
 
     public Actor(City city, int lifePoints, int actionPoints) {
         this.city = city;
         this.lifePoints = lifePoints;
         this.actionPoints = actionPoints;
+        this.maxActionPoints = actionPoints;
     }
 
     public Area getArea() {
@@ -88,5 +91,13 @@ public abstract class Actor {
 
     public boolean isDead() {
         return this.lifePoints <= 0;
+    }
+
+    public void increaseActionPoints() {
+        this.maxActionPoints++;
+    }
+
+    public void resetActionPoints() {
+        this.actionPoints = this.maxActionPoints;
     }
 }
