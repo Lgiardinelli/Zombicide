@@ -27,7 +27,7 @@ import java.util.List;
 
 public class Main {
 
-    private final City trainCity = new City(5,5);
+    private final City city = new City(10,10);
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -53,6 +53,7 @@ public class Main {
                 new DoorAction(),
                 new ItemAction(),
                 new NoiseAction(),
+                new AreaAction(),
                 new LookAction(),
                 new Fighter(),
                 new SurvivorMoveAction()
@@ -110,7 +111,7 @@ public class Main {
                 new Axe()
         );
 
-        Game game = new Game(this.trainCity);
+        Game game = new Game(this.city);
 
         Survivor s1 = new Survivor(fighterAction, game.getCity());
         s1.setName("Théophane");
@@ -123,21 +124,21 @@ public class Main {
         s3.setName("Eliès");
         game.addSurvivor(s3);
 
-//        Survivor s4 = new Survivor(snooperAction, game.getCity());
-//        s4.setName("Léo");
-//        game.addSurvivor(s4);
-//
-//        Survivor s5 = new Survivor(fighterAction, game.getCity());
-//        s5.setName("Bondu");
-//        game.addSurvivor(s5);
-//
-//        Survivor s6 = new Survivor(healerAction, game.getCity());
-//        s6.setName("Evan");
-//        game.addSurvivor(s6);
-//
-//        Survivor s7 = new Survivor(luckyAction, game.getCity());
-//        s7.setName("Monsieur Varré");
-//        game.addSurvivor(s7);
+        Survivor s4 = new Survivor(snooperAction, game.getCity());
+        s4.setName("Léo");
+        game.addSurvivor(s4);
+
+        Survivor s5 = new Survivor(fighterAction, game.getCity());
+        s5.setName("Bondu");
+        game.addSurvivor(s5);
+
+        Survivor s6 = new Survivor(healerAction, game.getCity());
+        s6.setName("Evan");
+        game.addSurvivor(s6);
+
+        Survivor s7 = new Survivor(luckyAction, game.getCity());
+        s7.setName("Monsieur Varré");
+        game.addSurvivor(s7);
 
 /*        Survivor s8 = new Survivor(snooperAction, game.getCity());
         s8.setName("Gabriel");
@@ -156,9 +157,9 @@ public class Main {
 //        game.addZombie(new Walker(zombieActions, game.getCity()));
 
 
-        List<Survivor> survivors = trainCity.getSurvivors();
+        List<Survivor> survivors = city.getSurvivors();
 
-        trainCity.display();
+        city.display();
 
 
 //        // Add axe in the hand survivor 2
