@@ -195,8 +195,4 @@ public class Survivor extends Actor {
             this.removeActionPoint();
         }
     }
-
-    public void increaseActionPoints() {
-        this.actionPoints++;
-    }
 }
