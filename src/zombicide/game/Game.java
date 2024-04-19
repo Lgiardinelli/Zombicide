@@ -124,6 +124,7 @@ public class Game {
         spawnAZombie();
         currentPhase = Phase.SURVIVORS;
         while(!endGame()){
+            System.out.println(this.city.getManholes().get(0).getZombies().size());
             this.startOfTheGame = true;
             if(currentPhase == Phase.SURVIVORS){
                 System.out.println("Survivors' tour");
@@ -186,7 +187,7 @@ public class Game {
     private void playZombiesPhase() {
         for(Zombie z : zombies){
             if(!z.isDead()) {
-                // scanner.next();
+                scanner.next();
                 z.handleAction();
             }
         }
@@ -207,7 +208,7 @@ public class Game {
 
                 System.out.println("Backpack : " + s.getBackpack().displayItems());
                 while (s.getActionPoints() > 0) {
-                    // scanner.next();
+                    scanner.next();
                     s.handleAction();
                     System.out.println(s.getName() + " has " + s.getActionPoints() + " pts d'action");
                 }
