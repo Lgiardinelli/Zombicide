@@ -92,10 +92,9 @@ public class Game {
      * @return true if all survivors are dead, false otherwise.
      */
     public boolean allSurvivorAreDead(){
-        if(!this.startOfTheGame) {
-            return this.survivors.isEmpty();
-        }else{ return false; }
+        return this.survivors.isEmpty();
     }
+
 
     /**
      * Checks if all zombies are dead.
@@ -103,9 +102,7 @@ public class Game {
      * @return true if all zombies are dead, false otherwise.
      */
     public boolean allZombiesAreDead(){
-        if(!this.startOfTheGame) {
-            return this.zombies.isEmpty();
-        }else{ return false; }
+        return this.zombies.isEmpty();
     }
 
     /**
@@ -121,18 +118,11 @@ public class Game {
      * Runs the game loop until the end conditions are met.
      */
     public void play(){
-        /*for (int i=0; i<3; i++) {
-            if(currentPhase == Phase.SURVIVORS){
-                playSurvivorsPhase();
-            }
-            else if(currentPhase == Phase.ZOMBIES){
-                playZombiesPhase();
-            } else { playEndPhase(); }
-
-            this.city.display();
-        }*/
         initGame();
-
+        playSurvivorsPhase();
+        playZombiesPhase();
+        spawnAZombie();
+        currentPhase = Phase.SURVIVORS;
         while(!endGame()){
             this.startOfTheGame = true;
             if(currentPhase == Phase.SURVIVORS){
@@ -174,11 +164,12 @@ public class Game {
         }
 
         if(!allZombiesAreDead()){
-            for(int i = 0 ; i < getNumberOfZombiesToSpawn() ; i++){
+            int nbZombie = getNumberOfZombiesToSpawn();
+            int k;
+            for(k = 0 ; k < nbZombie ; k++){
                 this.spawnAZombie();
-                System.out.println(i);
             }
-            System.out.println(getNumberOfZombiesToSpawn()+" zombies spawned");
+            System.out.println(nbZombie+" zombies spawned");
         }
 
         for (Survivor survivor : survivors) {
@@ -195,7 +186,7 @@ public class Game {
     private void playZombiesPhase() {
         for(Zombie z : zombies){
             if(!z.isDead()) {
-                scanner.next();
+                // scanner.next();
                 z.handleAction();
             }
         }
@@ -216,7 +207,7 @@ public class Game {
 
                 System.out.println("Backpack : " + s.getBackpack().displayItems());
                 while (s.getActionPoints() > 0) {
-                    scanner.next();
+                    // scanner.next();
                     s.handleAction();
                     System.out.println(s.getName() + " has " + s.getActionPoints() + " pts d'action");
                 }
@@ -297,7 +288,8 @@ public class Game {
         RandomListChooser<Zombie> ch = new RandomListChooser<>();
         Zombie zombie = ch.choose(zombiesTypes);
 
-        manhole.addZombie(zombie);
+        zombie.setArea(manhole);
+        // manhole.addZombie(zombie);
         this.zombies.add(zombie);
     }
 
