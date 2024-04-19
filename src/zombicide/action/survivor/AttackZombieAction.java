@@ -28,6 +28,10 @@ public class AttackZombieAction implements Action<Survivor> {
     public void doSomething(Survivor survivor) {
         survivor.removeActionPoint();
         Item itemHeld = survivor.getItemHeld();
+        if (itemHeld == null) {
+            System.out.println(survivor.getName() + " don't hold any item, no attack possible");
+            return;
+        }
         if (!itemHeld.canAttack()){
             System.out.println(survivor.getName()+" can't attack !");
             return;
