@@ -124,14 +124,13 @@ public class Game {
         spawnAZombie();
         currentPhase = Phase.SURVIVORS;
         while(!endGame()){
-            System.out.println(this.city.getManholes().get(0).getZombies().size());
             this.startOfTheGame = true;
             if(currentPhase == Phase.SURVIVORS){
-                System.out.println("Survivors' tour ("+this.survivors.size()+" alive(s)");
+                System.out.println("Survivors' tour ("+this.countOfSurvivorsAlive()+" alive");
                 playSurvivorsPhase();
             }
             else if(currentPhase == Phase.ZOMBIES){
-                System.out.println("Zombies' tour ("+this.zombies.size()+" alive(s)");
+                System.out.println("Zombies' tour ("+this.countOfZombiesAlive()+" alive");
                 playZombiesPhase();
             }
             else {
@@ -174,8 +173,13 @@ public class Game {
         }
 
         for (Survivor survivor : survivors) {
-            survivor.setActionPoints(3);
+            survivor.resetActionPoints();
         }
+
+        for (Zombie zombie : zombies) {
+            zombie.resetActionPoints();
+        }
+
         this.currentPhase = Phase.SURVIVORS;
 
     }
@@ -204,7 +208,7 @@ public class Game {
                 System.out.println("It's " + s.getName() + "'s turn ! He has "+s.getLifePoints() +" life point(s)");
 
                 if(s.getItemHeld() != null)
-                    System.out.println(s.getName()+" hold a(n) "+s.getItemHeld().toString());
+                    System.out.println(s.getName()+" is holding a(n) "+s.getItemHeld().toString());
 
                 System.out.println("Backpack : " + s.getBackpack().displayItems());
                 while (s.getActionPoints() > 0) {
@@ -292,6 +296,16 @@ public class Game {
         zombie.setArea(manhole);
         // manhole.addZombie(zombie);
         this.zombies.add(zombie);
+    }
+
+
+
+    private int countOfZombiesAlive(){
+        return (int) this.zombies.stream().filter(zombie -> !zombie.isDead()).count();
+    }
+
+    private int countOfSurvivorsAlive(){
+        return (int) this.survivors.stream().filter(survivor -> !survivor.isDead()).count();
     }
 
 
