@@ -127,11 +127,11 @@ public class Game {
             System.out.println(this.city.getManholes().get(0).getZombies().size());
             this.startOfTheGame = true;
             if(currentPhase == Phase.SURVIVORS){
-                System.out.println("Survivors' tour");
+                System.out.println("Survivors' tour ("+this.survivors.size()+" alive(s)");
                 playSurvivorsPhase();
             }
             else if(currentPhase == Phase.ZOMBIES){
-                System.out.println("Zombies' tour");
+                System.out.println("Zombies' tour ("+this.zombies.size()+" alive(s)");
                 playZombiesPhase();
             }
             else {
@@ -186,7 +186,7 @@ public class Game {
      */
     private void playZombiesPhase() {
         for(Zombie z : zombies){
-            if(!z.isDead()) {
+            while (z.getActionPoints() > 0) {
                 scanner.next();
                 z.handleAction();
             }
