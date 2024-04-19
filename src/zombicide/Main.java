@@ -145,11 +145,11 @@ public class Main {
         game.addSurvivor(s8);
 
         Survivor s9 = new Survivor(snooperAction, game.getCity());
-        s8.setName("Madgid");
+        s9.setName("Madgid");
         game.addSurvivor(s9);
 
         Survivor s10 = new Survivor(snooperAction, game.getCity());
-        s8.setName("Mohammad");
+        s10.setName("Mohammad");
         game.addSurvivor(s10);
 
 
