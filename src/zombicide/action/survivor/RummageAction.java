@@ -50,15 +50,14 @@ public class RummageAction implements Action<Survivor> {
         }
 
         Item roomItem = room.getRandomItem();
-        roomItem.setSurvivor(survivor);
-        if (backpack.stillHaveSpace()) {
-            backpack.addItem(roomItem);
-        }
-        else {
-            Item oldBpItem = backpack.addItem(roomItem);
+
+        Item oldBpItem = backpack.addItem(roomItem);
+
+        if (oldBpItem != null) {
             room.addItem(oldBpItem);
-            System.out.println(survivor.getName()+"'s backpack was full, his "+oldBpItem.toString()+" has been dropped");
+            System.out.println(survivor.getName()+"'s backpack was full, his "+ oldBpItem +" has been dropped");
         }
+
         System.out.println(survivor.getName()+" picked up a(n) "+ roomItem);
     }
 

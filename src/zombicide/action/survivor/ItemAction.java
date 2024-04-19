@@ -27,10 +27,8 @@ public class ItemAction implements Action<Survivor> {
                 System.out.println("The use of the "+survivor.getItemHeld().toString()+" is noisy!");
             }
 
-            if(!itemUsed.canAttack()){
+            if(!itemUsed.canAttack())
                 survivor.setItemHeld(null);
-                itemUsed.unsetSurvivor();
-            }
         }else{
             System.out.println(survivor.getName()+" has no item in his hands");
         }
