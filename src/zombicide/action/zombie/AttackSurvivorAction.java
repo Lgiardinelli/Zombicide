@@ -27,6 +27,7 @@ public class AttackSurvivorAction implements Action<Zombie> {
     public void doSomething(Zombie zombie) {
         if(zombie.getArea().isContinental()){
             System.out.printf(zombie.getName()+" is in the continental, he can't attack !");
+            zombie.removeActionPoint();
             return;
         }
 
