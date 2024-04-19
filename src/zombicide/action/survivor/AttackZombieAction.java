@@ -52,6 +52,7 @@ public class AttackZombieAction implements Action<Survivor> {
         */
         if (zombie != null) {
             shootZombie(survivor, zombie, attackItem);
+            System.out.println("d4d4");
         }
     }
 
