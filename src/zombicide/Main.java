@@ -11,6 +11,7 @@ import zombicide.action.zombie.AttackSurvivorAction;
 import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.*;
+import zombicide.city.City;
 import zombicide.city.TrainCity;
 import zombicide.game.Game;
 import zombicide.item.InfraredGlasses;
@@ -26,7 +27,7 @@ import java.util.List;
 
 public class Main {
 
-    private final TrainCity trainCity = new TrainCity();
+    private final City trainCity = new TrainCity();
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -119,30 +120,29 @@ public class Main {
         Survivor s2 = new Survivor(healerAction, game.getCity());
         s2.setName("Dylan");
         game.addSurvivor(s2);
+       Survivor s3 = new Survivor(luckyAction, game.getCity());
+        s3.setName("Eliès");
+        game.addSurvivor(s3);
 
-//       Survivor s3 = new Survivor(luckyAction, game.getCity());
-//        s3.setName("Eliès");
-//        game.addSurvivor(s3);
-//
-//        Survivor s4 = new Survivor(snooperAction, game.getCity());
-//        s4.setName("Léo");
-//        game.addSurvivor(s4);
-//
-//        Survivor s5 = new Survivor(fighterAction, game.getCity());
-//        s5.setName("Bondu");
-//        game.addSurvivor(s5);
-//
-//        Survivor s6 = new Survivor(healerAction, game.getCity());
-//        s6.setName("Evan");
-//        game.addSurvivor(s6);
-//
-//        Survivor s7 = new Survivor(luckyAction, game.getCity());
-//        s7.setName("Monsieur Varré");
-//        game.addSurvivor(s7);
-//
-//        Survivor s8 = new Survivor(snooperAction, game.getCity());
-//        s8.setName("Gabriel");
-//        game.addSurvivor(s8);
+        Survivor s4 = new Survivor(snooperAction, game.getCity());
+        s4.setName("Léo");
+        game.addSurvivor(s4);
+
+        Survivor s5 = new Survivor(fighterAction, game.getCity());
+        s5.setName("Bondu");
+        game.addSurvivor(s5);
+
+        Survivor s6 = new Survivor(healerAction, game.getCity());
+        s6.setName("Evan");
+        game.addSurvivor(s6);
+
+        Survivor s7 = new Survivor(luckyAction, game.getCity());
+        s7.setName("Monsieur Varré");
+        game.addSurvivor(s7);
+
+/*        Survivor s8 = new Survivor(snooperAction, game.getCity());
+        s8.setName("Gabriel");
+        game.addSurvivor(s8);*/
 
 
 //        game.addZombie(new Abomination(zombieActions, game.getCity()));
