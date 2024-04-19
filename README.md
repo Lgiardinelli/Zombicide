@@ -909,6 +909,7 @@ Week-end :
 ## Semaine 12
 __Objectif de la semaine :__  
 - Completer la classe Game
+- Finaliser entièrement le jeu
 
 __Objectif atteint :__
 
@@ -926,8 +927,17 @@ Mercredi 17/04 :
 
 Jeudi 18/04 :
 
+- Nous avons remarqué (en réalisant plusieurs essais dans le jeu) que les portes n'étaient jamais ouvertes jusqu'a la fin du jeu. Nous avons réfléchi et comprius que le problème était que :
+  - les survivants n'avaient qu'un pistolet en main (qui ne permet pas d'ouvrir de portes)
+  - les survivants avaient leur sac à dos vide: impossible de prendre un équipement capable d'ouvrir des portes
+  - les survivants se trouvaient dans la rue pednant tout le jeu : impossible de fouiller ppur rammasser un item capable d'ouvrir une porte
+
+Ainsi, nous nous sommes penchés sur la possibilité que le pistolet ouvre des portes pour continuer le jeu.
+
 
 Vendredi 19/04 :
+
+Après de nombreuses recherches, nous avons enfin corrigé notre bug qui faisait apparaitre 5 zombies au lieu de 1 .
 
 
 Week-end :
@@ -939,17 +949,28 @@ __Partage de taches :__
 Lundi 15/04 :
 
 Théophane : Ajout, modification et réadaptation des tests selon le changement fait ce lundi 15/04
+Eliès : Avancement de la classe Game
+Dylan,Léo : Changement de la modélisation des armes (Suppression de la classe Weapon pour créer une classe AttackItem)
+
 
 Mardi 16/04 :
+
+Eliès : Ajout de plusieurs SOUT permettant la bonne visualisation du jeu
 
 
 Mercredi 17/04 :
 
+Léo,Dylan : correction de tests 
+
 
 Jeudi 18/04 :
 
+Eliès : Ajout de plusieurs SOUT pour permettant la bonne visualisation du jeu
+
 
 Vendredi 19/04 :
+
+Léo : correction de bugs notamment concernant l'apparition des zombies
 
 
 Week-end :
