@@ -113,8 +113,10 @@ public class AttackZombieAction implements Action<Survivor> {
         }
 
         zombie.removeLifePoints(weapon.getDamage());
-        if (weapon.isNoisyWhenUsed())
+        if (weapon.isNoisyWhenUsed()) {
             survivor.getArea().increaseNoiseLevel(1);
+            System.out.println("The use of the " + survivor.getItemHeld().toString() + " is noisy!");
+        }
 
 
         if (zombie.isDead()) {

@@ -21,7 +21,7 @@ public class RummageAction implements Action<Survivor> {
      */
     @Override
     public void doSomething(Survivor survivor) {
-        System.out.println(survivor.getName()+" tried to rummaging");
+        System.out.println(survivor.getName()+" tried to rummage");
         rummage(survivor);
         survivor.removeActionPoint();
     }

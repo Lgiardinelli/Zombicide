@@ -22,8 +22,10 @@ public class ItemAction implements Action<Survivor> {
             Item itemUsed = survivor.getItemHeld();
             System.out.println(survivor.getName()+" is using his "+itemUsed.toString());
             itemUsed.use();
-            if(itemUsed.isNoisyWhenUsed())
+            if(itemUsed.isNoisyWhenUsed()){
                 survivor.getArea().increaseNoiseLevel(1);
+                System.out.println("The use of the "+survivor.getItemHeld().toString()+" is noisy!");
+            }
 
             if(!itemUsed.canAttack()){
                 survivor.setItemHeld(null);
