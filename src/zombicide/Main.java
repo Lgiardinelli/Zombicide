@@ -140,9 +140,17 @@ public class Main {
         s7.setName("Monsieur Varré");
         game.addSurvivor(s7);
 
-/*        Survivor s8 = new Survivor(snooperAction, game.getCity());
+        Survivor s8 = new Survivor(snooperAction, game.getCity());
         s8.setName("Gabriel");
-        game.addSurvivor(s8);*/
+        game.addSurvivor(s8);
+
+        Survivor s9 = new Survivor(snooperAction, game.getCity());
+        s8.setName("Madgid");
+        game.addSurvivor(s9);
+
+        Survivor s10 = new Survivor(snooperAction, game.getCity());
+        s8.setName("Mohammad");
+        game.addSurvivor(s10);
 
 
 //        game.addZombie(new Abomination(zombieActions, game.getCity()));
