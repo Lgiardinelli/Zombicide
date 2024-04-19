@@ -37,13 +37,13 @@ public class BackPack {
      * @return The item that was removed from the backpack.
      */
     public Item addItem(Item item) {
+        item.setSurvivor(this.survivor);
         if (stillHaveSpace()) {
             this.items.add(item);
-            item.setSurvivor(this.survivor);
             return null;
         } else {
             Item droppedItem = swapRandomItemWith(item);
-            droppedItem.setSurvivor(null);
+            droppedItem.unsetSurvivor();
             return droppedItem;
         }
     }
