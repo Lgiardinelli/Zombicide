@@ -44,6 +44,8 @@ public class AttackSurvivorAction implements Action<Zombie> {
                 r.letItems(s.getBackpack());
             }
         }
+
+        zombie.removeActionPoint();
     }
 
     /**
