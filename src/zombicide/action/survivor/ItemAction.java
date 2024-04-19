@@ -25,10 +25,8 @@ public class ItemAction implements Action<Survivor> {
             if(itemUsed.isNoisyWhenUsed())
                 survivor.getArea().increaseNoiseLevel(1);
 
-            if(!itemUsed.canAttack()){
+            if(!itemUsed.canAttack())
                 survivor.setItemHeld(null);
-                itemUsed.unsetSurvivor();
-            }
         }else{
             System.out.println(survivor.getName()+" has no item in his hands");
         }

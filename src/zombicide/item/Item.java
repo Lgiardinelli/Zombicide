@@ -95,9 +95,4 @@ public abstract class Item {
     }
 
     public abstract String toString();
-
-    public void unsetSurvivor(){
-        this.survivor = null;
-    }
-
 }

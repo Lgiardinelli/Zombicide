@@ -55,10 +55,8 @@ public class Room extends Area {
 	 */
 	public void letItems(BackPack backpack) {
 		List<Item> list = backpack.getItems();
-		for(Item item : list) {
-			item.unsetSurvivor();
+		for(Item item : list)
 			addItem(item);
-		}
 	}
 
 	/**

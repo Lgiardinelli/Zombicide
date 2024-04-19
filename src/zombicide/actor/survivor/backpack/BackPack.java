@@ -41,11 +41,8 @@ public class BackPack {
         if (stillHaveSpace()) {
             this.items.add(item);
             return null;
-        } else {
-            Item droppedItem = swapRandomItemWith(item);
-            droppedItem.unsetSurvivor();
-            return droppedItem;
         }
+        return swapRandomItemWith(item);
     }
 
     /**
