@@ -111,15 +111,20 @@ public class Game {
         return getTotalNumberOfSkillPoints() >= 30;
     }
 
+    private void playFisrtTour(){
+        initGame();
+        playSurvivorsPhase();
+        this.spawnAZombie();
+        resetActionPoints();
+        this.city.display();
+        currentPhase = Phase.SURVIVORS;
+    }
+
     /**
      * Runs the game loop until the end conditions are met.
      */
     public void play(){
-        initGame();
-        playSurvivorsPhase();
-        this.spawnAZombie();
-        this.city.display();
-        currentPhase = Phase.SURVIVORS;
+        playFisrtTour();
         while(!endGame()){
             if(currentPhase == Phase.SURVIVORS){
                 System.out.println("Survivors' tour ("+this.countOfSurvivorsAlive()+" alive)");
