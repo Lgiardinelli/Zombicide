@@ -195,13 +195,13 @@ public class Game {
      */
     private void playZombiesPhase() {
         for(Zombie z : zombies){
-            if(z.isDead())
-                return;
-
-            while (z.getActionPoints() > 0) {
-                scanner.next();
-                z.handleAction();
+            if(!z.isDead()){
+                while (z.getActionPoints() > 0) {
+                    scanner.next();
+                    z.handleAction();
+                }
             }
+
         }
         this.currentPhase = Phase.END;
     }
