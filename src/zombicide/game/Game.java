@@ -187,6 +187,9 @@ public class Game {
      */
     private void playZombiesPhase() {
         for(Zombie z : zombies){
+            if(z.isDead())
+                return;
+
             while (z.getActionPoints() > 0) {
                 scanner.next();
                 z.handleAction();
