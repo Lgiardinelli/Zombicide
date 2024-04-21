@@ -35,8 +35,6 @@ public class Game {
     private List<Zombie> zombies;
     private Phase currentPhase;
 
-    private boolean startOfTheGame;
-
     Scanner scanner = new Scanner(System.in);
 
     /**
@@ -49,7 +47,6 @@ public class Game {
         this.survivors = new ArrayList<>();
         this.zombies = new ArrayList<>();
         this.currentPhase = Phase.SURVIVORS;
-        this.startOfTheGame = true;
     }
 
     public void initGame(){
@@ -120,11 +117,11 @@ public class Game {
     public void play(){
         initGame();
         playSurvivorsPhase();
-        playZombiesPhase();
-        spawnAZombie();
+        this.spawnAZombie();
+        this.city.display();
+        playEndPhase();
         currentPhase = Phase.SURVIVORS;
         while(!endGame()){
-            this.startOfTheGame = true;
             if(currentPhase == Phase.SURVIVORS){
                 System.out.println("Survivors' tour ("+this.countOfSurvivorsAlive()+" alive)");
                 playSurvivorsPhase();
