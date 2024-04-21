@@ -27,7 +27,7 @@ import java.util.List;
 
 public class Main {
 
-    private final City city = new City(10,10);
+    private final City city = new City(7,7);
 
     public static void main(String[] args) {
         Main main = new Main();
