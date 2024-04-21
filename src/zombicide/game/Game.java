@@ -153,12 +153,7 @@ public class Game {
         survivors.removeIf(Actor::isDead);
         zombies.removeIf(Actor::isDead);
 
-
-        for(int i = 0; i < this.city.getWidth() ; i++){
-            for(int j = 0; j < this.city.getHeight() ; j++){
-                this.city.getArea(i , j).setNoise(0);
-            }
-        }
+        resetNoise();;
 
         if(!allZombiesAreDead()){
             int nbZombie = getNumberOfZombiesToSpawn();
@@ -179,6 +174,14 @@ public class Game {
 
         this.currentPhase = Phase.SURVIVORS;
 
+    }
+
+    private void resetNoise(){
+        for(int i = 0; i < this.city.getWidth() ; i++){
+            for(int j = 0; j < this.city.getHeight() ; j++){
+                this.city.getArea(i , j).setNoise(0);
+            }
+        }
     }
 
     /**
