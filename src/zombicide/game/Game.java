@@ -119,7 +119,6 @@ public class Game {
         playSurvivorsPhase();
         this.spawnAZombie();
         this.city.display();
-        playEndPhase();
         currentPhase = Phase.SURVIVORS;
         while(!endGame()){
             if(currentPhase == Phase.SURVIVORS){
@@ -164,13 +163,7 @@ public class Game {
             System.out.println(nbZombie+" zombies spawned");
         }
 
-        for (Survivor survivor : survivors) {
-            survivor.resetActionPoints();
-        }
-
-        for (Zombie zombie : zombies) {
-            zombie.resetActionPoints();
-        }
+        resetActionPoints();
 
         this.currentPhase = Phase.SURVIVORS;
 
@@ -181,6 +174,16 @@ public class Game {
             for(int j = 0; j < this.city.getHeight() ; j++){
                 this.city.getArea(i , j).setNoise(0);
             }
+        }
+    }
+
+    private void resetActionPoints(){
+        for (Survivor survivor : survivors) {
+            survivor.resetActionPoints();
+        }
+
+        for (Zombie zombie : zombies) {
+            zombie.resetActionPoints();
         }
     }
 
