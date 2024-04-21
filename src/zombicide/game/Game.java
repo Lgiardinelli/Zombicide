@@ -9,7 +9,6 @@ import zombicide.item.Item;
 import zombicide.actor.Actor;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.City;
-import zombicide.city.area.Area;
 import zombicide.item.InfraredGlasses;
 import zombicide.item.Map;
 import zombicide.item.MasterKey;
@@ -18,12 +17,10 @@ import zombicide.item.careItem.FirstAidKit;
 import zombicide.item.careItem.HealingFiask;
 import zombicide.util.listchooser.RandomListChooser;
 
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Represents a Zombicide game session.
@@ -111,7 +108,7 @@ public class Game {
         return getTotalNumberOfSkillPoints() >= 30;
     }
 
-    private void playFisrtTour(){
+    private void playFirstTour(){
         initGame();
         playSurvivorsPhase();
         this.spawnAZombie();
@@ -124,7 +121,7 @@ public class Game {
      * Runs the game loop until the end conditions are met.
      */
     public void play(){
-        playFisrtTour();
+        playFirstTour();
         while(!endGame()){
             if(currentPhase == Phase.SURVIVORS){
                 System.out.println("Survivors' tour ("+this.countOfSurvivorsAlive()+" alive)");
