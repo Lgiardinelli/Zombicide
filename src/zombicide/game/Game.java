@@ -108,7 +108,12 @@ public class Game {
         return getTotalNumberOfSkillPoints() >= 30;
     }
 
-    private void playFirstTour(){
+    /**
+     * Plays the first tour of the game.
+     * Initializes the game, plays the survivors' phase, spawns a zombie,
+     * resets action points, displays the city, and sets the current phase to survivors.
+     */
+    private void playFirstTour() {
         initGame();
         playSurvivorsPhase();
         this.spawnAZombie();
@@ -116,6 +121,7 @@ public class Game {
         this.city.display();
         currentPhase = Phase.SURVIVORS;
     }
+
 
     /**
      * Runs the game loop until the end conditions are met.
@@ -171,15 +177,21 @@ public class Game {
 
     }
 
-    private void resetNoise(){
-        for(int i = 0; i < this.city.getWidth() ; i++){
-            for(int j = 0; j < this.city.getHeight() ; j++){
-                this.city.getArea(i , j).setNoise(0);
+    /**
+     * Resets the noise level of all areas in the city to 0.
+     */
+    private void resetNoise() {
+        for (int i = 0; i < this.city.getWidth(); i++) {
+            for (int j = 0; j < this.city.getHeight(); j++) {
+                this.city.getArea(i, j).setNoise(0);
             }
         }
     }
 
-    private void resetActionPoints(){
+    /**
+     * Resets the action points of all survivors and zombies in the game.
+     */
+    private void resetActionPoints() {
         for (Survivor survivor : survivors) {
             survivor.resetActionPoints();
         }
@@ -188,6 +200,7 @@ public class Game {
             zombie.resetActionPoints();
         }
     }
+
 
     /**
      * Handles the zombies' phase of the game.
