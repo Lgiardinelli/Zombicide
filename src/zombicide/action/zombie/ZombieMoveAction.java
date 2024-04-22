@@ -1,6 +1,7 @@
 package zombicide.action.zombie;
 
 import zombicide.action.MoveAction;
+import zombicide.actor.Actor;
 import zombicide.actor.zombie.Zombie;
 import zombicide.city.area.Area;
 import zombicide.util.Direction;
@@ -15,6 +16,8 @@ import java.util.Map;
  */
 public class ZombieMoveAction extends MoveAction<Zombie> {
 
+
+
     /**
      * Calculates the direction of movement for the Zombie.
      *
@@ -23,7 +26,7 @@ public class ZombieMoveAction extends MoveAction<Zombie> {
      * @throws IllegalStateException If the Zombie cannot move.
      */
     @Override
-    protected Direction getDirectionFrom(Zombie z , Area area) throws IllegalStateException {
+    protected Direction getDirectionFrom(Actor z , Area area) throws IllegalStateException {
         Direction direction = bestDirectionToTake(z , area);
 
         if (direction == null)
@@ -62,7 +65,7 @@ public class ZombieMoveAction extends MoveAction<Zombie> {
         return direction;
     }
 
-    private Direction bestDirectionToTake(Zombie z , Area area){
+    private Direction bestDirectionToTake(Actor z , Area area){
         HashMap<Direction , Double> distanceFromEachDirection = new HashMap<>();
         Area a = z.getArea();
 

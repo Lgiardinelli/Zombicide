@@ -66,7 +66,7 @@ public abstract class MoveAction<T extends Actor> implements Action<T> {
         if (actor == null)
             return null;
 
-        Direction direction = getDirectionFrom(actor.getArea());
+        Direction direction = getDirectionFrom(actor , actor.getArea());
 
         int x = actor.getArea().getX();
         int y = actor.getArea().getY();
@@ -86,7 +86,7 @@ public abstract class MoveAction<T extends Actor> implements Action<T> {
      * @param area The Area from which to get the direction of movement.
      * @return The direction of movement from the specified Area.
      */
-    protected abstract Direction getDirectionFrom(Area area);
+    protected abstract Direction getDirectionFrom(Actor actor , Area area);
 
     /**
      * Performs the move action for the Actor.
@@ -109,5 +109,4 @@ public abstract class MoveAction<T extends Actor> implements Action<T> {
         actor.removeActionPoint();
     }
 
-    protected abstract Direction getDirectionFrom(Zombie z, Area area) throws IllegalStateException;
 }

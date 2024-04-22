@@ -1,6 +1,7 @@
 package zombicide.action.survivor;
 
 import zombicide.action.MoveAction;
+import zombicide.actor.Actor;
 import zombicide.actor.survivor.Survivor;
 import zombicide.city.area.Area;
 import zombicide.util.Direction;
@@ -20,7 +21,7 @@ public class SurvivorMoveAction extends MoveAction<Survivor> {
      * @return The direction for the Survivor to move, or null if the door is closed.
      */
     @Override
-    protected Direction getDirectionFrom(Area area) {
+    protected Direction getDirectionFrom(Actor actor , Area area) {
         Direction direction = randomDirection();
 
         if (!area.getDoor(direction).isOpen()) {
