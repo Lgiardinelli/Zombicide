@@ -115,6 +115,7 @@ public class Game {
      */
     private void playFirstTour() {
         initGame();
+        System.out.println("TOUR 1");
         playSurvivorsPhase();
         this.spawnAZombie();
         resetActionPoints();
@@ -128,8 +129,10 @@ public class Game {
      */
     public void play(){
         playFirstTour();
+        int i = 2;
         while(!endGame()){
             if(currentPhase == Phase.SURVIVORS){
+                System.out.println("TOUR "+i);
                 System.out.println("Survivors' tour ("+this.countOfSurvivorsAlive()+" alive)");
                 playSurvivorsPhase();
             }
@@ -145,6 +148,7 @@ public class Game {
                     System.out.printf("Le survivant %d a %d points de vie", ignored+1, survivors.get(ignored).getLifePoints());
                     System.out.println();
                 }
+                i++;
             }
             this.city.display();
         }
@@ -175,6 +179,7 @@ public class Game {
 
         this.currentPhase = Phase.SURVIVORS;
 
+        scanner.next();
     }
 
     /**
