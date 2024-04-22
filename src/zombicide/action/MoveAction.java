@@ -71,13 +71,17 @@ public abstract class MoveAction<T extends Actor> implements Action<T> {
         int x = actor.getArea().getX();
         int y = actor.getArea().getY();
 
-        if (direction == null)
+        if (direction == null){
             return new Position(x, y);
+        } else {
 
-        int i = x + direction.getX();
-        int j = y + direction.getY();
+            int i = x + direction.getX();
+            int j = y + direction.getY();
 
-        return new Position(i, j);
+            System.out.println(actor.getName()+" moved ");
+
+            return new Position(i, j);
+        }
     }
 
     /**
@@ -99,7 +103,6 @@ public abstract class MoveAction<T extends Actor> implements Action<T> {
         City city = actor.getCity();
         actor.setArea(city.getArea(p.getX(), p.getY()));
 
-        System.out.println(actor.getName()+" moved ");
         if(actor.getArea().isPharmacy()){
             ThePharmacy pharmacy = (ThePharmacy) actor.getArea();
             pharmacy.addHealingFiask();
