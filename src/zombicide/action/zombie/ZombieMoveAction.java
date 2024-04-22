@@ -49,11 +49,11 @@ public class ZombieMoveAction extends MoveAction<Zombie> {
     }
 
     private Direction minimalDistance(HashMap<Direction , Double> map){
-        Double min = (double) -1;
+        Double min = null;
         Direction direction = null;
 
         for(Map.Entry<Direction , Double> entry : map.entrySet()){
-            if(entry.getValue() >= min){
+            if(entry.getValue() <= min){
                 min = entry.getValue();
                 direction = entry.getKey();
             }
