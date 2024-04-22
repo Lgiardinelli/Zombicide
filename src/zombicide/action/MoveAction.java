@@ -1,6 +1,7 @@
 package zombicide.action;
 
 import zombicide.actor.Actor;
+import zombicide.actor.zombie.Zombie;
 import zombicide.city.City;
 import zombicide.city.area.Area;
 import zombicide.city.area.room.ThePharmacy;
@@ -107,4 +108,6 @@ public abstract class MoveAction<T extends Actor> implements Action<T> {
 
         actor.removeActionPoint();
     }
+
+    protected abstract Direction getDirectionFrom(Zombie z, Area area) throws IllegalStateException;
 }
