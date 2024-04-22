@@ -5,6 +5,8 @@ import zombicide.actor.zombie.Zombie;
 import zombicide.city.area.Area;
 import zombicide.util.Direction;
 
+import java.util.HashMap;
+
 /**
  * A class representing the move action for a Zombie in the game.
  * This class extends the MoveAction class and provides the specific
@@ -20,8 +22,8 @@ public class ZombieMoveAction extends MoveAction<Zombie> {
      * @throws IllegalStateException If the Zombie cannot move.
      */
     @Override
-    protected Direction getDirectionFrom(Area area) throws IllegalStateException {
-        Direction direction = randomOpenDirectionFrom(area);
+    protected Direction getDirectionFrom(Zombie z , Area area) throws IllegalStateException {
+        Direction direction = bestDirectionToTake(z , area);
 
         if (direction == null)
             throw new IllegalStateException("Zombie must have direction to move!");
@@ -33,9 +35,9 @@ public class ZombieMoveAction extends MoveAction<Zombie> {
         return "Move Action";
     }
 
-    private double distance(Zombie z , Area area){
-        int x1 = z.getArea().getX();
-        int y1 = z.getArea().getY();
+    private double distance(Area areaofZombie , Area area){
+        int x1 = areaofZombie.getX();
+        int y1 = areaofZombie.getY();
 
         int x2 = area.getX();
         int y2 = area.getY();
@@ -43,5 +45,13 @@ public class ZombieMoveAction extends MoveAction<Zombie> {
         double result = Math.pow(x2-x1 , 2) +  Math.pow(y2-y1 , 2);
 
         return Math.sqrt(result);
+    }
+
+    private Direction bestDirectionToTake(Zombie z , Area area){
+        HashMap<Direction , Double> distanceFromEachDirection = new HashMap<>();
+
+        for(Direction d : Direc
+            Area a = new Area(area.getX() + d.getX() , area.getY() + d.getY());
+        }
     }
 }
