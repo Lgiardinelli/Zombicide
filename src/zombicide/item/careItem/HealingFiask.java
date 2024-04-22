@@ -29,5 +29,6 @@ public class HealingFiask extends CareItem {
         HealAction healAction = new HealAction();
         healAction.setLifePointsToAdd(this.lifePointsToAdd);
         healAction.doSomething(survivor);
+        System.out.println(this.survivor.getName()+" has now "+this.survivor.getLifePoints()+" life point(s)");
     }
 }
