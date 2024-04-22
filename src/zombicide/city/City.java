@@ -614,7 +614,7 @@ public class City {
     }
 
     public Area getAreaNoiseMax() {
-        Area areaMaxNoise = null;
+        Area areaMaxNoise = this.spawn;
         int maxNoise = 0;
         for (int i=0; i<getWidth(); i++) {
             for (int j=0; j<getHeight(); j++) {
