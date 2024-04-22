@@ -32,4 +32,16 @@ public class ZombieMoveAction extends MoveAction<Zombie> {
     public String toString () {
         return "Move Action";
     }
+
+    private double distance(Zombie z , Area area){
+        int x1 = z.getArea().getX();
+        int y1 = z.getArea().getY();
+
+        int x2 = area.getX();
+        int y2 = area.getY();
+
+        double result = Math.pow(x2-x1 , 2) +  Math.pow(y2-y1 , 2);
+
+        return Math.sqrt(result);
+    }
 }
