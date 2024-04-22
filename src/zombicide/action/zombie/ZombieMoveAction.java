@@ -75,6 +75,7 @@ public class ZombieMoveAction extends MoveAction<Zombie> {
             distanceFromEachDirection.put(d , distance(a , areaDirection));
         }
 
+        return minimalDistance(distanceFromEachDirection);
 
     }
 }
