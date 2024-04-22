@@ -6,6 +6,7 @@ import zombicide.city.area.Area;
 import zombicide.util.Direction;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A class representing the move action for a Zombie in the game.
@@ -47,11 +48,33 @@ public class ZombieMoveAction extends MoveAction<Zombie> {
         return Math.sqrt(result);
     }
 
+    private Direction minimalDistance(HashMap<Direction , Double> map){
+        Double min = (double) -1;
+        Direction direction = null;
+
+        for(Map.Entry<Direction , Double> entry : map.entrySet()){
+            if(entry.getValue() >= min){
+                min = entry.getValue();
+                direction = entry.getKey();
+            }
+        }
+
+        return direction;
+    }
+
     private Direction bestDirectionToTake(Zombie z , Area area){
         HashMap<Direction , Double> distanceFromEachDirection = new HashMap<>();
+        Area a = z.getArea();
 
-        for(Direction d : Direc
-            Area a = new Area(area.getX() + d.getX() , area.getY() + d.getY());
+        for(Direction d : Direction.values()){
+            int x = a.getX()+d.getX();
+            int y = a.getY()+d.getY();
+
+            Area areaDirection = z.getCity().getArea(x , y);
+
+            distanceFromEachDirection.put(d , distance(a , areaDirection));
         }
+
+
     }
 }
