@@ -39,7 +39,7 @@ public class FirstAidKit extends CareItem {
         Survivor targetSurvivor = chooseAPlayer();
         if (targetSurvivor != null) {
             healAction.doSomething(targetSurvivor);
-            System.out.println(this.survivor.getName()+" has now "+this.survivor.getLifePoints()+" life point(s)");
+            System.out.println(targetSurvivor.getName()+" has now "+targetSurvivor.getLifePoints()+" life point(s)");
         } else {
             System.out.println("No other survivors in the area to heal.");
         }
