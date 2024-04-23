@@ -18,7 +18,6 @@ public class HealAction implements Action<Survivor> {
      */
     public void doSomething(Survivor survivor) {
         heal(survivor);
-        survivor.removeActionPoint();
     }
 
     /**
