@@ -1,16 +1,18 @@
 package zombicide.actor.survivor;
 
-import zombicide.action.*;
-import zombicide.city.City;
+import zombicide.action.Action;
+import zombicide.action.survivor.special.Snooper;
 import zombicide.actor.Actor;
-import zombicide.city.area.Area;
 import zombicide.actor.survivor.backpack.BackPack;
+import zombicide.city.City;
+import zombicide.city.area.Area;
 import zombicide.item.Item;
 import zombicide.item.attackItem.weapon.Pistol;
 import zombicide.util.Expertise;
 import zombicide.util.listchooser.RandomListChooser;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -187,12 +189,22 @@ public class Survivor extends Actor {
         Action<Survivor> action = SURVIVOR_ACTION_CHOOSER.choose(roles);
         // System.out.println();
         if (action != null) {
-            System.out.println(action.toString());
+            System.out.println(action);
             action.doSomething(this);
-        }
-        else {
+        } else {
             System.out.println(this.getName()+" decided to do nothing");
             this.removeActionPoint();
+        }
+
+        Iterator<Action<Survivor>> it = this.roles.iterator();
+        boolean found = false;
+        while (it.hasNext() && !found) {
+            Action<Survivor> a = it.next();
+            if (a instanceof Snooper) {
+                System.out.println(a);
+                a.doSomething(this);
+                found = true;
+            }
         }
     }
 }
