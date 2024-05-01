@@ -41,9 +41,6 @@ public class Zombicide {
 
         System.out.println("Plateau d'entraînement :");
 
-        List<Action<Zombie>> zombieActions = Arrays.asList(new AttackSurvivorAction(), new ZombieMoveAction());
-
-
         List<Action<Survivor>> fighterAction = Arrays.asList(
                 null,
                 new AttackZombieAction(),
@@ -96,19 +93,6 @@ public class Zombicide {
                 new SurvivorMoveAction()
         );
 
-        List<Item> listOfItems = Arrays.asList(
-                new Riffle(),
-                new Pistol(),
-                new HealingFiask(),
-                new Map(),
-                new InfraredGlasses(),
-                new FirstAidKit(),
-                new Chainsaw(),
-                new MasterKey(),
-                new Crowbar(),
-                new Axe()
-        );
-
         Game game = new Game(this.city);
 
         Survivor s1 = new Survivor(fighterAction, game.getCity());
@@ -150,55 +134,8 @@ public class Zombicide {
         s10.setName("Mohammad");
         game.addSurvivor(s10);
 
-
-//        game.addZombie(new Abomination(zombieActions, game.getCity()));
-//        game.addZombie(new Runner(zombieActions, game.getCity()));
-//        game.addZombie(new Balaise(zombieActions, game.getCity()));
-//        game.addZombie(new Abomination(zombieActions, game.getCity()));
-//        game.addZombie(new Walker(zombieActions, game.getCity()));
-//        game.addZombie(new Abomination(zombieActions, game.getCity()));
-//        game.addZombie(new Runner(zombieActions, game.getCity()));
-//        game.addZombie(new Balaise(zombieActions, game.getCity()));
-//        game.addZombie(new Abomination(zombieActions, game.getCity()));
-//        game.addZombie(new Walker(zombieActions, game.getCity()));
-
-
-        List<Survivor> survivors = city.getSurvivors();
-
         city.display();
-
-
-//        // Add axe in the hand survivor 2
-//        Axe axe = new Axe();
-//        survivors.get(0).setItemHeld(axe);
-//        axe.setSurvivor(survivors.get(0));
-
-        // Add healing fiask in the hand survivor 3
-//        HealingFiask healingFiask = new HealingFiask();
-//        survivors.get(2).setItemHeld(healingFiask);
-//        healingFiask.setSurvivor(survivors.get(2));
-
         game.play();
-
-        // Displaying survivors with their roles, their items in hand and a map in their backpack.
-//        System.out.println();
-//        int i = 1;
-//        for (Survivor survivor : survivors) {
-//            System.out.printf("Survivant %d : Item en main : %s | Contenu sac : %s | Actions : %s%n",
-//                    i++,
-//                    survivor.getItemHeld(),
-//                    survivor.getBackpack().getItems(),
-//                    survivor.getRoles().toString()
-//            );
-//        }
-//        System.out.println();
-//
-//        System.out.println();
-//        System.out.println("Voici l'état des survivants :");
-//        for (int ignored = 0; ignored < survivors.size(); ignored++) {
-//            System.out.printf("Le survivant %d a %d points de vie", ignored+1, survivors.get(ignored).getLifePoints());
-//            System.out.println();
-//        }
     }
 
 
