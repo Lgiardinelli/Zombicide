@@ -12,13 +12,13 @@
 [Le sujet 2024](https://www.fil.univ-lille.fr/~varre/portail/l2s4-projet/sujet2024.pdf)
 
 # UML LIVRABLE 1
-![UML](image/uml_map.jpg)
+![UML](uml/Livrable1.png)
 
 # UML LIVRABLE 2
-![UML](image/UML_LIVRABLE2.jpeg)
+![UML](uml/Livrable2.png)
 
 # UML LIVRABLE 3
-![UML](image/uml_l3.jpg)
+![UML](uml/Livrable3.png)
 
 # UML LIVRABLE 4
 ![UML]()
@@ -175,9 +175,9 @@ Tous les objectifs du livrable 3 ont été complété
 Récapitulatif des actions :
 - Regarder autour de soi : Cette fonctionnalité est implémentée et est gratuite. Les joueurs peuvent obtenir une description de la zone où se trouve le survivant.
 - Fouiller une pièce : Les survivants peuvent fouiller une pièce et récupérer des équipements s'ils en trouvent. La capacité du sac à dos est gérée, et les équipements non pris restent dans la pièce.
-- Prendre en main : Les joueurs peuvent prendre des objets de leur sac à dos pour les placer en main, remplaçant ainsi tout objet déjà en main.
-- Utiliser un équipement : Les survivants peuvent utiliser les équipements qu'ils ont en main, et les effets de chaque objet sont correctement appliqués. Une fois utilisé, l'équipement disparaît du jeu.
-- Ouvrir une porte : Pour ouvrir une porte, les survivants doivent disposer de l'équipement approprié en main. Ouvrir une porte fait apparaître des zombies, avec une chance d'apparition d'Abominations ou de Balaises.
+- Prendre en zombicide : Les joueurs peuvent prendre des objets de leur sac à dos pour les placer en zombicide, remplaçant ainsi tout objet déjà en zombicide.
+- Utiliser un équipement : Les survivants peuvent utiliser les équipements qu'ils ont en zombicide, et les effets de chaque objet sont correctement appliqués. Une fois utilisé, l'équipement disparaît du jeu.
+- Ouvrir une porte : Pour ouvrir une porte, les survivants doivent disposer de l'équipement approprié en zombicide. Ouvrir une porte fait apparaître des zombies, avec une chance d'apparition d'Abominations ou de Balaises.
 - Faire du bruit : Les survivants peuvent choisir de faire du bruit pour attirer les zombies, augmentant ainsi le niveau de bruit dans leur zone.
 - Se déplacer : Les survivants peuvent se déplacer vers une zone adjacente en passant par une porte ouverte.
 - Attaquer un zombie : Les survivants peuvent attaquer les zombies en fonction de leur visibilité et de leur portée. Les attaques sont résolues en lançant des dés, avec des seuils de réussite et des dommages dépendant de l'arme utilisée. 
@@ -590,7 +590,7 @@ Afin de spécifier un ou plusieurs rôles plus simplement aux survivants, nous s
 Ici cela nous évite dans notre POC de créer une liste de 1 rôle et ce pour chaque survivant.
 Suite au mail que vous nous avez envoyé avec la descritpion du rendu du livrable 2, nous avons dû modifier le livrable2 pour qu'il affiche 2 fois le plateau d'entrainement dont l'un sans le déplacements des survivants et l'autre avec les déplacements.  
 Pour les déplacements, nous avons eu une réfléxion de groupe qui a permis de nous accorder sur la méthode appelé pour le déplacement, qui est géré par la cellulle, car dans notre modélisation, une cellulle a un acteur et un acteur a une cellulle. (Comme le jeu de loi en POO)
-Pour l'ajout des fioles dans la main et de la carte dans le sac, nous avons implémenté cela logiquement dans les listes que contiennent les items.
+Pour l'ajout des fioles dans la zombicide et de la carte dans le sac, nous avons implémenté cela logiquement dans les listes que contiennent les items.
 
 
 __Partage de taches :__
@@ -699,7 +699,7 @@ Mardi 19/03 :
 
 
 Mercredi 20/03 :
-En ayant lu le projet pour avoir un résumé de ce qu'il nous manque à faire, nous nous sommes posé une question, sachant qu'une arme en main permet de faire l'action d'ouvrir une porte et d'attaquer, comment implémenter ces deux actions.  
+En ayant lu le projet pour avoir un résumé de ce qu'il nous manque à faire, nous nous sommes posé une question, sachant qu'une arme en zombicide permet de faire l'action d'ouvrir une porte et d'attaquer, comment implémenter ces deux actions.  
 Nous avons convenu que si l'ont utilise l'atribut use d'une arme elle attaque et que si l'action est d'ouvrir une porte, il faut vérifier que le joueur à un item qui permet d'ouvrir une porte pour l'ouvrir.  
 Puis, une autre interrogation, le sujet ne l'indique pas explicitement, est-ce que le survivant qui peut voir l'état des zombies attaque forcment le plus faible (ou le plus proche) ou vraiment aléatoirement.
 Pour la classe AttackAction, nous sommes bloqué sur le fait de savoir quel est le type de zombie pour savoir si l'rme influge les dégats ou non. Il ne faut pas utiliser d'instanceof, nous avons proposé de mettre un getName pour chaqu'un des zombies mais cela faisait bizarre.  
@@ -727,7 +727,7 @@ Lundi 18/03 :
 - Dylan : Réorganisation des packages en améliorant l'arborescence
 
 Mardi 19/03 :
-- Eliès : Finalisation de BackPack (prendre un Item en main)
+- Eliès : Finalisation de BackPack (prendre un Item en zombicide)
 
 Mercredi 20/03 :
 - Léo : Avancement de la classe AttackAction
@@ -935,7 +935,7 @@ Mercredi 17/04 :
 Jeudi 18/04 :
 
 - Nous avons remarqué (en réalisant plusieurs essais dans le jeu) que les portes n'étaient jamais ouvertes jusqu'a la fin du jeu. Nous avons réfléchi et comprius que le problème était que :
-  - les survivants n'avaient qu'un pistolet en main (qui ne permet pas d'ouvrir de portes)
+  - les survivants n'avaient qu'un pistolet en zombicide (qui ne permet pas d'ouvrir de portes)
   - les survivants avaient leur sac à dos vide: impossible de prendre un équipement capable d'ouvrir des portes
   - les survivants se trouvaient dans la rue pednant tout le jeu : impossible de fouiller ppur rammasser un item capable d'ouvrir une porte
 
