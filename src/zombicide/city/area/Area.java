@@ -151,7 +151,14 @@ public abstract class Area {
         if (z == 0) {
             return "    ";  // Placeholder for no zombies
         }
-        return " " + redBoldBrightColorCode + ZOMBIE + z + resetColorCode + " ";
+        return " " + redBoldBrightColorCode + ZOMBIE + z + resetColorCode + displaySpace(z);
+    }
+
+    private String displaySpace(int n) {
+        if (n > 9) {
+            return "";
+        }
+        return " ";
     }
 
     /**
@@ -165,7 +172,7 @@ public abstract class Area {
         if (s == 0) {
             return "    ";  // Placeholder for no survivors
         }
-        return " " + greenBoldBrightCode + SURVIVOR + s + resetColorCode + " ";
+        return " " + greenBoldBrightCode + SURVIVOR + s + resetColorCode + displaySpace(s);
     }
 
     /**
