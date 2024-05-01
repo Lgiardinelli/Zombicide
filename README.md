@@ -309,6 +309,9 @@ Modélisation complète.
 
 ### Choix de modélisation
 Nous avons donc tout mis en lien ce que nous avons fait dans les précédents livrables dans la classe game pour le déroulement du jeu.
+Nous avons tout mis en place pour que le code soit ouvert à tout ajout futur tel que des actions, roles, types de survivants particuliers, types de zombies particuliers, types d'items particuliers, et autres ajouts possible.
+En parti grâce à la généricité qui nous a permis de typer dynamiquement nos variables afin de respecter les consignes et de pouvoir ajouter des spécifications supplémentaires.
+Le choix des packages à été réfléchis en groupe pour que ce soit le plus clair et concis possible afin que quelqu'un qui ne connait pas le projet puisse s'y retrouver au maximum.
 
 ### Etat du développement 
 Le projet est réalisé et avec toutes les consignes demandé dans le sujet. Il fonctionne correctement.
