@@ -301,17 +301,21 @@ make run-jar ARGS="livrable3"
 
 ## Livrable 4
 
-### Objectif du premier livrable 
-
+### Objectif du quatrième livrable
 Modélisation complète.
 
-### Choix de modélisation 
+### Choix de modélisation
+Nous avons donc tout mis en lien ce que nous avons fait dans les précédents livrables dans la classe game pour le déroulement du jeu.
+Il y a deux possibilités, soit suivre pas à pas le déroulement du jeu, oubien en enlevant les scanner dans la classe game dans les pméthode de phases de jeu de faire filer le jeu jusqu'à ce qu'il se termine.
 
 ### Etat du développement 
+Le projet est réalisé et avec toutes les consignes demandé dans le sujet. Il fonctionne correctement.
 
 ### Atteinte des objectifs
+Tous les objectifs ont été atteint.
 
 ### Difficultés restant à résoudre
+Aucune.
 
 # Journal de bord
 
@@ -974,98 +978,3 @@ Léo : correction de bugs notamment concernant l'apparition des zombies
 
 
 Week-end :
-
-## Semaine 13
-__Objectif de la semaine :__  
-
-
-__Objectif atteint :__
-
-
-__Réflexion du groupe :__  
-
-Lundi 22/04 :
-
-
-Mardi 23/04 :
-
-
-Mercredi 24/04 :
-
-
-Jeudi 25/04 :
-
-
-Vendredi 26/04 :
-
-
-Week-end :
-
-__Partage de taches :__
-
-Lundi 22/04 :
-
-
-Mardi 23/04 :
-
-
-Mercredi 24/04 :
-
-
-Jeudi 25/04 :
-
-
-Vendredi 26/04 :
-
-
-Week-end :
-
-
-## Semaine 14
-__Objectif de la semaine :__  
-
-- Finir le projet et le rendre
-
-__Objectif atteint :__
-
-
-__Réflexion du groupe :__  
-
-Lundi 29/04 :
-
-
-Mardi 30/04 :
-
-
-Mercredi 01/04 :
-
-
-Jeudi 02/04 :
-
-
-Vendredi 03/04 :
-
-
-Week-end :
-
-
-
-__Partage de taches :__
-
-Lundi 29/04 :
-
-
-Mardi 30/04 :
-
-
-Mercredi 01/04 :
-
-
-Jeudi 02/04 :
-
-
-Vendredi 03/04 :
-
-
-Week-end :
-
