@@ -179,7 +179,7 @@ public class Game {
 
         this.currentPhase = Phase.SURVIVORS;
 
-        scanner.next();
+        // scanner.next();
     }
 
     /**
@@ -215,7 +215,7 @@ public class Game {
         for(Zombie z : zombies){
             if(!z.isDead()){
                 while (z.getActionPoints() > 0) {
-                    scanner.next();
+                    // scanner.next();
                     z.handleAction();
                 }
             }
@@ -238,7 +238,7 @@ public class Game {
 
                 System.out.println("Backpack : " + s.getBackpack().displayItems());
                 while (s.getActionPoints() > 0) {
-                    scanner.next();
+                    // scanner.next();
                     s.handleAction();
                     System.out.println(s.getName() + " has " + s.getActionPoints() + " pts d'action");
                 }
