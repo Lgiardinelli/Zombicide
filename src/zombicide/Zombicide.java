@@ -12,7 +12,6 @@ import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.survivor.Survivor;
 import zombicide.actor.zombie.*;
 import zombicide.city.City;
-import zombicide.city.TrainCity;
 import zombicide.game.Game;
 import zombicide.item.InfraredGlasses;
 import zombicide.item.Item;
@@ -25,13 +24,13 @@ import zombicide.item.careItem.HealingFiask;
 import java.util.Arrays;
 import java.util.List;
 
-public class Main {
+public class Zombicide {
 
     private final City city = new City(7,7);
 
     public static void main(String[] args) {
-        Main main = new Main();
-        main.start(args);
+        Zombicide zombicide = new Zombicide();
+        zombicide.start(args);
     }
 
     private void start(String[] args) {
