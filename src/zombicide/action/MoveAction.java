@@ -85,10 +85,12 @@ public abstract class MoveAction<T extends Actor> implements Action<T> {
     }
 
     /**
-     * Gets the direction of movement from the specified Area.
+     * Calculates the direction for the Actor to move based on the current area.
+     * If the door in the selected direction is closed, the Actor cannot move in that direction.
      *
-     * @param area The Area from which to get the direction of movement.
-     * @return The direction of movement from the specified Area.
+     * @param actor The Actor performing the move action.
+     * @param area The current area of the Actor.
+     * @return The direction for the Actor to move, or null if the door is closed.
      */
     protected abstract Direction getDirectionFrom(Actor actor , Area area);
 
