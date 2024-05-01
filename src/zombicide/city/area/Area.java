@@ -196,24 +196,6 @@ public abstract class Area {
     }
 
     /**
-     * Adds a list of zombies to the area's list of zombies.
-     *
-     * @param zombies The list of Zombies to add.
-     */
-    public void addZombies(List<Zombie> zombies) {
-        this.zombies.addAll(zombies);
-    }
-
-    /**
-     * Adds a list of survivors to the area's list of survivors.
-     *
-     * @param survivors The list of Survivors to add.
-     */
-    public void addSurvivors(List<Survivor> survivors) {
-        this.survivors.addAll(survivors);
-    }
-
-    /**
      * Removes an actor (zombie or survivor) from the area.
      * Removes the actor from both the zombie and survivor lists.
      *
