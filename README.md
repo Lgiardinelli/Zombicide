@@ -319,6 +319,41 @@ Le projet est réalisé et avec toutes les consignes demandé dans le sujet. Il 
 ### Atteinte des objectifs
 Tous les objectifs ont été atteint.
 
+### Ensemble des commandes
+- Compilation
+```bash
+make compile
+```
+
+- Exécution du programme (avec 3 paramètres longueur, largeur du tableau et nombre de survivants)
+```bash
+make run ARGS="10 10 50"
+```
+
+- Tests compilation
+```bash
+make tests
+```
+
+- Exécution des tests
+```bash
+make run-tests
+```
+
+- Javadoc
+```bash
+make javadoc
+```
+
+- Jar compilation (le nom peut être changé tant que l'extension reste bien spécifiée)
+```bash
+make zombicide.jar
+```
+- Jar exécution
+```bash
+java -jar jar/zombicide.jar 10 10 50
+```
+
 ### Difficultés restant à résoudre
 Aucune.
 
