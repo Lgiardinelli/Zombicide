@@ -1,25 +1,14 @@
 package zombicide;
 
 import zombicide.action.Action;
-import zombicide.action.survivor.SurvivorMoveAction;
 import zombicide.action.survivor.*;
 import zombicide.action.survivor.special.Fighter;
 import zombicide.action.survivor.special.Healer;
 import zombicide.action.survivor.special.Lucky;
 import zombicide.action.survivor.special.Snooper;
-import zombicide.action.zombie.AttackSurvivorAction;
-import zombicide.action.zombie.ZombieMoveAction;
 import zombicide.actor.survivor.Survivor;
-import zombicide.actor.zombie.*;
 import zombicide.city.City;
 import zombicide.game.Game;
-import zombicide.item.InfraredGlasses;
-import zombicide.item.Item;
-import zombicide.item.Map;
-import zombicide.item.MasterKey;
-import zombicide.item.attackItem.weapon.*;
-import zombicide.item.careItem.FirstAidKit;
-import zombicide.item.careItem.HealingFiask;
 import zombicide.util.listchooser.ListChooser;
 import zombicide.util.listchooser.RandomListChooser;
 
