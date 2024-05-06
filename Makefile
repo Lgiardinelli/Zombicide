@@ -44,7 +44,7 @@ run-tests: tests
 	$(JAVA) -jar $(TESTS_JAR) -cp $(TEST_DIR):$(CLASSES_DIR) -scan-classpath
 
 # Generate Java documentation
-javadoc:
+doc :
 	$(JAVADOC) -sourcepath $(SRC_DIR) -d $(DOCS_DIR) -subpackages $(MAIN_PACKAGE)
 
 zombicide.jar : compile
