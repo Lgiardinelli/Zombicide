@@ -29,9 +29,12 @@ public class Zombicide {
         if (args.length != 3) {
             throw new IllegalArgumentException("Il faut 3 arguments (longueur, largeur, nombre de survivants");
         }
+        if (Integer.parseInt(args[2]) < 2) {
+            throw new IllegalArgumentException("Le nombre de survivant doit être au minimum de 2");
+        }
         city = new City(parseInt(args[0]), parseInt(args[1]));
         game = new Game(this.city);
-        createSurvivors(parseInt(args[2]));
+        createSurvivors(Integer.parseInt(args[2]));
         initTrainCity();
     }
 
