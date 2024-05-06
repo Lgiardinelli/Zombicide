@@ -28,10 +28,10 @@ TESTS_JAR = junit-console.jar
 all: compile tests javadoc
 
 # Compile Java source files
-compile: $(JAVA_SOURCES)
+cls : $(JAVA_SOURCES)
 	$(JAVAC) -sourcepath $(SRC_DIR) -d $(CLASSES_DIR) $^
 
-# Run the livrable2 Java application with arguments (longueur, largeur, nbSurvivants)
+# Run the Java application with arguments (longueur, largeur, nbSurvivants)
 run: compile
 	$(JAVA) -cp $(CLASSES_DIR) $(MAIN_CLASS) $(ARGS)
 
