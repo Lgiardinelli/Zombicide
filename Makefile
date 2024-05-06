@@ -17,7 +17,7 @@ JAVA_SOURCES := $(shell find $(SRC_DIR) -name "*.java")
 TEST_SOURCES := $(shell find $(TEST_DIR) -name "*.java")
 CLASSES_DIR = classes
 
-JAR_NAME = livrable3.jar
+JAR_NAME = zombicide.jar
 
 TESTS_JAR = junit-console.jar
 
