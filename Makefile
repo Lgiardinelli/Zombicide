@@ -47,6 +47,9 @@ run-tests: tests
 javadoc:
 	$(JAVADOC) -sourcepath $(SRC_DIR) -d $(DOCS_DIR) -subpackages $(MAIN_PACKAGE)
 
+zombicide.jar : compile
+	$(JAR) cfe $(JAR_DIR)/$@ $(MAIN_CLASS) -C $(CLASSES_DIR) $(MAIN_PACKAGE)
+
 # Create a JAR file in jar directory
 %.jar: compile
 	$(JAR) cfe $(JAR_DIR)/$@ $(MAIN_CLASS) -C $(CLASSES_DIR) $(MAIN_PACKAGE)
