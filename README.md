@@ -23,6 +23,11 @@
 # UML LIVRABLE 4
 ![UML](uml/UML.png)
 
+# SOUTENANCE
+Voici le lien : https://www.canva.com/design/DAGEXFvFcyg/OwHMXqHimfl1m6m1qWH7Ow/edit?utm_content=DAGEXFvFcyg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+Sinon, la vidéo :
+![SOUTENANCE](soutenance/PROJET%20ZOMBICIDE%20L2%20INFO.mp4)
+
 # Livrables
 
 ## Livrable 1
