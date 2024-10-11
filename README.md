@@ -1,4 +1,5 @@
 # l2s4-projet-2024
+Ce projet, réalisé en L2 Informatique, n'a pas fait appel à des patrons de conception spécifiques. Il s'est déroulé sur 12 semaines, durant lesquelles nous avons dû communiquer efficacement pour optimiser son élaboration et conception, en nous appuyant sur les connaissances acquises au cours de notre deuxième année.
 
 # Equipe
 
